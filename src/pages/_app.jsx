@@ -2,9 +2,9 @@ import Head from 'next/head'
 import { Router, useRouter } from 'next/router'
 import { MDXProvider } from '@mdx-js/react'
 
-import { Layout } from '@/components/Layout'
-import * as mdxComponents from '@/components/mdx'
-import { useMobileNavigationStore } from '@/components/MobileNavigation'
+import { Layout } from '@/components/mdx/Layout'
+import * as mdxComponents from '@/components/mdx/mdx'
+import { useMobileNavigationStore } from '@/components/mdx/MobileNavigation'
 
 import '@/styles/tailwind.css'
 import 'focus-visible'
@@ -18,23 +18,26 @@ Router.events.on('routeChangeComplete', onRouteChange)
 Router.events.on('routeChangeError', onRouteChange)
 
 export default function App({ Component, pageProps }) {
-  let router = useRouter()
+
+  const router = useRouter()
+
+  console.log(router.pathname)
 
   return (
     <>
       <Head>
-        {router.pathname === '/' ? (
-          <title>Protocol API Reference</title>
-        ) : (
-          <title>{`${pageProps.title} - Protocol API Reference`}</title>
-        )}
+        <title>Kern AI</title>
         <meta name="description" content={pageProps.description} />
       </Head>
-      <MDXProvider components={mdxComponents}>
-        <Layout {...pageProps}>
-          <Component {...pageProps} />
-        </Layout>
-      </MDXProvider>
+      {router.pathname === '/' ? (
+        <Component {...pageProps} />
+      ) : (
+        <MDXProvider components={mdxComponents}>
+          <Layout {...pageProps}>
+            <Component {...pageProps} />
+          </Layout>
+        </MDXProvider>
+      )}
     </>
   )
 }

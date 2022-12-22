@@ -1,12 +1,12 @@
 import Link from 'next/link'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 
-import { GridPattern } from '@/components/GridPattern'
-import { Heading } from '@/components/Heading'
-import { ChatBubbleIcon } from '@/components/icons/ChatBubbleIcon'
-import { EnvelopeIcon } from '@/components/icons/EnvelopeIcon'
-import { UserIcon } from '@/components/icons/UserIcon'
-import { UsersIcon } from '@/components/icons/UsersIcon'
+import { GridPattern } from '@/components/mdx/GridPattern'
+import { Heading } from '@/components/mdx/Heading'
+import { ChatBubbleIcon } from '@/components/mdx/icons/ChatBubbleIcon'
+import { EnvelopeIcon } from '@/components/mdx/icons/EnvelopeIcon'
+import { UserIcon } from '@/components/mdx/icons/UserIcon'
+import { UsersIcon } from '@/components/mdx/icons/UsersIcon'
 
 const resources = [
   {

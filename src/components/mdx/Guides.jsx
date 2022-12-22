@@ -1,5 +1,5 @@
-import { Button } from '@/components/Button'
-import { Heading } from '@/components/Heading'
+import { Button } from '@/components/mdx/Button'
+import { Heading } from '@/components/mdx/Heading'
 
 const guides = [
   {

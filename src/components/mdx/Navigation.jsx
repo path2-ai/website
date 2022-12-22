@@ -4,10 +4,10 @@ import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
 
-import { Button } from '@/components/Button'
-import { useIsInsideMobileNavigation } from '@/components/MobileNavigation'
-import { useSectionStore } from '@/components/SectionProvider'
-import { Tag } from '@/components/Tag'
+import { Button } from '@/components/mdx/Button'
+import { useIsInsideMobileNavigation } from '@/components/mdx/MobileNavigation'
+import { useSectionStore } from '@/components/mdx/SectionProvider'
+import { Tag } from '@/components/mdx/Tag'
 import { remToPx } from '@/lib/remToPx'
 
 function useInitialValue(value, condition = true) {
@@ -188,22 +188,13 @@ export const navigation = [
     title: 'Guides',
     links: [
       { title: 'Introduction', href: '/' },
-      { title: 'Quickstart', href: '/quickstart' },
-      { title: 'SDKs', href: '/sdks' },
-      { title: 'Authentication', href: '/authentication' },
       { title: 'Pagination', href: '/pagination' },
-      { title: 'Errors', href: '/errors' },
-      { title: 'Webhooks', href: '/webhooks' },
     ],
   },
   {
     title: 'Resources',
     links: [
-      { title: 'Contacts', href: '/contacts' },
-      { title: 'Conversations', href: '/conversations' },
-      { title: 'Messages', href: '/messages' },
       { title: 'Groups', href: '/groups' },
-      { title: 'Attachments', href: '/attachments' },
     ],
   },
 ]
