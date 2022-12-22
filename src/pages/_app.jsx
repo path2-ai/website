@@ -2,6 +2,10 @@ import Head from 'next/head'
 import { Router, useRouter } from 'next/router'
 import { MDXProvider } from '@mdx-js/react'
 
+import { Header } from '@/components/jsx/Header'
+import { Footer } from '@/components/jsx/Footer'
+import { Animate } from "react-simple-animate";
+
 import { Layout } from '@/components/mdx/Layout'
 import * as mdxComponents from '@/components/mdx/mdx'
 import { useMobileNavigationStore } from '@/components/mdx/MobileNavigation'
@@ -21,17 +25,51 @@ export default function App({ Component, pageProps }) {
 
   const router = useRouter()
 
-  const mdxPaths = [
-    '/company/blog/',
+  const docsPaths = [
     '/docs/bricks',
     '/docs/refinery',
     '/docs/gates',
     '/docs/workflow',
   ]
 
-  // check if any of the paths are partially in the current path
-  const isMdxPath = mdxPaths.some((path) => router.pathname.includes(path))
+  const blogPath = '/company/blog/'
+  const changelogPath = '/changelog'
 
+  function Body({ pageProps, Component }) {
+    // check if any of the paths are partially in the current path
+
+    if (docsPaths.some((path) => router.pathname.includes(path))) {
+      return (
+        <MDXProvider components={mdxComponents}>
+          <Layout {...pageProps}>
+            <Component {...pageProps} />
+          </Layout>
+        </MDXProvider>
+      )
+    } else if (router.pathname.includes(blogPath) || router.pathname.includes(changelogPath)) {
+      return (
+        <MDXProvider components={mdxComponents}>
+          <Layout {...pageProps} showNavigation={false}>
+            <Component {...pageProps} />
+          </Layout>
+        </MDXProvider >
+      )
+    }
+    else {
+      return (
+        <div className='bg-black'>
+          <div className="sticky top-0 z-50 backdrop-blur-md opacity-[98%]">
+            <Header />
+          </div>
+          <Animate play start={{ opacity: 0 }} end={{ opacity: 1 }}>
+            <Component {...pageProps} />
+
+          </Animate>
+          <Footer />
+        </div>
+      )
+    }
+  }
 
   return (
     <>
@@ -42,15 +80,7 @@ export default function App({ Component, pageProps }) {
           content="Powering data-centric natural language processing"
         />
       </Head>
-      {isMdxPath ? (
-        <MDXProvider components={mdxComponents}>
-          <Layout {...pageProps}>
-            <Component {...pageProps} />
-          </Layout>
-        </MDXProvider>
-      ) : (
-        <Component {...pageProps} />
-      )}
+      <Body pageProps={pageProps} Component={Component} />
     </>
   )
 }
