@@ -21,7 +21,17 @@ export default function App({ Component, pageProps }) {
 
   const router = useRouter()
 
-  console.log(router.pathname)
+  const mdxPaths = [
+    '/company/blog/',
+    '/docs/bricks',
+    '/docs/refinery',
+    '/docs/gates',
+    '/docs/workflow',
+  ]
+
+  // check if any of the paths are partially in the current path
+  const isMdxPath = mdxPaths.some((path) => router.pathname.includes(path))
+
 
   return (
     <>
@@ -32,14 +42,14 @@ export default function App({ Component, pageProps }) {
           content="Powering data-centric natural language processing"
         />
       </Head>
-      {router.pathname === '/' ? (
-        <Component {...pageProps} />
-      ) : (
+      {isMdxPath ? (
         <MDXProvider components={mdxComponents}>
           <Layout {...pageProps}>
             <Component {...pageProps} />
           </Layout>
         </MDXProvider>
+      ) : (
+        <Component {...pageProps} />
       )}
     </>
   )

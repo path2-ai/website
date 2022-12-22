@@ -1,9 +1,7 @@
 import Head from 'next/head'
 import { Header } from '@/components/jsx/Header'
-import { Hero } from '@/components/jsx/Hero'
-import { Ecosystem } from '@/components/jsx/Ecosystem'
-import { CallToAction } from '@/components/jsx/CallToAction'
 import { Footer } from '@/components/jsx/Footer'
+import { Pricing } from '@/components/jsx/Pricing'
 import { Animate } from "react-simple-animate";
 
 
@@ -22,9 +20,7 @@ export default function Home() {
           <Header />
         </div>
         <Animate play start={{ opacity: 0 }} end={{ opacity: 1 }}>
-          <Hero />
-          <Ecosystem />
-          <CallToAction />
+          <Pricing />
         </Animate>
         <Footer />
       </div>

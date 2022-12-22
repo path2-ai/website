@@ -6,8 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { BookmarkSquareIcon, CalendarIcon } from '@heroicons/react/24/outline'
-import { IconArticle, IconBrandTwitter, IconBriefcase, IconBuildingCastle, IconQuote, IconTemplate, IconUsers } from '@tabler/icons'
+import { IconArticle, IconBriefcase, IconBuildingCastle, IconQuote, IconTemplate, IconUsers } from '@tabler/icons'
 import { RefineryIconScheme } from '@/util/RefineryIcon'
 import { BricksIconScheme } from '@/util/BricksIcon'
 import { GatesIconScheme } from '@/util/GatesIcon'
@@ -23,10 +22,10 @@ const navigation = [
     {
         name: 'Docs', subnav: [
             { name: 'Platform architecture', href: '/docs/architecture', icon: IconBuildingCastle, description: 'See how the platform of Kern AI works under the hood' },
-            { name: 'refinery', href: '/refinery', icon: RefineryIconScheme, description: 'Dive into the data-centric editor to build data and algorithms' },
-            { name: 'bricks', href: '/bricks', icon: BricksIconScheme, description: 'Search through our collection of modular and off-the-shelf NLP enrichments' },
-            { name: 'gates', href: '/gates', icon: GatesIconScheme, description: 'See how you can productionize refinery as a realtime and batch API' },
-            { name: 'workflow', href: '/workflow', icon: WorkflowIconScheme, description: 'Find out more about how you can build custom ETL processes for your natural language data' },
+            { name: 'refinery', href: '/docs/refinery', icon: RefineryIconScheme, description: 'Dive into the data-centric editor to build data and algorithms' },
+            { name: 'bricks', href: '/docs/bricks', icon: BricksIconScheme, description: 'Search through our collection of modular and off-the-shelf NLP enrichments' },
+            { name: 'gates', href: '/docs/gates', icon: GatesIconScheme, description: 'See how you can productionize refinery as a realtime and batch API' },
+            { name: 'workflow', href: '/docs/workflow', icon: WorkflowIconScheme, description: 'Find out more about how you can build custom ETL processes for your natural language data' },
         ]
     },
     { name: 'Changelog', href: '/changelog' },
