@@ -27,7 +27,10 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>Kern AI</title>
-        <meta name="description" content={pageProps.description} />
+        <meta
+          name="description"
+          content="Powering data-centric natural language processing"
+        />
       </Head>
       {router.pathname === '/' ? (
         <Component {...pageProps} />
