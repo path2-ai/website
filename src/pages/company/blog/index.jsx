@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
+import { Header } from '@/components/jsx/Header'
+import { Footer } from '@/components/jsx/Footer'
+import { Blog } from '@/components/jsx/Blog';
 import { Animate } from "react-simple-animate";
-import { Blog } from '@/components/Blog';
 
 export default function Home() {
 

@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import { Header } from '@/components/Header'
-import { Footer } from '@/components/Footer'
+import { Header } from '@/components/jsx/Header'
+import { Footer } from '@/components/jsx/Footer'
+import { Architecture } from '@/components/jsx/Architecture';
+import { CallToAction } from '@/components/jsx/CallToAction';
 import { Animate } from "react-simple-animate";
-import { Architecture } from '@/components/Architecture';
-import { CallToAction } from '@/components/CallToAction';
 
 
 export default function Home() {

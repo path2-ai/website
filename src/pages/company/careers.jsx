@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import { Header } from '@/components/Header'
-import { Careers } from '@/components/Careers';
-import { Footer } from '@/components/Footer'
+import { Header } from '@/components/jsx/Header'
+import { Careers } from '@/components/jsx/Careers';
+import { Footer } from '@/components/jsx/Footer'
 import { Animate } from "react-simple-animate";
 
 
