@@ -1,22 +1,8 @@
-import { getArticles } from '@/services/blog';
 import { useEffect, useState } from 'react';
 
 export function Blog() {
 
-
-    const [articles, setArticles] = useState([]);
-    const [meta, setMeta] = useState({});
-
-    useEffect(() => {
-        getArticles().then((response) => {
-            setArticles(response.data);
-            setMeta(response.meta);
-        });
-    }, []);
-
-    useEffect(() => {
-        console.log(articles);
-    }, [articles]);
+    const [articles, setArticles] = useState(null);
 
     return (
         <section className="mt-32 mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
