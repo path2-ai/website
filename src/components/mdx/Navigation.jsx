@@ -185,16 +185,31 @@ function NavigationGroup({ group, className }) {
 
 export const navigation = [
   {
-    title: 'Guides',
+    title: 'refinery',
     links: [
-      { title: 'Introduction', href: '/' },
-      { title: 'Pagination', href: '/pagination' },
+      { title: 'refinery', href: '/docs/refinery' },
+      { title: 'refinery-react', href: '/docs/refinery-react' },
     ],
   },
   {
-    title: 'Resources',
+    title: 'bricks',
     links: [
-      { title: 'Groups', href: '/groups' },
+      { title: 'refinery', href: '/docs/bricks' },
+      { title: 'refinery-react', href: '/docs/bricks-react' },
+    ],
+  },
+  {
+    title: 'gates',
+    links: [
+      { title: 'refinery', href: '/docs/gates' },
+      { title: 'refinery-react', href: '/docs/gates-react' },
+    ],
+  },
+  {
+    title: 'workflow',
+    links: [
+      { title: 'refinery', href: '/docs/workflow' },
+      { title: 'refinery-react', href: '/docs/workflow-react' },
     ],
   },
 ]

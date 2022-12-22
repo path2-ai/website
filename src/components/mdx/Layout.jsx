@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 import { Footer } from '@/components/mdx/Footer'
 import { Header } from '@/components/mdx/Header'
@@ -9,6 +10,9 @@ import { Prose } from '@/components/mdx/Prose'
 import { SectionProvider } from '@/components/mdx/SectionProvider'
 
 export function Layout({ children, sections = [] }) {
+
+  const router = useRouter()
+
   return (
     <SectionProvider sections={sections}>
       <div className="lg:ml-72 xl:ml-80">
@@ -17,9 +21,14 @@ export function Layout({ children, sections = [] }) {
           className="fixed inset-y-0 left-0 z-40 contents w-72 overflow-y-auto border-r border-zinc-900/10 px-6 pt-4 pb-8 dark:border-white/10 lg:block xl:w-80"
         >
           <div className="hidden lg:flex">
-            <Link href="/" aria-label="Home">
-              <Logo className="h-6" />
-            </Link>
+            <img
+              className="h-8 cursor-pointer"
+              src="/KernAI-primary-gray-100.svg"
+              alt=""
+              onClick={() => {
+                router.push('/')
+              }}
+            />
           </div>
           <Header />
           <Navigation className="hidden lg:mt-10 lg:block" />

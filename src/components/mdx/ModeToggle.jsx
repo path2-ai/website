@@ -31,7 +31,7 @@ export function ModeToggle() {
 
     let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = document.documentElement.classList.toggle('dark')
+    let isDarkMode = true // document.documentElement.classList.toggle('dark')
 
     if (isDarkMode === isSystemDarkMode) {
       delete window.localStorage.isDarkMode

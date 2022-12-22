@@ -2,9 +2,9 @@ import { forwardRef } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { useRouter } from 'next/router'
 
 import { Button } from '@/components/mdx/Button'
-import { Logo } from '@/components/mdx/Logo'
 import {
   MobileNavigation,
   useIsInsideMobileNavigation,
@@ -27,6 +27,8 @@ function TopLevelNavItem({ href, children }) {
 }
 
 export const Header = forwardRef(function Header({ className }, ref) {
+  const router = useRouter()
+
   let { isOpen: mobileNavIsOpen } = useMobileNavigationStore()
   let isInsideMobileNavigation = useIsInsideMobileNavigation()
 
@@ -61,9 +63,14 @@ export const Header = forwardRef(function Header({ className }, ref) {
       <Search />
       <div className="flex items-center gap-5 lg:hidden">
         <MobileNavigation />
-        <Link href="/" aria-label="Home">
-          <Logo className="h-6" />
-        </Link>
+        <img
+          className="h-8 cursor-pointer"
+          src="/KernAI-icon.svg"
+          alt=""
+          onClick={() => {
+            router.push('/')
+          }}
+        />
       </div>
       <div className="flex items-center gap-5">
         <nav className="hidden md:block">
@@ -76,7 +83,7 @@ export const Header = forwardRef(function Header({ className }, ref) {
         <div className="hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-white/15" />
         <div className="flex gap-4">
           <MobileSearch />
-          <ModeToggle />
+          {/* <ModeToggle /> */}
         </div>
         <div className="hidden min-[416px]:contents">
           <Button href="#">Sign in</Button>
