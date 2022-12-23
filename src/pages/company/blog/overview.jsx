@@ -13,40 +13,15 @@ export const articles = [
         "date": "2021-03-01"
     },
     {
-        "title": "Post 2",
-        "slug": "Post 2",
-        "teaser": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-        "category": "Announcements",
-        "thumbnail": `${BASE_ASSETS_URL}/test.png`,
-        "author": {
-            "name": "Johannes Hötter",
-            "image": `${BASE_ASSETS_URL}/test.png`
-        },
-        "date": "2021-03-01"
-    },
-    {
-        "title": "Post 3",
-        "slug": "post 3",
-        "teaser": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+        "title": "How we built bricks",
+        "slug": "how-we-built-bricks",
+        "teaser": "bricks is an open-source collection of modular and standardized NLP components written in Python. It is designed to fit into any NLP application with ease to bridge the gap between idea and implementation. In this post, we'll show you how we built bricks and how you can use it in your own projects.",
         "category": "Knowledge",
         "thumbnail": `${BASE_ASSETS_URL}/test.png`,
         "author": {
-            "name": "Johannes Hötter",
+            "name": "Leo Püttmann",
             "image": `${BASE_ASSETS_URL}/test.png`
         },
         "date": "2021-03-01"
-    },
-    {
-        "title": "How to use the Kern API",
-        "slug": "my-first-post",
-        "teaser": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-        "category": "Knowledge",
-        "thumbnail": `${BASE_ASSETS_URL}/test.png`,
-        "author": {
-            "name": "Johannes Hötter",
-            "image": `${BASE_ASSETS_URL}/test.png`
-        },
-        "date": "2021-03-01"
-    },
-
+    }
 ]
