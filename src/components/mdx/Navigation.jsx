@@ -198,7 +198,7 @@ export function getNavigationElements(type) {
         title: 'bricks',
         links: [
           { title: 'bricks', href: '/docs/bricks' },
-          { title: 'test', href: '/docs/test' },
+          { title: 'test', href: '/docs/bricks/test' },
         ],
       },
       {
