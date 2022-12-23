@@ -183,38 +183,60 @@ function NavigationGroup({ group, className }) {
   )
 }
 
-export const navigation = [
-  {
-    title: 'refinery',
-    links: [
-      { title: 'refinery', href: '/docs/refinery' },
-      { title: 'refinery-react', href: '/docs/refinery-react' },
-    ],
-  },
-  {
-    title: 'bricks',
-    links: [
-      { title: 'refinery', href: '/docs/bricks' },
-      { title: 'refinery-react', href: '/docs/bricks-react' },
-    ],
-  },
-  {
-    title: 'gates',
-    links: [
-      { title: 'refinery', href: '/docs/gates' },
-      { title: 'refinery-react', href: '/docs/gates-react' },
-    ],
-  },
-  {
-    title: 'workflow',
-    links: [
-      { title: 'refinery', href: '/docs/workflow' },
-      { title: 'refinery-react', href: '/docs/workflow-react' },
-    ],
-  },
-]
+export function getNavigationElements(type) {
+  if (type == 'docs') {
+    return [
+      {
+        title: 'refinery',
+        links: [
+          { title: 'refinery', href: '/docs/refinery' },
+          { title: 'refinery-react', href: '/docs/refinery-react' },
+        ],
+      },
+      {
+        title: 'bricks',
+        links: [
+          { title: 'refinery', href: '/docs/bricks' },
+          { title: 'refinery-react', href: '/docs/bricks-react' },
+        ],
+      },
+      {
+        title: 'gates',
+        links: [
+          { title: 'refinery', href: '/docs/gates' },
+          { title: 'refinery-react', href: '/docs/gates-react' },
+        ],
+      },
+      {
+        title: 'workflow',
+        links: [
+          { title: 'refinery', href: '/docs/workflow' },
+          { title: 'refinery-react', href: '/docs/workflow-react' },
+        ],
+      },
+    ]
+  } else if (type == 'blog') {
+    return [{
+      title: 'blog',
+      links: [
+        { title: 'refinery', href: '/docs/refinery' },
+        { title: 'refinery-react', href: '/docs/refinery-react' },
+      ],
+    },]
+  } else if (type == 'changelog') {
+    return [{
+      title: 'changelog',
+      links: [
+        { title: 'refinery', href: '/docs/refinery' },
+        { title: 'refinery-react', href: '/docs/refinery-react' },
+      ],
+    },]
+  }
+}
 
 export function Navigation(props) {
+
+  const navigation = getNavigationElements(props['type'])
   return (
     <nav {...props}>
       <ul role="list">

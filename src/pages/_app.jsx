@@ -35,21 +35,22 @@ export default function App({ Component, pageProps }) {
   const blogPath = '/company/blog/'
   const changelogPath = '/changelog'
 
-  function Body({ pageProps, Component }) {
+  const Body = ({ pageProps, Component }) => {
     // check if any of the paths are partially in the current path
 
     if (docsPaths.some((path) => router.pathname.includes(path))) {
       return (
         <MDXProvider components={mdxComponents}>
-          <Layout {...pageProps}>
+          <Layout type="docs" {...pageProps}>
             <Component {...pageProps} />
           </Layout>
         </MDXProvider>
       )
     } else if (router.pathname.includes(blogPath) || router.pathname.includes(changelogPath)) {
+      const type = router.pathname.includes(blogPath) ? 'blog' : 'changelog'
       return (
         <MDXProvider components={mdxComponents}>
-          <Layout {...pageProps} showNavigation={false}>
+          <Layout type={type} {...pageProps} >
             <Component {...pageProps} />
           </Layout>
         </MDXProvider >
@@ -63,7 +64,6 @@ export default function App({ Component, pageProps }) {
           </div>
           <Animate play start={{ opacity: 0 }} end={{ opacity: 1 }}>
             <Component {...pageProps} />
-
           </Animate>
           <Footer />
         </div>
