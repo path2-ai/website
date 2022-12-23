@@ -11,6 +11,7 @@ import { RefineryIconScheme } from '@/util/RefineryIcon'
 import { BricksIconScheme } from '@/util/BricksIcon'
 import { GatesIconScheme } from '@/util/GatesIcon'
 import { WorkflowIconScheme } from '@/util/WorkflowIcon'
+import Link from 'next/link'
 
 const navigation = [
     {
@@ -82,9 +83,9 @@ export function Header() {
                         <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12">
                             {navigation.map((item) => (
                                 item.href ? (
-                                    <a key={item.name} href={item.href} className="h-8 pt-2 font-semibold text-gray-300 hover:text-lime-400">
+                                    <Link key={item.name} href={item.href} className="h-8 pt-2 font-semibold text-gray-300 hover:text-lime-400">
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 ) : (
                                     <Popover key={item.name} className="relative">
                                         {({ open }) => (
@@ -115,7 +116,7 @@ export function Header() {
                                                         <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                                             <div className="relative grid gap-6 bg-neutral-900 px-5 py-6 sm:gap-8 sm:p-8 border border-gray-800">
                                                                 {item.subnav.map((subItem) => (
-                                                                    <a
+                                                                    <Link
                                                                         key={subItem.name}
                                                                         href={subItem.href}
                                                                         className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-neutral-800"
@@ -125,7 +126,7 @@ export function Header() {
                                                                             <p className="text-base font-medium text-gray-100">{subItem.name}</p>
                                                                             <p className="mt-1 text-sm text-gray-300">{subItem.description}</p>
                                                                         </div>
-                                                                    </a>
+                                                                    </Link>
                                                                 ))}
                                                             </div>
                                                         </div>
@@ -159,7 +160,9 @@ export function Header() {
                     <Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-black px-6 py-6 lg:hidden">
                         <div className="flex h-9 items-center justify-between">
                             <div className="flex">
-                                <a href="#" className="-m-1.5 p-1.5">
+                                <a
+                                    className="-m-1.5 p-1.5"
+                                >
                                     <span className="sr-only">Kern AI</span>
                                     <img
                                         className="h-8"
@@ -188,18 +191,20 @@ export function Header() {
                             <div className="-my-6 divide-y divide-gray-500/10">
                                 <div className="space-y-2 py-6">
                                     {navigation.map((item) => (
-                                        <a
+                                        <Link
                                             key={item.name}
                                             href={item.href}
                                             className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-600/10"
                                         >
                                             {item.name}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                                 <div className="py-6">
                                     <a
-                                        href="#"
+                                        href="https://app.kern.ai"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-100 hover:bg-gray-600/10"
                                     >
                                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>

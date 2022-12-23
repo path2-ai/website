@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export function CallToAction() {
     return (
         <section className="mx-auto max-w-7xl py-16 px-4 text-center sm:px-6 lg:py-16 lg:px-8 space-y-8">
@@ -16,24 +18,24 @@ export function CallToAction() {
             </h2>
             <div className="flex justify-center">
                 <div className="inline-flex">
-                    <a
+                    <Link
                         href="#"
                         className="hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
                     >
                         <span className='my-auto text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>
                             Request a demo
                         </span>
-                    </a>
+                    </Link>
                 </div>
                 <div className="ml-3 inline-flex">
-                    <a
-                        href="#"
+                    <Link
+                        href="/pricing"
                         className="hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
                     >
                         <span className='my-auto text-gray-200'>
                             See pricing
                         </span>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

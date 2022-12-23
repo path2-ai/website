@@ -1,4 +1,5 @@
 import { CheckIcon, XMarkIcon } from '@heroicons/react/20/solid'
+import Link from 'next/link'
 
 const plans = [
     {
@@ -217,7 +218,7 @@ export function Pricing() {
                                     </ul>
                                 </div>
 
-                                <a
+                                <Link
                                     href="#"
                                     className={classNames(
                                         tier.featured
@@ -227,7 +228,7 @@ export function Pricing() {
                                     )}
                                 >
                                     {tier.cta}
-                                </a>
+                                </Link>
                             </div>
                         ))}
                     </div>

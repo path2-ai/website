@@ -1,4 +1,5 @@
 import { articles } from "@/pages/company/blog/overview"
+import Link from "next/link"
 
 export function Blog() {
 
@@ -22,7 +23,7 @@ export function Blog() {
                         <div
                             className="mt-12 max-w-lg mx-auto lg:max-w-none"
                         >
-                            <a href={`blog/${featuredArticle.slug}`}>
+                            <Link href={`blog/${featuredArticle.slug}`}>
                                 <div className="flex flex-col overflow-hidden rounded-lg shadow-lg">
                                     <img className="object-cover" src={featuredArticle.thumbnail} alt={featuredArticle.title} />
                                 </div>
@@ -44,13 +45,13 @@ export function Blog() {
                                     <span className="text-white">|</span>
                                     <span className="text-gray-500"> {featuredArticle.date}</span>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
 
                         {/* other posts */}
                         <div className="mx-auto mt-24 grid max-w-lg gap-16 lg:max-w-none lg:grid-cols-2">
                             {articles.slice(1).map((post) => (
-                                <a
+                                <Link
                                     key={post.title}
                                     href={`blog/${post.slug}`}
                                 >
@@ -75,7 +76,7 @@ export function Blog() {
                                         <span className="text-white">|</span>
                                         <span className="text-gray-500"> {post.date}</span>
                                     </div>
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </div>

@@ -4,16 +4,15 @@ import { RefineryIcon } from '@/util/RefineryIcon'
 import { BricksIcon } from '@/util/BricksIcon'
 import { GatesIcon } from '@/util/GatesIcon'
 import { WorkflowIcon } from '@/util/WorkflowIcon'
-import Link from 'next/link'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { InboxIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import { IconBuildingCastle } from '@tabler/icons'
+import Link from 'next/link'
 
 const slideContent = {
   refinery: {
     title: "refinery",
     description: "Refinery is a data management platform that allows you to easily manage your data and build data pipelines.",
-    href: "https://www.kern.ai/refinery",
     icon: <RefineryIcon className="h-12 w-12" />,
     image: "/screenshot-refinery.png",
     fromColor: "from-green-500",
@@ -59,7 +58,6 @@ const slideContent = {
   bricks: {
     title: "bricks",
     description: "Bricks is a data processing platform that allows you to easily build data pipelines and run them on your data.",
-    href: "https://www.kern.ai/bricks",
     icon: <BricksIcon className="h-12 w-12" />,
     image: "/screenshot-bricks.png",
     fromColor: "from-amber-500",
@@ -96,7 +94,6 @@ const slideContent = {
   gates: {
     title: "gates",
     description: "Gates is a data processing platform that allows you to easily build data pipelines and run them on your data.",
-    href: "https://www.kern.ai/gates",
     icon: <GatesIcon className="h-12 w-12" />,
     image: "/screenshot-gates.png",
     fromColor: "from-red-500",
@@ -125,7 +122,6 @@ const slideContent = {
   workflow: {
     title: "workflow",
     description: "Workflow is a data processing platform that allows you to easily build data pipelines and run them on your data.",
-    href: "https://www.kern.ai/workflow",
     icon: <WorkflowIcon className="h-12 w-12" />,
     image: "/screenshot-workflow.png",
     fromColor: "from-sky-500",
@@ -306,7 +302,7 @@ export function Ecosystem() {
                 <div className='text-gray-100 text-sm'>
                   The Kern AI ecosystem consists of four products
                 </div>
-                <a
+                <Link
                   href='/docs/architecture'
                   type='button'
                   className='hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'>
@@ -317,22 +313,20 @@ export function Ecosystem() {
                   <span className="flex h-3 w-3">
                     <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500"></span>
                   </span>
-                </a>
+                </Link>
               </div>
               <div>
                 <h2 className={`text-3xl font-mono w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r ${slideContent[current].fromColor} ${slideContent[current].toColor}`}>{current}</h2>
                 <p className="text-lg text-gray-500">
                   {slideContent[current].description}
                 </p>
-                <a
+                <Link
                   type="button"
-                  href={slideContent[current].href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={`/docs/${slideContent[current].title}`}
                   className="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-100 ring-1 ring-gray-100/10 hover:ring-gray-100/20"
                 >
                   See {current}
-                </a>
+                </Link>
               </div>
               <div className={`w-full grid grid-cols-${slideContent[current].cols} gap-4 border-t border-white/5`}>
                 {slideContent[current].features.map((feature) => (

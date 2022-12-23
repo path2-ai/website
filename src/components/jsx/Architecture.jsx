@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const siloData = [
     {
         product: 'bricks',
@@ -58,14 +60,14 @@ function SiloText({ product, title, description, fromColor, toColor, link }) {
                 {description}
             </div>
             <div className="mt-6 inline-flex">
-                <a
+                <Link
                     href={link}
                     className="hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
                 >
                     <span className={`my-auto text-transparent bg-clip-text bg-gradient-to-r from-${fromColor}-400 to-${toColor}-600`}>
                         See {product} docs
                     </span>
-                </a>
+                </Link>
             </div>
         </div>
     )
