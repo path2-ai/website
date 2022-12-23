@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
+import { articles } from '@/pages/company/blog/overview'
+import { logs } from '@/pages/changelog/navbar'
 
 import { Button } from '@/components/mdx/Button'
 import { useIsInsideMobileNavigation } from '@/components/mdx/MobileNavigation'
@@ -190,46 +192,58 @@ export function getNavigationElements(type) {
         title: 'refinery',
         links: [
           { title: 'refinery', href: '/docs/refinery' },
-          { title: 'refinery-react', href: '/docs/refinery-react' },
         ],
       },
       {
         title: 'bricks',
         links: [
-          { title: 'refinery', href: '/docs/bricks' },
-          { title: 'refinery-react', href: '/docs/bricks-react' },
+          { title: 'bricks', href: '/docs/bricks' },
+          { title: 'test', href: '/docs/test' },
         ],
       },
       {
         title: 'gates',
         links: [
-          { title: 'refinery', href: '/docs/gates' },
-          { title: 'refinery-react', href: '/docs/gates-react' },
+          { title: 'gates', href: '/docs/gates' },
         ],
       },
       {
         title: 'workflow',
         links: [
-          { title: 'refinery', href: '/docs/workflow' },
-          { title: 'refinery-react', href: '/docs/workflow-react' },
+          { title: 'workflow', href: '/docs/workflow' },
         ],
       },
     ]
   } else if (type == 'blog') {
-    return [{
-      title: 'blog',
-      links: [
-        { title: 'refinery', href: '/docs/refinery' },
-        { title: 'refinery-react', href: '/docs/refinery-react' },
-      ],
-    },]
+
+    const announcements = {
+      title: 'Announcements',
+      links: articles.filter(article => article.category == 'Announcements').map(article => {
+        return { title: article.title, href: `/company/blog/${article.slug}` }
+      })
+    }
+
+
+    const knowledge = {
+      title: 'Knowledge',
+      links: articles.filter(article => article.category == 'Knowledge').map(article => {
+        return { title: article.title, href: `/company/blog/${article.slug}` }
+      })
+    }
+
+
+    const nav = [announcements, knowledge]
+
+    return nav
   } else if (type == 'changelog') {
     return [{
-      title: 'changelog',
-      links: [
-        { title: 'refinery', href: '/docs/refinery' },
-        { title: 'refinery-react', href: '/docs/refinery-react' },
-      ],
+      title: 'Changelog',
+      links: logs.map(log => {
+        return { title: log, href: `/changelog/${log}` }
+      })
+      // links: [
+      //   { title: 'version 1', href: '/changelog/v1_0_0' },
+      // ],
     },]
   }
 }

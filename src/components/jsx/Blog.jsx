@@ -1,8 +1,6 @@
-import { useEffect, useState } from 'react';
+import { articles } from "@/pages/company/blog/overview"
 
 export function Blog() {
-
-    const [articles, setArticles] = useState(null);
 
     return (
         <section className="mt-32 mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -22,7 +20,7 @@ export function Blog() {
                             {articles.map((post) => (
                                 <div key={post.title} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
                                     <div className="flex-shrink-0">
-                                        <img className="h-48 w-full object-cover" src={post.thumbnail.url} alt="" />
+                                        <img className="h-48 w-full object-cover" src={post.thumbnail} alt="" />
                                     </div>
                                     <div className="flex flex-1 flex-col justify-between bg-white p-6">
                                         <div className="flex-1">
