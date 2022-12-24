@@ -14,12 +14,14 @@ import { WorkflowIconScheme } from '@/util/WorkflowIcon'
 import Link from 'next/link'
 
 const navigation = [
-    {
-        name: 'Solutions', subnav: [
-            { name: 'ETL library', href: '/solutions/library', icon: IconTemplate, description: 'Browse through our library of workflows you can implement right away' },
-            { name: 'CSM assistant', href: 'https://csm-assistant.kern.ai', icon: IconQuote, description: 'Add a digital, intelligent assistant to your customer success team' },
-        ]
-    },
+    // {
+    //     name: 'Solutions', subnav: [
+    //         { name: 'ETL library', href: '/solutions/library', icon: IconTemplate, description: 'Browse through our library of workflows you can implement right away' },
+    //         { name: 'CSM assistant', href: 'https://csm-assistant.kern.ai', icon: IconQuote, description: 'Add a digital, intelligent assistant to your customer success team' },
+    //     ]
+    // },
+    { name: 'ETL library', href: '/solutions/library' },
+
     {
         name: 'Docs', subnav: [
             { name: 'Platform architecture', href: '/docs/architecture', icon: IconBuildingCastle, description: 'See how the platform of Kern AI works under the hood' },

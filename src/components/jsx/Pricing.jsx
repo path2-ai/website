@@ -1,9 +1,54 @@
 import { CheckIcon, XMarkIcon } from '@heroicons/react/20/solid'
+import { IconBuilding, IconCloud } from '@tabler/icons'
+import { useState, useEffect, use } from 'react'
 import Link from 'next/link'
 
-const plans = [
+const plansCloud = [
     {
-        title: 'Starter',
+        title: 'Personal',
+        featured: false,
+        description: 'All your essential business finances, taken care of.',
+        price: 5,
+        mainFeatures: [
+            { id: 1, value: 'Basic invoicing' },
+            { id: 2, value: 'Easy to use accounting' },
+            { id: 3, value: 'Mutli-accounts' },
+        ],
+        cta: 'Get started',
+    },
+    {
+        title: 'Growth',
+        featured: true,
+        description: 'The best financial services for your thriving business.',
+        price: 19,
+        mainFeatures: [
+            { id: 1, value: 'Advanced invoicing' },
+            { id: 2, value: 'Easy to use accounting' },
+            { id: 3, value: 'Mutli-accounts' },
+            { id: 4, value: 'Tax planning toolkit' },
+            { id: 5, value: 'VAT & VATMOSS filing' },
+            { id: 6, value: 'Free bank transfers' },
+        ],
+        cta: 'Get started',
+    },
+    {
+        title: 'Enterprise',
+        featured: false,
+        description: 'Convenient features to take your business to the next level.',
+        price: 12,
+        mainFeatures: [
+            { id: 1, value: 'Basic invoicing' },
+            { id: 2, value: 'Easy to use accounting' },
+            { id: 3, value: 'Mutli-accounts' },
+            { id: 4, value: 'Tax planning toolkit' },
+        ],
+        cta: 'Get started',
+    },
+]
+
+const plansSelfHosted = [
+    {
+        title: 'Personal',
         featured: false,
         description: 'All your essential business finances, taken care of.',
         price: 5,
@@ -29,21 +74,9 @@ const plans = [
         ],
         cta: 'Get started',
     },
-    {
-        title: 'Growth',
-        featured: false,
-        description: 'Convenient features to take your business to the next level.',
-        price: 12,
-        mainFeatures: [
-            { id: 1, value: 'Basic invoicing' },
-            { id: 2, value: 'Easy to use accounting' },
-            { id: 3, value: 'Mutli-accounts' },
-            { id: 4, value: 'Tax planning toolkit' },
-        ],
-        cta: 'Get started',
-    },
 ]
-const features = [
+
+const featuresCloud = [
     {
         title: 'Tax Savings',
         tiers: [
@@ -101,7 +134,61 @@ const features = [
         ],
     },
 ]
-const perks = [
+
+
+const featuresSelfHosted = [
+    {
+        title: 'Tax Savings',
+        tiers: [
+            { title: 'starter', value: true },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+    {
+        title: 'Easy to use accounting',
+        tiers: [
+            { title: 'starter', value: true },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+    {
+        title: 'Multi-accounts',
+        tiers: [
+            { title: 'starter', value: '3 accounts' },
+            { title: 'popular', featured: true, value: 'Unlimited accounts' },
+        ],
+    },
+    {
+        title: 'Invoicing',
+        tiers: [
+            { title: 'starter', value: '3 invoices' },
+            { title: 'popular', featured: true, value: 'Unlimited invoices' },
+        ],
+    },
+    {
+        title: 'Exclusive offers',
+        tiers: [
+            { title: 'starter', value: false },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+    {
+        title: '6 months free advisor',
+        tiers: [
+            { title: 'starter', value: false },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+    {
+        title: 'Mobile and web access',
+        tiers: [
+            { title: 'starter', value: false },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+]
+
+const perksCloud = [
     {
         title: '24/7 customer support',
         tiers: [
@@ -160,11 +247,81 @@ const perks = [
     },
 ]
 
+const perksSelfHosted = [
+    {
+        title: '24/7 customer support',
+        tiers: [
+            { title: 'starter', value: true },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+    {
+        title: 'Instant notifications',
+        tiers: [
+            { title: 'starter', value: true },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+    {
+        title: 'Budgeting tools',
+        tiers: [
+            { title: 'starter', value: true },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+    {
+        title: 'Digital receipts',
+        tiers: [
+            { title: 'starter', value: true },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+    {
+        title: 'Pots to separate money',
+        tiers: [
+            { title: 'starter', value: false },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+    {
+        title: 'Free bank transfers',
+        tiers: [
+            { title: 'starter', value: false },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+    {
+        title: 'Business debit card',
+        tiers: [
+            { title: 'starter', value: false },
+            { title: 'popular', featured: true, value: true },
+        ],
+    },
+]
+
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
 export function Pricing() {
+
+    const [cloudIsSelected, setCloudIsSelected] = useState(true)
+    const [plans, setPlans] = useState(plansCloud)
+    const [features, setFeatures] = useState(featuresCloud)
+    const [perks, setPerks] = useState(perksCloud)
+
+    useEffect(() => {
+        if (cloudIsSelected) {
+            setPlans(plansCloud)
+            setFeatures(featuresCloud)
+            setPerks(perksCloud)
+        } else {
+            setPlans(plansSelfHosted)
+            setFeatures(featuresSelfHosted)
+            setPerks(perksSelfHosted)
+        }
+    }, [cloudIsSelected])
+
     return (
         <div>
             <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black" />
@@ -179,6 +336,33 @@ export function Pricing() {
                     </p>
                 </div>
 
+                <div className='flex mt-8 mx-auto bg-neutral-900 border border-gray-500 p-1 rounded-xl w-fit space-x-2 text-white'>
+                    <button
+                        className={classNames(
+                            cloudIsSelected ? 'ring-lime-500' : 'ring-white/10 group-hover:ring-white/20',
+                            "flex space-x-2 hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset"
+                        )}
+                        onClick={() => setCloudIsSelected(true)}
+                    >
+                        <IconCloud className='w-6 h-6 text-lime-500' />
+                        <span className='my-auto text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>
+                            In the cloud
+                        </span>
+                    </button>
+                    <button
+                        className={classNames(
+                            !cloudIsSelected ? 'ring-lime-500' : 'ring-white/10 group-hover:ring-white/20',
+                            "flex space-x-2 hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset"
+                        )}
+                        onClick={() => setCloudIsSelected(false)}
+                    >
+                        <IconBuilding className='w-6 h-6 text-gray-200' />
+                        <span className='my-auto text-gray-200'>
+                            Self-Hosted
+                        </span>
+                    </button>
+                </div>
+
                 <h2 className="sr-only">Plans</h2>
                 {/* Cards */}
                 <div className="relative mx-auto mt-8 max-w-2xl px-4 pb-8 sm:mt-12 sm:px-6 lg:max-w-6xl lg:px-8 lg:pb-0">
@@ -188,7 +372,10 @@ export function Pricing() {
                         className="absolute inset-0 top-4 bottom-6 left-8 right-8 hidden rounded-tl-lg rounded-tr-lg lg:block"
                     />
 
-                    <div className="relative space-x-4 space-y-6 lg:grid lg:grid-cols-3 lg:space-y-0">
+                    <div className={classNames(
+                        cloudIsSelected ? "lg:grid-cols-3" : "lg:grid-cols-2",
+                        "relative space-x-4 space-y-6 lg:grid  lg:space-y-0"
+                    )}>
                         {plans.map((tier) => (
                             <div
                                 key={tier.title}
@@ -381,14 +568,21 @@ export function Pricing() {
 
                 <div className="mx-auto max-w-5xl py-24 px-8">
                     <div className="flex w-full items-stretch border-t border-gray-200">
-                        <div className="-mt-px flex w-1/4 items-end py-6 pr-4">
+                        <div className={classNames(
+                            cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                            "-mt-px flex items-end py-6 pr-4"
+                        )}>
                             <h3 className="mt-auto text-sm font-bold text-gray-100">Catered for business</h3>
                         </div>
                         {plans.map((plan, planIdx) => (
                             <div
                                 key={plan.title}
                                 aria-hidden="true"
-                                className={classNames(planIdx === plans.length - 1 ? '' : 'pr-4', '-mt-px pl-4 w-1/4')}
+                                className={classNames(
+                                    planIdx === plans.length - 1 ? '' : 'pr-4',
+                                    cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                    '-mt-px pl-4'
+                                )}
                             >
                                 <div
                                     className={classNames(plan.featured ? 'border-lime-400' : 'border-transparent', 'py-6 border-t-2')}
@@ -405,16 +599,27 @@ export function Pricing() {
                     <div className="relative">
                         {/* Fake card backgrounds */}
                         <div className="pointer-events-none absolute inset-0 flex items-stretch" aria-hidden="true">
-                            <div className="w-1/4 pr-4" />
-                            <div className="w-1/4 px-4">
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "pr-4"
+                            )} />
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "px-4"
+                            )} >
                                 <div className="h-full w-full rounded-lg bg-neutral-900 ring-1 ring-gray-700 shadow" />
                             </div>
-                            <div className="w-1/4 px-4">
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "px-4"
+                            )}>
                                 <div className="h-full w-full rounded-lg bg-neutral-900 ring-1 ring-gray-700 shadow-md" />
                             </div>
-                            <div className="w-1/4 pl-4">
-                                <div className="h-full w-full rounded-lg bg-neutral-900 ring-1 ring-gray-700 shadow" />
-                            </div>
+                            {cloudIsSelected && (
+                                <div className="w-1/4 pl-4">
+                                    <div className="h-full w-full rounded-lg bg-neutral-900 ring-1 ring-gray-700 shadow" />
+                                </div>
+                            )}
                         </div>
 
                         <table className="relative w-full">
@@ -476,16 +681,27 @@ export function Pricing() {
 
                         {/* Fake card borders */}
                         <div className="pointer-events-none absolute inset-0 flex items-stretch" aria-hidden="true">
-                            <div className="w-1/4 pr-4" />
-                            <div className="w-1/4 px-4">
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "pr-4"
+                            )} />
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "px-4"
+                            )}>
                                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
                             </div>
-                            <div className="w-1/4 px-4">
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "px-4"
+                            )}>
                                 <div className="h-full w-full rounded-lg ring-2 ring-lime-600 ring-opacity-100" />
                             </div>
-                            <div className="w-1/4 pl-4">
-                                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
-                            </div>
+                            {cloudIsSelected && (
+                                <div className="w-1/4 pl-4">
+                                    <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -494,16 +710,28 @@ export function Pricing() {
                     <div className="relative mt-6">
                         {/* Fake card backgrounds */}
                         <div className="pointer-events-none absolute inset-0 flex items-stretch" aria-hidden="true">
-                            <div className="w-1/4 pr-4" />
-                            <div className="w-1/4 px-4">
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "pr-4"
+                            )} />
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "px-4"
+                            )}>
                                 <div className="h-full w-full rounded-lg bg-neutral-900 ring-1 ring-gray-700 shadow" />
                             </div>
-                            <div className="w-1/4 px-4">
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "px-4"
+                            )}>
                                 <div className="h-full w-full rounded-lg bg-neutral-900 ring-1 ring-gray-700 shadow-md" />
                             </div>
-                            <div className="w-1/4 pl-4">
-                                <div className="h-full w-full rounded-lg bg-neutral-900 ring-1 ring-gray-700 shadow" />
-                            </div>
+                            {cloudIsSelected && (
+                                <div className="w-1/4 pl-4">
+                                    <div className="h-full w-full rounded-lg bg-neutral-900 ring-1 ring-gray-700 shadow" />
+                                </div>
+                            )}
+
                         </div>
 
                         <table className="relative w-full">
@@ -552,16 +780,27 @@ export function Pricing() {
 
                         {/* Fake card borders */}
                         <div className="pointer-events-none absolute inset-0 flex items-stretch" aria-hidden="true">
-                            <div className="w-1/4 pr-4" />
-                            <div className="w-1/4 px-4">
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "pr-4"
+                            )} />
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "px-4"
+                            )}>
                                 <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
                             </div>
-                            <div className="w-1/4 px-4">
+                            <div className={classNames(
+                                cloudIsSelected ? 'w-1/4' : 'w-1/3',
+                                "px-4"
+                            )}>
                                 <div className="h-full w-full rounded-lg ring-2 ring-lime-600 ring-opacity-100" />
                             </div>
-                            <div className="w-1/4 pl-4">
-                                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
-                            </div>
+                            {cloudIsSelected && (
+                                <div className="w-1/4 pl-4">
+                                    <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                                </div>
+                            )}
                         </div>
                     </div>
                 </div>
