@@ -1,302 +1,246 @@
 import { CheckIcon, XMarkIcon } from '@heroicons/react/20/solid'
 import { IconBuilding, IconCloud } from '@tabler/icons'
-import { useState, useEffect, use } from 'react'
+import { useState, useEffect } from 'react'
+import { PricingModal } from './PricingModal'
 import Link from 'next/link'
 
 const plansCloud = [
     {
         title: 'Personal',
         featured: false,
-        description: 'All your essential business finances, taken care of.',
-        price: 5,
+        description: 'For individuals who want to see how NLP can automate their workflows.',
+        price: null,
         mainFeatures: [
-            { id: 1, value: 'Basic invoicing' },
-            { id: 2, value: 'Easy to use accounting' },
-            { id: 3, value: 'Mutli-accounts' },
+            { id: 1, value: 'Access to full suite' },
+            { id: 2, value: 'Unlimited items' },
+            { id: 3, value: '1 user' },
+            { id: 4, value: '100 incl. refinery credits/month*' },
+            { id: 5, value: 'Community support' },
         ],
-        cta: 'Get started',
+        cta: 'Request access',
     },
     {
         title: 'Growth',
         featured: true,
-        description: 'The best financial services for your thriving business.',
-        price: 19,
+        description: 'For teams that want to build NLP products, grow workflows or create NLP-driven dashboards.',
+        price: "249€",
         mainFeatures: [
-            { id: 1, value: 'Advanced invoicing' },
-            { id: 2, value: 'Easy to use accounting' },
-            { id: 3, value: 'Mutli-accounts' },
-            { id: 4, value: 'Tax planning toolkit' },
-            { id: 5, value: 'VAT & VATMOSS filing' },
-            { id: 6, value: 'Free bank transfers' },
+            { id: 1, value: 'Access to full suite' },
+            { id: 2, value: 'Unlimited items' },
+            { id: 3, value: 'Unlimited users' },
+            { id: 4, value: '5,000 incl. refinery credits/month*' },
+            { id: 5, value: 'Priority support' },
         ],
-        cta: 'Get started',
+        cta: 'Contact us',
     },
     {
         title: 'Enterprise',
         featured: false,
-        description: 'Convenient features to take your business to the next level.',
-        price: 12,
+        description: 'For companies that heavily rely on natural language and textual data for their operations.',
+        price: 'From 999€',
         mainFeatures: [
-            { id: 1, value: 'Basic invoicing' },
-            { id: 2, value: 'Easy to use accounting' },
-            { id: 3, value: 'Mutli-accounts' },
-            { id: 4, value: 'Tax planning toolkit' },
+            { id: 1, value: 'All Growth features' },
+            { id: 2, value: 'Custom integrations' },
+            { id: 3, value: 'Custom refinery credits/month*' },
+            { id: 4, value: 'Dedicated support' },
         ],
-        cta: 'Get started',
+        cta: 'Contact us',
     },
 ]
 
 const plansSelfHosted = [
     {
-        title: 'Personal',
+        title: 'Community',
         featured: false,
-        description: 'All your essential business finances, taken care of.',
-        price: 5,
+        description: 'Use the single-user version of refinery for free on your own premises.',
+        price: null,
         mainFeatures: [
-            { id: 1, value: 'Basic invoicing' },
-            { id: 2, value: 'Easy to use accounting' },
-            { id: 3, value: 'Mutli-accounts' },
+            { id: 1, value: '1 user' },
+            { id: 2, value: 'Keep your data on your own premises' },
+            { id: 3, value: 'Community support' },
         ],
-        cta: 'Get started',
+        cta: 'Go to GitHub',
     },
     {
-        title: 'Scale',
+        title: 'Enterprise',
         featured: true,
-        description: 'The best financial services for your thriving business.',
-        price: 19,
+        description: 'Get access to premium features and the full product suite on your own premises.',
+        price: "On Request",
         mainFeatures: [
-            { id: 1, value: 'Advanced invoicing' },
-            { id: 2, value: 'Easy to use accounting' },
-            { id: 3, value: 'Mutli-accounts' },
-            { id: 4, value: 'Tax planning toolkit' },
-            { id: 5, value: 'VAT & VATMOSS filing' },
-            { id: 6, value: 'Free bank transfers' },
+            { id: 1, value: 'Access to full suite' },
+            { id: 2, value: 'Unlimited users' },
+            { id: 3, value: 'Dedicated support' },
         ],
-        cta: 'Get started',
+        cta: 'Contact us',
     },
 ]
 
 const featuresCloud = [
     {
-        title: 'Tax Savings',
+        title: 'bricks',
         tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: true },
+            { title: 'personal', value: true },
+            { title: 'growth', featured: true, value: true },
+            { title: 'enterprise', value: true },
         ],
     },
     {
-        title: 'Easy to use accounting',
+        title: 'refinery',
         tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: true },
+            { title: 'personal', value: true },
+            { title: 'growth', featured: true, value: true },
+            { title: 'enterprise', value: true },
         ],
     },
     {
-        title: 'Multi-accounts',
+        title: 'gates',
         tiers: [
-            { title: 'starter', value: '3 accounts' },
-            { title: 'popular', featured: true, value: 'Unlimited accounts' },
-            { title: 'intermediate', value: '7 accounts' },
+            { title: 'personal', value: true },
+            { title: 'growth', featured: true, value: true },
+            { title: 'enterprise', value: true },
         ],
     },
     {
-        title: 'Invoicing',
+        title: 'workflow',
         tiers: [
-            { title: 'starter', value: '3 invoices' },
-            { title: 'popular', featured: true, value: 'Unlimited invoices' },
-            { title: 'intermediate', value: '10 invoices' },
+            { title: 'personal', value: true },
+            { title: 'growth', featured: true, value: true },
+            { title: 'enterprise', value: true },
         ],
-    },
-    {
-        title: 'Exclusive offers',
-        tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: true },
-        ],
-    },
-    {
-        title: '6 months free advisor',
-        tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: true },
-        ],
-    },
-    {
-        title: 'Mobile and web access',
-        tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: false },
-        ],
-    },
+    }
 ]
 
 
 const featuresSelfHosted = [
     {
-        title: 'Tax Savings',
+        title: 'bricks',
         tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
+            { title: 'community', value: true },
+            { title: 'enterprise', featured: true, value: true },
         ],
     },
     {
-        title: 'Easy to use accounting',
+        title: 'refinery',
         tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
+            { title: 'community', value: true },
+            { title: 'enterprise', featured: true, value: true },
         ],
     },
     {
-        title: 'Multi-accounts',
+        title: 'gates',
         tiers: [
-            { title: 'starter', value: '3 accounts' },
-            { title: 'popular', featured: true, value: 'Unlimited accounts' },
+            { title: 'community', value: false },
+            { title: 'enterprise', featured: true, value: true },
         ],
     },
     {
-        title: 'Invoicing',
+        title: 'workflow',
         tiers: [
-            { title: 'starter', value: '3 invoices' },
-            { title: 'popular', featured: true, value: 'Unlimited invoices' },
+            { title: 'community', value: false },
+            { title: 'enterprise', featured: true, value: true },
         ],
-    },
-    {
-        title: 'Exclusive offers',
-        tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-        ],
-    },
-    {
-        title: '6 months free advisor',
-        tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-        ],
-    },
-    {
-        title: 'Mobile and web access',
-        tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-        ],
-    },
+    }
 ]
 
 const perksCloud = [
     {
-        title: '24/7 customer support',
+        title: 'Batch data processing',
         tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: true },
+            { title: 'personal', value: true },
+            { title: 'growth', featured: true, value: true },
+            { title: 'enterprise', value: true },
         ],
     },
     {
-        title: 'Instant notifications',
+        title: 'Realtime data processing',
         tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: true },
+            { title: 'personal', value: true },
+            { title: 'growth', featured: true, value: true },
+            { title: 'enterprise', value: true },
         ],
     },
     {
-        title: 'Budgeting tools',
+        title: 'Incl. refinery credits/month',
         tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: true },
+            { title: 'personal', value: '100' },
+            { title: 'growth', featured: true, value: '5,000' },
+            { title: 'enterprise', value: 'Custom' },
         ],
     },
     {
-        title: 'Digital receipts',
+        title: 'Price 100 added refinery credits (one-time)',
         tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: true },
+            { title: 'personal', value: '14.99€' },
+            { title: 'growth', featured: true, value: '9.99€' },
+            { title: 'enterprise', value: 'Custom' },
         ],
     },
     {
-        title: 'Pots to separate money',
+        title: 'Realtime items/credit',
         tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: true },
+            { title: 'personal', value: '1' },
+            { title: 'growth', featured: true, value: '1' },
+            { title: 'enterprise', value: '1' },
         ],
     },
     {
-        title: 'Free bank transfers',
+        title: 'Batch items/credit',
         tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: false },
+            { title: 'personal', value: '100' },
+            { title: 'growth', featured: true, value: '100' },
+            { title: 'enterprise', value: '100' },
         ],
     },
     {
-        title: 'Business debit card',
+        title: 'MB storage/credit',
         tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-            { title: 'intermediate', value: false },
+            { title: 'personal', value: '1' },
+            { title: 'growth', featured: true, value: '1' },
+            { title: 'enterprise', value: '1' },
         ],
     },
+    {
+        title: 'Realtime processing frequency',
+        tiers: [
+            { title: 'personal', value: '1 hour' },
+            { title: 'growth', featured: true, value: '10 minutes' },
+            { title: 'enterprise', value: 'Custom' },
+        ],
+    },
+    {
+        title: 'Custom integrations',
+        tiers: [
+            { title: 'personal', value: false },
+            { title: 'growth', featured: true, value: false },
+            { title: 'enterprise', value: true },
+        ],
+    },
+    {
+        title: 'Support',
+        tiers: [
+            { title: 'personal', value: 'Community' },
+            { title: 'growth', featured: true, value: 'Priority' },
+            { title: 'enterprise', value: 'Dedicated' },
+        ],
+    }
 ]
 
 const perksSelfHosted = [
     {
-        title: '24/7 customer support',
+        title: 'Batch data processing',
         tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
+            { title: 'community', value: true },
+            { title: 'enterprise', featured: true, value: true },
         ],
     },
     {
-        title: 'Instant notifications',
+        title: 'Realtime data processing',
         tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
+            { title: 'community', value: false },
+            { title: 'enterprise', value: true },
         ],
     },
-    {
-        title: 'Budgeting tools',
-        tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
-        ],
-    },
-    {
-        title: 'Digital receipts',
-        tiers: [
-            { title: 'starter', value: true },
-            { title: 'popular', featured: true, value: true },
-        ],
-    },
-    {
-        title: 'Pots to separate money',
-        tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-        ],
-    },
-    {
-        title: 'Free bank transfers',
-        tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-        ],
-    },
-    {
-        title: 'Business debit card',
-        tiers: [
-            { title: 'starter', value: false },
-            { title: 'popular', featured: true, value: true },
-        ],
-    },
+
 ]
 
 function classNames(...classes) {
@@ -309,6 +253,7 @@ export function Pricing() {
     const [plans, setPlans] = useState(plansCloud)
     const [features, setFeatures] = useState(featuresCloud)
     const [perks, setPerks] = useState(perksCloud)
+    const [openPricingModal, setOpenPricingModal] = useState(false)
 
     useEffect(() => {
         if (cloudIsSelected) {
@@ -328,13 +273,17 @@ export function Pricing() {
             <div className="relative">
                 <div className="relative mx-auto max-w-2xl px-4 pt-16 text-center sm:px-6 sm:pt-32 lg:max-w-5xl lg:px-8">
                     <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                        <span className="block lg:inline">Simple pricing,</span>
-                        <span className="block lg:inline">no commitment.</span>
+                        Simple pricing, for your requirements.
                     </h1>
-                    <p className="mt-4 text-xl text-lime-100">
+                    <p className="mt-8 text-xl text-lime-100">
                         Everything you need, nothing you don't. Pick a plan that best suits your business.
                     </p>
+                    <div className='text-sm mt-4 mx-auto max-w-5xl text-gray-300'>
+                        All prices are billed annually. You have a 2-months money-back guarantee.
+                    </div>
                 </div>
+
+
 
                 <div className='flex mt-8 mx-auto bg-neutral-900 border border-gray-500 p-1 rounded-xl w-fit space-x-2 text-white'>
                     <button
@@ -388,10 +337,22 @@ export function Pricing() {
                                             Most popular
                                         </p>
                                     ) : null}
-                                    <p className="mt-4 flex items-baseline text-gray-100">
-                                        <span className="text-5xl font-bold tracking-tight">${tier.price}</span>
-                                        <span className="ml-1 text-xl font-semibold">/month</span>
-                                    </p>
+                                    <div className="mt-4 flex items-baseline text-gray-100">
+                                        {tier.price ? (
+                                            plans === plansCloud ? (
+                                                <div>
+                                                    <span className="text-3xl font-bold tracking-tight">{tier.price}</span>
+                                                    <span className="ml-1 text-xl font-semibold">/month</span>
+                                                </div>
+                                            ) : (
+                                                <div>
+                                                    <span className="text-3xl font-bold tracking-tight">{tier.price}</span>
+                                                </div>
+                                            )
+                                        ) : (
+                                            <span className="text-3xl font-bold tracking-tight">Free</span>
+                                        )}
+                                    </div>
                                     <p className="mt-6 text-gray-500">{tier.description}</p>
 
                                     {/* Feature list */}
@@ -420,7 +381,17 @@ export function Pricing() {
                         ))}
                     </div>
                 </div>
+                <div className='text-sm mt-4 mx-auto max-w-5xl text-gray-300'>
+                    refinery credits are used as an abstraction to power both execution and storage in the refinery cloud. Credits are consumed for realtime inference, batch inference and storage. Depending on your plan, you get a certain amount of credits every month, and you can buy more credits at any time.
+                </div>
+                <div
+                    className='text-sm mt-2 mx-auto max-w-5xl text-green-500 cursor-pointer'
+                    onClick={() => setOpenPricingModal(true)}
+                >
+                    Why did we choose credits to implement our pricing model?
+                </div>
             </div>
+
 
             {/* Feature comparison (up to lg) */}
             <section aria-labelledby="mobile-comparison-heading" className="lg:hidden">
@@ -430,7 +401,7 @@ export function Pricing() {
 
                 <div className="mx-auto max-w-2xl space-y-16 py-16 px-4 sm:px-6">
                     {plans.map((plan, mobilePlanIndex) => (
-                        <div key="plan.title" className="border-t border-gray-200">
+                        <div key={plan.title} className="border-t border-gray-200">
                             <div
                                 className={classNames(
                                     plan.featured ? 'border-lime-600' : 'border-transparent',
@@ -442,7 +413,7 @@ export function Pricing() {
                                 </h3>
                                 <p className="mt-2 text-sm text-gray-500">{plan.description}</p>
                             </div>
-                            <h4 className="mt-10 text-sm font-bold text-gray-100">Catered for business</h4>
+                            <h4 className="mt-10 text-sm font-bold text-gray-100">Access to product suite</h4>
 
                             <div className="relative mt-6">
                                 {/* Fake card background */}
@@ -450,15 +421,15 @@ export function Pricing() {
                                     <div
                                         className={classNames(
                                             plan.featured ? 'shadow-md' : 'shadow',
-                                            'absolute right-0 w-1/2 h-full bg-white rounded-lg'
+                                            'absolute right-0 w-1/2 h-full bg-neutral-900 rounded-lg'
                                         )}
                                     />
                                 </div>
 
                                 <div
                                     className={classNames(
-                                        plan.featured ? 'ring-2 ring-lime-600 shadow-md' : 'ring-1 ring-black ring-opacity-5 shadow',
-                                        'relative py-3 px-4 bg-white rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
+                                        plan.featured ? 'ring-2 ring-lime-600 shadow-md' : 'ring-1 ring-gray-700 shadow',
+                                        'relative py-3 px-4 bg-neutral-900 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
                                     )}
                                 >
                                     <dl className="divide-y divide-gray-200">
@@ -501,14 +472,14 @@ export function Pricing() {
                                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden sm:block">
                                     <div
                                         className={classNames(
-                                            plan.featured ? 'ring-2 ring-lime-600' : 'ring-1 ring-black ring-opacity-5',
+                                            plan.featured ? 'ring-2 ring-lime-600' : 'ring-1 ring-gray-700',
                                             'absolute right-0 w-1/2 h-full rounded-lg'
                                         )}
                                     />
                                 </div>
                             </div>
 
-                            <h4 className="mt-10 text-sm font-bold text-gray-100">Other perks</h4>
+                            <h4 className="mt-10 text-sm font-bold text-gray-100">Usage details</h4>
 
                             <div className="relative mt-6">
                                 {/* Fake card background */}
@@ -516,29 +487,47 @@ export function Pricing() {
                                     <div
                                         className={classNames(
                                             plan.featured ? 'shadow-md' : 'shadow',
-                                            'absolute right-0 w-1/2 h-full bg-white rounded-lg'
+                                            'absolute right-0 w-1/2 h-full bg-neutral-900 rounded-lg'
                                         )}
                                     />
                                 </div>
 
                                 <div
                                     className={classNames(
-                                        plan.featured ? 'ring-2 ring-lime-600 shadow-md' : 'ring-1 ring-black ring-opacity-5 shadow',
-                                        'relative py-3 px-4 bg-white rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
+                                        plan.featured ? 'ring-2 ring-lime-600 shadow-md' : 'ring-1 ring-gray-700 shadow',
+                                        'relative py-3 px-4 bg-neutral-900 rounded-lg sm:p-0 sm:bg-transparent sm:rounded-none sm:ring-0 sm:shadow-none'
                                     )}
                                 >
                                     <dl className="divide-y divide-gray-200">
                                         {perks.map((perk) => (
-                                            <div key={perk.title} className="flex justify-between py-3 sm:grid sm:grid-cols-2">
-                                                <dt className="text-sm font-medium text-gray-400 sm:pr-4">{perk.title}</dt>
-                                                <dd className="text-center sm:px-4">
-                                                    {perk.tiers[mobilePlanIndex].value === true ? (
-                                                        <CheckIcon className="mx-auto h-5 w-5 text-lime-400" aria-hidden="true" />
+                                            <div
+                                                key={perk.title}
+                                                className="flex items-center justify-between py-3 sm:grid sm:grid-cols-2"
+                                            >
+                                                <dt className="pr-4 text-sm font-medium text-gray-400">{perk.title}</dt>
+                                                <dd className="flex items-center justify-end sm:justify-center sm:px-4">
+                                                    {typeof perk.tiers[mobilePlanIndex].value === 'string' ? (
+                                                        <span
+                                                            className={classNames(
+                                                                perk.tiers[mobilePlanIndex].featured ? 'text-lime-400' : 'text-gray-100',
+                                                                'text-sm font-medium'
+                                                            )}
+                                                        >
+                                                            {perk.tiers[mobilePlanIndex].value}
+                                                        </span>
                                                     ) : (
-                                                        <XMarkIcon className="mx-auto h-5 w-5 text-gray-600" aria-hidden="true" />
-                                                    )}
+                                                        <>
+                                                            {perk.tiers[mobilePlanIndex].value === true ? (
+                                                                <CheckIcon className="mx-auto h-5 w-5 text-lime-400" aria-hidden="true" />
+                                                            ) : (
+                                                                <XMarkIcon className="mx-auto h-5 w-5 text-gray-600" aria-hidden="true" />
+                                                            )}
 
-                                                    <span className="sr-only">{perk.tiers[mobilePlanIndex].value === true ? 'Yes' : 'No'}</span>
+                                                            <span className="sr-only">
+                                                                {perk.tiers[mobilePlanIndex].value === true ? 'Yes' : 'No'}
+                                                            </span>
+                                                        </>
+                                                    )}
                                                 </dd>
                                             </div>
                                         ))}
@@ -549,7 +538,7 @@ export function Pricing() {
                                 <div aria-hidden="true" className="pointer-events-none absolute inset-0 hidden sm:block">
                                     <div
                                         className={classNames(
-                                            plan.featured ? 'ring-2 ring-lime-400' : 'ring-1 ring-black ring-opacity-5',
+                                            plan.featured ? 'ring-2 ring-lime-400' : 'ring-1 ring-gray-700',
                                             'absolute right-0 w-1/2 h-full rounded-lg'
                                         )}
                                     />
@@ -572,7 +561,7 @@ export function Pricing() {
                             cloudIsSelected ? 'w-1/4' : 'w-1/3',
                             "-mt-px flex items-end py-6 pr-4"
                         )}>
-                            <h3 className="mt-auto text-sm font-bold text-gray-100">Catered for business</h3>
+                            <h3 className="mt-auto text-sm font-bold text-gray-100">Access to product suite</h3>
                         </div>
                         {plans.map((plan, planIdx) => (
                             <div
@@ -689,23 +678,23 @@ export function Pricing() {
                                 cloudIsSelected ? 'w-1/4' : 'w-1/3',
                                 "px-4"
                             )}>
-                                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                                <div className="h-full w-full rounded-lg ring-1 ring-gray-700" />
                             </div>
                             <div className={classNames(
                                 cloudIsSelected ? 'w-1/4' : 'w-1/3',
                                 "px-4"
                             )}>
-                                <div className="h-full w-full rounded-lg ring-2 ring-lime-600 ring-opacity-100" />
+                                <div className="h-full w-full rounded-lg ring-2 ring-lime-600" />
                             </div>
                             {cloudIsSelected && (
                                 <div className="w-1/4 pl-4">
-                                    <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                                    <div className="h-full w-full rounded-lg ring-1 ring-gray-700" />
                                 </div>
                             )}
                         </div>
                     </div>
 
-                    <h3 className="mt-10 text-sm font-bold text-gray-100">Other perks</h3>
+                    <h3 className="mt-10 text-sm font-bold text-gray-100">Usage details</h3>
 
                     <div className="relative mt-6">
                         {/* Fake card backgrounds */}
@@ -763,13 +752,26 @@ export function Pricing() {
                                                 )}
                                             >
                                                 <span className="relative h-full w-full py-3">
-                                                    {tier.value === true ? (
-                                                        <CheckIcon className="mx-auto h-5 w-5 text-lime-400" aria-hidden="true" />
+                                                    {typeof tier.value === 'string' ? (
+                                                        <span
+                                                            className={classNames(
+                                                                tier.featured ? 'text-lime-400' : 'text-gray-100',
+                                                                'text-sm font-medium'
+                                                            )}
+                                                        >
+                                                            {tier.value}
+                                                        </span>
                                                     ) : (
-                                                        <XMarkIcon className="mx-auto h-5 w-5 text-gray-600" aria-hidden="true" />
-                                                    )}
+                                                        <>
+                                                            {tier.value === true ? (
+                                                                <CheckIcon className="mx-auto h-5 w-5 text-lime-400" aria-hidden="true" />
+                                                            ) : (
+                                                                <XMarkIcon className="mx-auto h-5 w-5 text-gray-600" aria-hidden="true" />
+                                                            )}
 
-                                                    <span className="sr-only">{tier.value === true ? 'Yes' : 'No'}</span>
+                                                            <span className="sr-only">{tier.value === true ? 'Yes' : 'No'}</span>
+                                                        </>
+                                                    )}
                                                 </span>
                                             </td>
                                         ))}
@@ -788,23 +790,24 @@ export function Pricing() {
                                 cloudIsSelected ? 'w-1/4' : 'w-1/3',
                                 "px-4"
                             )}>
-                                <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                                <div className="h-full w-full rounded-lg ring-1 ring-gray-700" />
                             </div>
                             <div className={classNames(
                                 cloudIsSelected ? 'w-1/4' : 'w-1/3',
                                 "px-4"
                             )}>
-                                <div className="h-full w-full rounded-lg ring-2 ring-lime-600 ring-opacity-100" />
+                                <div className="h-full w-full rounded-lg ring-2 ring-lime-600" />
                             </div>
                             {cloudIsSelected && (
                                 <div className="w-1/4 pl-4">
-                                    <div className="h-full w-full rounded-lg ring-1 ring-black ring-opacity-5" />
+                                    <div className="h-full w-full rounded-lg ring-1 ring-gray-700" />
                                 </div>
                             )}
                         </div>
                     </div>
                 </div>
             </section>
+            <PricingModal open={openPricingModal} setOpen={setOpenPricingModal} />
         </div>
     )
 }
