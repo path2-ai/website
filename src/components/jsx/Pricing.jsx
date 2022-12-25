@@ -144,6 +144,14 @@ const featuresSelfHosted = [
 
 const perksCloud = [
     {
+        title: 'Role-based access control',
+        tiers: [
+            { title: 'personal', value: false },
+            { title: 'growth', featured: true, value: true },
+            { title: 'enterprise', value: true },
+        ],
+    },
+    {
         title: 'Batch data processing',
         tiers: [
             { title: 'personal', value: true },
@@ -200,6 +208,22 @@ const perksCloud = [
         ],
     },
     {
+        title: 'Managed labeling service',
+        tiers: [
+            { title: 'personal', value: false },
+            { title: 'growth', featured: true, value: true },
+            { title: 'enterprise', value: true },
+        ],
+    },
+    {
+        title: 'Costs labeling service',
+        tiers: [
+            { title: 'personal', value: false },
+            { title: 'growth', featured: true, value: 'Custom' },
+            { title: 'enterprise', value: 'Custom' },
+        ],
+    },
+    {
         title: 'Realtime processing frequency',
         tiers: [
             { title: 'personal', value: '1 hour' },
@@ -227,6 +251,13 @@ const perksCloud = [
 
 const perksSelfHosted = [
     {
+        title: 'Role-based access control',
+        tiers: [
+            { title: 'community', value: false },
+            { title: 'enterprise', featured: true, value: true },
+        ],
+    },
+    {
         title: 'Batch data processing',
         tiers: [
             { title: 'community', value: true },
@@ -240,7 +271,20 @@ const perksSelfHosted = [
             { title: 'enterprise', value: true },
         ],
     },
-
+    {
+        title: 'Custom integrations',
+        tiers: [
+            { title: 'community', value: false },
+            { title: 'enterprise', featured: true, value: true },
+        ],
+    },
+    {
+        title: 'Support',
+        tiers: [
+            { title: 'community', value: 'Community' },
+            { title: 'enterprise', featured: true, value: 'Dedicated' },
+        ],
+    }
 ]
 
 function classNames(...classes) {
