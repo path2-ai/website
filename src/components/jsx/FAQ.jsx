@@ -3,20 +3,50 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 const faqs = [
     {
-        question: "What's the best thing about Switzerland?",
+        question: "Is this open source?",
         answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+            "Partially. The core of refinery is open source, and bricks is fully available on GitHub. gates and workflow are proprietary. You can find the open source repositories on our GitHub page."
     },
     {
-        question: "What's the best thing about Switzerland?",
+        question: "Why did you choose a credit-based pricing?",
         answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+            "The goal of our pricing is to both be fair and easy to understand. You can find more details below the pricing table listed above."
     },
     {
-        question: "What's the best thing about Switzerland?",
+        question: "What are items?",
         answer:
-            "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+            "An item is the atomic unit of our pricing. In a realtime workflow, it is one processed task (e.g. an incoming customer mail). In a batch process, it is a row in your dataset."
     },
+    {
+        question: "Do I pay for each item?",
+        answer:
+            "No, each plan of our pricing model gives you a set of included credits, which you can use to process items. If you exceed the included credits, you will be charged for the additional items."
+    },
+    {
+        question: "What happens if I exceed my included credits?",
+        answer:
+            "You will be charged for the additional items. You will be notified before your credits run out and can then decide to either continue or to pause your workflow."
+    },
+    {
+        question: "I'm missing an integration. Can you add it?",
+        answer:
+            "Yes, we are constantly adding new integrations. If you are missing an integration, please let us know and we will add it to our roadmap. If you're on the enterprise plan, we can also add custom integrations."
+    },
+    {
+        question: "Where is my data stored?",
+        answer:
+            "Your data is stored in the cloud on DigitalOcean servers in Frankfurt, Germany. We use the latest security standards to protect your data, and are ISO 27001 certified."
+    },
+    {
+        question: "How can I cancel my subscription?",
+        answer:
+            "You can cancel your subscription at any time, but our billing is based on a yearly cycle. If you cancel your subscription, you will still be able to use your credits until the end of the year."
+    },
+    {
+        question: "How do the products work together?",
+        answer:
+            "Our products can be stacked together. Take a look into our product architecture to see how the stack is designed."
+    }
 ]
 
 function classNames(...classes) {
