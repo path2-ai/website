@@ -32,6 +32,49 @@ const slideContent = {
         ],
         complexity: "advanced",
     },
+    "ChatAnalyzer": {
+        title: "ChatAnalyzer",
+        teaser: "Build your own chatbot, which collects messages from your communication channels and analyzes them based on your configuration.",
+        description: "You receive hundreds of messages every day, but you don't have the time to read them all. Wouldn't it be great if you could just look into a dashboard of what was discussed, enriched with interesting metadata and insights? Well, now you can! Build your own pipeline using the 'ChatAnalyzer' template.",
+        features: [
+            "Grab messages from Slack, Discord, or any other communication channel",
+            "Extract structured data from text and customize pipeline flows",
+            "Send to Slack or any other tool of your choice",
+        ],
+        image: "/screenshot-workflow.png",
+        usedApps: [
+            "https://www.kern.ai/kern-icon.png",
+            "https://cdn.worldvectorlogo.com/logos/discord-4.svg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png",
+        ],
+        tags: [
+            "ChatAnalysis",
+            "Productivity",
+        ],
+        complexity: "intermediate",
+    },
+    "StockAnalyzer": {
+        title: "StockAnalyzer",
+        teaser: "Build your own stock analyzer, which collects stock data from your favorite stock market and analyzes it based on your configuration.",
+        description: "You're interested in the stock market, but you don't have the time to read all the news. Wouldn't it be great if you could just look into a dashboard of what's going on, enriched with interesting metadata and insights? Well, now you can! Build your own pipeline using the 'StockAnalyzer' template.",
+        features: [
+            "Grab stock data from Yahoo Finance or any other stock market",
+            "Extract structured data from text and customize pipeline flows",
+            "Send to Slack or any other tool of your choice",
+        ],
+        image: "/screenshot-workflow.png",
+        usedApps: [
+            "https://www.kern.ai/kern-icon.png",
+            "https://upload.wikimedia.org/wikipedia/commons/8/8f/Yahoo%21_Finance_logo_2021.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png",
+        ],
+        tags: [
+            "StockAnalysis",
+            "Productivity",
+        ],
+        complexity: "intermediate",
+    },
 }
 
 const slideOptions = Object.entries(slideContent).map(([key, value]) => value.title)
