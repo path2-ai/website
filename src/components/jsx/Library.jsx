@@ -2,20 +2,35 @@ import { useEffect, useState } from 'react'
 import { Circular } from '@/util/Circular'
 import { BoltIcon as BoltIconSolid } from '@heroicons/react/24/solid'
 import { BoltIcon as BoltIconOutline } from '@heroicons/react/24/outline'
+import { CheckIcon } from '@heroicons/react/24/outline'
 
 const slideContent = {
-    workflow: {
-        title: "workflow",
-        teaser: "Workflow is a data processing platform that allows you to easily build data pipelines and run them on your data.",
-        description: "Workflow is a data processing platform that allows you to easily build data pipelines and run them on your data.",
+    "Speech to Summary": {
+        title: "Speech to Summary",
+        teaser: "Build your custom recorder, which transcribes audio into summarized texts and analyzes its content based on your inputs.",
+        description: "You're just coming out of two hours of meetings and have already forgotten 70% of what was discussed. Wouldn't it be great if you could just look into a summarized transcript of the meeting notes, enriched with interesting metadata and insights? Directly sent to the tool of your choice? Well, now you can! Build your own pipeline using the 'Speech to Summary' template.",
+        features: [
+            "Grab audio directly from Google Meet or any other video conferencing tool",
+            "Transcribe audio into text",
+            "Summarize text",
+            "Extract structured data from text and customize pipeline flows",
+            "Send to Slack or any other tool of your choice",
+        ],
         image: "/screenshot-workflow.png",
         usedApps: [
             "https://www.kern.ai/kern-icon.png",
+            "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-96dp/logo_meet_2020q4_color_2x_web_96dp.png",
             "https://st2.depositphotos.com/47577860/46275/v/600/depositphotos_462751152-stock-illustration-algorithm-gym-learning-icon-in.jpg",
             "https://avatars.githubusercontent.com/u/25720743?s=200&v=4",
             "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png",
         ],
-        complexity: "starter",
+        tags: [
+            "Speech2Text",
+            "TextSummarization",
+            "TextAnalysis",
+            "Productivity",
+        ],
+        complexity: "advanced",
     },
 }
 
@@ -118,6 +133,16 @@ export function Library() {
                     <div className="mt-4 text-gray-400 text-sm">
                         {slideContent[current].description}
                     </div>
+                    <div className='mt-4 text-white text-sm'>
+                        <ul className='grid grid-cols-2 gap-4'>
+                            {slideContent[current].features.map((feature, index) => (
+                                <li key={index} className='flex space-x-2'>
+                                    <CheckIcon className="h-5 w-5 text-green-500" />
+                                    <span>{feature}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
                     <div className='mt-4 text-gray-200'>
                         <div className='font-semibold text-sm'>
                             Integrated nodes
@@ -133,6 +158,13 @@ export function Library() {
                                 </div>
                             ))}
                         </div>
+                    </div>
+                    <div className='mt-4 space-x-2 text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-lime-300 to-green-500'>
+                        {slideContent[current].tags.map((tag, index) => (
+                            <span key={index} className='inline-block text-sm font-semibold'>
+                                #{tag}
+                            </span>
+                        ))}
                     </div>
                 </div>
                 <div className="grid grid-cols-2 max-w-5xl mx-auto justify-center pt-10 flex gap-4">
@@ -168,7 +200,7 @@ export function Library() {
                             <div className='mt-2 text-sm text-gray-400'>
                                 {slideContent[key].teaser}
                             </div>
-                            <div className='flex justify-between'>
+                            <div className='mt-2 flex justify-between'>
                                 <div className='space-x-1'>
                                     {slideContent[key].usedApps.slice(0, 3).map((app, index) => (
                                         <div key={index} className='inline-block'>
