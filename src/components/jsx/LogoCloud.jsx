@@ -1,4 +1,4 @@
-import { KERN_ASSETS_URL } from "./settings"
+import { KERN_ASSETS_URL } from "./_settings"
 
 export function LogoCloud() {
     return (
