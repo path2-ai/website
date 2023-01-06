@@ -191,26 +191,43 @@ export function getNavigationElements(type) {
       {
         title: 'refinery',
         links: [
-          { title: 'refinery', href: '/docs/refinery' },
+          { title: 'About', href: '/docs/refinery' },
+          { title: 'Labeling', href: '/docs/refinery/labeling' },
+          { title: 'Automations', href: '/docs/refinery/automations' },
+          { title: 'Data Management', href: '/docs/refinery/data-management' },
+          { title: 'Monitoring', href: '/docs/refinery/monitoring' },
+          { title: 'Large Language Models', href: '/docs/refinery/large-language-models' },
         ],
       },
       {
         title: 'bricks',
         links: [
-          { title: 'bricks', href: '/docs/bricks' },
-          { title: 'test', href: '/docs/bricks/test' },
+          { title: 'About', href: '/docs/bricks' },
+          { title: 'Classifiers', href: '/docs/bricks/classifiers' },
+          { title: 'Extractors', href: '/docs/bricks/extractors' },
+          { title: 'Generators', href: '/docs/bricks/generators' },
+          { title: 'refinery x bricks', href: '/docs/bricks/refinery-integration' },
+          { title: 'Roadmap', href: '/docs/bricks/roadmap' },
         ],
       },
       {
         title: 'gates',
         links: [
-          { title: 'gates', href: '/docs/gates' },
+          { title: 'About', href: '/docs/gates' },
+          { title: 'Deploy', href: '/docs/gates/deploy' },
+          { title: 'Monitoring', href: '/docs/gates/monitoring' },
+          { title: 'Container', href: '/docs/gates/container' },
         ],
       },
       {
         title: 'workflow',
         links: [
-          { title: 'workflow', href: '/docs/workflow' },
+          { title: 'About', href: '/docs/workflow' },
+          { title: 'Editor', href: '/docs/workflow/editor' },
+          { title: 'Integrations', href: '/docs/workflow/integrations' },
+          { title: 'refinery x gates x workflow', href: '/docs/workflow/refinery-gates-integration' },
+          { title: 'Realtime and batch', href: '/docs/workflow/realtime-and-batch' },
+          { title: 'Data marts', href: '/docs/workflow/data-marts' },
         ],
       },
     ]

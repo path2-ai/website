@@ -6,13 +6,13 @@ import { GatesIcon } from '@/util/GatesIcon'
 import { WorkflowIcon } from '@/util/WorkflowIcon'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { InboxIcon, SparklesIcon } from '@heroicons/react/24/outline'
-import { IconBuildingCastle, IconRoute } from '@tabler/icons'
+import { Icon360, IconApiApp, IconApps, IconBrain, IconBrandDocker, IconBrandOpenSource, IconBrandPython, IconBuildingCastle, IconCategory2, IconCode, IconCrystalBall, IconDashboard, IconDatabase, IconDragDrop, IconGrowth, IconHighlight, IconLock, IconNumber3, IconRoute, IconTag, IconWindmill } from '@tabler/icons'
 import Link from 'next/link'
 
 const slideContent = {
   refinery: {
     title: "refinery",
-    description: "Refinery is a data management platform that allows you to easily manage your data and build data pipelines.",
+    description: "refinery is the editor for data-centric natural language processing. It combines training data and algorithms in a way that you can easily build NLP automations, e.g. to prototype ideas within an afternoon or to build quality assurance for your labeling workflow.",
     icon: <RefineryIcon className="h-12 w-12" />,
     image: "/screenshot-refinery.png",
     fromColor: "from-green-500",
@@ -21,43 +21,67 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/x1',
-        name: 'X1',
+        href: '/docs/refinery/labeling',
+        name: 'Manual labeling editor',
         description:
-          'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
-        icon: InboxIcon,
+          'refinery comes with a built-in editor (incl. role-based access) supporting classifications, span-extraction and text generation. Further, you can export data to other annotation tools like Labelstudio.',
+        icon: IconTag,
         colsSpan: 1,
       },
       {
-        href: '/x2',
-        name: 'X2',
+        href: '/docs/refinery/data-management',
+        name: 'Best-in-class data management',
         description:
-          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
-        icon: SparklesIcon,
+          'Use our modular data management to find e.g. records with below 30% confidence and mismatching manual and automated labels, sorted by confidence. Assign that data either to an inhouse expert or a crowdlabeler.',
+        icon: IconCrystalBall,
         colsSpan: 1,
       },
       {
-        href: '/x3',
-        name: 'X3',
+        href: '/docs/refinery/large-language-models',
+        name: 'Native large-language-model integration and finetuning',
         description:
-          'Learn about the message model and how to create, retrieve, update, delete, and list messages.',
-        icon: InboxIcon,
+          'You love Hugging Face, GPT-X or cohere for their large language models? We do too. That is why we integrated them into refinery. You can use them for embeddings (and neural search), active transfer learning, or even to create the training data for finetuning these LLMs on your data.',
+        icon: IconBrain,
         colsSpan: 2,
 
       },
       {
-        href: '/x4',
-        name: 'X4',
+        href: '/docs/refinery/automations',
+        name: 'Automate with heuristics',
         description:
-          'Learn about the group model and how to create, retrieve, update, delete, and list groups.',
-        icon: InboxIcon,
-        colsSpan: 2,
+          'refinery is shipped with a Monaco editor, enabling you to write heuristics in plain Python. Use them for e.g. rules, API calls, regex, active transfer learning or zero-shot predictions',
+        icon: IconCode,
+        colsSpan: 1,
+      },
+      {
+        href: '/docs/refinery/monitoring',
+        name: 'Monitor your data quality',
+        description:
+          'In the project dashboard, you can find distribution statistics and a confusion matrix showing you where your project needs improvement. Every analysis can be filtered down to atomic level.',
+        icon: IconDashboard,
+        colsSpan: 1,
+      },
+      {
+        href: 'https://github.com/code-kern-ai/refinery-python-sdk',
+        name: 'Integrate into your workflow via our Python SDK',
+        description:
+          'Use our Python SDK (also available for the CLI) to export and import data with ease. For instance, you can use it to batch-export data from refinery to your favorite data science framework or to batch-import data from your data sources into refinery.',
+        icon: IconBrandPython,
+        colsSpan: 1,
+      },
+      {
+        href: 'https://github.com/code-kern-ai/refinery',
+        name: 'Open-source',
+        description:
+          'Yes, you read that right. Our flagship product is open-sourced under the Apache 2.0 license. You can find the code on GitHub. We are also happy to accept contributions.',
+        icon: IconBrandOpenSource,
+        colsSpan: 1,
       },
     ]
   },
   bricks: {
     title: "bricks",
-    description: "Bricks is a data processing platform that allows you to easily build data pipelines and run them on your data.",
+    description: "bricks is a collection of modular and standardized code snippets which you can directly integrate into refinery. It's the application logic, driving your NLP automations. Each of them is open-source, documented and extensible.",
     icon: <BricksIcon className="h-12 w-12" />,
     image: "/screenshot-bricks.png",
     fromColor: "from-amber-500",
@@ -66,34 +90,66 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/x5',
-        name: 'X5',
+        href: '/docs/bricks/classifiers',
+        name: 'Classifiers',
         description:
           'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
-        icon: InboxIcon,
+        icon: IconCategory2,
         colsSpan: 1,
       },
       {
-        href: '/x6',
-        name: 'X6',
+        href: '/docs/bricks/extractors',
+        name: 'Extractors',
         description:
           'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
-        icon: SparklesIcon,
+        icon: IconHighlight,
         colsSpan: 1,
       },
       {
-        href: '/x7',
-        name: 'X7',
+        href: '/docs/bricks/generators',
+        name: 'Generators',
         description:
           'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
-        icon: SparklesIcon,
+        icon: IconWindmill,
+        colsSpan: 1,
+      },
+      {
+        href: '/docs/bricks/customize',
+        name: 'Customizable',
+        description:
+          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+        icon: IconCode,
+        colsSpan: 1,
+      },
+      {
+        href: '/docs/bricks/refinery-integration',
+        name: 'Integration to refinery',
+        description:
+          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+        icon: IconApiApp,
         colsSpan: 2,
+      },
+      {
+        href: '/docs/bricks/roadmap',
+        name: 'Growing weekly',
+        description:
+          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+        icon: IconGrowth,
+        colsSpan: 1,
+      },
+      {
+        href: 'https://github.com/code-kern-ai/bricks',
+        name: 'Open-source',
+        description:
+          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+        icon: IconBrandOpenSource,
+        colsSpan: 1,
       },
     ]
   },
   gates: {
     title: "gates",
-    description: "Gates is a data processing platform that allows you to easily build data pipelines and run them on your data.",
+    description: "You've built a great set of automations in refinery, but now want to put it into production for realtime inference? Enter gates, the online monitoring and inference API for your data-centric models.",
     icon: <GatesIcon className="h-12 w-12" />,
     image: "/screenshot-gates.png",
     fromColor: "from-red-500",
@@ -102,26 +158,42 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/x8',
-        name: 'X8',
+        href: '/docs/gates/deploy',
+        name: '3 clicks to deploy your model',
         description:
-          'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
-        icon: InboxIcon,
-        colsSpan: 2,
+          'You already did the work in refinery. Now gates is as simple as it gets. Select the automations, hit deploy, and your model is live.',
+        icon: IconNumber3,
+        colsSpan: 1,
       },
       {
-        href: '/x9',
-        name: 'X9',
+        href: '/docs/refinery/token',
+        name: 'Secure execution - anywhere',
         description:
-          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
-        icon: SparklesIcon,
-        colsSpan: 2,
-      }
+          'Integrate your model into any existing infrastructure. Use the API to get secured access to your model, no matter where and how it is deployed.',
+        icon: IconLock,
+        colsSpan: 1,
+      },
+      {
+        href: '/docs/gates/monitoring',
+        name: 'Monitor requests per hour, confidence and runtime',
+        description:
+          'Each model comes with a simple monitoring dashboard, helping you to analyze the usage and performance of your model.',
+        icon: IconDashboard,
+        colsSpan: 1,
+      },
+      {
+        href: '/docs/gates/container',
+        name: 'Containerized runtime',
+        description:
+          'Your model is deployed as a containerized runtime. If required, you can execute the model on your own infrastructure.',
+        icon: IconBrandDocker,
+        colsSpan: 1,
+      },
     ]
   },
   workflow: {
     title: "workflow",
-    description: "Workflow is a data processing platform that allows you to easily build data pipelines and run them on your data.",
+    description: "workflow is the orchestration layer for your natural language-driven tasks. It allows you to build complex workflows, which can be triggered by a variety of events. It's the glue between data sources, models and transformations, and the data targets.",
     icon: <WorkflowIcon className="h-12 w-12" />,
     image: "/screenshot-workflow.png",
     fromColor: "from-sky-500",
@@ -130,36 +202,44 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/x10',
-        name: 'X10',
+        href: '/docs/workflow/editor',
+        name: 'Drag-and-drop editor',
         description:
-          'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
-        icon: InboxIcon,
-        colsSpan: 2,
+          'Simple drag-and-drop interface to build your workflows, connected to catalogue of nodes with either no-code or programmable interfaces. This is as intuitive as it gets.',
+        icon: IconDragDrop,
+        colsSpan: 1,
       },
       {
-        href: '/x11',
-        name: 'X11',
+        href: '/docs/workflow/refinery-gates-integration',
+        name: 'Completing the stack',
         description:
-          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
-        icon: SparklesIcon,
-        colsSpan: 2,
+          'workflow stands on the shoulders of refinery and gates. This means that workflow is capable of handling the most complex NLP applications (and of course also the simpler ones), while still being easy to use.',
+        icon: IconApiApp,
+        colsSpan: 1,
       },
       {
         href: '/x12',
-        name: 'X12',
+        name: '/docs/workflow/integrations',
         description:
-          'Learn about the message model and how to create, retrieve, update, delete, and list messages.',
-        icon: InboxIcon,
-        colsSpan: 2,
+          'workflow offers native integrations to e.g. Google workspace applications, Slack or other collaboration channels, and further offers an API and Webhook links. We are continuously adding new integrations.',
+        icon: IconApps,
+        colsSpan: 1,
 
       },
       {
-        href: '/x13',
-        name: 'X13',
+        href: '/docs/workflow/data-marts',
+        name: 'Data collection',
         description:
-          'Learn about the group model and how to create, retrieve, update, delete, and list groups.',
-        icon: InboxIcon,
+          'Data is being stored in marts, such that you have direct access to your data source integrations. For instance, you can just export all emails from your inbox into refinery via the GMail integration, and then start building your NLP automations.',
+        icon: IconDatabase,
+        colsSpan: 1,
+      },
+      {
+        href: '/docs/workflow/realtime-and-batch',
+        name: 'Realtime and batch',
+        description:
+          'workflow is designed to work out of the box for the use cases you want to implement, whether it is realtime or batch processing. You can run operational tasks in realtime, and batch processing can be used for e.g. data analysis. Alternatively, you can synchronize refinery in a batch-job, such that your training data is always up-to-date. You will quickly realize: This is ETL for NLP - and it is designed to fit your ideas.',
+        icon: Icon360,
         colsSpan: 2,
       },
     ]
@@ -195,7 +275,7 @@ function HoverEffect({ mouseX, mouseY }) {
   )
 }
 
-function Feature({ feature }) {
+function Feature({ feature, product }) {
   let mouseX = useMotionValue(0)
   let mouseY = useMotionValue(0)
 
@@ -217,9 +297,32 @@ function Feature({ feature }) {
       <HoverEffect mouseX={mouseX} mouseY={mouseY} />
       <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 group-hover:ring-white/20" />
       <div className="relative rounded-2xl px-4 pt-16 pb-4">
-        <div className="flex h-7 w-7 items-center justify-center rounded-full ring-1 backdrop-blur-[2px] transition duration-300 bg-white/7.5 ring-white group-hover:bg-emerald-300/10 group-hover:ring-emerald-400">
-          <feature.icon className="h-5 w-5 transition-colors duration-300 fill-white/10 stroke-zinc-400 group-hover:fill-emerald-300/10 group-hover:stroke-emerald-400" />
-        </div>
+
+        {/* for some reason, dynamic setting of colors didn't work  */}
+        {product == "refinery" && (
+          <div className={`flex h-7 w-7 items-center justify-center rounded-full ring-1 backdrop-blur-[2px] transition duration-300 bg-white/7.5 ring-white group-hover:bg-green-300/10 group-hover:ring-green-400`}>
+            <feature.icon className={`h-5 w-5 transition-colors duration-300 fill-white/10 stroke-zinc-400 group-hover:fill-green-300/10 group-hover:stroke-green-400`} />
+          </div>
+        )}
+        {product == "bricks" && (
+          <div className={`flex h-7 w-7 items-center justify-center rounded-full ring-1 backdrop-blur-[2px] transition duration-300 bg-white/7.5 ring-white group-hover:bg-yellow-300/10 group-hover:ring-yellow-400`}>
+            <feature.icon className={`h-5 w-5 transition-colors duration-300 fill-white/10 stroke-zinc-400 group-hover:fill-yellow-300/10 group-hover:stroke-yellow-400`} />
+          </div>
+        )}
+
+        {product == "gates" && (
+          <div className={`flex h-7 w-7 items-center justify-center rounded-full ring-1 backdrop-blur-[2px] transition duration-300 bg-white/7.5 ring-white group-hover:bg-red-300/10 group-hover:ring-red-400`}>
+            <feature.icon className={`h-5 w-5 transition-colors duration-300 fill-white/10 stroke-zinc-400 group-hover:fill-red-300/10 group-hover:stroke-red-400`} />
+          </div>
+        )}
+
+        {product == "workflow" && (
+          <div className={`flex h-7 w-7 items-center justify-center rounded-full ring-1 backdrop-blur-[2px] transition duration-300 bg-white/7.5 ring-white group-hover:bg-blue-300/10 group-hover:ring-blue-400`}>
+            <feature.icon className={`h-5 w-5 transition-colors duration-300 fill-white/10 stroke-zinc-400 group-hover:fill-blue-300/10 group-hover:stroke-blue-400`} />
+          </div>
+        )}
+
+
         <h3 className="mt-4 text-sm font-semibold leading-7 text-white">
           <Link href={feature.href}>
             <span className="absolute inset-0 rounded-2xl" />
@@ -328,20 +431,16 @@ export function Ecosystem() {
               </div>
               <div>
                 <h2 className={`text-3xl font-mono w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r ${slideContent[current].fromColor} ${slideContent[current].toColor}`}>{current}</h2>
-                <p className="text-lg text-gray-500">
+                <p className="mt-2 text-gray-300">
                   {slideContent[current].description}
                 </p>
-                <Link
-                  type="button"
-                  href={`/docs/${slideContent[current].title}`}
-                  className="inline-block rounded-lg px-4 py-1.5 text-base font-semibold leading-7 text-gray-100 ring-1 ring-gray-100/10 hover:ring-gray-100/20"
-                >
-                  See {current}
-                </Link>
+                <p className="mt-2 text-sm text-gray-300">
+                  You can click on the below feature cards to jump into the documentation.
+                </p>
               </div>
               <div className={`w-full grid grid-cols-${slideContent[current].cols} gap-4 border-t border-white/5`}>
                 {slideContent[current].features.map((feature) => (
-                  <Feature key={feature.href} feature={feature} />
+                  <Feature key={feature.name} feature={feature} product={current} />
                 ))}
               </div>
             </div>
