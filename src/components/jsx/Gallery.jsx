@@ -113,7 +113,7 @@ function getComplexityIcon(complexity) {
     }
 }
 
-export function Library() {
+export function Gallery() {
     const [current, setCurrent] = useState(slider.current())
     const [clickedOption, setClickedOption] = useState(null)
 

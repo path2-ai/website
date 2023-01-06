@@ -6,7 +6,7 @@ import { GatesIcon } from '@/util/GatesIcon'
 import { WorkflowIcon } from '@/util/WorkflowIcon'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { InboxIcon, SparklesIcon } from '@heroicons/react/24/outline'
-import { IconBuildingCastle } from '@tabler/icons'
+import { IconBuildingCastle, IconRoute } from '@tabler/icons'
 import Link from 'next/link'
 
 const slideContent = {
@@ -302,18 +302,29 @@ export function Ecosystem() {
                 <div className='text-gray-100 text-sm'>
                   The Kern AI ecosystem consists of four products
                 </div>
-                <Link
-                  href='/docs/architecture'
-                  type='button'
-                  className='hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'>
-                  <IconBuildingCastle className='my-auto h-5 w-5 mr-2' />
-                  <span>
-                    Platform architecture
-                  </span>
-                  <span className="flex h-3 w-3">
-                    <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500"></span>
-                  </span>
-                </Link>
+                <div className='flex space-x-2'>
+                  <Link
+                    href='/docs/architecture'
+                    type='button'
+                    className='hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'>
+                    <IconBuildingCastle className='my-auto h-5 w-5 mr-2' />
+                    <span>
+                      Platform architecture
+                    </span>
+                    <span className="flex h-3 w-3">
+                      <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500"></span>
+                    </span>
+                  </Link>
+                  <Link
+                    href='/docs/how-it-works'
+                    type='button'
+                    className='hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'>
+                    <IconRoute className='my-auto h-5 w-5 mr-2' />
+                    <span>
+                      How it works
+                    </span>
+                  </Link>
+                </div>
               </div>
               <div>
                 <h2 className={`text-3xl font-mono w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r ${slideContent[current].fromColor} ${slideContent[current].toColor}`}>{current}</h2>

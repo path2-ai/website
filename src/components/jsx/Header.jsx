@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IconArticle, IconBriefcase, IconBuildingCastle, IconQuote, IconTemplate, IconUsers } from '@tabler/icons'
+import { IconArticle, IconBrain, IconBriefcase, IconBuildingCastle, IconBulldozer, IconHammer, IconLoader, IconRobot, IconRoute, IconTag, IconUsers } from '@tabler/icons'
 import { RefineryIconScheme } from '@/util/RefineryIcon'
 import { BricksIconScheme } from '@/util/BricksIcon'
 import { GatesIconScheme } from '@/util/GatesIcon'
@@ -20,20 +20,30 @@ const navigation = [
     //         { name: 'CSM assistant', href: 'https://csm-assistant.kern.ai', icon: IconQuote, description: 'Add a digital, intelligent assistant to your customer success team' },
     //     ]
     // },
-    { name: 'ETL library', href: '/solutions/library' },
-
+    { name: 'Gallery', href: '/solutions/gallery' },
     {
         name: 'Docs', subnav: [
             { name: 'Platform architecture', href: '/docs/architecture', icon: IconBuildingCastle, description: 'See how the platform of Kern AI works under the hood' },
-            { name: 'refinery', href: '/docs/refinery', icon: RefineryIconScheme, description: 'Dive into the data-centric editor to build data and algorithms' },
-            { name: 'bricks', href: '/docs/bricks', icon: BricksIconScheme, description: 'Search through our collection of modular and off-the-shelf NLP enrichments' },
-            { name: 'gates', href: '/docs/gates', icon: GatesIconScheme, description: 'See how you can productionize refinery as a realtime and batch API' },
-            { name: 'workflow', href: '/docs/workflow', icon: WorkflowIconScheme, description: 'Find out more about how you can build custom ETL processes for your natural language data' },
+            { name: 'How it works', href: '/docs/architecture', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
+            { name: 'refinery', href: '/docs/refinery', icon: RefineryIconScheme, description: 'The data-centric editor to build data and algorithms' },
+            { name: 'bricks', href: '/docs/bricks', icon: BricksIconScheme, description: 'Our collection of modular and off-the-shelf NLP enrichments' },
+            { name: 'gates', href: '/docs/gates', icon: GatesIconScheme, description: 'Turn refinery into a realtime API' },
+            { name: 'workflow', href: '/docs/workflow', icon: WorkflowIconScheme, description: 'Automate any natural language-driven process' },
         ]
     },
     { name: 'Changelog', href: '/changelog' },
     { name: 'Integrations', href: '/integrations' },
     { name: 'Pricing', href: '/pricing' },
+    {
+        name: 'Comparisons', subnav: [
+            { name: 'Automations [Zapier, Levity and n8n]', href: '/comparisons/automations', icon: IconLoader, description: 'vs. workflow' },
+            { name: 'Internal Tooling [Retool and Appsmith]', href: '/comparisons/internal-tooling', icon: IconHammer, description: 'vs. workflow and gates' },
+            { name: 'RPA [UiPath]', href: '/comparisons/rpa', icon: IconRobot, description: 'vs. workflow' },
+            { name: 'Labeling [Labelstudio and Prodi.gy]', href: '/comparisons/labeling', icon: IconTag, description: 'vs. refinery' },
+            { name: 'ML Operations [Baseten]', href: '/comparisons/ml-ops', icon: IconBulldozer, description: 'vs. gates' },
+            { name: 'Enterprise AI [Snorkel AI, Scale AI]', href: '/comparisons/enterprise-ai', icon: IconBrain, description: 'vs. refinery and gates' },
+        ]
+    },
     {
         name: 'Company', subnav: [
             { name: 'About', href: '/company/about', icon: IconUsers, description: 'Get to know the team behind Kern AI' },
@@ -82,7 +92,7 @@ export function Header() {
                                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                             </button>
                         </div>
-                        <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-12">
+                        <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-8">
                             {navigation.map((item) => (
                                 item.href ? (
                                     <Link key={item.name} href={item.href} className="h-8 pt-2 font-semibold text-gray-300 hover:text-lime-400">
@@ -114,7 +124,7 @@ export function Header() {
                                                     leaveFrom="opacity-100 translate-y-0"
                                                     leaveTo="opacity-0 translate-y-1"
                                                 >
-                                                    <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-xs -translate-x-1/2 transform px-2 sm:px-0">
+                                                    <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
                                                         <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                                                             <div className="relative grid gap-6 bg-neutral-900 px-5 py-6 sm:gap-8 sm:p-8 border border-gray-800">
                                                                 {item.subnav.map((subItem) => (

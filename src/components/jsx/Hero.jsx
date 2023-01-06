@@ -28,7 +28,7 @@ export function Hero() {
 
     return (
         <div>
-            <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black" />
+            {/* <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black" /> */}
             <main className="relative">
                 <div className="relative px-6 lg:px-8">
                     <div className="mx-auto max-w-5xl py-16 sm:py-20">
