@@ -290,8 +290,8 @@ function Feature({ feature, product }) {
       key={feature.href}
       onMouseMove={onMouseMove}
       className={classNames(
-        feature.colsSpan > 1 ? `md:col-span-${feature.colsSpan}` : '',
-        "col-span-1 group relative flex rounded-2xl transition-shadow hover:shadow-md bg-neutral-900 hover:shadow-black/5"
+        feature.colsSpan > 1 ? `col-span-${feature.colsSpan}` : '',
+        "group relative flex rounded-2xl transition-shadow hover:shadow-md bg-neutral-900 hover:shadow-black/5"
       )}
     >
       <HoverEffect mouseX={mouseX} mouseY={mouseY} />

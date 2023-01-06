@@ -1,5 +1,102 @@
-import { IconChevronRight } from '@tabler/icons'
+import { IconAirBalloon, IconBulb, IconChevronRight, IconHeart, IconMoodNerd, IconTrophy, IconUsers } from '@tabler/icons'
 import { KERN_ASSETS_URL } from './_settings'
+import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
+import { IconCrystalBall, IconTag } from '@tabler/icons'
+
+
+
+const values = [
+    {
+        name: 'Bias towards action',
+        description:
+            'You make clear plans, and then execute. When you see a goal in sight, you sprint towards it. You are not afraid to fail, and you learn from your mistakes.',
+        icon: IconTrophy,
+    },
+    {
+        name: 'Creativity and innovation',
+        description:
+            'You are not afraid to trust your gut, and push ideas forward when thinking of new ways to tackle existing problems.',
+        icon: IconBulb,
+    },
+    {
+        name: 'Self-starters',
+        description:
+            'You take initiative and take responsibility for your work. And you know there is a clear reason you are part of the team.',
+        icon: IconAirBalloon,
+    },
+    {
+        name: 'Teamwork',
+        description:
+            'You put the team first, and you create together with colleagues. This means you are open to feedback, and you are willing to help others.',
+        icon: IconUsers,
+    },
+    {
+        name: 'Kindness and empathy',
+        description:
+            'You are kind to others, and you are empathetic. You are not afraid to ask for help, and you are willing to help others.',
+        icon: IconHeart,
+    },
+    {
+        name: 'Curiosity and passion',
+        description:
+            'You are curious about the world, and you are passionate about what you do. You are driven by a desire to learn and grow. And you share deep interest in technology and software.',
+        icon: IconMoodNerd,
+    },
+]
+
+function HoverEffect({ mouseX, mouseY }) {
+    let maskImage = useMotionTemplate`radial-gradient(180px at ${mouseX}px ${mouseY}px, white, transparent)`
+    let style = { maskImage, WebkitMaskImage: maskImage }
+    return (
+        <div className="pointer-events-none">
+            <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
+            </div>
+            <motion.div
+                className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#202D2E] to-[#303428] opacity-0 transition duration-300 group-hover:opacity-100"
+                style={style}
+            />
+            <motion.div
+                className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay transition duration-300 group-hover:opacity-100"
+                style={style}
+            >
+            </motion.div>
+        </div>
+    )
+}
+
+function Value({ value, product }) {
+    let mouseX = useMotionValue(0)
+    let mouseY = useMotionValue(0)
+
+    function onMouseMove({ currentTarget, clientX, clientY }) {
+        let { left, top } = currentTarget.getBoundingClientRect()
+        mouseX.set(clientX - left)
+        mouseY.set(clientY - top)
+    }
+
+    return (
+        <div
+            onMouseMove={onMouseMove}
+            className="col-span-1 group relative flex rounded-2xl transition-shadow hover:shadow-md bg-neutral-900 hover:shadow-black/5"
+        >
+            <HoverEffect mouseX={mouseX} mouseY={mouseY} />
+            <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10 group-hover:ring-white/20" />
+            <div className="relative rounded-2xl px-4 pt-16 pb-4">
+                <div className={`flex h-7 w-7 items-center justify-center rounded-full ring-1 backdrop-blur-[2px] transition duration-300 bg-white/7.5 ring-white group-hover:bg-green-300/10 group-hover:ring-green-400`}>
+                    <value.icon className={`h-5 w-5 transition-colors duration-300 fill-white/10 stroke-zinc-400 group-hover:fill-green-300/10 group-hover:stroke-green-400`} />
+                </div>
+                <h3 className="mt-4 text-sm font-semibold leading-7 text-white">
+                    <span className="absolute inset-0 rounded-2xl" />
+                    {value.name}
+                </h3>
+                <p className="mt-1 text-sm text-zinc-400">
+                    {value.description}
+                </p>
+            </div>
+        </div>
+    )
+}
+
 
 export function Careers() {
     return (
@@ -55,6 +152,19 @@ export function Careers() {
                                 </span>
                             </a>
                         </div>
+                    </div>
+                </div>
+                <div className='mt-28 relative text-white mx-auto max-w-2xl lg:max-w-3xl'>
+                    <div className='text-2xl font-semibold'>
+                        Values at Kern AI
+                    </div>
+                    <div className='mt-4 text-sm text-gray-200'>
+                        We are makers, designers, engineers. We like getting our hands dirty and building things that could change how technology is used in the world. If you agree with the following values, we would love to hear from you.
+                    </div>
+                    <div className='mt-4 grid grid-cols-2 gap-4'>
+                        {values.map((value) => (
+                            <Value key={value.name} value={value} />
+                        ))}
                     </div>
                 </div>
             </div>
