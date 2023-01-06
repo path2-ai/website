@@ -1,29 +1,24 @@
+import { KERN_ASSETS_URL } from "./settings"
+
 export function LogoCloud() {
     return (
         <div className="mx-auto max-w-7xl pt-12 px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                    <img className="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple" />
+            <div className="grid grid-cols-2 gap-x-4 gap-y-8 lg:grid-cols-5">
+                <div className="flex justify-center col-span-1">
+                    <img className="h-4" src={`${KERN_ASSETS_URL}/users/user-docusign.png`} alt="DocuSign" />
                 </div>
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                    <img className="h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage" />
+                <div className="flex justify-center col-span-1">
+                    <img className="h-4" src={`${KERN_ASSETS_URL}/users/user-crowd.png`} alt="Crowd" />
                 </div>
-                <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                    <img className="h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit" />
+                <div className="flex justify-center col-span-1">
+                    <img className="h-4" src={`${KERN_ASSETS_URL}/users/user-samsung.png`} alt="Samsung" />
                 </div>
-                <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-                    <img
-                        className="h-12"
-                        src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                        alt="Transistor"
-                    />
+                <div className="flex justify-center col-span-1">
+                    <img className="h-4" src={`${KERN_ASSETS_URL}/users/user-cohere.png`} alt="Cohere" />
                 </div>
-                <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
-                    <img
-                        className="h-12"
-                        src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                        alt="Workcation"
-                    />
+                <div className="hidden lg:block flex justify-center col-span-1">
+                    <img className="h-4" src={`${KERN_ASSETS_URL}/users/user-barmenia.png`} alt="Barmenia" />
+
                 </div>
             </div>
         </div>

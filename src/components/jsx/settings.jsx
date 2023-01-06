@@ -1,0 +1,1 @@
+export const KERN_ASSETS_URL = 'http://kern-assets.s3-website.eu-central-1.amazonaws.com' // e.g. add /screen-gsheet.png

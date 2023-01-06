@@ -290,8 +290,8 @@ function Feature({ feature, product }) {
       key={feature.href}
       onMouseMove={onMouseMove}
       className={classNames(
-        feature.colsSpan > 1 ? `col-span-${feature.colsSpan}` : '',
-        "group relative flex rounded-2xl transition-shadow hover:shadow-md bg-neutral-900 hover:shadow-black/5"
+        feature.colsSpan > 1 ? `md:col-span-${feature.colsSpan}` : '',
+        "col-span-1 group relative flex rounded-2xl transition-shadow hover:shadow-md bg-neutral-900 hover:shadow-black/5"
       )}
     >
       <HoverEffect mouseX={mouseX} mouseY={mouseY} />
@@ -357,7 +357,7 @@ export function Ecosystem() {
 
   return (
     <section className='mx-auto max-w-5xl py-10 sm:py-16'>
-      <div>
+      <div className='mx-6'>
         <div>
           <div className="flex">
             <div className='space-y-4'>
@@ -405,7 +405,7 @@ export function Ecosystem() {
                 <div className='text-gray-100 text-sm'>
                   The Kern AI ecosystem consists of four products
                 </div>
-                <div className='flex space-x-2'>
+                <div className='flex flex-col md:flex-row md:space-x-2'>
                   <Link
                     href='/docs/architecture'
                     type='button'
@@ -421,7 +421,7 @@ export function Ecosystem() {
                   <Link
                     href='/docs/how-it-works'
                     type='button'
-                    className='hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'>
+                    className='mt-2 md:mt-0 hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'>
                     <IconRoute className='my-auto h-5 w-5 mr-2' />
                     <span>
                       How it works
@@ -429,16 +429,18 @@ export function Ecosystem() {
                   </Link>
                 </div>
               </div>
-              <div>
-                <h2 className={`text-3xl font-mono w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r ${slideContent[current].fromColor} ${slideContent[current].toColor}`}>{current}</h2>
-                <p className="mt-2 text-gray-300">
+              <div className='pt-8'>
+                <h2 className={`text-3xl font-mono w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r ${slideContent[current].fromColor} ${slideContent[current].toColor}`}>
+                  {current}
+                </h2>
+                <p className="mt-4 text-gray-300">
                   {slideContent[current].description}
                 </p>
-                <p className="mt-2 text-sm text-gray-300">
+                <p className="mt-4 text-sm text-gray-300">
                   You can click on the below feature cards to jump into the documentation.
                 </p>
               </div>
-              <div className={`w-full grid grid-cols-${slideContent[current].cols} gap-4 border-t border-white/5`}>
+              <div className={`w-full grid grid-cols-1 md:grid-cols-${slideContent[current].cols} gap-4 border-t border-white/5`}>
                 {slideContent[current].features.map((feature) => (
                   <Feature key={feature.name} feature={feature} product={current} />
                 ))}
