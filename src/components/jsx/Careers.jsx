@@ -254,7 +254,7 @@ export function Careers() {
 
             </div>
             <div className='mt-16 text-white mx-auto max-w-2xl lg:max-w-3xl'>
-                <div className='text-2xl font-semibold'>
+                <div className='text-2xl font-semibold animate-text bg-gradient-to-r from-white via-gray-600 to-white bg-clip-text text-transparent'>
                     Perks and benefits
                 </div>
                 <div className='mt-6 text-gray-200 grid grid-cols-2 gap-8'>
