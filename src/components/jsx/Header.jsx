@@ -34,16 +34,16 @@ const navigation = [
     { name: 'Changelog', href: '/changelog' },
     { name: 'Integrations', href: '/integrations' },
     { name: 'Pricing', href: '/pricing' },
-    {
-        name: 'Comparisons', subnav: [
-            { name: 'Automations [Zapier, Levity and n8n]', href: '/comparisons/automations', icon: IconLoader, description: 'vs. workflow' },
-            { name: 'Internal Tooling [Retool and Appsmith]', href: '/comparisons/internal-tooling', icon: IconHammer, description: 'vs. workflow and gates' },
-            { name: 'RPA [UiPath]', href: '/comparisons/rpa', icon: IconRobot, description: 'vs. workflow' },
-            { name: 'Labeling [Labelstudio and Prodi.gy]', href: '/comparisons/labeling', icon: IconTag, description: 'vs. refinery' },
-            { name: 'ML Operations [Baseten]', href: '/comparisons/ml-ops', icon: IconBulldozer, description: 'vs. gates' },
-            { name: 'Enterprise AI [Snorkel AI, Scale AI]', href: '/comparisons/enterprise-ai', icon: IconBrain, description: 'vs. refinery and gates' },
-        ]
-    },
+    // {
+    //     name: 'Comparisons', subnav: [
+    //         { name: 'Automations [Zapier, Levity and n8n]', href: '/comparisons/automations', icon: IconLoader, description: 'vs. workflow' },
+    //         { name: 'Internal Tooling [Retool and Appsmith]', href: '/comparisons/internal-tooling', icon: IconHammer, description: 'vs. workflow and gates' },
+    //         { name: 'RPA [UiPath]', href: '/comparisons/rpa', icon: IconRobot, description: 'vs. workflow' },
+    //         { name: 'Labeling [Labelstudio and Prodi.gy]', href: '/comparisons/labeling', icon: IconTag, description: 'vs. refinery' },
+    //         { name: 'ML Operations [Baseten]', href: '/comparisons/ml-ops', icon: IconBulldozer, description: 'vs. gates' },
+    //         { name: 'Enterprise AI [Snorkel AI, Scale AI]', href: '/comparisons/enterprise-ai', icon: IconBrain, description: 'vs. refinery and gates' },
+    //     ]
+    // },
     {
         name: 'Company', subnav: [
             { name: 'About', href: '/company/about', icon: IconUsers, description: 'Get to know the team behind Kern AI' },

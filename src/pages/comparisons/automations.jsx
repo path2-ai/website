@@ -1,10 +1,10 @@
-import { Team } from '@/components/jsx/Team';
+import { Comparison } from '@/components/jsx/Comparison';
 
 
 export default function Home() {
     return (
         <>
-            <Team />
+            <Comparison />
         </>
     )
 }
