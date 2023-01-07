@@ -24,7 +24,7 @@ const navigation = [
     {
         name: 'Docs', subnav: [
             { name: 'Platform architecture', href: '/docs/architecture', icon: IconBuildingCastle, description: 'See how the platform of Kern AI works under the hood' },
-            { name: 'How it works', href: '/docs/architecture', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
+            { name: 'How it works', href: '/docs/how-it-works', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
             { name: 'refinery', href: '/docs/refinery', icon: RefineryIconScheme, description: 'The data-centric editor to build data and algorithms' },
             { name: 'bricks', href: '/docs/bricks', icon: BricksIconScheme, description: 'Our collection of modular and off-the-shelf NLP enrichments' },
             { name: 'gates', href: '/docs/gates', icon: GatesIconScheme, description: 'Turn refinery into a realtime API' },

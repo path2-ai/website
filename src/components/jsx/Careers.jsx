@@ -493,7 +493,6 @@ export function Careers() {
                         </div>
                         <div className='flex space-x-4'>
                             <blockquote>
-
                                 <div>
                                     <IconQuote className="h-12 w-12 text-white" aria-hidden="true" />
                                     <p className="mt-2 text-xl font-medium text-white">
