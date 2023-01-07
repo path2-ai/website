@@ -2,6 +2,72 @@ import { IconAB, IconAirBalloon, IconBeach, IconBulb, IconCash, IconChevronRight
 import { KERN_ASSETS_URL } from './_settings'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { CalendarIcon, MapPinIcon, UsersIcon } from '@heroicons/react/20/solid'
+import { Line } from 'react-chartjs-2';
+import Chart from 'chart.js/auto'; // this must be imported to enable the charts plugin; don't remove it!
+
+const labels = ['July', 'August', 'September', 'October', 'November', 'December', 'January'];
+const employeeSurveyData = [
+    {
+        label: "How happy are you with your role?",
+        colorPrimary: "#f97316", // orange
+        colorSecondary: "#fdba74",
+        data: [6.2, 6.6, 5.8, 6.2, 6, 6.2, 6.6]
+    },
+    {
+        label: "Are my work and efforts sufficiently appreciated?",
+        colorPrimary: "#84cc16", // green
+        colorSecondary: "#bef264",
+        data: [6, 6.4, 6, 6.2, 6.6, 6.4, 6.6]
+    },
+    {
+        label: "Do I feel comfortable expressing my opinion at work and is it respected?",
+        colorPrimary: "#14b8a6", // teal
+        colorSecondary: "#5eead4",
+        data: [6.4, 6.6, 6.4, 6.6, 6.8, 6.6, 6.8]
+    },
+    {
+        label: "Do I know what is expected of me at work?",
+        colorPrimary: "#8b5cf6", // purple
+        colorSecondary: "#c4b5fd",
+        data: [6.2, 6.4, 6.2, 6.4, 6.6, 6.4, 6.6]
+    },
+    {
+        label: "I have the feeling to have clear company goals ahead of me.",
+        colorPrimary: "#ec4899", // pink
+        colorSecondary: "#f9a8d4",
+        data: [6.2, 6.4, 6.2, 6.4, 6.6, 6.4, 6.6]
+    },
+    {
+        label: "I know exactly what I do and my work is clearly defined.",
+        colorPrimary: "#ef4444", // red
+        colorSecondary: "#fca5a5",
+        data: [5.6, 5.8, 5.6, 5.8, 6, 5.8, 6]
+    },
+]
+
+function getEmployeeSurveyDataset(employeeData) {
+    return {
+        label: employeeData.label,
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: employeeData.colorySecondary,
+        borderColor: employeeData.colorPrimary,
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: employeeData.colorPrimary,
+        pointBackgroundColor: '#fff',
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: employeeData.colorPrimary,
+        pointHoverBorderColor: employeeData.colorPrimary,
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data: employeeData.data
+    }
+}
 
 const positions = [
     {
@@ -351,7 +417,7 @@ export function Careers() {
 
             </div>
 
-            <div className='mt-16 text-white mx-auto max-w-2xl lg:max-w-3xl'>
+            <div className='mt-28 text-white mx-auto max-w-2xl lg:max-w-3xl'>
                 <div className='text-2xl font-semibold animate-text bg-gradient-to-r from-white via-gray-600 to-white bg-clip-text text-transparent'>
                     Perks and benefits
                 </div>
@@ -362,7 +428,48 @@ export function Careers() {
                 </div>
             </div>
 
-            <div className='mt-16 text-white mx-auto max-w-2xl lg:max-w-3xl'>
+            <div className='mt-28 text-white mx-auto max-w-2xl lg:max-w-3xl'>
+                <div className='text-2xl font-semibold'>
+                    What our team says
+                </div>
+                <div className='mt-4 text-sm text-gray-200'>
+                    We collect feedback from our team to make sure we are on the right track. Here are the results from the last six months.
+                </div>
+                <div className='mt-8'>
+                    <div className='text-white grid grid-cols-2 gap-8'>
+                        {employeeSurveyData.map((data) => (
+                            <div key={data.label} className="text-sm">
+                                {/* small dot in the color of colorPrimary */}
+                                <span className='inline-block w-2 h-2 rounded-full mr-2' style={{ backgroundColor: data.colorPrimary }} />
+                                {data.label}
+                            </div>
+                        ))}
+                    </div>
+                    <div className='mt-4'>
+                        <Line
+                            data={{
+                                labels: labels,
+                                datasets: employeeSurveyData.map((data) => getEmployeeSurveyDataset(data))
+                            }}
+                            options={{
+                                scales: {
+                                    y: {
+                                        min: 0,
+                                        max: 7,
+                                    }
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    },
+                                }
+                            }}
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div className='mt-28 text-white mx-auto max-w-2xl lg:max-w-3xl'>
                 <div className='text-2xl font-semibold'>
                     Hiring process
                 </div>
@@ -409,7 +516,7 @@ export function Careers() {
                 </div>
             </div>
 
-            <div className='mt-16 text-white mx-auto max-w-2xl lg:max-w-3xl'>
+            <div className='mt-28 text-white mx-auto max-w-2xl lg:max-w-3xl'>
                 <div className='text-2xl font-semibold'>
                     Open positions
                 </div>
