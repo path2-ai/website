@@ -1,6 +1,70 @@
-import { IconAirBalloon, IconBeach, IconBulb, IconCash, IconChevronRight, IconClock, IconDeviceDesktop, IconGlobe, IconHeart, IconHomeDollar, IconMoneybag, IconMoodHappy, IconMoodNerd, IconTrophy, IconUsers } from '@tabler/icons'
+import { IconAirBalloon, IconBeach, IconBulb, IconCash, IconChevronRight, IconClock, IconDeviceDesktop, IconFile, IconFileText, IconGlobe, IconHeart, IconHomeDollar, IconMessages, IconMicrophone, IconMoneybag, IconMoodHappy, IconMoodNerd, IconRocket, IconTrophy, IconUsers, IconWritingSign } from '@tabler/icons'
 import { KERN_ASSETS_URL } from './_settings'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
+import { CheckIcon, HandThumbUpIcon, UserIcon } from '@heroicons/react/20/solid'
+
+const timeline = [
+    {
+        id: 1,
+        title: 'Application',
+        description: 'Apply for the job in our job portal (see below)',
+        remote_or_onsite: 'Remote',
+        icon: IconFileText,
+        iconBackground: 'bg-gray-900',
+    },
+    {
+        id: 2,
+        title: 'Initial screening',
+        description: 'This is a short and informal chat with one of our team members (can be an employee or founder). We mainly want to get to know you and your background, and you can ask us initial questions you have.',
+        remote_or_onsite: 'Remote',
+        icon: IconMessages,
+        iconBackground: 'bg-gray-700',
+    },
+    {
+        id: 3,
+        title: 'Founder interview',
+        description: 'This is a ca 30 minute interview with one of our founders. We want to understand how you can help the team grow, what you are highly passionate about, and what is important to you.',
+        remote_or_onsite: 'Remote',
+        icon: IconMicrophone,
+        iconBackground: 'bg-lime-800',
+    },
+    {
+        id: 4,
+        title: 'Case study',
+        description: 'In this step, we will send you a case study, for which we will hire you as a contractor. You will have 72 hours to complete it. We will then schedule a call to discuss your solution.',
+        remote_or_onsite: 'Remote',
+        icon: CheckIcon,
+        iconBackground: 'bg-lime-700',
+    },
+    {
+        id: 5,
+        title: 'Meet the team',
+        description: 'If you pass the case study, we will schedule a call with the team. Get to know your potential future colleagues, and get a feeling for what the team culture is like. If you want to, you can visit us in Bonn.',
+        remote_or_onsite: 'Remote or onsite',
+        icon: IconMoodHappy,
+        iconBackground: 'bg-green-600',
+    },
+    {
+        id: 6,
+        title: 'Contract signing',
+        description: 'We will send you the contract with all the details. We will previously have discussed what is important to you, and will try to make sure you are happy with the proposed contract.',
+        remote_or_onsite: 'Remote or onsite',
+        icon: IconWritingSign,
+        iconBackground: 'bg-green-500',
+    },
+    {
+        id: 7,
+        title: 'Onboarding',
+        description: 'Welcome, you are now part of the team! We will schedule a call to discuss your onboarding, and how the first two weeks will look like, and what you can expect.',
+        remote_or_onsite: 'Remote or onsite',
+        icon: IconRocket,
+        iconBackground: 'bg-lime-500',
+    },
+]
+
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
 
 
 const values = [
@@ -65,7 +129,7 @@ const perks = [
     },
     {
         name: 'We help you grow',
-        description: "We pay for educational content, do internal learning sessions and help you grow as much as possible.",
+        description: "We pay for educational title, do internal learning sessions and help you grow as much as possible.",
         icon: IconBulb,
     },
     {
@@ -261,6 +325,53 @@ export function Careers() {
                     {perks.map((perk) => (
                         <Perk key={perk.name} perk={perk} />
                     ))}
+                </div>
+            </div>
+
+            <div className='mt-16 text-white mx-auto max-w-2xl lg:max-w-3xl'>
+                <div className='text-2xl font-semibold'>
+                    Hiring process
+                </div>
+
+                <div className="mt-10 flow-root">
+                    <ul role="list" className="-mb-8">
+                        {timeline.map((event, eventIdx) => (
+                            <li key={event.id}>
+                                <div className="relative pb-8">
+                                    {eventIdx !== timeline.length - 1 ? (
+                                        <span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-lime-400" aria-hidden="true" />
+                                    ) : null}
+                                    <div className="relative flex space-x-3">
+                                        <div>
+                                            <span
+                                                className={classNames(
+                                                    event.iconBackground,
+                                                    'h-8 w-8 rounded-full flex items-center justify-center ring-2 ring-lime-500'
+                                                )}
+                                            >
+                                                <event.icon className="h-5 w-5 text-white" aria-hidden="true" />
+                                            </span>
+                                        </div>
+                                        <div className="flex min-w-0 flex-1 justify-between">
+                                            <div>
+                                                <p className="text-sm text-gray-400">
+                                                    <div>
+                                                        {event.title}
+                                                    </div>
+                                                    <div className="font-medium text-gray-100">
+                                                        {event.description}
+                                                    </div>
+                                                </p>
+                                            </div>
+                                            <div className="whitespace-nowrap text-right text-sm text-gray-300">
+                                                {event.remote_or_onsite}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
         </div>
