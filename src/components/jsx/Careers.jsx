@@ -1,8 +1,6 @@
-import { IconAirBalloon, IconBulb, IconChevronRight, IconHeart, IconMoodNerd, IconTrophy, IconUsers } from '@tabler/icons'
+import { IconAirBalloon, IconBulb, IconChevronRight, IconClock, IconGlobe, IconHeart, IconMoodNerd, IconTrophy, IconUsers } from '@tabler/icons'
 import { KERN_ASSETS_URL } from './_settings'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
-import { IconCrystalBall, IconTag } from '@tabler/icons'
-
 
 
 const values = [
@@ -97,6 +95,24 @@ function Value({ value, product }) {
     )
 }
 
+function PolaroidImage({ src, rotation, pos, description }) {
+    return (
+        <div className={`absolute rotate-[${rotation}deg] ${pos} border border-gray-300 rounded-lg p-3 pb-10 bg-white shadow-[0_0px_10px_2px_rgba(255,255,255,0.6)] hover:z-50`}>
+            <img
+                style={{
+                    width: '320px',
+                    height: '360px',
+                }}
+                className="rounded-md"
+                src={`${KERN_ASSETS_URL}/images/${src}.png`}
+            />
+            <p className='text-gray-600 text-xs'>
+                {description}
+            </p>
+        </div>
+    )
+}
+
 
 export function Careers() {
     return (
@@ -158,7 +174,7 @@ export function Careers() {
                     <div className='text-2xl font-semibold'>
                         Values at Kern AI
                     </div>
-                    <div className='mt-4 text-sm text-gray-200'>
+                    <div className='mt-4 text-gray-200'>
                         We are makers, designers, engineers. We like getting our hands dirty and building things that could change how technology is used in the world. If you agree with the following values, we would love to hear from you.
                     </div>
                     <div className='mt-4 grid grid-cols-2 gap-4'>
@@ -166,6 +182,28 @@ export function Careers() {
                             <Value key={value.name} value={value} />
                         ))}
                     </div>
+                </div>
+                <div className='mt-16 relative text-white mx-auto max-w-2xl lg:max-w-3xl'>
+                    <div className='flex items-center text-4xl font-semibold'>
+                        <IconClock className='inline-block w-10 h-10 text-lime-400 mr-2' />
+                        <span>
+                            CET ± 2 hours
+                        </span>
+                    </div>
+                    <div className='mt-4 text-gray-200'>
+                        We deeply believe in remote work, but we also believe that it is important to have colleagues available when you're working on something in a small team. That is why we have a CET ± 2 hours timezone policy, i.e. we hire people who work within 2 hours of CET.
+                    </div>
+                    <div className='mt-4 text-gray-200'>
+                        Our team is currently fully working from Germany. We have an office in Bonn, and a co-working space in Potsdam near Berlin.
+                    </div>
+                </div>
+                <div className='relative flex py-44 mx-auto mt-10 max-w-5xl lg:max-w-6xl'>
+                    <PolaroidImage src={'polaroid-office-bonn-get-together'} rotation={0} pos={'right-60 -mt-40'} description={'Get together in Bonn'} />
+                    <PolaroidImage src={'polaroid-office-bonn-lunch'} rotation={-17} pos={'left-20 -mt-32'} description={'Lunch at the office in Bonn'} />
+                    <PolaroidImage src={'polaroid-office-bonn-felix'} rotation={30} pos={'right-0 top-10'} description={'Felix improving refinery'} />
+                    <PolaroidImage src={'polaroid-office-bonn-moritz'} rotation={17} pos={'top-64 right-44'} description={'Moritz in full hacker-mode'} />
+                    <PolaroidImage src={'polaroid-activity'} rotation={0} pos={'left-72 -mt-10'} description={'Some after-work activities :)'} />
+                    <PolaroidImage src={'polaroid-office-bonn-late-hour'} rotation={-17} pos={'mt-16'} description={'Late night in the office'} />
                 </div>
             </div>
         </div>
