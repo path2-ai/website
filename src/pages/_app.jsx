@@ -10,6 +10,8 @@ import { Layout } from '@/components/mdx/Layout'
 import * as mdxComponents from '@/components/mdx/mdx'
 import { useMobileNavigationStore } from '@/components/mdx/MobileNavigation'
 
+import { CookieBanner } from '@/components/jsx/CookieBanner'
+
 import '@/styles/tailwind.css'
 import 'focus-visible'
 
@@ -66,6 +68,7 @@ export default function App({ Component, pageProps }) {
             <Component {...pageProps} />
           </Animate>
           <Footer />
+          <CookieBanner />
         </div>
       )
     }
