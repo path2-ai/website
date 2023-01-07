@@ -316,9 +316,9 @@ function Perk({ perk }) {
     )
 }
 
-function PolaroidImage({ src, rotation, pos, description }) {
+function PolaroidImage({ src, pos, description }) {
     return (
-        <div className={`absolute rotate-[${rotation}deg] ${pos} border border-gray-300 rounded-lg p-3 pb-10 bg-white shadow-[0_0px_10px_2px_rgba(255,255,255,0.6)] hover:z-50`}>
+        <div className={`absolute ${pos} border border-gray-300 rounded-lg p-3 pb-10 bg-white shadow-[0_0px_10px_2px_rgba(255,255,255,0.6)] hover:z-50`}>
             <img
                 style={{
                     width: '320px',
@@ -406,12 +406,12 @@ export function Careers() {
                 </div>
                 <div className='py-20'>
                     <div className='relative flex py-44 mx-auto mt-10 max-w-5xl lg:max-w-6xl'>
-                        <PolaroidImage src={'polaroid-office-bonn-get-together'} rotation={0} pos={'right-60 -mt-40'} description={'Get together in Bonn'} />
-                        <PolaroidImage src={'polaroid-office-bonn-lunch'} rotation={-17} pos={'left-20 -mt-32'} description={'Lunch at the office in Bonn'} />
-                        <PolaroidImage src={'polaroid-office-bonn-felix'} rotation={30} pos={'right-0 top-10'} description={'Felix improving refinery'} />
-                        <PolaroidImage src={'polaroid-office-bonn-moritz'} rotation={17} pos={'top-64 right-44'} description={'Moritz in full hacker-mode'} />
-                        <PolaroidImage src={'polaroid-activity'} rotation={0} pos={'left-72 -mt-10'} description={'Some after-work activities :)'} />
-                        <PolaroidImage src={'polaroid-office-bonn-late-hour'} rotation={-17} pos={'mt-16'} description={'Late night in the office'} />
+                        <PolaroidImage src={'polaroid-office-bonn-get-together'} pos={'right-60 -mt-40'} description={'Get together in Bonn'} />
+                        <PolaroidImage src={'polaroid-office-bonn-lunch'} pos={'rotate-[-17deg] left-20 -mt-32'} description={'Lunch at the office in Bonn'} />
+                        <PolaroidImage src={'polaroid-office-bonn-felix'} pos={'rotate-[30deg] right-0 top-10'} description={'Felix improving refinery'} />
+                        <PolaroidImage src={'polaroid-office-bonn-moritz'} pos={'rotate-[17deg] top-64 right-44'} description={'Moritz in full hacker-mode'} />
+                        <PolaroidImage src={'polaroid-activity'} pos={'left-72 -mt-10'} description={'Some after-work activities :)'} />
+                        <PolaroidImage src={'polaroid-office-bonn-late-hour'} pos={'rotate-[-17deg] mt-16'} description={'Late night in the office'} />
                     </div>
                 </div>
 
