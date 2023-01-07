@@ -1,4 +1,4 @@
-import { IconAB, IconAirBalloon, IconBeach, IconBulb, IconCash, IconChevronRight, IconClock, IconCode, IconDeviceDesktop, IconFile, IconFileText, IconGlobe, IconHeart, IconHomeDollar, IconMapPin, IconMessages, IconMicrophone, IconMoneybag, IconMoodHappy, IconMoodNerd, IconRocket, IconTrophy, IconUsers, IconWritingSign } from '@tabler/icons'
+import { IconAB, IconAirBalloon, IconBeach, IconBulb, IconCash, IconChevronRight, IconClock, IconCode, IconDeviceDesktop, IconFile, IconFileText, IconGlobe, IconHeart, IconHomeDollar, IconMapPin, IconMessages, IconMicrophone, IconMoneybag, IconMoodHappy, IconMoodNerd, IconQuote, IconRocket, IconTrophy, IconUser, IconUsers, IconWritingSign } from '@tabler/icons'
 import { KERN_ASSETS_URL } from './_settings'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { CalendarIcon, MapPinIcon, UsersIcon } from '@heroicons/react/20/solid'
@@ -465,6 +465,56 @@ export function Careers() {
                                 }
                             }}
                         />
+                    </div>
+                    <div className="mt-16 space-y-16">
+                        <div className='flex space-x-4'>
+                            <img
+                                className="w-32 h-32 rounded-lg shadow-[0_0px_5px_2px_rgba(255,255,255,0.3)] border border-neutral-800"
+                                src={`${KERN_ASSETS_URL}/team/team-felix.png`}
+                                alt="Felix"
+                            />
+                            <blockquote>
+
+                                <div>
+                                    <IconQuote className="h-12 w-12 text-white" aria-hidden="true" />
+                                    <p className="mt-2 text-xl font-medium text-white">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet
+                                        feugiat est integer dolor auctor adipiscing nunc urna, sit.
+                                    </p>
+                                </div>
+                                <footer className="mt-6">
+                                    <p className="text-base font-medium text-white">Felix Kirsch</p>
+                                    <div className="flex items-center text-base font-medium text-green-700">
+                                        <IconCode className="inline-block w-4 h-4 mr-1" aria-hidden="true" />
+                                        Machine Learning Engineer
+                                    </div>
+                                </footer>
+                            </blockquote>
+                        </div>
+                        <div className='flex space-x-4'>
+                            <blockquote>
+
+                                <div>
+                                    <IconQuote className="h-12 w-12 text-white" aria-hidden="true" />
+                                    <p className="mt-2 text-xl font-medium text-white">
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet
+                                        feugiat est integer dolor auctor adipiscing nunc urna, sit.
+                                    </p>
+                                </div>
+                                <footer className="mt-6">
+                                    <p className="text-base font-medium text-white">Leo Püttmann</p>
+                                    <div className="flex items-center text-base font-medium text-green-700">
+                                        <IconUser className="inline-block w-4 h-4 mr-1" aria-hidden="true" />
+                                        Developer Advocate
+                                    </div>
+                                </footer>
+                            </blockquote>
+                            <img
+                                className="w-32 h-32 rounded-lg shadow-[0_0px_5px_2px_rgba(255,255,255,0.3)] border border-neutral-800"
+                                src={`${KERN_ASSETS_URL}/team/team-leo.png`}
+                                alt="Leo"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>
