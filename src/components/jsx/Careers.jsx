@@ -1,4 +1,4 @@
-import { IconAirBalloon, IconBulb, IconChevronRight, IconClock, IconGlobe, IconHeart, IconMoodNerd, IconTrophy, IconUsers } from '@tabler/icons'
+import { IconAirBalloon, IconBeach, IconBulb, IconCash, IconChevronRight, IconClock, IconDeviceDesktop, IconGlobe, IconHeart, IconHomeDollar, IconMoneybag, IconMoodHappy, IconMoodNerd, IconTrophy, IconUsers } from '@tabler/icons'
 import { KERN_ASSETS_URL } from './_settings'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 
@@ -40,6 +40,50 @@ const values = [
             'You are curious about the world, and you are passionate about what you do. You are driven by a desire to learn and grow. And you share deep interest in technology and software.',
         icon: IconMoodNerd,
     },
+]
+
+const perks = [
+    {
+        name: 'CET ± 2 hours',
+        description: "You can work from anywhere within CET ± 2 hours. We have an office in Bonn if you want to join on-site.",
+        icon: IconGlobe,
+    },
+    {
+        name: 'Equity for every full-time employee',
+        description: "Share in the success of the company. We offer equity to every full-time employee.",
+        icon: IconHomeDollar,
+    },
+    {
+        name: 'Competitive salary',
+        description: "We offer a competitive salary, based on your experience and skills.",
+        icon: IconCash,
+    },
+    {
+        name: 'Equipment of your choice',
+        description: "MacOS, Windows or Linux? You can choose the equipment that works best for you.",
+        icon: IconDeviceDesktop,
+    },
+    {
+        name: 'We help you grow',
+        description: "We pay for educational content, do internal learning sessions and help you grow as much as possible.",
+        icon: IconBulb,
+    },
+    {
+        name: '5 weeks of vacation',
+        description: "We offer 5 weeks of vacation every year, so you can take a break and recharge.",
+        icon: IconBeach,
+    },
+    {
+        name: 'Amazing team',
+        description: "Working with a small team of highly passionate people is just incredible. You will be part of a great team.",
+        icon: IconMoodHappy,
+    },
+    {
+        name: 'Responsibility',
+        description: "You are not just one gear in a machine. You are a key part of the team, and you have a lot of responsibility.",
+        icon: IconTrophy,
+    },
+
 ]
 
 function HoverEffect({ mouseX, mouseY }) {
@@ -95,6 +139,20 @@ function Value({ value, product }) {
     )
 }
 
+function Perk({ perk }) {
+    return (
+        <div>
+            <div className='flex items-center text-white'>
+                <perk.icon className="h-6 w-6 text-lime-500 inline-block mr-2" />
+                {perk.name}
+            </div>
+            <div className='mt-2 text-sm text-gray-300'>
+                {perk.description}
+            </div>
+        </div>
+    )
+}
+
 function PolaroidImage({ src, rotation, pos, description }) {
     return (
         <div className={`absolute rotate-[${rotation}deg] ${pos} border border-gray-300 rounded-lg p-3 pb-10 bg-white shadow-[0_0px_10px_2px_rgba(255,255,255,0.6)] hover:z-50`}>
@@ -128,7 +186,7 @@ export function Careers() {
                 <div className="relative mx-auto max-w-7xl px-6 text-center lg:px-8">
                     <div className="mx-auto max-w-5xl lg:max-w-6xl">
                         <p className="mt-12 text-5xl font-bold tracking-tight text-white">
-                            Join us in building <span className='animate-text bg-gradient-to-r from-green-500 via-emerald-500 to-lime-500 bg-clip-text text-transparent'>magical</span> software
+                            Join us in building <span className='animate-text bg-gradient-to-r from-green-300 via-emerald-600 to-lime-300 bg-clip-text text-transparent'>magical</span> software
                         </p>
                         <p className="mt-6 text-lg leading-8 text-white">
                             We are looking for the most talented and ambitious people to join our team.
@@ -183,27 +241,26 @@ export function Careers() {
                         ))}
                     </div>
                 </div>
-                <div className='mt-16 relative text-white mx-auto max-w-2xl lg:max-w-3xl'>
-                    <div className='flex items-center text-4xl font-semibold'>
-                        <IconClock className='inline-block w-10 h-10 text-lime-400 mr-2' />
-                        <span>
-                            CET ± 2 hours
-                        </span>
-                    </div>
-                    <div className='mt-4 text-gray-200'>
-                        We deeply believe in remote work, but we also believe that it is important to have colleagues available when you're working on something in a small team. That is why we have a CET ± 2 hours timezone policy, i.e. we hire people who work within 2 hours of CET.
-                    </div>
-                    <div className='mt-4 text-gray-200'>
-                        Our team is currently fully working from Germany. We have an office in Bonn, and a co-working space in Potsdam near Berlin.
+                <div className='py-20'>
+                    <div className='relative flex py-44 mx-auto mt-10 max-w-5xl lg:max-w-6xl'>
+                        <PolaroidImage src={'polaroid-office-bonn-get-together'} rotation={0} pos={'right-60 -mt-40'} description={'Get together in Bonn'} />
+                        <PolaroidImage src={'polaroid-office-bonn-lunch'} rotation={-17} pos={'left-20 -mt-32'} description={'Lunch at the office in Bonn'} />
+                        <PolaroidImage src={'polaroid-office-bonn-felix'} rotation={30} pos={'right-0 top-10'} description={'Felix improving refinery'} />
+                        <PolaroidImage src={'polaroid-office-bonn-moritz'} rotation={17} pos={'top-64 right-44'} description={'Moritz in full hacker-mode'} />
+                        <PolaroidImage src={'polaroid-activity'} rotation={0} pos={'left-72 -mt-10'} description={'Some after-work activities :)'} />
+                        <PolaroidImage src={'polaroid-office-bonn-late-hour'} rotation={-17} pos={'mt-16'} description={'Late night in the office'} />
                     </div>
                 </div>
-                <div className='relative flex py-44 mx-auto mt-10 max-w-5xl lg:max-w-6xl'>
-                    <PolaroidImage src={'polaroid-office-bonn-get-together'} rotation={0} pos={'right-60 -mt-40'} description={'Get together in Bonn'} />
-                    <PolaroidImage src={'polaroid-office-bonn-lunch'} rotation={-17} pos={'left-20 -mt-32'} description={'Lunch at the office in Bonn'} />
-                    <PolaroidImage src={'polaroid-office-bonn-felix'} rotation={30} pos={'right-0 top-10'} description={'Felix improving refinery'} />
-                    <PolaroidImage src={'polaroid-office-bonn-moritz'} rotation={17} pos={'top-64 right-44'} description={'Moritz in full hacker-mode'} />
-                    <PolaroidImage src={'polaroid-activity'} rotation={0} pos={'left-72 -mt-10'} description={'Some after-work activities :)'} />
-                    <PolaroidImage src={'polaroid-office-bonn-late-hour'} rotation={-17} pos={'mt-16'} description={'Late night in the office'} />
+
+            </div>
+            <div className='mt-16 text-white mx-auto max-w-2xl lg:max-w-3xl'>
+                <div className='text-2xl font-semibold'>
+                    Perks and benefits
+                </div>
+                <div className='mt-6 text-gray-200 grid grid-cols-2 gap-8'>
+                    {perks.map((perk) => (
+                        <Perk key={perk.name} perk={perk} />
+                    ))}
                 </div>
             </div>
         </div>
