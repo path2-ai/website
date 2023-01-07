@@ -1,7 +1,40 @@
-import { IconAirBalloon, IconBeach, IconBulb, IconCash, IconChevronRight, IconClock, IconDeviceDesktop, IconFile, IconFileText, IconGlobe, IconHeart, IconHomeDollar, IconMessages, IconMicrophone, IconMoneybag, IconMoodHappy, IconMoodNerd, IconRocket, IconTrophy, IconUsers, IconWritingSign } from '@tabler/icons'
+import { IconAB, IconAirBalloon, IconBeach, IconBulb, IconCash, IconChevronRight, IconClock, IconCode, IconDeviceDesktop, IconFile, IconFileText, IconGlobe, IconHeart, IconHomeDollar, IconMapPin, IconMessages, IconMicrophone, IconMoneybag, IconMoodHappy, IconMoodNerd, IconRocket, IconTrophy, IconUsers, IconWritingSign } from '@tabler/icons'
 import { KERN_ASSETS_URL } from './_settings'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
-import { CheckIcon, HandThumbUpIcon, UserIcon } from '@heroicons/react/20/solid'
+import { CalendarIcon, MapPinIcon, UsersIcon } from '@heroicons/react/20/solid'
+
+const positions = [
+    {
+        id: 1,
+        title: 'Back End Developer',
+        type: 'Full-time',
+        href: 'https://kern-ai.workable.com/jobs/1140001',
+        location: 'Remote',
+        department: 'Engineering',
+        closeDate: '2020-01-07',
+        closeDateFull: 'January 7, 2020',
+    },
+    {
+        id: 2,
+        title: 'Front End Developer',
+        type: 'Full-time',
+        href: 'https://kern-ai.workable.com/jobs/1140001',
+        location: 'Remote',
+        department: 'Engineering',
+        closeDate: '2020-01-07',
+        closeDateFull: 'January 7, 2020',
+    },
+    {
+        id: 3,
+        title: 'User Interface Designer',
+        type: 'Full-time',
+        href: 'https://kern-ai.workable.com/jobs/1140001',
+        location: 'Remote',
+        department: 'Design',
+        closeDate: '2020-01-14',
+        closeDateFull: 'January 14, 2020',
+    },
+]
 
 const timeline = [
     {
@@ -33,7 +66,7 @@ const timeline = [
         title: 'Case study',
         description: 'In this step, we will send you a case study, for which we will hire you as a contractor. You will have 72 hours to complete it. We will then schedule a call to discuss your solution.',
         remote_or_onsite: 'Remote',
-        icon: CheckIcon,
+        icon: IconAB,
         iconBackground: 'bg-lime-700',
     },
     {
@@ -317,6 +350,7 @@ export function Careers() {
                 </div>
 
             </div>
+
             <div className='mt-16 text-white mx-auto max-w-2xl lg:max-w-3xl'>
                 <div className='text-2xl font-semibold animate-text bg-gradient-to-r from-white via-gray-600 to-white bg-clip-text text-transparent'>
                     Perks and benefits
@@ -354,14 +388,14 @@ export function Careers() {
                                         </div>
                                         <div className="flex min-w-0 flex-1 justify-between">
                                             <div>
-                                                <p className="text-sm text-gray-400">
+                                                <div className="text-sm text-gray-400">
                                                     <div>
                                                         {event.title}
                                                     </div>
                                                     <div className="font-medium text-gray-100">
                                                         {event.description}
                                                     </div>
-                                                </p>
+                                                </div>
                                             </div>
                                             <div className="whitespace-nowrap text-right text-sm text-gray-300">
                                                 {event.remote_or_onsite}
@@ -369,6 +403,50 @@ export function Careers() {
                                         </div>
                                     </div>
                                 </div>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+
+            <div className='mt-16 text-white mx-auto max-w-2xl lg:max-w-3xl'>
+                <div className='text-2xl font-semibold'>
+                    Open positions
+                </div>
+                <div className="mt-4 overflow-hidden border border-gray-800 shadow sm:rounded-md">
+                    <ul role="list" className="divide-y divide-gray-800">
+                        {positions.map((position) => (
+                            <li key={position.id}>
+                                <a href={position.href} className="block hover:bg-neutral-900">
+                                    <div className="px-4 py-4 sm:px-6">
+                                        <div className="flex items-center justify-between">
+                                            <p className="truncate text-sm font-medium text-green-500">{position.title}</p>
+                                            <div className="ml-2 flex flex-shrink-0">
+                                                <p className="inline-flex rounded-full bg-green-700 px-2 text-xs font-semibold leading-5 text-green-200">
+                                                    {position.type}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="mt-2 sm:flex sm:justify-between">
+                                            <div className="sm:flex">
+                                                <p className="flex items-center text-sm text-gray-500">
+                                                    <IconUsers className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-600" aria-hidden="true" />
+                                                    {position.department}
+                                                </p>
+                                                <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                    <IconMapPin className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-600" aria-hidden="true" />
+                                                    {position.location}
+                                                </p>
+                                            </div>
+                                            <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                                <CalendarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-600" aria-hidden="true" />
+                                                <p>
+                                                    Closing on <time dateTime={position.closeDate}>{position.closeDateFull}</time>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </li>
                         ))}
                     </ul>
