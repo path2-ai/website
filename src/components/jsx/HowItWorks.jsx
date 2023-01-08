@@ -1,24 +1,59 @@
 import { useState } from "react"
-import { IconCode, IconDashboard, IconLoader, IconUser } from "@tabler/icons"
+import { IconCode, IconDashboard, IconLoader, IconNumber1, IconNumber2 } from "@tabler/icons"
 import { InboxIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { KERN_ASSETS_URL } from './_settings'
 
 const options = [
     {
         title: "Building products",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        icon: IconCode
+        icon: IconCode,
+        steps: [{
+            title: "Step 1",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            icon: IconNumber1,
+            image: "screenshot-workflow"
+        }, {
+            title: "Step 2",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            icon: IconNumber2,
+            image: "screenshot-workflow"
+        }]
     },
     {
         title: "Building dashboards",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        icon: IconDashboard
+        icon: IconDashboard,
+        steps: [{
+            title: "Step 1",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            icon: IconNumber1,
+            image: "screenshot-workflow"
+        }, {
+            title: "Step 2",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            icon: IconNumber2,
+            image: "screenshot-workflow"
+        }]
     },
     {
         title: "Building workflows",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        icon: IconLoader
+        icon: IconLoader,
+        steps: [{
+            title: "Step 1",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            icon: IconNumber1,
+            image: "screenshot-workflow"
+        }, {
+            title: "Step 2",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            icon: IconNumber2,
+            image: "screenshot-workflow"
+        }]
     },
 ]
+
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -64,107 +99,42 @@ export function HowItWorks() {
             </div>
 
             <div
-                className="mx-auto w-full max-w-6xl mt-8 rounded-2xl border border-neutral-700 bg-neutral-900"
+                className="mt-12 mx-auto w-full max-w-6xl rounded-2xl border border-neutral-700 bg-neutral-900"
             >
-                <div className="relative overflow-hidden py-16">
-                    <div className="relative">
-                        <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-                            <div className="mx-auto max-w-xl px-6 lg:mx-0 lg:max-w-none lg:py-16 lg:px-0">
-                                <div>
-                                    <div>
-                                        <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-600">
-                                            <InboxIcon className="h-8 w-8 text-white" aria-hidden="true" />
-                                        </span>
-                                    </div>
-                                    <div className="mt-6">
-                                        <h2 className="text-3xl font-bold tracking-tight text-gray-100">Stay on top of customer support</h2>
-                                        <p className="mt-4 text-lg text-gray-300">
-                                            Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
-                                            porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus
-                                            viverra dui tellus ornare pharetra.
-                                        </p>
-                                        <div className="mt-6">
-                                            <a
-                                                href="#"
-                                                className="inline-flex rounded-lg bg-green-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-green-600 hover:bg-green-700 hover:ring-green-700"
-                                            >
-                                                Get started
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="mt-8 border-t border-gray-800 pt-6">
-                                    <blockquote>
-                                        <div>
-                                            <p className="text-base text-gray-300">
-                                                &ldquo;Cras velit quis eros eget rhoncus lacus ultrices sed diam. Sit orci risus aenean curabitur
-                                                donec aliquet. Mi venenatis in euismod ut.&rdquo;
-                                            </p>
-                                        </div>
-                                        <footer className="mt-3">
-                                            <div className="flex items-center space-x-3">
-                                                <div className="flex-shrink-0">
-                                                    <img
-                                                        className="h-6 w-6 rounded-full"
-                                                        src="https://images.unsplash.com/photo-1509783236416-c9ad59bae472?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                                                        alt=""
-                                                    />
-                                                </div>
-                                                <div className="text-base font-medium text-gray-300">Marcia Hill, Digital Marketing Manager</div>
-                                            </div>
-                                        </footer>
-                                    </blockquote>
-                                </div>
-                            </div>
-                            <div className="mt-12 sm:mt-16 lg:mt-0">
-                                <div className="-mr-48 pl-6 md:-mr-16 lg:relative lg:m-0 lg:h-full lg:px-0">
+                <div className="relative overflow-hidden py-28 space-y-20">
+                    {selected.steps.map((step, stepIdx) => (
+                        <div>
+                            <div className="flex mx-8 lg:grid lg:grid-cols-7 lg:gap-8 lg:items-center">
+                                <div className={classNames(
+                                    stepIdx % 2 === 0 ? 'order-last' : null,
+                                    "col-span-4"
+                                )}>
                                     <img
-                                        className="w-full rounded-xl shadow-xl ring-1 ring-white ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none"
-                                        src="https://tailwindui.com/img/component-images/inbox-app-screenshot-1.jpg"
-                                        alt="Inbox user interface"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-24">
-                        <div className="lg:mx-auto lg:grid lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-2 lg:gap-24 lg:px-8">
-                            <div className="mx-auto max-w-xl px-6 lg:col-start-2 lg:mx-0 lg:max-w-none lg:py-32 lg:px-0">
-                                <div>
-                                    <div>
-                                        <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-green-600">
-                                            <SparklesIcon className="h-8 w-8 text-white" aria-hidden="true" />
-                                        </span>
-                                    </div>
-                                    <div className="mt-6">
-                                        <h2 className="text-3xl font-bold tracking-tight text-gray-100">Better understand your customers</h2>
-                                        <p className="mt-4 text-lg text-gray-500">
-                                            Semper curabitur ullamcorper posuere nunc sed. Ornare iaculis bibendum malesuada faucibus lacinia
-                                            porttitor. Pulvinar laoreet sagittis viverra duis. In venenatis sem arcu pretium pharetra at. Lectus
-                                            viverra dui tellus ornare pharetra.
-                                        </p>
-                                        <div className="mt-6">
-                                            <a
-                                                href="#"
-                                                className="inline-flex rounded-lg bg-green-600 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-sm ring-1 ring-green-600 hover:bg-green-700 hover:ring-green-700"
-                                            >
-                                                Get started
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="mt-12 sm:mt-16 lg:col-start-1 lg:mt-0">
-                                <div className="-ml-48 pr-6 md:-ml-16 lg:relative lg:m-0 lg:h-full lg:px-0">
-                                    <img
-                                        className="w-full rounded-xl shadow-xl ring-1 ring-white ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none"
-                                        src="https://tailwindui.com/img/component-images/inbox-app-screenshot-2.jpg"
+                                        className="w-full rounded-xl shadow-xl ring-1 ring-gray-700"
+                                        src={`${KERN_ASSETS_URL}/screenshots/${step.image}.png`}
                                         alt="Customer profile user interface"
                                     />
                                 </div>
+                                <div className="col-span-3">
+                                    <div>
+                                        <div>
+                                            <span className="p-1 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-800 border border-gray-700">
+                                                <step.icon className="h-5 w-5 text-lime-500" aria-hidden="true" />
+                                            </span>
+                                        </div>
+                                        <div className="mt-6">
+                                            <h2 className="text-xl font-bold tracking-tight text-gray-100">
+                                                {step.title}
+                                            </h2>
+                                            <p className="mt-4 text-lg text-gray-500">
+                                                {step.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>
