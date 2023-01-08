@@ -1,54 +1,87 @@
 import { useState } from "react"
-import { IconCode, IconDashboard, IconLoader, IconNumber1, IconNumber2 } from "@tabler/icons"
-import { InboxIcon, SparklesIcon } from '@heroicons/react/24/outline'
+import { IconCode, IconDashboard, IconLoader, IconNumber1, IconNumber2, IconNumber3, IconNumber4, IconNumber5, IconPerspective, IconTestPipe } from "@tabler/icons"
 import { KERN_ASSETS_URL } from './_settings'
 
 const options = [
     {
         title: "Building products",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Use refinery to craft the data for your NLP model. Optionally, you can also use the gates API to use refinery automations as your model's inference engine.",
         icon: IconCode,
         steps: [{
-            title: "Step 1",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            title: "Connect a dataset",
+            description: "refinery uses JSON for user-defined inputs. You can choose from a variety of formats to upload your data, e.g. CSV, JSON, or Excel. Alternatively, you can grab data from a mart (e.g. a 3rd-party-integration or database) of the workflow product.",
             icon: IconNumber1,
-            image: "screenshot-workflow"
+            image: "screenshot-refinery-data"
         }, {
-            title: "Step 2",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            title: "Label reference data",
+            description: "Next, you need to label a few sample records. You can either do this in the built-in editor, or via another labeling solution like Labelstudio. Also, you can upload existing labeled data. These sample records will be (partially) used to train and validate heuristics.",
             icon: IconNumber2,
-            image: "screenshot-workflow"
-        }]
+            image: "screenshot-refinery-labeling"
+        }, {
+            title: "Set up automations",
+            description: "Now comes the fun part. You can program and integrate automations in form of heuristics. These include Python functions, regular expressions, active transfer learning models and many more. We also integrate large-language-models, such as from Hugging Face or OpenAI.",
+            icon: IconNumber3,
+            image: "screenshot-refinery-automation"
+        }, {
+            title: "Monitor and improve",
+            description: "You now have your data enriched with metadata like the heuristic indices or confidence scores to analyze the overall quality of your data, and to further drill down into specific filters. E.g. filter records with a low confidence score and assign someone to relabel them.",
+            icon: IconNumber4,
+            image: "screenshot-refinery-dashboard"
+        }, {
+            title: "Integrate or deploy",
+            description: "Lastly, you can decide whether you want to build your own model on top of the enriched data (you can export the data via UI or API), or rather use the gates API to use refinery automations as your model's inference engine.",
+            icon: IconNumber5,
+            image: "screenshot-gates"
+        },]
     },
     {
-        title: "Building dashboards",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        icon: IconDashboard,
+        title: "Building ETL pipelines",
+        description: "Set up a batch-workflow to automate recurring data tasks. E.g. for internal analytical processes, dashboards, or for keeping your data up-to-date.",
+        icon: IconPerspective,
         steps: [{
-            title: "Step 1",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            title: "Define a skeleton from sratch or use a template",
+            description: "First, to understand what you need to configure, set up the basic steps of your workflow. You can either start from scratch or choose a template. A batch-workflow fetches new data either daily, weekly, or monthly.",
             icon: IconNumber1,
             image: "screenshot-workflow"
         }, {
-            title: "Step 2",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            title: "Set up a data mart",
+            description: "Connect a data mart from one of our integrations, or use the workflow API to stream data into a custom data mart. This is where your raw data will be stored. By the way, you can connect data marts from workflow directly to refinery.",
             icon: IconNumber2,
             image: "screenshot-workflow"
+        }, {
+            title: "Connect a model from gates",
+            description: "If you have set up a model in refinery and activated it in gates, it is now useable in workflow. Simply grab an API token from the refinery project, insert the token, and you have your custom API available.",
+            icon: IconNumber3,
+            image: "screenshot-workflow"
+        }, {
+            title: "Finish your workflow",
+            description: "Finally, you can finish the skeleton of your workflow and connect your marts and model to the pipeline. If you run into errors, you can just reset the pipeline and start over. When you're done, you can publish your workflow.",
+            icon: IconNumber4,
+            image: "screenshot-workflow"
         }]
-    },
-    {
+    }, {
         title: "Building workflows",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        description: "Set up a realtime-workflow to automate operational natural language-driven tasks. E.g. for customer service automations.",
         icon: IconLoader,
         steps: [{
-            title: "Step 1",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            title: "Define a skeleton from sratch or use a template",
+            description: "First, to understand what you need to configure, set up the basic steps of your workflow. You can either start from scratch or choose a template. A realtime-workflow fetches new data either every second, every 5 seconds, every minute, or every 5 minutes.",
             icon: IconNumber1,
             image: "screenshot-workflow"
         }, {
-            title: "Step 2",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            title: "Set up a data mart",
+            description: "Connect a data mart from one of our integrations, or use the workflow API to stream data into a custom data mart. This is where your raw data will be stored. By the way, you can connect data marts from workflow directly to refinery.",
             icon: IconNumber2,
+            image: "screenshot-workflow"
+        }, {
+            title: "Connect a model from gates",
+            description: "If you have set up a model in refinery and activated it in gates, it is now useable in workflow. Simply grab an API token from the refinery project, insert the token, and you have your custom API available.",
+            icon: IconNumber3,
+            image: "screenshot-workflow"
+        }, {
+            title: "Finish your workflow",
+            description: "Finally, you can finish the skeleton of your workflow and connect your marts and model to the pipeline. If you run into errors, you can just reset the pipeline and start over. When you're done, you can publish your workflow.",
+            icon: IconNumber4,
             image: "screenshot-workflow"
         }]
     },
@@ -72,7 +105,7 @@ export function HowItWorks() {
                             How it works
                         </h2>
                         <p className="mt-4 max-w-3xl text-lg leading-6 text-gray-300">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Find out how you can use our platform for different NLP tasks.
                         </p>
                     </div>
                 </div>
@@ -101,7 +134,7 @@ export function HowItWorks() {
             <div
                 className="mt-12 mx-auto w-full max-w-6xl rounded-2xl border border-neutral-700 bg-neutral-900"
             >
-                <div className="relative overflow-hidden py-28 space-y-20">
+                <div className="relative overflow-hidden py-28 space-y-28">
                     {selected.steps.map((step, stepIdx) => (
                         <div>
                             <div className="flex mx-8 lg:grid lg:grid-cols-7 lg:gap-8 lg:items-center">
@@ -110,7 +143,8 @@ export function HowItWorks() {
                                     "col-span-4"
                                 )}>
                                     <img
-                                        className="w-full rounded-xl shadow-xl ring-1 ring-gray-700"
+                                        className="w-full rounded-xl shadow-xl ring-1 ring-gray-700
+                                        transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
                                         src={`${KERN_ASSETS_URL}/screenshots/${step.image}.png`}
                                         alt="Customer profile user interface"
                                     />

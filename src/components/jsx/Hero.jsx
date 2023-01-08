@@ -3,7 +3,7 @@ import { LogoCloud } from './LogoCloud'
 import Link from 'next/link'
 
 export function Hero() {
-    const [text, setText] = useState('reportings')
+    const [text, setText] = useState('ETL pipelines')
     const [counter, setCounter] = useState(0)
 
 
@@ -19,7 +19,7 @@ export function Hero() {
             } else if (counter % 3 == 1) {
                 setText('products')
             } else if (counter % 3 == 2) {
-                setText('reportings')
+                setText('ETL pipelines')
             }
         }, 2000) // Update the text every 2 seconds
 

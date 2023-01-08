@@ -5,7 +5,6 @@ import { BricksIcon } from '@/util/BricksIcon'
 import { GatesIcon } from '@/util/GatesIcon'
 import { WorkflowIcon } from '@/util/WorkflowIcon'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
-import { InboxIcon, SparklesIcon } from '@heroicons/react/24/outline'
 import { Icon360, IconApiApp, IconApps, IconBrain, IconBrandDocker, IconBrandOpenSource, IconBrandPython, IconBuildingCastle, IconCategory2, IconCode, IconCrystalBall, IconDashboard, IconDatabase, IconDragDrop, IconGrowth, IconHighlight, IconLock, IconNumber3, IconRoute, IconTag, IconWindmill } from '@tabler/icons'
 import Link from 'next/link'
 
