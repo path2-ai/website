@@ -12,6 +12,7 @@ import { BricksIconScheme } from '@/util/BricksIcon'
 import { GatesIconScheme } from '@/util/GatesIcon'
 import { WorkflowIconScheme } from '@/util/WorkflowIcon'
 import Link from 'next/link'
+import { KERN_ASSETS_URL } from './_settings'
 
 const navigation = [
     // {
@@ -74,11 +75,15 @@ export function Header() {
                                 type='button'
                                 className="m-1.5 p-1.5 cursor-pointer">
                                 <span className="sr-only">Kern AI</span>
-                                <img className="h-8" src="/KernAI-primary-gray-100.svg" alt="" onClick={
-                                    () => {
-                                        router.push('/')
-                                    }
-                                } />
+                                <img
+                                    className="h-8"
+                                    src={`${KERN_ASSETS_URL}/logos/KernAI-primary-gray-100.svg`}
+                                    alt=""
+                                    onClick={
+                                        () => {
+                                            router.push('/')
+                                        }
+                                    } />
                             </a>
                         </div>
 
@@ -178,7 +183,7 @@ export function Header() {
                                     <span className="sr-only">Kern AI</span>
                                     <img
                                         className="h-8"
-                                        src="/KernAI-icon.svg"
+                                        src={`${KERN_ASSETS_URL}/logos/KernAI-icon.svg`}
                                         alt=""
                                         onClick={
                                             () => {

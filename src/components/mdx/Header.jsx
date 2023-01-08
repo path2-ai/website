@@ -12,6 +12,7 @@ import {
 import { useMobileNavigationStore } from '@/components/mdx/MobileNavigation'
 import { ModeToggle } from '@/components/mdx/ModeToggle'
 import { MobileSearch, Search } from '@/components/mdx/Search'
+import { KERN_ASSETS_URL } from '../jsx/_settings'
 
 function TopLevelNavItem({ href, children }) {
   return (
@@ -65,7 +66,7 @@ export const Header = forwardRef(function Header({ className }, ref) {
         <MobileNavigation />
         <img
           className="h-8 cursor-pointer"
-          src="/KernAI-icon.svg"
+          src={`${KERN_ASSETS_URL}/logos/KernAI-primary-gray-100.svg`}
           alt=""
           onClick={() => {
             router.push('/')

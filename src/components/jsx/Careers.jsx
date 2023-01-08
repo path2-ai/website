@@ -360,7 +360,7 @@ export function Careers() {
                   shadow-[0_0px_40px_2px_rgba(200,250,0,0.5)]">
                     <img
                         className="mx-auto "
-                        src={"https://www.kern.ai/kern-icon.png"}
+                        src={`${KERN_ASSETS_URL}/logos/KernAI-icon.svg`}
                         alt=""
                         width="48"
                     />

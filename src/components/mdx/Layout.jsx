@@ -4,6 +4,7 @@ import { Header } from '@/components/mdx/Header'
 import { Navigation } from '@/components/mdx/Navigation'
 import { Prose } from '@/components/mdx/Prose'
 import { SectionProvider } from '@/components/mdx/SectionProvider'
+import { KERN_ASSETS_URL } from '../jsx/_settings'
 
 
 export function Layout({ children, sections = [], type }) {
@@ -21,7 +22,7 @@ export function Layout({ children, sections = [], type }) {
             <div className="hidden lg:flex">
               <img
                 className="h-8 cursor-pointer"
-                src="/KernAI-primary-gray-100.svg"
+                src={`${KERN_ASSETS_URL}/logos/KernAI-primary-gray-100.svg`}
                 alt=""
                 onClick={() => {
                   router.push('/')
