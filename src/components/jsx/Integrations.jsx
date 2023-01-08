@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { IconApiApp, IconCategory2, IconChevronLeft, IconChevronRight, IconHighlight, IconMessage, IconMoneybag, IconSocial, IconTrophy, IconWindmill } from '@tabler/icons'
+import { WORKFLOW_ASSETS_URL } from './_settings'
 
 const tabsExtractions = [
     { name: 'All', icon: IconApiApp },
     { name: 'Social Media', icon: IconSocial },
     { name: 'Collaboration', icon: IconMessage },
     { name: 'Customer Success', icon: IconTrophy },
-    { name: 'Sales', icon: IconMoneybag },
 ]
 
 const tabsTransformations = [
@@ -18,26 +18,109 @@ const tabsTransformations = [
 
 const tabsLoaders = [
     { name: 'All', icon: IconApiApp },
-    { name: 'CRM', icon: IconSocial },
+    { name: 'Customer Success', icon: IconTrophy },
+    { name: 'Collaboration', icon: IconMessage },
 ]
 
 const integrationsExtractions = [
     {
-        name: 'Airtable',
-        image: 'https://uploads-ssl.webflow.com/5fff0a6e7f2112aad3db58db/6094fc0a94681077d5ce6494_AirtableLogo.png',
-        description: 'Airtable is a low-code platform for building collaborative apps. It\'s the easiest way to organize everything you know and get work done.',
-        link: 'https://airtable.com/',
+        name: 'Gmail',
+        image: 'gmail',
+        description: 'Gmail is a free, advertising-supported email service developed by Google. Users can access Gmail on the web and using third-party programs that synchronize email content through POP or IMAP protocols.',
+        link: 'https://www.google.com/gmail/about/',
+        tags: ['Customer Success'],
+        state: 'production',
+    },
+    {
+        name: 'Twitter',
+        image: 'twitter',
+        description: 'Twitter is a social networking service on which users post and interact with messages known as "tweets". Registered users can post, like, and retweet tweets, but unregistered users can only read them.',
+        link: 'https://twitter.com/',
+        tags: ['Social Media'],
+        state: 'development',
+    },
+    {
+        name: 'Slack',
+        image: 'slack',
+        description: 'Slack is a tool to help you communicate with your team. It\'s a place where you can share information, discuss ideas, and collaborate on projects.',
+        link: 'https://slack.com/',
         tags: ['Collaboration'],
+        state: 'production',
+    },
+    {
+        name: 'Discord',
+        image: 'discord',
+        description: 'Discord is a platform designed for video gaming communities, that specializes in text, image, video and audio communication between users in a chat channel.',
+        link: 'https://discord.com/',
+        tags: ['Collaboration'],
+        state: 'development',
+    },
+    {
+        name: 'Outlook',
+        image: 'outlook',
+        description: 'Outlook is a an inbox service from Microsoft, available as a part of the Microsoft Office suite. It can manage your email, calendar, contacts, and tasks.',
+        link: 'https://outlook.live.com/owa/',
+        tags: ['Customer Success'],
+        state: 'development',
+    },
+    {
+        name: 'Zapier',
+        image: 'zapier',
+        description: 'Zapier is a web-based automation tool that allows users to connect their applications and automate repetitive tasks.',
+        link: 'https://zapier.com/',
+        tags: [],
+        state: 'development',
+    },
+    {
+        name: 'Intercom',
+        image: 'intercom',
+        description: 'Intercom is a customer messaging platform that helps businesses to communicate with their customers.',
+        link: 'https://www.intercom.com/',
+        tags: ['Customer Success'],
+        state: 'development',
+    },
+    {
+        name: 'GSheet',
+        image: 'gsheet',
+        description: 'Google Sheets is a spreadsheet program included as part of a free, web-based software office suite offered by Google within its Google Drive service.',
+        link: 'https://www.google.com/sheets/about/',
+        tags: ['Collaboration'],
+        state: 'production',
     }
 ]
 
 const integrationsLoaders = [
     {
         name: 'Airtable',
-        image: 'https://uploads-ssl.webflow.com/5fff0a6e7f2112aad3db58db/6094fc0a94681077d5ce6494_AirtableLogo.png',
+        image: 'airtable',
         description: 'Airtable is a low-code platform for building collaborative apps. It\'s the easiest way to organize everything you know and get work done.',
         link: 'https://airtable.com/',
-        tags: ['CRM'],
+        tags: ['Collaboration'],
+        state: 'development',
+    },
+    {
+        name: 'GSheet',
+        image: 'gsheet',
+        description: 'Google Sheets is a spreadsheet program included as part of a free, web-based software office suite offered by Google within its Google Drive service.',
+        link: 'https://www.google.com/sheets/about/',
+        tags: ['Collaboration'],
+        state: 'production',
+    },
+    {
+        name: 'Gmail',
+        image: 'gmail',
+        description: 'Gmail is a free, advertising-supported email service developed by Google. Users can access Gmail on the web and using third-party programs that synchronize email content through POP or IMAP protocols.',
+        link: 'https://www.google.com/gmail/about/',
+        tags: ['Customer Success'],
+        state: 'development',
+    },
+    {
+        name: 'Outlook',
+        image: 'outlook',
+        description: 'Outlook is a an inbox service from Microsoft, available as a part of the Microsoft Office suite. It can manage your email, calendar, contacts, and tasks.',
+        link: 'https://outlook.live.com/owa/',
+        tags: ['Customer Success'],
+        state: 'development',
     }
 ]
 
@@ -120,12 +203,24 @@ function IntegrationList({ name, color, integrations, tabs, currentTab, setCurre
                                 className="relative flex items-center space-x-3 rounded-lg border border-gray-700 bg-neutral-900 px-6 py-5 shadow-sm focus-within:ring-1 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-600"
                             >
                                 <div className="flex-shrink-0">
-                                    <img className="ring-1 ring-gray-700 h-10 w-10 rounded-lg p-2" src={integration.image} alt="" />
+                                    {name == 'Transformations' ? (
+                                        <img className="ring-1 ring-gray-700 h-10 w-10 rounded-lg p-2" src={integration.image} alt="" />
+                                    ) : (
+                                        <img className="ring-1 ring-gray-700 h-10 w-10 rounded-lg p-2" src={`${WORKFLOW_ASSETS_URL}/icons/${integration.image}.png`} alt="" />
+
+                                    )}
                                 </div>
                                 <div className="min-w-0 flex-1">
-                                    <a href="#" className="focus:outline-none">
+                                    <a href={integration.link} className="focus:outline-none">
                                         <span className="absolute inset-0" aria-hidden="true" />
-                                        <p className="text-sm font-medium text-gray-100">{integration.name}</p>
+                                        <div className='flex justify-between'>
+                                            <p className="text-sm font-medium text-gray-100">{integration.name}</p>
+                                            {integration.state == 'development' && (
+                                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-700 text-gray-300 border border-gray-700">
+                                                    Coming soon
+                                                </span>
+                                            )}
+                                        </div>
                                         <p className="truncate text-sm text-gray-500">{integration.description}</p>
                                     </a>
                                 </div>
