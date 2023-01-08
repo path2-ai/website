@@ -13,6 +13,12 @@ export function Footer() {
     const [enabled, setEnabled] = useState(false)
 
     const navigation = {
+        product: [
+            { name: 'Gallery', onClick: () => { router.push('/solutions/gallery') } },
+            { name: 'Platform architecture', onClick: () => { router.push('/docs/architecture') } },
+            { name: 'How it works', onClick: () => { router.push('/docs/how-it-works') } },
+            { name: 'Pricing', onClick: () => { router.push('/pricing') } },
+        ],
         docs: [
             { name: 'refinery', onClick: () => { router.push('/docs/refinery') } },
             { name: 'bricks', onClick: () => { router.push('/docs/refinery') } },
@@ -60,7 +66,7 @@ export function Footer() {
         ],
     }
     return (
-        <footer className="mt-10 max-w-5xl mx-auto">
+        <footer className="z-50 mt-10 max-w-5xl mx-auto">
             <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
                 <div className="grid grid-cols-6 gap-4 text-sm">
                     <div className="flex col-span-4 grid grid-cols-4">

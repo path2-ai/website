@@ -131,14 +131,18 @@ export function Gallery() {
 
     return (
         <div>
-            <div className="fixed inset-0"
+            <div className="absolute inset-0"
                 style={{
                     backgroundColor: "#000000",
-                    opacity: 0.25,
+                    opacity: 0.5,
                     backgroundImage: " radial-gradient(#84cc16 1.1500000000000001px, transparent 1.1500000000000001px), radial-gradient(#84cc16 1.1500000000000001px, #000000 1.1500000000000001px)",
                     backgroundSize: "46px 46px",
                     backgroundPosition: "0 0,23px 23px"
                 }} />
+
+            <div
+                className='absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-75'
+            />
             <main className="relative">
                 <div className="relative px-6 lg:px-8">
                     <div className="mx-auto max-w-5xl py-16 sm:py-20">
