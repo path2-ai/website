@@ -153,13 +153,13 @@ export function Header() {
                         </div>
                         <div className='hidden lg:block'>
                             <a
-                                href="https://app.kern.ai"
+                                href="https://demo.kern.ai"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
                             >
                                 <span className='text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>
-                                    Log in
+                                    Try refinery online
                                 </span>
                             </a>
                         </div>
@@ -214,13 +214,13 @@ export function Header() {
                                 </div>
                                 <div className="py-6">
                                     <a
-                                        href="https://app.kern.ai"
+                                        href="https://demo.kern.ai"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-100 hover:bg-gray-600/10"
                                     >
                                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>
-                                            Log in
+                                            Try refinery online
                                         </span>
                                     </a>
                                 </div>
