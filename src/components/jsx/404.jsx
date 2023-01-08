@@ -1,11 +1,12 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { Bars4Icon, BookmarkSquareIcon, BookOpenIcon, RssIcon } from '@heroicons/react/24/outline'
+import { IconBook, IconRss, IconUsers } from '@tabler/icons'
+import Link from 'next/link'
+import { KERN_ASSETS_URL } from './_settings'
 
 const links = [
-    { title: 'Documentation', description: 'Learn how to integrate our tools with your app', icon: BookOpenIcon },
-    { title: 'API Reference', description: 'A complete API reference for our libraries', icon: Bars4Icon },
-    { title: 'Guides', description: 'Installation guides that cover popular setups', icon: BookmarkSquareIcon },
-    { title: 'Blog', description: 'Read our latest news and articles', icon: RssIcon },
+    { title: 'Documentation', description: 'Learn how to use the platform', icon: IconBook, href: '/docs/refinery' },
+    { title: 'Blog', description: 'Read our latest news and articles', icon: IconRss, href: '/company/blog' },
+    { title: 'About', description: 'Learn more about the company', icon: IconUsers, href: '/company/about' }
 ]
 
 export function NotFound() {
@@ -15,7 +16,7 @@ export function NotFound() {
                   shadow-[0_0px_40px_2px_rgba(200,250,0,0.5)]">
                 <img
                     className="mx-auto "
-                    src={"https://www.kern.ai/kern-icon.png"}
+                    src={`${KERN_ASSETS_URL}/logos/KernAI-icon.svg`}
                     alt=""
                     width="48"
                 />
@@ -34,17 +35,17 @@ export function NotFound() {
                         {links.map((link, linkIdx) => (
                             <li key={linkIdx} className="relative flex items-start space-x-4 py-6 hover:bg-neutral-900">
                                 <div className="flex-shrink-0">
-                                    <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-green-900">
-                                        <link.icon className="h-6 w-6 text-green-700" aria-hidden="true" />
+                                    <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-green-700">
+                                        <link.icon className="h-6 w-6 text-green-500" aria-hidden="true" />
                                     </span>
                                 </div>
                                 <div className="min-w-0 flex-1">
                                     <h3 className="text-base font-medium text-gray-100">
                                         <span className="rounded-sm focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2">
-                                            <a href="#" className="focus:outline-none">
+                                            <Link href={link.href} className="focus:outline-none">
                                                 <span className="absolute inset-0" aria-hidden="true" />
                                                 {link.title}
-                                            </a>
+                                            </Link>
                                         </span>
                                     </h3>
                                     <p className="text-base text-gray-500">{link.description}</p>
@@ -56,10 +57,10 @@ export function NotFound() {
                         ))}
                     </ul>
                     <div className="mt-8">
-                        <a href="#" className="text-base font-medium text-green-400 hover:text-green-500">
+                        <Link href="/" className="text-base font-medium text-green-400 hover:text-green-500">
                             Or go back home
                             <span aria-hidden="true"> &rarr;</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
