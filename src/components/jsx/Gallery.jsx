@@ -4,6 +4,8 @@ import { BoltIcon as BoltIconSolid } from '@heroicons/react/24/solid'
 import { BoltIcon as BoltIconOutline } from '@heroicons/react/24/outline'
 import { CheckIcon } from '@heroicons/react/24/outline'
 import { KERN_ASSETS_URL } from './_settings'
+import { IconApps, IconChevronRight, IconUser } from '@tabler/icons'
+import Link from 'next/link'
 
 const slideContent = {
     "Customer support": {
@@ -231,6 +233,44 @@ export function Gallery() {
                             </div>
                         </div>
                     ))}
+
+                </div>
+                <div className='max-w-5xl mx-auto justify-center mt-20 w-full grid grid-cols-2 gap-4'>
+                    <div className='flex flex-col col-span-1 bg-neutral-900 p-8 rounded-lg border border-lime-900 space-y-4'>
+                        <div className='flex justify-center items-center bg-neutral-800 rounded-md border border-gray-700 w-10 h-10'>
+                            <IconUser className='h-5 w-5 text-gray-400 inline-block' />
+                        </div>
+                        <h3 className='font-semibold text-white'>
+                            We're hiring a <span className='text-green-500'>Head of Go-to-Market</span> to join our team!
+                        </h3>
+                        <div className='text-gray-300'>
+                            Responsibility of this role is to drive the growth of the company by researching and defining use cases on top of our platform, and building a go-to-market strategy to reach out to potential customers.
+                        </div>
+                        <div className='text-gray-300'>
+                            In other words: working closely together with the founding team to add use cases to this gallery, e.g. in form of standalone products.
+                        </div>
+                        <Link href='/company/careers'>
+                            <span className='inline-block text-green-500 font-semibold hover:text-green-400'>
+                                Learn more <IconChevronRight className='inline-block h-4 w-4' />
+                            </span>
+                        </Link>
+                    </div>
+                    <div className='flex flex-col col-span-1 bg-neutral-900 p-8 rounded-lg border border-gray-700 space-y-4'>
+                        <div className='flex justify-center items-center bg-neutral-800 rounded-md border border-gray-700 w-10 h-10'>
+                            <IconApps className='h-5 w-5 text-gray-400 inline-block' />
+                        </div>
+                        <h3 className='font-semibold text-white'>
+                            We're adding new integrations <span className='text-green-500'>on a weekly basis</span>.
+                        </h3>
+                        <div className='text-gray-300'>
+                            If you need an integration that's not yet available, please let us know! We're happy to add it to our roadmap, and implement it with high priority.
+                        </div>
+                        <Link href='/integrations'>
+                            <span className='inline-block text-white font-semibold hover:text-gray-400'>
+                                Learn more <IconChevronRight className='inline-block h-4 w-4' />
+                            </span>
+                        </Link>
+                    </div>
                 </div>
             </main>
         </div>
