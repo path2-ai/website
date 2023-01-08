@@ -144,12 +144,12 @@ export function HowItWorks() {
                                 )}>
                                     <img
                                         className="w-full rounded-xl shadow-xl ring-1 ring-gray-700
-                                        transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110"
+                                        transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
                                         src={`${KERN_ASSETS_URL}/screenshots/${step.image}.png`}
                                         alt="Customer profile user interface"
                                     />
                                 </div>
-                                <div className="col-span-3">
+                                <div className="col-span-3 mx-4">
                                     <div>
                                         <div>
                                             <span className="p-1 flex h-8 w-8 items-center justify-center rounded-full bg-neutral-800 border border-gray-700">

@@ -1,79 +1,11 @@
 import { CheckIcon, XMarkIcon } from '@heroicons/react/20/solid'
 import { IconBuilding, IconCloud } from '@tabler/icons'
 import { useState, useEffect } from 'react'
+import { AccessModal } from './AccessModal'
 import { PricingModal } from './PricingModal'
-import Link from 'next/link'
-
-const plansCloud = [
-    {
-        title: 'Personal',
-        featured: false,
-        description: 'For individuals who want to see how NLP can automate their workflows.',
-        price: null,
-        mainFeatures: [
-            { id: 1, value: 'Access to full suite' },
-            { id: 2, value: 'Unlimited items' },
-            { id: 3, value: '1 user' },
-            { id: 4, value: '100 incl. refinery credits/month*' },
-            { id: 5, value: 'Community support' },
-        ],
-        cta: 'Request access',
-    },
-    {
-        title: 'Growth',
-        featured: true,
-        description: 'For teams that want to build NLP products, grow workflows or create NLP-driven dashboards.',
-        price: "249€",
-        mainFeatures: [
-            { id: 1, value: 'Access to full suite' },
-            { id: 2, value: 'Unlimited items' },
-            { id: 3, value: 'Unlimited users' },
-            { id: 4, value: '5,000 incl. refinery credits/month*' },
-            { id: 5, value: 'Priority support' },
-        ],
-        cta: 'Contact us',
-    },
-    {
-        title: 'Enterprise',
-        featured: false,
-        description: 'For companies that heavily rely on natural language and textual data for their operations.',
-        price: 'From 999€',
-        mainFeatures: [
-            { id: 1, value: 'All Growth features' },
-            { id: 2, value: 'Custom integrations' },
-            { id: 3, value: 'Custom refinery credits/month*' },
-            { id: 4, value: 'Dedicated support' },
-        ],
-        cta: 'Contact us',
-    },
-]
-
-const plansSelfHosted = [
-    {
-        title: 'Community',
-        featured: false,
-        description: 'Use the single-user version of refinery for free on your own premises.',
-        price: null,
-        mainFeatures: [
-            { id: 1, value: '1 user' },
-            { id: 2, value: 'Keep your data on your own premises' },
-            { id: 3, value: 'Community support' },
-        ],
-        cta: 'Go to GitHub',
-    },
-    {
-        title: 'Enterprise',
-        featured: true,
-        description: 'Get access to premium features and the full product suite on your own premises.',
-        price: "On Request",
-        mainFeatures: [
-            { id: 1, value: 'Access to full suite' },
-            { id: 2, value: 'Unlimited users' },
-            { id: 3, value: 'Dedicated support' },
-        ],
-        cta: 'Contact us',
-    },
-]
+import { CalModal } from './CalModal'
+import { DiscoveryModal } from './DiscoveryModal'
+import { useRouter } from 'next/router'
 
 const featuresCloud = [
     {
@@ -293,11 +225,141 @@ function classNames(...classes) {
 
 export function Pricing() {
 
+    const router = useRouter()
+    const [openPricingModal, setOpenPricingModal] = useState(false)
+    const [openCalModal, setOpenCalModal] = useState(false)
+    const [openDiscoveryModal, setOpenDiscoveryModal] = useState(false)
+    const [openAccessModal, setOpenAccessModal] = useState(false)
+
+    const plansCloud = [
+        {
+            title: 'Personal',
+            featured: false,
+            description: 'For individuals who want to see how NLP can automate their workflows.',
+            price: null,
+            mainFeatures: [
+                { id: 1, value: 'Access to full suite' },
+                { id: 2, value: 'Unlimited items' },
+                { id: 3, value: '1 user' },
+                { id: 4, value: '100 incl. refinery credits/month*' },
+                { id: 5, value: 'Community support' },
+            ],
+            buttons: [
+                {
+                    id: 1,
+                    text: 'Request access',
+                    featured: false,
+                    onClick: () => { setOpenAccessModal(true) }
+                }
+            ],
+        },
+        {
+            title: 'Growth',
+            featured: true,
+            description: 'For teams that want to build NLP products, grow workflows or create NLP-driven dashboards.',
+            price: "249€",
+            mainFeatures: [
+                { id: 1, value: 'Access to full suite' },
+                { id: 2, value: 'Unlimited items' },
+                { id: 3, value: 'Unlimited users' },
+                { id: 4, value: '5,000 incl. refinery credits/month*' },
+                { id: 5, value: 'Priority support' },
+            ],
+            buttons: [
+                {
+                    id: 1,
+                    text: 'Contact us',
+                    featured: true,
+                    onClick: () => { setOpenDiscoveryModal(true) }
+                },
+                {
+                    id: 2,
+                    text: 'See demo',
+                    featured: false,
+                    onClick: () => { setOpenCalModal(true) }
+                }
+            ],
+        },
+        {
+            title: 'Enterprise',
+            featured: false,
+            description: 'For companies that heavily rely on natural language and textual data for their operations.',
+            price: 'From 999€',
+            mainFeatures: [
+                { id: 1, value: 'All Growth features' },
+                { id: 2, value: 'Custom integrations' },
+                { id: 3, value: 'Custom refinery credits/month*' },
+                { id: 4, value: 'Dedicated support' },
+            ],
+            buttons: [
+                {
+                    id: 1,
+                    text: 'Contact us',
+                    featured: true,
+                    onClick: () => { setOpenContactModal(true) }
+                },
+                {
+                    id: 2,
+                    text: 'See demo',
+                    featured: false,
+                    onClick: () => { setOpenCalModal(true) }
+                }
+            ],
+        },
+    ]
+
+    const plansSelfHosted = [
+        {
+            title: 'Community',
+            featured: false,
+            description: 'Use the single-user version of refinery for free on your own premises.',
+            price: null,
+            mainFeatures: [
+                { id: 1, value: '1 user' },
+                { id: 2, value: 'Keep your data on your own premises' },
+                { id: 3, value: 'Community support' },
+            ],
+            buttons: [
+                {
+                    id: 1,
+                    text: 'Go to GitHub',
+                    featured: false,
+                    onClick: () => { router.push('https://github.comcode-kern-ai/refinery') },
+
+                }
+            ],
+        },
+        {
+            title: 'Enterprise',
+            featured: true,
+            description: 'Get access to premium features and the full product suite on your own premises.',
+            price: "On Request",
+            mainFeatures: [
+                { id: 1, value: 'Access to full suite' },
+                { id: 2, value: 'Unlimited users' },
+                { id: 3, value: 'Dedicated support' },
+            ],
+            buttons: [
+                {
+                    id: 1,
+                    text: 'Contact us',
+                    featured: true,
+                    onClick: () => { setOpenContactModal(true) }
+                },
+                {
+                    id: 2,
+                    text: 'See demo',
+                    featured: false,
+                    onClick: () => { setOpenCalModal(true) }
+                }
+            ],
+        },
+    ]
+
     const [cloudIsSelected, setCloudIsSelected] = useState(true)
     const [plans, setPlans] = useState(plansCloud)
     const [features, setFeatures] = useState(featuresCloud)
     const [perks, setPerks] = useState(perksCloud)
-    const [openPricingModal, setOpenPricingModal] = useState(false)
 
     useEffect(() => {
         if (cloudIsSelected) {
@@ -410,17 +472,22 @@ export function Pricing() {
                                     </ul>
                                 </div>
 
-                                <Link
-                                    href="#"
-                                    className={classNames(
-                                        tier.featured
-                                            ? 'bg-green-500 text-neutral-900 hover:bg-green-400'
-                                            : 'bg-green-900 text-green-300 hover:bg-green-900',
-                                        'mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium'
-                                    )}
-                                >
-                                    {tier.cta}
-                                </Link>
+                                <div className='flex space-x-2'>
+                                    {tier.buttons.map((button) => (
+                                        <button
+                                            key={button.id}
+                                            onClick={button.onClick}
+                                            className={classNames(
+                                                button.featured
+                                                    ? 'bg-green-500 text-neutral-900 hover:bg-green-400'
+                                                    : 'bg-green-900 text-green-300 hover:bg-green-900',
+                                                'mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium'
+                                            )}
+                                        >
+                                            {button.text}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -852,6 +919,9 @@ export function Pricing() {
                 </div>
             </section>
             <PricingModal open={openPricingModal} setOpen={setOpenPricingModal} />
+            <CalModal open={openCalModal} setOpen={setOpenCalModal} />
+            <DiscoveryModal open={openDiscoveryModal} setOpen={setOpenDiscoveryModal} />
+            <AccessModal open={openAccessModal} setOpen={setOpenAccessModal} />
         </div>
     )
 }

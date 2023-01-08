@@ -18,6 +18,15 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  async redirects() {
+    return [
+      {
+        source: '/newsletter',
+        destination: '/#newsletter',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default withMDX(nextConfig)

@@ -217,7 +217,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/x12',
+        href: '/docs/workflow/integrations',
         name: '/docs/workflow/integrations',
         description:
           'workflow offers native integrations to e.g. Google workspace applications, Slack or other collaboration channels, and further offers an API and Webhook links. We are continuously adding new integrations.',
@@ -320,7 +320,6 @@ function Feature({ feature, product }) {
             <feature.icon className={`h-5 w-5 transition-colors duration-300 fill-white/10 stroke-zinc-400 group-hover:fill-blue-300/10 group-hover:stroke-blue-400`} />
           </div>
         )}
-
 
         <h3 className="mt-4 text-sm font-semibold leading-7 text-white">
           <Link href={feature.href}>
@@ -439,7 +438,7 @@ export function Ecosystem() {
                   You can click on the below feature cards to jump into the documentation.
                 </p>
               </div>
-              <div className={`w-full grid grid-cols-1 md:grid-cols-${slideContent[current].cols} gap-4 border-t border-white/5`}>
+              <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-white/5`}>
                 {slideContent[current].features.map((feature) => (
                   <Feature key={feature.name} feature={feature} product={current} />
                 ))}

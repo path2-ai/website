@@ -46,6 +46,7 @@ export default function App({ Component, pageProps }) {
           <Layout type="docs" {...pageProps}>
             <Component {...pageProps} />
           </Layout>
+          <CookieBanner />
         </MDXProvider>
       )
     } else if (router.pathname.includes(blogPath) || router.pathname.includes(changelogPath)) {
@@ -55,6 +56,7 @@ export default function App({ Component, pageProps }) {
           <Layout type={type} {...pageProps} >
             <Component {...pageProps} />
           </Layout>
+          <CookieBanner />
         </MDXProvider >
       )
     }
@@ -65,7 +67,9 @@ export default function App({ Component, pageProps }) {
             <Header />
           </div>
           <Animate play start={{ opacity: 0 }} end={{ opacity: 1 }}>
-            <Component {...pageProps} />
+            <Component
+              {...pageProps}
+            />
           </Animate>
           <Footer />
           <CookieBanner />
