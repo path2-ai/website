@@ -69,7 +69,7 @@ function getEmployeeSurveyDataset(employeeData) {
     }
 }
 
-const positions = [
+export const positions = [
     {
         id: 1,
         title: 'Back End Developer',
@@ -342,7 +342,7 @@ export function Careers() {
                 <div>
                     <img
                         className="absolute top-0 left-1/2 w-[1440px] max-w-none -translate-x-1/2"
-                        src={`${KERN_ASSETS_URL}/images/background-careers.png`}
+                        src={`${KERN_ASSETS_URL}/images/background-careers-1440.png`}
                         alt=""
                     />
                 </div>

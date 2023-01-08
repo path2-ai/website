@@ -1,71 +1,140 @@
 import { IconBrain } from "@tabler/icons";
+import { KERN_ASSETS_URL } from "./_settings";
+import { positions } from './Careers';
+import Link from "next/link";
+import { useState, useEffect } from 'react';
 
 export function Team() {
+
+    const [gitHubStarsRefinery, setGitHubStarsRefinery] = useState(0);
+    const [gitHubStarsBricks, setGitHubStarsBricks] = useState(0);
+
+
+    useEffect(() => {
+        fetch('https://api.github.com/repos/code-kern-ai/refinery')
+            .then(response => response.json())
+            .then(data => setGitHubStarsRefinery(data.stargazers_count));
+
+        fetch('https://api.github.com/repos/code-kern-ai/bricks')
+            .then(response => response.json())
+            .then(data => setGitHubStarsBricks(data.stargazers_count));
+    }, []);
+
     return (
         <section className="mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
             <div className="mt-20 py-8 sm:py-10">
                 <div>
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+                    <h2 className="text-3xl font-bold tracking-tight text-gray-100">
                         How we view <span className="text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600">
                             <IconBrain className="inline-block text-lime-300 pb-4 h-16 w-16" />
                             artificial intelligence
                         </span>
                     </h2>
-                    <p className="mt-2 text-lg leading-5 text-gray-400">
+                    <p className="mt-2 text-sm leading-5 text-gray-300">
                         The rise of artificial intelligence is one of the most important developments of our time. We believe that its biggest impact will be felt in the field of natural language processing, enabling new ways of interaction between humans and machines. It will impact how we search for information, how we get creative about new content, and ultimately how we get things done.
                     </p>
-                    <p className="mt-2 text-lg leading-5 text-gray-400">
+                    <p className="mt-2 text-sm leading-5 text-gray-300">
                         As large language models are becoming more and more powerful, we further believe that the next step is to make them more data-centric. This gives developers and scientists the superpower to control and shape the models to their needs. And for this to happen, data must finally be the first-class citizen in the world of NLP.
                     </p>
-                    <p className="mt-2 text-lg leading-5 text-gray-400">
+                    <p className="mt-2 text-sm leading-5 text-gray-300">
                         We will not stop until training data is treated as if it were software code, such that ideas can be turned into reality in a matter of hours.
                     </p>
-                    <div className="mt-4 text-2xl">
-                        <span
-                            className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600"
-                        >Our mission:
-                        </span> {' '}
-                        <span className="text-white">
-                            shorten the gap between ideas and reality in NLP, ultimately enabling reliable, controllable and powerful natural language interfaces.
-                        </span>
+                    <div className="mt-10">
+                        <div
+                            className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600"
+                        >Our mission
+                        </div> {' '}
+                        <div className="text-gray-300 -sm mt-2">
+                            Shorten the gap between ideas and reality in NLP, ultimately enabling reliable, controllable and powerful natural language interfaces.
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div className="mx-auto py-8 sm:py-10">
-                <div>
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+            <div className="py-8 pt-28 text-white mx-auto grid grid-cols-5 gap-8">
+
+                <div className="col-span-2 mt-auto">
+                    <h2 className="text-2xl font-bold tracking-tight text-gray-100">
                         Our team
                     </h2>
-                    <p className="mt-2 text-lg leading-5 text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-gray-300 to-gray-500">
-                        test
+                    <p className="mt-2 text-sm leading-5 text-gray-300">
+                        We are a rather small team, focusing on how modern natural language processing can shift how we view and interact with data.
+                    </p>
+                    <p className="mt-2 text-sm leading-5 text-gray-300">
+                        Our work is based on very simple principals. When we built software, we think of the endusers first, and how we can help them to not only get their work done, but to do it in a way that sparks their creativity and curiosity.
+                    </p>
+                    <p className="mt-2 text-sm leading-5 text-gray-300">
+                        Also, we see our product as more than a user interface attached to some backend. We believe that the product starts with the client's problem, and so we will always try to understand the problem first, and then see how we can help to solve it.
                     </p>
                 </div>
-            </div>
-            <div className="text-white mx-auto grid grid-cols-5">
-                <div className="col-span-2">
-                    test
+                <div className="col-span-3 mx-auto border border-gray-700 rounded-lg p-3 pb-10 bg-neutral-800 shadow-[0_0px_10px_2px_rgba(255,255,255,0.2)]">
+                    <img
+                        src={`${KERN_ASSETS_URL}/team/team.png`}
+                        alt="Team"
+                        className="rounded-md"
+                    />
+                    <p className='text-gray-300 text-xs'>
+                        On a hot summer day in 2022
+                    </p>
                 </div>
-                <img
-                    src="https://www.kern.ai/teamfoto.jpg"
-                    alt="Team"
-                    className="col-span-3 mx-auto rounded-2xl
-                    shadow-[0_0px_20px_2px_rgba(255,255,255,0.5)]
-                    "
-                />
             </div>
 
             <div className="mx-auto py-16 sm:py-24">
                 <div>
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+                    <h2 className="text-2xl font-bold tracking-tight text-gray-100">
                         Some numbers and the story so far
                     </h2>
-                    <p className="mt-2 text-lg leading-5 text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-gray-300 to-gray-500">
-                        test
-                    </p>
+                    <div className="mt-8 space-y-10">
+                        <div className="flex space-x-8">
+                            <div className="flex justify-center items-center h-28 w-28 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
+                                2020
+                            </div>
+                            <div className="w-fit text-sm my-auto text-gray-300">
+                                Was the year we started Kern AI. Initially, we started as a consulting companies, and helped our clients to build their first AI models. We quickly realized that there was a need for a better way to build and manage especially the training data for these models. So we started to build refinery, our first product. After seeing its impact, we turned into a software company, and fully committed to building the best tools for NLP.
+                            </div>
+                        </div>
+                        <div className="flex space-x-8">
+                            <div className="flex justify-center items-center h-28 w-28 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
+                                9
+                            </div>
+                            <div className="w-fit text-sm my-auto text-gray-300">
+                                People are working at Kern AI. We are a small team, but we know how to work together efficiently, how to communicate, and how to get things done.
+                            </div>
+                        </div>
+                        <div className="flex space-x-8">
+                            <div className="flex justify-center items-center h-28 w-28 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
+                                {positions.length}
+                            </div>
+                            <div className="w-fit text-sm my-auto text-gray-300">
+                                Open positions are currently available at Kern AI. We are always looking for new team members, so if you are interested, please check out our <Link href="/company/careers"><span className="text-lime-300">careers page</span></Link>.
+                            </div>
+                        </div>
+                        <div className="flex space-x-8">
+                            <div className="flex justify-center items-center h-28 w-28 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
+                                {(gitHubStarsRefinery + gitHubStarsBricks).toLocaleString()}
+                            </div>
+                            <div className="w-fit text-sm my-auto text-gray-300">
+                                GitHub stars are currently attributed to our two open-source projects, {' '}
+                                <a
+                                    href="https://github.com/code-kern-ai/refinery"
+                                    target="_blank"
+                                    className="text-lime-300"
+                                >
+                                    refinery
+                                </a>{' '} ({gitHubStarsRefinery.toLocaleString()} stars) and {' '}
+                                <a
+                                    href="https://github.com/code-kern-ai/bricks"
+                                    target="_blank"
+                                    className="text-lime-300"
+                                >
+                                    bricks
+                                </a> {' '} ({gitHubStarsBricks.toLocaleString()} stars). We are very proud of these projects, and we are happy to see that they are used by so many people.
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-        </section>
+        </section >
     )
 }
