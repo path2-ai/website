@@ -381,7 +381,7 @@ export function Pricing() {
                     <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                         Simple pricing, for your requirements.
                     </h1>
-                    <p className="mt-8 text-xl text-lime-100">
+                    <p className="mt-8 text-xl text-lime-500">
                         Everything you need, nothing you don't. Pick a plan that best suits your business.
                     </p>
                     <div className='text-sm mt-4 mx-auto max-w-5xl text-gray-300'>
