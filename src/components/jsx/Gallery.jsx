@@ -116,7 +116,7 @@ export function Gallery() {
                 <div className='max-w-5xl mx-auto justify-center pt-10 text-white'>
                     <div className='bg-gradient-to-b from-gray-500 via-neutral-700 to-gray-500 rounded-lg 
                   transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
-                  shadow-[0_0px_100px_10px_rgba(255,255,255,0.3)]
+                  shadow-[0_0px_25px_10px_rgba(255,255,255,0.2)]
                '>
                         <img
                             src={`${KERN_ASSETS_URL}/images/${slideContent[current].image}.png`}
