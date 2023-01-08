@@ -3,81 +3,36 @@ import { Circular } from '@/util/Circular'
 import { BoltIcon as BoltIconSolid } from '@heroicons/react/24/solid'
 import { BoltIcon as BoltIconOutline } from '@heroicons/react/24/outline'
 import { CheckIcon } from '@heroicons/react/24/outline'
+import { KERN_ASSETS_URL } from './_settings'
 
 const slideContent = {
-    "Speech to Summary": {
-        title: "Speech to Summary",
-        teaser: "Build your custom recorder, which transcribes audio into summarized texts and analyzes its content based on your inputs.",
-        description: "You're just coming out of two hours of meetings and have already forgotten 70% of what was discussed. Wouldn't it be great if you could just look into a summarized transcript of the meeting notes, enriched with interesting metadata and insights? Directly sent to the tool of your choice? Well, now you can! Build your own pipeline using the 'Speech to Summary' template.",
+    "Customer support": {
+        teaser: "Take your customer support to the next level. Understand what your customers want to understand (both on high-level and on a granular level) and provide them with the best possible support.",
+        description: "You want to give your clients the best possible operational support. But how can you operate on high-frequency while stile ensuring that you're keeping up with customers' requirements? Future-proof your customer support by building your own pipeline using the 'Customer support' template.",
         features: [
-            "Grab audio directly from Google Meet or any other video conferencing tool",
-            "Transcribe audio into text",
-            "Summarize text",
-            "Extract structured data from text and customize pipeline flows",
-            "Send to Slack or any other tool of your choice",
+            "Automatically route messages to the right department",
+            "Automatically gather granular information from the email (e.g. the customer's name, the product they're using, the issue they're facing, etc.)",
+            "Use internal systems (e.g. CRM, ERP, etc.) to collect the data required to write an answer",
+            "Depending on the AI's confidence, automatically send the answer to the customer or send it to a human for review",
         ],
-        image: "/screenshot-workflow.png",
-        usedApps: [
-            "https://www.kern.ai/kern-icon.png",
-            "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v1/web-96dp/logo_meet_2020q4_color_2x_web_96dp.png",
-            "https://st2.depositphotos.com/47577860/46275/v/600/depositphotos_462751152-stock-illustration-algorithm-gym-learning-icon-in.jpg",
-            "https://avatars.githubusercontent.com/u/25720743?s=200&v=4",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png",
-        ],
-        tags: [
-            "Speech2Text",
-            "TextSummarization",
-            "TextAnalysis",
-            "Productivity",
-        ],
+        image: "customer-automation-full-hd",
         complexity: "advanced",
     },
-    "ChatAnalyzer": {
-        title: "ChatAnalyzer",
-        teaser: "Build your own chatbot, which collects messages from your communication channels and analyzes them based on your configuration.",
-        description: "You receive hundreds of messages every day, but you don't have the time to read them all. Wouldn't it be great if you could just look into a dashboard of what was discussed, enriched with interesting metadata and insights? Well, now you can! Build your own pipeline using the 'ChatAnalyzer' template.",
+    "NLP dashboards": {
+        teaser: "Build dashboards that understand natural language. Identify characteristics and patterns that can only be retrieved via state-of-the-art AI.",
+        description: "If you have a large text corpora (e.g. all external reviews for a product of yours), you can use the 'NLP dashboards' template to build a dashboard that understands natural language. This allows you to identify characteristics and patterns that can only be retrieved via state-of-the-art AI.",
         features: [
-            "Grab messages from Slack, Discord, or any other communication channel",
-            "Extract structured data from text and customize pipeline flows",
-            "Send to Slack or any other tool of your choice",
+            "Attach a datasource such as Google Sheets or a database",
+            "Automatically extract entities and relationships from the text",
+            "Use the extracted entities and relationships to build a dashboard",
+            "Analyze behavior and patterns in the data that would otherwise be impossible to identify",
         ],
-        image: "/screenshot-workflow.png",
-        usedApps: [
-            "https://www.kern.ai/kern-icon.png",
-            "https://cdn.worldvectorlogo.com/logos/discord-4.svg",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/479px-WhatsApp.svg.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png",
-        ],
-        tags: [
-            "ChatAnalysis",
-            "Productivity",
-        ],
-        complexity: "intermediate",
-    },
-    "StockAnalyzer": {
-        title: "StockAnalyzer",
-        teaser: "Build your own stock analyzer, which collects stock data from your favorite stock market and analyzes it based on your configuration.",
-        description: "You're interested in the stock market, but you don't have the time to read all the news. Wouldn't it be great if you could just look into a dashboard of what's going on, enriched with interesting metadata and insights? Well, now you can! Build your own pipeline using the 'StockAnalyzer' template.",
-        features: [
-            "Grab stock data from Yahoo Finance or any other stock market",
-            "Extract structured data from text and customize pipeline flows",
-            "Send to Slack or any other tool of your choice",
-        ],
-        image: "/screenshot-workflow.png",
-        usedApps: [
-            "https://www.kern.ai/kern-icon.png",
-            "https://upload.wikimedia.org/wikipedia/commons/8/8f/Yahoo%21_Finance_logo_2021.png",
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/2048px-Slack_icon_2019.svg.png",
-        ],
-        tags: [
-            "StockAnalysis",
-            "Productivity",
-        ],
-        complexity: "intermediate",
+        image: "analytics-full-hd",
+        complexity: "advanced",
     },
 }
 
-const slideOptions = Object.entries(slideContent).map(([key, value]) => value.title)
+const slideOptions = Object.entries(slideContent).map(([key, value]) => key)
 const slider = new Circular(slideOptions)
 
 
@@ -134,7 +89,7 @@ export function Gallery() {
             <div className="absolute inset-0"
                 style={{
                     backgroundColor: "#000000",
-                    opacity: 0.5,
+                    opacity: 0.4,
                     backgroundImage: " radial-gradient(#84cc16 1.1500000000000001px, transparent 1.1500000000000001px), radial-gradient(#84cc16 1.1500000000000001px, #000000 1.1500000000000001px)",
                     backgroundSize: "46px 46px",
                     backgroundPosition: "0 0,23px 23px"
@@ -149,7 +104,7 @@ export function Gallery() {
                         <div>
                             <div>
                                 <h1 className="text-white text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
-                                    <div>Workflow templates for ETL</div>
+                                    <div>Use case gallery</div>
                                 </h1>
                                 <p className="mt-6 text-xl leading-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-gray-300 to-gray-500 sm:text-center">
                                     Used by data scientists at AI-driven organizations, both small and large
@@ -164,18 +119,18 @@ export function Gallery() {
                   shadow-[0_0px_100px_10px_rgba(255,255,255,0.3)]
                '>
                         <img
-                            src={slideContent[current].image}
-                            alt={slideContent[current].title}
+                            src={`${KERN_ASSETS_URL}/images/${slideContent[current].image}.png`}
+                            alt={current}
                             className="rounded-lg p-0.5"
                         />
                     </div>
                     <div className="flex justify-between mt-6 text-gray-100">
                         <span>
-                            {slideContent[current].title}
+                            {current}
                         </span>
-                        <span>
+                        {/* <span>
                             {getComplexityIcon(slideContent[current].complexity)}
-                        </span>
+                        </span> */}
                     </div>
                     <div className="mt-4 text-gray-400 text-sm">
                         {slideContent[current].description}
@@ -190,7 +145,7 @@ export function Gallery() {
                             ))}
                         </ul>
                     </div>
-                    <div className='mt-4 text-gray-200'>
+                    {/* <div className='mt-4 text-gray-200'>
                         <div className='font-semibold text-sm'>
                             Integrated nodes
                         </div>
@@ -212,7 +167,7 @@ export function Gallery() {
                                 #{tag}
                             </span>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
                 <div className="grid grid-cols-2 max-w-5xl mx-auto justify-center pt-10 flex gap-4">
                     {Object.entries(slideContent).map(([key, item], index) => (
@@ -238,17 +193,17 @@ export function Gallery() {
                         >
                             <div className='flex justify-between text-gray-100'>
                                 <span>
-                                    {slideContent[key].title}
+                                    {key}
                                 </span>
-                                <span>
+                                {/* <span>
                                     {getComplexityIcon(slideContent[key].complexity)}
-                                </span>
+                                </span> */}
                             </div>
                             <div className='mt-2 text-sm text-gray-400'>
                                 {slideContent[key].teaser}
                             </div>
                             <div className='mt-2 flex justify-between'>
-                                <div className='space-x-1'>
+                                {/* <div className='space-x-1'>
                                     {slideContent[key].usedApps.slice(0, 3).map((app, index) => (
                                         <div key={index} className='inline-block'>
                                             <img
@@ -267,7 +222,7 @@ export function Gallery() {
                                             </div>
                                         </div>
                                     )}
-                                </div>
+                                </div> */}
                                 <div className="mt-4 h-1.5 w-44 flex rounded bg-green-200">
                                     {key === current && (
                                         <div className="w-12 bg-gradient-to-r rounded from-green-600 to-lime-600" style={{ width: `${key === clickedOption ? 0 : timer * .25}%` }} />
