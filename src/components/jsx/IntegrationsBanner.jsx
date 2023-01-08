@@ -287,7 +287,7 @@ export function IntegrationsBanner() {
                 </h1>
                 <div className="mt-10 flex flex-col text-gray-300">
                     <div className="text-lg flex flex-col mx-auto items-center">
-                        <div>Create pipelines for your natural language data with 20+ integrations.</div>
+                        <div>Create pipelines for your natural language.</div>
                         <div>Choose from the below extractors, transformers, and loaders.</div>
                     </div>
                 </div>
