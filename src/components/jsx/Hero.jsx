@@ -34,7 +34,7 @@ export function Hero() {
                     <div className="mx-auto max-w-5xl py-16 sm:py-20">
                         <div>
                             <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                                <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-100/10 hover:ring-gray-100/20">
+                                {/* <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-100/10 hover:ring-gray-100/20">
                                     <span className="text-gray-300">
                                         Announcing our 2.7m€ seed funding.{' '}
                                         <Link href="/company/blog/announcing-our-seed" className="font-semibold text-green-400">
@@ -42,7 +42,7 @@ export function Hero() {
                                             Read more <span aria-hidden="true">&rarr;</span>
                                         </Link>
                                     </span>
-                                </div>
+                                </div> */}
                             </div>
                             <div>
                                 <h1 className="text-white text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
