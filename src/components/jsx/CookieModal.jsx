@@ -8,9 +8,9 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export function CookieModal({ open, setOpen }) {
-    const [enabled, setEnabled] = useState(false)
+export function CookieModal({ open, setOpen, enabled, setEnabled }) {
 
+    const [enabledTmp, setEnabledTmp] = useState(enabled)
 
     return (
         <Transition.Root show={open} as={Fragment}>
@@ -73,7 +73,7 @@ export function CookieModal({ open, setOpen }) {
 
                                                 </div>
                                                 <div className='text-white p-4 border-b border-t border-neutral-600 bg-neutral-800'>
-                                                    {enabled ? (
+                                                    {enabledTmp ? (
                                                         <IconCheck className='h-5 w-5 text-green-500 inline-block mr-2' />
                                                     ) : (
                                                         <IconX className='h-5 w-5 text-red-500 inline-block mr-2' />
@@ -86,22 +86,22 @@ export function CookieModal({ open, setOpen }) {
                                                     </div>
                                                     <div className='mt-4'>
                                                         <Switch
-                                                            checked={enabled}
-                                                            onChange={setEnabled}
+                                                            checked={enabledTmp}
+                                                            onChange={setEnabledTmp}
                                                             className="group relative inline-flex h-5 w-10 flex-shrink-0 cursor-pointer items-center justify-center rounded-full "
                                                         >
                                                             <span aria-hidden="true" className="pointer-events-none absolute h-full w-full rounded-md bg-neutral-800" />
                                                             <span
                                                                 aria-hidden="true"
                                                                 className={classNames(
-                                                                    enabled ? 'bg-green-600' : 'bg-gray-200',
+                                                                    enabledTmp ? 'bg-green-600' : 'bg-gray-200',
                                                                     'pointer-events-none absolute mx-auto h-4 w-9 rounded-full transition-colors duration-200 ease-in-out'
                                                                 )}
                                                             />
                                                             <span
                                                                 aria-hidden="true"
                                                                 className={classNames(
-                                                                    enabled ? 'translate-x-5' : 'translate-x-0',
+                                                                    enabledTmp ? 'translate-x-5' : 'translate-x-0',
                                                                     'pointer-events-none absolute left-0 inline-block h-5 w-5 transform rounded-full border border-gray-200 bg-neutral-800 shadow ring-0 transition-transform duration-200 ease-in-out'
                                                                 )}
                                                             />
@@ -116,7 +116,10 @@ export function CookieModal({ open, setOpen }) {
                                     <button
                                         type='button'
                                         className="hover:bg-neutral-700 bg-neutral-800 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
-                                        onClick={() => { setOpen(false) }}
+                                        onClick={() => {
+                                            setEnabled(enabledTmp)
+                                            setOpen(false)
+                                        }}
                                     >
                                         <span className='my-auto text-gray-200'>
                                             Save settings

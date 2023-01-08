@@ -2,17 +2,30 @@ import { Fragment, useState } from 'react'
 import { Transition } from '@headlessui/react'
 import { IconCookie } from '@tabler/icons'
 import { CookieModal } from './CookieModal'
+import { useEffect } from 'react'
+import cookieCutter from 'cookie-cutter'
 
 export function CookieBanner() {
-    const [show, setShow] = useState(true)
+    const [show, setShow] = useState(false)
     const [openModal, setOpenModal] = useState(false)
+    const [enabled, setEnabled] = useState(false)
+
+    useEffect(() => {
+        let cookie = cookieCutter.get('kern-cookie')
+        if (cookie) {
+            cookie = JSON.parse(cookie)
+            setEnabled(cookie['analytics'])
+        } else {
+            setShow(true)
+        }
+    }, [])
 
     return (
         <>
             {/* Global notification live region, render this permanently at the end of the document */}
             <div
                 aria-live="assertive"
-                className="fixed bottom-0 w-full pointer-events-none flex items-end px-4 py-6 sm:items-start sm:p-6"
+                className="z-50 fixed bottom-0 w-full pointer-events-none flex items-end px-4 py-6 sm:items-start sm:p-6"
             >
                 <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
                     {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
@@ -40,6 +53,13 @@ export function CookieBanner() {
                                                 <button
                                                     type="button"
                                                     className="hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
+                                                    onClick={() => {
+                                                        cookieCutter.set('kern-cookie', JSON.stringify({
+                                                            strictlyNecessary: true,
+                                                            analytics: enabled,
+                                                        }))
+                                                        setShow(false)
+                                                    }}
                                                 >
                                                     <span className='my-auto text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>
                                                         Accept
@@ -65,7 +85,7 @@ export function CookieBanner() {
                         </div>
                     </Transition>
                 </div>
-                <CookieModal open={openModal} setOpen={setOpenModal} />
+                <CookieModal open={openModal} setOpen={setOpenModal} enabled={enabled} setEnabled={setEnabled} />
             </div>
         </>
     )

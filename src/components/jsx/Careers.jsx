@@ -318,7 +318,7 @@ function Perk({ perk }) {
 
 function PolaroidImage({ src, pos, description }) {
     return (
-        <div className={`absolute ${pos} border border-gray-300 rounded-lg p-3 pb-10 bg-white shadow-[0_0px_10px_2px_rgba(255,255,255,0.6)] hover:z-50`}>
+        <div className={`absolute ${pos} border border-gray-700 rounded-lg p-3 pb-10 bg-neutral-800 shadow-[0_0px_10px_2px_rgba(255,255,255,0.2)] hover:z-40`}>
             <img
                 style={{
                     width: '320px',
@@ -327,7 +327,7 @@ function PolaroidImage({ src, pos, description }) {
                 className="rounded-md"
                 src={`${KERN_ASSETS_URL}/images/${src}.png`}
             />
-            <p className='text-gray-600 text-xs'>
+            <p className='text-gray-300 text-xs'>
                 {description}
             </p>
         </div>
