@@ -8,14 +8,11 @@ import cookieCutter from 'cookie-cutter'
 export function CookieBanner() {
     const [show, setShow] = useState(false)
     const [openModal, setOpenModal] = useState(false)
-    const [enabled, setEnabled] = useState(false)
+    const [enabled, setEnabled] = useState(true)
 
     useEffect(() => {
         let cookie = cookieCutter.get('kern-cookie')
-        if (cookie) {
-            cookie = JSON.parse(cookie)
-            setEnabled(cookie['analytics'])
-        } else {
+        if (!cookie) {
             setShow(true)
         }
     }, [])
@@ -25,7 +22,7 @@ export function CookieBanner() {
             {/* Global notification live region, render this permanently at the end of the document */}
             <div
                 aria-live="assertive"
-                className="z-50 fixed bottom-0 w-full pointer-events-none flex items-end px-4 py-6 sm:items-start sm:p-6"
+                className="z-40 fixed bottom-0 w-full pointer-events-none flex items-end px-4 py-6 sm:items-start sm:p-6"
             >
                 <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
                     {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
@@ -73,7 +70,7 @@ export function CookieBanner() {
                                                     onClick={() => { setOpenModal(true) }}
                                                 >
                                                     <span className='my-auto text-gray-200'>
-                                                        Details
+                                                        Configure
                                                     </span>
                                                 </button>
                                             </div>
@@ -85,7 +82,7 @@ export function CookieBanner() {
                         </div>
                     </Transition>
                 </div>
-                <CookieModal open={openModal} setOpen={setOpenModal} enabled={enabled} setEnabled={setEnabled} />
+                <CookieModal open={openModal} setOpen={setOpenModal} enabled={enabled} setEnabled={setEnabled} show={show} setShow={setShow} />
             </div>
         </>
     )

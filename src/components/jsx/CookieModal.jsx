@@ -1,20 +1,20 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { ExclamationTriangleIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { IconCheck, IconCookie, IconX } from '@tabler/icons'
 import { Switch } from '@headlessui/react'
+import cookieCutter from 'cookie-cutter'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export function CookieModal({ open, setOpen, enabled, setEnabled }) {
+export function CookieModal({ open, setOpen, enabled, setEnabled, show, setShow }) {
 
     const [enabledTmp, setEnabledTmp] = useState(enabled)
 
     return (
         <Transition.Root show={open} as={Fragment}>
-            <Dialog as="div" className="relative z-10" onClose={setOpen}>
+            <Dialog as="div" className="relative z-50" onClose={setOpen}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -27,7 +27,7 @@ export function CookieModal({ open, setOpen, enabled, setEnabled }) {
                     <div className="fixed inset-0 bg-gray-500 bg-opacity-25 transition-opacity" />
                 </Transition.Child>
 
-                <div className="fixed inset-0 z-10 overflow-y-auto">
+                <div className="fixed inset-0 z-50 overflow-y-auto">
                     <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                         <Transition.Child
                             as={Fragment}
@@ -112,17 +112,35 @@ export function CookieModal({ open, setOpen, enabled, setEnabled }) {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                                <div className="flex justify-end space-x-2 mt-5">
                                     <button
                                         type='button'
                                         className="hover:bg-neutral-700 bg-neutral-800 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
                                         onClick={() => {
                                             setEnabled(enabledTmp)
+                                            cookieCutter.set('kern-cookie', JSON.stringify({
+                                                strictlyNecessary: true,
+                                                analytics: enabledTmp,
+                                            }))
+                                            setOpen(false)
+                                            if (setShow) {
+                                                setShow(false)
+                                            }
+                                        }}
+                                    >
+                                        <span className='my-auto text-gray-200'>
+                                            Save and accept
+                                        </span>
+                                    </button>
+                                    <button
+                                        type='button'
+                                        className="hover:bg-neutral-700 bg-neutral-800 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
+                                        onClick={() => {
                                             setOpen(false)
                                         }}
                                     >
                                         <span className='my-auto text-gray-200'>
-                                            Save settings
+                                            Cancel
                                         </span>
                                     </button>
                                 </div>
