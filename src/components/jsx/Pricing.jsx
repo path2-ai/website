@@ -296,7 +296,7 @@ export function Pricing() {
                     id: 1,
                     text: 'Contact us',
                     featured: true,
-                    onClick: () => { setOpenContactModal(true) }
+                    onClick: () => { setOpenDiscoveryModal(true) }
                 },
                 {
                     id: 2,
@@ -344,7 +344,7 @@ export function Pricing() {
                     id: 1,
                     text: 'Contact us',
                     featured: true,
-                    onClick: () => { setOpenContactModal(true) }
+                    onClick: () => { setOpenDiscoveryModal(true) }
                 },
                 {
                     id: 2,
