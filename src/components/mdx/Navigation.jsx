@@ -229,9 +229,6 @@ export function getNavigationElements(type) {
         title: 'bricks',
         links: [
           { title: 'About', href: '/docs/bricks' },
-          { title: 'Classifiers', href: '/docs/bricks/classifiers' },
-          { title: 'Extractors', href: '/docs/bricks/extractors' },
-          { title: 'Generators', href: '/docs/bricks/generators' },
           { title: 'refinery x bricks', href: '/docs/bricks/refinery-integration' },
           { title: 'Roadmap', href: '/docs/bricks/roadmap' },
         ],

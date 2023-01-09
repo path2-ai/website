@@ -89,7 +89,7 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/docs/bricks/classifiers',
+        href: '/docs/bricks#classifiers',
         name: 'Classifiers',
         description:
           'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
@@ -97,7 +97,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/bricks/extractors',
+        href: '/docs/bricks#extractors',
         name: 'Extractors',
         description:
           'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
@@ -105,7 +105,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/bricks/generators',
+        href: '/docs/bricks#generators',
         name: 'Generators',
         description:
           'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
@@ -113,7 +113,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/bricks/customize',
+        href: '/docs/bricks#customize',
         name: 'Customizable',
         description:
           'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',

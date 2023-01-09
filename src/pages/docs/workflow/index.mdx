@@ -1,10 +1,5 @@
-export const description =
-  'In this guide, we will look at how to work with paginated responses when querying the Protocol API'
+# workflow
 
-# Pagination
+![](http://localhost:3000/screenshot-workflow.png)
 
-In this guide, we will look at how to work with paginated responses when querying the Protocol API. By default, all responses limit results to ten. However, you can go as high as 100 by adding a `limit` parameter to your requests. If you are using one of the official Protocol API client libraries, you don't need to worry about pagination, as it's all being taken care of behind the scenes. {{ className: 'lead' }}
-
-When an API response returns a list of objects, no matter the amount, pagination is supported. In paginated responses, objects are nested in a `data` attribute and have a `has_more` attribute that indicates whether you have reached the end of the last page. You can use the `starting_after` and `endding_before` query parameters to browse pages.
-
-## Example using cursors
+workflow is the glue of the platform, allowing you to define ETL-like pipelines that can understand natural language. For instance, you can use workflow to grab data from a 3rd party API, put it through refinery/gates, and then use the results in any further step of the pipeline.
