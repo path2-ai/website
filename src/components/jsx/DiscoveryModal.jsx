@@ -1,8 +1,48 @@
-import { Fragment } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { IconMessages, IconX } from '@tabler/icons'
+import { Fragment, useState } from 'react'
+import { Dialog, Transition, Menu } from '@headlessui/react'
+import { IconMessages, IconSend, IconX } from '@tabler/icons'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
 
 export function DiscoveryModal({ open, setOpen }) {
+
+    const [selectedUseOfProduct, setSelectedUseOfProduct] = useState(null)
+    const useOfProductOptions = [
+        "I'm not sure yet",
+        "I want to build AI products, and want to use the platform to build and maintain training data",
+        "I want to set up ETL workflows to build analytical use cases",
+        "I want to set up operational realtime-workflows to build operational use cases",
+        "All of the above",
+    ]
+
+    const [selectedAmountMessages, setSelectedAmountMessages] = useState(null)
+    const amountMessagesOptions = [
+        "I'm not sure yet",
+        "Less than 1,000 items",
+        "1,000 - 10,000 items",
+        "10,000 - 100,000 items",
+        "More than 100,000 items",
+    ]
+
+    const [selectedTypeOfMessages, setSelectedTypeOfMessages] = useState(null)
+    const typeOfMessagesOptions = [
+        "I'm not sure yet",
+        "Short messages, e.g. chat messages",
+        "Long form messages, e.g. emails",
+        "Documents, e.g. PDFs",
+        "Semi-structured data, e.g. JSON",
+        "All of the above",
+    ]
+
+    const [name, setName] = useState(null)
+    const [email, setEmail] = useState(null)
+    const [company, setCompany] = useState(null)
+    const [role, setRole] = useState(null)
+    const [comments, setComments] = useState(null)
+
 
     return (
         <Transition.Root show={open} as={Fragment}>
@@ -30,7 +70,7 @@ export function DiscoveryModal({ open, setOpen }) {
                             leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                             leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                         >
-                            <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-neutral-800 px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6">
+                            <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-neutral-800 px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-3xl sm:p-6">
                                 <div className="absolute top-0 right-0 hidden pt-4 pr-4 sm:block">
                                     <button
                                         type="button"
@@ -47,26 +87,265 @@ export function DiscoveryModal({ open, setOpen }) {
                                     </div>
                                     <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                                         <Dialog.Title as="h3" className="text-lg font-medium leading-6 text-gray-100">
-                                            Contact us
+                                            Discovery survey
                                         </Dialog.Title>
                                         <div className="mt-2">
                                             <p className="text-sm text-gray-300">
-                                                We use cookies to improve your site experience. The "strictly necessary" cookies are required for Kern AI to function.
+                                                We're happy to jump on a call with you to discuss your needs and how we can help. Before that, please help us preparing for the call by answering the following questions.
+                                            </p>
+                                        </div>
+                                        <div className='mt-8'>
+                                            <label htmlFor="name" className="block text-sm font-medium text-gray-100">
+                                                What best describes what you could see yourself using our product for?
+                                            </label>
+                                            <Menu as="div" className="mt-1 relative inline-block w-full">
+                                                <div>
+                                                    <Menu.Button className="text-left inline-flex w-full justify-between rounded-md border border-gray-700 bg-neutral-900 px-4 py-2 text-sm font-medium text-gray-300 shadow-sm hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                                                        {selectedUseOfProduct ? selectedUseOfProduct : "Select an option"}
+                                                        <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+                                                    </Menu.Button>
+                                                </div>
+
+                                                <Transition
+                                                    as={Fragment}
+                                                    enter="transition ease-out duration-100"
+                                                    enterFrom="transform opacity-0 scale-95"
+                                                    enterTo="transform opacity-100 scale-100"
+                                                    leave="transition ease-in duration-75"
+                                                    leaveFrom="transform opacity-100 scale-100"
+                                                    leaveTo="transform opacity-0 scale-95"
+                                                >
+                                                    <Menu.Items className="absolute left-0 z-50 mt-2 w-full origin-top-right border border-gray-700 rounded-md bg-neutral-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                        <div className="py-1">
+                                                            {useOfProductOptions.map((option, index) => (
+                                                                <Menu.Item key={index}>
+                                                                    {({ active }) => (
+                                                                        <div
+                                                                            key={index}
+                                                                            className={classNames(
+                                                                                active ? 'bg-neutral-700 text-gray-100' : 'text-gray-300',
+                                                                                'block px-4 py-2 text-sm cursor-pointer'
+                                                                            )}
+                                                                            onClick={() => {
+                                                                                setSelectedUseOfProduct(option)
+                                                                            }}
+
+                                                                        >
+                                                                            {option}
+                                                                        </div>
+                                                                    )}
+                                                                </Menu.Item>
+                                                            ))}
+                                                        </div>
+                                                    </Menu.Items>
+                                                </Transition>
+                                            </Menu>
+                                        </div>
+                                        <div className='mt-8'>
+                                            <label htmlFor="name" className="block text-sm font-medium text-gray-100">
+                                                By rule of thumb, how many text items do you plan to process in the next 12 months?
+                                            </label>
+                                            <Menu as="div" className="mt-1 relative inline-block w-full">
+                                                <div>
+                                                    <Menu.Button className="text-left inline-flex w-full justify-between rounded-md border border-gray-700 bg-neutral-900 px-4 py-2 text-sm font-medium text-gray-300 shadow-sm hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                                                        {selectedAmountMessages ? selectedAmountMessages : "Select an option"}
+                                                        <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+                                                    </Menu.Button>
+                                                </div>
+
+                                                <Transition
+                                                    as={Fragment}
+                                                    enter="transition ease-out duration-100"
+                                                    enterFrom="transform opacity-0 scale-95"
+                                                    enterTo="transform opacity-100 scale-100"
+                                                    leave="transition ease-in duration-75"
+                                                    leaveFrom="transform opacity-100 scale-100"
+                                                    leaveTo="transform opacity-0 scale-95"
+                                                >
+                                                    <Menu.Items className="absolute left-0 z-50 mt-2 w-full origin-top-right border border-gray-700 rounded-md bg-neutral-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                        <div className="py-1">
+                                                            {amountMessagesOptions.map((option, index) => (
+                                                                <Menu.Item key={index}>
+                                                                    {({ active }) => (
+                                                                        <div
+                                                                            key={index}
+                                                                            className={classNames(
+                                                                                active ? 'bg-neutral-700 text-gray-100' : 'text-gray-300',
+                                                                                'block px-4 py-2 text-sm cursor-pointer'
+                                                                            )}
+                                                                            onClick={() => {
+                                                                                setSelectedAmountMessages(option)
+                                                                            }}
+
+                                                                        >
+                                                                            {option}
+                                                                        </div>
+                                                                    )}
+                                                                </Menu.Item>
+                                                            ))}
+                                                        </div>
+                                                    </Menu.Items>
+                                                </Transition>
+                                            </Menu>
+                                            <p className='mt-1 text-xs text-gray-300'>
+                                                For now, think of "processing" simply as uploading a file to the platform. How many files would you upload?
                                             </p>
                                         </div>
 
+                                        <div className='mt-8'>
+                                            <label htmlFor="name" className="block text-sm font-medium text-gray-100">
+                                                What kind of textual items do you plan to process?
+                                            </label>
+                                            <Menu as="div" className="mt-1 relative inline-block w-full">
+                                                <div>
+                                                    <Menu.Button className="text-left inline-flex w-full justify-between rounded-md border border-gray-700 bg-neutral-900 px-4 py-2 text-sm font-medium text-gray-300 shadow-sm hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900">
+                                                        {selectedTypeOfMessages ? selectedTypeOfMessages : "Select an option"}
+                                                        <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+                                                    </Menu.Button>
+                                                </div>
+
+                                                <Transition
+                                                    as={Fragment}
+                                                    enter="transition ease-out duration-100"
+                                                    enterFrom="transform opacity-0 scale-95"
+                                                    enterTo="transform opacity-100 scale-100"
+                                                    leave="transition ease-in duration-75"
+                                                    leaveFrom="transform opacity-100 scale-100"
+                                                    leaveTo="transform opacity-0 scale-95"
+                                                >
+                                                    <Menu.Items className="absolute left-0 z-50 mt-2 w-full origin-top-right border border-gray-700 rounded-md bg-neutral-900 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                        <div className="py-1">
+                                                            {typeOfMessagesOptions.map((option, index) => (
+                                                                <Menu.Item key={index}>
+                                                                    {({ active }) => (
+                                                                        <div
+                                                                            key={index}
+                                                                            className={classNames(
+                                                                                active ? 'bg-neutral-700 text-gray-100' : 'text-gray-300',
+                                                                                'block px-4 py-2 text-sm cursor-pointer'
+                                                                            )}
+                                                                            onClick={() => {
+                                                                                setSelectedTypeOfMessages(option)
+                                                                            }}
+
+                                                                        >
+                                                                            {option}
+                                                                        </div>
+                                                                    )}
+                                                                </Menu.Item>
+                                                            ))}
+                                                        </div>
+                                                    </Menu.Items>
+                                                </Transition>
+                                            </Menu>
+                                        </div>
+
+                                        <div className='mt-8'>
+                                            <label htmlFor="name" className="block text-sm font-medium text-gray-100">
+                                                Please tell us your name
+                                            </label>
+                                            <div className="mt-1">
+                                                <input
+                                                    type="text"
+                                                    name="name"
+                                                    id="name"
+                                                    className="text-gray-200 shadow-sm mt-1 block w-full sm:text-sm border-gray-300 rounded-md p-2 bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                                                    placeholder="John Doe"
+                                                    onChange={(e) => {
+                                                        setName(e.target.value)
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className='mt-8'>
+                                            <label htmlFor="name" className="block text-sm font-medium text-gray-100">
+                                                Where do you work?
+                                            </label>
+                                            <div className="mt-1">
+                                                <input
+                                                    type="text"
+                                                    name="name"
+                                                    id="name"
+                                                    className="text-gray-200 shadow-sm mt-1 block w-full sm:text-sm border-gray-300 rounded-md p-2 bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                                                    placeholder="ACME Inc."
+                                                    onChange={(e) => {
+                                                        setCompany(e.target.value)
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className='mt-8'>
+                                            <label htmlFor="name" className="block text-sm font-medium text-gray-100">
+                                                What is your role?
+                                            </label>
+                                            <div className="mt-1">
+                                                <input
+                                                    type="text"
+                                                    name="name"
+                                                    id="name"
+                                                    className="text-gray-200 shadow-sm mt-1 block w-full sm:text-sm border-gray-300 rounded-md p-2 bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                                                    placeholder="NLP Lead"
+                                                    onChange={(e) => {
+                                                        setRole(e.target.value)
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className='mt-8'>
+                                            <label htmlFor="name" className="block text-sm font-medium text-gray-100">
+                                                What is your email address?
+                                            </label>
+                                            <div className="mt-1">
+                                                <input
+                                                    type="email"
+                                                    name="name"
+                                                    id="name"
+                                                    className="text-gray-200 shadow-sm mt-1 block w-full sm:text-sm border-gray-300 rounded-md p-2 bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                                                    placeholder="john.doe@acme.com"
+                                                    onChange={(e) => {
+                                                        setEmail(e.target.value)
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <div className='mt-8'>
+                                            <label htmlFor="name" className="block text-sm font-medium text-gray-100">
+                                                Any other comments? <span className='italic text-neutral-500'>- optional</span>
+                                            </label>
+                                            <div className="mt-1">
+                                                <textarea
+                                                    id="name"
+                                                    name="name"
+                                                    rows={4}
+                                                    className="text-gray-200 shadow-sm mt-1 block w-full sm:text-sm border-gray-300 rounded-md p-2 bg-neutral-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+                                                    placeholder="John Doe"
+                                                    onChange={(e) => {
+                                                        setComments(e.target.value)
+                                                    }}
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="flex justify-end space-x-2 mt-5">
                                     <button
                                         type='button'
-                                        className="hover:bg-neutral-700 bg-neutral-800 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
+                                        className={classNames(
+                                            "inline-block rounded-lg px-4 py-2 font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20",
+                                            !(name && company && role && email && selectedAmountMessages && selectedTypeOfMessages && selectedUseOfProduct) ? 'bg-neutral-700 text-gray-500  cursor-not-allowed' : 'text-gray-200 bg-neutral-800 hover:bg-neutral-700 '
+
+                                        )}
                                         onClick={() => {
                                             setOpen(false)
                                         }}
+                                        disabled={!(name && company && role && email && selectedAmountMessages && selectedTypeOfMessages && selectedUseOfProduct)}
                                     >
-                                        <span className='my-auto text-gray-200'>
-                                            Save and accept
+                                        <span className='my-auto'>
+                                            <IconSend className='h-4 w-4 inline-block mr-1' /> Send
                                         </span>
                                     </button>
                                     <button
