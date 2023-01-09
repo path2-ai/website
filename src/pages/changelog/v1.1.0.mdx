@@ -1,0 +1,55 @@
+Our newest release is mainly powered by you - the great community behind Refinery. We are deeply grateful for your comments, feature requests, and bug reports. The time after the open source release was characterized by getting a lot of new input and adjusting our roadmap to it. On [GitHub](https://github.com/code-kern-ai/refinery/projects/1) you can have a look at our plan for the future.
+
+## How to Update
+
+To update to refinery v1.1, you have to follow some easy steps 😊  
+**If you installed refinery via pip:**
+
+Move into the repository where you've installed refinery, and then run:
+
+```shell
+pip install -U kern-refinery
+refinery update
+```
+
+**If you installed refinery by cloning the repository:**
+
+Make sure you are inside the refinery directory. Stop the refinery application if it is running (<code>./stop</code> if you're on Mac/Linux, <code>./stop.bat</code> if you're on Windows). Then you can update the refinery by pulling the latest version from Github and running the update script after that.
+
+```shell
+# Mac/Linux
+git pull
+./update
+```
+
+```shell
+# Windows
+git pull
+./update.bat
+```
+
+## Playground Preparations
+
+Within the next weeks, we will launch a demo version of the refinery app. It is intended for everyone who wants to try out the basic features of the app without the need to install the application locally. The playground is a clone of the refinery application with restricted functionalities (computational heavy tasks like embedding creation are excluded). Further, we will reset the demo time by time to guarantee a good experience for everyone.
+
+The preparations of the playground involved various adjustments in the app. Mostly affected have been the refinery-ui, refinery-gateway, and refinery-entry services. Further, we set up everything to host the demo app on a new machine.
+
+## Fixes
+
+Thanks to the community, we could fix a couple of bugs in the new version:
+
+- Persisting Minio and Qdrant storage
+- Uploading partially labeled records could lead to records with empty label
+- Attribute embeddings failed if the number of records in the project was small
+- Token embeddings failed for long text, which exceeded the maximum token number of the transformer model
+- In the record ide, code was not executed automatically when going to the next/prev record
+- We fixed various smaller frontend issues
+
+## Minor Changes
+
+- Frontend refactoring
+- Update to Angular 13
+- Integrate GitHub Dependabot to update dependencies automatically
+- Discord and Home link on the navigation bar
+- Improving the robustness of token embeddings creation, especially the matching between spacy and transformer tokens
+- Added a way to only display records with diverging heuristic results

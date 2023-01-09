@@ -1,0 +1,49 @@
+This version not only brings new features to refinery itself, but it also comes with a new tool to the product line-up of Kern AI. We are proud to announce the launch of bricks, an open-source content library for natural language processing tasks. Bricks is available at [bricks.kern.ai](https://bricks.kern.ai/home)
+
+Apart from bricks, version 1.7 also brings some changes to the way that the attribute visibility is handled as well as the feature to now filter for comments in the data browser.
+
+## Bricks - an open-source NLP library
+
+Bricks provide modules that can be seamlessly integrated into your NLP projects, such as modules for language translation, entity extraction, and many more. In total, we provide 50+ modules in this release and are planning to implement new modules regularly. Bricks is also designed to allow users to implement and add modules or module ideas themselves easily.
+
+You can try all the bricks modules on our [live endpoints](https://bricks.kern.ai/home). An example input for the endpoint is provided but can be altered by the user. The source code for each module is also provided, which can be copied directly into refinery or any other environment of your choice.
+
+![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_7_0/bricks-intro.png 'bricks-intro.png')
+
+This update also adds a guided integrator for bricks into refinery. Whenever a new labeling function or attribute calculation is created, the user has the possibility to search all context-based available modules on bricks to see if the desired functionality is already provided.
+
+![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_7_0/refinery-and.bricks.png 'refinery-and-bricks.png')
+
+With the integrator, modules can be configured to the fitting context, meaning that the right attribute names or label names can be selected and automatically inserted into the code provided by bricks. Of course, the user still has the option to write code normally as before or make changes to the code provided by a bricks module.
+
+## Attribute visibility
+
+Especially with the addition of attribute calculation, there are sometimes cases where you want to add attributes to your record specifically to use them in labeling functions. Often, these are not relevant to a person labeling your records, so instead, they add up and obstruct the labeling view.
+
+With version 1.7, we introduce a new setting - attribute visibility. Changing the visibility ensures that your data browser, labeling view, or heuristics are looking clean. Below, we listed the available options and explained them in more detail.
+
+In total, there are four states of visibility:
+
+- _Do not hide_ -> The attribute is visible everywhere, just like before.
+- _Hide on data browser_ -> The attribute is hidden in the data browser. Also hides it for attribute filtering!
+- _Hide on labeling page_ -> The attribute is hidden in the data browser as well as the labeling view.
+- _Hide_ -> The attribute is hidden in the data browser, labeling page, and when running your labeling or attribute function on examples. Since you can still use every attribute of the record, they are still visible as copy buttons.
+
+![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_7_0/attribute-visibility.png 'attribute-visibility.png')
+
+## Comment filter in the data browser
+
+There are multiple ways to mark records for later review. You could for example create a dummy label and assign it to faulty or unclear records, then filter by that dummy label in the data browser and review those records in a group of domain matter experts or colleagues.
+
+We now introduce a new filter functionality in the data browser that makes this dummy label obsolete: filtering by comments. So each time you are unsure about a record's label or data quality, you can just comment on it, describe the issue that you're having and then filter for them in the data browser later. Independently of the current filtering options, any record with a comment will be indicated by a quick display button in the upper right corner.
+
+![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_7_0/filter-comments.png 'filter-comments.png')
+
+## Minor changes
+
+- Fixed an error in which the session would not load when accessing a new labeling session directly through a link. (Hotfix)
+- Increased the performance of the data-browser UI by implementing a self-built highlighting module. [Issue #190](https://github.com/code-kern-ai/refinery/issues/190)
+- The data browser highlighting now incorporates case sensitivity depending on the filter. [Issue #186](https://github.com/code-kern-ai/refinery/issues/186)
+- Downloaded models are now part of the corresponding recommendation lists (managed only). [Issue #49](https://github.com/code-kern-ai/refinery-ui/issues/49)
+- The [demo version of refinery](https://demo.kern.ai/app/projects) now has a logout button to easily switch between roles to get a better feeling of the capabilities. [Issue #188](https://github.com/code-kern-ai/refinery/issues/188)
+- Modals of refinery were completely reworked to unify the structure by replacing Daisy UI with Tailwind UI.
