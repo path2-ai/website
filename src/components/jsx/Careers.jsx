@@ -86,7 +86,7 @@ export const positions = [
         type: 'Full-time',
         href: 'https://join.com/companies/kernai/6849584-founders-associate',
         location: 'Remote or Bonn',
-        department: 'Founders deparment',
+        department: 'Founders department',
         closeDate: '2022-02-28',
         closeDateFull: 'February 28, 2022',
     },
@@ -584,17 +584,17 @@ export function Careers() {
                                         </div>
                                         <div className="mt-2 sm:flex sm:justify-between">
                                             <div className="sm:flex">
-                                                <p className="flex items-center text-sm text-gray-500">
-                                                    <IconUsers className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-600" aria-hidden="true" />
+                                                <p className="flex items-center text-sm text-gray-300">
+                                                    <IconUsers className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300" aria-hidden="true" />
                                                     {position.department}
                                                 </p>
-                                                <p className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
-                                                    <IconMapPin className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-600" aria-hidden="true" />
+                                                <p className="mt-2 flex items-center text-sm text-gray-300 sm:mt-0 sm:ml-6">
+                                                    <IconMapPin className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300" aria-hidden="true" />
                                                     {position.location}
                                                 </p>
                                             </div>
-                                            <div className="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
-                                                <CalendarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-600" aria-hidden="true" />
+                                            <div className="mt-2 flex items-center text-sm text-gray-300 sm:mt-0">
+                                                <CalendarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300" aria-hidden="true" />
                                                 <p>
                                                     Closing on <time dateTime={position.closeDate}>{position.closeDateFull}</time>
                                                 </p>
