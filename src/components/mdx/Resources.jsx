@@ -3,66 +3,7 @@ import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 
 import { GridPattern } from '@/components/mdx/GridPattern'
 import { Heading } from '@/components/mdx/Heading'
-import { ChatBubbleIcon } from '@/components/mdx/icons/ChatBubbleIcon'
-import { EnvelopeIcon } from '@/components/mdx/icons/EnvelopeIcon'
-import { UserIcon } from '@/components/mdx/icons/UserIcon'
-import { UsersIcon } from '@/components/mdx/icons/UsersIcon'
-
-const resources = [
-  {
-    href: '/contacts',
-    name: 'Contacts',
-    description:
-      'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
-    icon: UserIcon,
-    pattern: {
-      y: 16,
-      squares: [
-        [0, 1],
-        [1, 3],
-      ],
-    },
-  },
-  {
-    href: '/conversations',
-    name: 'Conversations',
-    description:
-      'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
-    icon: ChatBubbleIcon,
-    pattern: {
-      y: -6,
-      squares: [
-        [-1, 2],
-        [1, 3],
-      ],
-    },
-  },
-  {
-    href: '/messages',
-    name: 'Messages',
-    description:
-      'Learn about the message model and how to create, retrieve, update, delete, and list messages.',
-    icon: EnvelopeIcon,
-    pattern: {
-      y: 32,
-      squares: [
-        [0, 2],
-        [1, 4],
-      ],
-    },
-  },
-  {
-    href: '/groups',
-    name: 'Groups',
-    description:
-      'Learn about the group model and how to create, retrieve, update, delete, and list groups.',
-    icon: UsersIcon,
-    pattern: {
-      y: 22,
-      squares: [[0, 1]],
-    },
-  },
-]
+import { logs } from '@/pages/changelog/navbar'
 
 function ResourceIcon({ icon: Icon }) {
   return (
@@ -128,13 +69,14 @@ function Resource({ resource }) {
       <div className="relative rounded-2xl px-4 pt-16 pb-4">
         <ResourceIcon icon={resource.icon} />
         <h3 className="mt-4 text-sm font-semibold leading-7 text-zinc-900 dark:text-white">
-          <Link href={resource.href}>
+          <Link href={`/changelog/${resource.href}`}>
             <span className="absolute inset-0 rounded-2xl" />
-            {resource.name}
+            {resource.title}
+            <span className='ml-2 font-mono font-regular text-xs'>({resource.href})</span>
           </Link>
         </h3>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-          {resource.description}
+          {resource.date}
         </p>
       </div>
     </div>
@@ -148,8 +90,8 @@ export function Resources() {
         Resources
       </Heading>
       <div className="not-prose mt-4 grid grid-cols-1 gap-8 border-t border-zinc-900/5 pt-10 dark:border-white/5 sm:grid-cols-2 xl:grid-cols-4">
-        {resources.map((resource) => (
-          <Resource key={resource.href} resource={resource} />
+        {logs.map((resource) => (
+          <Resource key={resource} resource={resource} />
         ))}
       </div>
     </div>

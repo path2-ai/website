@@ -253,15 +253,22 @@ export function getNavigationElements(type) {
 
     return nav
   } else if (type == 'changelog') {
-    return [{
-      title: 'Changelog',
-      links: logs.map(log => {
-        return { title: log, href: `/changelog/${log}` }
-      })
-      // links: [
-      //   { title: 'version 1', href: '/changelog/v1_0_0' },
-      // ],
-    },]
+    return [
+      {
+        title: 'Changelog',
+        links: [
+          { title: 'About', href: '/changelog' }
+        ]
+      },
+      {
+        title: 'Versions',
+        links: logs.map(log => {
+          return { title: `${log.title} (${log.href})`, href: `/changelog/${log.href}` }
+        })
+        // links: [
+        //   { title: 'version 1', href: '/changelog/v1_0_0' },
+        // ],
+      },]
   }
 }
 
