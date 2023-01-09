@@ -26,3 +26,11 @@ export const articles = [
         "date": "2021-03-01"
     }
 ]
+
+export default function Overview() {
+    return (
+        <div>
+            {/* hack */}
+        </div>
+    )
+}

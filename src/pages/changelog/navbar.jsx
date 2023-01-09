@@ -106,3 +106,11 @@ export const logs = [
         },
     }
 ]
+
+export default function Navbar() {
+    return (
+        <div>
+            {/* hack */}
+        </div>
+    )
+}
