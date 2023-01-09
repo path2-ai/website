@@ -100,7 +100,7 @@ export function Footer() {
                                 id="newsletter"
                                 autoComplete="email"
                                 required
-                                className="w-full min-w-0 appearance-none rounded-md border border-transparent bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:border-white focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                                className="w-full min-w-0 appearance-none rounded-md border border-transparent bg-neutral-900 py-2 px-4 text-base text-gray-100 placeholder-gray-300 focus:border-white focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 focus:ring-offset-gray-200"
                                 placeholder="Enter your email"
                             />
                             <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
