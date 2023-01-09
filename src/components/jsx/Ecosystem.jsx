@@ -20,7 +20,7 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/docs/refinery/labeling',
+        href: '/docs/refinery/process/manual-labeling',
         name: 'Manual labeling editor',
         description:
           'refinery comes with a built-in editor (incl. role-based access) supporting classifications, span-extraction and text generation. Further, you can export data to other annotation tools like Labelstudio.',
@@ -28,7 +28,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/refinery/data-management',
+        href: '/docs/refinery/process/data-management',
         name: 'Best-in-class data management',
         description:
           'Use our modular data management to find e.g. records with below 30% confidence and mismatching manual and automated labels, sorted by confidence. Assign that data either to an inhouse expert or a crowdlabeler.',
@@ -36,7 +36,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/refinery/large-language-models',
+        href: '/docs/refinery/process/large-language-models',
         name: 'Native large-language-model integration and finetuning',
         description:
           'You love Hugging Face, GPT-X or cohere for their large language models? We do too. That is why we integrated them into refinery. You can use them for embeddings (and neural search), active transfer learning, or even to create the training data for finetuning these LLMs on your data.',
@@ -45,7 +45,7 @@ const slideContent = {
 
       },
       {
-        href: '/docs/refinery/automations',
+        href: '/docs/refinery/process/building-heuristics',
         name: 'Automate with heuristics',
         description:
           'refinery is shipped with a Monaco editor, enabling you to write heuristics in plain Python. Use them for e.g. rules, API calls, regex, active transfer learning or zero-shot predictions',
@@ -53,7 +53,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/refinery/monitoring',
+        href: '/docs/refinery/process/monitoring',
         name: 'Monitor your data quality',
         description:
           'In the project dashboard, you can find distribution statistics and a confusion matrix showing you where your project needs improvement. Every analysis can be filtered down to atomic level.',
