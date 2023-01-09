@@ -477,7 +477,7 @@ export function Careers() {
 
                                 <div>
                                     <IconQuote className="h-12 w-12 text-white" aria-hidden="true" />
-                                    <p className="mt-2 text-xl font-medium text-white">
+                                    <p className="mt-2 font-medium text-white">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet
                                         feugiat est integer dolor auctor adipiscing nunc urna, sit.
                                     </p>
@@ -495,9 +495,8 @@ export function Careers() {
                             <blockquote>
                                 <div>
                                     <IconQuote className="h-12 w-12 text-white" aria-hidden="true" />
-                                    <p className="mt-2 text-xl font-medium text-white">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet
-                                        feugiat est integer dolor auctor adipiscing nunc urna, sit.
+                                    <p className="mt-2 font-medium text-white">
+                                        Working at Kern AI has allowed me to grow immensly both on a technical as well as on a personal level. A fantastic and caring team with lots of expertise and a deep love for what they do, paired with exciting and meaningful tasks. I just wish my colleagues weren't that good in Super Smash Bros (I just lose every damn time).
                                     </p>
                                 </div>
                                 <footer className="mt-6">
