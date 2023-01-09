@@ -71,7 +71,7 @@ export function AccessModal({ open, setOpen }) {
                                                 />
                                             </div>
                                             <p className="mt-2 text-sm text-gray-500" id="email-description">
-                                                We'll send you a link when you get access.
+                                                We'll send you a confirmation that you're on the waitlist.
                                             </p>
 
                                             {/* consent checkbox */}

@@ -72,33 +72,33 @@ function getEmployeeSurveyDataset(employeeData) {
 export const positions = [
     {
         id: 1,
-        title: 'Back End Developer',
+        title: 'Go-to-Market Manager',
         type: 'Full-time',
-        href: 'https://kern-ai.workable.com/jobs/1140001',
-        location: 'Remote',
-        department: 'Engineering',
-        closeDate: '2020-01-07',
-        closeDateFull: 'January 7, 2020',
+        href: 'https://join.com/companies/kernai/6849194-go-to-market-manager',
+        location: 'Remote or Bonn',
+        department: 'Business Development',
+        closeDate: '2022-02-28',
+        closeDateFull: 'February 28, 2022',
     },
     {
         id: 2,
-        title: 'Front End Developer',
+        title: 'Founders Associate',
         type: 'Full-time',
-        href: 'https://kern-ai.workable.com/jobs/1140001',
-        location: 'Remote',
-        department: 'Engineering',
-        closeDate: '2020-01-07',
-        closeDateFull: 'January 7, 2020',
+        href: 'https://join.com/companies/kernai/6849584-founders-associate',
+        location: 'Remote or Bonn',
+        department: 'Founders deparment',
+        closeDate: '2022-02-28',
+        closeDateFull: 'February 28, 2022',
     },
     {
         id: 3,
-        title: 'User Interface Designer',
-        type: 'Full-time',
-        href: 'https://kern-ai.workable.com/jobs/1140001',
-        location: 'Remote',
-        department: 'Design',
-        closeDate: '2020-01-14',
-        closeDateFull: 'January 14, 2020',
+        title: 'Working student for Administration',
+        type: 'Working student',
+        href: 'https://join.com/companies/kernai/6849926-working-student-for-administration',
+        location: 'Berlin/Potsdam',
+        department: 'Administration',
+        closeDate: '2022-02-28',
+        closeDateFull: 'February 28, 2022',
     },
 ]
 
@@ -381,7 +381,7 @@ export function Careers() {
                     <div className="mt-4">
                         <div className="inline-flex">
                             <a
-                                href="#"
+                                href="/company/careers/#open-positions"
                                 className="hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
                             >
                                 <span className='my-auto text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>
@@ -565,7 +565,7 @@ export function Careers() {
                 </div>
             </div>
 
-            <div className='mt-28 text-white mx-auto max-w-2xl lg:max-w-3xl'>
+            <div id="open-positions" className='mt-28 text-white mx-auto max-w-2xl lg:max-w-3xl'>
                 <div className='text-2xl font-semibold'>
                     Open positions
                 </div>

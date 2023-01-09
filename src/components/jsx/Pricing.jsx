@@ -76,6 +76,14 @@ const featuresSelfHosted = [
 
 const perksCloud = [
     {
+        title: 'Number of users',
+        tiers: [
+            { title: 'personal', value: '1' },
+            { title: 'growth', featured: true, value: 'Unlimited' },
+            { title: 'enterprise', value: 'Unlimited' },
+        ],
+    },
+    {
         title: 'Role-based access control',
         tiers: [
             { title: 'personal', value: false },
@@ -183,6 +191,13 @@ const perksCloud = [
 
 const perksSelfHosted = [
     {
+        title: 'Number of users',
+        tiers: [
+            { title: 'community', value: '1' },
+            { title: 'enterprise', featured: true, value: 'Unlimited' },
+        ],
+    },
+    {
         title: 'Role-based access control',
         tiers: [
             { title: 'community', value: false },
@@ -235,7 +250,7 @@ export function Pricing() {
         {
             title: 'Personal',
             featured: false,
-            description: 'For individuals who want to see how NLP can automate their workflows.',
+            description: 'For individuals who want to see how NLP can automate their workflows. Not generally available yet, so please request access.',
             price: null,
             mainFeatures: [
                 { id: 1, value: 'Access to full suite' },
@@ -324,7 +339,7 @@ export function Pricing() {
                     id: 1,
                     text: 'Go to GitHub',
                     featured: false,
-                    onClick: () => { router.push('https://github.comcode-kern-ai/refinery') },
+                    onClick: () => { router.push('https://github.com/code-kern-ai/refinery') },
 
                 }
             ],
@@ -375,11 +390,11 @@ export function Pricing() {
 
     return (
         <div>
-            <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black" />
+            {/* <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black" /> */}
             <div className="relative">
                 <div className="relative mx-auto max-w-2xl px-4 pt-16 text-center sm:px-6 sm:pt-32 lg:max-w-5xl lg:px-8">
                     <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                        Simple pricing, for your requirements.
+                        Simple pricing fitting your requirements.
                     </h1>
                     <p className="mt-8 text-xl text-lime-500">
                         Everything you need, nothing you don't. Pick a plan that best suits your business.
@@ -459,14 +474,14 @@ export function Pricing() {
                                             <span className="text-3xl font-bold tracking-tight">Free</span>
                                         )}
                                     </div>
-                                    <p className="mt-6 text-gray-500">{tier.description}</p>
+                                    <p className="mt-6 text-gray-300">{tier.description}</p>
 
                                     {/* Feature list */}
                                     <ul role="list" className="mt-6 space-y-6">
                                         {tier.mainFeatures.map((feature) => (
                                             <li key={feature.id} className="flex">
                                                 <CheckIcon className="h-6 w-6 flex-shrink-0 text-green-500" aria-hidden="true" />
-                                                <span className="ml-3 text-gray-500">{feature.value}</span>
+                                                <span className="ml-3 text-gray-300">{feature.value}</span>
                                             </li>
                                         ))}
                                     </ul>
@@ -477,14 +492,15 @@ export function Pricing() {
                                         <button
                                             key={button.id}
                                             onClick={button.onClick}
-                                            className={classNames(
-                                                button.featured
-                                                    ? 'bg-green-500 text-neutral-900 hover:bg-green-400'
-                                                    : 'bg-green-900 text-green-300 hover:bg-green-900',
-                                                'mt-8 block w-full py-3 px-6 border border-transparent rounded-md text-center font-medium'
-                                            )}
+                                            className='mt-8 hover:bg-neutral-700 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20 my-auto'
                                         >
-                                            {button.text}
+                                            <span className={classNames(
+                                                button.featured
+                                                    ? 'text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'
+                                                    : 'text-gray-200',
+                                            )}>
+                                                {button.text}
+                                            </span>
                                         </button>
                                     ))}
                                 </div>
@@ -492,15 +508,19 @@ export function Pricing() {
                         ))}
                     </div>
                 </div>
-                <div className='text-sm mt-4 mx-auto max-w-5xl text-gray-300'>
-                    refinery credits are used as an abstraction to power both execution and storage in the refinery cloud. Credits are consumed for realtime inference, batch inference and storage. Depending on your plan, you get a certain amount of credits every month, and you can buy more credits at any time.
-                </div>
-                <div
-                    className='text-sm mt-2 mx-auto max-w-5xl text-green-500 cursor-pointer'
-                    onClick={() => setOpenPricingModal(true)}
-                >
-                    Why did we choose credits to implement our pricing model?
-                </div>
+                {cloudIsSelected && (
+                    <div>
+                        <div className='text-sm mt-4 mx-auto max-w-5xl text-gray-300'>
+                            refinery credits are used as an abstraction to power both execution and storage in the Kern AI cloud. Credits are consumed for realtime inference, batch inference and storage. Depending on your plan, you get a certain amount of credits every month, and you can buy more credits at any time.
+                        </div>
+                        <div
+                            className='text-sm mt-2 mx-auto max-w-5xl text-green-500 cursor-pointer'
+                            onClick={() => setOpenPricingModal(true)}
+                        >
+                            Why did we choose credits to implement our pricing model?
+                        </div>
+                    </div>
+                )}
             </div>
 
 
@@ -522,7 +542,7 @@ export function Pricing() {
                                 <h3 className={classNames(plan.featured ? 'text-lime-400' : 'text-gray-100', 'text-sm font-bold')}>
                                     {plan.title}
                                 </h3>
-                                <p className="mt-2 text-sm text-gray-500">{plan.description}</p>
+                                <p className="mt-2 text-sm text-gray-300">{plan.description}</p>
                             </div>
                             <h4 className="mt-10 text-sm font-bold text-gray-100">Access to product suite</h4>
 
@@ -690,7 +710,7 @@ export function Pricing() {
                                     <p className={classNames(plan.featured ? 'text-lime-400' : 'text-gray-100', 'text-sm font-bold')}>
                                         {plan.title}
                                     </p>
-                                    <p className="mt-2 text-sm text-gray-500">{plan.description}</p>
+                                    <p className="mt-2 text-sm text-gray-300">{plan.description}</p>
                                 </div>
                             </div>
                         ))}

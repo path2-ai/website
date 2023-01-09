@@ -10,7 +10,7 @@ const faqs = [
     {
         question: "Why did you choose a credit-based pricing?",
         answer:
-            "The goal of our pricing is to both be fair and easy to understand. You can find more details below the pricing table listed above."
+            "The goal of our pricing is to both be fair and easy to understand. You can find more details in the pricing table listed above."
     },
     {
         question: "What are items?",

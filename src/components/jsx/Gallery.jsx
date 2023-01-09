@@ -241,7 +241,7 @@ export function Gallery() {
                             <IconUser className='h-5 w-5 text-gray-400 inline-block' />
                         </div>
                         <h3 className='font-semibold text-white'>
-                            We're hiring a <span className='text-green-500'>Head of Go-to-Market</span> to join our team!
+                            We're hiring a <span className='text-green-500'>Go-to-Market Manager</span> to join our team!
                         </h3>
                         <div className='text-gray-300'>
                             Responsibility of this role is to drive the growth of the company by researching and defining use cases on top of our platform, and building a go-to-market strategy to reach out to potential customers.

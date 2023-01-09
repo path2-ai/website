@@ -337,7 +337,6 @@ export function DiscoveryModal({ open, setOpen }) {
                                         className={classNames(
                                             "inline-block rounded-lg px-4 py-2 font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20",
                                             !(name && company && role && email && selectedAmountMessages && selectedTypeOfMessages && selectedUseOfProduct) ? 'bg-neutral-700 text-gray-500  cursor-not-allowed' : 'text-gray-200 bg-neutral-800 hover:bg-neutral-700 '
-
                                         )}
                                         onClick={() => {
                                             setOpen(false)
