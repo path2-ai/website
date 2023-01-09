@@ -189,14 +189,40 @@ export function getNavigationElements(type) {
   if (type == 'docs') {
     return [
       {
-        title: 'refinery',
+        title: 'refinery - getting started',
         links: [
           { title: 'About', href: '/docs/refinery' },
-          { title: 'Labeling', href: '/docs/refinery/labeling' },
-          { title: 'Automations', href: '/docs/refinery/automations' },
-          { title: 'Data Management', href: '/docs/refinery/data-management' },
-          { title: 'Monitoring', href: '/docs/refinery/monitoring' },
-          { title: 'Large Language Models', href: '/docs/refinery/large-language-models' },
+          { title: 'Self-hosted-version', href: '/docs/refinery/getting-started/self-hosted-version' },
+          { title: 'Managed version', href: '/docs/refinery/getting-started/managed-version' },
+          { title: 'Configuration page', href: '/docs/refinery/getting-started/configuration-page' },
+          { title: 'Updating refinery', href: '/docs/refinery/getting-started/updating-refinery' },
+        ],
+      },
+      {
+        title: 'refinery - process',
+        links: [
+          { title: 'Project creation', href: '/docs/refinery/process/project-creation' },
+          { title: 'Large language models', href: '/docs/refinery/process/large-language-models' },
+          { title: 'Attribute modification', href: '/docs/refinery/process/attribute-modification' },
+          { title: 'Labeling tasks', href: '/docs/refinery/process/labeling-tasks' },
+          { title: 'Manual labeling workflow', href: '/docs/refinery/process/manual-labeling' },
+          { title: 'Building heuristics', href: '/docs/refinery/process/building-heuristics' },
+          { title: 'Weak supervision', href: '/docs/refinery/process/weak-supervision' },
+          { title: 'Monitoring', href: '/docs/refinery/process/monitoring' },
+          { title: 'Data management', href: '/docs/refinery/process/data-management' },
+          { title: 'Neural search', href: '/docs/refinery/process/neural-search' },
+          { title: 'Comments', href: '/docs/refinery/process/comments' },
+          { title: 'Download data', href: '/docs/refinery/process/download-data' },
+          { title: 'Model feedback', href: '/docs/refinery/process/model-feedback' },
+          { title: 'Python SDK', href: '/docs/refinery/process/python-sdk' },
+          { title: 'Access token', href: '/docs/refinery/process/token' },
+        ],
+      },
+      {
+        title: 'refinery - multiuser',
+        links: [
+          { title: 'Managing roles', href: '/docs/refinery/multi-user/managing-roles' },
+          { title: 'Minimized labeling view', href: '/docs/refinery/multi-user/minimized-labeling-view' },
         ],
       },
       {

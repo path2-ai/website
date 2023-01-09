@@ -1,0 +1,40 @@
+# Download data
+
+You can download your records on both the [settings](doc:settings) and [databrowser](doc:databrowser) page by clicking on "Download records". This will create a records-oriented JSON file.
+
+![](https://files.readme.io/18dd73e-export.png 'export.png')
+
+Let's take a look at an export to better understand the schema:
+
+```json
+[
+  {
+    "headline": "$200 Laptops Break a Business Model",
+    "running_id": "1479",
+    "__clickbait__MANUAL": null,
+    "__clickbait__WEAK_SUPERVISION": "yes",
+    "__clickbait__WEAK_SUPERVISION__confidence": "0.4685",
+    "headline__entities__MANUAL": ["O", "O", "O", "O", "O", "O", "O"],
+    "headline__entities__WEAK_SUPERVISION": [
+      "MONEY",
+      "MONEY",
+      "O",
+      "O",
+      "O",
+      "O",
+      "O"
+    ],
+    "headline__entities__WEAK_SUPERVISION__confidence": [
+      0.83, 0.83, 0.0, 0.0, 0.0, 0.0, 0.0
+    ]
+  }
+]
+```
+
+`headline` and `running_id` were given in the initial data import. Labeling tasks are indicated with a double underscore `__`, and for each labeling task you have a triplet:
+
+- `MANUAL`: the manually set labeled for this task.
+- `WEAK_SUPERVISION`: the weakly supervised labeled for this task.
+- `WEAK_SUPERVISION_CONFIDENCE`: the confidence for the weakly supervised label.
+
+Extraction tasks contain the labels per token. The attributes for each task are given at the beginning - if the attribute is `full record`, the triplets begin with a double underscore `__`.

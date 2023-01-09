@@ -1,0 +1,58 @@
+# Data management
+
+The data browser is the heart of Kern Refinery. With it, you can create labeling sessions, filter down your data, find similar records, and many more. Let's dive right in!
+
+## Attribute filters
+
+The data browser comes with extensive filtering. The most straightforward option is to search for specific textual patterns in your texts, e.g. if an attribute contains a certain term. The filtered results highlight the found terms in your data.
+
+![](https://files.readme.io/c113a94-Text_Slicing.png 'Text Slicing.png')
+
+From the created filter, you could now directly jump into a labeling session - in other words, with the above-applied filter, you'd now only label records containing "UK" in some attribute. Now let's see how this can become more complex, and what great use cases you can build on that foundation for your labeling.
+
+## Heuristic-based filters
+
+As you implement and run heuristics, they not only automate your labeling via [weak supervision](doc:weak-supervision). They also enrich your records such that you can filter for them in the data browser. For instance, I can now look for the records which are hit by both the heuristics `starts_with_digit` and `DistilbertClassifier`. As you see on the right side of the browser, I now have exactly those records.
+
+![](https://files.readme.io/c0d88ee-Databrowser.png 'Databrowser.png')
+
+This is super helpful when you want to better understand potential intersections and conflicts of heuristics. With that capability, you can better analyze where you need to debug your heuristics.
+
+## Confidence-based ordering
+
+Alternatively, I can also my confidence scores from the weakly supervised labels to order accordingly. What are the records that have super reliable labels? Easy to find out:
+
+![](https://files.readme.io/c801553-order_confidence.png 'order confidence.png')
+
+## Finding label mismatches
+
+You can also use the labeling-task-specific drawers to select for potential labeling mismatches. As you can order by the weak supervision confidence score, this makes it easy to either find manual labeling errors (i.e. there is a mismatch and the weakly supervised label has a high likelihood) and weak supervision bugs.
+
+![](https://files.readme.io/6fbac10-Find_label_errors.png 'Find label errors.png')
+
+## User filters
+
+In the [managed version](doc:saas-application), you can also filter for data labeled by different users. This is especially helpful if you want to determine the [inter-annotator agreement](doc:monitoring) for your users.
+
+![](https://files.readme.io/4bb12f7-user_filter.png 'user filter.png')
+
+## Mixing filters
+
+You can generally mix and match between different filter segments. Your building components will be joined by a conjunction, i.e. narrowing down the result set.
+
+![](https://files.readme.io/96ef295-Complex_Filtering.png 'Complex Filtering.png')
+
+## Saving filters
+
+Finally, you can store your filters to re-use them later on. Doing so, you have two options:
+
+- storing them as `dynamic` slices: every time you select this filter, its conditions will be re-computed. This way, this filter is highly flexible for additional customizations but takes longer to compute.
+- storing them as `static` slices: the filtered result will be stored in form of indices. Those slices are super-fast, and because of that, can also be used for the [monitoring](doc:monitoring) page to drill down your analysis.
+
+![](https://files.readme.io/4ab0b45-random_unlabeled.png 'random_unlabeled.png')
+
+## Sharing filters
+
+If you have a static filter, your filter will have a URL attached which you can send to your expert or annotator colleagues to look into further. Simply click on the info icon, and click on the URL to copy it to your clipboard. You can now just send the link via mail or attach it to a Zoom meeting!
+
+![](https://files.readme.io/51a8e03-share-slice.png)

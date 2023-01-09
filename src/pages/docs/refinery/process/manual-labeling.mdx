@@ -1,0 +1,33 @@
+# Manual labeling
+
+The manual labeling workflow is very simplistic. You can create customized labeling sessions in the [data browser](doc:data-management), but for now, we just assume that you start labeling random data from your upload.
+
+For each [labeling task](doc:labeling-tasks) you define, a group is created with corresponding labels. You can set them for this record just by clicking on the respective bade.
+
+![](https://files.readme.io/c7f5f08-manual_labeling.png 'manual labeling.png')
+
+For span labeling, you can just mark the respective token(s), and a dropdown will occur, showing you your label options. You can also use this dropdown to create new labels on-the-fly. Labeling tokens is really straightforward, as the characters you mark will always be expanded to the full token. No need to carefully select each character.
+
+![](https://files.readme.io/4bf6f5d-labeling_entity.png 'labeling entity.png')
+
+> 📘 Specify the number of displayed label options
+>
+> If you have rather many labels in your task, the workflow can become cluttered with options. You can select how many labels you want to have displayed on the page, and the rest of the labeling task is hidden within the "options" button (which opens the label option dropdown).
+>
+> Also, you can search and create new labels within this dropdown.
+
+The spans you label manually will automatically be linked to some lookup list, which you can afterward use to create [labeling functions](doc:building-labeling-functions).
+
+## Record IDE
+
+The labeling workflow comes integrated with a lightweight record IDE. Here you can take a look at the specific record from a programmatic point of view. The respective `record` (stored in a pre-set variable) can be used to better understand which logic can be applied to it. This is super helpful if you just want to try out some idea on one specific record, and later turn it into a labeling function.
+
+![](https://files.readme.io/36237b9-record-ide.png 'record-ide.png')
+
+## Multi-user labeling
+
+Also, with the [managed version](doc:saas-application), you get access to multi-user labeling. If annotators disagree, a small green star will appear, which you can use to specify the gold standard label for this disagreement. In addition, you have specific [minimized labeling views](doc:minimized-labeling-view) depending on the role you require.
+
+Further, you can see all available metadata for this specific record. You can view this as record-specific documentation and analysis.
+
+![](https://files.readme.io/93bbd1c-labeling_with_metadata.png 'labeling with metadata.png')

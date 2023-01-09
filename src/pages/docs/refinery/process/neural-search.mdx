@@ -1,0 +1,21 @@
+# Neural search
+
+Once you [integrate embeddings](doc:embedding-integration) into your project, you can make use of the neural search features of the data browser. There are two use cases: finding similar records, and finding outliers.
+
+## Similarity search
+
+If you've got one reference vector, you can easily find other records that are similar in a given vector space. To do so, simply click on "Find similar records", which will compute the vector similarity for you. If you've got multiple embeddings in your project, a modal will appear asking you which embedding to choose.
+
+![](https://files.readme.io/bed4f28-similarity_search.png 'similarity search.png')
+
+Similarity search is incredibly helpful if you're looking for a specific kind of record, and want to see more of its type. Especially in combination with writing heuristics, the similarity search functionality helps you to quickly grow your new heuristic, as you use this to either grow your [lookup lists](doc:building-labeling-functions#lookup-lists-for-distant-supervision) or to further train your [active learners](doc:building-active-learners).
+
+## Outlier detection
+
+We make use of vector distance comparison to find records that are - given some vector space - most likely outliers. To use this feature, we need at least one labeled record, as we compare pools of unlabeled and labeled data for this outlier detection.
+
+To find outliers, simply click on the "Find outliers" button at the bottom of the filter sidebar. This will compute a new static data slice, which you can select to see your outliers.
+
+![](https://files.readme.io/2042156-outlier_detection.png 'outlier detection.png')
+
+The results of the outlier detection are heavily dependent on the vector space. Especially when used as a filter criterium for the [monitoring](doc:monitoring) page, you can quickly find weak spots or/and obstacles in your data.
