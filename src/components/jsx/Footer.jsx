@@ -21,9 +21,9 @@ export function Footer() {
         ],
         docs: [
             { name: 'refinery', onClick: () => { router.push('/docs/refinery') } },
-            { name: 'bricks', onClick: () => { router.push('/docs/refinery') } },
-            { name: 'gates', onClick: () => { router.push('/docs/refinery') } },
-            { name: 'workflow', onClick: () => { router.push('/docs/refinery') } },
+            { name: 'bricks', onClick: () => { router.push('/docs/bricks') } },
+            { name: 'gates', onClick: () => { router.push('/docs/gates') } },
+            { name: 'workflow', onClick: () => { router.push('/docs/workflow') } },
         ],
         company: [
             { name: 'About', onClick: () => { router.push('/company/about') } },
