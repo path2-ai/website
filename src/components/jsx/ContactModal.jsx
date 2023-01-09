@@ -4,6 +4,7 @@ import { IconMessages, IconSend, IconX } from '@tabler/icons'
 import { useState } from 'react'
 import { AccessModal } from './AccessModal'
 import { DiscoveryModal } from './DiscoveryModal'
+import { CalModal } from './CalModal'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -13,6 +14,7 @@ export function ContactModal({ open, setOpen }) {
 
     const [openAccessModal, setOpenAccessModal] = useState(false)
     const [openDiscoveryModal, setOpenDiscoveryModal] = useState(false)
+    const [openCalModal, setOpenCalModal] = useState(false)
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -78,6 +80,14 @@ export function ContactModal({ open, setOpen }) {
                                                         }}
                                                     >
                                                         early access
+                                                    </button>, {' '} <button
+                                                        className='text-xs text-lime-300 underline hover:text-lime-200'
+                                                        onClick={() => {
+                                                            setOpen(false)
+                                                            setOpenCalModal(true)
+                                                        }}
+                                                    >
+                                                        requesting a demo
                                                     </button> {' '} or {' '}
                                                     <button
                                                         className='text-xs text-lime-300 underline hover:text-lime-200'
@@ -181,6 +191,7 @@ export function ContactModal({ open, setOpen }) {
                     </div>
                 </Dialog>
             </Transition.Root>
+            <CalModal open={openCalModal} setOpen={setOpenCalModal} />
             <AccessModal open={openAccessModal} setOpen={setOpenAccessModal} />
             <DiscoveryModal open={openDiscoveryModal} setOpen={setOpenDiscoveryModal} />
         </div>
