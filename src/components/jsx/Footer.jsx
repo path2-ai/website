@@ -32,8 +32,8 @@ export function Footer() {
             { name: 'Contact', onClick: () => { setOpenContactModal(true) } },
         ],
         other: [
+            { name: 'Imprint', onClick: () => { router.push('/imprint') } },
             { name: 'Privacy policy', onClick: () => { router.push('/privacy') } },
-            { name: 'Terms of service', onClick: () => { router.push('/terms') } },
             { name: 'Security', onClick: () => { router.push('/security') } },
             { name: 'Cookie settings', onClick: () => { setOpen(true) } },
         ],
