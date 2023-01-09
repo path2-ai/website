@@ -16,7 +16,7 @@ export function Layout({ children, sections = [], type }) {
       <div className="lg:ml-72 xl:ml-80">
         <motion.header
           layoutScroll
-          className="fixed inset-y-0 left-0 z-40 contents w-72 overflow-y-auto border-r border-zinc-900/10 px-6 pt-4 pb-8 dark:border-white/10 lg:block xl:w-80"
+          className="bg-neutral-900 fixed inset-y-0 left-0 z-40 contents w-72 overflow-y-auto border-r border-zinc-900/10 px-6 pt-4 pb-8 dark:border-white/10 lg:block xl:w-80"
         >
           <div>
             <div className="hidden lg:flex">

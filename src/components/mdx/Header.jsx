@@ -76,9 +76,9 @@ export const Header = forwardRef(function Header({ className }, ref) {
       <div className="flex items-center gap-5">
         <nav className="hidden md:block">
           <ul role="list" className="flex items-center gap-8">
-            <TopLevelNavItem href="/">API</TopLevelNavItem>
-            <TopLevelNavItem href="#">Documentation</TopLevelNavItem>
-            <TopLevelNavItem href="#">Support</TopLevelNavItem>
+            {/* <TopLevelNavItem href="/">API</TopLevelNavItem>
+            <TopLevelNavItem href="#">Documentation</TopLevelNavItem> */}
+            <TopLevelNavItem href="https://discord.com/invite/qf4rGCEphW">Community support</TopLevelNavItem>
           </ul>
         </nav>
         <div className="hidden md:block md:h-5 md:w-px md:bg-zinc-900/10 md:dark:bg-white/15" />
@@ -87,7 +87,17 @@ export const Header = forwardRef(function Header({ className }, ref) {
           {/* <ModeToggle /> */}
         </div>
         <div className="hidden min-[416px]:contents">
-          <Button href="#">Sign in</Button>
+          {/* <Button href="#">Log in</Button> */}
+          <a
+            href="https://demo.kern.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-100 hover:bg-gray-600/10"
+          >
+            <span className='text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>
+              Try refinery online
+            </span>
+          </a>
         </div>
       </div>
     </motion.div>
