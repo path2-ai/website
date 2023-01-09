@@ -71,7 +71,7 @@ export function Footer() {
                 <div className="grid grid-cols-6 gap-4 text-sm">
                     <div className="flex col-span-4 grid grid-cols-4">
                         {Object.keys(navigation).filter(section => section != 'social').map((section) => (
-                            <div className="col-span-1">
+                            <div key={section} className="col-span-1">
                                 <h3 className="text-white">{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
                                 <ul role="list" className="mt-2 space-y-2">
                                     {navigation[section].map((item) =>
