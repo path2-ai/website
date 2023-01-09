@@ -39,50 +39,50 @@ const options = [
         description: "Set up a batch-workflow to automate recurring data tasks. E.g. for internal analytical processes, dashboards, or for keeping your data up-to-date.",
         icon: IconPerspective,
         steps: [{
-            title: "Define a skeleton from sratch or use a template",
+            title: "Define a skeleton from scratch or use a template",
             description: "First, to understand what you need to configure, set up the basic steps of your workflow. You can either start from scratch or choose a template. A batch-workflow fetches new data either daily, weekly, or monthly.",
             icon: IconNumber1,
-            image: "screenshot-workflow"
+            image: "screenshot-batch-skeleton"
         }, {
             title: "Set up a data mart",
             description: "Connect a data mart from one of our integrations, or use the workflow API to stream data into a custom data mart. This is where your raw data will be stored. By the way, you can connect data marts from workflow directly to refinery.",
             icon: IconNumber2,
-            image: "screenshot-workflow"
+            image: "screenshot-spreadsheet-mart"
         }, {
             title: "Connect a model from gates",
             description: "If you have set up a model in refinery and activated it in gates, it is now useable in workflow. Simply grab an API token from the refinery project, insert the token, and you have your custom API available.",
             icon: IconNumber3,
-            image: "screenshot-workflow"
+            image: "screenshot-model-activation"
         }, {
             title: "Finish your workflow",
             description: "Finally, you can finish the skeleton of your workflow and connect your marts and model to the pipeline. If you run into errors, you can just reset the pipeline and start over. When you're done, you can publish your workflow.",
             icon: IconNumber4,
-            image: "screenshot-workflow"
+            image: "screenshot-batch-workflow"
         }]
     }, {
         title: "Building workflows",
         description: "Set up a realtime-workflow to automate operational natural language-driven tasks. E.g. for customer service automations.",
         icon: IconLoader,
         steps: [{
-            title: "Define a skeleton from sratch or use a template",
+            title: "Define a skeleton from scratch or use a template",
             description: "First, to understand what you need to configure, set up the basic steps of your workflow. You can either start from scratch or choose a template. A realtime-workflow fetches new data either every second, every 5 seconds, every minute, or every 5 minutes.",
             icon: IconNumber1,
-            image: "screenshot-workflow"
+            image: "screenshot-realtime-skeleton"
         }, {
             title: "Set up a data mart",
             description: "Connect a data mart from one of our integrations, or use the workflow API to stream data into a custom data mart. This is where your raw data will be stored. By the way, you can connect data marts from workflow directly to refinery.",
             icon: IconNumber2,
-            image: "screenshot-workflow"
+            image: "screenshot-spreadsheet-mart"
         }, {
             title: "Connect a model from gates",
             description: "If you have set up a model in refinery and activated it in gates, it is now useable in workflow. Simply grab an API token from the refinery project, insert the token, and you have your custom API available.",
             icon: IconNumber3,
-            image: "screenshot-workflow"
+            image: "screenshot-model-activation"
         }, {
             title: "Finish your workflow",
             description: "Finally, you can finish the skeleton of your workflow and connect your marts and model to the pipeline. If you run into errors, you can just reset the pipeline and start over. When you're done, you can publish your workflow.",
             icon: IconNumber4,
-            image: "screenshot-workflow"
+            image: "screenshot-realtime-workflow"
         }]
     },
 ]
