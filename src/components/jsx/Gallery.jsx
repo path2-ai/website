@@ -13,7 +13,7 @@ const slideContent = {
         description: "You want to give your clients the best possible operational support. But how can you operate on high-frequency while stile ensuring that you're keeping up with customers' requirements? Future-proof your customer support by building your own pipeline using the 'Customer support' template.",
         features: [
             "Automatically route messages to the right department",
-            "Automatically gather granular information from the email (e.g. the customer's name, the product they're using, the issue they're facing, etc.)",
+            "Automatically gather granular information about the customer's problem",
             "Use internal systems (e.g. CRM, ERP, etc.) to collect the data required to write an answer",
             "Depending on the AI's confidence, automatically send the answer to the customer or send it to a human for review",
         ],
@@ -115,37 +115,36 @@ export function Gallery() {
                         </div>
                     </div>
                 </div>
-                <div className='max-w-5xl mx-auto justify-center pt-10 text-white'>
-                    <div className='bg-gradient-to-b from-gray-500 via-neutral-700 to-gray-500 rounded-lg 
-                  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
-                  shadow-[0_0px_25px_10px_rgba(255,255,255,0.2)]
-               '>
+                <div className='grid grid-cols-5 gap-8 max-w-5xl mx-auto justify-center pt-4 text-white'>
+                    <div className='col-span-3'>
                         <img
                             src={`${KERN_ASSETS_URL}/images/${slideContent[current].image}.png`}
                             alt={current}
-                            className="rounded-lg p-0.5"
+                            className="rounded-xl border border-gray-700 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
+                            shadow-[0_0px_20px_5px_rgba(255,255,255,0.2)]"
                         />
                     </div>
-                    <div className="flex justify-between mt-6 text-gray-100">
-                        <span>
-                            {current}
-                        </span>
-                        {/* <span>
+                    <div className='col-span-2'>
+                        <div className="flex justify-between mt-6 text-gray-100">
+                            <span>
+                                {current}
+                            </span>
+                            {/* <span>
                             {getComplexityIcon(slideContent[current].complexity)}
                         </span> */}
-                    </div>
-                    <div className="mt-4 text-gray-400 text-sm">
-                        {slideContent[current].description}
-                    </div>
-                    <div className='mt-4 text-white text-sm'>
-                        <ul className='grid grid-cols-2 gap-4'>
-                            {slideContent[current].features.map((feature, index) => (
-                                <li key={index} className='flex space-x-2'>
-                                    <CheckIcon className="h-5 w-5 text-green-500" />
-                                    <span>{feature}</span>
-                                </li>
-                            ))}
-                        </ul>
+                        </div>
+                        <div className="mt-4 text-gray-400 text-sm">
+                            {slideContent[current].description}
+                        </div>
+                        <div className='mt-4 text-white text-sm'>
+                            <ul className='grid grid-cols-2 gap-4'>
+                                {slideContent[current].features.map((feature, index) => (
+                                    <li key={index} className='flex space-x-2'>
+                                        <span>{feature}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                     {/* <div className='mt-4 text-gray-200'>
                         <div className='font-semibold text-sm'>
@@ -175,7 +174,7 @@ export function Gallery() {
                     {Object.entries(slideContent).map(([key, item], index) => (
                         <div key={index}
                             className={classNames(
-                                key === clickedOption ? "ring-lime-500" : "ring-white/10",
+                                key === clickedOption ? "ring-gray-500" : "ring-white/10",
                                 "w-full hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg p-4 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset group-hover:ring-white/20 cursor-pointer",
                             )}
                             onClick={
@@ -235,8 +234,14 @@ export function Gallery() {
                     ))}
 
                 </div>
-                <div className='max-w-5xl mx-auto justify-center mt-20 w-full grid grid-cols-2 gap-4'>
-                    <div className='flex flex-col col-span-1 bg-neutral-900 p-8 rounded-lg border border-lime-900 space-y-4'>
+
+
+
+                <div className='max-w-5xl mx-auto justify-center mt-28 '>
+                    <h3 className='text-white text-xl font-semibold'>Growing our team to grow our platform</h3>
+                </div>
+                <div className='max-w-5xl mx-auto justify-center mt-6 w-full grid grid-cols-2 gap-4'>
+                    <div className='flex flex-col col-span-1 bg-neutral-900 hover:bg-neutral-800 p-8 rounded-lg border border-gray-700 space-y-4'>
                         <div className='flex justify-center items-center bg-neutral-800 rounded-md border border-gray-700 w-10 h-10'>
                             <IconUser className='h-5 w-5 text-gray-400 inline-block' />
                         </div>
@@ -255,7 +260,7 @@ export function Gallery() {
                             </span>
                         </Link>
                     </div>
-                    <div className='flex flex-col col-span-1 bg-neutral-900 p-8 rounded-lg border border-gray-700 space-y-4'>
+                    <div className='flex flex-col col-span-1 bg-neutral-900 hover:bg-neutral-800 p-8 rounded-lg border border-gray-700 space-y-4'>
                         <div className='flex justify-center items-center bg-neutral-800 rounded-md border border-gray-700 w-10 h-10'>
                             <IconApps className='h-5 w-5 text-gray-400 inline-block' />
                         </div>
