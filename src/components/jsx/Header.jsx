@@ -227,7 +227,7 @@ export function Header() {
                                                 >
                                                     {item.name}
                                                 </div>
-                                                <div className='mt-2 flex flex-col space-y-6'>
+                                                <div className='mt-4 flex flex-col space-y-4'>
                                                     {item.subnav.map((subItem) => (
                                                         <Link
                                                             key={subItem.name}
