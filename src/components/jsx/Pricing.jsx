@@ -455,7 +455,7 @@ export function Pricing() {
                                     <h3 className="text-xl font-semibold text-gray-100">{tier.title}</h3>
                                     {tier.featured ? (
                                         <p className="absolute top-0 -translate-y-1/2 transform rounded-full bg-green-500 py-1.5 px-4 text-sm font-semibold text-neutral-900">
-                                            Most popular
+                                            Recommended
                                         </p>
                                     ) : null}
                                     <div className="mt-4 flex items-baseline text-gray-100">
