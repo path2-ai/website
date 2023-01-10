@@ -80,18 +80,23 @@ function SiloText({ product, title, description, fromColor, toColor, link }) {
 function Silo({ product, title, description, fromColor, toColor, link, imageOnRighternSide }) {
     return (
         <div>
-            {imageOnRighternSide ? (
-                <div className="grid grid-cols-2 gap-10">
-                    <SiloText product={product} title={title} description={description} fromColor={fromColor} toColor={toColor} link={link} />
-                    <SiloImage product={product} />
-                </div>
-            ) : (
-                <div className="grid grid-cols-2 gap-10">
-                    <SiloImage product={product} />
-                    <SiloText product={product} title={title} description={description} fromColor={fromColor} toColor={toColor} link={link} />
-                </div>
-            )}
-
+            <div className="hidden md:block">
+                {imageOnRighternSide ? (
+                    <div className="grid grid-cols-2 gap-10">
+                        <SiloText product={product} title={title} description={description} fromColor={fromColor} toColor={toColor} link={link} />
+                        <SiloImage product={product} />
+                    </div>
+                ) : (
+                    <div className="grid grid-cols-2 gap-10">
+                        <SiloImage product={product} />
+                        <SiloText product={product} title={title} description={description} fromColor={fromColor} toColor={toColor} link={link} />
+                    </div>
+                )}
+            </div>
+            <div className="md:hidden flex flex-col justify-center">
+                <SiloImage product={product} />
+                <SiloText product={product} title={title} description={description} fromColor={fromColor} toColor={toColor} link={link} />
+            </div>
         </div>
     )
 }
@@ -99,10 +104,10 @@ function Silo({ product, title, description, fromColor, toColor, link, imageOnRi
 export function Architecture() {
     return (
         <section className="my-32 mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
-            <h1 className="flex flex-col text-4xl font-semibold items-center text-gray-300">
-                See what the platform looks like <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600">under the hood.</span>
+            <h1 className="flex justify-center text-4xl font-semibold items-center text-gray-300">
+                <span>See what the platform looks like <span className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-lime-400 to-lime-600">under the hood.</span></span>
             </h1>
-            <div className="flex justify-center mt-4 text-gray-200">
+            <div className="flex md:justify-center mt-4 text-gray-200">
                 A brief technical overview
             </div>
             <div className="mt-32 text-gray-400 space-y-20">
