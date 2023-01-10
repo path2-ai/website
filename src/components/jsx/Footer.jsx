@@ -115,8 +115,8 @@ export function Footer() {
                                 <button
                                     type="button"
                                     className={classNames(
-                                        !consent ? "bg-gradient-to-r from-gray-300 to-neutral-500 cursor-not-allowed" : "hover:from-lime-400 hover:to-green-500",
-                                        "flex w-full items-center justify-center rounded-md bg-gradient-to-r from-lime-300 to-green-600 py-2 px-4 text-base font-medium text-neutral-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                        !consent ? "text-gray-500 bg-neutral-700 cursor-not-allowed " : "text-neutral-900 bg-gradient-to-r from-lime-300 to-green-600 hover:from-lime-400 hover:to-green-500",
+                                        "flex w-full items-center justify-center rounded-md py-2 px-4 text-base font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
                                     )}
                                     onClick={() => {
                                         axios
