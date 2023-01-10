@@ -509,12 +509,12 @@ export function Pricing() {
                     </div>
                 </div>
                 {cloudIsSelected && (
-                    <div>
-                        <div className='text-sm md:mt-4 mx-auto max-w-2xl text-gray-300'>
+                    <div className='text-sm mx-auto max-w-2xl lg:max-w-5xl '>
+                        <div className='md:mt-4 text-gray-300'>
                             refinery credits are used as an abstraction to power both execution and storage in the Kern AI cloud. Credits are consumed for realtime inference, batch inference and storage. Depending on your plan, you get a certain amount of credits every month, and you can buy more credits at any time.
                         </div>
                         <div
-                            className='text-sm mt-2 mx-auto max-w-2xl text-green-500 cursor-pointer'
+                            className='mt-2 text-green-500 cursor-pointer'
                             onClick={() => setOpenPricingModal(true)}
                         >
                             Why did we choose credits to implement our pricing model?
