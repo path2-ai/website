@@ -87,7 +87,7 @@ export function Gallery() {
     }, [timer])
 
     return (
-        <div>
+        <div className='mx-4'>
             <div className="absolute inset-0"
                 style={{
                     backgroundColor: "#000000",
@@ -115,8 +115,8 @@ export function Gallery() {
                         </div>
                     </div>
                 </div>
-                <div className='grid grid-cols-5 gap-8 max-w-5xl mx-auto justify-center pt-4 text-white'>
-                    <div className='col-span-3'>
+                <div className='md:grid md:grid-cols-5 md:gap-8 max-w-5xl mx-auto justify-center pt-4 text-white'>
+                    <div className='md:col-span-3'>
                         <img
                             src={`${KERN_ASSETS_URL}/images/${slideContent[current].image}.png`}
                             alt={current}
@@ -124,7 +124,7 @@ export function Gallery() {
                             shadow-[0_0px_20px_5px_rgba(255,255,255,0.2)]"
                         />
                     </div>
-                    <div className='col-span-2'>
+                    <div className='md:col-span-2'>
                         <div className="flex justify-between mt-6 text-gray-100">
                             <span>
                                 {current}
@@ -170,7 +170,7 @@ export function Gallery() {
                         ))}
                     </div> */}
                 </div>
-                <div className="grid grid-cols-2 max-w-5xl mx-auto justify-center pt-10 flex gap-4">
+                <div className="md:grid md:grid-cols-2 max-w-5xl mx-auto justify-center pt-10 flex flex-col md:flex-row space-y-4 md:space-y-0 md:gap-4">
                     {Object.entries(slideContent).map(([key, item], index) => (
                         <div key={index}
                             className={classNames(
@@ -240,7 +240,7 @@ export function Gallery() {
                 <div className='max-w-5xl mx-auto justify-center mt-28 '>
                     <h3 className='text-white text-xl font-semibold'>Growing our team to grow our platform</h3>
                 </div>
-                <div className='max-w-5xl mx-auto justify-center mt-6 w-full grid grid-cols-2 gap-4'>
+                <div className='max-w-5xl mx-auto flex flex-col justify-center mt-6 w-full md:grid md:grid-cols-2 md:gap-4 space-y-4 md:space-y-0'>
                     <div className='flex flex-col col-span-1 bg-neutral-900 hover:bg-neutral-800 p-8 rounded-lg border border-gray-700 space-y-4'>
                         <div className='flex justify-center items-center bg-neutral-800 rounded-md border border-gray-700 w-10 h-10'>
                             <IconUser className='h-5 w-5 text-gray-400 inline-block' />
