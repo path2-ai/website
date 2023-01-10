@@ -4,11 +4,11 @@ We added the functionality to calculate new attributes with python code, which y
 
 This is an exciting one! The previous workflow in refinery required you to have your data ready at the start of your project. After that, the schema was set and you could not really change much. This was especially a problem when you realized that you are missing some features some days into the project.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_3_0/attribute-modification-overview.png 'attribute-modification-overview.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_3_0/attribute-modification-overview.png 'attribute-modification-overview.png')
 
 This changes today! You now have the freedom to create as many new attributes as you like programmatically all within your beloved refinery user interface. This is huge news as you can engineer features that are then usable in Labeling Functions, Active Learners, and in the advanced filtering of the Data Browser (just to name a few). The best thing: **requests work** (see Fig. 2). That means you can easily incorporate any API you want to create new attributes of your data!
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_3_0/attribute-modification-details.png 'attribute-modification-details.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_3_0/attribute-modification-details.png 'attribute-modification-details.png')
 
 To give you a starting point, here are some ideas that you could use this new feature for:
 
@@ -22,13 +22,13 @@ I think by now you get the idea, the possibilities are endless and finally you c
 
 Weak supervision is the heart and soul behind semi-automated labeling in refinery. Previously, you could see the amount of records with a weak supervision label and you could filter and sort by confidence in the data browser. With this newest release, you will now have the possibility to inspect your weak supervision confidence distribution at a single glance so you can have better insight into the weak supervision quality before exporting your data.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_3_0/confidence-distribution.png 'confidence-distribution.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_3_0/confidence-distribution.png 'confidence-distribution.png')
 
 ## Add custom model predictions to your project
 
 In this version, you will now be able to upload your custom model predictions to your refinery project using our [SDK](https://github.com/code-kern-ai/refinery-python-sdk). We offer an easy workflow that includes downloading your data, training a classifier, and uploading the predictions to your project. We built several adapters for some of your favorite machine learning frameworks to make the process as easy as possible. To start, please take a closer look at the ["Callbacks" section of the SDK readme](https://github.com/code-kern-ai/refinery-python-sdk#callbacks)!
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_3_0/model-predictions.png 'model-predictions.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_3_0/model-predictions.png 'model-predictions.png')
 
 ## Role system
 
@@ -38,13 +38,13 @@ Why is this just totally awesome? Because now you can dissect your data into imp
 
 Read this section to find out the differences in the roles and how they could be applied to your project!
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_3_0/team-assignments.png 'team-assignments.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_3_0/team-assignments.png 'team-assignments.png')
 
 ### Engineer
 
 The _Engineer_ has full access to all parts of refinery. They see the regular refinery interface with the addition that they can now distribute labeling tasks to annotators.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_3_0/crowd-labeling.png 'crowd-labeling.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_3_0/crowd-labeling.png 'crowd-labeling.png')
 
 ### Domain Expert
 
@@ -52,7 +52,7 @@ The _Domain Expert_ has access only to the labeling view of their projects. With
 
 This role should be given to someone you trust to label your data reliably, hence the name Domain Expert.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_3_0/expert-view.png 'expert-view.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_3_0/expert-view.png 'expert-view.png')
 
 ### Annotator
 

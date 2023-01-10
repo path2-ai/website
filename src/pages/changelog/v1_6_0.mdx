@@ -4,27 +4,27 @@ Version 1.6.0 of refinery introduces changes to the data browser to provide enha
 
 The data browser is one of the main features of refinery, allowing you to slice and filter data in many ways. In previous versions, the attribute filters were limited to a few operators, such as CONTAINS or EQUAL. With these operators, it was already possible to do a lot, but there were still many cases in which the previous approach to attribute filtering was not sufficient. The new version offers a lot more in depths ways to filter attributes.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_6_0/extended-data-browser.png 'extended-data-browser.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_6_0/extended-data-browser.png 'extended-data-browser.png')
 
 For example, there is now the option to use wildcards for filtering. Wildcards can be used as a placeholder for any value in order to cover a wider range of variables or to use them if the actual target value is not known. In the image below you can see a wildcard used to get all the two-digit IDs starting with 1 and all starting with 4. We can use the "\_" (or ?) as a wildcard for a single character and % (or \*) for anything following. The filter then returns all records matching the running IDs 10 to 19 or everything starting with 4 (so 4, 40, 41, ... 400, 401,...).
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_6_0/complex-wildcard.png 'complex-wildcard.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_6_0/complex-wildcard.png 'complex-wildcard.png')
 
 The following operators have been added: IN, IN WC (wildcard), BETWEEN, GREATER, GREATER EQUAL, LESSER and LESSER EQUAL.
 
 It is now also possible to set the filter to case-sensitive. Searching for "EU" previously returned all words containing "eu" (such as the word "lineup" for example). Activating the case sensitivity now only returns results that match the provided casing.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_6_0/case-sensitive-filter.png 'case-sensitive-filter.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_6_0/case-sensitive-filter.png 'case-sensitive-filter.png')
 
 ## Label renaming
 
 The names of labels can now be changed on the settings page. In previous versions, the names of labels were immutable. This was partly because other parts of the project, such as label functions or lookup lists, were tied to the labels by name. When changing the name of a label, a prompt now opens, allowing you to change all the label names in the source code of label functions, active learners or lookup lists with just one click.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_6_0/label-renaming-example-1.png 'label-renaming-example-1.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_6_0/label-renaming-example-1.png 'label-renaming-example-1.png')
 
 Please keep in mind that we provide a "best guess" for the changes. Since e.g. python code is very versatile some changes might not be what you intended.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_6_0/label-renaming-example-2.png 'label-renaming-example-2.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_6_0/label-renaming-example-2.png 'label-renaming-example-2.png')
 
 In this example, we check for a word that matches the label "by accident" which would result in code that doesn't provide the previous functionality. So before changing something keep in mind to double-check the provided helper.
 
@@ -36,7 +36,7 @@ The demo application, which can be found at demo.kern.ai, was also given multipl
 - Expert: Access to the labeling view only.
 - Annotator: Access to a task-minimized labeling view only
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/changelog/v1_6_0/demo-overhaul.png 'demo-overhaul.png')
+![](https://kern-assets.s3.amazonaws.com/website/changelog/v1_6_0/demo-overhaul.png 'demo-overhaul.png')
 
 To further highlight the different abilities of the roles, the demo application now also features multiuser example projects. The example projects are similar to the example projects which could previously be found in refinery. They are enriched with multiuser functionalities such as crows heuristics or specific data slices for the labeling view.
 

@@ -6,17 +6,17 @@ workflow comes with a simple drag-and-drop editor, which you can use to define s
 
 If you start building from scratch, you will see a blank canvas. In this canvas, you can hit `⌘ + K` or hit the `Add node` button in the left-bottom control section. This will open up a scrollable and filterable command palette for you.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-editor-skeleton.png)
+![](https://kern-assets.s3.amazonaws.com/website/screenshots/workflow-editor-skeleton.png)
 
 From this command palette, you can select which nodes you want to use. For instance, you could use a `GMail Read` node to fetch data from a GMail mart, then pass it through some `Python Template` (custom modifier) and ultimately send it to a `Gsheet Send` mart, which will push the data to an actual spreadsheet.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-editor-flow.png)
+![](https://kern-assets.s3.amazonaws.com/website/screenshots/workflow-editor-flow.png)
 
 The read border indicates that the nodes aren't completely set up yet, as they must be connected to some mart. You can read a node with red bordes as a placeholder of a concrete integration (e.g. GMail), but with a missing mart (e.g. your inbox vs. the inbox of John Doe)
 
 Alternatively, when creating a project, you can also choose to create from a template. For instance, the `Customer service automation` template reads from an inbox, passes the data through an AI node, and then pushes data back to the inbox.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-template.png)
+![](https://kern-assets.s3.amazonaws.com/website/screenshots/workflow-template.png)
 
 In this case, the nodes have orange borders. This indicates that you have to first set up the actual node type (e.g. choose `GMail read` for the `Source inbox`).
 
@@ -25,17 +25,17 @@ In this case, the nodes have orange borders. This indicates that you have to fir
 If you click on a node, it will open a slide-over containing the node data. We differentiate between no-code nodes (e.g. data marts), and programmable marts (e.g. the `Python Template` node).
 
 The Python Template allows you to implement custom logic in the `node` function. It expects a `record` dictionary as input, and outputs a modified dictionary. You can decide for yourself how the modification should look like. The standard implementation adds a `processed_at` timestamp, which you can happily alter.
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-node-config.png)
+![](https://kern-assets.s3.amazonaws.com/website/screenshots/workflow-node-config.png)
 
 If you modify a mart node, you will see a no-code interface. Here, you can simply choose from the available marts that you previously configured in the integrations page.
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-nocode-config.png)
+![](https://kern-assets.s3.amazonaws.com/website/screenshots/workflow-nocode-config.png)
 
 ## Edge implementations
 
 To connect nodes, you have to define small conditions. These are Python snippets which are being evaluated; if the condition you define turns out to be true for a given record, it is passed to the next node.
 
 For instance, you can use this to only pass records to the next node which have been predicted to be `new card` requests.
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-condition-eval.png)
+![](https://kern-assets.s3.amazonaws.com/website/screenshots/workflow-condition-eval.png)
 
 If you want to send the data to the next node in any case, you can simply write `True` into the condition editor.
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-condition-true.png)
+![](https://kern-assets.s3.amazonaws.com/website/screenshots/workflow-condition-true.png)
