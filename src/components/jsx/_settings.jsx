@@ -1,2 +1,2 @@
-export const KERN_ASSETS_URL = 'http://kern-assets.s3-website.eu-central-1.amazonaws.com/website' // e.g. add /screen-gsheet.png
-export const WORKFLOW_ASSETS_URL = 'http://kern-assets.s3-website.eu-central-1.amazonaws.com/workflow' // e.g. add /screen-gsheet.png
+export const KERN_ASSETS_URL = 'https://kern-assets.s3.amazonaws.com/website' // e.g. add /screen-gsheet.png
+export const WORKFLOW_ASSETS_URL = 'https://kern-assets.s3.amazonaws.com/workflow' // e.g. add /screen-gsheet.png
