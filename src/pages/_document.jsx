@@ -39,6 +39,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <script src="https://cdn.usefathom.com/script.js" data-site="ZIUTHOCW" defer></script>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
       </Head>
       <body className="bg-white antialiased dark:bg-black">
