@@ -206,13 +206,13 @@ export function Header() {
                         </div>
                         <div className="mt-6 flow-root">
                             <div className="-my-6 divide-y divide-gray-500/10">
-                                <div className="m-4 space-y-2 py-6 grid grid-cols-2 gap-8">
+                                <div className="m-4 py-6 grid grid-cols-2 gap-8">
                                     {navigation.map((item) => (
                                         item.href && (
                                             <Link
                                                 key={item.name}
                                                 href={item.href}
-                                                className="text-base font-semibold leading-7 text-gray-100 hover:bg-gray-600/10"
+                                                className="font-semibold text-gray-100 hover:bg-gray-600/10"
                                             >
                                                 {item.name}
                                             </Link>
@@ -223,7 +223,7 @@ export function Header() {
                                             <div>
                                                 <div
                                                     key={item.name}
-                                                    className="text-base font-semibold leading-7 text-gray-100 hover:bg-gray-600/10"
+                                                    className="font-semibold text-gray-100 hover:bg-gray-600/10"
                                                 >
                                                     {item.name}
                                                 </div>
