@@ -5,9 +5,15 @@ import { ContactModal } from "./ContactModal"
 import { useState } from "react"
 import axios from "axios";
 
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
+
 export function Footer() {
 
     const router = useRouter()
+
+    const [consent, setConsent] = useState(false)
 
     const [openContactModal, setOpenContactModal] = useState(false)
     const [open, setOpen] = useState(false)
@@ -108,7 +114,10 @@ export function Footer() {
                             <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                                 <button
                                     type="button"
-                                    className="flex w-full items-center justify-center rounded-md bg-gradient-to-r from-lime-300 to-green-600 py-2 px-4 text-base font-medium text-neutral-900 hover:from-lime-400 hover:to-green-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    className={classNames(
+                                        !consent ? "bg-gradient-to-r from-gray-300 to-neutral-500 cursor-not-allowed" : "hover:from-lime-400 hover:to-green-500",
+                                        "flex w-full items-center justify-center rounded-md bg-gradient-to-r from-lime-300 to-green-600 py-2 px-4 text-base font-medium text-neutral-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    )}
                                     onClick={() => {
                                         axios
                                             .post(
@@ -125,9 +134,29 @@ export function Footer() {
                                                 console.log(error);
                                             })
                                     }}
+                                    disabled={!consent}
                                 >
                                     Subscribe
                                 </button>
+                            </div>
+                        </div>
+
+                        <div className="flex items-center mt-4">
+                            <div className="mb-auto flex items-start">
+                                <div className="flex items-center h-5">
+                                    <input
+                                        id="consent"
+                                        name="consent"
+                                        type="checkbox"
+                                        className="accent-green-500 focus:ring-green-500 h-4 w-4 text-green-600 border-gray-700 rounded"
+                                        onChange={() => setConsent(!consent)}
+                                    />
+                                </div>
+                            </div>
+                            <div className="ml-2 text-xs">
+                                <label htmlFor="consent" className="font-medium text-gray-300">
+                                    I agree to the storage of my data for the purpose of contacting me and I consent to the privacy policy.
+                                </label>
                             </div>
                         </div>
                     </div>

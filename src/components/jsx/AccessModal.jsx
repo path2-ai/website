@@ -73,13 +73,10 @@ export function AccessModal({ open, setOpen }) {
                                                     onChange={(e) => setEmail(e.target.value)}
                                                 />
                                             </div>
-                                            <p className="mt-2 text-sm text-gray-500" id="email-description">
-                                                We'll send you a confirmation that you're on the waitlist.
-                                            </p>
 
                                             {/* consent checkbox */}
                                             <div className="flex items-center mt-4">
-                                                <div className="flex items-start">
+                                                <div className="mb-auto flex items-start">
                                                     <div className="flex items-center h-5">
                                                         <input
                                                             id="consent"
@@ -90,12 +87,9 @@ export function AccessModal({ open, setOpen }) {
                                                         />
                                                     </div>
                                                 </div>
-                                                <div className="ml-2 text-sm">
+                                                <div className="ml-2 text-xs">
                                                     <label htmlFor="consent" className="font-medium text-gray-300">
-                                                        I agree to the{' '}
-                                                        <Link href="/terms" className="text-green-500 hover:underline">
-                                                            Terms of Service
-                                                        </Link>
+                                                        I agree to the storage of my data for the purpose of contacting me and I consent to the privacy policy.
                                                     </label>
                                                 </div>
                                             </div>
@@ -106,7 +100,7 @@ export function AccessModal({ open, setOpen }) {
                                     <button
                                         type='button'
                                         className={classNames(
-                                            consent ? 'hover:bg-neutral-700 bg-neutral-800 text-gray-200' : 'bg-neutral-700 text-gray-500 cursor-not-allowed',
+                                            (email && consent) ? 'hover:bg-neutral-700 bg-neutral-800 text-gray-200' : 'bg-neutral-700 text-gray-500 cursor-not-allowed',
                                             "inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
                                         )}
                                         onClick={() => {
@@ -126,7 +120,7 @@ export function AccessModal({ open, setOpen }) {
                                                     console.log(error);
                                                 });
                                         }}
-                                        disabled={!consent}
+                                        disabled={!(consent && email)}
                                     >
                                         <span className='my-auto '>
                                             Send
@@ -149,6 +143,6 @@ export function AccessModal({ open, setOpen }) {
                     </div>
                 </div>
             </Dialog>
-        </Transition.Root>
+        </Transition.Root >
     )
 }

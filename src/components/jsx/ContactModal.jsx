@@ -14,6 +14,8 @@ function classNames(...classes) {
 
 export function ContactModal({ open, setOpen }) {
 
+    const [consent, setConsent] = useState(false)
+
     const [openAccessModal, setOpenAccessModal] = useState(false)
     const [openDiscoveryModal, setOpenDiscoveryModal] = useState(false)
     const [openCalModal, setOpenCalModal] = useState(false)
@@ -157,6 +159,25 @@ export function ContactModal({ open, setOpen }) {
                                                     />
                                                 </div>
                                             </div>
+
+                                            <div className="flex items-center mt-4">
+                                                <div className="mb-auto flex items-start">
+                                                    <div className="flex items-center h-5">
+                                                        <input
+                                                            id="consent"
+                                                            name="consent"
+                                                            type="checkbox"
+                                                            className="accent-green-500 focus:ring-green-500 h-4 w-4 text-green-600 border-gray-700 rounded"
+                                                            onChange={() => setConsent(!consent)}
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div className="ml-2 text-xs">
+                                                    <label htmlFor="consent" className="font-medium text-gray-300">
+                                                        I agree to the storage of my data for the purpose of contacting me and I consent to the privacy policy.
+                                                    </label>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="flex justify-end space-x-2 mt-5">
@@ -164,7 +185,7 @@ export function ContactModal({ open, setOpen }) {
                                             type='button'
                                             className={classNames(
                                                 "inline-block rounded-lg px-4 py-2 font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20",
-                                                !(name && email && message) ? 'bg-neutral-700 text-gray-500  cursor-not-allowed' : 'text-gray-200 bg-neutral-800 hover:bg-neutral-700 '
+                                                !(consent && name && email && message) ? 'bg-neutral-700 text-gray-500  cursor-not-allowed' : 'text-gray-200 bg-neutral-800 hover:bg-neutral-700 '
                                             )}
                                             onClick={() => {
                                                 setOpen(false)
@@ -187,7 +208,7 @@ export function ContactModal({ open, setOpen }) {
                                                         console.log(error);
                                                     });
                                             }}
-                                            disabled={!(name && email && message)}
+                                            disabled={!(consent && name && email && message)}
                                         >
                                             <span className='my-auto'>
                                                 <IconSend className='h-4 w-4 inline-block mr-1' /> Send
