@@ -6,14 +6,14 @@ const siloData = [
         title: 'the heart of the platform',
         description: 'This is the flagship of our NLP stack. refinery is both database and the application logic editor; it allows you to scale, assess and maintain your data. It automates the process of data cleaning and labeling, and shows you where improvements can be made. It also allows you to easily work together with inhouse or external annotators, and leverages the power of large language models to help you with your data.',
         link: '/docs/refinery',
-        imageOnRighternSide: true,
+        imageOnRighternSide: false,
     },
     {
         product: 'bricks',
         title: 'the fuel of the platform',
         description: 'Our overall platform runs on plenty of natural language processing automations, which can be defined by the user. Now, the use cases our users face have different challenges, and require different automations. This is why we have implemented bricks: a collection of open-source and modular automations that can be stacked together, enabling users to customize the platform to their use cases with ease.',
         link: '/docs/bricks',
-        imageOnRighternSide: false,
+        imageOnRighternSide: true,
     },
     {
         product: 'gates',
