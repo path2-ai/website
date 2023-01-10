@@ -3,6 +3,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { IconDoorEnter, IconX } from '@tabler/icons'
 import Link from 'next/link'
 import { useState } from 'react'
+import axios from "axios";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -11,6 +12,7 @@ function classNames(...classes) {
 export function AccessModal({ open, setOpen }) {
 
     const [consent, setConsent] = useState(false)
+    const [email, setEmail] = useState('')
 
     return (
         <Transition.Root show={open} as={Fragment}>
@@ -68,6 +70,7 @@ export function AccessModal({ open, setOpen }) {
                                                     id="email"
                                                     className="block w-full rounded-md border-gray-700 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm p-2 bg-neutral-900 text-gray-200"
                                                     placeholder="you@example.com"
+                                                    onChange={(e) => setEmail(e.target.value)}
                                                 />
                                             </div>
                                             <p className="mt-2 text-sm text-gray-500" id="email-description">
@@ -108,6 +111,20 @@ export function AccessModal({ open, setOpen }) {
                                         )}
                                         onClick={() => {
                                             setOpen(false)
+                                            axios
+                                                .post(
+                                                    "https://getform.io/f/a6bcfa85-cd0c-4450-adc1-c1962bfa1d81",
+                                                    {
+                                                        email: email,
+                                                    },
+                                                    { headers: { Accept: "application/json" } }
+                                                )
+                                                .then(function (response) {
+                                                    setEmail('')
+                                                })
+                                                .catch(function (error) {
+                                                    console.log(error);
+                                                });
                                         }}
                                         disabled={!consent}
                                     >

@@ -5,6 +5,8 @@ import { useState } from 'react'
 import { AccessModal } from './AccessModal'
 import { DiscoveryModal } from './DiscoveryModal'
 import { CalModal } from './CalModal'
+import axios from "axios";
+
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -166,6 +168,24 @@ export function ContactModal({ open, setOpen }) {
                                             )}
                                             onClick={() => {
                                                 setOpen(false)
+                                                axios
+                                                    .post(
+                                                        "https://getform.io/f/db1a2152-0d46-47c1-85bc-f65360be84e5",
+                                                        {
+                                                            name: name,
+                                                            email: email,
+                                                            message: message
+                                                        },
+                                                        { headers: { Accept: "application/json" } }
+                                                    )
+                                                    .then(function (response) {
+                                                        setName('')
+                                                        setEmail('')
+                                                        setMessage('')
+                                                    })
+                                                    .catch(function (error) {
+                                                        console.log(error);
+                                                    });
                                             }}
                                             disabled={!(name && email && message)}
                                         >

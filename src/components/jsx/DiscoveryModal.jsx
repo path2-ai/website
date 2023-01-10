@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition, Menu } from '@headlessui/react'
 import { IconMessages, IconSend, IconX } from '@tabler/icons'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import axios from "axios";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -340,6 +341,34 @@ export function DiscoveryModal({ open, setOpen }) {
                                         )}
                                         onClick={() => {
                                             setOpen(false)
+                                            axios
+                                                .post(
+                                                    "https://getform.io/f/df6fd1d4-3639-4bde-91bd-b918d40a72e2",
+                                                    {
+                                                        selectedUseOfProduct: selectedUseOfProduct,
+                                                        selectedTypeOfMessages: selectedTypeOfMessages,
+                                                        selectedAmountMessages: selectedAmountMessages,
+                                                        name: name,
+                                                        company: company,
+                                                        role: role,
+                                                        email: email,
+                                                        comments: comments,
+                                                    },
+                                                    { headers: { Accept: "application/json" } }
+                                                )
+                                                .then(function (response) {
+                                                    setSelectedUseOfProduct(null)
+                                                    setSelectedTypeOfMessages(null)
+                                                    setSelectedAmountMessages(null)
+                                                    setName('')
+                                                    setCompany('')
+                                                    setRole('')
+                                                    setEmail('')
+                                                    setComments('')
+                                                })
+                                                .catch(function (error) {
+                                                    console.log(error);
+                                                });
                                         }}
                                         disabled={!(name && company && role && email && selectedAmountMessages && selectedTypeOfMessages && selectedUseOfProduct)}
                                     >

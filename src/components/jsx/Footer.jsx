@@ -2,7 +2,8 @@ import { IconBrandDiscord, IconBrandGithub, IconBrandLinkedin, IconBrandTwitter,
 import { useRouter } from "next/router"
 import { CookieModal } from "./CookieModal"
 import { ContactModal } from "./ContactModal"
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import axios from "axios";
 
 export function Footer() {
 
@@ -11,6 +12,7 @@ export function Footer() {
     const [openContactModal, setOpenContactModal] = useState(false)
     const [open, setOpen] = useState(false)
     const [enabled, setEnabled] = useState(false)
+    const [email, setEmail] = useState('')
 
     const navigation = {
         product: [
@@ -90,7 +92,7 @@ export function Footer() {
                         <p className="mt-4 text-gray-300">
                             The latest news, articles, and resources, sent to your inbox weekly.
                         </p>
-                        <form className="mt-4 flex max-w-md">
+                        <div className="mt-4 flex max-w-md">
                             <label htmlFor="newsletter" className="sr-only">
                                 Email address
                             </label>
@@ -98,23 +100,39 @@ export function Footer() {
                                 type="email"
                                 name="newsletter"
                                 id="newsletter"
-                                autoComplete="email"
                                 required
                                 className="w-full min-w-0 appearance-none rounded-md border border-transparent bg-neutral-900 py-2 px-4 text-base text-gray-100 placeholder-gray-300 focus:border-white focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 focus:ring-offset-gray-200"
                                 placeholder="Enter your email"
+                                onChange={(e) => setEmail(e.target.value)}
                             />
                             <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                                 <button
-                                    type="submit"
+                                    type="button"
                                     className="flex w-full items-center justify-center rounded-md bg-gradient-to-r from-lime-300 to-green-600 py-2 px-4 text-base font-medium text-neutral-900 hover:from-lime-400 hover:to-green-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                    onClick={() => {
+                                        axios
+                                            .post(
+                                                "https://getform.io/f/9cad3d6d-7a57-4818-8984-5175ca10deac",
+                                                {
+                                                    email: email,
+                                                },
+                                                { headers: { Accept: "application/json" } }
+                                            )
+                                            .then(function (response) {
+                                                setEmail('');
+                                            })
+                                            .catch(function (error) {
+                                                console.log(error);
+                                            })
+                                    }}
                                 >
                                     Subscribe
                                 </button>
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </div >
             <div className="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
                 <div className="flex space-x-6 md:order-2">
                     {navigation.social.map((item) => (
@@ -130,6 +148,6 @@ export function Footer() {
             </div>
             <ContactModal open={openContactModal} setOpen={setOpenContactModal} />
             <CookieModal open={open} setOpen={setOpen} enabled={enabled} setEnabled={setEnabled} />
-        </footer>
+        </footer >
     )
 }
