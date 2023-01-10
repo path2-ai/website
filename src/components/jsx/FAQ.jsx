@@ -35,7 +35,7 @@ const faqs = [
     {
         question: "Where is my data stored?",
         answer:
-            "Your data is stored in the cloud on DigitalOcean servers in Frankfurt, Germany. We use the latest security standards to protect your data, and are ISO 27001 certified."
+            "Your data is stored in the cloud on DigitalOcean servers in Frankfurt, Germany. We use the latest security standards to protect your data."
     },
     {
         question: "How can I cancel my subscription?",
