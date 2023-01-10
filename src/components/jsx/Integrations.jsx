@@ -302,7 +302,7 @@ export function Integrations() {
     }, [])
 
     return (
-        <div className='space-y-8'>
+        <div className='space-y-20'>
             <IntegrationList name='Extractions' color='lime' integrations={integrationsExtractions} tabs={tabsExtractions} currentTab={currentTabExtractions} setCurrentTab={setCurrentTabExtractions} currentOffset={currentOffsetExtractions} setCurrentOffset={setCurrentOffsetExtractions} />
             <IntegrationList name='Transformations' color='lime' integrations={integrationsTransformations} tabs={tabsTransformations} currentTab={currentTabTransformations} setCurrentTab={setCurrentTabTransformations} currentOffset={currentOffsetTransformations} setCurrentOffset={setCurrentOffsetTransformations} />
             <IntegrationList name='Loaders' color='lime' integrations={integrationsLoaders} tabs={tabsLoaders} currentTab={currentTabLoaders} setCurrentTab={setCurrentTabLoaders} currentOffset={currentOffsetLoaders} setCurrentOffset={setCurrentOffsetLoaders} />
