@@ -56,9 +56,9 @@ function classNames(...classes) {
 export function FAQ() {
     return (
         <div>
-            <div className="mx-auto max-w-5xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl lg:max-w-5xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-5xl divide-y-2 divide-gray-800">
-                    <h2 className="text-center text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+                    <h2 className="text-center text-2xl font-bold tracking-tight text-gray-100 sm:text-4xl">
                         Frequently asked questions
                     </h2>
                     <dl className="mt-10 space-y-6 divide-y divide-gray-800">
@@ -66,7 +66,7 @@ export function FAQ() {
                             <Disclosure as="div" key={faq.question} className="pt-6">
                                 {({ open }) => (
                                     <>
-                                        <dt className="text-lg">
+                                        <dt className="text-sm">
                                             <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-600">
                                                 <span className="font-medium text-gray-100">{faq.question}</span>
                                                 <span className="ml-6 flex h-7 items-center">
@@ -78,7 +78,7 @@ export function FAQ() {
                                             </Disclosure.Button>
                                         </dt>
                                         <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                                            <p className="text-base text-gray-500">{faq.answer}</p>
+                                            <p className="text-sm text-gray-500">{faq.answer}</p>
                                         </Disclosure.Panel>
                                     </>
                                 )}

@@ -389,10 +389,10 @@ export function Pricing() {
     }, [cloudIsSelected])
 
     return (
-        <div>
+        <div className='mx-4'>
             {/* <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black" /> */}
             <div className="relative">
-                <div className="relative mx-auto max-w-2xl px-4 pt-16 text-center sm:px-6 sm:pt-32 lg:max-w-5xl lg:px-8">
+                <div className="relative mx-auto max-w-2xl pt-16 text-center sm:px-6 sm:pt-32 lg:max-w-5xl lg:px-8">
                     <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
                         Simple pricing fitting your requirements.
                     </h1>
@@ -435,7 +435,7 @@ export function Pricing() {
 
                 <h2 className="sr-only">Plans</h2>
                 {/* Cards */}
-                <div className="relative mx-auto mt-8 max-w-2xl px-4 pb-8 sm:mt-12 sm:px-6 lg:max-w-6xl lg:px-8 lg:pb-0">
+                <div className="relative mx-auto mt-8 max-w-2xl pb-8 sm:mt-12 sm:px-6 lg:max-w-6xl lg:px-8 lg:pb-0">
                     {/* Decorative background */}
                     <div
                         aria-hidden="true"
@@ -444,7 +444,7 @@ export function Pricing() {
 
                     <div className={classNames(
                         cloudIsSelected ? "lg:grid-cols-3" : "lg:grid-cols-2",
-                        "relative space-x-4 space-y-6 lg:grid  lg:space-y-0"
+                        "relative  lg:space-x-4 space-y-6 lg:grid  lg:space-y-0"
                     )}>
                         {plans.map((tier) => (
                             <div
@@ -510,11 +510,11 @@ export function Pricing() {
                 </div>
                 {cloudIsSelected && (
                     <div>
-                        <div className='text-sm mt-4 mx-auto max-w-5xl text-gray-300'>
+                        <div className='text-sm md:mt-4 mx-auto max-w-2xl text-gray-300'>
                             refinery credits are used as an abstraction to power both execution and storage in the Kern AI cloud. Credits are consumed for realtime inference, batch inference and storage. Depending on your plan, you get a certain amount of credits every month, and you can buy more credits at any time.
                         </div>
                         <div
-                            className='text-sm mt-2 mx-auto max-w-5xl text-green-500 cursor-pointer'
+                            className='text-sm mt-2 mx-auto max-w-2xl text-green-500 cursor-pointer'
                             onClick={() => setOpenPricingModal(true)}
                         >
                             Why did we choose credits to implement our pricing model?
@@ -530,7 +530,7 @@ export function Pricing() {
                     Feature comparison
                 </h2>
 
-                <div className="mx-auto max-w-2xl space-y-16 py-16 px-4 sm:px-6">
+                <div className="mx-auto max-w-2xl space-y-16 py-16 lg:px-4">
                     {plans.map((plan, mobilePlanIndex) => (
                         <div key={plan.title} className="border-t border-gray-200">
                             <div
