@@ -140,109 +140,111 @@ function IntegrationList({ name, color, integrations, tabs, currentTab, setCurre
     )
 
     return (
-        <div className='mt-16 max-w-5xl mx-auto'>
-            {currentTab && (
-                <div>
-                    <h1 className={`text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-${color}-300 to-${color}-600`}>
-                        {name}
-                    </h1>
+        <div className='mx-4'>
+            <div className='mt-16 max-w-5xl mx-auto'>
+                {currentTab && (
                     <div>
-                        <div className="hidden sm:block">
-                            <div className="border-b border-gray-200">
-                                <nav className="-mb-px flex space-x-8" aria-label="Tabs">
-                                    {tabs.map((tab) => (
-                                        <button
-                                            key={tab.name}
-                                            type="button"
-                                            className={classNames(
-                                                tab.current
-                                                    ? 'border-green-500 text-green-400'
-                                                    : 'border-transparent text-gray-500 hover:text-gray-300 hover:border-gray-700',
-                                                'group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm cursor-pointer'
-                                            )}
-                                            onClick={() => {
-                                                setCurrentTab(tab)
-                                                setCurrentOffset(0)
-                                            }}
-                                            aria-current={tab == currentTab ? 'page' : undefined}
-                                        >
-                                            <tab.icon
+                        <h1 className={`text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-${color}-300 to-${color}-600`}>
+                            {name}
+                        </h1>
+                        <div>
+                            <div className="hidden sm:block">
+                                <div className="border-b border-gray-200">
+                                    <nav className="-mb-px flex space-x-8" aria-label="Tabs">
+                                        {tabs.map((tab) => (
+                                            <button
+                                                key={tab.name}
+                                                type="button"
                                                 className={classNames(
-                                                    tab == currentTab ? 'text-green-500' : 'text-gray-600 group-hover:text-gray-500',
-                                                    '-ml-0.5 mr-2 h-5 w-5'
+                                                    tab.current
+                                                        ? 'border-green-500 text-green-400'
+                                                        : 'border-transparent text-gray-500 hover:text-gray-300 hover:border-gray-700',
+                                                    'group inline-flex items-center py-4 px-1 border-b-2 font-medium text-sm cursor-pointer'
                                                 )}
-                                                aria-hidden="true"
-                                            />
-                                            <span>{tab.name}</span>
-                                        </button>
-                                    ))}
-                                </nav>
+                                                onClick={() => {
+                                                    setCurrentTab(tab)
+                                                    setCurrentOffset(0)
+                                                }}
+                                                aria-current={tab == currentTab ? 'page' : undefined}
+                                            >
+                                                <tab.icon
+                                                    className={classNames(
+                                                        tab == currentTab ? 'text-green-500' : 'text-gray-600 group-hover:text-gray-500',
+                                                        '-ml-0.5 mr-2 h-5 w-5'
+                                                    )}
+                                                    aria-hidden="true"
+                                                />
+                                                <span>{tab.name}</span>
+                                            </button>
+                                        ))}
+                                    </nav>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                        {filteredIntegrations.slice(currentOffset * 8, (currentOffset + 1) * 8).map((integration) => (
-                            <div
-                                key={integration.name}
-                                className="relative flex items-center space-x-3 rounded-lg border border-gray-700 bg-neutral-900 px-6 py-5 shadow-sm focus-within:ring-1 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-600"
-                            >
-                                <div className="flex-shrink-0">
-                                    {name == 'Transformations' ? (
-                                        <img className="ring-1 ring-gray-700 h-10 w-10 rounded-lg p-2" src={integration.image} alt="" />
-                                    ) : (
-                                        <img className="ring-1 ring-gray-700 h-10 w-10 rounded-lg p-2" src={`${WORKFLOW_ASSETS_URL}/icons/${integration.image}.png`} alt="" />
+                        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                            {filteredIntegrations.slice(currentOffset * 8, (currentOffset + 1) * 8).map((integration) => (
+                                <div
+                                    key={integration.name}
+                                    className="relative flex items-center space-x-3 rounded-lg border border-gray-700 bg-neutral-900 px-6 py-5 shadow-sm focus-within:ring-1 focus-within:ring-green-500 focus-within:ring-offset-2 hover:border-gray-600"
+                                >
+                                    <div className="flex-shrink-0">
+                                        {name == 'Transformations' ? (
+                                            <img className="ring-1 ring-gray-700 h-10 w-10 rounded-lg p-2" src={integration.image} alt="" />
+                                        ) : (
+                                            <img className="ring-1 ring-gray-700 h-10 w-10 rounded-lg p-2" src={`${WORKFLOW_ASSETS_URL}/icons/${integration.image}.png`} alt="" />
 
-                                    )}
+                                        )}
+                                    </div>
+                                    <div className="min-w-0 flex-1">
+                                        <a href={integration.link} className="focus:outline-none">
+                                            <span className="absolute inset-0" aria-hidden="true" />
+                                            <div className='flex justify-between'>
+                                                <p className="text-sm font-medium text-gray-100">{integration.name}</p>
+                                                {integration.state == 'development' && (
+                                                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-700 text-gray-300 border border-gray-700">
+                                                        Coming soon
+                                                    </span>
+                                                )}
+                                            </div>
+                                            <p className="truncate text-sm text-gray-500">{integration.description}</p>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div className="min-w-0 flex-1">
-                                    <a href={integration.link} className="focus:outline-none">
-                                        <span className="absolute inset-0" aria-hidden="true" />
-                                        <div className='flex justify-between'>
-                                            <p className="text-sm font-medium text-gray-100">{integration.name}</p>
-                                            {integration.state == 'development' && (
-                                                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-neutral-700 text-gray-300 border border-gray-700">
-                                                    Coming soon
-                                                </span>
-                                            )}
-                                        </div>
-                                        <p className="truncate text-sm text-gray-500">{integration.description}</p>
-                                    </a>
-                                </div>
+                            ))}
+                        </div>
+                        <div className='mt-4 flex justify-between'>
+                            <div className='text-gray-200'>
+                                Showing {currentOffset * 8 + 1} to {Math.min((currentOffset + 1) * 8, filteredIntegrations.length)} of {filteredIntegrations.length} {name.toLowerCase()}
                             </div>
-                        ))}
-                    </div>
-                    <div className='mt-4 flex justify-between'>
-                        <div className='text-gray-200'>
-                            Showing {currentOffset * 8 + 1} to {Math.min((currentOffset + 1) * 8, filteredIntegrations.length)} of {filteredIntegrations.length} {name.toLowerCase()}
-                        </div>
-                        <div className="flex space-x-4 justify-end">
-                            <button
-                                className={classNames(
-                                    currentOffset == 0 ? 'text-gray-800' : 'text-gray-500 hover:text-gray-400',
-                                    "text-sm font-medium cursor-pointer"
-                                )}
-                                onClick={() => {
-                                    setCurrentOffset(currentOffset - 1)
-                                }}
-                                disabled={currentOffset == 0}
-                            >
-                                <IconChevronLeft className="h-5 w-5" />
-                            </button>
-                            <button
-                                className={classNames(
-                                    currentOffset + 1 >= Math.ceil(filteredIntegrations.length / 8) ? 'text-gray-800' : 'text-gray-500 hover:text-gray-400',
-                                    "text-sm font-medium cursor-pointer"
-                                )} onClick={() => {
-                                    setCurrentOffset(currentOffset + 1)
-                                }}
-                                disabled={currentOffset + 1 >= Math.ceil(filteredIntegrations.length / 8)}
-                            >
-                                <IconChevronRight className="h-5 w-5" />
-                            </button>
+                            <div className="flex space-x-4 justify-end">
+                                <button
+                                    className={classNames(
+                                        currentOffset == 0 ? 'text-gray-800' : 'text-gray-500 hover:text-gray-400',
+                                        "text-sm font-medium cursor-pointer"
+                                    )}
+                                    onClick={() => {
+                                        setCurrentOffset(currentOffset - 1)
+                                    }}
+                                    disabled={currentOffset == 0}
+                                >
+                                    <IconChevronLeft className="h-5 w-5" />
+                                </button>
+                                <button
+                                    className={classNames(
+                                        currentOffset + 1 >= Math.ceil(filteredIntegrations.length / 8) ? 'text-gray-800' : 'text-gray-500 hover:text-gray-400',
+                                        "text-sm font-medium cursor-pointer"
+                                    )} onClick={() => {
+                                        setCurrentOffset(currentOffset + 1)
+                                    }}
+                                    disabled={currentOffset + 1 >= Math.ceil(filteredIntegrations.length / 8)}
+                                >
+                                    <IconChevronRight className="h-5 w-5" />
+                                </button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
+                )}
+            </div>
         </div>
     )
 }
