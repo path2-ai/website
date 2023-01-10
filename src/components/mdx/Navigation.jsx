@@ -237,9 +237,6 @@ export function getNavigationElements(type) {
         title: 'gates',
         links: [
           { title: 'About', href: '/docs/gates' },
-          { title: 'Deploy', href: '/docs/gates/deploy' },
-          { title: 'Monitoring', href: '/docs/gates/monitoring' },
-          { title: 'Container', href: '/docs/gates/container' },
         ],
       },
       {
@@ -247,7 +244,7 @@ export function getNavigationElements(type) {
         links: [
           { title: 'About', href: '/docs/workflow' },
           { title: 'Editor', href: '/docs/workflow/editor' },
-          { title: 'Integrations', href: '/docs/workflow/integrations' },
+          { title: 'Integrations', href: '/docs/workflow/data-marts#integrations' },
           { title: 'refinery x gates x workflow', href: '/docs/workflow/refinery-gates-integration' },
           { title: 'Realtime and batch', href: '/docs/workflow/realtime-and-batch' },
           { title: 'Data marts', href: '/docs/workflow/data-marts' },

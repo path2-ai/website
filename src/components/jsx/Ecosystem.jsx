@@ -157,7 +157,7 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/docs/gates/deploy',
+        href: '/docs/gates#deploy',
         name: '3 clicks to deploy your model',
         description:
           'You already did the work in refinery. Now gates is as simple as it gets. Select the automations, hit deploy, and your model is live.',
@@ -165,7 +165,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/refinery/token',
+        href: '/docs/refinery/process/token',
         name: 'Secure execution - anywhere',
         description:
           'Integrate your model into any existing infrastructure. Use the API to get secured access to your model, no matter where and how it is deployed.',
@@ -173,7 +173,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/gates/monitoring',
+        href: '/docs/gates#monitoring',
         name: 'Monitor requests per hour, confidence and runtime',
         description:
           'Each model comes with a simple monitoring dashboard, helping you to analyze the usage and performance of your model.',
@@ -181,7 +181,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/gates/container',
+        href: '/docs/gates#container',
         name: 'Containerized runtime',
         description:
           'Your model is deployed as a containerized runtime. If required, you can execute the model on your own infrastructure.',
@@ -217,8 +217,8 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/workflow/integrations',
-        name: '/docs/workflow/integrations',
+        href: '/docs/workflow/data-marts#integrations',
+        name: 'Integrations',
         description:
           'workflow offers native integrations to e.g. Google workspace applications, Slack or other collaboration channels, and further offers an API and Webhook links. We are continuously adding new integrations.',
         icon: IconApps,
