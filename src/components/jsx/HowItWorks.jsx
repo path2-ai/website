@@ -97,7 +97,7 @@ export function HowItWorks() {
     const [selected, setSelected] = useState(options[0])
 
     return (
-        <section className="mt-16">
+        <section className="mx-4 mt-16">
             <div className="mx-auto w-full max-w-5xl sm:px-6 lg:px-8">
                 <div className="mt-20 py-8 sm:py-10 ">
                     <div>
@@ -109,7 +109,7 @@ export function HowItWorks() {
                         </p>
                     </div>
                 </div>
-                <div className="mt-6 grid grid-cols-3 gap-4">
+                <div className="mt-6 m-4 md:p-0 md:grid md:grid-cols-3 md:gap-4">
                     {options.map((option) => (
                         <div
                             key={option.title}
@@ -132,7 +132,7 @@ export function HowItWorks() {
             </div>
 
             <div
-                className="mt-12 mx-auto w-full max-w-6xl rounded-2xl border border-neutral-700 bg-neutral-900"
+                className="hidden lg:block mt-12 mx-auto w-full max-w-6xl rounded-2xl border border-neutral-700 bg-neutral-900"
             >
                 <div className="relative overflow-hidden py-28 space-y-28">
                     {selected.steps.map((step, stepIdx) => (
