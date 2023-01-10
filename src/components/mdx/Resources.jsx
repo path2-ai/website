@@ -72,7 +72,7 @@ function Resource({ resource }) {
           <Link href={`/changelog/${resource.href}`}>
             <span className="absolute inset-0 rounded-2xl" />
             {resource.title}
-            <span className='ml-2 font-mono font-regular text-xs'>({resource.href})</span>
+            <span className='ml-2 font-mono font-regular text-xs'>({String(resource.href).replace('_', '.').replace('_', '.')})</span>
           </Link>
         </h3>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
