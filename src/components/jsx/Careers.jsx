@@ -36,7 +36,7 @@ const employeeSurveyData = [
         label: "I have the feeling to have clear company goals ahead of me.",
         colorPrimary: "#ec4899", // pink
         colorSecondary: "#f9a8d4",
-        data: [6.2, 6.4, 6.2, 6.4, 6.6, 6.4, 6.6]
+        data: [6, 6.2, 6.2, 6.6, 6.6, 6.6, 6.8]
     },
     {
         label: "I know exactly what I do and my work is clearly defined.",
