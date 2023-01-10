@@ -7,6 +7,7 @@ import { WorkflowIcon } from '@/util/WorkflowIcon'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { Icon360, IconApiApp, IconApps, IconBrain, IconBrandDocker, IconBrandOpenSource, IconBrandPython, IconBuildingCastle, IconCategory2, IconCode, IconCrystalBall, IconDashboard, IconDatabase, IconDragDrop, IconGrowth, IconHighlight, IconLock, IconNumber3, IconRoute, IconTag, IconWindmill } from '@tabler/icons'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 const slideContent = {
   refinery: {
@@ -340,6 +341,7 @@ export function Ecosystem() {
 
   const [current, setCurrent] = useState(slider.current())
   const [clickedOption, setClickedOption] = useState(null)
+  const router = useRouter()
 
   const [timer, setTimer] = useState(0)
   useEffect(() => {
@@ -404,27 +406,35 @@ export function Ecosystem() {
                   The Kern AI ecosystem consists of four products
                 </div>
                 <div className='flex flex-col md:flex-row md:space-x-2'>
-                  <Link
-                    href='/docs/architecture'
+                  <button
                     type='button'
-                    className='hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'>
-                    <IconBuildingCastle className='my-auto h-5 w-5 mr-2' />
+                    className='bg-transparent hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'
+                    onClick={() => {
+                      router.push('/docs/architecture')
+                    }}
+                  >
                     <span>
+                      <IconBuildingCastle className='my-auto h-5 w-5 inline-block mr-2' />
                       Platform architecture
                     </span>
                     <span className="flex h-3 w-3">
                       <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500"></span>
                     </span>
-                  </Link>
-                  <Link
-                    href='/docs/how-it-works'
+                  </button>
+
+                  <button
                     type='button'
-                    className='mt-2 md:mt-0 hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'>
-                    <IconRoute className='my-auto h-5 w-5 mr-2' />
+                    className='mt-2 md:mt-0 hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'
+                    onClick={() => {
+                      router.push('/docs/how-it-works')
+                    }}
+                  >
                     <span>
+                      <IconRoute className='my-auto h-5 w-5 inline-block mr-2' />
+
                       How it works
                     </span>
-                  </Link>
+                  </button>
                 </div>
               </div>
               <div className='pt-8'>

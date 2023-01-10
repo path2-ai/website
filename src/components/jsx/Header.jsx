@@ -71,7 +71,7 @@ export function Header() {
                 {!mobileMenuOpen && (
                     <nav className="flex h-9 items-center justify-between" aria-label="Global">
                         <div className="mt-2" aria-label="Global">
-                            <a
+                            <button
                                 type='button'
                                 className="m-1.5 p-1.5 cursor-pointer">
                                 <span className="sr-only">Kern AI</span>
@@ -84,7 +84,7 @@ export function Header() {
                                             router.push('/')
                                         }
                                     } />
-                            </a>
+                            </button>
                         </div>
 
                         <div className="flex lg:hidden">

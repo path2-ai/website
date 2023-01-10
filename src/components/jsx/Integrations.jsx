@@ -147,27 +147,11 @@ function IntegrationList({ name, color, integrations, tabs, currentTab, setCurre
                         {name}
                     </h1>
                     <div>
-                        <div className="sm:hidden">
-                            <label htmlFor="tabs" className="sr-only">
-                                Select a tab
-                            </label>
-                            {/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
-                            <select
-                                id="tabs"
-                                name="tabs"
-                                className="block w-full rounded-md border-gray-700 focus:border-green-500 focus:ring-green-500"
-                                defaultValue={tabs.find((tab) => tab == currentTab)?.name}
-                            >
-                                {tabs.map((tab) => (
-                                    <option key={tab.name}>{tab.name}</option>
-                                ))}
-                            </select>
-                        </div>
                         <div className="hidden sm:block">
                             <div className="border-b border-gray-200">
                                 <nav className="-mb-px flex space-x-8" aria-label="Tabs">
                                     {tabs.map((tab) => (
-                                        <a
+                                        <button
                                             key={tab.name}
                                             type="button"
                                             className={classNames(
@@ -190,7 +174,7 @@ function IntegrationList({ name, color, integrations, tabs, currentTab, setCurre
                                                 aria-hidden="true"
                                             />
                                             <span>{tab.name}</span>
-                                        </a>
+                                        </button>
                                     ))}
                                 </nav>
                             </div>
