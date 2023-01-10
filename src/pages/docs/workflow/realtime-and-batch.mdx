@@ -1,5 +1,13 @@
 # Realtime and batch-processing
 
+In workflow, you can define two types of processess: realtime (i.e. operational) and batch (i.e. analytical) workflows. They differ in a very simple way:
+
+- realtime jobs are executed per item, and can be executed e.g. every second
+- batch jobs technically also work on item-level, but they are executed on batches of data, and can be executed e.g. every day. This higher level of granularity makes them perfect for analytical jobs.
+
+To define a workflow (no matter which type), simply hit `New project`, and click on one of the two options to either start from scratch or by using a template.
 ![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-creation.png)
+
+If you start from scratch, you can now define which type of workflow you want to build.
 
 ![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-creation-from-scratch.png)

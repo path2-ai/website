@@ -1,19 +1,42 @@
 # Data marts
 
+Data marts are your data storage vehicles in workflow. For instance, you can set up a mart that fetches data from your Google Mail inbox, and then use that data for your workflows. Let's look into how this works.
+
 ## Integrations
 
+In the left sidebar, you can head over to the integrations tab. Here, you will find a list of ready-made integrations (please note that workflow is in an early version and we're continuously adding new integrations to the store).
+
+These integrations are categorized by being either a `source` or a `target`, and categorized into use cases. To add an integration, simply click on `Add mart`.
+
 ![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-integration-store.png)
+
+In this example, we're adding a mart for the inbox of `johannes.hoetter@kern.ai`. This account is available as we have hit on the button with the key, which forwards us to authenticate with Google that the workflow application should have access to the inbox.
+![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-mart-setup.png)
+
+You can also see which access you have given to workflow in the specified tab on the sidebar. For instance, Johannes has given the workflow app permission for accessing his GMail inbox.
 
 ![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-access.png)
 
 ## Storage
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-single-entry.png)
+When you have set up a mart, it will run in the background with some integration-specific logic. For instance, the GMail mart will start fetching data from your inbox.
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-sample-input.png)
+Alternatively, you can also define a `Workflow Read` mart as both a data-entry UI for manual data entry, or for access via API. Simply define the input schema in the integration page.
 
 ![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-read.png)
 
+You then have access to the mart page. In there, click `Enter data`.
+
 ![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-read-empty.png)
 
-![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-mart-setup.png)
+You are now on a page where you can enter data in the format you've previously specified.
+
+![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-single-entry.png)
+
+When you enter data, it will be stored in the mart. You can now access the data in a workflow.
+
+![](http://kern-assets.s3-website.eu-central-1.amazonaws.com/website/screenshots/workflow-sample-input.png)
+
+## Target marts
+
+`target` marts also store data, but the data collected by them is coming only from the workflows themselves. If you set up a target mart which isn't filled by any workflow, it will stay empty. The main purpose for a `target` mart is to give you easy access into seeing what the data looks like before being sent to the integration. For instance, the `GSheet Send` integration builds marts that send data to an actual Google spreadsheet which you define when you set up the mart.

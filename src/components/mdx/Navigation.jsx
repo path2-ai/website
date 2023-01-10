@@ -243,11 +243,10 @@ export function getNavigationElements(type) {
         title: 'workflow',
         links: [
           { title: 'About', href: '/docs/workflow' },
-          { title: 'Editor', href: '/docs/workflow/editor' },
-          { title: 'Integrations', href: '/docs/workflow/data-marts#integrations' },
           { title: 'refinery x gates x workflow', href: '/docs/workflow/refinery-gates-integration' },
           { title: 'Realtime and batch', href: '/docs/workflow/realtime-and-batch' },
           { title: 'Data marts', href: '/docs/workflow/data-marts' },
+          { title: 'Editor', href: '/docs/workflow/editor' },
         ],
       },
     ]
