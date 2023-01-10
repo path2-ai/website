@@ -84,11 +84,11 @@ function resolveResult(result) {
     result.type === 'content'
       ? levels.pop()
       : levels
-          .filter(
-            (level) =>
-              allLevels.indexOf(level) <= allLevels.indexOf(result.type)
-          )
-          .pop()
+        .filter(
+          (level) =>
+            allLevels.indexOf(level) <= allLevels.indexOf(result.type)
+        )
+        .pop()
 
   return {
     titleHtml: result._highlightResult.hierarchy[level].value,
@@ -358,7 +358,7 @@ function SearchDialog({ open, setOpen, className }) {
     function onKeyDown(event) {
       if (event.key === 'k' && (event.metaKey || event.ctrlKey)) {
         event.preventDefault()
-        setOpen(true)
+        // setOpen(true)
       }
     }
 
@@ -478,20 +478,22 @@ export function Search() {
   }, [])
 
   return (
-    <div className="hidden lg:block lg:max-w-md lg:flex-auto">
-      <button
-        type="button"
-        className="hidden h-8 w-full items-center gap-2 rounded-full bg-white pl-2 pr-3 text-sm text-zinc-500 ring-1 ring-zinc-900/10 transition hover:ring-zinc-900/20 dark:bg-white/5 dark:text-zinc-400 dark:ring-inset dark:ring-white/10 dark:hover:ring-white/20 lg:flex focus:[&:not(:focus-visible)]:outline-none"
-        {...buttonProps}
-      >
-        <SearchIcon className="h-5 w-5 stroke-current" />
-        Find something...
-        <kbd className="ml-auto text-2xs text-zinc-400 dark:text-zinc-500">
-          <kbd className="font-sans">{modifierKey}</kbd>
-          <kbd className="font-sans">K</kbd>
-        </kbd>
-      </button>
-      <SearchDialog className="hidden lg:block" {...dialogProps} />
+    <div className='invisible'>
+      <div className="hidden lg:block lg:max-w-md lg:flex-auto">
+        <button
+          type="button"
+          className="hidden h-8 w-full items-center gap-2 rounded-full bg-white pl-2 pr-3 text-sm text-zinc-500 ring-1 ring-zinc-900/10 transition hover:ring-zinc-900/20 dark:bg-white/5 dark:text-zinc-400 dark:ring-inset dark:ring-white/10 dark:hover:ring-white/20 lg:flex focus:[&:not(:focus-visible)]:outline-none"
+          {...buttonProps}
+        >
+          <SearchIcon className="h-5 w-5 stroke-current" />
+          Find something...
+          <kbd className="ml-auto text-2xs text-zinc-400 dark:text-zinc-500">
+            <kbd className="font-sans">{modifierKey}</kbd>
+            <kbd className="font-sans">K</kbd>
+          </kbd>
+        </button>
+        <SearchDialog className="hidden lg:block" {...dialogProps} />
+      </div>
     </div>
   )
 }

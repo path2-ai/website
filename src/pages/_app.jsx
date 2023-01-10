@@ -23,44 +23,33 @@ Router.events.on('hashChangeStart', onRouteChange)
 Router.events.on('routeChangeComplete', onRouteChange)
 Router.events.on('routeChangeError', onRouteChange)
 
+export const docsPaths = [
+  '/docs/bricks',
+  '/docs/refinery',
+  '/docs/gates',
+  '/docs/workflow',
+]
+
+export const blogPath = '/company/blog/'
+export const changelogPath = '/changelog'
+
 export default function App({ Component, pageProps }) {
 
   const router = useRouter()
 
-  const docsPaths = [
-    '/docs/bricks',
-    '/docs/refinery',
-    '/docs/gates',
-    '/docs/workflow',
-  ]
-
-  const blogPath = '/company/blog/'
-  const changelogPath = '/changelog'
-
   const Body = ({ pageProps, Component }) => {
     // check if any of the paths are partially in the current path
 
-    if (docsPaths.some((path) => router.pathname.includes(path))) {
+    if (docsPaths.some((path) => router.pathname.includes(path)) || (router.pathname.includes(blogPath) || router.pathname.includes(changelogPath))) {
       return (
         <MDXProvider components={mdxComponents}>
-          <Layout type="docs" {...pageProps}>
+          <Layout  {...pageProps}>
             <Component {...pageProps} />
           </Layout>
           <CookieBanner />
         </MDXProvider>
       )
-    } else if (router.pathname.includes(blogPath) || router.pathname.includes(changelogPath)) {
-      const type = router.pathname.includes(blogPath) ? 'blog' : 'changelog'
-      return (
-        <MDXProvider components={mdxComponents}>
-          <Layout type={type} {...pageProps} >
-            <Component {...pageProps} />
-          </Layout>
-          <CookieBanner />
-        </MDXProvider >
-      )
-    }
-    else {
+    } else {
       return (
         <div className='bg-black'>
           <div className="sticky top-0 z-50 backdrop-blur-md opacity-[98%]">

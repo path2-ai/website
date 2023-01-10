@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
 import { articles } from '@/pages/company/blog/overview'
 import { logs } from '@/pages/changelog/navbar'
+import { docsPaths, changelogPath, blogPath } from '@/pages/_app'
 
 import { Button } from '@/components/mdx/Button'
 import { useIsInsideMobileNavigation } from '@/components/mdx/MobileNavigation'
@@ -284,22 +285,29 @@ export function getNavigationElements(type) {
         links: logs.map(log => {
           return { title: `${log.title} (${log.href})`, href: `/changelog/${log.href}` }
         })
-        // links: [
-        //   { title: 'version 1', href: '/changelog/v1_0_0' },
-        // ],
       },]
   }
 }
 
 export function Navigation(props) {
+  const router = useRouter()
+  let type;
+  if (docsPaths.some((path) => router.pathname.includes(path))) {
+    type = 'docs'
+  } else if (router.pathname.includes(blogPath)) {
+    type = 'blog'
+  } else if (router.pathname.includes(changelogPath)) {
+    type = 'changelog'
+  }
 
-  const navigation = getNavigationElements(props['type'])
+  const navigation = getNavigationElements(type)
+
   return (
     <nav {...props}>
       <ul role="list">
-        <TopLevelNavItem href="/">API</TopLevelNavItem>
-        <TopLevelNavItem href="#">Documentation</TopLevelNavItem>
-        <TopLevelNavItem href="#">Support</TopLevelNavItem>
+        {/* <TopLevelNavItem href="/">API</TopLevelNavItem>
+        <TopLevelNavItem href="#">Documentation</TopLevelNavItem> */}
+        <TopLevelNavItem href="https://discord.com/invite/qf4rGCEphW">Community support</TopLevelNavItem>
         {navigation.map((group, groupIndex) => (
           <NavigationGroup
             key={group.title}
@@ -307,11 +315,6 @@ export function Navigation(props) {
             className={groupIndex === 0 && 'md:mt-0'}
           />
         ))}
-        <li className="sticky bottom-0 z-10 mt-6 min-[416px]:hidden">
-          <Button href="#" variant="filled" className="w-full">
-            Sign in
-          </Button>
-        </li>
       </ul>
     </nav>
   )

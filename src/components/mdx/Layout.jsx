@@ -7,7 +7,7 @@ import { SectionProvider } from '@/components/mdx/SectionProvider'
 import { KERN_ASSETS_URL } from '../jsx/_settings'
 
 
-export function Layout({ children, sections = [], type }) {
+export function Layout({ children, sections = [] }) {
 
   const router = useRouter()
 
@@ -30,7 +30,7 @@ export function Layout({ children, sections = [], type }) {
               />
             </div>
             <Header />
-            <Navigation type={type} className="hidden lg:mt-10 lg:block" />
+            <Navigation className="hidden lg:mt-10 lg:block" />
           </div>
         </motion.header>
         <div className="relative px-4 pt-14 sm:px-6 lg:px-8">
