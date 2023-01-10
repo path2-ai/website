@@ -1,10 +1,10 @@
-import { IconBrandDiscord, IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconBrandYoutube } from "@tabler/icons"
+import { IconBrandDiscord, IconBrandGithub, IconBrandLinkedin, IconBrandTwitter, IconBrandYoutube, IconCheck, IconX } from "@tabler/icons"
 import { useRouter } from "next/router"
 import { CookieModal } from "./CookieModal"
 import { ContactModal } from "./ContactModal"
-import { useState } from "react"
 import axios from "axios";
-
+import { Fragment, useState } from 'react'
+import { Transition } from '@headlessui/react'
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
@@ -19,6 +19,8 @@ export function Footer() {
     const [open, setOpen] = useState(false)
     const [enabled, setEnabled] = useState(false)
     const [email, setEmail] = useState('')
+    const [showNotification, setShowNotification] = useState(false)
+
 
     const navigation = {
         product: [
@@ -116,7 +118,7 @@ export function Footer() {
                                     type="button"
                                     className={classNames(
                                         !consent ? "text-gray-500 bg-neutral-700 cursor-not-allowed " : "text-neutral-900 bg-gradient-to-r from-lime-300 to-green-600 hover:from-lime-400 hover:to-green-500",
-                                        "flex w-full items-center justify-center rounded-md py-2 px-4 text-base font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                        "flex w-full items-center justify-center rounded-md py-2 px-4 text-base font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-800"
                                     )}
                                     onClick={() => {
                                         axios
@@ -129,6 +131,7 @@ export function Footer() {
                                             )
                                             .then(function (response) {
                                                 setEmail('');
+                                                setShowNotification(true);
                                             })
                                             .catch(function (error) {
                                                 console.log(error);
@@ -177,6 +180,51 @@ export function Footer() {
             </div>
             <ContactModal open={openContactModal} setOpen={setOpenContactModal} />
             <CookieModal open={open} setOpen={setOpen} enabled={enabled} setEnabled={setEnabled} />
+
+            <div
+                aria-live="assertive"
+                className="z-30 fixed bottom-0 right-0 w-full pointer-events-none flex items-end px-4 py-6 sm:items-start sm:p-6"
+            >
+                <div className="flex w-full flex-col items-center space-y-4 sm:items-end">
+                    {/* Notification panel, dynamically insert this into the live region when it needs to be displayed */}
+                    <Transition
+                        show={showNotification}
+                        as={Fragment}
+                        enter="transform ease-out duration-300 transition"
+                        enterFrom="translate-y-2 opacity-0 sm:translate-y-0 sm:translate-x-2"
+                        enterTo="translate-y-0 opacity-100 sm:translate-x-0"
+                        leave="transition ease-in duration-100"
+                        leaveFrom="opacity-100"
+                        leaveTo="opacity-0"
+                    >
+                        <div className="pointer-events-auto w-full max-w-sm overflow-hidden rounded-lg bg-neutral-900 shadow-lg ring-1 ring-gray-700">
+                            <div className="p-4">
+                                <div className="flex items-start">
+                                    <div className="flex-shrink-0">
+                                        <IconCheck className="h-6 w-6 text-green-400" aria-hidden="true" />
+                                    </div>
+                                    <div className="ml-3 w-0 flex-1 pt-0.5">
+                                        <p className="text-sm font-medium text-gray-100">Subscribed to newsletter</p>
+                                        <p className="mt-1 text-sm text-gray-300">We added you to our weekly newsletter.</p>
+                                    </div>
+                                    <div className="ml-4 flex flex-shrink-0">
+                                        <button
+                                            type="button"
+                                            className="inline-flex rounded-md bg-neutral-900 text-gray-300 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                                            onClick={() => {
+                                                setShowNotification(false)
+                                            }}
+                                        >
+                                            <span className="sr-only">Close</span>
+                                            <IconX className="h-5 w-5" aria-hidden="true" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Transition>
+                </div>
+            </div>
         </footer >
     )
 }
