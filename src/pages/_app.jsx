@@ -14,6 +14,8 @@ import { CookieBanner } from '@/components/jsx/CookieBanner'
 
 import '@/styles/tailwind.css'
 import 'focus-visible'
+import * as Fathom from 'fathom-client';
+
 
 function onRouteChange() {
   useMobileNavigationStore.getState().close()
@@ -36,6 +38,28 @@ export const changelogPath = '/changelog'
 export default function App({ Component, pageProps }) {
 
   const router = useRouter()
+
+  useEffect(() => {
+    // Initialize Fathom when the app loads
+    // Example: yourdomain.com
+    //  - Do not include https://
+    //  - This must be an exact match of your domain.
+    //  - If you're using www. for your domain, make sure you include that here.
+    Fathom.load('ZIUTHOCW', {
+      includedDomains: ['kern.ai', 'www.kern.ai'],
+    });
+
+    function onRouteChangeComplete() {
+      Fathom.trackPageview();
+    }
+    // Record a pageview when route changes
+    router.events.on('routeChangeComplete', onRouteChangeComplete);
+
+    // Unassign event listener
+    return () => {
+      router.events.off('routeChangeComplete', onRouteChangeComplete);
+    };
+  }, []);
 
   const Body = ({ pageProps, Component }) => {
     // check if any of the paths are partially in the current path
