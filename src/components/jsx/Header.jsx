@@ -206,18 +206,44 @@ export function Header() {
                         </div>
                         <div className="mt-6 flow-root">
                             <div className="-my-6 divide-y divide-gray-500/10">
-                                <div className="space-y-2 py-6">
+                                <div className="m-4 space-y-2 py-6 grid grid-cols-2 gap-8">
                                     {navigation.map((item) => (
-                                        <Link
-                                            key={item.name}
-                                            href={item.href}
-                                            className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-600/10"
-                                        >
-                                            {item.name}
-                                        </Link>
+                                        item.href && (
+                                            <Link
+                                                key={item.name}
+                                                href={item.href}
+                                                className="text-base font-semibold leading-7 text-gray-100 hover:bg-gray-600/10"
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        )
+                                    ))}
+                                    {navigation.map((item) => (
+                                        !item.href && (
+                                            <div>
+                                                <div
+                                                    key={item.name}
+                                                    className="text-base font-semibold leading-7 text-gray-100 hover:bg-gray-600/10"
+                                                >
+                                                    {item.name}
+                                                </div>
+                                                <div className='mt-2 flex flex-col space-y-2'>
+                                                    {item.subnav.map((subItem) => (
+                                                        <Link
+                                                            key={subItem.name}
+                                                            href={subItem.href}
+                                                        >
+                                                            <div className="ml-4">
+                                                                <p className="text-base font-medium text-gray-100">{subItem.name}</p>
+                                                            </div>
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )
                                     ))}
                                 </div>
-                                <div className="py-6">
+                                <div className="py-2">
                                     <a
                                         href="https://demo.kern.ai"
                                         target="_blank"
