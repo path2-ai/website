@@ -118,7 +118,7 @@ export function Footer() {
                                     <button
                                         type="button"
                                         className={classNames(
-                                            !consent ? "text-gray-500 bg-neutral-700 cursor-not-allowed " : "text-neutral-900 bg-gradient-to-r from-lime-300 to-green-600 hover:from-lime-400 hover:to-green-500",
+                                            !(consent && email) ? "text-gray-500 bg-neutral-700 cursor-not-allowed " : "text-neutral-900 bg-gradient-to-r from-lime-300 to-green-600 hover:from-lime-400 hover:to-green-500",
                                             "flex w-full items-center justify-center rounded-md py-2 px-4 text-base font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-800"
                                         )}
                                         onClick={() => {
@@ -138,7 +138,7 @@ export function Footer() {
                                                     console.log(error);
                                                 })
                                         }}
-                                        disabled={!consent}
+                                        disabled={!(consent && email)}
                                     >
                                         Subscribe
                                     </button>
