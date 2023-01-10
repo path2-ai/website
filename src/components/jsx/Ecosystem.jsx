@@ -448,11 +448,21 @@ export function Ecosystem() {
                   You can click on the below feature cards to jump into the documentation.
                 </p>
               </div>
-              <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-white/5`}>
-                {slideContent[current].features.map((feature) => (
-                  <Feature key={feature.name} feature={feature} product={current} />
-                ))}
+              <div className='hidden md:block'>
+                <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-white/5`}>
+                  {slideContent[current].features.map((feature) => (
+                    <Feature key={feature.name} feature={feature} product={current} />
+                  ))}
+                </div>
               </div>
+              <div className='block md:hidden'>
+                <div className={`w-full flex flex-col space-y-6 border-t border-white/5`}>
+                  {slideContent[current].features.map((feature) => (
+                    <Feature key={feature.name} feature={feature} product={current} />
+                  ))}
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
