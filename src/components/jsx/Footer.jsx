@@ -78,8 +78,8 @@ export function Footer() {
     return (
         <footer className="my-10 max-w-5xl mx-auto">
             <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-                <div className="grid grid-cols-6 gap-4 text-sm">
-                    <div className="flex col-span-4 grid grid-cols-4">
+                <div className="md:grid md:grid-cols-6 gap-4 text-sm">
+                    <div className="flex col-span-2 md:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-4">
                         {Object.keys(navigation).filter(section => section != 'social').map((section) => (
                             <div key={section} className="col-span-1">
                                 <h3 className="text-white">{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
@@ -95,71 +95,72 @@ export function Footer() {
                             </div>
                         ))}
                     </div>
-                    <div className="col-span-2">
-                        <h3 className="text-white">Subscribe to our newsletter</h3>
-                        <p className="mt-4 text-gray-300">
-                            The latest news, articles, and resources, sent to your inbox weekly.
-                        </p>
-                        <div className="mt-4 flex max-w-md">
-                            <label htmlFor="newsletter" className="sr-only">
-                                Email address
-                            </label>
-                            <input
-                                type="email"
-                                name="newsletter"
-                                id="newsletter"
-                                required
-                                className="w-full min-w-0 appearance-none rounded-md border border-transparent bg-neutral-900 py-2 px-4 text-base text-gray-100 placeholder-gray-300 focus:border-white focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 focus:ring-offset-gray-200"
-                                placeholder="Enter your email"
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-                                <button
-                                    type="button"
-                                    className={classNames(
-                                        !consent ? "text-gray-500 bg-neutral-700 cursor-not-allowed " : "text-neutral-900 bg-gradient-to-r from-lime-300 to-green-600 hover:from-lime-400 hover:to-green-500",
-                                        "flex w-full items-center justify-center rounded-md py-2 px-4 text-base font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-800"
-                                    )}
-                                    onClick={() => {
-                                        axios
-                                            .post(
-                                                "https://getform.io/f/9cad3d6d-7a57-4818-8984-5175ca10deac",
-                                                {
-                                                    email: email,
-                                                },
-                                                { headers: { Accept: "application/json" } }
-                                            )
-                                            .then(function (response) {
-                                                setEmail('');
-                                                setShowNotification(true);
-                                            })
-                                            .catch(function (error) {
-                                                console.log(error);
-                                            })
-                                    }}
-                                    disabled={!consent}
-                                >
-                                    Subscribe
-                                </button>
-                            </div>
-                        </div>
-
-                        <div className="flex items-center mt-4">
-                            <div className="mb-auto flex items-start">
-                                <div className="flex items-center h-5">
-                                    <input
-                                        id="consent"
-                                        name="consent"
-                                        type="checkbox"
-                                        className="accent-green-500 focus:ring-green-500 h-4 w-4 text-green-600 border-gray-700 rounded"
-                                        onChange={() => setConsent(!consent)}
-                                    />
+                    <div className="mt-8 md:mt-0 col-span:4 md:col-span-2">
+                        <div>
+                            <h3 className="text-white">Subscribe to our newsletter</h3>
+                            <p className="mt-4 text-gray-300">
+                                The latest news, articles, and resources, sent to your inbox weekly.
+                            </p>
+                            <div className="mt-4 flex max-w-md">
+                                <label htmlFor="newsletter" className="sr-only">
+                                    Email address
+                                </label>
+                                <input
+                                    type="email"
+                                    name="newsletter"
+                                    id="newsletter"
+                                    required
+                                    className="w-full min-w-0 appearance-none rounded-md border border-transparent bg-neutral-900 py-2 px-4 text-base text-gray-100 placeholder-gray-300 focus:border-white focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 focus:ring-offset-gray-200"
+                                    placeholder="Enter your email"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <div className="ml-3  rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                                    <button
+                                        type="button"
+                                        className={classNames(
+                                            !consent ? "text-gray-500 bg-neutral-700 cursor-not-allowed " : "text-neutral-900 bg-gradient-to-r from-lime-300 to-green-600 hover:from-lime-400 hover:to-green-500",
+                                            "flex w-full items-center justify-center rounded-md py-2 px-4 text-base font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+                                        )}
+                                        onClick={() => {
+                                            axios
+                                                .post(
+                                                    "https://getform.io/f/9cad3d6d-7a57-4818-8984-5175ca10deac",
+                                                    {
+                                                        email: email,
+                                                    },
+                                                    { headers: { Accept: "application/json" } }
+                                                )
+                                                .then(function (response) {
+                                                    setEmail('');
+                                                    setShowNotification(true);
+                                                })
+                                                .catch(function (error) {
+                                                    console.log(error);
+                                                })
+                                        }}
+                                        disabled={!consent}
+                                    >
+                                        Subscribe
+                                    </button>
                                 </div>
                             </div>
-                            <div className="ml-2 text-xs">
-                                <label htmlFor="consent" className="font-medium text-gray-300">
-                                    I agree to the storage of my data for the purpose of contacting me and I consent to the privacy policy.
-                                </label>
+                            <div className="flex items-center mt-4">
+                                <div className="mb-auto flex items-start">
+                                    <div className="flex items-center h-5">
+                                        <input
+                                            id="consent"
+                                            name="consent"
+                                            type="checkbox"
+                                            className="accent-green-500 focus:ring-green-500 h-4 w-4 text-green-600 border-gray-700 rounded"
+                                            onChange={() => setConsent(!consent)}
+                                        />
+                                    </div>
+                                </div>
+                                <div className="ml-2 text-xs">
+                                    <label htmlFor="consent" className="font-medium text-gray-300">
+                                        I agree to the storage of my data for the purpose of contacting me and I consent to the privacy policy.
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
