@@ -93,7 +93,7 @@ const slideContent = {
         href: '/docs/bricks#classifiers',
         name: 'Classifiers',
         description:
-          'Learn about the contact model and how to create, retrieve, update, delete, and list contacts.',
+          'Classifiers summarize information, e.g. the sentiment of a text. Think of them as functions returning values, i.e. one input = one output.',
         icon: IconCategory2,
         colsSpan: 1,
       },
@@ -101,7 +101,7 @@ const slideContent = {
         href: '/docs/bricks#extractors',
         name: 'Extractors',
         description:
-          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+          'Extractors retrieve information, e.g. extracting organizations in texts. Think of them as functions yielding values, i.e. one input = arbitrary number of output.',
         icon: IconHighlight,
         colsSpan: 1,
       },
@@ -109,7 +109,7 @@ const slideContent = {
         href: '/docs/bricks#generators',
         name: 'Generators',
         description:
-          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+          'Generators produce new data, e.g. translating from German to Portuguese. Think of them as functions returning values, i.e. one input = one output, but that output is sequential.',
         icon: IconWindmill,
         colsSpan: 1,
       },
@@ -117,7 +117,7 @@ const slideContent = {
         href: '/docs/bricks#customize',
         name: 'Customizable',
         description:
-          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+          'Every brick is open-source and modular, such that you can customize the code itself immediately. Start with a great baseline, and adapt it to your needs.',
         icon: IconCode,
         colsSpan: 1,
       },
@@ -125,7 +125,7 @@ const slideContent = {
         href: '/docs/bricks/refinery-integration',
         name: 'Integration to refinery',
         description:
-          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+          'Every brick is designed to be integrated into refinery. You can search within refinery for a brick, and then add it to your project within a few clicks.',
         icon: IconApiApp,
         colsSpan: 2,
       },
@@ -133,7 +133,7 @@ const slideContent = {
         href: '/docs/bricks/roadmap',
         name: 'Growing weekly',
         description:
-          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+          'We aim to add new bricks every week. If you have a great idea for a brick, please let us know. We are happy to help you implement it.',
         icon: IconGrowth,
         colsSpan: 1,
       },
@@ -141,7 +141,7 @@ const slideContent = {
         href: 'https://github.com/code-kern-ai/bricks',
         name: 'Open-source',
         description:
-          'Learn about the conversation model and how to create, retrieve, update, delete, and list conversations.',
+          'Just as refinery, bricks is open-source. You can find the code on GitHub. We are also happy to accept contributions.',
         icon: IconBrandOpenSource,
         colsSpan: 1,
       },
