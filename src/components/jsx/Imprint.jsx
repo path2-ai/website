@@ -12,7 +12,7 @@ export function Imprint() {
                         Information according to § 5 TMG
                     </p>
                     <p className="mt-2">
-                        onetask.ai GmbH <br />
+                        Kern AI GmbH <br />
 
                         Gerhart-Hauptmann-Allee 71 <br />
                         15732 Eichwalde <br />
