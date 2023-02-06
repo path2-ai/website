@@ -2,8 +2,63 @@ export function Security() {
     return (
         <div className="relative overflow-hidden text-gray-100 py-16">
             <div className="relative px-4 sm:px-6 lg:px-8">
-                <div className="mx-auto max-w-prose text-lg">
+                <div className="mx-auto max-w-prose text-lg flex flex-col space-y-8">
+
                     <h1>
+                        <span className="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-white sm:text-4xl">
+                            General Information Security Policy
+                        </span>
+                    </h1>
+
+                    <div>
+                        <span className="font-bold">Protect</span> Kern AI’s informational and IT assets (including but not limited to all computers, mobile
+                        devices, networking equipment, software and sensitive data) against all internal, external, deliberate
+                        or accidental threats and to mitigate the risks associated with the theft, loss, misuse, damage or
+                        abuse of these systems;
+                    </div>
+                    <div>
+                        <span className="font-bold">Ensure</span> information will be protected against any unauthorized access. Users shall only have access to
+                        resources that they have been specifically authorized to access. The allocation of privileges shall be
+                        strictly controlled and reviewed regularly.
+                    </div>
+                    <div>
+                        <span className="font-bold">Protect CONFIDENTIALITY</span> of information. When we talk about confidentiality of information, we are
+                        talking about protecting the information from disclosure to unauthorized parties;
+                    </div>
+                    <div>
+                        <span className="font-bold">Ensure INTEGRITY</span> of information. Integrity of information refers to protecting information from
+                        being modified by unauthorized parties;
+                    </div>
+                    <div>
+                        <span className="font-bold">Maintain AVAILABILITY</span> of information for business processes. Availability of information refers to
+                        ensuring that authorized parties can access the information when needed.
+                    </div>
+                    <div>
+                        <span className="font-bold">Comply</span> with and, wherever possible, exceed, national legislative and regulatory requirements,
+                        standards and best practices;
+                    </div>
+                    <div>
+                        <span className="font-bold">Develop</span>, <span className="font-bold">Maintain</span> and <span className="font-bold">Test</span> business continuity plans to ensure we stay on course despite all
+                        obstacles that we may come across. It is about “keeping calm and carrying on!”;
+                    </div>
+                    <div>
+                        <span className="font-bold">Raise</span> awareness of information security by making information security training available for all
+                        Employees. Security awareness and targeted training shall be conducted consistently, security
+                        responsibilities reflected in job descriptions, and compliance with security requirements shall be
+                        expected and accepted as a part of our culture;
+                    </div>
+                    <div>
+                        <span className="font-bold">Ensure</span> that no action will be taken against any employee who discloses an information security
+                        concern through reporting or in direct contact with the Information Security Management Leader,
+                        unless such disclosure indicates, beyond any reasonable doubt, an illegal act, gross negligence, or a
+                        repetitive deliberate or willful disregard for regulations or procedures;
+                    </div>
+                    <div>
+                        <span className="font-bold">Report</span> all actual or suspected information security breaches security@kern.ai.
+                    </div>
+
+
+                    {/* <h1>
                         <span className="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-white sm:text-4xl">
                             Everything you need to know about our security practices
                         </span>
@@ -75,7 +130,7 @@ export function Security() {
                         <p className="mt-2 text-gray-300">
                             For all further questions, please contact henrik.wenck@kern.ai.
                         </p>
-                    </div>
+                    </div> */}
 
                 </div>
 

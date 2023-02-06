@@ -9,189 +9,252 @@ export function Terms() {
                         </span>
                     </h1>
                     <div className="mt-8">
-                        <p>Last updated: January 26, 2023</p>
+                        <p>Last updated: 06/02/2023</p>
                         <p>Please read these terms and conditions carefully before using Our Service.</p>
                     </div>
                     <div className="mt-8 space-y-8">
-                        <div>
-                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Interpretation and Definitions</h1>
-                            <div>
-                                <h2>Interpretation</h2>
-                                <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
-                            </div>
-                            <div>
-                                <h2>Definitions</h2>
-                                <p>For the purposes of these Terms and Conditions:</p>
-                                <ul>
-                                    <li>
-                                        <p><strong>Application</strong> means the software program provided by the Company, named Kern AI</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Country</strong> refers to: Brandenburg,  Germany</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Kern AI GmbH, Gerhart-Hauptmann-Allee 71, 15732 Eichwalde.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Content</strong> refers to content such as text, images, or other information that can be uploaded, linked to or otherwise made available by You, regardless of the form of that content.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Feedback</strong> means feedback, innovations or suggestions sent by You regarding the attributes, performance or features of our Service.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Free Trial</strong> refers to a limited period of time that may be free when purchasing a Subscription.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Promotions</strong> refer to contests, sweepstakes or other promotions offered through the Service.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Service</strong> refers to the Application or the Website or both.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Subscriptions</strong> refer to the services or access to the Service offered on a subscription basis by the Company to You.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Terms and Conditions</strong> (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Third-party Service</strong> means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.</p>
-                                    </li>
-                                    <li>
-                                        <p><strong>Website</strong> refers to Kern AI, accessible from <a href="https://www.kern.ai" rel="external nofollow noopener" target="_blank">https://www.kern.ai</a></p>
-                                    </li>
-                                    <li>
-                                        <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
-                                    </li>
-                                </ul>
-                            </div>
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">1. Preamble</h1>
+                            <p>1.1 Kern AI GmbH, Gerhart-Hauptmann-Allee 71, 15732 Eichwalde (“Licensor”) is a provider of digital solutions and offers a data-centric platform for Natural Language Products, Tools and Workflows. In these Terms, we refer to you as “Licensee”.</p>
+                            <p>1.2 Licensor has developed the ecosystem “Kern AI” (hereinafter referred to as “Software”). Kern AI is a collection of tools to scale, analyze and mantain your natural language data. To do so, Kern AI provides the refinery as editor for natural language processing, bricks as a collection of modular and standardized code snippets that can be directly integrate into refinery, gates as online monitoring and inference API for data-centric models and workflow as orchestration layer for natural language-driven tasks.</p>
+                            <p>1.3 Licensor offers both a self-hosted, on-premises version (“Self-hosted Edition”) and a hosted software as a service version (“SaaS Edition”) of Software.</p>
+                            <p>1.4 Kern AI consists of a core (“Core”) and specific, proprietary software features as described in Annex 1. Licensor released the Core as an “Essential Open Source” version (“OSS Version”) under the Apache License, Version 2.0 (“Core License”). These Terms cover both, the Core and the Features, however, exclusively under the conditions of these Terms and not under the Core License. The use of the OSS Version free of charge is governed exclusively by the Core License and not subject to these Terms.</p>
+                            <p>1.5 These Software License and Subscription Terms (“Terms”) provide the terms and conditions that govern both the commercial use of the Self-hosted Edition and the SaaS Edition and are to be included in a respective agreement between Licensor and Licensee.  </p>
+                            <p>1.6 Unless Licensee already concluded an Agreement with Licensor that refers to these Terms, by installing the Self-hosted Edition or subscribing to the SaaS Edition, Licensee agrees to be bound by the following Terms.</p>
                         </div>
-                        <div>
-                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Acknowledgment</h1>
-                            <p>These are the Terms and Conditions governing the use of this Service and the agreement that operates between You and the Company. These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.</p>
-                            <p>Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. These Terms and Conditions apply to all visitors, users and others who access or use the Service.</p>
-                            <p>By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.</p>
-                            <p>You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.</p>
-                            <p>Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.</p>
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">2. Scope of Terms</h1>
+                            <p>2.1 Subject to the details set out in Annex 1, Licensor offers versions of both the Self-hosted Edition and the SaaS Edition that are free of charge for Licensee (“Free Versions”). The use of additional features not comprised by Free Versions and any granting an extended range of usage rights are subject to specific agreements or valid Subscriptions and the fees set out in Annex 1.</p>
+                            <p>2.2 The scope of the different versions and editions of the Software is set out in Annex 1. For clarity, each version and edition of the Software may be limited to certain features and functionalities, a certain number of users (user-based system), a certain number of refinery credits, a certain subscription term, or a combination of the foregoing parameters.</p>
+                            <p>2.3 The Parties may agree on further features not listed in Annex 1 on an individual basis. This may also include additional services such as programming, support, or similar services.</p>
+                            <p>2.4 If required by applicable law, the parties will conclude an agreement on data processing.</p>
+                            <p>2.5 The Licensee’s general terms and conditions shall only become part of a contract between the parties if this has been expressly agreed in text form (email being sufficient).</p>
                         </div>
-                        <div>
-                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Subscriptions</h1>
-                            <h2>Subscription period</h2>
-                            <p>The Service or some parts of the Service are available only with a paid Subscription. You will be billed in advance on a recurring and periodic basis (such as monthly or annually), depending on the type of Subscription plan you select when purchasing the Subscription.</p>
-                            <p>At the end of each period, Your Subscription will automatically renew under the exact same conditions unless You cancel it or the Company cancels it.</p>
-                            <h2>Subscription cancellations</h2>
-                            <p>You may cancel Your Subscription renewal by contacting the Company.
-                                You will not receive a refund for the fees You already paid for Your current Subscription period and You will be able to access the Service until the end of Your current Subscription period.</p>
-                            <h2>Billing</h2>
-                            <p>You shall provide the Company with accurate and complete billing information including full name, address, state, zip code, telephone number, and a valid payment method information.</p>
-                            <p>Should automatic billing fail to occur for any reason, the Company will issue an electronic invoice indicating that you must proceed manually, within a certain deadline date, with the full payment corresponding to the billing period as indicated on the invoice.</p>
-                            <h2>Fee Changes</h2>
-                            <p>The Company, in its sole discretion and at any time, may modify the Subscription fees. Any Subscription fee change will become effective at the end of the then-current Subscription period.</p>
-                            <p>The Company will provide You with reasonable prior notice of any change in Subscription fees to give You an opportunity to terminate Your Subscription before such change becomes effective.</p>
-                            <p>Your continued use of the Service after the Subscription fee change comes into effect constitutes Your agreement to pay the modified Subscription fee amount.</p>
-                            <h2>Refunds</h2>
-                            <p>Except when required by law, paid Subscription fees are non-refundable.</p>
-                            <p>Certain refund requests for Subscriptions may be considered by the Company on a case-by-case basis and granted at the sole discretion of the Company.</p>
-                            <h2>Free Trial</h2>
-                            <p>The Company may, at its sole discretion, offer a Subscription with a Free Trial for a limited period of time.</p>
-                            <p>At any time and without notice, the Company reserves the right to (i) modify the terms and conditions of the Free Trial offer, or (ii) cancel such Free Trial offer.</p>
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">3. Self-hosted Edition</h1>
+                            <p>The provisions of this section 3 shall apply to the Self-hosted Edition only. Furthermore, for the avoidance of doubt, the provisions of this section 3 do not apply to the OSS Version.</p>
+                            <h2 className="font-semibold">3.1 Grant of rights</h2>
+                            <p>3.1.1 Licensor hereby grants to Licensee a non-exclusive, non-transferable, non-perpetual, and non-sublicensable right to use the Self-hosted Edition during the term of the respective agreement, subject to the provisions of such agreement and these Terms. Licensee is not entitled to use the Self-hosted Edition after the term of the respective agreement.</p>
+                            <p>3.1.2 The Self-hosted Edition will be made available to Licensor in source code form and any other form if described in Annex 1. For the provision of source code, the Parties agree that the provision of a link to a public or non-public repository is sufficient.</p>
+                            <p>3.1.3 Licensee is not entitled to modify the Self-hosted Edition, unless allowed by statutory law or explicitly allowed by Licensor.</p>
+                            <p>3.1.4 In the event of the Self-hosted Edition or parts of it being provided in another form than source code, any reverse engineering and decompiling of the Self-hosted Edition is prohibited, unless permitted under mandatory law.</p>
+                            <p>3.1.5 Copyright notices and other features aimed at product identification may not be removed, altered or suppressed under any circumstances.</p>
+                            <p>3.1.6 Licensee may not produce copies of the Self-hosted Edition, unless</p>
+                            <ul className="list-disc">
+                                <li>required for the contractual use as per Licensor’s instructions,</li>
+                                <li>explicitly allowed by Licensor or</li>
+                                <li>required for backup copies that shall ensure future use by Licensee.</li>
+                            </ul>
+                            <p>3.1.7 Licensee is not entitled to make the Self-hosted Edition available to third parties without prior explicit approval by the Licensor. This includes any sale, lease, letting, or indirect use of the Self-hosted Edition and its provision as a service.</p>
+                            <p>3.1.8 In case Licensee is entitled to modify the Self-hosted Edition, unless agreed otherwise, the provisions of clause 3.1.7 also apply to any such modifications.</p>
+                            <p>3.1.9 Furthermore, in case Licensee is entitled to modify the Self-hosted Edition, Licensee grants Licensor non-exclusive, sub-licensable, transferable, irrevocable rights of use, unlimited in time and space, to all modifications of the Self-hosted Edition, if any, and will provide Licensor upon request with the Source Code modified in the course of creating the modifications.</p>
+
+                            <h2 className="font-semibold">3.2 Specific Obligations of Licensee</h2>
+                            <p>3.2.1 Licensee is solely responsible for setting up a working hardware and software environment appropriate for the Software, also considering any additional load which may be caused to Licensee's IT environment by the Software, unless agreed otherwise.</p>
+                            <p>3.2.2 Licensee shall follow the software installation and operating instructions provided by Licensor. Licensee is responsible for establishing the interfaces between the Software and further IT-environment of Licensee, unless agreed otherwise.</p>
+                            <p>3.2.3 For any services and support provided by Licensor, Licensee must grant Licensor access to Licensee’s IT infrastructure required for the operation of the Software and to the respective installation of the Software directly or via remote access.</p>
                         </div>
-                        <div></div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Promotions</h1>
-                        <p>Any Promotions made available through the Service may be governed by rules that are separate from these Terms.</p>
-                        <p>If You participate in any Promotions, please review the applicable rules as well as our Privacy policy. If the rules for a Promotion conflict with these Terms, the Promotion rules will apply.</p>
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">4. SaaS Editions</h1>
+                            <p>The provisions of this section 4 shall apply to the SaaS Edition only.</p>
+                            <h2 className="font-semibold">4.1 Scope of Services</h2>
+                            <p>4.1.1 Unless agreed otherwise and depending on the subscription plan chosen by Licensee, Licensor will provide the services set out in these Terms and in Annex 1.</p>
+                            <p>4.1.2 Licensor shall make the SaaS Edition available to the Licensee via the Internet as software as a service during the term of the subscription contract.</p>
+                            <p>4.1.3 The Licensor’s responsibility for the performance of the services ends at the WAN port of the router in the Licensor's data center (Ort der Leistungsübergabe). It is the Licensee’s sole duty to ensure that he can receive the Licensor’s service.</p>
+                            <p>4.1.4 The average availability of the SaaS Edition for Licensees is 98% on an annual average. This does not include any necessary planned maintenance work and disruptions that are beyond the Licensor's control. Such disruptions include all events of force majeure. If possible, the Licensor shall inform the Licensee in text form (email being sufficient) about planned maintenance work at least 48 hours before it shall begin. However, the Licensor reserves the right to carry out unannounced maintenance work in case this is necessary, in particular, if this is required for data and operational security.</p>
+                            <p>4.1.5 The Licensor is entitled, but under no obligation, to extend and further develop new features and functionalities of the SaaS Edition. The Licensor reserves the right to offer Licensee such new features and improvements against payment of an additional fee only. In the event of Licensee being provided with new features and improvements for a fee by means of a corresponding contractual agreement in addition to an existing contract, the provisions of such contract shall apply accordingly. In the event of Licensee being provided with new features and improvements free of charge, these new features and further improvements shall be deemed to be a voluntary service of the Licensor.</p>
+                            <p>4.1.6 The Licensor may change the functional scope of the services at any time to an extent that is reasonable for the Licensee. Such change shall be deemed reasonable, in particular, if the services the parties expressly agreed on and the Licensor's main contractual performance obligations (Hauptleistungspflichten) remain substantially unchanged and if that change is necessary for an important reason. Such reasons are, without limitation, disruptions in the provision of services by subcontractors and safety reasons. If the changes do not exclusively concern new features and improvements or if the changes do not only concern insignificant components of the services to be provided by the Licensor, the Licensor shall notify the Licensee of the change by email at least four weeks before it comes into effect.</p>
+                            <p>4.1.7 The Licensor is entitled to suspend the Licensee's access to the SaaS Edition if:</p>
+                            <ul className="list-disc">
+                                <li>there are indications that the Licensee's credentials for accessing the SaaS Edition have been or are being misused or that these credentials have been or are being provided to an unauthorised third party, or that credentials are being used by more than one person;</li>
+                                <li>there are indications that third parties have otherwise gained access to the SaaS Edition provided to Licensee;</li>
+                                <li>the blocking is necessary for technical reasons;</li>
+                                <li>the Licensor is under a legal obligation (e.g. by law, court order, or administrative order) to suspend Licensee’s access;</li>
+                                <li>the Licensee’s payment of agreed fees is more than one month late;</li>
+                                <li>the Licensee has provided Licensor with incorrect or invalid contact data, and Licensor is no longer able to contact Licensee;</li>
+                                <li>in the event of payment by direct debit, the Licensee has provided incorrect bank account details and does not effect the respective payment by other means.</li>
+                            </ul>
+                            <p>4.1.8 The Licensor shall announce the suspension of the Licensee’s credentials within the meaning of section 4.1.7 to the Licensee in text or written form at least one working day before the suspension comes into effect, insofar as, considering the interests of both parties, such announcement is reasonable does not affect the purpose of the suspension.</p>
+                            <h2 className="font-semibold">4.2 Term and Termination</h2>
+                            <p>4.2.1 A subscription shall become effective upon its activation by Licensor and shall remain valid unless terminated.</p>
+                            <p>4.2.2 Either party may terminate a monthly subscription at least 30 days prior to its expiration, a monthly subscription shall be prolonged for further monthly periods respectively.</p>
+                            <p>4.2.3 Either party may terminate an annual subscription at least 30 days prior to its expiration, an annual subscription shall be prolonged for further annual periods respectively.</p>
+                            <p>4.2.4 Either party may terminate a subscription immediately by giving written notice to the other party if (i) the other party commits a material breach of the respective agreement or these Terms; and (ii) where such breach is capable of remedy, the other party fails to remedy such breach within 30 days of the date of written notice from the non-defaulting party.</p>
+                            <h2 className="font-semibold">4.3 Specific Obligations of Licensee</h2>
+                            <p>4.3.1 When using the SaaS Edition for the first time, Licensee shall perform the digital onboarding provided by Licensor within the SaaS Edition.</p>
+                            <p>4.3.2 Licensee must keep any credentials confidential and must ensure that the access to the SaaS Edition is limited to authorized personnel only.</p>
+                        </div>
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">5. License Fees</h1>
+                            <p>5.1 Licensee shall pay to Licensor the remuneration as set out in Annex 1, unless agreed otherwise.</p>
+                            <p>5.2 License fees are payable and will be invoiced in advance, unless agreed otherwise. Licensor will send invoices reasonably in advance of the time frame to which they apply, and invoices are due 14 days after receipt. In the event of default, statutory interest may be charged. Licensor has the right to suspend any provision of support and other services in case a fee is not paid when due.</p>
+                            <p>5.3 All remuneration is subject to statutory value added tax and all other applicable duties if any.</p>
+                        </div>
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">6. Obligations of Licensee</h1>
+                            <p>6.1 Licensee shall fulfil all obligations stipulated in these Terms or as agreed between the Parties within a reasonable period of time and free of charge. This includes the specific obligations of Licensee set out in sections 3.2 and 4.3.</p>
+                            <p>6.2 Licensee confirms to be aware of the essential functional features of the Software and solely bears the risk that it fits with Licensee's wishes and needs. In case Licensee might have had doubt before concluding an agreement with Licensor, Licensee has consulted with Licensor or specialized third parties on the usability of the software for its business purposes.</p>
+                            <p>6.3 Prior to any productive use of the Software as part of the respective contractual use, Licensee shall test the Software thoroughly to ensure that it is free of defects and that it is operable in the existing hardware and software environment of Licensee. This also applies for any software provided by Licensor under warranty provisions of these Terms.</p>
+                            <p>6.4 Licensee shall take adequate precautions for the event that the Software does not work properly as a whole or partially. This includes, without limitation, Licensee being responsible for generating back-ups of all data processed and regular checking of the data processing results.</p>
+                            <p>6.5 If Licensee fails to fulfill its duties to collaborate within the agreed periods of time or within reasonable time upon Licensor’s request, all deadlines agreed upon are deemed prolonged by the time Licensee needs to fulfill the respective duty, and Licensor is then granted reasonable time to fulfill its obligations.</p>
+                            <p>6.6 Licensee solely bears any disadvantages and any additional costs incurred due to any culpable non-observance of its duties.</p>
+                            <p>6.7 All data sources must be integrated into the Software by Licensee in accordance with the Licensor’s instructions.</p>
+                        </div>
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">7. Warranty and Updates</h1>
+                            <p>7.1 Licensor warrants (gewährleistet) that the Software has the features described in Annex 1.</p>
+                            <p>7.2 Licensor shall maintain the Software in a satisfactory working condition suitable that enables Lincensee to use the Software in accordance with these Terms and the respective agreement. However, Licensor reserves the right to remedy defects exclusively by providing an update, an upgrade or a new version of the Software. Such new version may contain new or slightly modified features which, however, do not qualify as a significant deviation from the features Licensor and Licensee agreed on.</p>
+                            <p>7.3 The responsibility of Licensor is excluded to the extent of defects resulting from Licensee not complying with operating conditions for the Software or instructions from Licensor or modifications Licensee made to the Software himself. Any work provided by Licensor with that regard may be subject to additional remuneration depending on scope and amount of additional efforts required.</p>
+                            <p>7.4 Licensor may provide Licensee with updates related to the Software from time to time. However, Licensor is not obliged to do so.</p>
+                            <p>7.5 Any modifications of the Software required due to regulatory or other legal changes shall be agreed on separately, if applicable, and shall be remunerated separately.</p>
+                        </div>
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">8. Deficiency In Title</h1>
+                            <p>8.1 A deficiency in title is deemed to exist only in the event that Licensee cannot effectively be granted the rights required for the use of the Software in accordance with these Terms and Annex 1.</p>
+                            <p>8.2 If any third-party claims are asserted against Licensee for the infringement of any proprietary rights to the Software, Licensee shall immediately notify Licensor accordingly in writing and leave the defense against such claims to Licensor to the extent possible. Licensee shall render all reasonable support to Licensor in defending such claims.</p>
+                            <p>8.3 If any third-party rights are infringed, Licensor may at its own choice and in its sole discretion provide subsequent performance by</p>
+                            <ul className="list-disc">
+                                <li>acquiring to Licensee’s benefit a right of use sufficient for the purposes of these Terms; or</li>
+                                <li>modifying the Software infringing upon the proprietary right without any or with only such impacts on the functions of the Software that are deemed to be reasonable for Licensee; or</li>
+                                <li>supplying a new version of the Software the contractual use of which will not infringe upon any such third party rights.</li>
+                            </ul>
+                            <p>8.4 If Licensee should modify the Software or have it modified by third parties, Licensee is not entitled to any claims because of deficiency in title, unless such defects were not caused by such modification.</p>
+                        </div>
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">9. Third-party components</h1>
+                            <p>9.1 The Software contains third-party components, including open source software (“Third-Party Components“). Parts of such Third-Party Components are subject to deviating license terms (“Third-Party License Terms“). A list of such Third-Party Components and its respective Third-Party License Terms are available within the Software.</p>
+                            <p>9.2 No stipulation in these Terms is intended to impose further restrictions on Licensee’s use of such Third-Party Components licensed under Third-Party License Terms.</p>
+                            <p>9.3 Licensor reserves the right to introduce deviating or additional Third-Party License Terms in the course of modifications of the Software and in case of updates for the Software to the extent necessary due to additional Third-Party Components or due to changed Third-Party License Terms.</p>
+                        </div>
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">10. Liability</h1>
+                            <p>10.1 Unless stated otherwise in this Agreement, Licensor is liable in the event of a breach of contractual and non-contractual obligations in accordance with the statutory provisions.</p>
+                            <p>10.2 To the extent any Software or functionality is provided free of charge, Licensor is liable only for intent and gross negligence (in accordance with statutory law).</p>
+                            <p>10.3 To the extent the Software and Services (including access to the Software by means of Software as a Service) are provided for a fee, Licensor’s statutory liability is unlimited for intent and gross negligence as well as for injuries to life, limb or health. The same applies to claims related to provided guarantees (“Garantien”), applicable product liability laws or other legally mandatory grounds for liability.</p>
+                            <p>10.4 Other than in the cases described in Sec. 10.3, Licensor is liable for slight negligence only in case of breach of a key contractual obligation (so called “cardinal obligation”), and limited to what was reasonably foreseeable in light of the given contractual setting in that case. A cardinal obligation in the sense of this section is an obligation whose fulfilment enables the execution of the Terms themselves and upon whose fulfilment Licensee may therefore generally rely.</p>
+                            <p>10.5 In case of Sec. 10.4, Licensor is not liable for indirect damages and consequential damages like loss of earnings.</p>
+                            <p>10.6 Furthermore, liability in case of Sec. 10.4 is limited to the remuneration payable by Licensee under these Terms projected for a twelve (12) month period.</p>
+                            <p>10.7 The limitation of liability also applies respectively in favour of employees, agents, legal representatives, and assistants of Licensor.</p>
+                            <p>10.8 Licensor is not liable to the extent that damages are caused by usage of the Software not in accordance with these Terms or modifications made by Licensee.</p>
+                            <p>10.9 Licensor and the Software are not data backup providers. Licensee is responsible for regular backups of data which is processed using the Software. Therefore, to the extent Licensor is liable in principle under the foregoing for any loss of data, such liability is limited to the amount that would be needed to restore the lost data from a backup if it had been backed up properly beforehand.</p>
+                        </div>
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">11. Confidentiality</h1>
+                            <p>11.1 The parties agree and undertake to protect, keep confidential and not to disclose to third parties any kind of written or verbal confidential information which come to their knowledge. Confidential information includes all information declared or reasonably recognizable as confidential by the parties, the agreed remuneration and any kind of confidential information regarding general commercial activities (including sales costs, profit, pricing methods, organization and list of personnel, internal processes, structures, ideas, concepts and strategies), without being limited to those specified above.</p>
+                            <p>11.2 Parties may disclose confidential information to related persons and institutions upon a request made or order given by any court or authorized governmental body or if required by law or if required to enforce rights under an agreement that has been concluded between the parties. Disclosure under said circumstances does not constitute a breach of these Terms.</p>
+                            <p>11.3 The obligation of confidentiality will not apply to any part of the confidential information to the extent it</p>
+                            <ul className="list-disc">
+                                <li>is at the time of disclosure already publicly known;</li>
+                                <li>becomes at a later date publicly known through no breach of the provisions of these Terms or by a wrongful act of the related party;</li>
+                                <li>was in the receiving party’s possession before the receipt of confidential information;</li>
+                                <li>was disclosed to the receiving party without restriction on disclosure by a third party who has lawful right to disclose such information or</li>
+                                <li>is disclosed to a court or competent arbitrating body.</li>
+                            </ul>
+                            <p>11.4 Subject to confirmation by Licensee, Licensor may use Licensee’s name and trademarks for marketing purposes by naming Licensee as a reference customer (including within marketing materials and on its website). Licensee shall not unreasonably withhold the confirmation.</p>
+                            <p>11.5 Any documentation provided with the Software may not be made publicly accessible by Licensee, unless agreed otherwise.</p>
+                        </div>
+
+
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">12. Miscellaneous</h1>
+                            <p>12.1 The Licensor shall be entitled to engage subcontractors as vicarious agents (Erfüllungsgehilfen) for the performance of services at his own discretion.</p>
+                            <p>12.2 Licensor reserves the right to amend these Terms in his sole discretion, which may include amendments due to the further development of the Software or because new functionalities will be implemented. Licensor will notify Licensee in text form (email being sufficient) about the modified terms before the modifications will enter into force and Licensor will inform Licensee about the new provisions, the planned date for the new terms to enter into effect, Licensee’s termination right, the applicable termination period and the significance of remaining silent, and Licensor will then grant an adequate, at least six-week period to Licensee to terminate the agreements that are based on these Terms if Licensee does not agree with the modified Terms. If Licensee does not terminate the agreements based on these Terms within the aforementioned period, the modified Terms shall apply upon expiration of the period. The termination by Licensee must be submitted in text form (email being sufficient).</p>
+                            <p>12.3 Any provision of these Terms that is invalid or unenforceable shall not affect the validity or enforceability of the remaining provisions hereof. The parties shall replace any invalid or unenforceable provision by a valid or enforceable provision which most accurately reflects the initial purpose of the parties.</p>
+                            <p>12.4 Unless expressly provided otherwise in these Terms, all notices hereunder shall be made in text form (email being sufficient).</p>
+                            <p>12.5 The parties shall only be entitled to offset contractual claims if the corresponding counterclaim is ultimately confirmed by court or unchallenged by the respective other party.</p>
+                            <p>12.6 These Terms shall be governed by and construed in accordance with the laws of Germany, excluding its conflict of law provisions. Any dispute or controversy arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts of Potsdam, Germany.</p>
+                            <p>12.7 The attached “Annex 1” is a part of these Terms. In the event of any conflict between these Terms and the attached Annex 1, the provisions of Annex 1 shall prevail over the provisions of these Terms.  </p>
+                            <p>12.8 Any individual and deviating agreement between the parties prevails over these Terms.</p>
+                        </div>
+
                     </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">User Accounts</h1>
-                        <p>When You create an account, You must provide Us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of Your account on Our Service.</p>
-                        <p>You are responsible for safeguarding the password that You use to access the Service and for any activities or actions under Your password, whether Your password is with Our Service or a Third-Party Service.</p>
-                        <p>You agree not to disclose Your password to any third party. You must notify Us immediately upon becoming aware of any breach of security or unauthorized use of Your account.</p>
-                        <p>You may not use as a username the name of another person or entity or that is not lawfully available for use, a name or trademark that is subject to any rights of another person or entity other than You without appropriate authorization, or a name that is otherwise offensive, vulgar or obscene.</p>
+
+                    <h1>
+                        <span className="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-white sm:text-4xl">
+                            Annex 1 – Pricing and Services
+                        </span>
+                    </h1>
+                    <div className="mt-8">
+                        <p>Last updated: 06/02/2023</p>
                     </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Content</h1>
-                        <h2>Your Right to Upload Content</h2>
-                        <p>Our Service allows You to upload Content. You are responsible for the Content that You upload to the Service, including its legality, reliability, and appropriateness.</p>
-                        <p>You represent and warrant that: (i) the Content is Yours (You own it) or You have the right to use it and (ii) the upload of Your Content on or through the Service does not violate the privacy rights, publicity rights, copyrights, contract rights or any other rights of any person.</p>
-                        <h2>Content Restrictions</h2>
-                        <p>The Company is not responsible for the content of the Service's users. You expressly understand and agree that You are solely responsible for the Content and for all activity that occurs under your account, whether done so by You or any third person using Your account.</p>
-                        <h2>Content Backups</h2>
-                        <p>Although regular backups of Content are performed, the Company does not guarantee there will be no loss or corruption of data.</p>
-                        <p>Corrupt or invalid backup points may be caused by, without limitation, Content that is corrupted prior to being backed up or that changes during the time a backup is performed.</p>
-                        <p>The Company will provide support and attempt to troubleshoot any known or discovered issues that may affect the backups of Content. But You acknowledge that the Company has no liability related to the integrity of Content or the failure to successfully restore Content to a usable state.</p>
+                    <div className="mt-8 space-y-8">
+                        <div className="flex flex-col space-y-4">
+                            <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">13. Pricing and Services</h1>
+                            <p>All prices in this Annex 1 will be subject to renegotiation after an initial six-month period of use by Licensee. All prices should be taken from the pricing page of the Licensor’s website.</p>
+                            <h2 className="font-semibold">13.1 Self-hosted Edition</h2>
+                            <p>13.1.1 Community</p>
+                            <ul className="list-disc">
+                                <li>Price: See pricing page</li>
+                                <li>access to bricks and refinery</li>
+                                <li>1 user</li>
+                                <li>batch data processing</li>
+                                <li>community support</li>
+                            </ul>
+                            <p>13.1.2 Enterprise</p>
+                            <ul className="list-disc">
+                                <li>Price: See pricing page</li>
+                                <li>access to full suite (refinery, bricks, gates and workflow)</li>
+                                <li>unlimited users</li>
+                                <li>role-based access control</li>
+                                <li>batch and realtime data processing</li>
+                                <li>custom integrations</li>
+                                <li>dedicated support</li>
+                            </ul>
+                            <h2 className="font-semibold">13.2 SaaS Edition</h2>
+                            <p>13.2.1 Personal</p>
+                            <ul className="list-disc">
+                                <li>Price: See pricing page</li>
+                                <li>access to full suite (refinery, bricks, gates and workflow)</li>
+                                <li>unlimited items</li>
+                                <li>1 user</li>
+                                <li>batch and realtime processing</li>
+                                <li>100 refinery credits/month incl.</li>
+                                <li>community support</li>
+                            </ul>
+                            <p>13.2.2 Growth</p>
+                            <ul className="list-disc">
+                                <li>Price: See pricing page</li>
+                                <li>access to full suite (refinery, bricks, gates and workflow)</li>
+                                <li>unlimited items</li>
+                                <li>unlimited users</li>
+                                <li>batch and realtime data processing</li>
+                                <li>role-based access control</li>
+                                <li>5,000 refinery credits/month incl.</li>
+                                <li>priority support</li>
+                            </ul>
+                            <p>13.2.3 Enterprise</p>
+                            <ul className="list-disc">
+                                <li>Price: See pricing page</li>
+                                <li>Everything in Growth (13.2.2.) plus</li>
+                                <li>custom integrations</li>
+                                <li>custom refinery credits/month</li>
+                                <li>dedicated support</li>
+                            </ul>
+                            <h2 className="font-semibold">13.3 Further services</h2>
+                            <p>13.3.1 Software Development and further Support</p>
+                            <p>Any software development and any support requested by Licensee that is not included in his plan will be charged on a time and material basis according to the following rates (excl. VAT):</p>
+                            <ul className="list-disc">
+                                <li>Software developer: 250 EUR/hour</li>
+                                <li>Data science consultant: 250 EUR/hour</li>
+                            </ul>
+                        </div>
                     </div>
+
+
                     <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Intellectual Property</h1>
-                        <p>The Service and its original content (excluding Content provided by You or other users), features and functionality are and will remain the exclusive property of the Company and its licensors.</p>
-                    </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Your Feedback to Us</h1>
-                        <p>You assign all rights, title and interest in any Feedback You provide the Company. If for any reason such assignment is ineffective, You agree to grant the Company a non-exclusive, perpetual, irrevocable, royalty free, worldwide right and license to use, reproduce, disclose, sub-license, distribute, modify and exploit such Feedback without restriction.</p>
-                    </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Links to Other Websites</h1>
-                        <p>Our Service may contain links to third-party web sites or services that are not owned or controlled by the Company.</p>
-                        <p>The Company has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that the Company shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such web sites or services.</p>
-                        <p>We strongly advise You to read the terms and conditions and privacy policies of any third-party web sites or services that You visit.</p>
-                    </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Termination</h1>
-                        <p>We may terminate or suspend Your Account immediately, without prior notice or liability, if You breach these Terms and Conditions.</p>
-                        <p>Upon termination, Your right to use the Service will cease immediately. If You wish to terminate Your Account, You may simply discontinue using the Service.</p>
-                    </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Limitation of Liability</h1>
-                        <p>Notwithstanding any damages that You might incur, the entire liability of the Company and any of its suppliers under any provision of this Terms and Your exclusive remedy for all of the foregoing shall be limited to the amount actually paid by You through the Service.</p>
-                        <p>To the maximum extent permitted by applicable law, in no event shall the Company or its suppliers be liable for any special, incidental, indirect, or consequential damages whatsoever (including, but not limited to, damages for loss of profits, loss of data or other information, for business interruption, for personal injury, loss of privacy arising out of or in any way related to the use of or inability to use the Service, third-party software and/or third-party hardware used with the Service, or otherwise in connection with any provision of this Terms), even if the Company or any supplier has been advised of the possibility of such damages and even if the remedy fails of its essential purpose.</p>
-                        <p>Some states do not allow the exclusion of implied warranties or limitation of liability for incidental or consequential damages, which means that some of the above limitations may not apply. In these states, each party's liability will be limited to the greatest extent permitted by law.</p>
-                    </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">"AS IS" and "AS AVAILABLE" Disclaimer</h1>
-                        <p>The Service is provided to You "AS IS" and "AS AVAILABLE" and with all faults and defects without warranty of any kind. To the maximum extent permitted under applicable law, the Company, on its own behalf and on behalf of its Affiliates and its and their respective licensors and service providers, expressly disclaims all warranties, whether express, implied, statutory or otherwise, with respect to the Service, including all implied warranties of merchantability, fitness for a particular purpose, title and non-infringement, and warranties that may arise out of course of dealing, course of performance, usage or trade practice. Without limitation to the foregoing, the Company provides no warranty or undertaking, and makes no representation of any kind that the Service will meet Your requirements, achieve any intended results, be compatible or work with any other software, applications, systems or services, operate without interruption, meet any performance or reliability standards or be error free or that any errors or defects can or will be corrected.</p>
-                        <p>Without limiting the foregoing, neither the Company nor any of the company's provider makes any representation or warranty of any kind, express or implied: (i) as to the operation or availability of the Service, or the information, content, and materials or products included thereon; (ii) that the Service will be uninterrupted or error-free; (iii) re as to the accuracy, reliability, or currency of any information or content provided through the Service.</p>
-                        <p>Some jurisdictions do not allow the exclusion of certain types of warranties or limitations on applicable statutory rights of a consumer, so some or all of the above exclusions and limitations may not apply to You. But in such a case the exclusions and limitations set forth in this section shall be applied to the greatest extent enforceable under applicable law.</p>
-                    </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Governing Law</h1>
-                        <p>The laws of the Country, excluding its conflicts of law rules, shall govern this Terms and Your use of the Service. Your use of the Application may also be subject to other local, state, national, or international laws.</p>
-                    </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Disputes Resolution</h1>
-                        <p>If You have any concern or dispute about the Service, You agree to first try to resolve the dispute informally by contacting the Company.</p>
-                    </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">For European Union (EU) Users</h1>
-                        <p>If You are a European Union consumer, you will benefit from any mandatory provisions of the law of the country in which you are resident in.</p>
-                    </div><div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">United States Federal Government End Use Provisions</h1>
-                        <p>If You are a U.S. federal government end user, our Service is a "Commercial Item" as that term is defined at 48 C.F.R. §2.101.</p>
-                    </div><div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Severability and Waiver</h1>
-                        <h2>Severability</h2>
-                        <p>If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law and the remaining provisions will continue in full force and effect.</p>
-                        <h2>Waiver</h2>
-                        <p>Except as provided herein, the failure to exercise a right or to require performance of an obligation under these Terms shall not effect a party's ability to exercise such right or require such performance at any time thereafter nor shall the waiver of a breach constitute a waiver of any subsequent breach.</p>
-                    </div>
-                    <div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Translation Interpretation</h1>
-                        <p>These Terms and Conditions may have been translated if We have made them available to You on our Service.
-                            You agree that the original English text shall prevail in the case of a dispute.</p>
-                    </div><div>
-                        <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Changes to These Terms and Conditions</h1>
-                        <p>We reserve the right, at Our sole discretion, to modify or replace these Terms at any time. If a revision is material We will make reasonable efforts to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at Our sole discretion.</p>
-                        <p>By continuing to access or use Our Service after those revisions become effective, You agree to be bound by the revised terms. If You do not agree to the new terms, in whole or in part, please stop using the website and the Service.</p>
-                    </div><div>
                         <h1 className="my-4 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">Contact Us</h1>
                         <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
-                        <ul>
+                        <ul className="list-disc">
                             <li>By email: info@kern.ai</li>
                         </ul>
                     </div>
