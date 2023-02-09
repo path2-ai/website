@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IconArticle, IconBrain, IconBriefcase, IconBuildingCastle, IconBulldozer, IconHammer, IconLoader, IconRobot, IconRoute, IconTag, IconUsers } from '@tabler/icons'
+import { IconArticle, IconBriefcase, IconBuildingCastle, IconDatabase, IconRoute, IconUsers } from '@tabler/icons'
 import { RefineryIconScheme } from '@/util/RefineryIcon'
 import { BricksIconScheme } from '@/util/BricksIcon'
 import { GatesIconScheme } from '@/util/GatesIcon'
@@ -21,15 +21,19 @@ const navigation = [
     //         { name: 'CSM assistant', href: 'https://csm-assistant.kern.ai', icon: IconQuote, description: 'Add a digital, intelligent assistant to your customer success team' },
     //     ]
     // },
-    { name: 'Gallery', href: '/solutions/gallery' },
+    {
+        name: 'Use cases', subnav: [
+            { name: 'Building training data', href: '/use-cases/training-data', icon: IconDatabase, description: 'Pipeline and automate your training data' },
+        ]
+    },
     {
         name: 'Docs', subnav: [
             { name: 'Platform architecture', href: '/docs/architecture', icon: IconBuildingCastle, description: 'See how the platform of Kern AI works under the hood' },
             { name: 'How it works', href: '/docs/how-it-works', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
-            { name: 'refinery', href: '/docs/refinery', icon: RefineryIconScheme, description: 'The data-centric editor to build data and algorithms' },
-            { name: 'bricks', href: '/docs/bricks', icon: BricksIconScheme, description: 'Our collection of modular and off-the-shelf NLP enrichments' },
-            { name: 'gates', href: '/docs/gates', icon: GatesIconScheme, description: 'Turn refinery into a realtime API' },
-            { name: 'workflow', href: '/docs/workflow', icon: WorkflowIconScheme, description: 'Automate any natural language-driven process' },
+            { name: 'refinery', href: '/docs/refinery', icon: null, description: 'The data-centric editor to build data and algorithms' },
+            { name: 'bricks', href: '/docs/bricks', icon: null, description: 'Our collection of modular and off-the-shelf NLP enrichments' },
+            { name: 'gates', href: '/docs/gates', icon: null, description: 'Turn refinery into a realtime API' },
+            { name: 'workflow', href: '/docs/workflow', icon: null, description: 'Automate any natural language-driven process' },
         ]
     },
     { name: 'Changelog', href: '/changelog' },
@@ -138,7 +142,12 @@ export function Header() {
                                                                         href={subItem.href}
                                                                         className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-neutral-800"
                                                                     >
-                                                                        <subItem.icon className="h-6 w-6 flex-shrink-0 text-lime-400" aria-hidden="true" />
+                                                                        {subItem.icon ? (
+                                                                            <subItem.icon className="h-6 w-6 flex-shrink-0 text-lime-400" aria-hidden="true" />
+                                                                        ) : (
+                                                                            <img src={`/${subItem.name}-icon.png`} className="h-6 w-6 flex-shrink-0 text-lime-400" />
+                                                                        )}
+
                                                                         <div className="ml-4">
                                                                             <p className="text-base font-medium text-gray-100">{subItem.name}</p>
                                                                             <p className="mt-1 text-sm text-gray-300">{subItem.description}</p>
