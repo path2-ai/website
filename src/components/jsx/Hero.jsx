@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
 import { LogoCloud } from './LogoCloud'
 import Link from 'next/link'
+import { AccessBanner } from './AccessBanner'
+import { AccessModal } from './AccessModal'
 
 export function Hero() {
     const [text, setText] = useState('ETL pipelines')
     const [counter, setCounter] = useState(0)
-
+    const [openAccessModal, setOpenAccessModal] = useState(false)
 
 
     useEffect(() => {
@@ -60,6 +62,8 @@ export function Hero() {
                     </div>
                 </div>
             </main>
+            <AccessBanner setOpenAccessModal={setOpenAccessModal} />
+            <AccessModal open={openAccessModal} setOpen={setOpenAccessModal} />
         </div>
     )
 }
