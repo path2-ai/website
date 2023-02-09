@@ -71,26 +71,26 @@ function getEmployeeSurveyDataset(employeeData) {
 }
 
 export const positions = [
-    {
-        id: 1,
-        title: 'Go-to-Market Manager',
-        type: 'Full-time',
-        href: 'https://join.com/companies/kernai/6849194-go-to-market-manager',
-        location: 'Remote or Bonn',
-        department: 'Business Development',
-        closeDate: '2022-02-28',
-        closeDateFull: 'February 28, 2022',
-    },
-    {
-        id: 2,
-        title: 'Founders Associate',
-        type: 'Full-time',
-        href: 'https://join.com/companies/kernai/6849584-founders-associate',
-        location: 'Remote or Bonn',
-        department: 'Founders department',
-        closeDate: '2022-02-28',
-        closeDateFull: 'February 28, 2022',
-    },
+    // {
+    //     id: 1,
+    //     title: 'Go-to-Market Manager',
+    //     type: 'Full-time',
+    //     href: 'https://join.com/companies/kernai/6849194-go-to-market-manager',
+    //     location: 'Remote or Bonn',
+    //     department: 'Business Development',
+    //     closeDate: '2022-02-28',
+    //     closeDateFull: 'February 28, 2022',
+    // },
+    // {
+    //     id: 2,
+    //     title: 'Founders Associate',
+    //     type: 'Full-time',
+    //     href: 'https://join.com/companies/kernai/6849584-founders-associate',
+    //     location: 'Remote or Bonn',
+    //     department: 'Founders department',
+    //     closeDate: '2022-02-28',
+    //     closeDateFull: 'February 28, 2022',
+    // },
     {
         id: 3,
         title: 'Working student for Administration',
