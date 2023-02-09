@@ -1,4 +1,4 @@
-import { IconApiApp, IconBook, IconBug, IconDatabase, IconTerminal, IconUsers } from '@tabler/icons'
+import { IconApiApp, IconBook, IconBug, IconCategory2, IconDatabase, IconHighlight, IconTerminal, IconUsers, IconWindmill } from '@tabler/icons'
 import { useRouter } from 'next/router'
 
 const benefits = [{
@@ -84,6 +84,28 @@ export function TrainingData() {
                     <p className="mt-6 text-lg leading-8 text-gray-300">
                         Streamline your data collection, labeling and quality control processes with our refinery. Designed to give developers control.
                     </p>
+
+                    <div className='my-8 flex flex-col space-y-4 text-gray-100'>
+                        <div className='flex flex-row space-x-3'>
+                            <IconCategory2 className='h-6 w-6 text-gray-200' />
+                            <span>
+                                Classification labeling
+                            </span>
+                        </div>
+                        <div className='flex flex-row space-x-3'>
+                            <IconHighlight className='h-6 w-6 text-gray-200' />
+                            <span>
+                                Nested span labeling
+                            </span>
+                        </div>
+                        <div className='flex flex-row space-x-3'>
+                            <IconWindmill className='h-6 w-6 text-gray-200' />
+                            <span>
+                                Text generation
+                            </span>
+                        </div>
+                    </div>
+
                     <div className='mt-10 flex flex-col md:flex-row md:space-x-2'>
                         <button
                             type='button'
