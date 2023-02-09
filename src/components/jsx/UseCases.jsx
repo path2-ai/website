@@ -1,24 +1,29 @@
 import { IconDatabase, IconMessage, IconPerspective, IconWorldWww } from "@tabler/icons"
+import Link from "next/link"
 
 const useCases = [{
   title: 'Training data',
   description: 'Combine workflow and refinery to streamline your training data. Automatically synchronize refinery projects from stores.',
   icon: IconDatabase,
+  href: '/use-cases/training-data',
   image: 'https://kern-assets.s3.eu-central-1.amazonaws.com/website/welcome/guide-training-data.png',
 }, {
   title: 'Email channels',
   description: 'An abundance of messages are sent via email every day. Use refinery to extract insights from your emails and automate your workflows.',
   icon: IconMessage,
+  href: '/use-cases/email-channels',
   image: 'https://kern-assets.s3.eu-central-1.amazonaws.com/website/welcome/guide-training-data.png',
 }, {
   title: 'Webscraping',
   description: 'Handling complex HTML structures can be a pain. Build a simple Python scraper, and use refinery to extract the data you need.',
   icon: IconWorldWww,
+  href: '/use-cases/webscraping',
   image: 'https://kern-assets.s3.eu-central-1.amazonaws.com/website/welcome/guide-training-data.png',
 }, {
   title: 'ETL pipelines',
   description: 'Why limit ETL to only structured data? Build pipelines that actually understand human language, and future-proof your pipelines.',
   icon: IconPerspective,
+  href: '/use-cases/etl',
   image: 'https://kern-assets.s3.eu-central-1.amazonaws.com/website/welcome/guide-training-data.png',
 },]
 
@@ -36,7 +41,7 @@ export function UseCases() {
 
       <div className="mt-10 grid grid-cols-2 gap-6">
         {useCases.map((useCase, index) => (
-          <div className="hover:bg-zinc-900 p-6 rounded-2xl">
+          <Link className="hover:bg-zinc-900 p-6 rounded-2xl" href={useCase.href} key={index}>
             <div
               className="flex flex-col space-y-8"
             >
@@ -52,7 +57,7 @@ export function UseCases() {
                 </p>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
