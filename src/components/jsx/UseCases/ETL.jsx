@@ -1,22 +1,22 @@
-import { IconApiApp, IconBook, IconBug, IconDatabase, IconPerspective, IconTerminal, IconUsers } from '@tabler/icons'
+import { IconApiApp, IconBook, IconBug, IconDashboard, IconDatabase, IconPerspective, IconTerminal, IconUsers } from '@tabler/icons'
 import { useRouter } from 'next/router'
 
 const benefits = [{
-    title: 'Shorten model development time',
+    title: 'Shorten pipeline development time',
     icon: IconTerminal,
-    description: 'Our users have been able to prototype complex models within an afternoon, just by scaling their training data. Bring your models to market faster with us.'
+    description: 'Building an NLP pipeline with our platform is a breeze. You can build a pipeline in a fraction of the time it would take to build it from scratch.'
 }, {
-    title: 'Debug and improve your models',
+    title: 'Debug and improve your pipelines',
     icon: IconBug,
-    description: 'Modern algorithms are blackboxes. Find their weaknesses in a data-centric manner, and improve your model by fixing that data or creating new slices for re-training.'
+    description: 'Easily debug and improve your pipelines with our platform. You can easily see what your pipeline is doing, and improve it with our visual debugging tools.'
 }, {
     title: 'Collaborate with domain experts and annotators',
     icon: IconUsers,
-    description: 'It has never been easier to integrate domain expertise into your work specifically on the data you need help for. Just send them a link, or tell them to sign in.'
+    description: 'It has never been easier to integrate domain expertise into your work specifically on the data you need help for.'
 }, {
-    title: 'Integrate your workflow',
-    icon: IconApiApp,
-    description: 'You can integrate refinery into your existing workflow (e.g. via our native export to Labelstudio), or set up even complex ETL pipelines via workflow.'
+    title: 'Gain new insights',
+    icon: IconDashboard,
+    description: '80% of data is unstructured. With our platform, you can gain new insights from your data by combining it with NLP.'
 }]
 
 export function ETL() {
@@ -68,7 +68,7 @@ export function ETL() {
                         y2="638.714"
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop stopColor="green" />
+                        <stop stopColor="blue" />
                         <stop offset={1} stopColor="#80CAFF" />
                     </linearGradient>
                 </defs>
@@ -79,11 +79,10 @@ export function ETL() {
                         <IconPerspective className="h-8 w-8 text-lime-500" />
                     </div>
                     <h1 className="mt-20 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                        Pipeline and automate your training data
+                        Pipelines that understand natural language
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-300">
-                        Streamline your data collection, labeling and quality control processes with our refinery. Designed to give developers control.
-                    </p>
+                        ETL pipelines are the unsung heros that enable your business to make complex analysis of business relevant data. Why not use the for textual data?</p>
                     <div className='mt-10 flex flex-col md:flex-row md:space-x-2'>
                         <button
                             type='button'

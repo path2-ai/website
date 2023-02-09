@@ -1,23 +1,31 @@
-import { IconApiApp, IconBook, IconBug, IconDatabase, IconTerminal, IconUsers, IconWorldWww } from '@tabler/icons'
+import { IconBook, IconClock, IconDatabase, IconEyeTable, IconMessage, IconTableAlias, IconTerminal, IconUser, IconWorldWww } from '@tabler/icons'
 import { useRouter } from 'next/router'
 
 const benefits = [{
-    title: 'Shorten model development time',
+    title: 'HTML + NLP = 💚',
     icon: IconTerminal,
-    description: 'Our users have been able to prototype complex models within an afternoon, just by scaling their training data. Bring your models to market faster with us.'
+    description: 'Ever struggled parsing textual data inside a div, paragraph or table? Combine scraping with NLP, and you can extract data from any HTML element.',
+    colspan: 1
 }, {
-    title: 'Debug and improve your models',
-    icon: IconBug,
-    description: 'Modern algorithms are blackboxes. Find their weaknesses in a data-centric manner, and improve your model by fixing that data or creating new slices for re-training.'
+    title: 'Master data management',
+    icon: IconTableAlias,
+    description: 'When webscraping, you often need mapping data to synchronize external data with internal sources. With workflow, handling mapping data is easy.',
+    colspan: 1
 }, {
-    title: 'Collaborate with domain experts and annotators',
-    icon: IconUsers,
-    description: 'It has never been easier to integrate domain expertise into your work specifically on the data you need help for. Just send them a link, or tell them to sign in.'
+    title: 'Visual scraping',
+    icon: IconEyeTable,
+    description: 'Scraping can be really difficult sometimes. Combine scraping with visual labeling, and see if your scraping technique works as you expect.',
+    colspan: 1
 }, {
-    title: 'Integrate your workflow',
-    icon: IconApiApp,
-    description: 'You can integrate refinery into your existing workflow (e.g. via our native export to Labelstudio), or set up even complex ETL pipelines via workflow.'
+    title: 'Shorter time to build',
+    icon: IconClock,
+    description: 'Webscraping is a complex task. With our platform, you can build webscraping workflows in a fraction of the time it would take to build it from scratch.',
+    colspan: 1
 }]
+
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
 
 export function Webscraping() {
 
@@ -68,7 +76,7 @@ export function Webscraping() {
                         y2="638.714"
                         gradientUnits="userSpaceOnUse"
                     >
-                        <stop stopColor="green" />
+                        <stop stopColor="yellow" />
                         <stop offset={1} stopColor="#80CAFF" />
                     </linearGradient>
                 </defs>
@@ -79,10 +87,10 @@ export function Webscraping() {
                         <IconWorldWww className="h-8 w-8 text-lime-500" />
                     </div>
                     <h1 className="mt-20 text-4xl font-bold tracking-tight text-white sm:text-6xl">
-                        Pipeline and automate your training data
+                        Make complex webscraping a breeze
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-300">
-                        Streamline your data collection, labeling and quality control processes with our refinery. Designed to give developers control.
+                        Webscraping is an extremely powerful tool. Still, it can be really difficult to make sense of HTML trees. Have you ever thought about how NLP can help you in webscraping? We did.
                     </p>
                     <div className='mt-10 flex flex-col md:flex-row md:space-x-2'>
                         <button
@@ -128,7 +136,9 @@ export function Webscraping() {
                     {benefits.map((option) => (
                         <div
                             key={option.title}
-                            className="flex flex-col p-4 rounded-lg"
+                            className={classNames(
+                                option.colspan === 2 ? 'col-span-2' : '',
+                                "flex flex-col p-4 rounded-lg")}
                         >
                             <div className="border-gray-800 text-white flex items-center justify-center h-12 w-12 rounded-md border bg-gradient-to-b from-neutral-900 to-neutral-800">
                                 <option.icon className="h-6 w-6" aria-hidden="true" />
