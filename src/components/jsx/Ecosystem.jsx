@@ -495,7 +495,7 @@ export function Ecosystem() {
               </div>
               <div className='flex flex-col items-center space-y-4'>
                 <div className='text-gray-100 text-sm'>
-                  The Kern AI ecosystem consists of four products
+                  The Kern AI platform consists of four products
                 </div>
                 <div className='flex flex-col md:flex-row md:space-x-2'>
                   <button

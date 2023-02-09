@@ -1,10 +1,10 @@
 import { CallToAction } from "@/components/jsx/CallToAction";
-import { TrainingData } from "@/components/jsx/UseCases/TrainingData";
+import { EmailChannels } from "@/components/jsx/UseCases/EmailChannels";
 
 export default function Home() {
     return (
         <>
-            <TrainingData />
+            <EmailChannels />
             <CallToAction />
         </>
     )

@@ -1,6 +1,23 @@
-import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { IconBook, IconBucket, IconDatabase, IconRoute } from '@tabler/icons'
+import { IconApiApp, IconBook, IconBug, IconDatabase, IconTerminal, IconUsers } from '@tabler/icons'
 import { useRouter } from 'next/router'
+
+const benefits = [{
+    title: 'Shorten model development time',
+    icon: IconTerminal,
+    description: 'Our users have been able to prototype complex models within an afternoon, just by scaling their training data. Bring your models to market faster with us.'
+}, {
+    title: 'Debug and improve your models',
+    icon: IconBug,
+    description: 'Modern algorithms are blackboxes. Find their weaknesses in a data-centric manner, and improve your model by fixing that data or creating new slices for re-training.'
+}, {
+    title: 'Collaborate with domain experts and annotators',
+    icon: IconUsers,
+    description: 'It has never been easier to integrate domain expertise into your work specifically on the data you need help for. Just send them a link, or tell them to sign in.'
+}, {
+    title: 'Integrate your workflow',
+    icon: IconApiApp,
+    description: 'You can integrate refinery into your existing workflow (e.g. via our native export to Labelstudio), or set up even complex ETL pipelines via workflow.'
+}]
 
 export function TrainingData() {
 
@@ -65,8 +82,7 @@ export function TrainingData() {
                         Pipeline and automate your training data
                     </h1>
                     <p className="mt-6 text-lg leading-8 text-gray-300">
-                        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                        fugiat veniam occaecat fugiat aliqua.
+                        Streamline your data collection, labeling and quality control processes with our refinery. Designed to give developers control.
                     </p>
                     <div className='mt-10 flex flex-col md:flex-row md:space-x-2'>
                         <button
@@ -105,6 +121,24 @@ export function TrainingData() {
                             className="w-[76rem] rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
                         />
                     </div>
+                </div>
+            </div>
+            <div className='mx-auto max-w-5xl px-6 pb-20 lg:flex lg:px-8'>
+                <div className='grid grid-cols-2 gap-8'>
+                    {benefits.map((option) => (
+                        <div
+                            key={option.title}
+                            className="flex flex-col p-4 rounded-lg"
+                        >
+                            <div className="border-gray-800 text-white flex items-center justify-center h-12 w-12 rounded-md border bg-gradient-to-b from-neutral-900 to-neutral-800">
+                                <option.icon className="h-6 w-6" aria-hidden="true" />
+                            </div>
+                            <div className="mt-5">
+                                <h3 className="text-lg leading-6 font-medium text-gray-100">{option.title}</h3>
+                                <p className="mt-2 text-sm leading-6 text-gray-300">{option.description}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

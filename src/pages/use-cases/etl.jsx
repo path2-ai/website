@@ -1,10 +1,10 @@
 import { CallToAction } from "@/components/jsx/CallToAction";
-import { TrainingData } from "@/components/jsx/UseCases/TrainingData";
+import { ETL } from "@/components/jsx/UseCases/ETL";
 
 export default function Home() {
     return (
         <>
-            <TrainingData />
+            <ETL />
             <CallToAction />
         </>
     )

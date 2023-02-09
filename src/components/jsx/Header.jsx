@@ -6,11 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IconArticle, IconBriefcase, IconBuildingCastle, IconDatabase, IconRoute, IconUsers } from '@tabler/icons'
-import { RefineryIconScheme } from '@/util/RefineryIcon'
-import { BricksIconScheme } from '@/util/BricksIcon'
-import { GatesIconScheme } from '@/util/GatesIcon'
-import { WorkflowIconScheme } from '@/util/WorkflowIcon'
+import { IconArticle, IconBriefcase, IconBuildingCastle, IconDatabase, IconMessage, IconPerspective, IconRoute, IconUsers, IconWorldWww } from '@tabler/icons'
 import Link from 'next/link'
 import { KERN_ASSETS_URL } from './_settings'
 
@@ -24,6 +20,10 @@ const navigation = [
     {
         name: 'Use cases', subnav: [
             { name: 'Building training data', href: '/use-cases/training-data', icon: IconDatabase, description: 'Pipeline and automate your training data' },
+            { name: 'Email automation', href: '/use-cases/email-channels', icon: IconMessage, description: 'Automate email-channels from analysis to automation' },
+            { name: 'Webscraping NLP', href: '/use-cases/webscraping', icon: IconWorldWww, description: 'Make complex webscraping a breeze' },
+            { name: 'Extract, transform, load', href: '/use-cases/etl', icon: IconPerspective, description: 'Build pipelines that understand natural language' },
+
         ]
     },
     {
