@@ -581,7 +581,7 @@ export function Ecosystem() {
                 </p>
               </div>
               <div className='hidden md:block'>
-                <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-white/5`}>
+                <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-white/5`}>
                   {slideContent[current].features.map((feature) => (
                     <Feature key={feature.name} feature={feature} product={current} />
                   ))}
