@@ -70,7 +70,7 @@ export function Team() {
                     </div>
                     <div className="mt-4 md:mt-0 col-span-3 mx-auto border border-gray-700 rounded-lg p-3 pb-10 bg-neutral-800 shadow-[0_0px_10px_2px_rgba(255,255,255,0.2)]">
                         <img
-                            src={`${KERN_ASSETS_URL}/team/team.png`}
+                            src="/team.png"
                             alt="Team"
                             className="rounded-md"
                         />
