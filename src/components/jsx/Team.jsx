@@ -80,6 +80,73 @@ export function Team() {
                     </div>
                 </div>
 
+                <div className="py-8 pt-28 text-white mx-auto md:grid md:grid-cols-5 md:gap-8">
+
+                    <div className="col-span-2 mb-auto">
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-100">
+                            Our investors
+                        </h2>
+                        <p className="mt-2 text-sm leading-5 text-gray-300">
+                            We are backed by leading investors in Europe.
+                        </p>
+
+                    </div>
+                    <div className="mt-4 md:mt-0 col-span-3 mx-auto p-3">
+                        <div className="grid grid-cols-3 gap-8">
+                            <img src="/seedcamp.png" className="w-44 mr-auto my-auto" />
+                            <img src="/another-vc.png" className="w-40 mr-auto my-auto" />
+                            <img src="/xdeck.png" className="w-28 mr-auto my-auto" />
+
+                            <img src="/faber.png" className="w-20 mr-auto my-auto" />
+                            <img src="/hpi-seed.png" className="w-16 mr-auto my-auto" />
+                        </div>
+                        <div className="mt-10">
+                            <div className="grid grid-cols-3 gap-8">
+                                <div>
+                                    <p className='text-gray-100 text-semibold'>
+                                        Nicolas Peters
+                                    </p>
+                                    <p className='text-gray-300 text-xs'>
+                                        Co-Founder & Ex-CTO Signavio
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className='text-gray-100 text-semibold'>
+                                        Gerrit de Veeer
+                                    </p>
+                                    <p className='text-gray-300 text-xs'>
+                                        Senior Vice President Sales MEE Signavio
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className='text-gray-100 text-semibold'>
+                                        Marcus Nagel
+                                    </p>
+                                    <p className='text-gray-300 text-xs'>
+                                        Ex-CEO Zurich Deutschland, Senior Advisor PE
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className='text-gray-100 text-semibold'>
+                                        Sebastian Heinz
+                                    </p>
+                                    <p className='text-gray-300 text-xs'>
+                                        CEO statworx
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className='text-gray-100 text-semibold'>
+                                        Julius Heinz
+                                    </p>
+                                    <p className='text-gray-300 text-xs'>
+                                        CFO statworx
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="mx-auto py-16 sm:py-24">
                     <div>
                         <h2 className="text-2xl font-bold tracking-tight text-gray-100">
