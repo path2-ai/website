@@ -26,7 +26,7 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/docs/refinery/process/manual-labeling',
+        href: 'https://docs.kern.ai/refinery/manual-labeling',
         name: 'Manual labeling editor',
         description:
           'refinery comes with a built-in editor (incl. role-based access) supporting classifications, span-extraction and text generation. Further, you can export data to other annotation tools like Labelstudio.',
@@ -34,7 +34,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/refinery/process/data-management',
+        href: 'https://docs.kern.ai/refinery/data-management',
         name: 'Best-in-class data management',
         description:
           'Use our modular data management to find e.g. records with below 30% confidence and mismatching manual and automated labels, sorted by confidence. Assign that data either to an inhouse expert or a crowdlabeler.',
@@ -42,7 +42,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/refinery/process/large-language-models',
+        href: 'https://docs.kern.ai/refinery/embedding-integration',
         name: 'Native large-language-model integration and finetuning',
         description:
           'You love Hugging Face, GPT-X or cohere for their large language models? We do too. That is why we integrated them into refinery. You can use them for embeddings (and neural search), active transfer learning, or even to create the training data for finetuning these LLMs on your data.',
@@ -51,7 +51,7 @@ const slideContent = {
 
       },
       {
-        href: '/docs/refinery/process/building-heuristics',
+        href: 'https://docs.kern.ai/refinery/heuristics',
         name: 'Automate with heuristics',
         description:
           'refinery is shipped with a Monaco editor, enabling you to write heuristics in plain Python. Use them for e.g. rules, API calls, regex, active transfer learning or zero-shot predictions',
@@ -59,7 +59,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/refinery/process/monitoring',
+        href: 'https://docs.kern.ai/refinery/monitoring',
         name: 'Monitor your data quality',
         description:
           'In the project dashboard, you can find distribution statistics and a confusion matrix showing you where your project needs improvement. Every analysis can be filtered down to atomic level.',
@@ -95,7 +95,7 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/docs/bricks#classifiers',
+        href: 'https://docs.kern.ai/bricks/classifiers',
         name: 'Classifiers',
         description:
           'Classifiers summarize information, e.g. the sentiment of a text. Think of them as functions returning values, i.e. one input = one output.',
@@ -103,7 +103,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/bricks#extractors',
+        href: 'https://docs.kern.ai/bricks/extractors',
         name: 'Extractors',
         description:
           'Extractors retrieve information, e.g. extracting organizations in texts. Think of them as functions yielding values, i.e. one input = arbitrary number of output.',
@@ -111,7 +111,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/bricks#generators',
+        href: 'https://docs.kern.ai/bricks/generators',
         name: 'Generators',
         description:
           'Generators produce new data, e.g. translating from German to Portuguese. Think of them as functions returning values, i.e. one input = one output, but that output is sequential.',
@@ -119,7 +119,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/bricks#customize',
+        href: 'https://docs.kern.ai/bricks',
         name: 'Customizable',
         description:
           'Every brick is open-source and modular, such that you can customize the code itself immediately. Start with a great baseline, and adapt it to your needs.',
@@ -127,7 +127,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/bricks/refinery-integration',
+        href: 'https://docs.kern.ai/bricks/refinery-integration',
         name: 'Integration to refinery',
         description:
           'Every brick is designed to be integrated into refinery. You can search within refinery for a brick, and then add it to your project within a few clicks.',
@@ -135,7 +135,7 @@ const slideContent = {
         colsSpan: 2,
       },
       {
-        href: '/docs/bricks/roadmap',
+        href: 'https://docs.kern.ai/bricks',
         name: 'Growing weekly',
         description:
           'We aim to add new bricks every week. If you have a great idea for a brick, please let us know. We are happy to help you implement it.',
@@ -163,7 +163,7 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/docs/gates#deploy',
+        href: 'https://docs.kern.ai/gates/deploy',
         name: '3 clicks to deploy your model',
         description:
           'You already did the work in refinery. Now gates is as simple as it gets. Select the automations, hit deploy, and your model is live.',
@@ -171,7 +171,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/refinery/process/token',
+        href: 'https://docs.kern.ai/gates/token',
         name: 'Secure execution - anywhere',
         description:
           'Integrate your model into any existing infrastructure. Use the API to get secured access to your model, no matter where and how it is deployed.',
@@ -179,7 +179,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/gates#monitoring',
+        href: 'https://docs.kern.ai/gates/monitoring',
         name: 'Monitor requests per hour, confidence and runtime',
         description:
           'Each model comes with a simple monitoring dashboard, helping you to analyze the usage and performance of your model.',
@@ -187,7 +187,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/gates#container',
+        href: 'https://docs.kern.ai/gates/deploy',
         name: 'Containerized runtime',
         description:
           'Your model is deployed as a containerized runtime. If required, you can execute the model on your own infrastructure.',
@@ -207,7 +207,7 @@ const slideContent = {
     cols: 2,
     features: [
       {
-        href: '/docs/workflow/editor',
+        href: 'https://docs.kern.ai/workflow/workflows',
         name: 'Drag-and-drop editor',
         description:
           'Simple drag-and-drop interface to build your workflows, connected to catalogue of nodes with either no-code or programmable interfaces. This is as intuitive as it gets.',
@@ -215,7 +215,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/workflow/refinery-gates-integration',
+        href: 'https://docs.kern.ai/workflow',
         name: 'Completing the stack',
         description:
           'workflow stands on the shoulders of refinery and gates. This means that workflow is capable of handling the most complex NLP applications (and of course also the simpler ones), while still being easy to use.',
@@ -223,7 +223,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/workflow/data-marts#integrations',
+        href: 'https://docs.kern.ai/workflow/stores',
         name: 'Integrations',
         description:
           'workflow offers native integrations to e.g. Google workspace applications, Slack or other collaboration channels, and further offers an API and Webhook links. We are continuously adding new integrations.',
@@ -232,7 +232,7 @@ const slideContent = {
 
       },
       {
-        href: '/docs/workflow/data-marts',
+        href: 'https://docs.kern.ai/workflow/stores',
         name: 'Data collection',
         description:
           'Data is being stored in marts, such that you have direct access to your data source integrations. For instance, you can just export all emails from your inbox into refinery via the GMail integration, and then start building your NLP automations.',

@@ -5,28 +5,28 @@ const siloData = [
         product: 'refinery',
         title: 'the heart of the platform',
         description: 'This is the flagship of our NLP stack. refinery is both database and the application logic editor; it allows you to scale, assess and maintain your data. It automates the process of data cleaning and labeling, and shows you where improvements can be made. It also allows you to easily work together with inhouse or external annotators, and leverages the power of large language models to help you with your data.',
-        link: '/docs/refinery',
+        link: 'https://docs.kern.ai/refinery',
         imageOnRighternSide: false,
     },
     {
         product: 'bricks',
         title: 'the fuel of the platform',
         description: 'Our overall platform runs on plenty of natural language processing automations, which can be defined by the user. Now, the use cases our users face have different challenges, and require different automations. This is why we have implemented bricks: a collection of open-source and modular automations that can be stacked together, enabling users to customize the platform to their use cases with ease.',
-        link: '/docs/bricks',
+        link: 'https://docs.kern.ai/bricks',
         imageOnRighternSide: true,
     },
     {
         product: 'gates',
         title: 'enabling realtime processing',
         description: 'gates simply is the add-on to refinery, allowing it to process realtime data streams. With gates, you can use refinery to make predictions on data immediately, and use the results to make operational decisions.',
-        link: '/docs/gates',
+        link: 'https://docs.kern.ai/gates',
         imageOnRighternSide: false,
     },
     {
         product: 'workflow',
         title: 'the orchestrator of the platform',
         description: 'workflow is the glue of the platform, allowing you to define ETL-like pipelines that can understand natural language. For instance, you can use workflow to grab data from a 3rd party API, put it through refinery/gates, and then use the results in any further step of the pipeline.',
-        link: '/docs/workflow',
+        link: 'https://docs.kern.ai/workflow',
         imageOnRighternSide: true,
     },
 ]
@@ -64,14 +64,16 @@ function SiloText({ product, title, description, fromColor, toColor, link }) {
                 {description}
             </div>
             <div className="mt-6 inline-flex">
-                <Link
+                <a
                     href={link}
+                    target="_blank"
+                    rel="noreferrer"
                     className="hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
                 >
                     <span className={`my-auto text-white`}>
                         See {product} docs
                     </span>
-                </Link>
+                </a>
             </div>
         </div>
     )

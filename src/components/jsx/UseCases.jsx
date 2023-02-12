@@ -12,7 +12,7 @@ const useCases = [{
   slug: 'training-data',
   description: 'Combine workflow and refinery to streamline your training data. Automatically synchronize refinery projects from stores.',
   icon: IconDatabase,
-  href: '/use-cases/training-data',
+  href: 'https://docs.kern.ai/use-cases/training-data',
   color: 'red',
   image: '/screenshot-workflow.png',
   benefits: [{
@@ -37,7 +37,7 @@ const useCases = [{
   slug: 'email-channels',
   description: 'An abundance of messages are sent via email every day. Use refinery to extract insights from your emails and automate your workflows.',
   icon: IconMessage,
-  href: '/use-cases/email-channels',
+  href: 'https://docs.kern.ai/use-cases/email-channels',
   color: 'blue',
   image: '/screenshot-workflow.png',
   benefits: [{
@@ -61,7 +61,7 @@ const useCases = [{
   slug: 'webscraping',
   description: 'Handling complex HTML structures can be a pain. Build a simple Python scraper, and use refinery to extract the data you need.',
   icon: IconWorldWww,
-  href: '/use-cases/webscraping',
+  href: 'https://docs.kern.ai/use-cases/webscraping',
   color: 'yellow',
   image: '/screenshot-workflow.png',
 
@@ -91,7 +91,7 @@ const useCases = [{
   slug: 'etl',
   description: 'Why limit ETL to only structured data? Build pipelines that actually understand human language, and future-proof your pipelines.',
   icon: IconPerspective,
-  href: '/use-cases/etl',
+  href: 'https://docs.kern.ai/use-cases/etl',
   color: 'purple',
   image: '/screenshot-workflow.png',
   benefits: [{
@@ -207,18 +207,18 @@ export function UseCases() {
                             </span>
                           </button>
 
-                          <button
+                          <a
                             type='button'
                             className='mt-2 md:mt-0 hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-gray-800 group-hover:ring-white/20'
-                            onClick={() => {
-                              router.push('/docs')
-                            }}
+                            href={useCase.href}
+                            target='_blank'
+                            rel='noopener noreferrer'
                           >
                             <span>
                               <IconBook className='my-auto h-5 w-5 inline-block mr-2' />
                               See docs
                             </span>
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -340,18 +340,18 @@ export function UseCases() {
                             </span>
                           </button>
 
-                          <button
+                          <a
                             type='button'
                             className='mt-2 md:mt-0 hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-gray-800 group-hover:ring-white/20'
-                            onClick={() => {
-                              router.push('/docs')
-                            }}
+                            href={useCase.href}
+                            target='_blank'
+                            rel='noopener noreferrer'
                           >
                             <span>
                               <IconBook className='my-auto h-5 w-5 inline-block mr-2' />
                               See docs
                             </span>
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
