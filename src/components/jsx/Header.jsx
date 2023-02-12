@@ -198,7 +198,7 @@ export function Header() {
                                                         }}
                                                         className={classNames(
                                                             active ? 'text-gray-100' : 'text-gray-400',
-                                                            'block px-4 py-2 text-sm'
+                                                            'block px-4 py-2 text-sm cursor-pointer'
                                                         )}
                                                     >
                                                         Request platform access
