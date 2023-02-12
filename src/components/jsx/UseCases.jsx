@@ -1,6 +1,5 @@
 import { IconDatabase, IconMessage, IconPerspective, IconWorldWww } from "@tabler/icons"
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
-import { IconApiApp, IconBook, IconBug, IconCategory2, IconHighlight, IconTerminal, IconUsers, IconWindmill, IconClock, IconUser, IconTableAlias, IconEyeTable, IconDashboard } from '@tabler/icons'
+import { IconApiApp, IconBook, IconBug, IconTerminal, IconUsers, IconClock, IconUser, IconTableAlias, IconEyeTable, IconDashboard } from '@tabler/icons'
 import { useRouter } from 'next/router'
 
 
