@@ -11,6 +11,8 @@ import { Tooltip } from "@nextui-org/react";
 
 import { useRouter } from 'next/router'
 
+const YOUTUBE_VIDEO = 'https://www.youtube.com/watch?v=ZQ3Z9Y4Z0Zs'
+
 const slideContent = {
   refinery: {
     title: "refinery",
@@ -374,6 +376,14 @@ export function Ecosystem() {
                     alt={slideContent[current].title}
                     className="rounded-lg p-0.5"
                   />
+                  <a
+                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    href={YOUTUBE_VIDEO}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <IconPlayerPlay className='h-5 w-5 text-stone-100' fill='white' />
+                  </a>
                 </div>
               )}
               {current == 'bricks' && (
@@ -381,11 +391,20 @@ export function Ecosystem() {
                   transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
                   shadow-[0_0px_100px_10px_rgba(251,217,94,0.5)]
                '>
+
                   <img
                     src={slideContent[current].image}
                     alt={slideContent[current].title}
                     className="rounded-lg p-0.5"
                   />
+                  <a
+                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    href={YOUTUBE_VIDEO}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <IconPlayerPlay className='h-5 w-5 text-stone-100' fill='white' />
+                  </a>
                 </div>
               )}
               {current == 'gates' && (
@@ -398,6 +417,14 @@ export function Ecosystem() {
                     alt={slideContent[current].title}
                     className="rounded-lg p-0.5"
                   />
+                  <a
+                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    href={YOUTUBE_VIDEO}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <IconPlayerPlay className='h-5 w-5 text-stone-100' fill='white' />
+                  </a>
                 </div>
               )}
               {current == 'workflow' && (
@@ -410,6 +437,14 @@ export function Ecosystem() {
                     alt={slideContent[current].title}
                     className="rounded-lg p-0.5"
                   />
+                  <a
+                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    href={YOUTUBE_VIDEO}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <IconPlayerPlay className='h-5 w-5 text-stone-100' fill='white' />
+                  </a>
                 </div>
               )}
               <div className="justify-center pt-10 flex space-x-4">
