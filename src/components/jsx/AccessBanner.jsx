@@ -62,7 +62,13 @@ export function AccessBanner({ setOpenAccessModal }) {
                                                 setOpenAccessModal(true)
                                             }
 
-                                        }>⌘ + K</span> to request access</p>
+                                        }>⌘ + K</span> to request access,</p>
+                                        <p className="mt-1 text-sm text-gray-300">or click <span className='underline hover:text-green-500 cursor-pointer' onClick={
+                                            () => {
+                                                setOpenAccessModal(true)
+                                            }
+
+                                        }>here</span>.</p>
                                     </div>
                                     <div>
                                         <IconX size={24} stroke={1.5} className="text-gray-300 hover:text-gray-500 cursor-pointer" onClick={() => {
