@@ -11,7 +11,7 @@ import { Tooltip } from "@nextui-org/react";
 
 import { useRouter } from 'next/router'
 
-const YOUTUBE_VIDEO = 'https://www.youtube.com/watch?v=ZQ3Z9Y4Z0Zs'
+const YOUTUBE_VIDEO = 'https://www.youtube.com/watch?v=7VXqimJvzdU'
 
 const slideContent = {
   refinery: {
