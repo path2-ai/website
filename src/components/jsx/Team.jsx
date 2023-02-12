@@ -154,6 +154,14 @@ export function Team() {
                         </h2>
                         <div className="mt-8 space-y-10">
                             <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+                                <div className="flex justify-center items-center h-28 w-28 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
+                                    €2.7M
+                                </div>
+                                <div className="w-fit text-sm my-auto text-gray-300">
+                                    We raised 2,700,000€ venture capital in our seed round from leading investors in Europe.
+                                </div>
+                            </div>
+                            <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
                                 <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
                                     2020
                                 </div>
