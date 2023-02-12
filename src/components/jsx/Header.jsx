@@ -9,6 +9,9 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { IconArticle, IconBriefcase, IconBuildingCastle, IconDatabase, IconMessage, IconPerspective, IconRoute, IconUsers, IconWorldWww } from '@tabler/icons'
 import Link from 'next/link'
 import { KERN_ASSETS_URL } from './_settings'
+import { Menu } from '@headlessui/react'
+import { AccessModal } from './AccessModal'
+
 
 const navigation = [
     // {
@@ -66,6 +69,7 @@ export function Header() {
 
     const router = useRouter()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [openAccessModal, setOpenAccessModal] = useState(false)
 
     return (
         <div className="px-6 pt-3 lg:px-8 mx-auto justify-center max-w-6xl">
@@ -166,7 +170,78 @@ export function Header() {
                             ))}
                         </div>
                         <div className='hidden lg:block'>
-                            <a
+                            <Menu as="div" className="relative inline-block text-left">
+                                <div>
+                                    <Menu.Button
+                                        className="inline-flex hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20 text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600"
+                                    >
+                                        Actions
+                                    </Menu.Button>
+                                </div>
+
+                                <Transition
+                                    as={Fragment}
+                                    enter="transition ease-out duration-100"
+                                    enterFrom="transform opacity-0 scale-95"
+                                    enterTo="transform opacity-100 scale-100"
+                                    leave="transition ease-in duration-75"
+                                    leaveFrom="transform opacity-100 scale-100"
+                                    leaveTo="transform opacity-0 scale-95"
+                                >
+                                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-neutral-900 shadow-lg ring-1 ring-gray-800 ring-opacity-5 focus:outline-none">
+                                        <div className="py-1">
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        onClick={() => {
+                                                            setOpenAccessModal(true)
+                                                        }}
+                                                        className={classNames(
+                                                            active ? 'text-gray-100' : 'text-gray-400',
+                                                            'block px-4 py-2 text-sm'
+                                                        )}
+                                                    >
+                                                        Request platform access
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href="https://demo.kern.ai"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={classNames(
+                                                            active ? 'text-gray-100' : 'text-gray-400',
+                                                            'block px-4 py-2 text-sm'
+                                                        )}
+                                                    >
+                                                        Try refinery online
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+
+                                            <Menu.Item>
+                                                {({ active }) => (
+                                                    <a
+                                                        href="https://github.com/code-kern-ai/refinery"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={classNames(
+                                                            active ? 'text-gray-100' : 'text-gray-400',
+                                                            'block px-4 py-2 text-sm'
+                                                        )}
+                                                    >
+                                                        Leave a star on GitHub
+                                                    </a>
+                                                )}
+                                            </Menu.Item>
+                                        </div>
+                                    </Menu.Items>
+                                </Transition>
+                            </Menu>
+                            {/* <a
                                 href="https://demo.kern.ai"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -175,7 +250,7 @@ export function Header() {
                                 <span className='text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>
                                     Try refinery online
                                 </span>
-                            </a>
+                            </a> */}
                         </div>
                     </nav>
                 )}
@@ -273,6 +348,7 @@ export function Header() {
             {!mobileMenuOpen && (
                 <div className="mt-3 h-px bg-gradient-to-r from-gray-800 via-lime-600 to-gray-800" />
             )}
+            <AccessModal open={openAccessModal} setOpen={setOpenAccessModal} />
         </div>
 
     )
