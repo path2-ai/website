@@ -5,9 +5,13 @@ import { BricksIcon } from '@/util/BricksIcon'
 import { GatesIcon } from '@/util/GatesIcon'
 import { WorkflowIcon } from '@/util/WorkflowIcon'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
-import { Icon360, IconApiApp, IconApps, IconBrain, IconBrandDocker, IconBrandOpenSource, IconBrandPython, IconBuildingCastle, IconCategory2, IconCode, IconCrystalBall, IconDashboard, IconDatabase, IconDragDrop, IconGrowth, IconHighlight, IconLock, IconNumber3, IconRoute, IconTag, IconWindmill } from '@tabler/icons'
+import { Icon360, IconApiApp, IconApps, IconBrain, IconBrandDocker, IconBrandOpenSource, IconBrandPython, IconBuildingCastle, IconCategory2, IconCode, IconCrystalBall, IconDashboard, IconDatabase, IconDragDrop, IconGrowth, IconHighlight, IconLock, IconNumber3, IconPlayerPause, IconPlayerPlay, IconRoute, IconTag, IconWindmill } from '@tabler/icons'
 import Link from 'next/link'
+import { Tooltip } from "@nextui-org/react";
+
 import { useRouter } from 'next/router'
+
+const YOUTUBE_VIDEO = 'https://www.youtube.com/watch?v=ZQ3Z9Y4Z0Zs'
 
 const slideContent = {
   refinery: {
@@ -15,9 +19,10 @@ const slideContent = {
     description: "refinery is the editor for data-centric natural language processing. It combines training data and algorithms in a way that you can easily build NLP automations, e.g. to prototype ideas within an afternoon or to build quality assurance for your labeling workflow.",
     icon: <RefineryIcon className="h-12 w-12" />,
     image: "/screenshot-refinery.png",
-    fromColor: "from-green-500",
-    toColor: "to-lime-500",
-    ringColor: "ring-green-500",
+    fromColor: "from-indigo-500",
+    toColor: "to-purple-500",
+    ringColor: "ring-purple-500",
+    rgb: "200,250,0,0.5",
     cols: 2,
     features: [
       {
@@ -300,8 +305,8 @@ function Feature({ feature, product }) {
 
         {/* for some reason, dynamic setting of colors didn't work  */}
         {product == "refinery" && (
-          <div className={`flex h-7 w-7 items-center justify-center rounded-full ring-1 backdrop-blur-[2px] transition duration-300 bg-white/7.5 ring-white group-hover:bg-green-300/10 group-hover:ring-green-400`}>
-            <feature.icon className={`h-5 w-5 transition-colors duration-300 fill-white/10 stroke-zinc-400 group-hover:fill-green-300/10 group-hover:stroke-green-400`} />
+          <div className={`flex h-7 w-7 items-center justify-center rounded-full ring-1 backdrop-blur-[2px] transition duration-300 bg-white/7.5 ring-white group-hover:bg-purple-300/10 group-hover:ring-purple-400`}>
+            <feature.icon className={`h-5 w-5 transition-colors duration-300 fill-white/10 stroke-zinc-400 group-hover:fill-purple-300/10 group-hover:stroke-purple-400`} />
           </div>
         )}
         {product == "bricks" && (
@@ -361,16 +366,87 @@ export function Ecosystem() {
         <div>
           <div className="flex">
             <div className='space-y-4'>
-              <div className='bg-gradient-to-b from-lime-500 via-green-700 to-lime-500 rounded-lg 
+              {current == 'refinery' && (
+                <div className='bg-gradient-to-b from-purple-700 via-purple-400 to-purple-700 rounded-lg 
                   transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
-                  shadow-[0_0px_100px_10px_rgba(200,250,0,0.5)]
+                  shadow-[0_0px_100px_10px_rgba(202,73,223,0.5)]
                '>
-                <img
-                  src={slideContent[current].image}
-                  alt={slideContent[current].title}
-                  className="rounded-lg p-0.5"
-                />
-              </div>
+                  <img
+                    src={slideContent[current].image}
+                    alt={slideContent[current].title}
+                    className="rounded-lg p-0.5"
+                  />
+                  <a
+                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    href={YOUTUBE_VIDEO}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <IconPlayerPlay className='h-5 w-5 text-stone-100' fill='white' />
+                  </a>
+                </div>
+              )}
+              {current == 'bricks' && (
+                <div className='bg-gradient-to-b from-yellow-700 via-yellow-400 to-yellow-700 rounded-lg 
+                  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
+                  shadow-[0_0px_100px_10px_rgba(251,217,94,0.5)]
+               '>
+
+                  <img
+                    src={slideContent[current].image}
+                    alt={slideContent[current].title}
+                    className="rounded-lg p-0.5"
+                  />
+                  <a
+                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    href={YOUTUBE_VIDEO}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <IconPlayerPlay className='h-5 w-5 text-stone-100' fill='white' />
+                  </a>
+                </div>
+              )}
+              {current == 'gates' && (
+                <div className='bg-gradient-to-b from-red-700 via-red-400 to-red-700 rounded-lg 
+                  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
+                  shadow-[0_0px_100px_10px_rgba(251,98,78,0.5)]
+               '>
+                  <img
+                    src={slideContent[current].image}
+                    alt={slideContent[current].title}
+                    className="rounded-lg p-0.5"
+                  />
+                  <a
+                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    href={YOUTUBE_VIDEO}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <IconPlayerPlay className='h-5 w-5 text-stone-100' fill='white' />
+                  </a>
+                </div>
+              )}
+              {current == 'workflow' && (
+                <div className='bg-gradient-to-b from-blue-700 via-blue-400 to-blue-700 rounded-lg 
+                  transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
+                  shadow-[0_0px_100px_10px_rgba(66,127,244,0.5)]
+               '>
+                  <img
+                    src={slideContent[current].image}
+                    alt={slideContent[current].title}
+                    className="rounded-lg p-0.5"
+                  />
+                  <a
+                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    href={YOUTUBE_VIDEO}
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    <IconPlayerPlay className='h-5 w-5 text-stone-100' fill='white' />
+                  </a>
+                </div>
+              )}
               <div className="justify-center pt-10 flex space-x-4">
                 {Object.entries(slideContent).map(([key, item], index) => (
                   <div key={index}>
@@ -388,22 +464,73 @@ export function Ecosystem() {
                         setClickedOption(key)
                         setTimer(0)
                       }} className={classNames(
-                        key === clickedOption ? `${item.ringColor}` : "ring-white/10",
-                        "hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg p-4 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset group-hover:ring-white/20",
+                        key === clickedOption ? `${item.ringColor} ring-1 ` : `hover:ring-neutral-500`,
+                        "rounded-xl inline-block ring-1 ring-black  h-12 w-12",
                       )}>
-                      {slideContent[key].icon}
+                      {/* {slideContent[key].icon} */}
+                      <img
+                        src={"/" + key + "-bicon.png"}
+                      />
                     </button>
-                    <div className="mt-2 h-1.5 flex rounded bg-green-200">
-                      {key === current && (
-                        <div className="w-12 bg-gradient-to-r rounded from-green-600 to-lime-600" style={{ width: `${key === clickedOption ? 0 : timer * .25}%` }} />
+                    <div className="mt-2 h-1.5 flex rounded bg-gray-200">
+                      {key === current && key == 'refinery' && (
+                        <div className="w-12 bg-gradient-to-r rounded from-indigo-600 to-purple-600" style={{ width: `${key === clickedOption ? 0 : timer * .25}%` }} />
+                      )}
+                      {key === current && key == 'bricks' && (
+                        <div className="w-12 bg-gradient-to-r rounded from-yellow-600 to-amber-600" style={{ width: `${key === clickedOption ? 0 : timer * .25}%` }} />
+                      )}
+                      {key === current && key == 'gates' && (
+                        <div className="w-12 bg-gradient-to-r rounded from-orange-600 to-red-600" style={{ width: `${key === clickedOption ? 0 : timer * .25}%` }} />
+                      )}
+                      {key === current && key == 'workflow' && (
+                        <div className="w-12 bg-gradient-to-r rounded from-sky-600 to-blue-600" style={{ width: `${key === clickedOption ? 0 : timer * .25}%` }} />
                       )}
                     </div>
                   </div>
                 ))}
+                {clickedOption && (
+                  <div>
+                    <Tooltip className='ml-1' color="invert" content={"Autoplay"} placement="right"
+                    >
+                      <button
+                        type='button'
+                        className='mt-2 h-fit hover:text-green-500 hover:bg-neutral-800 bg-neutral-900 flex rounded-lg p-2 text-xs font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'
+                        onClick={() => {
+                          setClickedOption(null)
+                          setTimer(0)
+                        }}
+                      >
+                        <IconPlayerPlay className='my-auto h-5 w-5 inline-block' />
+                      </button>
+                    </Tooltip>
+                  </div>
+                )}
+                {clickedOption == null && (
+                  <div>
+                    <Tooltip className='ml-1' color="invert" content={"Stop autoplay"} placement="right"
+                    >
+                      <button
+                        type='button'
+                        className='mt-2 h-fit hover:text-red-400 hover:bg-neutral-800 bg-neutral-900 flex rounded-lg p-2 text-xs font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'
+                        onClick={() => {
+                          while (slider.current() !== current) {
+                            slider.next()
+                          }
+                          setCurrent(current)
+                          setClickedOption(current)
+                          setTimer(0)
+                        }}
+                      >
+
+                        <IconPlayerPause className='my-auto h-5 w-5 inline-block' />
+                      </button>
+                    </Tooltip>
+                  </div>
+                )}
               </div>
               <div className='flex flex-col items-center space-y-4'>
                 <div className='text-gray-100 text-sm'>
-                  The Kern AI ecosystem consists of four products
+                  The Kern AI platform consists of four products
                 </div>
                 <div className='flex flex-col md:flex-row md:space-x-2'>
                   <button
@@ -431,15 +558,55 @@ export function Ecosystem() {
                   >
                     <span>
                       <IconRoute className='my-auto h-5 w-5 inline-block mr-2' />
-
                       How it works
                     </span>
                   </button>
                 </div>
               </div>
               <div className='pt-8'>
-                <h2 className={`text-3xl font-mono w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r ${slideContent[current].fromColor} ${slideContent[current].toColor}`}>
-                  {current}
+                <h2 className={`flex flex-row items-end text-3xl font-mono w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r ${slideContent[current].fromColor} ${slideContent[current].toColor}`}>
+                  {clickedOption && (
+                    <div>
+                      <Tooltip className='mt-1' color="invert" content={"Autoplay"} placement="top"
+                      >
+                        <button
+                          type='button'
+                          className='mr-4 hover:text-green-500 hover:bg-neutral-800 bg-neutral-900 flex rounded-lg p-2 text-xs font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'
+                          onClick={() => {
+                            setClickedOption(null)
+                            setTimer(0)
+                          }}
+                        >
+                          <IconPlayerPlay className='my-auto h-5 w-5 inline-block' />
+                        </button>
+                      </Tooltip>
+                    </div>
+                  )}
+                  {clickedOption == null && (
+                    <div>
+                      <Tooltip className='mt-1' color="invert" content={"Stop autoplay"} placement="top"
+                      >
+                        <button
+                          type='button'
+                          className='mr-4 hover:text-red-400 hover:bg-neutral-800 bg-neutral-900 flex rounded-lg p-2 text-xs font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'
+                          onClick={() => {
+                            while (slider.current() !== current) {
+                              slider.next()
+                            }
+                            setCurrent(current)
+                            setClickedOption(current)
+                            setTimer(0)
+                          }}
+                        >
+                          <IconPlayerPause className='my-auto h-5 w-5 inline-block' />
+                        </button>
+                      </Tooltip>
+                    </div>
+                  )}
+                  <div>
+                    {current}
+                  </div>
+
                 </h2>
                 <p className="mt-4 text-gray-300">
                   {slideContent[current].description}
@@ -449,7 +616,7 @@ export function Ecosystem() {
                 </p>
               </div>
               <div className='hidden md:block'>
-                <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-white/5`}>
+                <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-white/5`}>
                   {slideContent[current].features.map((feature) => (
                     <Feature key={feature.name} feature={feature} product={current} />
                   ))}

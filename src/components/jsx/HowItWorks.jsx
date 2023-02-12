@@ -11,7 +11,7 @@ const options = [
             title: "Connect a dataset",
             description: "refinery uses JSON for user-defined inputs. You can choose from a variety of formats to upload your data, e.g. CSV, JSON, or Excel. Alternatively, you can grab data from a mart (e.g. a 3rd-party-integration or database) of the workflow product.",
             icon: IconNumber1,
-            image: "screenshot-refinery-data"
+            image: "screenshot-refinery"
         }, {
             title: "Label reference data",
             description: "Next, you need to label a few sample records. You can either do this in the built-in editor, or via another labeling solution like Labelstudio. Also, you can upload existing labeled data. These sample records will be (partially) used to train and validate heuristics.",
@@ -42,22 +42,22 @@ const options = [
             title: "Define a skeleton from scratch or use a template",
             description: "First, to understand what you need to configure, set up the basic steps of your workflow. You can either start from scratch or choose a template. A batch-workflow fetches new data either daily, weekly, or monthly.",
             icon: IconNumber1,
-            image: "screenshot-batch-skeleton"
+            image: "screenshot-workflow-b-skeleton"
         }, {
             title: "Set up a data mart",
             description: "Connect a data mart from one of our integrations, or use the workflow API to stream data into a custom data mart. This is where your raw data will be stored. By the way, you can connect data marts from workflow directly to refinery.",
             icon: IconNumber2,
-            image: "screenshot-spreadsheet-mart"
+            image: "screenshot-workflow-store"
         }, {
             title: "Connect a model from gates",
             description: "If you have set up a model in refinery and activated it in gates, it is now useable in workflow. Simply grab an API token from the refinery project, insert the token, and you have your custom API available.",
             icon: IconNumber3,
-            image: "screenshot-model-activation"
+            image: "screenshot-workflow-gates"
         }, {
             title: "Finish your workflow",
             description: "Finally, you can finish the skeleton of your workflow and connect your marts and model to the pipeline. If you run into errors, you can just reset the pipeline and start over. When you're done, you can publish your workflow.",
             icon: IconNumber4,
-            image: "screenshot-batch-workflow"
+            image: "screenshot-workflow-b"
         }]
     }, {
         title: "Building workflows",
@@ -67,22 +67,22 @@ const options = [
             title: "Define a skeleton from scratch or use a template",
             description: "First, to understand what you need to configure, set up the basic steps of your workflow. You can either start from scratch or choose a template. A realtime-workflow fetches new data either every second, every 5 seconds, every minute, or every 5 minutes.",
             icon: IconNumber1,
-            image: "screenshot-realtime-skeleton"
+            image: "screenshot-workflow-rt-skeleton"
         }, {
             title: "Set up a data mart",
             description: "Connect a data mart from one of our integrations, or use the workflow API to stream data into a custom data mart. This is where your raw data will be stored. By the way, you can connect data marts from workflow directly to refinery.",
             icon: IconNumber2,
-            image: "screenshot-spreadsheet-mart"
+            image: "screenshot-workflow-store"
         }, {
             title: "Connect a model from gates",
             description: "If you have set up a model in refinery and activated it in gates, it is now useable in workflow. Simply grab an API token from the refinery project, insert the token, and you have your custom API available.",
             icon: IconNumber3,
-            image: "screenshot-model-activation"
+            image: "screenshot-workflow-gates"
         }, {
             title: "Finish your workflow",
             description: "Finally, you can finish the skeleton of your workflow and connect your marts and model to the pipeline. If you run into errors, you can just reset the pipeline and start over. When you're done, you can publish your workflow.",
             icon: IconNumber4,
-            image: "screenshot-realtime-workflow"
+            image: "screenshot-workflow"
         }]
     },
 ]
@@ -136,7 +136,7 @@ export function HowItWorks() {
             >
                 <div className="relative overflow-hidden py-28 space-y-28">
                     {selected.steps.map((step, stepIdx) => (
-                        <div>
+                        <div key={stepIdx} >
                             <div className="flex mx-8 lg:grid lg:grid-cols-7 lg:gap-8 lg:items-center">
                                 <div className={classNames(
                                     stepIdx % 2 === 0 ? 'order-last' : null,
@@ -145,7 +145,7 @@ export function HowItWorks() {
                                     <img
                                         className="w-full rounded-xl shadow-xl ring-1 ring-gray-700
                                         transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
-                                        src={`${KERN_ASSETS_URL}/screenshots/${step.image}.png`}
+                                        src={`/${step.image}.png`}
                                         alt="Customer profile user interface"
                                     />
                                 </div>
