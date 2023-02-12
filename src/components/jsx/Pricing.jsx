@@ -111,7 +111,7 @@ const perksCloud = [
         title: 'Incl. refinery credits/month',
         tiers: [
             { title: 'personal', value: '100' },
-            { title: 'growth', featured: true, value: '5,000' },
+            { title: 'growth', featured: true, value: '3,000' },
             { title: 'enterprise', value: 'Custom' },
         ],
     },
@@ -272,12 +272,12 @@ export function Pricing() {
             title: 'Growth',
             featured: true,
             description: 'For teams that want to build NLP products, grow workflows or create NLP-driven dashboards.',
-            price: "249€",
+            price: "149€",
             mainFeatures: [
                 { id: 1, value: 'Access to full suite' },
                 { id: 2, value: 'Unlimited items' },
                 { id: 3, value: 'Unlimited users' },
-                { id: 4, value: '5,000 incl. refinery credits/month*' },
+                { id: 4, value: '3,000 incl. refinery credits/month*' },
                 { id: 5, value: 'Priority support' },
             ],
             buttons: [
