@@ -50,7 +50,7 @@ function SiloText({ product, title, description, fromColor, toColor, link }) {
                     <span className={`font-mono text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-amber-500`}>{product}</span>
                 )}
                 {product == 'refinery' && (
-                    <span className={`font-mono text-transparent bg-clip-text bg-gradient-to-r from-lime-500 to-green-500`}>{product}</span>
+                    <span className={`font-mono text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500`}>{product}</span>
                 )}
                 {product == 'gates' && (
                     <span className={`font-mono text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500`}>{product}</span>
