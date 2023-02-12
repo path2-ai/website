@@ -19,10 +19,10 @@ const navigation = [
     // },
     {
         name: 'Use cases', subnav: [
-            { name: 'Building training data', href: '/use-cases/training-data', icon: IconDatabase, description: 'Pipeline and automate your training data' },
-            { name: 'Email automation', href: '/use-cases/email-channels', icon: IconMessage, description: 'Automate email-channels from analysis to automation' },
-            { name: 'Webscraping NLP', href: '/use-cases/webscraping', icon: IconWorldWww, description: 'Make complex webscraping a breeze' },
-            { name: 'Extract, transform, load', href: '/use-cases/etl', icon: IconPerspective, description: 'Build pipelines that understand natural language' },
+            { name: 'Building training data', href: '/#training-data', icon: IconDatabase, description: 'Pipeline and automate your training data' },
+            { name: 'Email automation', href: '/#email-channels', icon: IconMessage, description: 'Automate email-channels from analysis to automation' },
+            { name: 'Webscraping NLP', href: '/#webscraping', icon: IconWorldWww, description: 'Make complex webscraping a breeze' },
+            { name: 'Extract, transform, load', href: '/#etl', icon: IconPerspective, description: 'Build pipelines that understand natural language' },
 
         ]
     },
