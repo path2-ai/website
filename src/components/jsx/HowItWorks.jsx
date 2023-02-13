@@ -133,7 +133,7 @@ export function HowItWorks() {
                         </p>
                     </div>
                 </div>
-                <div className="mt-6 m-4 md:p-0 md:grid md:grid-cols-3 md:gap-4">
+                <div className="mt-6 md:m-4 space-y-4 md:p-0 md:grid md:grid-cols-3 md:gap-4">
                     {options.map((option) => (
                         <div
                             key={option.title}
