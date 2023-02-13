@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IconArticle, IconBriefcase, IconBuildingCastle, IconDatabase, IconMessage, IconPerspective, IconRoute, IconUsers, IconWorldWww } from '@tabler/icons'
+import { IconArticle, IconBriefcase, IconBuildingCastle, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconUsers, IconWorldWww } from '@tabler/icons'
 import Link from 'next/link'
 import { KERN_ASSETS_URL } from './_settings'
 import { Menu } from '@headlessui/react'
@@ -290,18 +290,7 @@ export function Header() {
                         </div>
                         <div className="mt-6 flow-root">
                             <div className="-my-6 divide-y divide-gray-500/10">
-                                <div className="m-4 py-6 grid grid-cols-2 gap-8">
-                                    {navigation.map((item) => (
-                                        item.href && (
-                                            <Link
-                                                key={item.name}
-                                                href={item.href}
-                                                className="font-semibold text-gray-100 hover:bg-gray-600/10"
-                                            >
-                                                {item.name}
-                                            </Link>
-                                        )
-                                    ))}
+                                <div className="m-4 py-4 grid grid-cols-2 gap-8">
                                     {navigation.map((item) => (
                                         !item.href && (
                                             <div>
@@ -317,7 +306,8 @@ export function Header() {
                                                             key={subItem.name}
                                                             href={subItem.href}
                                                         >
-                                                            <div className="ml-4">
+                                                            <div className="ml-1 flex flex-row items-center space-x-1">
+                                                                <IconChevronRight className="h-5 w-5 text-gray-400" aria-hidden="true" />
                                                                 <p className="text-base font-medium text-gray-100">{subItem.name}</p>
                                                             </div>
                                                         </Link>
@@ -326,8 +316,19 @@ export function Header() {
                                             </div>
                                         )
                                     ))}
+                                    {navigation.map((item) => (
+                                        item.href && (
+                                            <Link
+                                                key={item.name}
+                                                href={item.href}
+                                                className="font-semibold text-gray-100 hover:bg-gray-600/10"
+                                            >
+                                                {item.name}
+                                            </Link>
+                                        )
+                                    ))}
                                 </div>
-                                <div className="py-2">
+                                <div className="m-4 py-2">
                                     <a
                                         href="https://demo.kern.ai"
                                         target="_blank"
@@ -335,7 +336,27 @@ export function Header() {
                                         className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-100 hover:bg-gray-600/10"
                                     >
                                         <span className='text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>
+                                            Request platform access
+                                        </span>
+                                    </a>
+                                    <a
+                                        href="https://demo.kern.ai"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-100 hover:bg-gray-600/10"
+                                    >
+                                        <span className='text-gray-300'>
                                             Try refinery online
+                                        </span>
+                                    </a>
+                                    <a
+                                        href="https://demo.kern.ai"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-6 text-gray-100 hover:bg-gray-600/10"
+                                    >
+                                        <span className='text-gray-300'>
+                                            Leave a star on GitHub
                                         </span>
                                     </a>
                                 </div>

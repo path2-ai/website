@@ -128,7 +128,7 @@ export function UseCases() {
         </p>
       </div>
 
-      <div className="overflow-hidden py-12 flex flex-col space-y-40 ">
+      <div className="hidden lg:block overflow-hidden py-12 flex flex-col space-y-40 ">
         {useCases.map((useCase, index) => (
           <div id={useCase.slug} key={index} className="m-16 px-16 border border-gray-800 bg-neutral-900 rounded-2xl relative overflow-hidden">
             {index % 2 === 0 ? (
@@ -381,6 +381,122 @@ export function UseCases() {
             )}
 
 
+          </div>
+        ))}
+
+
+      </div>
+
+      <div className="lg:hidden">
+        {useCases.map((useCase, index) => (
+          <div id={useCase.slug} key={index} className="m-6 px-6 md:m-16 m:px-16 border border-gray-800 bg-neutral-900 rounded-lg relative overflow-hidden">
+            <div className="relative">
+              <svg
+                className="absolute inset-0 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+                aria-hidden="true"
+              >
+                <defs>
+                  <pattern
+                    id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
+                    width={200}
+                    height={200}
+                    x="50%"
+                    y={-1}
+                    patternUnits="userSpaceOnUse"
+                  >
+                    <path d="M.5 200V.5H200" fill="none" />
+                  </pattern>
+                </defs>
+                <svg x="50%" y={-1} className="overflow-visible fill-gray-800/20">
+                  <path
+                    d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
+                    strokeWidth={0}
+                  />
+                </svg>
+                <rect width="100%" height="100%" strokeWidth={0} fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)" />
+              </svg>
+              <svg
+                viewBox="0 0 1108 632"
+                aria-hidden="true"
+                className="absolute top-10 left-[calc(50%-4rem)] w-[69.25rem] max-w-none transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
+              >
+                <path
+                  fill="url(#175c433f-44f6-4d59-93f0-c5c51ad5566d)"
+                  fillOpacity=".2"
+                  d="M235.233 402.609 57.541 321.573.83 631.05l234.404-228.441 320.018 145.945c-65.036-115.261-134.286-322.756 109.01-230.655C968.382 433.026 1031 651.247 1092.23 459.36c48.98-153.51-34.51-321.107-82.37-385.717L810.952 324.222 648.261.088 235.233 402.609Z"
+                />
+                <defs>
+                  <linearGradient
+                    id="175c433f-44f6-4d59-93f0-c5c51ad5566d"
+                    x1="1220.59"
+                    x2="-85.053"
+                    y1="432.766"
+                    y2="638.714"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop stopColor="blue" />
+                    <stop offset={1} stopColor="#80CAFF" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div className="py-6 md:py-16">
+                <div className='p-2 border border-gray-800 bg-neutral-900 w-fit rounded-lg'>
+                  <useCase.icon className="h-8 w-8 text-lime-500" />
+                </div>
+                <div className="mt-6">
+                  <h2 className="text-xl font-bold tracking-tight text-gray-100">
+                    {useCase.title}
+                  </h2>
+                  <p className="mt-4 text-sm text-gray-300">
+                    {useCase.description}
+                  </p>
+                  <div className='mt-10 flex flex-col md:flex-row md:space-x-4'>
+                    <button
+                      type='button'
+                      className='bg-transparent hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-gray-800 group-hover:ring-white/20'
+                      onClick={() => {
+                        router.push('/pricing')
+                      }}
+                    >
+                      <span>
+                        See pricing
+                      </span>
+                    </button>
+
+                    <a
+                      type='button'
+                      className='mt-2 md:mt-0 hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-gray-800 group-hover:ring-white/20'
+                      href={useCase.href}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      <span>
+                        <IconBook className='my-auto h-5 w-5 inline-block mr-2' />
+                        See docs
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <div className='mt-8'>
+                  <div className='grid md:grid-cols-2 gap-8'>
+                    {useCase.benefits.map((option) => (
+                      <div
+                        key={option.title}
+                        className="flex flex-col rounded-lg"
+                      >
+                        <div className="border-gray-800 text-white flex items-center justify-center h-12 w-12 rounded-md border bg-gradient-to-b from-neutral-900 to-neutral-800">
+                          <option.icon className="h-6 w-6" aria-hidden="true" />
+                        </div>
+                        <div className="mt-5">
+                          <h3 className="text-sm leading-6 font-medium text-gray-100">{option.title}</h3>
+                          <p className="mt-2 text-sm leading-6 text-gray-300">{option.description}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
