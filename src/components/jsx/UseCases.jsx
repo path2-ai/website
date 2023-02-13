@@ -18,19 +18,23 @@ const useCases = [{
   benefits: [{
     title: 'Shorten model development time',
     icon: IconTerminal,
-    description: 'On average, you can build models 10x faster.'
+    description: 'On average, you can build models 10x faster.',
+    red: false,
   }, {
     title: 'Debug and improve your models',
     icon: IconBug,
-    description: 'Find and fix errors in your data and models with ease.'
+    description: 'Find and fix errors in your data and models with ease.',
+    red: true
   }, {
     title: 'Engage collaboration',
     icon: IconUsers,
-    description: 'Work with domain experts and annotators to improve your models.'
+    description: 'Work with domain experts and annotators to improve your models.',
+    red: false
   }, {
     title: 'Integrate your workflow',
     icon: IconApiApp,
-    description: 'Integrate your workflow with your internal systems and databases.'
+    description: 'Integrate your workflow with your internal systems and databases.',
+    red: false
   }]
 }, {
   title: 'Email channels',
@@ -44,17 +48,20 @@ const useCases = [{
     title: 'Shorten time to response',
     icon: IconClock,
     description: 'Automate your workflows and reduce the time it takes to respond to your customers.',
-    colspan: 1
+    colspan: 1,
+    red: false
   }, {
     title: 'Reduce workload on operators',
     icon: IconUser,
     description: 'Let operators focus on the most important tasks and let the platform handle the rest.',
-    colspan: 1
+    colspan: 1,
+    red: false
   }, {
     title: 'Integrate internal databases',
     icon: IconDatabase,
     description: 'Key to great quality is that you can integrate your internal databases or systems to respond or synchronize easily.',
-    colspan: 2
+    colspan: 2,
+    red: false
   }]
 }, {
   title: 'Webscraping',
@@ -64,27 +71,30 @@ const useCases = [{
   href: 'https://docs.kern.ai/use-cases/webscraping',
   color: 'yellow',
   image: '/screenshot-workflow.png',
-
   benefits: [{
     title: 'HTML + NLP = 💚',
     icon: IconTerminal,
     description: 'Combine scraping with NLP, and you can extract data from any HTML element.',
-    colspan: 1
+    colspan: 1,
+    red: false
   }, {
     title: 'Master data management',
     icon: IconTableAlias,
     description: 'Synchronize external data with internal sources. With workflow, handling mapping data is easy.',
-    colspan: 1
+    colspan: 1,
+    red: false
   }, {
     title: 'Visual scraping',
     icon: IconEyeTable,
     description: 'Combine scraping with visual labeling, and see if your scraping technique works as you expect.',
-    colspan: 1
+    colspan: 1,
+    red: false
   }, {
     title: 'Shorter time to build',
     icon: IconClock,
     description: 'Build webscraping workflows in a fraction of the time it would take to build it from scratch.',
-    colspan: 1
+    colspan: 1,
+    red: false
   }]
 }, {
   title: 'ETL pipelines',
@@ -97,19 +107,23 @@ const useCases = [{
   benefits: [{
     title: 'Shorten pipeline development time',
     icon: IconTerminal,
-    description: 'You can build a pipeline in a fraction of the time it would take to build it from scratch.'
+    description: 'You can build a pipeline in a fraction of the time it would take to build it from scratch.',
+    red: false
   }, {
     title: 'Debug and improve your pipelines',
     icon: IconBug,
-    description: 'You can easily see what your pipeline is doing, and improve it with our visual debugging tools.'
+    description: 'You can easily see what your pipeline is doing, and improve it with our visual debugging tools.',
+    red: true
   }, {
     title: 'Engage collaboration',
     icon: IconUsers,
-    description: 'It has never been easier to integrate domain expertise into your work specifically on the data you need help for.'
+    description: 'It has never been easier to integrate domain expertise into your work specifically on the data you need help for.',
+    red: false
   }, {
     title: 'Gain new insights',
     icon: IconDashboard,
-    description: '80% of data is unstructured. You can gain new insights from your data by combining it with NLP.'
+    description: '80% of data is unstructured. You can gain new insights from your data by combining it with NLP.',
+    red: false
   }]
 },]
 
@@ -230,7 +244,11 @@ export function UseCases() {
                             className="flex flex-col rounded-lg"
                           >
                             <div className="border-gray-800 text-white flex items-center justify-center h-12 w-12 rounded-md border bg-gradient-to-b from-neutral-900 to-neutral-800">
-                              <option.icon className="h-6 w-6" aria-hidden="true" />
+                              {option.red ? (
+                                <option.icon className="h-6 w-6 text-red-400" aria-hidden="true" />
+                              ) : (
+                                <option.icon className="h-6 w-6" aria-hidden="true" />
+                              )}
                             </div>
                             <div className="mt-5">
                               <h3 className="text-lg leading-6 font-medium text-gray-100">{option.title}</h3>
@@ -363,7 +381,11 @@ export function UseCases() {
                             className="flex flex-col rounded-lg"
                           >
                             <div className="border-gray-800 text-white flex items-center justify-center h-12 w-12 rounded-md border bg-gradient-to-b from-neutral-900 to-neutral-800">
-                              <option.icon className="h-6 w-6" aria-hidden="true" />
+                              {option.red ? (
+                                <option.icon className="h-6 w-6 text-red-400" aria-hidden="true" />
+                              ) : (
+                                <option.icon className="h-6 w-6" aria-hidden="true" />
+                              )}
                             </div>
                             <div className="mt-5">
                               <h3 className="text-lg leading-6 font-medium text-gray-100">{option.title}</h3>
@@ -485,7 +507,11 @@ export function UseCases() {
                         className="flex flex-col rounded-lg"
                       >
                         <div className="border-gray-800 text-white flex items-center justify-center h-12 w-12 rounded-md border bg-gradient-to-b from-neutral-900 to-neutral-800">
-                          <option.icon className="h-6 w-6" aria-hidden="true" />
+                          {option.red ? (
+                            <option.icon className="h-6 w-6 text-red-400" aria-hidden="true" />
+                          ) : (
+                            <option.icon className="h-6 w-6" aria-hidden="true" />
+                          )}
                         </div>
                         <div className="mt-5">
                           <h3 className="text-sm leading-6 font-medium text-gray-100">{option.title}</h3>
