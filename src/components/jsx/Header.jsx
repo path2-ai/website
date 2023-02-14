@@ -39,7 +39,7 @@ const navigation = [
             { name: 'workflow', href: 'https://docs.kern.ai/workflow', icon: null, description: 'Automate any natural language-driven process' },
         ]
     },
-    { name: 'Changelog', href: '/changelog' },
+    { name: 'Changelog', href: 'https://changelog.kern.ai' },
     { name: 'Integrations', href: '/integrations' },
     { name: 'Pricing', href: '/pricing' },
     // {

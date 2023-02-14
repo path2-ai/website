@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
 import { articles } from '@/pages/company/blog/overview'
-import { logs } from '@/pages/changelog/navbar'
 import { changelogPath, blogPath } from '@/pages/_app'
 
 import { Button } from '@/components/mdx/Button'
