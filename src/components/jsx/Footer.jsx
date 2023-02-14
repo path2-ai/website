@@ -30,10 +30,10 @@ export function Footer() {
             { name: 'Pricing', onClick: () => { router.push('/pricing') } },
         ],
         docs: [
-            { name: 'refinery', onClick: () => { router.push('/docs/refinery') } },
-            { name: 'bricks', onClick: () => { router.push('/docs/bricks') } },
-            { name: 'gates', onClick: () => { router.push('/docs/gates') } },
-            { name: 'workflow', onClick: () => { router.push('/docs/workflow') } },
+            { name: 'refinery', onClick: () => { router.push('https://docs.kern.ai/refinery') } },
+            { name: 'bricks', onClick: () => { router.push('https://docs.kern.ai/bricks') } },
+            { name: 'gates', onClick: () => { router.push('https://docs.kern.ai/gates') } },
+            { name: 'workflow', onClick: () => { router.push('https://docs.kern.ai/workflow') } },
         ],
         company: [
             { name: 'About', onClick: () => { router.push('/company/about') } },

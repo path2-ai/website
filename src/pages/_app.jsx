@@ -24,13 +24,6 @@ Router.events.on('hashChangeStart', onRouteChange)
 Router.events.on('routeChangeComplete', onRouteChange)
 Router.events.on('routeChangeError', onRouteChange)
 
-export const docsPaths = [
-  '/docs/bricks',
-  '/docs/refinery',
-  '/docs/gates',
-  '/docs/workflow',
-]
-
 export const blogPath = '/company/blog/'
 export const changelogPath = '/changelog'
 
@@ -41,7 +34,7 @@ export default function App({ Component, pageProps }) {
   const Body = ({ pageProps, Component }) => {
     // check if any of the paths are partially in the current path
 
-    if (docsPaths.some((path) => router.pathname.includes(path)) || (router.pathname.includes(blogPath) || router.pathname.includes(changelogPath))) {
+    if ((router.pathname.includes(blogPath) || router.pathname.includes(changelogPath))) {
       return (
         <MDXProvider components={mdxComponents}>
           <Layout  {...pageProps}>

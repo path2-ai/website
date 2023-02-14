@@ -240,7 +240,7 @@ const slideContent = {
         colsSpan: 1,
       },
       {
-        href: '/docs/workflow/realtime-and-batch',
+        href: 'https://docs.kern.ai/workflow',
         name: 'Realtime and batch',
         description:
           'workflow is designed to work out of the box for the use cases you want to implement, whether it is realtime or batch processing. You can run operational tasks in realtime, and batch processing can be used for e.g. data analysis. Alternatively, you can synchronize refinery in a batch-job, such that your training data is always up-to-date. You will quickly realize: This is ETL for NLP - and it is designed to fit your ideas.',
