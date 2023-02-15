@@ -25,15 +25,24 @@ export function Blog() {
                                 className="mt-12 max-w-lg mx-auto lg:max-w-none"
                             >
                                 <Link href={`blog/${featuredArticle.slug}`}>
-                                    <div className="flex flex-col overflow-hidden rounded-lg shadow-lg">
-                                        <img className="object-cover" src={featuredArticle.thumbnail} alt={featuredArticle.title} />
+                                    <div className="p-4 grid grid-cols-2 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
+                                        <div className="p-12 rounded-lg">
+                                            <img className="object-cover" src={featuredArticle.thumbnail} alt={featuredArticle.title} />
+                                        </div>
+                                        <div className="py-12 mr-12 flex flex-col">
+
+                                            <h2 className="mt-4 font-semibold text-white text-4xl">
+                                                {featuredArticle.title}
+                                            </h2>
+                                            <p className="mt-4 text-gray-200">
+                                                {featuredArticle.description}
+                                            </p>
+                                            <div className="mt-16 text-gray-400 text-sm">
+                                                {featuredArticle.category}
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className="mt-2 text-gray-400 text-sm">
-                                        {featuredArticle.category}
-                                    </div>
-                                    <h2 className="mt-4 font-semibold text-white text-2xl">
-                                        {featuredArticle.title}
-                                    </h2>
+
                                     <div className="mt-4 text-gray-200">
                                         {featuredArticle.teaser}
                                     </div>
@@ -56,26 +65,33 @@ export function Blog() {
                                         key={post.title}
                                         href={`blog/${post.slug}`}
                                     >
-                                        <div className="flex flex-col overflow-hidden rounded-lg shadow-lg">
-                                            <img className="object-cover" src={post.thumbnail} alt={post.title} />
-                                        </div>
-                                        <div className="mt-2 text-gray-400 text-sm">
-                                            {post.category}
-                                        </div>
-                                        <h2 className="mt-4 font-semibold text-white text-2xl">
-                                            {post.title}
-                                        </h2>
-                                        <div className="mt-4 text-gray-200">
-                                            {post.teaser}
-                                        </div>
-                                        <div className="mt-4 text-sm flex space-x-2.5">
-                                            <img
-                                                className="h-6 w-6 rounded-full"
-                                                src={post.author.image}
-                                            />
-                                            <span className="text-white">{post.author.name}</span>
-                                            <span className="text-white">|</span>
-                                            <span className="text-gray-300"> {post.date}</span>
+                                        <div className="px-12 p-4 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
+                                            <div className="flex flex-col items-center justify-center">
+                                                <div className="p-8 rounded-lg">
+                                                    <img className="object-cover" src={post.thumbnail} alt={post.title} />
+                                                </div>
+                                                <h2 className="mt-2 font-semibold text-white text-xl">
+                                                    {post.title}
+                                                </h2>
+                                                <p className="mt-4 text-gray-200">
+                                                    {post.description}
+                                                </p>
+                                            </div>
+                                            <div className="mt-8 text-gray-400 text-sm">
+                                                {post.category}
+                                            </div>
+                                            <div className="mt-4 text-gray-200">
+                                                {post.teaser}
+                                            </div>
+                                            <div className="mt-4 text-sm flex space-x-2.5">
+                                                <img
+                                                    className="h-6 w-6 rounded-full"
+                                                    src={post.author.image}
+                                                />
+                                                <span className="text-white">{post.author.name}</span>
+                                                <span className="text-white">|</span>
+                                                <span className="text-gray-300"> {post.date}</span>
+                                            </div>
                                         </div>
                                     </Link>
                                 ))}
