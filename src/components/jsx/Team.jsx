@@ -101,12 +101,12 @@ export function Team() {
                     </div>
                     <div className="mt-4 md:mt-0 col-span-3 mx-auto p-3">
                         <div className="grid grid-cols-3 gap-8">
-                            <img src="/seedcamp.png" className="w-44 mr-auto my-auto" />
-                            <img src="/another-vc.png" className="w-40 mr-auto my-auto" />
-                            <img src="/xdeck.png" className="w-28 mr-auto my-auto" />
+                            <img src="/investors/seedcamp.png" className="w-44 mr-auto my-auto" />
+                            <img src="/investors/another-vc.png" className="w-40 mr-auto my-auto" />
+                            <img src="/investors/xdeck.png" className="w-28 mr-auto my-auto" />
 
-                            <img src="/faber.png" className="w-20 mr-auto my-auto" />
-                            <img src="/hpi-seed.png" className="w-16 mr-auto my-auto" />
+                            <img src="/investors/faber.png" className="w-20 mr-auto my-auto" />
+                            <img src="/investors/hpi-seed.png" className="w-16 mr-auto my-auto" />
                         </div>
                         <div className="mt-10">
                             <div className="grid grid-cols-3 gap-8">
