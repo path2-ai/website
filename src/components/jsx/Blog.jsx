@@ -29,18 +29,18 @@ export function Blog() {
                                     target="_blank"
                                     rel="noreferrer noopener"
                                 >
-                                    <div className="p-4 grid grid-cols-2 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
-                                        <div className="pt-12 px-12 pb-10 flex flex-col items-center">
+                                    <div className="p-4 grid md:grid-cols-2 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
+                                        <div className="md:pt-12 md:px-12 md:pb-10 flex flex-col items-center">
                                             <img className="rounded-lg object-cover" src={featuredArticle.thumbnail} alt={featuredArticle.title} />
                                             <p className="mt-2 text-gray-400 text-xs italic">"{featuredArticle.prompt}"</p>
                                             <p className="text-gray-400 text-xs italic">(This image was generated via Stable Diffusion)</p>
                                         </div>
-                                        <div className="py-12 mr-12 flex flex-col">
-                                            <div className="mt-16 flex flex-row items-center justify-between">
+                                        <div className="md:py-12 md:mr-12 flex flex-col">
+                                            <div className="md:mt-16 flex flex-col md:flex-row md:items-center justify-between">
                                                 <div className="text-gray-400 text-sm">
                                                     {featuredArticle.category}
                                                 </div>
-                                                <div className="text-sm flex space-x-2.5">
+                                                <div className="mt-2 md:mt-0 text-sm flex space-x-2.5">
                                                     <img
                                                         className="h-6 w-6 rounded-full"
                                                         src={featuredArticle.author.image}
@@ -50,7 +50,7 @@ export function Blog() {
                                                     <span className="text-gray-300"> {featuredArticle.date}</span>
                                                 </div>
                                             </div>
-                                            <h2 className="mt-4 font-semibold text-white text-4xl">
+                                            <h2 className="mt-4 font-semibold text-white text-lg md:text-4xl">
                                                 {featuredArticle.title}
                                             </h2>
                                             <p className="mt-4 text-gray-200">
@@ -60,7 +60,7 @@ export function Blog() {
                                         </div>
                                     </div>
 
-                                    <div className="mt-4 text-gray-200">
+                                    <div className="p-2 mt-4 text-gray-400">
                                         {featuredArticle.teaser}
                                     </div>
 
@@ -68,7 +68,7 @@ export function Blog() {
                             </div>
 
                             {/* other posts */}
-                            <div className="mx-auto mt-24 grid max-w-lg gap-16 lg:max-w-none lg:grid-cols-2">
+                            <div className="mx-auto py-16 md:mt-24 grid max-w-lg gap-16 lg:max-w-none lg:grid-cols-2">
                                 {articles.slice(1).map((post) => (
                                     <a
                                         key={post.title}
@@ -76,21 +76,20 @@ export function Blog() {
                                         target="_blank"
                                         rel="noreferrer noopener"
                                     >
-                                        <div className="p-8 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
+                                        <div className="p-4 md:p-8 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
                                             <div className="flex flex-col">
                                                 <div className="flex flex-col justify-start">
                                                     <div className="flex flex-col items-center">
                                                         <img className="rounded-lg object-cover" src={post.thumbnail} alt={post.title} />
                                                         <p className="mt-2 text-gray-400 text-xs italic">"{post.prompt}"</p>
                                                     </div>
-                                                    <div className="mt-4 flex flex-row items-end justify-between">
+                                                    <div className="mt-4 flex flex-col md:flex-row md:items-end justify-between">
                                                         <div className="text-gray-400 text-sm">
                                                             {post.category}
                                                         </div>
-
                                                         <div className="mt-2 text-sm flex flex-row items-center space-x-2.5">
                                                             <img
-                                                                className="h-4 w-4 rounded-full"
+                                                                className="h-6 w-6 md:h-4 md:w-4 rounded-full"
                                                                 src={post.author.image}
                                                             />
                                                             <span className="text-white">{post.author.name}</span>
@@ -99,7 +98,7 @@ export function Blog() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <h2 className="mt-3 font-semibold text-white text-xl">
+                                                <h2 className="mt-3 font-semibold text-white text-lg md:text-xl">
                                                     {post.title}
                                                 </h2>
                                                 <p className="mt-2 text-gray-200">
@@ -107,7 +106,7 @@ export function Blog() {
                                                 </p>
                                             </div>
                                         </div>
-                                        <div className="mt-4 text-gray-200">
+                                        <div className="p-2 mt-4 text-gray-400">
                                             {post.teaser}
                                         </div>
                                     </a>
