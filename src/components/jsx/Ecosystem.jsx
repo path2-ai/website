@@ -377,7 +377,7 @@ export function Ecosystem() {
                     className="rounded-lg p-0.5"
                   />
                   <a
-                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    className='flex justify-center items-center absolute top-[34%] left-[40%] md:top-[47%] md:left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
                     href={YOUTUBE_VIDEO}
                     target='_blank'
                     rel='noreferrer'
@@ -398,7 +398,7 @@ export function Ecosystem() {
                     className="rounded-lg p-0.5"
                   />
                   <a
-                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    className='flex justify-center items-center absolute top-[34%] left-[40%] md:top-[47%] md:left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
                     href={YOUTUBE_VIDEO}
                     target='_blank'
                     rel='noreferrer'
@@ -418,7 +418,7 @@ export function Ecosystem() {
                     className="rounded-lg p-0.5"
                   />
                   <a
-                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    className='flex justify-center items-center absolute top-[34%] left-[40%] md:top-[47%] md:left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
                     href={YOUTUBE_VIDEO}
                     target='_blank'
                     rel='noreferrer'
@@ -438,7 +438,7 @@ export function Ecosystem() {
                     className="rounded-lg p-0.5"
                   />
                   <a
-                    className='flex justify-center items-center absolute top-[47%] left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                    className='flex justify-center items-center absolute top-[34%] left-[40%] md:top-[47%] md:left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
                     href={YOUTUBE_VIDEO}
                     target='_blank'
                     rel='noreferrer'
