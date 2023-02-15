@@ -24,10 +24,15 @@ export function Blog() {
                             <div
                                 className="mt-12 max-w-lg mx-auto lg:max-w-none"
                             >
-                                <Link href={`blog/${featuredArticle.slug}`}>
+                                <a
+                                    href={`https://blog.kern.ai/${featuredArticle.slug}`}
+                                    target="_blank"
+                                    rel="noreferrer noopener"
+                                >
                                     <div className="p-4 grid grid-cols-2 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
-                                        <div className="p-12 rounded-lg">
-                                            <img className="object-cover" src={featuredArticle.thumbnail} alt={featuredArticle.title} />
+                                        <div className="p-12 flex flex-col items-center">
+                                            <img className="rounded-lg object-cover" src={featuredArticle.thumbnail} alt={featuredArticle.title} />
+                                            <p className="mt-2 text-gray-400 text-xs italic">"{featuredArticle.prompt}"</p>
                                         </div>
                                         <div className="py-12 mr-12 flex flex-col">
                                             <div className="mt-16 flex flex-row items-center justify-between">
@@ -58,28 +63,31 @@ export function Blog() {
                                         {featuredArticle.teaser}
                                     </div>
 
-                                </Link>
+                                </a>
                             </div>
 
                             {/* other posts */}
                             <div className="mx-auto mt-24 grid max-w-lg gap-16 lg:max-w-none lg:grid-cols-2">
                                 {articles.slice(1).map((post) => (
-                                    <Link
+                                    <a
                                         key={post.title}
-                                        href={`blog/${post.slug}`}
+                                        href={`https://blog.kern.ai//${post.slug}`}
+                                        target="_blank"
+                                        rel="noreferrer noopener"
                                     >
                                         <div className="p-8 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
                                             <div className="flex flex-col">
                                                 <div className="flex flex-col justify-start">
-                                                    <div className="rounded-lg">
-                                                        <img className="object-cover" src={post.thumbnail} alt={post.title} />
+                                                    <div className="flex flex-col items-center">
+                                                        <img className="rounded-lg object-cover" src={post.thumbnail} alt={post.title} />
+                                                        <p className="mt-2 text-gray-400 text-xs italic">"{post.prompt}"</p>
                                                     </div>
-                                                    <div className="flex flex-row items-end justify-between">
-                                                        <div className="mt-2 text-gray-400 text-sm">
+                                                    <div className="mt-4 flex flex-row items-end justify-between">
+                                                        <div className="text-gray-400 text-sm">
                                                             {post.category}
                                                         </div>
 
-                                                        <div className="mt-4 text-sm flex flex-row items-center space-x-2.5">
+                                                        <div className="mt-2 text-sm flex flex-row items-center space-x-2.5">
                                                             <img
                                                                 className="h-4 w-4 rounded-full"
                                                                 src={post.author.image}
@@ -90,10 +98,10 @@ export function Blog() {
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <h2 className="mt-6 font-semibold text-white text-xl">
+                                                <h2 className="mt-3 font-semibold text-white text-xl">
                                                     {post.title}
                                                 </h2>
-                                                <p className="mt-4 text-gray-200">
+                                                <p className="mt-2 text-gray-200">
                                                     {post.description}
                                                 </p>
                                             </div>
@@ -101,7 +109,7 @@ export function Blog() {
                                         <div className="mt-4 text-gray-200">
                                             {post.teaser}
                                         </div>
-                                    </Link>
+                                    </a>
                                 ))}
                             </div>
                         </div>
