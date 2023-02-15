@@ -115,6 +115,10 @@ export function Blog() {
                         </div>
                     </div>
                 )}
+
+                <p className="mt-8 text-center text-base text-gray-400">
+                    We generated the blog post images using <a href="https://github.com/Stability-AI/stablediffusion" target="_blank" rel="noreferrer noopener" className="text-gray-100 underline hover:text-green-500">Stable Diffusion</a>.
+                </p>
             </section>
         </div>
     )
