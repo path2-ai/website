@@ -12,6 +12,7 @@ export function AccessModal({ open, setOpen }) {
 
     const [consent, setConsent] = useState(false)
     const [email, setEmail] = useState('')
+    const [usageComments, setUsageComments] = useState('')
     const [loading, setLoading] = useState(false)
     const [showNotification, setShowNotification] = useState(false)
 
@@ -76,9 +77,27 @@ export function AccessModal({ open, setOpen }) {
                                                             onChange={(e) => setEmail(e.target.value)}
                                                         />
                                                     </div>
+                                                    <div>
+                                                        <label htmlFor="comment" className="mt-4 block text-sm font-medium text-gray-300">
+                                                            What would you like to implement in the platform?
+                                                        </label>
+                                                        <div className="mt-1">
+                                                            <textarea
+                                                                rows={4}
+                                                                name="comment"
+                                                                id="comment"
+                                                                className="block w-full rounded-md border-gray-700 shadow-sm focus:border-green-500 focus:ring-green-500 sm:text-sm p-2 bg-neutral-900 text-gray-200"
+                                                                placeholder="I would like to use the platform to..."
+                                                                onChange={(e) => setUsageComments(e.target.value)}
+                                                            />
+                                                        </div>
+                                                        <p className="mt-2 text-xs text-gray-500">
+                                                            This is optional, but giving us an idea what you would like to do with the platform can help us onboard you faster.
+                                                        </p>
+                                                    </div>
 
                                                     {/* consent checkbox */}
-                                                    <div className="flex items-center mt-4">
+                                                    <div className="flex items-center mt-6">
                                                         <div className="mb-auto flex items-start">
                                                             <div className="flex items-center h-5">
                                                                 <input
@@ -146,6 +165,7 @@ export function AccessModal({ open, setOpen }) {
                                                             "https://getform.io/f/a6bcfa85-cd0c-4450-adc1-c1962bfa1d81",
                                                             {
                                                                 email: email,
+                                                                comment: usageComments,
                                                             },
                                                             { headers: { Accept: "application/json" } }
                                                         )
