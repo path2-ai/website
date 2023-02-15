@@ -30,9 +30,10 @@ export function Blog() {
                                     rel="noreferrer noopener"
                                 >
                                     <div className="p-4 grid grid-cols-2 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
-                                        <div className="p-12 flex flex-col items-center">
+                                        <div className="pt-12 px-12 pb-10 flex flex-col items-center">
                                             <img className="rounded-lg object-cover" src={featuredArticle.thumbnail} alt={featuredArticle.title} />
                                             <p className="mt-2 text-gray-400 text-xs italic">"{featuredArticle.prompt}"</p>
+                                            <p className="text-gray-400 text-xs italic">(This image was generated via Stable Diffusion)</p>
                                         </div>
                                         <div className="py-12 mr-12 flex flex-col">
                                             <div className="mt-16 flex flex-row items-center justify-between">
