@@ -29,7 +29,7 @@ export function Blog() {
                                     target="_blank"
                                     rel="noreferrer noopener"
                                 >
-                                    <div className="p-4 grid md:grid-cols-2 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
+                                    <div className="p-4 grid md:grid-cols-2 gap-8 border rounded-2xl bg-neutral-900 border-gray-800 hover:bg-neutral-800 hover:border-gray-700 transition duration-300 ease-in-out">
                                         <div className="md:pt-12 md:px-12 md:pb-10 flex flex-col items-center">
                                             <img className="rounded-lg object-cover" src={featuredArticle.thumbnail} alt={featuredArticle.title} />
                                             <p className="mt-2 text-gray-400 text-xs italic">"{featuredArticle.prompt}"</p>
@@ -76,7 +76,7 @@ export function Blog() {
                                         target="_blank"
                                         rel="noreferrer noopener"
                                     >
-                                        <div className="p-4 md:p-8 gap-8 border rounded-2xl bg-neutral-900 border-gray-800">
+                                        <div className="p-4 md:p-8 gap-8 border rounded-2xl bg-neutral-900 border-gray-800 hover:bg-neutral-800 hover:border-gray-700 transition duration-300 ease-in-out">
                                             <div className="flex flex-col">
                                                 <div className="flex flex-col justify-start">
                                                     <div className="flex flex-col items-center">
