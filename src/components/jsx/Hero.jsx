@@ -48,7 +48,7 @@ export function Hero() {
                             </div>
                             <div>
                                 <h1 className="text-white text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
-                                    <div>We help business to embed modern</div>
+                                    <div>We help companies to embed modern</div>
                                     <div className="md:py-6 text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600">
                                         natural language processing
                                     </div>
