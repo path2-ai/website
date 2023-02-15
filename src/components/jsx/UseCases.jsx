@@ -142,7 +142,7 @@ export function UseCases() {
         </p>
       </div>
 
-      <div className="max-w-5xl mx-auto hidden lg:block overflow-hidden py-12 flex flex-col space-y-40 ">
+      <div className="max-w-7xl mx-auto hidden lg:block overflow-hidden py-12 flex flex-col space-y-40 ">
         {useCases.map((useCase, index) => (
           <div id={useCase.slug} key={index} className="m-16 xl:my-16 xl:mx-0 px-16 border border-gray-800 bg-neutral-900 rounded-2xl relative overflow-hidden">
             {index % 2 === 0 ? (
