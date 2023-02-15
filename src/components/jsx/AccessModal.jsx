@@ -122,23 +122,23 @@ export function AccessModal({ open, setOpen }) {
                                                         We will let you know via email when you can access your account.
                                                     </p>
                                                     <p className="mt-2 text-sm text-gray-300">
-                                                        In the meantime, you can see a video where Leo uses the app to build a sentiment analysis model.
+                                                        In the meantime, you can see how Leo builds a Slackbot that provides you a daily summary of sentiment in financial news, completely built with our platform.
                                                     </p>
                                                     <div className='mt-4'>
-                                                        <div className='w-fit mx-auto rounded-md border border-stone-200 relative'>
+                                                        <div className='w-fit mx-auto rounded-md border border-gray-800 relative'>
                                                             <a
-                                                                href='https://youtu.be/UXSDiRjgn7Y'
+                                                                href='https://www.youtube.com/watch?v=yeML0vX0yLw&ab_channel=KernAI'
                                                                 target='_blank'
                                                                 rel='noopener noreferrer'
                                                             >
                                                                 <img
-                                                                    src='https://img.youtube.com/vi/UXSDiRjgn7Y/mqdefault.jpg'
-                                                                    alt='NLP with bricks'
+                                                                    src='/slackbot_thumbnail.png'
+                                                                    alt='The Kern AI platform'
                                                                     className='relative opacity-50 rounded-md hover:opacity-80 transition-opacity duration-300'
                                                                 />
                                                                 <div
 
-                                                                    className='flex justify-center items-center absolute top-16 left-36 h-8 w-8 bg-black rounded-full hover:scale-110 transition-transform duration-300' >
+                                                                    className='flex justify-center items-center absolute top-20 left-36 md:top-28 md:left-48 h-8 w-8 bg-black rounded-full hover:scale-110 transition-transform duration-300' >
                                                                     <IconPlayerPlay className='h-5 w-5 text-stone-100' fill='white' />
                                                                 </div>
                                                             </a>
