@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { IconCheck, IconCookie, IconX } from '@tabler/icons'
 import { Switch } from '@headlessui/react'
-import cookieCutter from 'cookie-cutter'
+// import cookieCutter from 'cookie-cutter'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -118,7 +118,8 @@ export function CookieModal({ open, setOpen, enabled, setEnabled, show, setShow 
                                         className="hover:bg-neutral-700 bg-neutral-800 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
                                         onClick={() => {
                                             setEnabled(enabledTmp)
-                                            cookieCutter.set('kern-cookie', JSON.stringify({
+                                            localStorage.setItem('kern-cookie', JSON.stringify({
+                                                // cookieCutter.set('kern-cookie', JSON.stringify({
                                                 strictlyNecessary: true,
                                                 analytics: enabledTmp,
                                             }))

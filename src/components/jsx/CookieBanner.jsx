@@ -3,7 +3,7 @@ import { Transition } from '@headlessui/react'
 import { IconCookie } from '@tabler/icons'
 import { CookieModal } from './CookieModal'
 import { useEffect } from 'react'
-import cookieCutter from 'cookie-cutter'
+// import cookieCutter from 'cookie-cutter'
 
 export function CookieBanner() {
     const [show, setShow] = useState(false)
@@ -11,7 +11,8 @@ export function CookieBanner() {
     const [enabled, setEnabled] = useState(true)
 
     useEffect(() => {
-        let cookie = cookieCutter.get('kern-cookie')
+        let cookie = localStorage.getItem('kern-cookie')
+        // let cookie = cookieCutter.get('kern-cookie')
         if (!cookie) {
             setShow(true)
         }
@@ -51,7 +52,8 @@ export function CookieBanner() {
                                                     type="button"
                                                     className="hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
                                                     onClick={() => {
-                                                        cookieCutter.set('kern-cookie', JSON.stringify({
+                                                        localStorage.setItem('kern-cookie', JSON.stringify({
+                                                            // cookieCutter.set('kern-cookie', JSON.stringify({
                                                             strictlyNecessary: true,
                                                             analytics: enabled,
                                                         }))
