@@ -24,7 +24,6 @@ export function Footer() {
 
     const navigation = {
         product: [
-            { name: 'Gallery', onClick: () => { router.push('/solutions/gallery') } },
             { name: 'Platform architecture', onClick: () => { router.push('/docs/architecture') } },
             { name: 'How it works', onClick: () => { router.push('/docs/how-it-works') } },
             { name: 'Pricing', onClick: () => { router.push('/pricing') } },

@@ -89,6 +89,14 @@ export function Team() {
                         <p className="mt-2 text-sm leading-5 text-gray-300">
                             We are backed by leading investors in Europe.
                         </p>
+                        <p className="mt-2 text-sm leading-5 text-gray-300">
+                            If you are an investor (business angel or institutional) interested in speaking with our co-founder <a
+                                href="https://www.linkedin.com/in/johannesh%C3%B6tter/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-green-500"
+                            >Johannes</a>, please book a slot in the <a href="https://cal.com/jhoetter" target="_blank" rel="noopener noreferrer" className="text-green-500">calendar</a>.
+                        </p>
 
                     </div>
                     <div className="mt-4 md:mt-0 col-span-3 mx-auto p-3">
