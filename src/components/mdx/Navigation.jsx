@@ -4,8 +4,7 @@ import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import { AnimatePresence, motion, useIsPresent } from 'framer-motion'
 import { articles } from '@/pages/company/blog/overview'
-import { logs } from '@/pages/changelog/navbar'
-import { docsPaths, changelogPath, blogPath } from '@/pages/_app'
+import { changelogPath, blogPath } from '@/pages/_app'
 
 import { Button } from '@/components/mdx/Button'
 import { useIsInsideMobileNavigation } from '@/components/mdx/MobileNavigation'
@@ -187,71 +186,7 @@ function NavigationGroup({ group, className }) {
 }
 
 export function getNavigationElements(type) {
-  if (type == 'docs') {
-    return [
-      {
-        title: 'refinery - getting started',
-        links: [
-          { title: 'About', href: '/docs/refinery' },
-          { title: 'Self-hosted-version', href: '/docs/refinery/getting-started/self-hosted-version' },
-          { title: 'Managed version', href: '/docs/refinery/getting-started/managed-version' },
-          { title: 'Configuration page', href: '/docs/refinery/getting-started/configuration-page' },
-          { title: 'Updating refinery', href: '/docs/refinery/getting-started/updating-refinery' },
-        ],
-      },
-      {
-        title: 'refinery - process',
-        links: [
-          { title: 'Project creation', href: '/docs/refinery/process/project-creation' },
-          { title: 'Large language models', href: '/docs/refinery/process/large-language-models' },
-          { title: 'Attribute modification', href: '/docs/refinery/process/attribute-modification' },
-          { title: 'Labeling tasks', href: '/docs/refinery/process/labeling-tasks' },
-          { title: 'Manual labeling workflow', href: '/docs/refinery/process/manual-labeling' },
-          { title: 'Building heuristics', href: '/docs/refinery/process/building-heuristics' },
-          { title: 'Weak supervision', href: '/docs/refinery/process/weak-supervision' },
-          { title: 'Monitoring', href: '/docs/refinery/process/monitoring' },
-          { title: 'Data management', href: '/docs/refinery/process/data-management' },
-          { title: 'Neural search', href: '/docs/refinery/process/neural-search' },
-          { title: 'Comments', href: '/docs/refinery/process/comments' },
-          { title: 'Download data', href: '/docs/refinery/process/download-data' },
-          { title: 'Model feedback', href: '/docs/refinery/process/model-feedback' },
-          { title: 'Python SDK', href: '/docs/refinery/process/python-sdk' },
-          { title: 'Access token', href: '/docs/refinery/process/token' },
-        ],
-      },
-      {
-        title: 'refinery - multiuser',
-        links: [
-          { title: 'Managing roles', href: '/docs/refinery/multi-user/managing-roles' },
-          { title: 'Minimized labeling view', href: '/docs/refinery/multi-user/minimized-labeling-view' },
-        ],
-      },
-      {
-        title: 'bricks',
-        links: [
-          { title: 'About', href: '/docs/bricks' },
-          { title: 'refinery x bricks', href: '/docs/bricks/refinery-integration' },
-          { title: 'Roadmap', href: '/docs/bricks/roadmap' },
-        ],
-      },
-      {
-        title: 'gates',
-        links: [
-          { title: 'About', href: '/docs/gates' },
-        ],
-      },
-      {
-        title: 'workflow',
-        links: [
-          { title: 'About', href: '/docs/workflow' },
-          { title: 'refinery x gates x workflow', href: '/docs/workflow/refinery-gates-integration' },
-          { title: 'Realtime and batch', href: '/docs/workflow/realtime-and-batch' },
-          { title: 'Data marts', href: '/docs/workflow/data-marts' },
-          { title: 'Editor', href: '/docs/workflow/editor' },
-        ],
-      },
-    ]
-  } else if (type == 'blog') {
+  if (type == 'blog') {
 
     const announcements = {
       title: 'Announcements',
@@ -292,9 +227,7 @@ export function getNavigationElements(type) {
 export function Navigation(props) {
   const router = useRouter()
   let type;
-  if (docsPaths.some((path) => router.pathname.includes(path))) {
-    type = 'docs'
-  } else if (router.pathname.includes(blogPath)) {
+  if (router.pathname.includes(blogPath)) {
     type = 'blog'
   } else if (router.pathname.includes(changelogPath)) {
     type = 'changelog'

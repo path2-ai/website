@@ -70,13 +70,88 @@ export function Team() {
                     </div>
                     <div className="mt-4 md:mt-0 col-span-3 mx-auto border border-gray-700 rounded-lg p-3 pb-10 bg-neutral-800 shadow-[0_0px_10px_2px_rgba(255,255,255,0.2)]">
                         <img
-                            src={`${KERN_ASSETS_URL}/team/team.png`}
+                            src="/team.png"
                             alt="Team"
                             className="rounded-md"
                         />
                         <p className='text-gray-300 text-xs'>
                             On a hot summer day in 2022
                         </p>
+                    </div>
+                </div>
+
+                <div className="py-8 pt-28 text-white mx-auto md:grid md:grid-cols-5 md:gap-8">
+
+                    <div className="col-span-2 mb-auto">
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-100">
+                            Our investors
+                        </h2>
+                        <p className="mt-2 text-sm leading-5 text-gray-300">
+                            We are backed by leading investors in Europe.
+                        </p>
+                        <p className="mt-2 text-sm leading-5 text-gray-300">
+                            If you are an investor (business angel or institutional) interested in speaking with our co-founder <a
+                                href="https://www.linkedin.com/in/johannesh%C3%B6tter/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-green-500"
+                            >Johannes</a>, please book a slot in the <a href="https://cal.com/jhoetter" target="_blank" rel="noopener noreferrer" className="text-green-500">calendar</a>.
+                        </p>
+
+                    </div>
+                    <div className="mt-4 md:mt-0 col-span-3 mx-auto p-3">
+                        <div className="grid grid-cols-3 gap-8">
+                            <img src="/investors/seedcamp.png" className="w-44 mr-auto my-auto" />
+                            <img src="/investors/another-vc.png" className="w-40 mr-auto my-auto" />
+                            <img src="/investors/xdeck.png" className="w-28 mr-auto my-auto" />
+
+                            <img src="/investors/faber.png" className="w-20 mr-auto my-auto" />
+                            <img src="/investors/hpi-seed.png" className="w-16 mr-auto my-auto" />
+                        </div>
+                        <div className="mt-10">
+                            <div className="grid grid-cols-3 gap-8">
+                                <div>
+                                    <p className='text-gray-100 text-semibold'>
+                                        Nicolas Peters
+                                    </p>
+                                    <p className='text-gray-300 text-xs'>
+                                        Co-Founder & Ex-CTO Signavio
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className='text-gray-100 text-semibold'>
+                                        Gerrit de Veeer
+                                    </p>
+                                    <p className='text-gray-300 text-xs'>
+                                        Senior Vice President Sales MEE Signavio
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className='text-gray-100 text-semibold'>
+                                        Marcus Nagel
+                                    </p>
+                                    <p className='text-gray-300 text-xs'>
+                                        Ex-CEO Zurich Deutschland, Senior Advisor PE
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className='text-gray-100 text-semibold'>
+                                        Sebastian Heinz
+                                    </p>
+                                    <p className='text-gray-300 text-xs'>
+                                        CEO statworx
+                                    </p>
+                                </div>
+                                <div>
+                                    <p className='text-gray-100 text-semibold'>
+                                        Julius Heinz
+                                    </p>
+                                    <p className='text-gray-300 text-xs'>
+                                        CFO statworx
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -87,6 +162,14 @@ export function Team() {
                         </h2>
                         <div className="mt-8 space-y-10">
                             <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+                                <div className="flex justify-center items-center h-28 w-28 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
+                                    €2.7M
+                                </div>
+                                <div className="w-fit text-sm my-auto text-gray-300">
+                                    We raised 2,700,000€ venture capital in our seed round from leading investors in Europe.
+                                </div>
+                            </div>
+                            <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
                                 <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
                                     2020
                                 </div>
@@ -96,7 +179,7 @@ export function Team() {
                             </div>
                             <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
                                 <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
-                                    9
+                                    11
                                 </div>
                                 <div className="w-fit text-sm my-auto text-gray-300">
                                     People are working at Kern AI. We are a small team, but we know how to work together efficiently, how to communicate, and how to get things done.

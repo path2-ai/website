@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { KERN_ASSETS_URL } from './_settings'
 
 const links = [
-    { title: 'Documentation', description: 'Learn how to use the platform', icon: IconBook, href: '/docs/refinery' },
+    { title: 'Documentation', description: 'Learn how to use the platform', icon: IconBook, href: 'https://docs.kern.ai' },
     { title: 'Blog', description: 'Read our latest news and articles', icon: IconRss, href: '/company/blog' },
     { title: 'About', description: 'Learn more about the company', icon: IconUsers, href: '/company/about' }
 ]
