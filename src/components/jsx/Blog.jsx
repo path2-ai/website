@@ -13,7 +13,7 @@ export function Blog() {
                         <div className="relative mx-auto max-w-7xl">
                             <div>
                                 <h2 className="text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">
-                                    From the blog
+                                    From our blog
                                 </h2>
                                 <div className="mt-3 text-xl text-gray-300 sm:mt-4">
                                     Updates from the team, and insights into the world of data-centric natural language processing.
