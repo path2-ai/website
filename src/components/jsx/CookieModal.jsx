@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { IconCheck, IconCookie, IconX } from '@tabler/icons'
 import { Switch } from '@headlessui/react'
@@ -10,7 +10,19 @@ function classNames(...classes) {
 
 export function CookieModal({ open, setOpen, enabled, setEnabled, show, setShow }) {
 
-    const [enabledTmp, setEnabledTmp] = useState(enabled)
+    const [enabledTmp, setEnabledTmp] = useState(null)
+
+
+    useEffect(() => {
+        let cookie = localStorage.getItem('kern-cookie')
+        if (!cookie) return;
+        cookie = JSON.parse(cookie)
+        setEnabled(cookie.analytics)
+    }, [])
+
+    useEffect(() => {
+        setEnabledTmp(enabled)
+    }, [enabled])
 
     return (
         <Transition.Root show={open} as={Fragment}>

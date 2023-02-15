@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { CookieModal } from "./CookieModal"
 import { ContactModal } from "./ContactModal"
 import axios from "axios";
-import { Fragment, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Transition } from '@headlessui/react'
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
