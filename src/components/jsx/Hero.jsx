@@ -39,10 +39,10 @@ export function Hero() {
                                 <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-100/10 hover:ring-gray-100/20">
                                     <span className="text-gray-300">
                                         Announcing our 2.7m€ seed funding.{' '}
-                                        <Link href="/company/blog/announcing-our-seed" className="font-semibold text-green-400">
+                                        <a href="https://blog.kern.ai/our-seed" className="font-semibold text-green-400" target="_blank" rel="noreferrer noopener">
                                             <span className="absolute inset-0" aria-hidden="true" />
                                             Read more <span aria-hidden="true">&rarr;</span>
-                                        </Link>
+                                        </a>
                                     </span>
                                 </div>
                             </div>
