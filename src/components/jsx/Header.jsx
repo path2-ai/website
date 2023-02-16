@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IconArticle, IconBriefcase, IconBuildingCastle, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconUsers, IconWorldWww } from '@tabler/icons'
+import { IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconUsers, IconWorldWww } from '@tabler/icons'
 import Link from 'next/link'
 import { KERN_ASSETS_URL } from './_settings'
 import { Menu } from '@headlessui/react'
@@ -169,7 +169,7 @@ export function Header() {
 
                             ))}
                         </div>
-                        <div className='hidden lg:block'>
+                        <div className='hidden lg:flex flex-row space-x-4'>
                             <Menu as="div" className="relative inline-block text-left">
                                 <div>
                                     <Menu.Button
@@ -241,6 +241,15 @@ export function Header() {
                                     </Menu.Items>
                                 </Transition>
                             </Menu>
+
+                            <a
+                                className='p-2 border border-neutral-900 rounded-md cursor-pointer'
+                                href='https://github.com/code-kern-ai'
+                                target='_blank'
+                                rel='noreferrer noopener'
+                            >
+                                <IconBrandGithub className='h-4 w-4 text-gray-300 hover:text-lime-400' />
+                            </a>
                             {/* <a
                                 href="https://demo.kern.ai"
                                 target="_blank"
