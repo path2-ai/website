@@ -120,7 +120,7 @@ export function Team() {
                                 </div>
                                 <div>
                                     <p className='text-gray-100 text-semibold'>
-                                        Gerrit de Veeer
+                                        Gerrit de Veer
                                     </p>
                                     <p className='text-gray-300 text-xs'>
                                         Senior Vice President Sales MEE Signavio
