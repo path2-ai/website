@@ -82,6 +82,61 @@ export function Team() {
 
                 <div className="py-8 pt-28 text-white mx-auto md:grid md:grid-cols-5 md:gap-8">
 
+                    <div className="col-span-2 mt-auto">
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-100">
+                            Our founders
+                        </h2>
+                        <p className="mt-2 text-sm leading-5 text-gray-300">
+                            Henrik and Johannes started Kern AI during their master's degree at <a
+                                href="https://hpi.de/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-green-500 hover:text-green-600"
+                            >Hasso Plattner Institute</a>, where they worked on modern natural language processing research. After having started a consultancy together in early 2020, they decided to build Kern AI as the data-centric developer platform for natural language processing to help companies turn their unstructured text into value.
+                        </p>
+                    </div>
+                    <div className="mt-10 md:mt-0 col-span-3 grid md:grid-cols-2 gap-10 md:gap-20 mx-auto">
+                        <div>
+                            <img
+                                src="/team/team-johannes.png"
+                                alt="Johannes Hötter"
+                                className="rounded-md h-40 w-40"
+                            />
+                            <a
+                                className='mt-1 text-sm text-gray-300 font-semibold'
+                                href="https://www.linkedin.com/in/johannesh%C3%B6tter/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Johannes Hötter
+                            </a>
+                            <p className='text-gray-300 text-xs'>
+                                Co-founder & CEO
+                            </p>
+                        </div>
+                        <div>
+                            <img
+                                src="/team/team-henrik.png"
+                                alt="Henrik Wenck"
+                                className="rounded-md h-40 w-40"
+                            />
+                            <a
+                                className='mt-1 text-sm text-gray-300 font-semibold'
+                                href="https://www.linkedin.com/in/henrikwenck/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Henrik Wenck
+                            </a>
+                            <p className='text-gray-300 text-xs'>
+                                Co-founder & COO
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="py-8 pt-28 text-white mx-auto md:grid md:grid-cols-5 md:gap-8">
+
                     <div className="col-span-2 mb-auto">
                         <h2 className="text-2xl font-bold tracking-tight text-gray-100">
                             Our investors
