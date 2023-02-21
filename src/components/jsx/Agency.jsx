@@ -72,7 +72,7 @@ export function Agency() {
                 <div className="mx-auto max-w-7xl px-6 pt-10 pb-24 sm:pb-32 lg:flex lg:py-40 lg:px-8">
                     <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
                         <div className="mt-24 sm:mt-32 lg:mt-16">
-                            <a href="https://blog.kern.ai/chatgpt-mass-awareness" className="inline-flex space-x-6">
+                            <a href="https://blog.kern.ai/chatgpt-mass-awareness" className="inline-flex items-center space-x-6">
                                 <span className="rounded-full bg-blue-500/10 px-3 py-1 text-sm font-semibold leading-6 text-blue-400 ring-1 ring-inset ring-blue-500/20">
                                     Insights
                                 </span>
@@ -133,10 +133,10 @@ export function Agency() {
 
             <section className="max-w-5xl mx-auto py-16 sm:py-20">
                 <div
-                    className='grid grid-cols-2 gap-16'
+                    className='flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-16'
                 >
-                    <img src='/longtail.png' className='p-10 -mb-16' />
-                    <div className='mt-auto text-white'>
+                    <img src='/longtail.png' className='p-10 lg:-mb-16 max-w-sm lg:max-w-md' />
+                    <div className='mx-6 lg:mx-0 mt-auto text-white'>
                         <h2 className='text-2xl font-bold'>
                             Go from repeating uses case to the longtail.
                         </h2>
@@ -183,9 +183,10 @@ export function Agency() {
 
             <section className="max-w-5xl mx-auto py-16 sm:py-20">
                 <div
-                    className='grid grid-cols-2 gap-16'
+                    className='flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-16'
                 >
-                    <div className='mt-auto text-white'>
+                    <img src='/sigmoid.png' className='p-10 lg:order-last max-w-sm lg:max-w-md' />
+                    <div className='mx-6 lg:mx-0 mt-auto text-white'>
                         <h2 className='text-2xl font-bold'>
                             Now is the time to start natural language processing.
                         </h2>
@@ -219,18 +220,16 @@ export function Agency() {
                                     </h3>
                                 </div>
                                 <p className='p-2 text-gray-300'>
-                                    With our platform, workshop ideas become protypes in a day, and protypes become production-ready products in weeks.
+                                    Build prototypes in a day, and deploy to production in weeks.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <img src='/sigmoid.png' className='p-10' />
-
                 </div>
             </section>
 
             <section className="isolate overflow-hidden px-6 lg:px-8">
-                <div className="relative mx-auto max-w-2xl py-24 sm:py-32 lg:max-w-4xl">
+                <div className="relative mx-auto max-w-2xl py-24 sm:py-36 lg:max-w-4xl">
 
                     <svg
                         viewBox="0 0 1108 632"
@@ -292,9 +291,36 @@ export function Agency() {
                 </div>
             </section>
 
+            <section className='xl:hidden mx-auto max-w-5xl'>
+                <div className='flex flex-col items-center justify-center space-y-4'>
+                    <div className='mx-6'>
+                        <h4 className="mt-12 text-3xl font-bold tracking-tight text-white">
+                            Partner with us to build <span className='animate-text bg-gradient-to-r from-sky-300 via-blue-600 to-indigo-300 bg-clip-text text-transparent'>magical</span> software
+                        </h4>
+                        <p className="mt-6 text-base leading-8 text-white">
+                            We are looking for partners to help us build the future of NLP. Let's build great things together.
+                        </p>
+                    </div>
+                    <div className='mt-4 w-fit'>
+                        <button
+                            className='text-white bg-neutral-900 hover:bg-neutral-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 rounded-lg p-3 text-base font-medium'
+                            onClick={() => setOpenModal(true)}
+                        >
+                            <div className='flex items-center flex-row space-x-4'>
+                                <div className='p-2 border border-gray-800 bg-neutral-900 rounded-full'>
+                                    <IconArrowRight className="h-4 w-4 text-blue-500" />
+                                </div>
+                                <div className='text-gray-300 pr-2'>
+                                    Set up a call
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </section>
 
-            <section className='-mt-20 mb-32'>
-                <div className='absolute'>
+            <section className='hidden xl:block -mt-20 mb-32'>
+                <div className='absolute w-full mx-auto'>
                     <img
                         className="relative left-1/2 w-[1440px] max-w-none -translate-x-1/2"
                         src="/background-partners-1440.png"
@@ -337,7 +363,7 @@ export function Agency() {
                         </button>
                     </div>
                 </div>
-            </section >
+            </section>
 
             {openBanner && (
                 <div className="fixed inset-x-0 bottom-0 z-50">
