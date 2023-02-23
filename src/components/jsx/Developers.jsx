@@ -1,34 +1,83 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
-import { XMarkIcon } from '@heroicons/react/20/solid'
-import { KERN_ASSETS_URL } from './_settings'
 import { CalModal } from './CalModal'
 import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
-import { IconArrowDown, IconArrowRight, IconAsterisk, IconChevronRight, IconMessageChatbot, IconRepeat, IconWand } from '@tabler/icons'
+import { Icon3dCubeSphere, IconApi, IconApiApp, IconArrowDown, IconArrowRight, IconArrowsSplit, IconAsterisk, IconChevronRight, IconDashboard, IconFilter, IconHighlight, IconLink, IconMessageChatbot, IconNumber3, IconRepeat, IconTerminal, IconUsers, IconWall, IconWand } from '@tabler/icons'
 
-const features = [
-    {
-        name: 'Push to deploy.',
-        description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: CloudArrowUpIcon,
-    },
-    {
-        name: 'SSL certificates.',
-        description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-        icon: LockClosedIcon,
-    },
-    {
-        name: 'Database backups.',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: ServerIcon,
-    },
-]
+const features = {
+    "pipeline": [
+        {
+            name: 'Native integrations.',
+            description:
+                'Integrate with sources such as you email inbox, Slack workspace or GitHub repository to collect data with ease.',
+            icon: IconApiApp,
+        },
+        {
+            name: 'Text generation.',
+            description: 'Integrate large language models to grow from 1,000 records to 10,000 records in a matter of minutes.',
+            icon: Icon3dCubeSphere,
+        },
+        {
+            name: 'API and conditional flows.',
+            description: 'Push and pull data from your workflow, and define programmable conditions within your workflow.',
+            icon: IconArrowsSplit,
+        },
+    ],
+    "automate": [
+        {
+            name: 'Implement heuristics.',
+            description:
+                'From classification via extraction to generation, you can implement heuristics such as active learners or regular expressions for automatic data labeling.',
+            icon: IconTerminal,
+        },
+        {
+            name: 'Rich set of open-source modules.',
+            description: 'Get started with our open-source bricks modules, e.g. for language detection, sentiment analysis, text summarization and many more.',
+            icon: IconWall,
+        },
+        {
+            name: 'Built-in labeling editor.',
+            description: 'Use our NLP-optimized labeling editor for things such as classifications, nested span labeling or attribute generation.',
+            icon: IconHighlight,
+        },
+    ],
+    "dashboard": [
+        {
+            name: 'Estimate data quality.',
+            description:
+                'Automatically labeled records have a weakly supervised confidence score. Understand where your automations do not work yet, or sort labeling sessions by confidence.',
+            icon: IconDashboard,
+        },
 
-const stats = [
-    { id: 1, name: 'Estimated market size of NLP by 2027', value: '$49.4 billion' },
-    { id: 2, name: 'until ChatGPT crossed 1,000,000 users', value: '5 days' },
-    { id: 3, name: 'unstructured data in businesses', value: '80%' },
-]
+        {
+            name: 'Best-in-class data management.',
+            description: 'Granular filters allow you to slice down datasets by e.g. heuristic, confidence or attribute.',
+            icon: IconFilter,
+        },
+        {
+            name: 'Multiuser and shareable filters.',
+            description: 'Share your headache-causing filters with colleagues (inhouse or crowd) to orchestrate tasks with ease. Simply send the link, and they can start labeling right away.',
+            icon: IconLink,
+        },
+    ],
+    "deploy": [
+        {
+            name: '3 clicks.',
+            description:
+                'You already did the work in refinery. Now gates is as simple as it gets. Select the automations, hit deploy, and your model is live.',
+            icon: IconNumber3,
+        },
+        {
+            name: 'Integrate anywhere.',
+            description: 'Integrate your model into any existing infrastructure. Use the API to get secured access to your model, no matter where and how it is deployed.',
+            icon: IconApi,
+        },
+        {
+            name: 'Database backups.',
+            description: 'Each model comes with a simple monitoring dashboard, helping you to analyze the usage and performance of your model.',
+            icon: IconDashboard,
+        },
+    ]
+}
 
 import { useState } from 'react'
 
@@ -153,17 +202,16 @@ export function Developers() {
                     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                         <div className="lg:ml-auto lg:pt-4 lg:pl-4">
                             <div className="lg:max-w-lg">
-                                <h2 className="text-base font-semibold leading-7 text-indigo-400">Pipeline collection</h2>
-                                <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">A better workflow</p>
+                                <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600">Pipeline collection</h2>
+                                <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Collect and generate textual data</p>
                                 <p className="mt-6 text-lg leading-8 text-gray-300">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                                    iste dolor cupiditate blanditiis ratione.
+                                    Design simple or complex workflows powered via Python logic and a visual editor. Collect data from websites, inboxes, APIs, large language models and much more.
                                 </p>
                                 <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
-                                    {features.map((feature) => (
+                                    {features["pipeline"].map((feature) => (
                                         <div key={feature.name} className="relative pl-9">
                                             <dt className="inline font-semibold text-white">
-                                                <feature.icon className="absolute top-1 left-1 h-5 w-5 text-indigo-500" aria-hidden="true" />
+                                                <feature.icon className="absolute top-1 left-1 h-5 w-5 text-blue-500" aria-hidden="true" />
                                                 {feature.name}
                                             </dt>{' '}
                                             <dd className="inline">{feature.description}</dd>
@@ -172,8 +220,8 @@ export function Developers() {
                                 </dl>
                             </div>
                         </div>
-                        <div className="sm:px-6 lg:px-0 order-first">
-                            <div className="relative isolate overflow-hidden bg-gradient-to-r from-neutral-800 to-neutral-900 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 sm:pl-16 sm:pr-0 lg:mx-0 lg:max-w-none">
+                        <div className="sm:px-6 lg:px-0 lg:order-first">
+                            <div className="hidden lg:block relative isolate overflow-hidden bg-gradient-to-r from-neutral-800 to-neutral-900 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 sm:pl-16 sm:pr-0 lg:mx-0 lg:max-w-none">
                                 <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
                                     <img
                                         src="/screenshot-workflow.png"
@@ -181,6 +229,17 @@ export function Developers() {
                                         width={2432}
                                         height={1442}
                                         className="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-blue-800"
+                                    />
+                                </div>
+                            </div>
+                            <div className='lg:hidden'>
+                                <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+                                    <img
+                                        src="/screenshot-workflow.png"
+                                        alt="Product screenshot"
+                                        width={2432}
+                                        height={1442}
+                                        className="-mb-12 w-[57rem] max-w-none rounded-l-xl bg-gray-800 ring-1 ring-blue-800"
                                     />
                                 </div>
                             </div>
@@ -195,17 +254,16 @@ export function Developers() {
                         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                             <div className="lg:pr-8 lg:pt-4">
                                 <div className="lg:max-w-lg">
-                                    <h2 className="text-base font-semibold leading-7 text-indigo-400">Automate and assess</h2>
-                                    <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">A better workflow</p>
+                                    <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-purple-500 to-fuchsia-500">Automate and assess</h2>
+                                    <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Weak supervision for automation</p>
                                     <p className="mt-6 text-lg leading-8 text-gray-300">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                                        iste dolor cupiditate blanditiis ratione.
+                                        With our data-centric approach, you can easily label and assess your training data. Apply weak supervision (i.e. combining Python scripts, regular expressions, active learners or large language models) to automate your tasks.
                                     </p>
                                     <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
-                                        {features.map((feature) => (
+                                        {features["automate"].map((feature) => (
                                             <div key={feature.name} className="relative pl-9">
                                                 <dt className="inline font-semibold text-white">
-                                                    <feature.icon className="absolute top-1 left-1 h-5 w-5 text-indigo-500" aria-hidden="true" />
+                                                    <feature.icon className="absolute top-1 left-1 h-5 w-5 text-purple-500" aria-hidden="true" />
                                                     {feature.name}
                                                 </dt>{' '}
                                                 <dd className="inline">{feature.description}</dd>
@@ -215,7 +273,7 @@ export function Developers() {
                                 </div>
                             </div>
                             <div className="sm:px-6 lg:px-0">
-                                <div className="relative isolate overflow-hidden bg-gradient-to-l from-neutral-800 to-neutral-900 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 lg:mx-0 lg:max-w-none sm:pl-16 sm:pr-0">
+                                <div className="hidden lg:block relative isolate overflow-hidden bg-gradient-to-l from-neutral-800 to-neutral-900 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 lg:mx-0 lg:max-w-none sm:pl-16 sm:pr-0">
                                     <div className="relative mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
                                         <img
                                             src="/screenshot-refinery.png"
@@ -225,6 +283,15 @@ export function Developers() {
                                             className="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-purple-800"
                                         />
                                     </div>
+                                </div>
+                                <div className='lg:hidden'>
+                                    <img
+                                        src="/screenshot-refinery.png"
+                                        alt="Product screenshot"
+                                        width={2432}
+                                        height={1442}
+                                        className="-mb-12 w-[57rem] max-w-none rounded-l-xl bg-gray-800 ring-1 ring-purple-800"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -237,17 +304,16 @@ export function Developers() {
                     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                         <div className="lg:ml-auto lg:pt-4 lg:pl-4">
                             <div className="lg:max-w-lg">
-                                <h2 className="text-base font-semibold leading-7 text-indigo-400">Assess and orchestrate</h2>
-                                <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">A better workflow</p>
+                                <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-lime-300 via-yellow-500 to-green-700">Assess and orchestrate</h2>
+                                <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Powerful analytics</p>
                                 <p className="mt-6 text-lg leading-8 text-gray-300">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                                    iste dolor cupiditate blanditiis ratione.
+                                    All your training data gets enriched with valuable metadata, allowing you to drill down into your data and make informed decisions.
                                 </p>
                                 <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
-                                    {features.map((feature) => (
+                                    {features["dashboard"].map((feature) => (
                                         <div key={feature.name} className="relative pl-9">
                                             <dt className="inline font-semibold text-white">
-                                                <feature.icon className="absolute top-1 left-1 h-5 w-5 text-indigo-500" aria-hidden="true" />
+                                                <feature.icon className="absolute top-1 left-1 h-5 w-5 text-lime-500" aria-hidden="true" />
                                                 {feature.name}
                                             </dt>{' '}
                                             <dd className="inline">{feature.description}</dd>
@@ -256,8 +322,8 @@ export function Developers() {
                                 </dl>
                             </div>
                         </div>
-                        <div className="sm:px-6 lg:px-0 order-first">
-                            <div className="relative isolate overflow-hidden bg-gradient-to-r from-neutral-800 to-neutral-900 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 sm:pl-16 sm:pr-0 lg:mx-0 lg:max-w-none">
+                        <div className="sm:px-6 lg:px-0 lg:order-first">
+                            <div className="hidden lg:block relative isolate overflow-hidden bg-gradient-to-r from-neutral-800 to-neutral-900 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 sm:pl-16 sm:pr-0 lg:mx-0 lg:max-w-none">
                                 <div className="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
                                     <img
                                         src="/screenshot-refinery-dashboard.png"
@@ -267,6 +333,15 @@ export function Developers() {
                                         className="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-purple-800"
                                     />
                                 </div>
+                            </div>
+                            <div className='lg:hidden'>
+                                <img
+                                    src="/screenshot-refinery-dashboard.png"
+                                    alt="Product screenshot"
+                                    width={2432}
+                                    height={1442}
+                                    className="-mb-12 w-[57rem] max-w-none rounded-l-xl bg-gray-800 ring-1 ring-purple-800"
+                                />
                             </div>
                         </div>
                     </div>
@@ -279,17 +354,16 @@ export function Developers() {
                         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                             <div className="lg:pr-8 lg:pt-4">
                                 <div className="lg:max-w-lg">
-                                    <h2 className="text-base font-semibold leading-7 text-indigo-400">Deploy faster</h2>
-                                    <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">A better workflow</p>
+                                    <h2 className="text-base font-semibold leading-7 text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-red-600 to-orange-500">Deploy faster</h2>
+                                    <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">Integrate anywhere in minutes</p>
                                     <p className="mt-6 text-lg leading-8 text-gray-300">
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                                        iste dolor cupiditate blanditiis ratione.
+                                        Once you've built your NLP, you can easily deploy it to your own infrastructure or to the cloud via gates within 3 clicks.
                                     </p>
                                     <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-300 lg:max-w-none">
-                                        {features.map((feature) => (
+                                        {features["deploy"].map((feature) => (
                                             <div key={feature.name} className="relative pl-9">
                                                 <dt className="inline font-semibold text-white">
-                                                    <feature.icon className="absolute top-1 left-1 h-5 w-5 text-indigo-500" aria-hidden="true" />
+                                                    <feature.icon className="absolute top-1 left-1 h-5 w-5 text-rose-500" aria-hidden="true" />
                                                     {feature.name}
                                                 </dt>{' '}
                                                 <dd className="inline">{feature.description}</dd>
@@ -299,7 +373,7 @@ export function Developers() {
                                 </div>
                             </div>
                             <div className="sm:px-6 lg:px-0">
-                                <div className="relative isolate overflow-hidden bg-gradient-to-l from-neutral-800 to-neutral-900 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 lg:mx-0 lg:max-w-none sm:pl-16 sm:pr-0">
+                                <div className="hidden lg:block relative isolate overflow-hidden bg-gradient-to-l from-neutral-800 to-neutral-900 px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 lg:mx-0 lg:max-w-none sm:pl-16 sm:pr-0">
                                     <div className="relative mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
                                         <img
                                             src="/screenshot-gates.png"
@@ -309,6 +383,15 @@ export function Developers() {
                                             className="-mb-12 w-[57rem] max-w-none rounded-tl-xl bg-gray-800 ring-1 ring-red-800"
                                         />
                                     </div>
+                                </div>
+                                <div className='lg:hidden'>
+                                    <img
+                                        src="/screenshot-gates.png"
+                                        alt="Product screenshot"
+                                        width={2432}
+                                        height={1442}
+                                        className="-mb-12 w-[57rem] max-w-none rounded-l-xl bg-gray-800 ring-1 ring-red-800"
+                                    />
                                 </div>
                             </div>
                         </div>
