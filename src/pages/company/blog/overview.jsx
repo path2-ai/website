@@ -8,7 +8,7 @@ export const articles = [
         "teaser": "In this article, we would like to provide you with a step-by-step tutorial, in which we build a slack bot that sends us a daily message on the sentiment of the news of our stocks.",
         "category": "Knowledge",
         "thumbnail": "/blog/robot-news.png",
-        "prompt": "A robot throwing newspapers comic style.",
+        "prompt": "A robot throws newspapers comic style.",
         "author": {
             "name": "Leo Püttmann",
             "image": `${KERN_ASSETS_URL}/team/team-leo.png`
