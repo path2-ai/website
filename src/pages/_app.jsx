@@ -34,27 +34,33 @@ export default function App({ Component, pageProps }) {
   const Body = ({ pageProps, Component }) => {
     // check if any of the paths are partially in the current path
 
-    if ((router.pathname.includes(blogPath) || router.pathname.includes(changelogPath))) {
+    if ((router.pathname.includes('german-insurers'))) {
       return (
-        <MDXProvider components={mdxComponents}>
-          <Layout  {...pageProps}>
-            <Component {...pageProps} />
-          </Layout>
-          <CookieBanner />
-        </MDXProvider>
-      )
-    } else {
-      return (
-        <div className='bg-black'>
+        <div className='bg-slate-50'>
           <div className="sticky top-0 z-50 backdrop-blur-md opacity-[98%]">
-            <Header />
+            <Header isDarkTheme={false} />
           </div>
           <Animate play start={{ opacity: 0 }} end={{ opacity: 1 }}>
             <Component
               {...pageProps}
             />
           </Animate>
-          <Footer />
+          <Footer isDarkTheme={false} />
+          <CookieBanner />
+        </div>
+      )
+    } else {
+      return (
+        <div className='bg-black'>
+          <div className="sticky top-0 z-50 backdrop-blur-md opacity-[98%]">
+            <Header isDarkTheme={true} />
+          </div>
+          <Animate play start={{ opacity: 0 }} end={{ opacity: 1 }}>
+            <Component
+              {...pageProps}
+            />
+          </Animate>
+          <Footer isDarkTheme={true} />
           <CookieBanner />
         </div>
       )
