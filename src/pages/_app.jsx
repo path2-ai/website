@@ -37,15 +37,11 @@ export default function App({ Component, pageProps }) {
     if ((router.pathname.includes('german-insurers'))) {
       return (
         <div className='bg-slate-50'>
-          <div className="sticky top-0 z-50 backdrop-blur-md opacity-[98%]">
-            <Header isDarkTheme={false} />
-          </div>
           <Animate play start={{ opacity: 0 }} end={{ opacity: 1 }}>
             <Component
               {...pageProps}
             />
           </Animate>
-          <Footer isDarkTheme={false} />
           <CookieBanner />
         </div>
       )
