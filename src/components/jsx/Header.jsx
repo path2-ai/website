@@ -243,12 +243,12 @@ export function Header() {
                             </Menu>
 
                             <a
-                                className='p-2 border border-neutral-900 rounded-md cursor-pointer'
+                                className='flex items-center px-2.5 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20 rounded-lg cursor-pointer'
                                 href='https://github.com/code-kern-ai'
                                 target='_blank'
                                 rel='noreferrer noopener'
                             >
-                                <IconBrandGithub className='h-4 w-4 text-gray-300 hover:text-lime-400' />
+                                <IconBrandGithub className='h-4 w-4 text-gray-500 hover:text-lime-400' />
                             </a>
                             {/* <a
                                 href="https://demo.kern.ai"

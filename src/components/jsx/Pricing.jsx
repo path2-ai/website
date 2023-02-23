@@ -124,7 +124,7 @@ const perksCloud = [
         ],
     },
     {
-        title: 'Realtime items/credit',
+        title: 'gates predictions/credit',
         tiers: [
             { title: 'personal', value: '1' },
             { title: 'growth', featured: true, value: '1' },
@@ -132,19 +132,11 @@ const perksCloud = [
         ],
     },
     {
-        title: 'Batch items/credit',
+        title: 'refinery processings/credit',
         tiers: [
             { title: 'personal', value: '100' },
             { title: 'growth', featured: true, value: '100' },
             { title: 'enterprise', value: '100' },
-        ],
-    },
-    {
-        title: 'MB storage/credit',
-        tiers: [
-            { title: 'personal', value: '1' },
-            { title: 'growth', featured: true, value: '1' },
-            { title: 'enterprise', value: '1' },
         ],
     },
     {
@@ -167,7 +159,7 @@ const perksCloud = [
         title: 'Realtime processing frequency',
         tiers: [
             { title: 'personal', value: '1 hour' },
-            { title: 'growth', featured: true, value: '10 minutes' },
+            { title: 'growth', featured: true, value: '5 seconds' },
             { title: 'enterprise', value: 'Custom' },
         ],
     },

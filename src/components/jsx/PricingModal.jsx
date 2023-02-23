@@ -47,18 +47,20 @@ export function PricingModal({ open, setOpen }) {
                                                 Everyone wants a simple pricing model, right? We do too. But most importantly, we want it to also fit your requirements. So we've created a pricing model that is flexible and easy to understand.
                                             </p>
                                             <p className="mt-2 text-sm text-gray-300">
-                                                Mainly, there are three atomic use cases for our platform, all building on top of refinery.
+                                                Mainly, there are two things to price in our platform:
                                             </p>
                                             <ul className="ml-5 mt-2 text-sm text-gray-300">
                                                 <li className="list-disc">Implementing operational workflows that process data in realtime.</li>
                                                 <li className="list-disc">Implementing analytical workflows, processing data in batches.</li>
-                                                <li className="list-disc">Storing training data to keep it in a maintainable and documented way - just like a regular software artifact.</li>
                                             </ul>
+                                            <p className="mt-2 text-sm text-gray-300">
+                                                For now, we don't price the data storage. In the near future, you'll also be able to call 3rd party APIs via credits.
+                                            </p>
                                             <p className="mt-2 text-sm text-gray-300">
                                                 Our costs mainly depend on the amount of workload you create, and for how long you store the data. Still, we want you to be creative when implementing via refinery, not worrying about every single action you take credit-wise. This is embodied in the pricing model.
                                             </p>
                                             <p className="mt-2 text-sm text-gray-300">
-                                                <span className='text-green-500 font-semibold'>While you're working on batches of data, we charge only 1 credit per 100 items processed</span>, so you can be creative and answer critical questions for your data. <span className='text-green-500 font-semibold'>Once you put workflows into a realtime setting, we charge one credit per item (aka task) processed</span>. And finally, <span className='text-green-500 font-semibold'>we charge 1 credit per 10MB of data stored, per month</span>.
+                                                <span className='text-green-500 font-semibold'>While you're working in refinery, we charge only 1 credit per 100 items processed</span>, so you can be creative and answer critical questions for your data. <span className='text-green-500 font-semibold'>Once you put workflows into gates, we charge one credit per item (aka task) processed</span>.
                                             </p>
                                             <p className="mt-2 text-sm text-gray-300">
                                                 Ultimately, we want you to make the best out of refinery. If you're not happy with the results of using our platform, we guarantee a full refund of your credits for two months.
