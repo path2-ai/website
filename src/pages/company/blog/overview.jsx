@@ -2,7 +2,7 @@ import { KERN_ASSETS_URL } from "@/components/jsx/_settings"
 
 export const articles = [
     {
-        "title": "How we used AI to automate stock sentiment classification",
+        "title": "How we use the Kern AI platform to build a stock sentiment slackbot",
         "description": "We build a really cool slackbot to automatically classifiy stock news.",
         "slug": "slackbot-workflow",
         "teaser": "In this article, we would like to provide you with a step-by-step tutorial, in which we build a slack bot that sends us a daily message on the sentiment of the news of our stocks.",
