@@ -2,6 +2,20 @@ import { KERN_ASSETS_URL } from "@/components/jsx/_settings"
 
 export const articles = [
     {
+        "title": "How we use the Kern AI platform to build a stock sentiment slackbot",
+        "description": "We build a really cool slackbot to automatically classifiy stock news.",
+        "slug": "slackbot-workflow",
+        "teaser": "In this article, we would like to provide you with a step-by-step tutorial, in which we build a slack bot that sends us a daily message on the sentiment of the news of our stocks.",
+        "category": "Knowledge",
+        "thumbnail": "/blog/robot-news.png",
+        "prompt": "A robot throwing newspapers comic style.",
+        "author": {
+            "name": "Leo Püttmann",
+            "image": `${KERN_ASSETS_URL}/team/team-leo.png`
+        },
+        "date": "2023-02-23"
+    },
+    {
         "title": "Announcing our 2.7m€ seed round",
         "description": "And how we got there (with a failed first product) since our start in 2020.",
         "slug": "our-seed",
