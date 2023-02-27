@@ -1,32 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { LogoCloud } from './LogoCloud'
-import Link from 'next/link'
 import { AccessBanner } from './AccessBanner'
 import { AccessModal } from './AccessModal'
 
 export function Hero() {
-    const [text, setText] = useState('ETL pipelines')
-    const [counter, setCounter] = useState(0)
+
     const [openAccessModal, setOpenAccessModal] = useState(false)
-
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            // Increment the counter
-            setCounter((prevCounter) => prevCounter + 1)
-
-            // Update the text based on the counter value
-            if (counter % 3 == 0) {
-                setText('workflows')
-            } else if (counter % 3 == 1) {
-                setText('products')
-            } else if (counter % 3 == 2) {
-                setText('ETL pipelines')
-            }
-        }, 2000) // Update the text every 2 seconds
-
-        return () => clearInterval(interval)
-    }, [counter]) // Only run the effect when the counter changes
 
     return (
         <div>
