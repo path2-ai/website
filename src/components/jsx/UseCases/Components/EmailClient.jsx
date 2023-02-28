@@ -3,7 +3,7 @@ import { Menu, Transition } from '@headlessui/react'
 import {
     ChevronDownIcon,
 } from '@heroicons/react/20/solid'
-import { IconLoader2, IconRefresh } from '@tabler/icons'
+import { IconFilter, IconLoader2, IconRefresh } from '@tabler/icons'
 import { CustomMailModal } from './CustomMailModal'
 
 const navigation = [
@@ -119,12 +119,14 @@ export function EmailClient() {
     ])
 
     const [selectedMessage, setSelectedMessage] = useState(messages[0])
+    const [messagesInFilter, setMessagesInFilter] = useState(messages)
 
     const [loading, setLoading] = useState(false)
     const [draftAccepted, setDraftAccepted] = useState(false)
     const [openCustomMailModal, setOpenCustomMailModal] = useState(false)
     const [classifiedMessageIds, setClassifiedMessageIds] = useState([])
     const [acceptedDraftMessageIds, setAcceptedDraftMessageIds] = useState([])
+    const [filterOnSentiment, setFilterOnSentiment] = useState(null)
 
     useEffect(() => {
         if (loading) {
@@ -146,6 +148,14 @@ export function EmailClient() {
             setAcceptedDraftMessageIds(computedMessages => [...computedMessages, selectedMessage.id])
         }
     }, [draftAccepted])
+
+    useEffect(() => {
+        if (filterOnSentiment) {
+            setMessagesInFilter(messages.filter(message => message.response.sentiment === filterOnSentiment && classifiedMessageIds.includes(message.id)))
+        } else {
+            setMessagesInFilter(messages)
+        }
+    }, [filterOnSentiment])
 
     return (
         <>
@@ -248,7 +258,7 @@ export function EmailClient() {
                                                 <div className="mt-4 flex items-center justify-between sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:justify-start">
                                                     <span className={classNames(
                                                         "inline-flex items-center rounded-full px-3 py-0.5 text-sm font-medium",
-                                                        selectedMessage.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : 'bg-red-700 text-red-400'
+                                                        selectedMessage.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : (selectedMessage.response.sentiment === 'negative' ? 'bg-red-700 text-red-400' : 'bg-yellow-700 text-yellow-400')
                                                     )}>
                                                         {selectedMessage.response.sentiment}
                                                     </span>
@@ -379,10 +389,100 @@ export function EmailClient() {
                             <aside className="hidden xl:order-first xl:block xl:flex-shrink-0">
                                 <div className="relative flex h-full w-96 flex-col border-r border-gray-800 bg-neutral-900">
                                     <div className="flex-shrink-0">
-                                        <div className="flex h-16 flex-col justify-center bg-neutral-900 px-6">
+                                        <div className="flex h-16 flex-row items-center justify-between bg-neutral-900 px-6">
                                             <div className="flex items-baseline space-x-3">
                                                 <h2 className="text-lg font-medium text-gray-100">Inbox</h2>
-                                                <p className="text-sm font-medium text-gray-500">{messages.length} messages</p>
+                                                <p className="text-sm font-medium text-gray-500">{messagesInFilter.length} messages</p>
+                                            </div>
+                                            <div className='flex flex-row items-center space-x-2'>
+                                                {filterOnSentiment && (
+                                                    <div className={classNames(
+                                                        "mt-1 inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
+                                                        filterOnSentiment === 'positive' ? 'bg-green-700 text-green-400' : (filterOnSentiment === 'negative' ? 'bg-red-700 text-red-400' : 'bg-yellow-700 text-yellow-400')
+                                                    )}>
+                                                        {filterOnSentiment}
+                                                    </div>
+                                                )}
+                                                <Menu as="div" key="filter" className="relative text-left">
+                                                    <Menu.Button className="mt-2">
+                                                        <IconFilter className='h-5 w-5 text-gray-500 hover:text-gray-300 transition-colors duration-200' />
+                                                    </Menu.Button>
+
+                                                    <Transition
+                                                        as={Fragment}
+                                                        enter="transition ease-out duration-100"
+                                                        enterFrom="transform opacity-0 scale-95"
+                                                        enterTo="transform opacity-100 scale-100"
+                                                        leave="transition ease-in duration-75"
+                                                        leaveFrom="transform opacity-100 scale-100"
+                                                        leaveTo="transform opacity-0 scale-95"
+                                                    >
+                                                        <Menu.Items className="absolute right-0 z-10 mt-2 w-32 origin-top-right rounded-md bg-neutral-900 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none">
+                                                            <div className="py-1">
+                                                                <Menu.Item key="remove">
+                                                                    {({ active }) => (
+                                                                        <div
+                                                                            className={classNames(
+                                                                                active ? 'bg-neutral-800' : '',
+                                                                                'block px-4 py-2 text-sm text-gray-300 cursor-pointer'
+                                                                            )}
+                                                                            onClick={() => {
+                                                                                setFilterOnSentiment(null)
+                                                                            }}
+                                                                        >
+                                                                            remove filter
+                                                                        </div>
+                                                                    )}
+                                                                </Menu.Item>
+                                                                <Menu.Item key="positive">
+                                                                    {({ active }) => (
+                                                                        <div
+                                                                            className={classNames(
+                                                                                active ? 'bg-neutral-800' : '',
+                                                                                'block px-4 py-2 text-sm text-gray-300 cursor-pointer'
+                                                                            )}
+                                                                            onClick={() => {
+                                                                                setFilterOnSentiment('positive')
+                                                                            }}
+                                                                        >
+                                                                            positive
+                                                                        </div>
+                                                                    )}
+                                                                </Menu.Item>
+                                                                <Menu.Item key="neutral">
+                                                                    {({ active }) => (
+                                                                        <div
+                                                                            className={classNames(
+                                                                                active ? 'bg-neutral-800' : '',
+                                                                                'block px-4 py-2 text-sm text-gray-300 cursor-pointer'
+                                                                            )}
+                                                                            onClick={() => {
+                                                                                setFilterOnSentiment('neutral')
+                                                                            }}
+                                                                        >
+                                                                            neutral
+                                                                        </div>
+                                                                    )}
+                                                                </Menu.Item>
+                                                                <Menu.Item key="negative">
+                                                                    {({ active }) => (
+                                                                        <div
+                                                                            className={classNames(
+                                                                                active ? 'bg-neutral-800' : '',
+                                                                                'block px-4 py-2 text-sm text-gray-300 cursor-pointer'
+                                                                            )}
+                                                                            onClick={() => {
+                                                                                setFilterOnSentiment('negative')
+                                                                            }}
+                                                                        >
+                                                                            negative
+                                                                        </div>
+                                                                    )}
+                                                                </Menu.Item>
+                                                            </div>
+                                                        </Menu.Items>
+                                                    </Transition>
+                                                </Menu>
                                             </div>
                                         </div>
                                         <div className="border-t border-b border-gray-800 bg-zinc-800 px-6 py-2 text-sm font-medium text-gray-500">
@@ -391,7 +491,7 @@ export function EmailClient() {
                                     </div>
                                     <nav aria-label="Message list" className="min-h-0 flex-1 overflow-y-auto">
                                         <ul role="list" className="divide-y divide-gray-800 border-b border-gray-800">
-                                            {messages.map((message) => (
+                                            {messagesInFilter.map((message) => (
                                                 <li
                                                     key={message.id}
                                                     className="relative bg-neutral-900 py-5 px-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 hover:bg-neutral-800"
@@ -420,7 +520,7 @@ export function EmailClient() {
                                                     {classifiedMessageIds.includes(message.id) && (
                                                         <div className={classNames(
                                                             "mt-1 inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
-                                                            message.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : 'bg-red-700 text-red-400'
+                                                            message.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : (message.response.sentiment === 'negative' ? 'bg-red-700 text-red-400' : 'bg-yellow-700 text-yellow-400')
                                                         )}>
                                                             {message.response.sentiment}
                                                         </div>
