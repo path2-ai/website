@@ -4,6 +4,7 @@ import {
     ChevronDownIcon,
 } from '@heroicons/react/20/solid'
 import { IconLoader2, IconRefresh } from '@tabler/icons'
+import { CustomMailModal } from './CustomMailModal'
 
 const navigation = [
     {
@@ -19,99 +20,132 @@ const navigation = [
     },
 ]
 
-const messages = [
-    {
-        id: 1,
-        subject: 'I love this tool!',
-        sender: {
-            name: 'Monica White',
-            email: 'monica.white@acme.org',
-        },
-        date: '1d ago',
-        datetime: '2021-01-27T16:35',
-        preview:
-            'It is amazing to see how natural language processing can be used to automate email workflows. I love this tool!',
-        thread: [
-            {
-                id: 1,
-                author: {
-                    name: 'Monica White',
-                    email: 'monica.white@acme.org',
-                },
-                date: 'Wednesday at 4:35pm',
-                datetime: '2021-01-27T16:35',
-                body: `
-                <p>It is amazing to see how natural language processing can be used to automate email workflows. I love this tool!</p>
-                <p><strong style="font-weight: 600;">Monica White</strong><br/>Customer Service</p>
-              `,
-            }
-        ],
-        response: {
-            text: 'Thanks, Monica! We are glad you like it!',
-            sentiment: 'positive',
-        }
-    },
-    {
-        id: 2,
-        subject: 'Downtime',
-        sender: {
-            name: 'Richard Hendricks',
-            email: 'richard.hendricks@piedpiper.com',
-        },
-        date: '1d ago',
-        datetime: '2021-01-28T10:35',
-        preview:
-            'Hi support, We are experiencing some downtime. Can you please look into this?',
-        thread: [
-            {
-                id: 1,
-                author: {
-                    name: 'Richard Hendricks',
-                    email: 'richard.hendricks@piedpiper.com'
-                },
-                date: 'Thursday at 10:35am',
-                datetime: '2021-01-28T10:35',
-                body: `
-                <p>Hi support,</p>
-                <p>We are experiencing some downtime. Can you please look into this?</p>
-                <p><strong style="font-weight: 600;">Richard Hendricks</strong><br/>CEO & Founder Pied Piper</p>
-              `,
-            }
-        ],
-        response: {
-            text: 'Hi Richard, We are looking into this. We will get back to you as soon as possible.',
-            sentiment: 'negative',
-        }
-    },
-]
-
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
 export function EmailClient() {
 
+    const [messages, setMessages] = useState([
+        {
+            id: 1,
+            subject: 'I love this tool!',
+            sender: {
+                name: 'Monica White',
+                email: 'monica.white@acme.org',
+            },
+            userDefinedMail: false,
+            date: '1d ago',
+            datetime: '2021-01-27T16:35',
+            preview:
+                'It is amazing to see how natural language processing can be used to automate email workflows. I love this tool!',
+            thread: [
+                {
+                    id: 1,
+                    author: {
+                        name: 'Monica White',
+                        email: 'monica.white@acme.org',
+                    },
+                    date: 'Wednesday at 4:35pm',
+                    datetime: '2021-01-27T16:35',
+                    body: `
+                    <p>It is amazing to see how natural language processing can be used to automate email workflows. I love this tool!</p>
+                    <p><strong style="font-weight: 600;">Monica White</strong><br/>Customer Service</p>
+                  `,
+                }
+            ],
+            response: {
+                text: 'Thanks, Monica! We are glad you like it!',
+                sentiment: 'positive',
+            }
+        },
+        {
+            id: 2,
+            subject: 'Downtime',
+            sender: {
+                name: 'Richard Hendricks',
+                email: 'richard.hendricks@piedpiper.com',
+            },
+            userDefinedMail: false,
+            date: '1d ago',
+            datetime: '2021-01-28T10:35',
+            preview:
+                'Hi support, We are experiencing some downtime. Can you please look into this?',
+            thread: [
+                {
+                    id: 1,
+                    author: {
+                        name: 'Richard Hendricks',
+                        email: 'richard.hendricks@piedpiper.com'
+                    },
+                    date: 'Thursday at 10:35am',
+                    datetime: '2021-01-28T10:35',
+                    body: `
+                    <p>Hi, how exactly can I deploy a gates API? Thanks</p>
+                  `,
+                },
+                {
+                    id: 2,
+                    author: {
+                        name: 'You',
+                        email: 'you@your-company.com'
+                    },
+                    date: 'Thursday at 10:37am',
+                    datetime: '2021-01-28T10:37',
+                    body: `
+                    <p>Hi Richard,</p>
+                    <p>Simply head over to your gates overview and configure the API settings. <a class="underline" href="https://docs.kern.ai/gates">Here are the docs</a>.</p>
+                  `,
+                },
+                {
+                    id: 3,
+                    author: {
+                        name: 'Richard Hendricks',
+                        email: 'richard.hendricks@piedpiper.com'
+                    },
+                    date: 'Thursday at 10:35am',
+                    datetime: '2021-01-28T10:35',
+                    body: `
+                    <p>Hi support, we are experiencing some downtime. Can you please look into this?</p>
+                    <p><strong style="font-weight: 600;">Richard Hendricks</strong></p>
+                  `,
+                },
+            ],
+            response: {
+                text: 'Hi Richard, We are looking into this. We will get back to you as soon as possible.',
+                sentiment: 'negative',
+            }
+        },
+    ])
+
     const [selectedMessage, setSelectedMessage] = useState(messages[0])
 
     const [loading, setLoading] = useState(false)
-    const [draftExists, setDraftExists] = useState(false)
     const [draftAccepted, setDraftAccepted] = useState(false)
-    const [isCustomMessage, setIsCustomMessage] = useState(false)
+    const [openCustomMailModal, setOpenCustomMailModal] = useState(false)
+    const [classifiedMessageIds, setClassifiedMessageIds] = useState([])
+    const [acceptedDraftMessageIds, setAcceptedDraftMessageIds] = useState([])
 
     useEffect(() => {
         if (loading) {
             setTimeout(() => {
                 setLoading(false)
-                setDraftExists(true)
                 setDraftAccepted(false)
+
+                setClassifiedMessageIds(computedMessages => [...computedMessages, selectedMessage.id])
             }, 523)
         }
     }, [loading])
 
     useEffect(() => {
-        setDraftExists(false)
         setDraftAccepted(false)
     }, [selectedMessage])
+
+    useEffect(() => {
+        if (classifiedMessageIds.includes(selectedMessage.id)) {
+            setAcceptedDraftMessageIds(computedMessages => [...computedMessages, selectedMessage.id])
+        }
+    }, [draftAccepted])
 
     return (
         <>
@@ -210,11 +244,11 @@ export function EmailClient() {
                                                 <p className="mt-1 truncate text-sm text-gray-500">{selectedMessage.sender.email}</p>
                                             </div>
 
-                                            {draftExists && (
+                                            {classifiedMessageIds.includes(selectedMessage.id) && (
                                                 <div className="mt-4 flex items-center justify-between sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:justify-start">
                                                     <span className={classNames(
                                                         "inline-flex items-center rounded-full px-3 py-0.5 text-sm font-medium",
-                                                        selectedMessage.response.sentiment === 'positive' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                                                        selectedMessage.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : 'bg-red-700 text-red-400'
                                                     )}>
                                                         {selectedMessage.response.sentiment}
                                                     </span>
@@ -251,8 +285,8 @@ export function EmailClient() {
                                                 </div>
                                             </div>
                                         )}
-                                        {draftExists && (
-                                            draftAccepted ? (
+                                        {(classifiedMessageIds.includes(selectedMessage.id) || acceptedDraftMessageIds.includes(selectedMessage.id)) && (
+                                            (draftAccepted || acceptedDraftMessageIds.includes(selectedMessage.id)) ? (
                                                 <li key='response' className={classNames(
                                                     "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
                                                     selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
@@ -303,17 +337,17 @@ export function EmailClient() {
                                             )
                                         )}
                                     </ul>
-                                    {!loading && (
+                                    {!loading && !acceptedDraftMessageIds.includes(selectedMessage.id) && (
                                         <div
                                             className='my-2 flex items-center justify-end px-4 sm:px-6 lg:px-8'
                                         >
-                                            {draftExists ? (
+                                            {classifiedMessageIds.includes(selectedMessage.id) ? (
                                                 <div className='p-[1px] rounded-lg bg-gradient-to-r from-neutral-900 via-green-700 to-neutral-900 hover:from-neutral-800 hover:via-green-600 hover:to-neutral-800'>
                                                     <button
                                                         className="p-4 bg-[#141414] rounded-lg text-gray-200 flex flex-col items-center justify-center text-sm hover:bg-[#171717] active:bg-[#0f0f0f] hover:text-gray-300 transition-colors duration-200"
                                                         onClick={() => {
-                                                            setDraftExists(false)
                                                             setLoading(true)
+                                                            setClassifiedMessageIds(classifiedMessageIds.filter((messageId) => messageId !== selectedMessage.id))
                                                         }}
                                                     >
                                                         <IconRefresh className='h-5 w-5' />
@@ -324,12 +358,11 @@ export function EmailClient() {
                                                     <button
                                                         className="h-16 px-4 bg-[#141414] rounded-lg text-gray-200 flex flex-col items-center justify-center text-sm hover:bg-[#171717] active:bg-[#0f0f0f] hover:text-gray-300 transition-colors duration-200"
                                                         onClick={() => {
-                                                            setDraftExists(false)
                                                             setLoading(true)
                                                         }}
                                                     >
                                                         <div className='flex flex-row items-center font-semibold'>
-                                                            Generate response draft
+                                                            Classify mail and generate a draft response
                                                         </div>
                                                         <p className='text-gray-500 text-sm ml-2'>
                                                             In production, this would happen in the background
@@ -384,15 +417,31 @@ export function EmailClient() {
                                                     <div className="mt-1">
                                                         <p className="text-sm text-gray-600 line-clamp-2">{message.preview}</p>
                                                     </div>
+                                                    {classifiedMessageIds.includes(message.id) && (
+                                                        <div className={classNames(
+                                                            "mt-1 inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
+                                                            message.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : 'bg-red-700 text-red-400'
+                                                        )}>
+                                                            {message.response.sentiment}
+                                                        </div>
+                                                    )}
                                                 </li>
                                             ))}
                                         </ul>
+                                        <button
+                                            type='button'
+                                            className='relative bg-neutral-900 py-5 px-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 hover:bg-neutral-800 text-white text-sm focus:ring-green-500'
+                                            onClick={() => setOpenCustomMailModal(true)}
+                                        >
+                                            Click here to enter a message yourself, and see how the draft is generated
+                                        </button>
                                     </nav>
                                 </div>
                             </aside>
                         </main>
                     </div>
                 </div>
+                <CustomMailModal open={openCustomMailModal} setOpen={setOpenCustomMailModal} messages={messages} setMessages={setMessages} />
             </div>
         </>
     )
