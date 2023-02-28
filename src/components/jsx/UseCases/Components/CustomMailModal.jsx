@@ -90,7 +90,7 @@ export function CustomMailModal({ open, setOpen, messages, setMessages }) {
                                 <div className="mt-4 flex flex-row justify-end space-x-4">
                                     <button
                                         type="button"
-                                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-green-800 pl-3 pr-4 py-2 text-base font-medium text-gray-100 shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
+                                        className="inline-flex w-full justify-center rounded-md border border-transparent bg-green-800 pl-3 pr-4 py-2 text-base font-medium text-gray-100 shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm disabled:opacity-50 disabled:cursor-not-allowed"
                                         onClick={() => {
                                             setMessages([
                                                 ...messages,
@@ -129,6 +129,7 @@ export function CustomMailModal({ open, setOpen, messages, setMessages }) {
                                             setMailBody(null)
                                             setOpen(false)
                                         }}
+                                        disabled={!mailSubject || !mailBody}
                                     >
                                         <IconSend className="h-6 w-6 text-green-400 mr-3" aria-hidden="true" />
                                         Send

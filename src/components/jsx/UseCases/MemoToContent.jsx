@@ -11,7 +11,7 @@ function classNames(...classes) {
 const mimeType = "audio/webm";
 
 
-export function MemoToContent({ devIsSelected }) {
+export function MemoToContent() {
 
     const [useCaseInput, setUseCaseInput] = useState('Wow, this looks absolutely amazing!')
     function apiCall(useCaseInput) {
@@ -150,9 +150,7 @@ export function MemoToContent({ devIsSelected }) {
                 />
 
                 <div className='p-6 relative flex flex-col space-y-6'>
-                    <div className={classNames(
-                        devIsSelected ? 'grid grid-cols-2 gap-6' : null,
-                    )}>
+                    <div className='grid grid-cols-2 gap-6'>
                         <div className='p-[1px] rounded-md bg-gradient-to-b from-gray-800 to-neutral-900'>
                             <div className='px-4 py-1 text-gray-500 text-sm rounded-t-md bg-neutral-900 border-b border-gray-800'>
                                 Input (your voice recording)
@@ -187,29 +185,27 @@ export function MemoToContent({ devIsSelected }) {
                                 </div>
                             </div>
                         </div>
-                        {devIsSelected && (
-                            <div className='p-[1px] rounded-md bg-gradient-to-b from-gray-800 to-neutral-900 overflow-hidden'>
-                                <div className='px-4 py-1 flex flex-row justify-between rounded-t-md bg-neutral-900 border-b border-gray-800 font-mono'>
-                                    <div className='text-gray-500 text-sm'>
-                                        cURL
-                                    </div>
-                                    <a
-                                        className='group text-gray-500 hover:text-gray-300 text-sm'
-                                        href='https://docs.kern.ai'
-                                        target='_blank'
-                                        rel='noreferrer noopener'
-                                    >
-                                        Docs
-                                        <IconArrowRight className='inline-block w-4 h-4 ml-1 text-gray-500 group-hover:text-gray-300' />
-                                    </a>
+                        <div className='p-[1px] rounded-md bg-gradient-to-b from-gray-800 to-neutral-900 overflow-hidden'>
+                            <div className='px-4 py-1 flex flex-row justify-between rounded-t-md bg-neutral-900 border-b border-gray-800 font-mono'>
+                                <div className='text-gray-500 text-sm'>
+                                    cURL
                                 </div>
-                                <pre
-                                    className="h-56 block w-full bg-gradient-to-b from-[#0f0f0f] to-[#141414] p-4 rounded-b-md shadow-sm focus:outline-slate-800 font-mono text-xs text-green-500 overflow-auto"
+                                <a
+                                    className='group text-gray-500 hover:text-gray-300 text-sm'
+                                    href='https://docs.kern.ai'
+                                    target='_blank'
+                                    rel='noreferrer noopener'
                                 >
-                                    {apiCall(useCaseInput.replace(/"/g, '\\"').replace(/\n/g, '\\n'))}
-                                </pre>
+                                    Docs
+                                    <IconArrowRight className='inline-block w-4 h-4 ml-1 text-gray-500 group-hover:text-gray-300' />
+                                </a>
                             </div>
-                        )}
+                            <pre
+                                className="h-56 block w-full bg-gradient-to-b from-[#0f0f0f] to-[#141414] p-4 rounded-b-md shadow-sm focus:outline-slate-800 font-mono text-xs text-green-500 overflow-auto"
+                            >
+                                {apiCall(useCaseInput.replace(/"/g, '\\"').replace(/\n/g, '\\n'))}
+                            </pre>
+                        </div>
                     </div>
 
                     <div className='p-[1px] rounded-lg bg-gradient-to-r from-neutral-900 via-green-700 to-neutral-900 hover:from-neutral-800 hover:via-green-600 hover:to-neutral-800'>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { Icon360, IconApiApp, IconApps, IconArrowRight, IconArrowsRightDown, IconBrain, IconBrandDocker, IconBrandOpenSource, IconBrandPython, IconBuildingCastle, IconCategory2, IconCode, IconCrystalBall, IconDashboard, IconDatabase, IconDragDrop, IconGrowth, IconHighlight, IconLoader, IconLoader2, IconLock, IconMail, IconNumber3, IconPlayerPause, IconPlayerPlay, IconRoute, IconTag, IconWindmill } from '@tabler/icons'
 import { EmailAnalytics } from './UseCases/EmailAnalytics'
+import { MemoToContent } from './UseCases/MemoToContent'
 
 
 
@@ -63,8 +64,8 @@ export function Playground() {
 
             </div>
 
-            <EmailAnalytics />
-            {/* <MemoToContent devIsSelected={devIsSelected} /> */}
+            {/* <EmailAnalytics /> */}
+            <MemoToContent />
         </section >
     )
 }
