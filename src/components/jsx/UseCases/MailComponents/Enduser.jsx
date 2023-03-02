@@ -149,13 +149,14 @@ export function Enduser() {
         }
     }, [draftAccepted])
 
+
     useEffect(() => {
         if (filterOnSentiment) {
             setMessagesInFilter(messages.filter(message => message.response.sentiment === filterOnSentiment && classifiedMessageIds.includes(message.id)))
         } else {
             setMessagesInFilter(messages)
         }
-    }, [filterOnSentiment])
+    }, [filterOnSentiment, messages])
 
     return (
         <>
@@ -494,7 +495,10 @@ export function Enduser() {
                                             {messagesInFilter.map((message) => (
                                                 <li
                                                     key={message.id}
-                                                    className="relative bg-neutral-900 py-5 px-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 hover:bg-neutral-800"
+                                                    className={classNames(
+                                                        message.id === selectedMessage?.id ? "bg-zinc-800" : "bg-neutral-900",
+                                                        "relative py-5 px-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 hover:bg-neutral-800"
+                                                    )}
                                                 >
                                                     <div className="flex justify-between space-x-3">
                                                         <div className="min-w-0 flex-1">
