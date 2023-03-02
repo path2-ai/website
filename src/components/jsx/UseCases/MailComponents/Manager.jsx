@@ -1,11 +1,51 @@
 import { IconCategory2, IconNote, IconRoute } from '@tabler/icons'
 import { useState } from 'react'
+import { Doughnut } from 'react-chartjs-2';
+import Chart from 'chart.js/auto'; // this must be imported to enable the charts plugin; don't remove it!
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
 export function Manager() {
+
+    const dataSentiment = {
+        labels: [
+            'Positive',
+            'Neutral',
+            'Negative'
+        ],
+        datasets: [{
+            label: 'Sentiment',
+            data: [300, 50, 100],
+            backgroundColor: [
+                '#16a34a',
+                '#ca8a04',
+                '#dc2626'
+            ],
+            hoverOffset: 4
+        }]
+    };
+
+    const dataIntent = {
+        labels: [
+            'Outreach',
+            'Feedback',
+            'Support',
+            'Other'
+        ],
+        datasets: [{
+            label: 'Intent',
+            data: [300, 50, 100, 200],
+            backgroundColor: [
+                '#16a34a',
+                '#ca8a04',
+                '#dc2626',
+                '#2563eb'
+            ],
+            hoverOffset: 4
+        }]
+    };
 
     const [sliderValue, setSliderValue] = useState(50)
 
@@ -73,14 +113,63 @@ export function Manager() {
                                             Analytical benefits
                                         </div>
                                         <div
-                                            className="h-44 text-gray-100 block w-full bg-gradient-to-b from-[#141414] to-[#111111] p-4 focus:outline-none sm:text-sm resize-none"
-
+                                            className="flex flex-col h-60 text-gray-100 block w-full bg-gradient-to-b from-[#141414] to-[#111111] p-4 focus:outline-none sm:text-sm resize-none"
                                         >
+                                            <div className='mt-2 flex flex-row'>
+                                                <div
+                                                    className='-ml-10'
+                                                >
+                                                    <Doughnut
+                                                        data={dataSentiment}
+                                                        options={{
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: false,
+                                                                },
+                                                            },
+                                                            borderColor: '#171717',
+                                                        }}
+                                                    />
+                                                </div>
+                                                <div
+                                                    className='-ml-28'
+                                                >
+                                                    <Doughnut
+                                                        data={dataIntent}
+                                                        options={{
+                                                            responsive: true,
+                                                            maintainAspectRatio: false,
+                                                            plugins: {
+                                                                legend: {
+                                                                    display: false,
+                                                                },
+                                                            },
+                                                            borderColor: '#171717',
+                                                        }}
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className='mt-6'>
+                                                <p className='text-gray-400 text-sm'>
+                                                    Gain <span className='font-semibold text-green-500'>relevant insights</span> directly from your inbox.
+                                                </p>
+                                            </div>
                                         </div>
                                         <div
-                                            className='h-12 rounded-b-md bg-neutral-800 border-t border-gray-800 flex flex-row px-4 items-center text-sm text-gray-500'
+                                            className='h-12 rounded-b-md bg-neutral-800 border-t border-gray-800 flex flex-row pl-4 pr-2 items-center justify-between text-sm text-gray-500'
                                         >
-                                            x
+                                            <span>
+                                                Help your team to work smarter
+                                            </span>
+                                            <button
+                                                type="button"
+                                                className="inline-flex items-center px-2 py-1 border border-gray-800 text-sm font-medium rounded-md shadow-sm text-gray-200 bg-neutral-900 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                                            >
+                                                Get started
+                                            </button>
+
                                         </div>
                                     </div>
                                 </div>
