@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { IconArrowRight, IconLanguageOff, IconLoader2, IconMail, IconMoodAngry, IconMoodHappy, IconMoodNeutral } from '@tabler/icons'
 import { Enduser } from './MailComponents/Enduser'
 import { Developer } from './MailComponents/Developer'
+import { Manager } from './MailComponents/Manager'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -9,11 +10,11 @@ function classNames(...classes) {
 
 export function EmailAnalytics() {
 
-    const [devIsSelected, setDevIsSelected] = useState(false)
+    const [showForStakeholders, setShowForStakeholders] = useState("enduser")
 
     return (
         <div className='my-20'>
-            <div className='flex flex-col space-y-6'>
+            <div className='max-w-5xl mx-auto flex flex-col space-y-6'>
                 <div className='flex flex-row items-center space-x-4'>
                     <div
                         className='p-3 bg-[#0d0d0d] border border-neutral-900 rounded-2xl'
@@ -29,58 +30,82 @@ export function EmailAnalytics() {
                         </p>
                     </div>
                 </div>
-                <div className='w-fit p-[1px] rounded-2xl bg-gradient-to-r from-gray-800 via-gray-500 to-neutral-900'>
-                    <div className='flex flex-row space-x-2 items-center justify-between p-2 text-gray-500 text-sm rounded-2xl bg-neutral-900 border-b border-gray-800'>
-                        <div className='w-fit p-[1px] rounded-xl bg-gradient-to-r from-gray-800 via-gray-500 to-gray-800'>
+                <div className='mx-auto w-fit p-[1px] rounded-2xl bg-gradient-to-r from-gray-900 via-gray-600 to-black'>
+                    <div className='flex flex-row space-x-2 items-center justify-between p-2 text-gray-500 text-sm rounded-2xl bg-neutral-900'>
+
+                        <div className='w-fit p-[1px] rounded-xl bg-gradient-to-r from-gray-800 to-gray-600'>
                             <button
                                 className={classNames(
-                                    devIsSelected ? null : 'text-white',
+                                    showForStakeholders == 'enduser' && 'text-white',
                                     'flex flex-row items-center p-2 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 rounded-xl hover:from-neutral-800 hover:via-neutral-700 hover:to-neutral-800 hover:text-white'
                                 )}
-                                onClick={() => setDevIsSelected(false)}
+                                onClick={() => setShowForStakeholders("enduser")}
                             >
                                 <span
                                     className={classNames(
                                         'mt-0.5 rounded-full w-2 h-2 inline-block mx-1.5',
-                                        devIsSelected ? 'bg-neutral-500' : 'bg-green-500'
+                                        showForStakeholders == 'enduser' ? 'bg-green-500' : 'bg-neutral-500'
                                     )}
                                 />
                                 <span>
-                                    Show me how the end user's experience looks like
+                                    How does this look like for a user?
                                 </span>
                             </button>
                         </div>
 
-                        <div className='w-fit p-[1px] rounded-xl bg-gradient-to-r from-gray-800 via-gray-500 to-gray-800'>
+                        <div className='w-fit p-[1px] rounded-xl bg-gradient-to-r from-gray-600 via-gray-500 to-gray-600'>
                             <button
                                 className={classNames(
-                                    devIsSelected ? 'text-white' : null,
+                                    showForStakeholders == 'manager' && 'text-white',
                                     'flex flex-row items-center p-2 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 rounded-xl hover:from-neutral-800 hover:via-neutral-700 hover:to-neutral-800 hover:text-white'
                                 )}
-                                onClick={() => setDevIsSelected(true)}
+                                onClick={() => setShowForStakeholders('manager')}
                             >
                                 <span
                                     className={classNames(
                                         'mt-0.5 rounded-full w-2 h-2 inline-block mx-1.5',
-                                        devIsSelected ? 'bg-green-500' : 'bg-neutral-500'
+                                        showForStakeholders == 'manager' ? 'bg-green-500' : 'bg-neutral-500'
                                     )}
                                 />
                                 <span>
-                                    Show me how the developer's experience looks like
+                                    What are my benefits?
+                                </span>
+                            </button>
+                        </div>
+
+                        <div className='w-fit p-[1px] rounded-xl bg-gradient-to-r from-gray-600 to-neutral-800'>
+                            <button
+                                className={classNames(
+                                    showForStakeholders == 'developer' && 'text-white',
+                                    'flex flex-row items-center p-2 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 rounded-xl hover:from-neutral-800 hover:via-neutral-700 hover:to-neutral-800 hover:text-white'
+                                )}
+                                onClick={() => setShowForStakeholders('developer')}
+                            >
+                                <span
+                                    className={classNames(
+                                        'mt-0.5 rounded-full w-2 h-2 inline-block mx-1.5',
+                                        showForStakeholders == 'developer' ? 'bg-green-500' : 'bg-neutral-500'
+                                    )}
+                                />
+                                <span>
+                                    Show me the API for this!
                                 </span>
                             </button>
                         </div>
                     </div>
                 </div>
-                <div>
-                    {devIsSelected ? (
-                        <Developer />
-                    ) : (
-                        <Enduser />
-                    )}
-                </div>
             </div>
-
+            <div className='mt-6'>
+                {showForStakeholders == 'developer' && (
+                    <Developer />
+                )}
+                {showForStakeholders == 'enduser' && (
+                    <Enduser />
+                )}
+                {showForStakeholders == 'manager' && (
+                    <Manager />
+                )}
+            </div>
         </div>
     )
 }
