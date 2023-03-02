@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { IconArrowRight, IconLanguageOff, IconLoader2, IconMail, IconMoodAngry, IconMoodHappy, IconMoodNeutral } from '@tabler/icons'
-import { EmailClient } from './Components/EmailClient'
-import { EmailAPI } from './Components/EmailAPI'
+import { Enduser } from './MailComponents/Enduser'
+import { Developer } from './MailComponents/Developer'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -74,9 +74,9 @@ export function EmailAnalytics() {
                 </div>
                 <div>
                     {devIsSelected ? (
-                        <EmailAPI />
+                        <Developer />
                     ) : (
-                        <EmailClient />
+                        <Enduser />
                     )}
                 </div>
             </div>

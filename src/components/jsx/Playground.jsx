@@ -64,8 +64,10 @@ export function Playground() {
 
             </div>
 
-            {/* <EmailAnalytics /> */}
-            <MemoToContent />
+            <div className='flex flex-col space-y-10'>
+                <EmailAnalytics />
+                <MemoToContent />
+            </div>
         </section >
     )
 }
