@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
-import { IconAlignLeft } from '@tabler/icons'
+import { IconAlignLeft, IconLink } from '@tabler/icons'
 import { Enduser } from './MemoComponents/Enduser'
 import { Developer } from './MemoComponents/Developer'
+import { Manager } from './MemoComponents/Manager'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -18,14 +19,14 @@ export function MemoToContent() {
                     <div
                         className='p-3 bg-[#0d0d0d] border border-neutral-900 rounded-2xl'
                     >
-                        <IconAlignLeft className='text-neutral-500 w-6 h-6' />
+                        <IconLink className='text-neutral-500 w-6 h-6' />
                     </div>
                     <div>
                         <h3 className='text-2xl font-bold text-white'>
-                            Memo to content
+                            Chaining complex NLP tasks
                         </h3>
                         <p className='text-gray-400 mt-1'>
-                            Transcribe voice memos to text and create valuable content directly from it.
+                            Embed the power of GPT and NLP into your own processes, e.g. for content creation.
                         </p>
                     </div>
                 </div>
@@ -101,6 +102,9 @@ export function MemoToContent() {
                 )}
                 {showForStakeholders == 'enduser' && (
                     <Enduser />
+                )}
+                {showForStakeholders == 'manager' && (
+                    <Manager />
                 )}
             </div>
         </div>
