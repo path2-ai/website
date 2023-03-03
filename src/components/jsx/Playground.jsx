@@ -26,7 +26,7 @@ export function Playground() {
     const [hideSubNav, setHideSubNav] = useState(true)
 
     return (
-        <section className=' py-16'>
+        <section className='py-16'>
             <div className={classNames(
                 hideSubNav ? 'hidden' : null,
                 'sticky top-14 py-1 z-40 backdrop-blur-md opacity-[98%]'
@@ -59,7 +59,7 @@ export function Playground() {
             </div>
 
 
-            <div className="mx-auto max-w-7xl mx-6"
+            <div className="mx-auto max-w-7xl"
             >
                 <h2 className='text-4xl font-bold text-white text-center flex flex-row space-x-2 items-center justify-center'>
                     <span className='animate-text bg-gradient-to-r from-white via-gray-600 to-white bg-clip-text text-transparent'>
@@ -84,7 +84,7 @@ export function Playground() {
                     }
                 }}
             >
-                <div className='mx-auto max-w-7xl mx-4 my-6 flex flex-col'>
+                <div className='mx-auto max-w-7xl my-6 flex flex-col'>
                     <InView
                         threshold={0.5}
                         as="div" onChange={(inView, entry) => {

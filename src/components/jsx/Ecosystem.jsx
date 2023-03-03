@@ -537,7 +537,7 @@ export function Ecosystem() {
                     type='button'
                     className='bg-transparent hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'
                     onClick={() => {
-                      router.push('/docs/architecture')
+                      router.push('/platform/architecture')
                     }}
                   >
                     <span>
@@ -553,7 +553,7 @@ export function Ecosystem() {
                     type='button'
                     className='mt-2 md:mt-0 hover:text-lime-400 hover:bg-neutral-800 flex rounded-lg p-3 text-base font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'
                     onClick={() => {
-                      router.push('/docs/how-it-works')
+                      router.push('/platform/how-it-works')
                     }}
                   >
                     <span>

@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconUsers, IconWorldWww } from '@tabler/icons'
+import { IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconStack3, IconTools, IconUsers, IconWorldWww } from '@tabler/icons'
 import Link from 'next/link'
 import { KERN_ASSETS_URL } from './_settings'
 import { Menu } from '@headlessui/react'
@@ -20,19 +20,25 @@ const navigation = [
     //         { name: 'CSM assistant', href: 'https://csm-assistant.kern.ai', icon: IconQuote, description: 'Add a digital, intelligent assistant to your customer success team' },
     //     ]
     // },
-    {
-        name: 'Use cases', subnav: [
-            { name: 'Building training data', href: '/#training-data', icon: IconDatabase, description: 'Pipeline and automate your training data' },
-            { name: 'Email automation', href: '/#email-channels', icon: IconMessage, description: 'Automate email-channels from analysis to automation' },
-            { name: 'Webscraping NLP', href: '/#webscraping', icon: IconWorldWww, description: 'Make complex webscraping a breeze' },
-            { name: 'Extract, transform, load', href: '/#etl', icon: IconPerspective, description: 'Build pipelines that understand natural language' },
+    // {
+    //     name: 'Use cases', subnav: [
+    //         { name: 'Building training data', href: '/#training-data', icon: IconDatabase, description: 'Pipeline and automate your training data' },
+    //         { name: 'Email automation', href: '/#email-channels', icon: IconMessage, description: 'Automate email-channels from analysis to automation' },
+    //         { name: 'Webscraping NLP', href: '/#webscraping', icon: IconWorldWww, description: 'Make complex webscraping a breeze' },
+    //         { name: 'Extract, transform, load', href: '/#etl', icon: IconPerspective, description: 'Build pipelines that understand natural language' },
 
+    //     ]
+    // },
+    {
+        name: 'Platform', subnav: [
+            { name: 'Platform', href: '/platform', icon: IconTools, description: 'Get an overview of the platform' },
+            { name: 'Platform architecture', href: '/platform/architecture', icon: IconStack3, description: 'See how the platform of Kern AI works under the hood' },
+            { name: 'How it works', href: '/platform/how-it-works', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
         ]
     },
+
     {
         name: 'Docs', subnav: [
-            { name: 'Platform architecture', href: '/docs/architecture', icon: IconBuildingCastle, description: 'See how the platform of Kern AI works under the hood' },
-            { name: 'How it works', href: '/docs/how-it-works', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
             { name: 'refinery', href: 'https://docs.kern.ai/refinery', icon: null, description: 'The data-centric editor to build data and algorithms' },
             { name: 'bricks', href: 'https://docs.kern.ai/bricks', icon: null, description: 'Our collection of modular and off-the-shelf NLP enrichments' },
             { name: 'gates', href: 'https://docs.kern.ai/gates', icon: null, description: 'Turn refinery into a realtime API' },

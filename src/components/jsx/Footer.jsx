@@ -25,8 +25,8 @@ export function Footer({ isDarkTheme }) {
 
     const navigation = {
         product: [
-            { name: 'Platform architecture', onClick: () => { router.push('/docs/architecture') } },
-            { name: 'How it works', onClick: () => { router.push('/docs/how-it-works') } },
+            { name: 'Platform architecture', onClick: () => { router.push('/platform/architecture') } },
+            { name: 'How it works', onClick: () => { router.push('/platform/how-it-works') } },
             { name: 'Pricing', onClick: () => { router.push('/pricing') } },
         ],
         docs: [
