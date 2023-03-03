@@ -84,7 +84,7 @@ export function Playground() {
                     }
                 }}
             >
-                <div className='mx-auto max-w-7xl my-6 flex flex-col'>
+                <div className='mx-auto max-w-6xl my-6 flex flex-col'>
                     <InView
                         threshold={0.5}
                         as="div" onChange={(inView, entry) => {
