@@ -12,27 +12,27 @@ const slideContent = [
     {
         name: 'workflows',
         title: 'Design workflows',
-        video: "/video/quickstart.mp4",
+        video: "/video/workflows.mp4",
     },
     {
         name: 'annotate',
         title: 'Annotate data',
-        video: "/video/quickstart.mp4",
-    },
-    {
-        name: 'manage',
-        title: 'Manage and orchestrate',
-        video: "/video/quickstart.mp4",
+        video: "/video/annotate.mp4",
     },
     {
         name: 'automate',
         title: 'Build automations',
-        video: "/video/quickstart.mp4",
+        video: "/video/automate.mp4",
+    },
+    {
+        name: 'manage',
+        title: 'Manage and orchestrate',
+        video: "/video/manage.mp4",
     },
     {
         name: 'deploy',
         title: 'Deploy as an API',
-        video: "/video/quickstart.mp4",
+        video: "/video/deploy.mp4",
     }
 ]
 const slideOptions = Object.entries(slideContent).map(([key, value]) => value.name)
@@ -181,25 +181,25 @@ export function TrainingDataPipe() {
             </div>
 
             <div className='mt-10'>
-                <div className='
-                bg-gradient-to-b from-purple-700 via-purple-400 to-purple-700 rounded-lg 
-                  transform 
-                  shadow-[0_0px_100px_10px_rgba(202,73,223,0.5)]
-               '>
-                    <video
-                        width="100%"
-                        className='rounded-lg p-0.5'
-                        autoPlay
-                        loop
-                        muted
-                    >
-                        <source src={
-                            slideContent.find((item) => item.name === current).video
-                        } type="video/mp4"
-                        />
-                        Sorry, your browser doesn't support videos.
-                    </video>
-                </div>
+                {slideContent.map((item) => (
+                    <div className={classNames(
+                        current == item.name ? 'block' : 'hidden',
+                        'bg-gradient-to-b from-purple-700 via-purple-400 to-purple-700 rounded-lg',
+                        'transform shadow-[0_0px_100px_10px_rgba(202,73,223,0.5)]',
+                    )}>
+                        <video
+                            width="100%"
+                            className='rounded-lg p-0.5'
+                            autoPlay
+                            loop
+                            muted
+                        >
+                            <source src={item.video} type="video/mp4"
+                            />
+                            Sorry, your browser doesn't support videos.
+                        </video>
+                    </div>
+                ))}
             </div>
         </div>
     )
