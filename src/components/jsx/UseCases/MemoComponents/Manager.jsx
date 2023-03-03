@@ -54,22 +54,30 @@ export function Manager() {
         {
             name: 'Call center',
             icon: <IconPhoneCall size={24} className='text-gray-200' />,
-            description: 'Transcribe and analyze calls to improve customer experience and reduce costs.'
+            description: 'Transcribe and analyze calls to improve customer experience and reduce costs.',
+            question: "How many calls does your call center have per month?",
+            unit: "calls"
         },
         {
             name: 'Sales follow-up',
             icon: <IconMailOpened size={24} className='text-gray-200' />,
-            description: 'Transcribe and analyze sales calls and follow up with customers to close more deals.'
+            description: 'Transcribe and analyze sales calls and follow up with customers to close more deals.',
+            question: "How many sales calls does your team have per month?",
+            unit: "calls"
         },
         {
             name: 'Meeting notes',
             icon: <IconUsers size={24} className='text-gray-200' />,
-            description: 'Automatically protocol, share and analyze meeting notes and infer action items.'
+            description: 'Automatically protocol, share and analyze meeting notes and infer action items.',
+            question: "How many meetings does your team have per month?",
+            unit: "meetings"
         },
         {
             name: 'Content creation',
             icon: <IconAlignLeft size={24} className='text-gray-200' />,
-            description: 'Automatically create content for your website, shop or blog and optimize for SEO.'
+            description: 'Automatically create content for your website, shop or blog and optimize for SEO.',
+            question: "How many content pieces does your team create per month?",
+            unit: "pieces"
         },
     ])
 
@@ -126,8 +134,6 @@ export function Manager() {
                                             </div>
                                         </div>
                                     ))}
-
-
                                 </div>
                             )}
 
@@ -138,7 +144,7 @@ export function Manager() {
                                         onClick={() => setShowRoI(null)}
                                     >
                                         <IconArrowLeft className='text-gray-200 group-hover:text-green-500' size={16} />
-                                        <span> Go back</span>
+                                        <span>Go back</span>
                                     </button>
 
                                     <div
@@ -155,18 +161,7 @@ export function Manager() {
                                                     className="h-52 text-gray-100 block w-full bg-gradient-to-b from-[#0f0f0f] to-[#141414] p-4 focus:outline-none sm:text-sm resize-none"
                                                 >
                                                     <label for="minmax-range" className="block mb-2 text-sm font-medium text-gray-500">
-                                                        {showRoI.name == 'Call center' && (
-                                                            "How many calls does your call center have per month?"
-                                                        )}
-                                                        {showRoI.name == 'Sales follow-up' && (
-                                                            "How many sales calls does your team have per month?"
-                                                        )}
-                                                        {showRoI.name == 'Meeting notes' && (
-                                                            "How many meetings does your team have per month?"
-                                                        )}
-                                                        {showRoI.name == 'Content creation' && (
-                                                            "How many content pieces does your team create per month?"
-                                                        )}
+                                                        {showRoI.question}
                                                     </label>
                                                     <input
                                                         id="minmax-range"
@@ -181,15 +176,15 @@ export function Manager() {
                                                         <span
                                                             className='text-sm rounded-md border border-neutral-800 bg-neutral-900 w-fit px-2 py-1 text-sm'
                                                         >
-                                                            <span className='font-semibold'>{sliderValue}</span> mails
+                                                            <span className='font-semibold'>{sliderValue}</span> {showRoI.unit}
                                                         </span>
                                                     </div>
                                                     <div className='mt-2'>
                                                         <p className='text-gray-400 text-sm'>
-                                                            <span className='font-semibold text-green-500'>{Math.round(sliderValue * 0.95)}</span> mails will automatically be enriched (e.g. category, sentiment, language) and forwarded to the right department.
+                                                            <span className='font-semibold text-green-500'>All</span> {showRoI.unit} will automatically be transcribed at highest quality.
                                                         </p>
                                                         <p className='text-gray-400 text-sm'>
-                                                            <span className='font-semibold text-green-500'>{Math.round(sliderValue * 0.5)}</span> mails will get an automated response draft.
+                                                            <span className='font-semibold text-green-500'>{Math.round(sliderValue * 0.95)}</span> {showRoI.unit} will automatically be enriched with relevant metadata (e.g. sentiment, entities, topics, etc.).
                                                         </p>
                                                     </div>
                                                 </div>
@@ -237,7 +232,7 @@ export function Manager() {
                                                     </div>
                                                     <div className='mt-6'>
                                                         <p className='text-gray-400 text-sm'>
-                                                            Gain <span className='font-semibold text-green-500'>relevant insights</span> directly from your inbox.
+                                                            Gain <span className='font-semibold text-green-500'>relevant insights</span> directly from your process.
                                                         </p>
                                                     </div>
                                                 </div>
