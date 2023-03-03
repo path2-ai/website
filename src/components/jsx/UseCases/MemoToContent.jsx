@@ -12,6 +12,22 @@ export function MemoToContent() {
 
     const [showForStakeholders, setShowForStakeholders] = useState("enduser")
 
+    const navigation = [{
+        name: 'How does this look like for a user?',
+        showFor: 'enduser',
+        onClick: () => setShowForStakeholders("enduser")
+    },
+    {
+        name: 'What are my benefits?',
+        showFor: 'manager',
+        onClick: () => setShowForStakeholders("manager")
+    },
+    {
+        name: 'Show me the API!',
+        showFor: 'developer',
+        onClick: () => setShowForStakeholders("developer")
+    }]
+
     return (
         <div
             className='my-28'
@@ -33,70 +49,34 @@ export function MemoToContent() {
                         </p>
                     </div>
                 </div>
-                <div className='mx-auto w-fit p-[1px] rounded-2xl bg-gradient-to-r from-gray-900 via-gray-600 to-black'>
-                    <div className='flex flex-row space-x-2 items-center justify-between p-2 text-gray-500 text-sm rounded-2xl bg-neutral-900'>
-
-                        <div className='w-fit p-[1px] rounded-xl bg-gradient-to-r from-gray-800 to-gray-600'>
-                            <button
-                                className={classNames(
-                                    showForStakeholders == 'enduser' && 'text-white',
-                                    'flex flex-row items-center p-2 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 rounded-xl hover:from-neutral-800 hover:via-neutral-700 hover:to-neutral-800 hover:text-white'
-                                )}
-                                onClick={() => setShowForStakeholders("enduser")}
-                            >
-                                <span
-                                    className={classNames(
-                                        'mt-0.5 rounded-full w-2 h-2 inline-block mx-1.5',
-                                        showForStakeholders == 'enduser' ? 'bg-green-500' : 'bg-neutral-500'
-                                    )}
-                                />
-                                <span>
-                                    How does this look like for a user?
-                                </span>
-                            </button>
-                        </div>
-
-                        <div className='w-fit p-[1px] rounded-xl bg-gradient-to-r from-gray-600 via-gray-500 to-gray-600'>
-                            <button
-                                className={classNames(
-                                    showForStakeholders == 'manager' && 'text-white',
-                                    'flex flex-row items-center p-2 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 rounded-xl hover:from-neutral-800 hover:via-neutral-700 hover:to-neutral-800 hover:text-white'
-                                )}
-                                onClick={() => setShowForStakeholders('manager')}
-                            >
-                                <span
-                                    className={classNames(
-                                        'mt-0.5 rounded-full w-2 h-2 inline-block mx-1.5',
-                                        showForStakeholders == 'manager' ? 'bg-green-500' : 'bg-neutral-500'
-                                    )}
-                                />
-                                <span>
-                                    What are my benefits?
-                                </span>
-                            </button>
-                        </div>
-
-                        <div className='w-fit p-[1px] rounded-xl bg-gradient-to-r from-gray-600 to-neutral-800'>
-                            <button
-                                className={classNames(
-                                    showForStakeholders == 'developer' && 'text-white',
-                                    'flex flex-row items-center p-2 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 rounded-xl hover:from-neutral-800 hover:via-neutral-700 hover:to-neutral-800 hover:text-white'
-                                )}
-                                onClick={() => setShowForStakeholders('developer')}
-                            >
-                                <span
-                                    className={classNames(
-                                        'mt-0.5 rounded-full w-2 h-2 inline-block mx-1.5',
-                                        showForStakeholders == 'developer' ? 'bg-green-500' : 'bg-neutral-500'
-                                    )}
-                                />
-                                <span>
-                                    Show me the API for this!
-                                </span>
-                            </button>
+                <div>
+                    <div
+                        className='mx-auto w-fit h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-full opacity-90'
+                    >
+                        <div className='flex flex-row mx-auto p-2 space-x-2'>
+                            {navigation.map((item) => (
+                                <button
+                                    key={item.name}
+                                    onClick={item.onClick}
+                                    className='flex flex-row group space-x-2 items-center relative border border-neutral-800 rounded-full bg-neutral-900 pl-2 pr-3 py-1.5'
+                                >
+                                    <span
+                                        className={classNames(
+                                            showForStakeholders === item.showFor ? 'bg-green-500' : null,
+                                            'mt-0.5 rounded-full w-2 h-2 inline-block mx-1.5 bg-gray-500 group-hover:bg-green-500'
+                                        )}
+                                    />
+                                    <span
+                                        className='text-gray-400 group-hover:text-white'
+                                    >
+                                        {item.name}
+                                    </span>
+                                </button>
+                            ))}
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div className='mt-6'>

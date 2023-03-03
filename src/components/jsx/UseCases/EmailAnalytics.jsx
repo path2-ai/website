@@ -12,14 +12,17 @@ export function EmailAnalytics() {
 
     const navigation = [{
         name: 'How does this look like for a user?',
+        showFor: 'enduser',
         onClick: () => setShowForStakeholders("enduser")
     },
     {
         name: 'What are my benefits?',
+        showFor: 'manager',
         onClick: () => setShowForStakeholders("manager")
     },
     {
         name: 'Show me the API!',
+        showFor: 'developer',
         onClick: () => setShowForStakeholders("developer")
     }]
 
@@ -59,7 +62,10 @@ export function EmailAnalytics() {
                                     className='flex flex-row group space-x-2 items-center relative border border-neutral-800 rounded-full bg-neutral-900 pl-2 pr-3 py-1.5'
                                 >
                                     <span
-                                        className='mt-0.5 rounded-full w-2 h-2 inline-block mx-1.5 bg-gray-500 group-hover:bg-green-500'
+                                        className={classNames(
+                                            showForStakeholders === item.showFor ? 'bg-green-500' : null,
+                                            'mt-0.5 rounded-full w-2 h-2 inline-block mx-1.5 bg-gray-500 group-hover:bg-green-500'
+                                        )}
                                     />
                                     <span
                                         className='text-gray-400 group-hover:text-white'

@@ -80,14 +80,16 @@ export function TrainingDataPipe() {
                     </div>
                 </div>
                 <div className='flex flex-row items-center space-x-2 mx-auto '>
-                    <div className='w-fit p-[1px] rounded-2xl bg-gradient-to-r from-gray-900 via-gray-600 to-black'>
-                        <div className='flex flex-row space-x-2 items-center justify-between p-2 text-gray-500 text-sm rounded-2xl bg-neutral-900'>
+                    <div
+                        className='mx-auto w-fit h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-full opacity-90'
+                    >
+                        <div className='flex flex-row mx-auto p-2 space-x-2'>
                             {slideContent.map((item) => (
-                                <div className='w-fit p-[1px] rounded-xl bg-gradient-to-r from-gray-800 to-gray-700'>
+                                <div>
                                     <div
                                         className={classNames(
-                                            clickedOption === item.name ? 'border border-green-500' : 'border border-transparent',
-                                            'p-2 bg-gradient-to-r from-neutral-900 via-neutral-800 to-neutral-900 rounded-xl hover:from-neutral-800 hover:via-neutral-700 hover:to-neutral-800 hover:text-white cursor-pointer'
+                                            clickedOption === item.name ? 'border border-green-500' : 'border border-neutral-800',
+                                            'text-gray-300 rounded-full p-2 bg-neutral-900 hover:text-white cursor-pointer'
                                         )}
                                         onClick={() => {
                                             if (item.name === clickedOption) {
@@ -109,7 +111,6 @@ export function TrainingDataPipe() {
                                                 current == item.name && 'text-white',
                                                 'flex flex-row items-center'
                                             )}
-
                                         >
                                             <span
                                                 className={classNames(
@@ -121,19 +122,19 @@ export function TrainingDataPipe() {
                                                 {item.title}
                                             </span>
                                         </button>
-                                        <div
-                                            className={classNames(
-                                                current == item.name ? 'bg-gray-200' : 'bg-gradient-to-r from-neutral-800 via-neutral-700 to-neutral-800',
-                                                'mt-1 w-full h-1.5 rounded-full'
-                                            )}
-                                        >
-                                            {current == item.name && !clickedOption && (
-                                                <div
-                                                    className='bg-green-500 h-1.5 rounded-full' style={{ width: `${timer / 5}%` }}
-                                                />
-                                            )}
 
-                                        </div>
+                                    </div>
+                                    <div
+                                        className={classNames(
+                                            current == item.name ? 'bg-gray-200' : 'bg-neutral-800',
+                                            'mt-1 w-3/4 mx-auto h-1.5 rounded-full'
+                                        )}
+                                    >
+                                        {current == item.name && !clickedOption && (
+                                            <div
+                                                className='bg-green-500 h-1.5 rounded-full' style={{ width: `${timer / 5}%` }}
+                                            />
+                                        )}
                                     </div>
                                 </div>
                             ))}
