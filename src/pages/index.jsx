@@ -3,6 +3,7 @@ import { Ecosystem } from '@/components/jsx/Ecosystem'
 import { CallToAction } from '@/components/jsx/CallToAction'
 import { UseCases } from '@/components/jsx/UseCases'
 import { Playground } from '@/components/jsx/Playground'
+import { PlatformBenefits } from '@/components/jsx/PlatformBenefits'
 
 
 
@@ -11,8 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <Playground />
-      {/* <Ecosystem /> */}
-      {/* <UseCases /> */}
+      <PlatformBenefits />
       <CallToAction />
     </>
   )
