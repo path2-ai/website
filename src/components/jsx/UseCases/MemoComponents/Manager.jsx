@@ -1,4 +1,4 @@
-import { IconCategory2, IconNote, IconRoute } from '@tabler/icons'
+import { IconAlignLeft, IconArrowLeft, IconArrowRight, IconCategory2, IconMailOpened, IconNote, IconPhone, IconPhoneCall, IconRoute, IconUsers } from '@tabler/icons'
 import { useState } from 'react'
 import { Doughnut } from 'react-chartjs-2';
 import Chart from 'chart.js/auto'; // this must be imported to enable the charts plugin; don't remove it!
@@ -48,6 +48,30 @@ export function Manager() {
     };
 
     const [sliderValue, setSliderValue] = useState(50)
+    const [showRoI, setShowRoI] = useState(null)
+
+    const [useCases, setUseCases] = useState([
+        {
+            name: 'Call center',
+            icon: <IconPhoneCall size={24} className='text-gray-200' />,
+            description: 'Transcribe and analyze calls to improve customer experience and reduce costs.'
+        },
+        {
+            name: 'Sales follow-up',
+            icon: <IconMailOpened size={24} className='text-gray-200' />,
+            description: 'Transcribe and analyze sales calls and follow up with customers to close more deals.'
+        },
+        {
+            name: 'Meeting notes',
+            icon: <IconUsers size={24} className='text-gray-200' />,
+            description: 'Automatically protocol, share and analyze meeting notes and infer action items.'
+        },
+        {
+            name: 'Content creation',
+            icon: <IconAlignLeft size={24} className='text-gray-200' />,
+            description: 'Automatically create content for your website, shop or blog and optimize for SEO.'
+        },
+    ])
 
     return (
         <>
@@ -56,7 +80,7 @@ export function Manager() {
                     <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
                         <div className="lg:pr-4">
                             <div className="lg:max-w-lg">
-                                <p className="text-base font-semibold leading-7 text-green-400">Integrate NLP into your process</p>
+                                <p className="text-base font-semibold leading-7 text-green-400">Integrate NLP into your processes</p>
                                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">"What can ChatGPT do for my business?"</h1>
                                 <p className="mt-6 text-xl leading-8 text-gray-300">
                                     We get this question on a daily basis. And it's not just ChatGPT, but so much more. Embed and chain powerful NLP models into your processes.
@@ -67,113 +91,175 @@ export function Manager() {
                     <div className="p-16 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
 
                         <div className='relative'>
-
-                            <div
-                                className='absolute w-full h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
-                            />
-
-                            <div className='p-6 relative flex flex-col space-y-6'>
-                                <div className=''>
-                                    <div className='p-[1px] rounded-md bg-gradient-to-b from-gray-800 to-neutral-900'>
-                                        <div className='flex flex-row items-center justify-between px-4 py-1 text-gray-500 text-sm rounded-t-md bg-neutral-900 border-b border-gray-800'>
-                                            Operational benefits
-                                        </div>
+                            {!showRoI && (
+                                <div
+                                    className='grid grid-cols-2 gap-8'
+                                >
+                                    {useCases.map((useCase, index) => (
                                         <div
-                                            className="h-52 text-gray-100 block w-full bg-gradient-to-b from-[#0f0f0f] to-[#141414] p-4 focus:outline-none sm:text-sm resize-none"
+                                            className='relative'
                                         >
-                                            <label for="minmax-range" className="block mb-2 text-sm font-medium text-gray-500">
-                                                How many emails are entered into your central inbox per day?
-                                            </label>
-                                            <input
-                                                id="minmax-range"
-                                                type="range"
-                                                min={0}
-                                                max={500}
-                                                value={sliderValue}
-                                                onChange={(e) => setSliderValue(e.target.value)}
-                                                className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-green-500"
+                                            <div
+                                                className='absolute w-full h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
                                             />
-                                            <div className='mt-1 flex justify-end'>
-                                                <span
-                                                    className='text-sm rounded-md border border-neutral-800 bg-neutral-900 w-fit px-2 py-1 text-sm'
-                                                >
-                                                    <span className='font-semibold'>{sliderValue}</span> mails
-                                                </span>
-                                            </div>
-                                            <div className='mt-2'>
-                                                <p className='text-gray-400 text-sm'>
-                                                    <span className='font-semibold text-green-500'>{Math.round(sliderValue * 0.95)}</span> mails will automatically be enriched (e.g. category, sentiment, language) and forwarded to the right department.
-                                                </p>
-                                                <p className='text-gray-400 text-sm'>
-                                                    <span className='font-semibold text-green-500'>{Math.round(sliderValue * 0.5)}</span> mails will get an automated response draft.
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className='flex flex-row items-center justify-between px-4 py-1 text-gray-500 text-sm border-t bg-neutral-900 border-b border-gray-800'>
-                                            Analytical benefits
-                                        </div>
-                                        <div
-                                            className="flex flex-col h-60 text-gray-100 block w-full bg-gradient-to-b from-[#141414] to-[#111111] p-4 focus:outline-none sm:text-sm resize-none"
-                                        >
-                                            <div className='mt-2 flex flex-row'>
-                                                <div
-                                                    className='-ml-10'
-                                                >
-                                                    <Doughnut
-                                                        data={dataSentiment}
-                                                        options={{
-                                                            responsive: true,
-                                                            maintainAspectRatio: false,
-                                                            plugins: {
-                                                                legend: {
-                                                                    display: false,
-                                                                },
-                                                            },
-                                                            borderColor: '#171717',
-                                                        }}
-                                                    />
+                                            <div className='flex flex-col m-3 relative border border-gray-800 rounded-lg bg-neutral-900 p-4 space-y-3'>
+                                                <div className='flex flex-row items-center space-x-3 '>
+                                                    <div>
+                                                        {useCase.icon}
+                                                    </div>
+                                                    <h3 className='text-gray-200 font-semibold'>
+                                                        {useCase.name}
+                                                    </h3>
                                                 </div>
-                                                <div
-                                                    className='-ml-28'
-                                                >
-                                                    <Doughnut
-                                                        data={dataIntent}
-                                                        options={{
-                                                            responsive: true,
-                                                            maintainAspectRatio: false,
-                                                            plugins: {
-                                                                legend: {
-                                                                    display: false,
-                                                                },
-                                                            },
-                                                            borderColor: '#171717',
-                                                        }}
-                                                    />
+                                                <div>
+                                                    <p className='text-gray-400 text-sm'>
+                                                        {useCase.description}
+                                                    </p>
                                                 </div>
-                                            </div>
-                                            <div className='mt-6'>
-                                                <p className='text-gray-400 text-sm'>
-                                                    Gain <span className='font-semibold text-green-500'>relevant insights</span> directly from your inbox.
-                                                </p>
+                                                <button
+                                                    className='group flex flex-row items-center space-x-2 text-sm text-gray-200 hover:text-green-500'
+                                                    onClick={() => setShowRoI(useCase)}
+                                                >
+                                                    <span> More details</span>
+                                                    <IconArrowRight className='text-gray-200 group-hover:text-green-500' size={16} />
+                                                </button>
                                             </div>
                                         </div>
-                                        <div
-                                            className='h-12 rounded-b-md bg-neutral-800 border-t border-gray-800 flex flex-row pl-4 pr-2 items-center justify-between text-sm text-gray-500'
-                                        >
-                                            <span>
-                                                Help your team to work smarter
-                                            </span>
-                                            <button
-                                                type="button"
-                                                className="inline-flex items-center px-2 py-1 border border-gray-800 text-sm font-medium rounded-md shadow-sm text-gray-200 bg-neutral-900 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                                            >
-                                                Get started
-                                            </button>
+                                    ))}
 
+
+                                </div>
+                            )}
+
+                            {showRoI && (
+                                <div>
+                                    <button
+                                        className='mb-2 flex flex-row items-center space-x-2 text-sm text-gray-200 hover:text-green-500 group'
+                                        onClick={() => setShowRoI(null)}
+                                    >
+                                        <IconArrowLeft className='text-gray-200 group-hover:text-green-500' size={16} />
+                                        <span> Go back</span>
+                                    </button>
+
+                                    <div
+                                        className='absolute w-full h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
+                                    />
+
+                                    <div className='p-6 relative flex flex-col space-y-6'>
+                                        <div className=''>
+                                            <div className='p-[1px] rounded-md bg-gradient-to-b from-gray-800 to-neutral-900'>
+                                                <div className='flex flex-row items-center justify-between px-4 py-1 text-gray-500 text-sm rounded-t-md bg-neutral-900 border-b border-gray-800'>
+                                                    Operational benefits
+                                                </div>
+                                                <div
+                                                    className="h-52 text-gray-100 block w-full bg-gradient-to-b from-[#0f0f0f] to-[#141414] p-4 focus:outline-none sm:text-sm resize-none"
+                                                >
+                                                    <label for="minmax-range" className="block mb-2 text-sm font-medium text-gray-500">
+                                                        {showRoI.name == 'Call center' && (
+                                                            "How many calls does your call center have per month?"
+                                                        )}
+                                                        {showRoI.name == 'Sales follow-up' && (
+                                                            "How many sales calls does your team have per month?"
+                                                        )}
+                                                        {showRoI.name == 'Meeting notes' && (
+                                                            "How many meetings does your team have per month?"
+                                                        )}
+                                                        {showRoI.name == 'Content creation' && (
+                                                            "How many content pieces does your team create per month?"
+                                                        )}
+                                                    </label>
+                                                    <input
+                                                        id="minmax-range"
+                                                        type="range"
+                                                        min={0}
+                                                        max={500}
+                                                        value={sliderValue}
+                                                        onChange={(e) => setSliderValue(e.target.value)}
+                                                        className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-green-500"
+                                                    />
+                                                    <div className='mt-1 flex justify-end'>
+                                                        <span
+                                                            className='text-sm rounded-md border border-neutral-800 bg-neutral-900 w-fit px-2 py-1 text-sm'
+                                                        >
+                                                            <span className='font-semibold'>{sliderValue}</span> mails
+                                                        </span>
+                                                    </div>
+                                                    <div className='mt-2'>
+                                                        <p className='text-gray-400 text-sm'>
+                                                            <span className='font-semibold text-green-500'>{Math.round(sliderValue * 0.95)}</span> mails will automatically be enriched (e.g. category, sentiment, language) and forwarded to the right department.
+                                                        </p>
+                                                        <p className='text-gray-400 text-sm'>
+                                                            <span className='font-semibold text-green-500'>{Math.round(sliderValue * 0.5)}</span> mails will get an automated response draft.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className='flex flex-row items-center justify-between px-4 py-1 text-gray-500 text-sm border-t bg-neutral-900 border-b border-gray-800'>
+                                                    Analytical benefits
+                                                </div>
+                                                <div
+                                                    className="flex flex-col h-60 text-gray-100 block w-full bg-gradient-to-b from-[#141414] to-[#111111] p-4 focus:outline-none sm:text-sm resize-none"
+                                                >
+                                                    <div className='mt-2 flex flex-row'>
+                                                        <div
+                                                            className='-ml-10'
+                                                        >
+                                                            <Doughnut
+                                                                data={dataSentiment}
+                                                                options={{
+                                                                    responsive: true,
+                                                                    maintainAspectRatio: false,
+                                                                    plugins: {
+                                                                        legend: {
+                                                                            display: false,
+                                                                        },
+                                                                    },
+                                                                    borderColor: '#171717',
+                                                                }}
+                                                            />
+                                                        </div>
+                                                        <div
+                                                            className='-ml-28'
+                                                        >
+                                                            <Doughnut
+                                                                data={dataIntent}
+                                                                options={{
+                                                                    responsive: true,
+                                                                    maintainAspectRatio: false,
+                                                                    plugins: {
+                                                                        legend: {
+                                                                            display: false,
+                                                                        },
+                                                                    },
+                                                                    borderColor: '#171717',
+                                                                }}
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div className='mt-6'>
+                                                        <p className='text-gray-400 text-sm'>
+                                                            Gain <span className='font-semibold text-green-500'>relevant insights</span> directly from your inbox.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    className='h-12 rounded-b-md bg-neutral-800 border-t border-gray-800 flex flex-row pl-4 pr-2 items-center justify-between text-sm text-gray-500'
+                                                >
+                                                    <span>
+                                                        Help your team to work smarter
+                                                    </span>
+                                                    <button
+                                                        type="button"
+                                                        className="inline-flex items-center px-2 py-1 border border-gray-800 text-sm font-medium rounded-md shadow-sm text-gray-200 bg-neutral-900 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                                                    >
+                                                        Get started
+                                                    </button>
+
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
 
                     </div>
