@@ -183,7 +183,7 @@ export function TrainingDataPipe() {
                 </div>
             </div>
 
-            <div className='mt-10'>
+            <div className='max-w-5xl mx-auto mt-10'>
                 {slideContent.map((item) => (
                     <div className={classNames(
                         current == item.name ? 'block' : 'hidden',
