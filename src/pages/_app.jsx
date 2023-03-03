@@ -48,7 +48,7 @@ export default function App({ Component, pageProps }) {
     } else {
       return (
         <div className='bg-black'>
-          <div className="sticky top-0 z-50 backdrop-blur-md opacity-[98%]">
+          <div className="sticky top-0 z-50 backdrop-blur-lg opacity-[98%]">
             <Header isDarkTheme={true} />
           </div>
           <Animate play start={{ opacity: 0 }} end={{ opacity: 1 }}>

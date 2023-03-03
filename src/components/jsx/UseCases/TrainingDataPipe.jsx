@@ -59,7 +59,10 @@ export function TrainingDataPipe() {
 
 
     return (
-        <div className='my-20'>
+        <div
+            className='my-28'
+            id="training-data"
+        >
             <div className='max-w-5xl mx-auto flex flex-col space-y-6'>
                 <div className='flex flex-row items-center space-x-4'>
                     <div
