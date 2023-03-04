@@ -71,35 +71,15 @@ function getEmployeeSurveyDataset(employeeData) {
 }
 
 export const positions = [
-    // {
-    //     id: 1,
-    //     title: 'Go-to-Market Manager',
-    //     type: 'Full-time',
-    //     href: 'https://join.com/companies/kernai/6849194-go-to-market-manager',
-    //     location: 'Remote or Bonn',
-    //     department: 'Business Development',
-    //     closeDate: '2022-02-28',
-    //     closeDateFull: 'February 28, 2022',
-    // },
-    // {
-    //     id: 2,
-    //     title: 'Founders Associate',
-    //     type: 'Full-time',
-    //     href: 'https://join.com/companies/kernai/6849584-founders-associate',
-    //     location: 'Remote or Bonn',
-    //     department: 'Founders department',
-    //     closeDate: '2022-02-28',
-    //     closeDateFull: 'February 28, 2022',
-    // },
     {
-        id: 3,
-        title: 'Working student for Administration',
+        id: 1,
+        title: 'Working student - bricks contributor',
         type: 'Working student',
-        href: 'https://join.com/companies/kernai/6849926-working-student-for-administration',
-        location: 'Berlin/Potsdam',
-        department: 'Administration',
-        closeDate: '2022-02-28',
-        closeDateFull: 'February 28, 2022',
+        href: 'https://join.com/companies/kernai/7353178-working-student-natural-language-processing-engineer-project-bricks',
+        location: 'Remote',
+        department: 'Engineering',
+        closeDate: '2022-05-01',
+        closeDateFull: 'May 1, 2022',
     },
 ]
 
