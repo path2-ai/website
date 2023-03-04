@@ -1,4 +1,4 @@
-import { IconArrowRight, IconChessKnight, IconDatabase, IconHeart, IconStack3, IconTerminal, IconTrophy, IconUser } from "@tabler/icons"
+import { IconArrowRight, IconBrandDiscord, IconChessKnight, IconDatabase, IconHeart, IconStack3, IconTerminal, IconTrophy, IconUser } from "@tabler/icons"
 
 const useCases = [
     {
@@ -81,7 +81,7 @@ export function PlatformBenefits() {
 
                     </div>
                     <div
-                        className='absolute w-full h-full bg-gradient-to-b from-[#241b0c] to-[#1f1505] border border-neutral-800 rounded-2xl opacity-90'
+                        className='absolute w-full h-full bg-gradient-to-b from-[#241b0c] to-[#1f1505] border border-neutral-800 rounded-2xl opacity-90 animate-pulse'
                     />
                     <div className='flex flex-col m-3 relative border border-yellow-800 rounded-lg bg-neutral-900 p-4 space-y-3'>
                         <div className='flex flex-row items-center space-x-3 '>
@@ -97,13 +97,25 @@ export function PlatformBenefits() {
                                 When you become a client, we don't stop caring once you sign the contract. We are here to help you succeed, and we will do everything in our power to make that happen.
                             </p>
                         </div>
-                        <a
-                            className='group flex flex-row items-center space-x-2 text-sm text-gray-200 hover:text-yellow-500'
-                            href='/company/about'
-                        >
-                            <span>The power of our small team</span>
-                            <IconArrowRight className='text-gray-200 group-hover:text-yellow-500' size={16} />
-                        </a>
+                        <div className="flex flex-row space-x-4">
+                            <a
+                                className='group flex flex-row items-center space-x-1 text-sm text-gray-200 hover:text-yellow-500'
+                                href='https://discord.com/channels/993436333055938600/994293197087969311'
+                                target='_blank'
+                                rel='noreferrer noopener'
+                            >
+                                <IconBrandDiscord className='text-gray-200 group-hover:text-yellow-500' size={16} />
+                                <span>See our CTO responding to community questions within minutes</span>
+
+                            </a>
+                            <a
+                                className='group flex flex-row items-center space-x-1 text-sm text-gray-200 hover:text-yellow-500'
+                                href='/company/about'
+                            >
+                                <IconArrowRight className='text-gray-200 group-hover:text-yellow-500' size={16} />
+                                <span>The power of our small team</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
