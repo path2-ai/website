@@ -43,6 +43,7 @@ export function PlatformBenefits() {
                     {useCases.map((useCase, index) => (
                         <div
                             className='relative'
+                            key={index}
                         >
                             <div
                                 className='absolute w-full h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
