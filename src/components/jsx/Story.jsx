@@ -1,4 +1,5 @@
 import { IconArrowDown, IconArrowRight, IconCategory2, IconFile, IconHighlight, IconMail, IconSearch, IconWindmill, IconWorldWww } from '@tabler/icons'
+import Link from 'next/link'
 
 export function Story() {
 
@@ -332,7 +333,7 @@ export function Story() {
                                                     It will change everything
                                                 </h3>
                                                 <p className="text-gray-400 text-center text-sm mt-4">
-                                                    we curated the most prominent use cases built on our platform below.
+                                                    We curated the most prominent use cases built on our platform below.
                                                 </p>
                                             </div>
                                         </div>
@@ -342,12 +343,14 @@ export function Story() {
                         </div>
 
                         <div className='mt-2'>
-                            <button className='flex flex-row items-center space-x-2 group text-gray-200 hover:text-white'>
+                            <Link
+                                href="/file/Kern AI - Insurance.pdf" download
+                                className='flex flex-row items-center space-x-2 group text-gray-200 hover:text-white'>
                                 <IconArrowRight className='h-5 w-5 text-gray-200 group-hover:text-white group-hover:rotate-90 transition-transform duration-300 ease-in-out' />
                                 <span>
                                     Download slides
                                 </span>
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
