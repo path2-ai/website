@@ -81,9 +81,9 @@ export function PlatformBenefits() {
 
                     </div>
                     <div
-                        className='absolute w-full h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
+                        className='absolute w-full h-full bg-gradient-to-b from-[#241b0c] to-[#1f1505] border border-neutral-800 rounded-2xl opacity-90'
                     />
-                    <div className='flex flex-col m-3 relative border border-gray-800 rounded-lg bg-neutral-900 p-4 space-y-3'>
+                    <div className='flex flex-col m-3 relative border border-yellow-800 rounded-lg bg-neutral-900 p-4 space-y-3'>
                         <div className='flex flex-row items-center space-x-3 '>
                             <div>
                                 <IconTrophy className='text-yellow-500' size={24} />
@@ -97,12 +97,13 @@ export function PlatformBenefits() {
                                 When you become a client, we don't stop caring once you sign the contract. We are here to help you succeed, and we will do everything in our power to make that happen.
                             </p>
                         </div>
-                        <button
-                            className='group flex flex-row items-center space-x-2 text-sm text-gray-200 hover:text-green-500'
+                        <a
+                            className='group flex flex-row items-center space-x-2 text-sm text-gray-200 hover:text-yellow-500'
+                            href='/company/about'
                         >
-                            <span> More details</span>
-                            <IconArrowRight className='text-gray-200 group-hover:text-green-500' size={16} />
-                        </button>
+                            <span>The power of our small team</span>
+                            <IconArrowRight className='text-gray-200 group-hover:text-yellow-500' size={16} />
+                        </a>
                     </div>
                 </div>
             </div>
