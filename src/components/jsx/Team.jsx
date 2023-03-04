@@ -37,16 +37,13 @@ export function Team() {
                         <p className="mt-2 text-sm leading-5 text-gray-300">
                             As large language models are becoming more and more powerful, we further believe that the next step is to make them more data-centric. This gives developers and scientists the superpower to control and shape the models to their needs. And for this to happen, data must finally be the first-class citizen in the world of NLP.
                         </p>
-                        <p className="mt-2 text-sm leading-5 text-gray-300">
-                            We will not stop until training data is treated as if it were software code, such that ideas can be turned into reality in a matter of hours.
-                        </p>
                         <div className="mt-10">
                             <div
                                 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600"
                             >Our mission
                             </div> {' '}
                             <div className="text-gray-300 -sm mt-2">
-                                Shorten the gap between ideas and reality in NLP, ultimately enabling reliable, controllable and powerful natural language interfaces.
+                                Help you succeed in one of the most fascinating technology innovations of our time.
                             </div>
                         </div>
                     </div>
