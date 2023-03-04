@@ -86,6 +86,9 @@ export function Team() {
                         <h2 className="text-2xl font-bold tracking-tight text-gray-100">
                             Our founders
                         </h2>
+                        <h3 className="text-lg font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-600">
+                            are here to help you succeed with NLP
+                        </h3>
                         <p className="mt-2 text-sm leading-5 text-gray-300">
                             Henrik and Johannes started Kern AI during their master's degree at <a
                                 href="https://hpi.de/"
@@ -113,6 +116,14 @@ export function Team() {
                             <p className='text-gray-300 text-xs'>
                                 Co-founder & CEO
                             </p>
+                            <a
+                                href="https://cal.com/jhoetter"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm text-green-500 hover:text-green-600"
+                            >
+                                Book a call with Johannes
+                            </a>
                         </div>
                         <div>
                             <img
