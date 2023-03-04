@@ -3,8 +3,8 @@ import Link from 'next/link'
 
 export function Story() {
 
-    const people = [
-        { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
+    const companies = [
+        { name: 'Kern AI GmbH', founded: '2020', teamsize: '11' },
     ]
 
     const nlpActions = [{
@@ -74,7 +74,7 @@ export function Story() {
                                 >
                                     <div className="inline-block">
                                         <div
-                                            className="p-4 h-72 overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
+                                            className="p-4 w-[34rem] w-fit h-72 overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
                                         >
                                             <div className="px-4 sm:px-6 lg:px-8">
                                                 <div className="mt-12 flow-root">
@@ -87,21 +87,21 @@ export function Story() {
                                                                             Name
                                                                         </th>
                                                                         <th scope="col" className="px-4 py-3.5 text-left text-sm font-semibold text-gray-100">
-                                                                            Title
+                                                                            Founded
                                                                         </th>
                                                                         <th scope="col" className="px-4 py-3.5 text-left text-sm font-semibold text-gray-100">
-                                                                            Email
+                                                                            Employees
                                                                         </th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody className="divide-y divide-gray-800">
-                                                                    {people.map((person) => (
-                                                                        <tr key={person.email} className="divide-x divide-gray-800">
+                                                                    {companies.map((company) => (
+                                                                        <tr key={company.email} className="divide-x divide-gray-800">
                                                                             <td className="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-100 sm:pl-0">
-                                                                                {person.name}
+                                                                                {company.name}
                                                                             </td>
-                                                                            <td className="whitespace-nowrap p-4 text-sm text-gray-500">{person.title}</td>
-                                                                            <td className="whitespace-nowrap p-4 text-sm text-gray-500">{person.email}</td>
+                                                                            <td className="whitespace-nowrap p-4 text-sm text-gray-500">{company.founded}</td>
+                                                                            <td className="whitespace-nowrap p-4 text-sm text-gray-500">{company.teamsize}</td>
                                                                         </tr>
                                                                     ))}
                                                                 </tbody>
@@ -282,7 +282,7 @@ export function Story() {
                                         >
                                             <div className='flex items-center justify-center h-full text-gray-300'>
                                                 <span className='transform -rotate-180' style={{ writingMode: 'vertical-rl' }}>
-                                                    In other words
+                                                    This enables new applications
                                                 </span>
                                             </div>
                                         </div>
@@ -333,6 +333,9 @@ export function Story() {
                                                     It will change everything
                                                 </h3>
                                                 <p className="text-gray-400 text-center text-sm mt-4">
+                                                    ChatGPT is only the beginning.
+                                                </p>
+                                                <p className="text-gray-400 text-center text-sm">
                                                     We curated the most prominent use cases built on our platform below.
                                                 </p>
                                             </div>
@@ -344,7 +347,7 @@ export function Story() {
 
                         <div className='mt-2'>
                             <Link
-                                href="/file/Kern AI - Insurance.pdf" download
+                                href="/file/kernai_pitch_deck.pdf" download
                                 className='flex flex-row items-center space-x-2 group text-gray-200 hover:text-white'>
                                 <IconArrowRight className='h-5 w-5 text-gray-200 group-hover:text-white group-hover:rotate-90 transition-transform duration-300 ease-in-out' />
                                 <span>
