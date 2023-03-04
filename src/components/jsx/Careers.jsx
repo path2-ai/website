@@ -6,43 +6,43 @@ import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto'; // this must be imported to enable the charts plugin; don't remove it!
 import { useState } from 'react';
 
-const labels = ['July', 'August', 'September', 'October', 'November', 'December', 'January', 'February'];
+const labels = ['July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March']
 const employeeSurveyData = [
     {
         label: "How happy are you with your role?",
         colorPrimary: "#f97316", // orange
         colorSecondary: "#fdba74",
-        data: [6.2, 6.6, 5.8, 6.2, 6, 6.2, 6.6, 6.4]
+        data: [6.2, 6.6, 5.8, 6.2, 6, 6.2, 6.6, 6.4, 6.6]
     },
     {
         label: "Are my work and efforts sufficiently appreciated?",
         colorPrimary: "#84cc16", // green
         colorSecondary: "#bef264",
-        data: [6, 6.4, 6, 6.2, 6.6, 6.4, 6.6, 6.4]
+        data: [6, 6.4, 6, 6.2, 6.6, 6.4, 6.6, 6.4, 6.6]
     },
     {
         label: "Do I feel comfortable expressing my opinion at work and is it respected?",
         colorPrimary: "#14b8a6", // teal
         colorSecondary: "#5eead4",
-        data: [6.4, 6.6, 6.4, 6.6, 6.8, 6.6, 6.8, 6.6]
+        data: [6.4, 6.6, 6.4, 6.6, 6.8, 6.6, 6.8, 6.6, 6.2]
     },
     {
         label: "Do I know what is expected of me at work?",
         colorPrimary: "#8b5cf6", // purple
         colorSecondary: "#c4b5fd",
-        data: [6.2, 6.4, 6.2, 6.4, 6.6, 6.4, 6.6, 6.6]
+        data: [6.2, 6.4, 6.2, 6.4, 6.6, 6.4, 6.6, 6.6, 6.4]
     },
     {
         label: "I have the feeling to have clear company goals ahead of me.",
         colorPrimary: "#ec4899", // pink
         colorSecondary: "#f9a8d4",
-        data: [6, 6.2, 6.2, 6.6, 6.6, 6.6, 6.8, 6.8]
+        data: [6, 6.2, 6.2, 6.6, 6.6, 6.6, 6.8, 6.8, 6.8]
     },
     {
         label: "I know exactly what I do and my work is clearly defined.",
         colorPrimary: "#ef4444", // red
         colorSecondary: "#fca5a5",
-        data: [5.6, 5.8, 5.6, 5.8, 6, 5.8, 6, 6.4]
+        data: [5.6, 5.8, 5.6, 5.8, 6, 5.8, 6, 6.4, 6.4]
     },
 ]
 
