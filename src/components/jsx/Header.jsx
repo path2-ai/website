@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IconApi, IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconStack3, IconTags, IconTools, IconUsers, IconWorldWww } from '@tabler/icons'
+import { IconApi, IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChessKnight, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconStack3, IconTags, IconTools, IconUsers, IconWorldWww } from '@tabler/icons'
 import Link from 'next/link'
 import { KERN_ASSETS_URL } from './_settings'
 import { Menu } from '@headlessui/react'
@@ -65,6 +65,7 @@ const navigation = [
             { name: 'About', href: '/company/about', icon: IconUsers, description: 'Get to know the team behind Kern AI' },
             { name: 'Careers', href: '/company/careers', icon: IconBriefcase, description: 'Interested in joining the team? Take a look at our open positions' },
             { name: 'Blog', href: '/company/blog', icon: IconArticle, description: 'Updates and interesting articles curated by our team' },
+            { name: 'Lean NLP Canvas', href: '/company/lean-nlp-canvas', icon: IconChessKnight, description: 'Plan your NLP use case with our lean canvas' },
         ]
     },
 ]
