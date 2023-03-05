@@ -373,7 +373,7 @@ export function Ecosystem() {
             'animate-text')}>data-centric NLP</span>
       </h1>
       <p className='mt-8 text-center text-gray-300 text-lg'>
-        Designed with an open-core available on GitHub. Build from templates or start completely from scratch.
+        Designed with an open-core available on GitHub. Build from templates or build completely from scratch.
       </p>
       <div className='mt-16 mx-6'>
         <div>
