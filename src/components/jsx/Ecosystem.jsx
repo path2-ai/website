@@ -5,10 +5,38 @@ import { BricksIcon } from '@/util/BricksIcon'
 import { GatesIcon } from '@/util/GatesIcon'
 import { WorkflowIcon } from '@/util/WorkflowIcon'
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
-import { Icon360, IconApiApp, IconApps, IconBrain, IconBrandDocker, IconBrandOpenSource, IconBrandPython, IconBuildingCastle, IconCategory2, IconCode, IconCrystalBall, IconDashboard, IconDatabase, IconDragDrop, IconGrowth, IconHighlight, IconLock, IconNumber3, IconPlayerPause, IconPlayerPlay, IconRoute, IconTag, IconWindmill } from '@tabler/icons'
+import { Icon360, IconApiApp, IconApps, IconBrain, IconBrandDocker, IconBrandOpenSource, IconBrandPython, IconBuildingCastle, IconCategory2, IconChartBar, IconCode, IconCrystalBall, IconDashboard, IconDatabase, IconDragDrop, IconGrowth, IconHighlight, IconLock, IconNumber3, IconPlayerPause, IconPlayerPlay, IconRoute, IconTag, IconWindmill } from '@tabler/icons'
 import Link from 'next/link'
 import { Tooltip } from "@nextui-org/react";
 import { useRouter } from 'next/router'
+import { IconArrowRight, IconBrandDiscord, IconChessKnight, IconHeart, IconStack3, IconTerminal, IconTrophy, IconUser } from "@tabler/icons"
+
+const useCases = [
+  {
+    name: 'Speed and flexibility',
+    icon: IconTerminal,
+    mirror: false,
+    description: 'You need some Python knowledge to build an application on our platform, but you do not need a PhD. You have the full flexibility, but can developer fast and easy.',
+  },
+  {
+    name: 'Your data intellectual property',
+    icon: IconDatabase,
+    mirror: false,
+    description: 'Data lives longer than code. With our data-centric approach, you build your intellectual data property, allowing you to stay flexible when it comes to your requirements.',
+  },
+  {
+    name: 'Models change',
+    icon: IconBrain,
+    mirror: false,
+    description: "Let's be honest here, models change. GPT-4 will follow GPT-3, and Huggingface releases new models incredibly fast. But your data is produced by your applications. Choose the right stack to build your data strategically.",
+  },
+  {
+    name: 'Long-tail use cases',
+    icon: IconChartBar,
+    mirror: true,
+    description: 'There are use cases like the info@-inbox one, which is recurring quite often. But there are also use cases that are very specific to your business. We help you build both with our low-code, data-centric NLP approach.',
+  }
+]
 
 const YOUTUBE_VIDEO = 'https://www.youtube.com/watch?v=7VXqimJvzdU'
 
@@ -644,6 +672,46 @@ export function Ecosystem() {
               </div>
 
             </div>
+          </div>
+        </div>
+      </div>
+      <div className='flex flex-col justify-center max-w-5xl mx-auto mt-16'>
+        <h2
+          className="text-3xl w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-neutral-600 to-neutral-300 animate-text"
+        >
+          Why we believe low-code and data-centric will power the future of NLP
+        </h2>
+        <div className='mt-6'>
+          <div
+            className='grid grid-cols-2 gap-8'
+          >
+            {useCases.map((useCase, index) => (
+              <div
+                className='relative'
+                key={index}
+              >
+                <div
+                  className='absolute w-full h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
+                />
+                <div className='flex flex-col m-3 relative border border-gray-800 rounded-lg bg-neutral-900 p-4 space-y-3'>
+                  <div className='flex flex-row items-center space-x-3 '>
+                    <div>
+                      <useCase.icon className={classNames(
+                        useCase.mirror ? 'scale-x-[-1]' : '',
+                        'text-gray-200')} size={24} />
+                    </div>
+                    <h3 className='text-gray-200 font-semibold'>
+                      {useCase.name}
+                    </h3>
+                  </div>
+                  <div>
+                    <p className='text-gray-400 text-sm'>
+                      {useCase.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
