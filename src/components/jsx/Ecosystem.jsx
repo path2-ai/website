@@ -8,7 +8,6 @@ import { motion, useMotionTemplate, useMotionValue } from 'framer-motion'
 import { Icon360, IconApiApp, IconApps, IconBrain, IconBrandDocker, IconBrandOpenSource, IconBrandPython, IconBuildingCastle, IconCategory2, IconCode, IconCrystalBall, IconDashboard, IconDatabase, IconDragDrop, IconGrowth, IconHighlight, IconLock, IconNumber3, IconPlayerPause, IconPlayerPlay, IconRoute, IconTag, IconWindmill } from '@tabler/icons'
 import Link from 'next/link'
 import { Tooltip } from "@nextui-org/react";
-
 import { useRouter } from 'next/router'
 
 const YOUTUBE_VIDEO = 'https://www.youtube.com/watch?v=7VXqimJvzdU'
@@ -362,7 +361,21 @@ export function Ecosystem() {
 
   return (
     <section className='mx-auto max-w-5xl py-10 sm:py-16'>
-      <div className='mx-6'>
+      <h1
+        className='mt-16 text-5xl font-bold text-center text-white'
+      >
+        A low-code dev platform for <span
+          className={classNames(
+            current == 'refinery' && 'text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-700',
+            current == 'bricks' && 'text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-700',
+            current == 'gates' && 'text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-700',
+            current == 'workflow' && 'text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-blue-700',
+            'animate-text')}>data-centric NLP</span>
+      </h1>
+      <p className='mt-8 text-center text-gray-300 text-lg'>
+        Designed with an open-core available on GitHub. Build from templates or start completely from scratch.
+      </p>
+      <div className='mt-16 mx-6'>
         <div>
           <div className="flex">
             <div className='space-y-4'>
