@@ -97,6 +97,9 @@ export function LabelingService() {
                         </div>
                     </div>
                 </div>
+                <div className='mx-auto max-w-7xl flex items-center justify-center'>
+                    <p className="mt-10 text-gray-100">Labeling services are directly available within our platform.</p>
+                </div>
             </div>
         </div>
     )
