@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconStack3, IconTools, IconUsers, IconWorldWww } from '@tabler/icons'
+import { IconApi, IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconStack3, IconTags, IconTools, IconUsers, IconWorldWww } from '@tabler/icons'
 import Link from 'next/link'
 import { KERN_ASSETS_URL } from './_settings'
 import { Menu } from '@headlessui/react'
@@ -34,6 +34,8 @@ const navigation = [
             { name: 'Platform', href: '/platform', icon: IconTools, description: 'Get an overview of the platform' },
             { name: 'Platform architecture', href: '/platform/architecture', icon: IconStack3, description: 'See how the platform of Kern AI works under the hood' },
             { name: 'How it works', href: '/platform/how-it-works', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
+            { name: 'Labeling services', href: '/platform/labeling-services', icon: IconTags, description: 'Let us handle your labeling needs' },
+            { name: 'One API for everything', href: '/platform/api-proxy', icon: IconApi, description: 'Access dozens of NLP APIs via just one access token' },
         ]
     },
 
