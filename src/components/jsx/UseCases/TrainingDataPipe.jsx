@@ -204,8 +204,20 @@ export function TrainingDataPipe() {
                         </video>
                     </div>
                 ))}
+                <div className='mt-5'>
+                    <div
+                        className='mx-auto w-fit h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-full opacity-90'
+                    >
+                        <a
+                            href='/platform'
+                            className='text-gray-200 m-5 flex flex-row group space-x-2 items-center relative border border-neutral-800 rounded-full bg-neutral-900 pl-2 pr-3 py-1.5 hover:bg-neutral-800 hover:text-white'
+                        >
+                            Take a look into our platform
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </div >
     )
 }
 
