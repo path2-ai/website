@@ -199,7 +199,7 @@ export function Footer({ isDarkTheme }) {
                                             "text-gray-600"
                                         ),
                                         "font-medium")}>
-                                        I agree to the storage of my data for the purpose of contacting me and I consent to the privacy policy.
+                                        I would like to receive the newsletter with news, articles and resources about Kern AI and NLP. Consent can be revoked with future effect, e.g. by emailing info@kern.ai. For more information, please see our <a className="hover:text-green-500" href="/privacy">privacy policy</a>.
                                     </label>
                                 </div>
                             </div>
