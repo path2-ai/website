@@ -341,6 +341,115 @@ export function Story() {
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div className="inline-block">
+                                        <div
+                                            className="w-96 h-72 max-w-xs overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
+                                        >
+                                            <img
+                                                className="w-full h-full object-cover"
+                                                src="blog/data-centricity.png"
+                                                alt="Data Centricity"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div className="inline-block">
+                                        <div
+                                            className="p-4 w-96 h-72 max-w-xs overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
+                                        >
+                                            <div>
+                                                <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-600 text-center text-3xl font-bold mt-8">
+                                                    And what is data-centric NLP?
+                                                </h3>
+                                                <p className="text-gray-400 text-center text-sm mt-4">
+                                                    NLP models are a bit like students preparing for an exam.
+                                                </p>
+                                                <p className="text-gray-400 text-center text-sm">
+                                                    They learn via index cards; on the upper half is the question, on the lower half is the answer.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="inline-block">
+                                        <div
+                                            className="p-4 w-96 h-72 max-w-xs overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
+                                        >
+                                            <div className='absolute w-72 text-sm text-gray-500'>
+                                                <span className='text-center'>
+                                                    Hover over this card to see the response
+                                                </span>
+                                            </div>
+                                            <div className='relative rounded-md border border-gray-600 bg-neutral-800 h-64 mt-12 hover:mt-0 transition-all duration-300 ease-in-out'>
+                                                <div className='flex flex-col items-center justify-center text-white h-52'>
+                                                    What is the capital of France?
+                                                </div>
+                                                <div className='flex flex-col items-center justify-center text-white h-12 border-t border-gray-600'>
+                                                    Paris
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="inline-block">
+                                        <div
+                                            className="p-4 w-96 h-72 max-w-xs overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
+                                        >
+                                            <div>
+                                                <p className="text-gray-400 text-center text-2xl font-semibold mt-20">
+                                                    Now imagine, you have the following index card to prepare for the exam.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="inline-block">
+                                        <div
+                                            className="p-4 w-96 h-72 max-w-xs overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
+                                        >
+                                            <div className='absolute w-72 text-sm text-gray-500'>
+                                                <span className='text-center'>
+                                                    Hover over this card to see the response
+                                                </span>
+                                            </div>
+                                            <div className='relative rounded-md border border-gray-600 bg-neutral-800 h-64 mt-12 hover:mt-0 transition-all duration-300 ease-in-out'>
+                                                <div className='flex flex-col items-center justify-center text-white h-52'>
+                                                    What is the capital of France?
+                                                </div>
+                                                <div className='flex flex-col items-center justify-center text-white h-12 border-t border-gray-600'>
+                                                    Berlin
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="inline-block">
+                                        <div
+                                            className="p-4 w-96 h-72 max-w-xs overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
+                                        >
+                                            <div>
+                                                <p className="text-gray-400 text-center text-2xl font-semibold mt-20">
+                                                    Making sure that this doesn't happen is the key to data-centric NLP.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="inline-block">
+                                        <div
+                                            className="p-4 w-96 h-72 max-w-xs overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
+                                        >
+                                            <div>
+                                                <p className="text-gray-400 text-center text-2xl font-semibold mt-24">
+                                                    And we're here to help <span className='text-yellow-500'>you</span> with that.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
