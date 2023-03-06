@@ -5,6 +5,7 @@ import { ContactModal } from "./ContactModal"
 import axios from "axios";
 import { Fragment, useEffect, useState } from 'react'
 import { Transition } from '@headlessui/react'
+import Link from "next/link";
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -207,6 +208,15 @@ export function Footer({ isDarkTheme }) {
                     </div>
                 </div>
             </div >
+            <div className="flex flex-row space-x-6">
+                <Link
+                    href="/file/DE_IS_20230058_27001_KernAI_ENG.pdf" download
+                >
+                    <img src="/iso-27001.png" className="h-12 w-12" />
+
+                </Link>
+                <img src="/gdpr.png" className="h-12 w-12" />
+            </div>
             <div className="mx-4 mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
                 <div className="flex space-x-6 md:order-2">
                     {navigation.social.map((item) => (
