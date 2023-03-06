@@ -100,6 +100,7 @@ export function Security() {
                     <p className="mt-8 text-lg leading-8 text-gray-300">
                         At Kern AI, we strictly adhere to all requirements of the General Data Protection Regulation (GDPR), including those related to data protection, privacy, and the sharing of personal data.
                     </p>
+                    <img src="/heydata.png" className="mt-4 w-40 mx-auto" />
 
                     <h1>
                         <span className="mt-20 block text-center text-3xl font-bold leading-8 tracking-tight text-white sm:text-4xl">
