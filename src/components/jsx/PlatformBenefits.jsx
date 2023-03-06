@@ -62,12 +62,6 @@ export function PlatformBenefits() {
                                         {useCase.description}
                                     </p>
                                 </div>
-                                <button
-                                    className='group flex flex-row items-center space-x-2 text-sm text-gray-200 hover:text-green-500'
-                                >
-                                    <span> More details</span>
-                                    <IconArrowRight className='text-gray-200 group-hover:text-green-500' size={16} />
-                                </button>
                             </div>
                         </div>
                     ))}
