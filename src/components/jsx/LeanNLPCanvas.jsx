@@ -110,13 +110,6 @@ export function LeanNLPCanvas() {
                     </div>
                 </div>
             </div>
-
-            {/* example 1 of filled canvas */}
-            {/* example 2 of filled canvas */}
-
-            {/* faq, e.g. "who is this for" etc. */}
-            {/* extended canvas */}
-
         </section >
     )
 }

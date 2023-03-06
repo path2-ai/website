@@ -24,10 +24,10 @@ export function LabelingService() {
             <div className="py-24 sm:py-32">
                 <div className="mx-auto max-w-7xl px-4">
                     <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                        <p className="text-base font-semibold leading-7 text-purple-500">Labeling just got smarter</p>
-                        <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">Hire experts for your labeling</h1>
                         <div className="mt-10 grid grid-cols-5 gap-8 text-base leading-7 text-gray-300">
                             <div className='col-span-3 mt-auto'>
+                                <p className="text-base font-semibold leading-7 text-purple-500">Labeling just got smarter</p>
+                                <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">Hire experts for your labeling</h1>
                                 <p className="mt-8">
                                     Manual data labeling is the heavy lifting of building NLP models. It's time-consuming, expensive, and prone to errors.
                                 </p>
