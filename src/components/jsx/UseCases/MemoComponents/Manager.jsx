@@ -1,4 +1,4 @@
-import { IconAlignLeft, IconArrowLeft, IconArrowRight, IconCategory2, IconMailOpened, IconNote, IconPhone, IconPhoneCall, IconRoute, IconUsers } from '@tabler/icons'
+import { IconAlignLeft, IconArrowLeft, IconArrowRight, IconArrowsShuffle, IconBulb, IconCategory2, IconMailOpened, IconMicrophone, IconNote, IconPhone, IconPhoneCall, IconRoute, IconUsers } from '@tabler/icons'
 import { useState } from 'react'
 import { Doughnut } from 'react-chartjs-2';
 import Chart from 'chart.js/auto'; // this must be imported to enable the charts plugin; don't remove it!
@@ -262,39 +262,33 @@ export function Manager() {
                         <div className="lg:pr-4">
                             <div className="max-w-xl text-base leading-7 text-gray-300 lg:max-w-lg">
                                 <p>
-                                    Every company has generic inboxes; think of the typical info@, support@, or sales@ inbox (even we have them). Making them smarter is an incredible time saver for your team. Let's see how:
+                                    Every company has processess running mainly on communication, collaboration and creativity. We know that these processes can be optimized by using AI to automate repetitive tasks and to provide insights that help to make better decisions.
                                 </p>
                                 <ul role="list" className="mt-8 space-y-8 text-gray-500">
                                     <li className="flex gap-x-3">
-                                        <IconCategory2 className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
+                                        <IconBulb className="mt-1 h-5 w-5 flex-none text-yellow-400" aria-hidden="true" />
                                         <span>
-                                            <strong className="font-semibold text-gray-100">Automate categorization.</strong> Every incoming email receives a category, helping you to forward mails to the right department and giving you insights about sentiment, urgency or language.
+                                            <strong className="font-semibold text-gray-100">Automate insights.</strong> Every idea, ticket or post receives a category, giving you insights about sentiment, urgency or language.
                                         </span>
                                     </li>
                                     <li className="flex gap-x-3">
-                                        <IconNote className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
+                                        <IconMicrophone className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
                                         <span>
-                                            <strong className="font-semibold text-gray-100">Automate response drafting.</strong> Imagine that you enter your inbox, and 50% of your mails already have drafts generated for you. Read it, edit it, send it. Done.
+                                            <strong className="font-semibold text-gray-100">Text-to-text, voice-to-text.</strong> Build transformations that turn voice into text, and text into modified text. For instance, to create a detailed ticket from a voice message.
                                         </span>
                                     </li>
                                     <li className="flex gap-x-3">
-                                        <IconRoute className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
+                                        <IconArrowsShuffle className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
                                         <span>
-                                            <strong className="font-semibold text-gray-100">Conditional flows.</strong> Create conditional flows helping you focus on what matters. For instance, get notified when a mail is really urgent. Or when your NLP wasn't confident and you should take a look.
+                                            <strong className="font-semibold text-gray-100">Structure-to-text, text-to-structure</strong> Turn any complex text into a structured format, and vice versa. For instance, turn spreadsheets describing products into SEO-optimized texts.
                                         </span>
                                     </li>
                                 </ul>
                                 <p className="mt-8">
-                                    The implications are clear: your team can save a lot of time while ensuring a fast and consistent response to recipients. And on top of this, you can get tons of insights about characteristics of your incoming mails.
+                                    The implications are clear: your team can save a lot of time while generating better content, e.g. in sales, in support or other roles.
                                 </p>
-                                <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-100">Email hasn't seen innovation for decades.</h2>
-                                <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-100">We change that.</h2>
-                                <p className="mt-6">
-                                    Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu ipsum urna nibh.
-                                    Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-                                    tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam
-                                    turpis ipsum eu a sed convallis diam.
-                                </p>
+                                <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-100">ChatGPT is only the beginning.</h2>
+                                <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-100">Put NLP into action for you.</h2>
                             </div>
                         </div>
                     </div>

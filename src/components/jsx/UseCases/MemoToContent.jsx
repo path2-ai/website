@@ -22,11 +22,12 @@ export function MemoToContent() {
         showFor: 'manager',
         onClick: () => setShowForStakeholders("manager")
     },
-    {
-        name: 'Show me the API!',
-        showFor: 'developer',
-        onClick: () => setShowForStakeholders("developer")
-    }]
+        // {
+        //     name: 'Show me the API!',
+        //     showFor: 'developer',
+        //     onClick: () => setShowForStakeholders("developer")
+        // }
+    ]
 
     return (
         <div
@@ -45,7 +46,7 @@ export function MemoToContent() {
                             Chaining complex NLP tasks
                         </h3>
                         <p className='text-gray-400 mt-1'>
-                            Embed the power of GPT and NLP into your own processes, e.g. for content creation.
+                            Embed the power of GPT and NLP into your own processes. Ranging from content creation to transcription or summarization, text modification and many more. Put GPT-like models into your processes.
                         </p>
                     </div>
                 </div>
@@ -80,9 +81,9 @@ export function MemoToContent() {
             </div>
 
             <div className='mt-6'>
-                {showForStakeholders == 'developer' && (
+                {/* {showForStakeholders == 'developer' && (
                     <Developer />
-                )}
+                )} */}
                 {showForStakeholders == 'enduser' && (
                     <Enduser />
                 )}

@@ -208,12 +208,6 @@ export function Manager() {
                                 </p>
                                 <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-100">Email hasn't seen innovation for decades.</h2>
                                 <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-100">We change that.</h2>
-                                <p className="mt-6">
-                                    Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu ipsum urna nibh.
-                                    Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed
-                                    tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam
-                                    turpis ipsum eu a sed convallis diam.
-                                </p>
                             </div>
                         </div>
                     </div>

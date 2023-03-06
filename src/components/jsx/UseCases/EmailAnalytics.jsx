@@ -20,11 +20,12 @@ export function EmailAnalytics() {
         showFor: 'manager',
         onClick: () => setShowForStakeholders("manager")
     },
-    {
-        name: 'Show me the API!',
-        showFor: 'developer',
-        onClick: () => setShowForStakeholders("developer")
-    }]
+        // {
+        //     name: 'Show me the API!',
+        //     showFor: 'developer',
+        //     onClick: () => setShowForStakeholders("developer")
+        // }
+    ]
 
 
     const [showForStakeholders, setShowForStakeholders] = useState("enduser")
@@ -45,7 +46,7 @@ export function EmailAnalytics() {
                             Email automation
                         </h3>
                         <p className='text-gray-400 mt-1'>
-                            Send personalized emails to your customers based on their behavior. Automated directly in your inbox. Customizable to your needs.
+                            Turn your info@-inbox (or any other inbox) into a first-class AI assistant. Automatically categorize incoming emails by intent, identify sentiment and urgency, extract key information and automatically create response drafts.
                         </p>
                     </div>
                 </div>
@@ -80,9 +81,9 @@ export function EmailAnalytics() {
 
             </div>
             <div className='mt-6'>
-                {showForStakeholders == 'developer' && (
+                {/* {showForStakeholders == 'developer' && (
                     <Developer />
-                )}
+                )} */}
                 {showForStakeholders == 'enduser' && (
                     <Enduser />
                 )}

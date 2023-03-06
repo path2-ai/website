@@ -546,13 +546,13 @@ export function Enduser() {
                                                     </li>
                                                 ))}
                                             </ul>
-                                            <button
+                                            {/* <button
                                                 type='button'
                                                 className='relative bg-neutral-900 py-5 px-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-blue-600 hover:bg-neutral-800 text-white text-sm focus:ring-green-500'
                                                 onClick={() => setOpenCustomMailModal(true)}
                                             >
                                                 Click here to enter a message yourself, and see how the draft is generated
-                                            </button>
+                                            </button> */}
                                         </nav>
                                     </div>
                                 </aside>
@@ -562,7 +562,7 @@ export function Enduser() {
                     <CustomMailModal open={openCustomMailModal} setOpen={setOpenCustomMailModal} messages={messages} setMessages={setMessages} />
                 </div>
                 <p className='mt-4 text-center text-gray-300'>
-                    This works for any email client, as omni-channel (WhatsApp, Telegram, Social Media) or with any customer-facing IT system (CRM, CSM).
+                    This works for any email client, for all channels (Email, WhatsApp, Telegram, Social Media) and with any customer-facing IT system (CRM, CSM).
                 </p>
             </InView>
         </>
