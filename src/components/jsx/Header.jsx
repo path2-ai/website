@@ -447,7 +447,7 @@ export function Header({ isDarkTheme }) {
                                 <div className="m-4 py-4 grid grid-cols-2 gap-8">
                                     {navigation.map((item) => (
                                         !item.href && (
-                                            <div>
+                                            <div key={item.name}>
                                                 <div
                                                     key={item.name}
                                                     className="font-semibold text-gray-100 hover:bg-gray-600/10"

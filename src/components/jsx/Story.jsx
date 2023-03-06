@@ -96,7 +96,9 @@ export function Story() {
                                                                 </thead>
                                                                 <tbody className="divide-y divide-gray-800">
                                                                     {companies.map((company) => (
-                                                                        <tr key={company.email} className="divide-x divide-gray-800">
+                                                                        <tr
+                                                                            key={company.name}
+                                                                            className="divide-x divide-gray-800">
                                                                             <td className="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-100 sm:pl-0">
                                                                                 {company.name}
                                                                             </td>

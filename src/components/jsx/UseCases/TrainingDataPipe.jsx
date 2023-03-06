@@ -85,7 +85,7 @@ export function TrainingDataPipe() {
                     >
                         <div className='flex flex-row mx-auto p-2 space-x-2'>
                             {slideContent.map((item) => (
-                                <div>
+                                <div key={item.name}>
                                     <div
                                         className={classNames(
                                             clickedOption === item.name ? 'border border-green-500' : 'border border-neutral-800',
@@ -190,7 +190,9 @@ export function TrainingDataPipe() {
                         current == item.name ? 'block' : 'hidden',
                         'bg-gradient-to-b from-purple-700 via-purple-400 to-purple-700 rounded-lg',
                         'transform shadow-[0_0px_100px_10px_rgba(202,73,223,0.5)]',
-                    )}>
+                    )}
+                        key={item.name}
+                    >
                         <video
                             width="100%"
                             className='rounded-lg p-0.5'
