@@ -3,11 +3,15 @@ import { useState } from 'react'
 import { Doughnut } from 'react-chartjs-2';
 import Chart from 'chart.js/auto'; // this must be imported to enable the charts plugin; don't remove it!
 
+import { CalModal } from '../../CalModal';
+
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
 export function Manager() {
+
+    const [openCalModal, setOpenCalModal] = useState(false)
 
     const dataSentiment = {
         labels: [
@@ -166,8 +170,9 @@ export function Manager() {
                                             <button
                                                 type="button"
                                                 className="inline-flex items-center px-2 py-1 border border-gray-800 text-sm font-medium rounded-md shadow-sm text-gray-200 bg-neutral-900 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+                                                onClick={() => setOpenCalModal(true)}
                                             >
-                                                Get started
+                                                Contact the founder
                                             </button>
 
                                         </div>
@@ -212,6 +217,7 @@ export function Manager() {
                         </div>
                     </div>
                 </div>
+                <CalModal open={openCalModal} setOpen={setOpenCalModal} />
             </div>
         </>
     )
