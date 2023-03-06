@@ -29,6 +29,7 @@ const navigation = [
 
     //     ]
     // },
+    { name: 'Implications of GPT ', href: '/strategic-nlp' },
     {
         name: 'Platform', subnav: [
             { name: 'Platform', href: '/platform', icon: IconTools, description: 'Get an overview of the platform' },
