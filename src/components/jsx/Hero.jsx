@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { LogoCloud } from './LogoCloud'
-import { AccessBanner } from './AccessBanner'
+import { StrategicNLPBanner } from './StrategicNLPBanner'
 import { AccessModal } from './AccessModal'
 
 export function Hero() {
@@ -42,7 +42,7 @@ export function Hero() {
                     </div>
                 </div>
             </main>
-            <AccessBanner setOpenAccessModal={setOpenAccessModal} />
+            <StrategicNLPBanner />
             <AccessModal open={openAccessModal} setOpen={setOpenAccessModal} />
         </div>
     )

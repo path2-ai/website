@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IconApi, IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChessKnight, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconStack3, IconTags, IconTools, IconUsers, IconWorldWww } from '@tabler/icons'
+import { IconApi, IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChessKnight, IconChevronRight, IconDatabase, IconInfoCircle, IconMessage, IconPerspective, IconRoute, IconStack3, IconTags, IconTools, IconUser, IconUsers, IconWorldWww } from '@tabler/icons'
 import Link from 'next/link'
 import { KERN_ASSETS_URL } from './_settings'
 import { Menu } from '@headlessui/react'
@@ -36,6 +36,7 @@ const navigation = [
             { name: 'How it works', href: '/platform/how-it-works', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
             { name: 'Labeling services', href: '/platform/labeling-services', icon: IconTags, description: 'Let us handle your labeling needs' },
             { name: 'One API for everything', href: '/platform/api-proxy', icon: IconApi, description: 'Access dozens of NLP APIs via just one access token' },
+            { name: 'Changelog', icon: IconInfoCircle, href: 'https://changelog.kern.ai', description: 'See what we have been up to' },
         ]
     },
 
@@ -47,7 +48,7 @@ const navigation = [
             { name: 'workflow', href: 'https://docs.kern.ai/workflow', icon: null, description: 'Automate any natural language-driven process' },
         ]
     },
-    { name: 'Changelog', href: 'https://changelog.kern.ai' },
+    // { name: 'Use Case Gallery', href: '/integrations' },
     { name: 'Integrations', href: '/integrations' },
     { name: 'Pricing', href: '/pricing' },
     // {

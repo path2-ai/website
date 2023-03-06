@@ -413,6 +413,9 @@ export function Enduser() {
                             </div>
                         </foreignObject>
                     </svg>
+                    <p className='mt-4 text-center text-gray-300'>
+                        Use large-language models like GPT-X in your own processes.
+                    </p>
                 </div>
             )}
         </>

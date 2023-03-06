@@ -15,10 +15,10 @@ export function Playground() {
         name: 'Email automation',
         href: '#email-automation',
     }, {
-        name: 'Content generation',
+        name: 'GPT-like content generation',
         href: '#content-generation',
     }, {
-        name: 'Training data',
+        name: 'Data-centric NLP',
         href: '#training-data',
     }]
 
@@ -99,7 +99,7 @@ export function Playground() {
                         threshold={0.5}
                         as="div" onChange={(inView, entry) => {
                             if (inView) {
-                                setCurrentView('Content generation')
+                                setCurrentView('GPT-like content generation')
                             }
                         }}>
                         <MemoToContent />
@@ -108,7 +108,7 @@ export function Playground() {
                         threshold={0.5}
                         as="div" onChange={(inView, entry) => {
                             if (inView) {
-                                setCurrentView('Training data')
+                                setCurrentView('Data-centric NLP')
                             }
                         }}>
                         <TrainingDataPipe />

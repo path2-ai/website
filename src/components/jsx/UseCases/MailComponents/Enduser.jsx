@@ -561,6 +561,9 @@ export function Enduser() {
                     </div>
                     <CustomMailModal open={openCustomMailModal} setOpen={setOpenCustomMailModal} messages={messages} setMessages={setMessages} />
                 </div>
+                <p className='mt-4 text-center text-gray-300'>
+                    This works for any email client, as omni-channel (WhatsApp, Telegram, Social Media) or with any customer-facing IT system (CRM, CSM).
+                </p>
             </InView>
         </>
     )
