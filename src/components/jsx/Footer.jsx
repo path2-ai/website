@@ -24,12 +24,21 @@ export function Footer({ isDarkTheme }) {
 
 
     const navigation = {
+        "Common use cases": [
+            { name: 'Email automation', onClick: () => { router.push('/#email-automation') } },
+            { name: 'GPT-like content', onClick: () => { router.push('/#content-generation') } },
+            { name: 'Data-centric NLP', onClick: () => { router.push('/#training-data') } },
+
+        ],
         product: [
-            { name: 'Platform architecture', onClick: () => { router.push('/platform/architecture') } },
+            { name: 'Platform', onClick: () => { router.push('/platform') } },
+            { name: 'Architecture', onClick: () => { router.push('/platform/architecture') } },
             { name: 'How it works', onClick: () => { router.push('/platform/how-it-works') } },
-            { name: 'Pricing', onClick: () => { router.push('/pricing') } },
+            { name: 'Labeling services', onClick: () => { router.push('/platform/labeling-services') } },
+            { name: 'One API for everything', onClick: () => { router.push('/platform/api-proxy') } },
         ],
         docs: [
+            { name: 'Changelog', onClick: () => { router.push('https://changelog.kern.ai') } },
             { name: 'refinery', onClick: () => { router.push('https://docs.kern.ai/refinery') } },
             { name: 'bricks', onClick: () => { router.push('https://docs.kern.ai/bricks') } },
             { name: 'gates', onClick: () => { router.push('https://docs.kern.ai/gates') } },
@@ -40,6 +49,8 @@ export function Footer({ isDarkTheme }) {
             { name: 'Blog', onClick: () => { router.push('/company/blog') } },
             { name: 'Careers', onClick: () => { router.push('/company/careers') } },
             { name: 'Contact', onClick: () => { setOpenContactModal(true) } },
+            { name: 'Pricing', onClick: () => { router.push('/pricing') } },
+            { name: 'Lean NLP Canvas', onClick: () => { router.push('/company/lean-nlp-canvas') } },
         ],
         other: [
             { name: 'Imprint', onClick: () => { router.push('/imprint') } },
@@ -79,8 +90,8 @@ export function Footer({ isDarkTheme }) {
     return (
         <footer className="py-10 max-w-5xl mx-auto">
             <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-                <div className="md:grid md:grid-cols-6 gap-4 text-sm">
-                    <div className="flex col-span-2 md:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="md:grid md:grid-cols-7 gap-4 text-sm">
+                    <div className="flex col-span-2 md:col-span-5 grid grid-cols-2 md:grid-cols-5 gap-2">
                         {Object.keys(navigation).filter(section => section != 'social').map((section) => (
                             <div key={section} className="col-span-1">
                                 <h3 className="text-white">{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
@@ -103,7 +114,7 @@ export function Footer({ isDarkTheme }) {
                             </div>
                         ))}
                     </div>
-                    <div className="mt-8 md:mt-0 col-span:4 md:col-span-2">
+                    <div className="mt-8 md:mt-0 col-span:5 md:col-span-2">
                         <div>
                             <h3 className="text-white">Subscribe to our newsletter</h3>
                             <p className={classNames(
