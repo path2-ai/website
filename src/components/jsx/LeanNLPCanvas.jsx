@@ -7,7 +7,7 @@ export function LeanNLPCanvas() {
     const [showLightVersion, setShowLightVersion] = useState(false)
 
     return (
-        <section className='max-w-5xl mx-auto py-32'>
+        <section className='max-w-5xl mx-auto py-32 px-6'>
             <h1 className='text-5xl font-bold text-center text-white'>Lean NLP Canvas</h1>
             <p className='mt-4 text-center text-gray-300'>A simple tool to help you get plan your next NLP use case</p>
             <div className="my-10">
@@ -52,11 +52,10 @@ export function LeanNLPCanvas() {
                     </p>
                 </div>
 
-                <div className="m-2 grid grid-cols-2 gap-8">
+                <div className="m-2 lg:grid lg:grid-cols-2 gap-8">
                     <img src="/lean-nlp-canvas-email-intelligence.png" alt="Lean NLP Canvas" className="mx-auto" />
                     <div className="mt-auto">
-                        <h2 className='text-2xl font-bold text-white'>Example: email intelligence</h2>
-
+                        <h2 className='mt-4 lg:mt-0 text-2xl font-bold text-white'>Example: email intelligence</h2>
                         <p className="mt-6 text-gray-300">
                             In this canvas, we dive into the info@-inbox that every company has. We want to turn it from an unloved tool into a powerful communications channel with lots of potential for automation.
                         </p>
@@ -73,7 +72,7 @@ export function LeanNLPCanvas() {
                     </div>
                 </div>
 
-                <div className="m-2 grid grid-cols-2 gap-8">
+                <div className="m-2 grid lg:grid-cols-2 lg:gap-8">
                     <div className="mt-auto">
                         <h2 className='text-2xl font-bold text-white'>Example: content generation</h2>
 
@@ -91,7 +90,7 @@ export function LeanNLPCanvas() {
                             </Link>
                         </div>
                     </div>
-                    <img src="/lean-nlp-canvas-email-intelligence.png" alt="Lean NLP Canvas" className="mx-auto" />
+                    <img src="/lean-nlp-canvas-email-intelligence.png" alt="Lean NLP Canvas" className="mt-4 lg:mt-0mx-auto" />
 
                 </div>
 

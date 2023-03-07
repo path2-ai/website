@@ -21,10 +21,10 @@ export function LabelingService() {
     return (
         <div>
             {/* <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black" /> */}
-            <div className="py-24 sm:py-32">
-                <div className="mx-auto max-w-7xl px-4">
+            <div className="py-24 sm:py-32 px-6">
+                <div className="mx-auto max-w-7xl">
                     <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-                        <div className="mt-10 grid grid-cols-5 gap-8 text-base leading-7 text-gray-300">
+                        <div className="mt-10 grid xl:grid-cols-5 gap-8 text-base leading-7 text-gray-300">
                             <div className='col-span-3 mt-auto'>
                                 <p className="text-base font-semibold leading-7 text-purple-500">Labeling just got smarter</p>
                                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">Hire experts for your labeling</h1>
@@ -43,7 +43,7 @@ export function LabelingService() {
                                 </p>
                                 <div className="mt-12">
                                     <div
-                                        className='grid grid-cols-3 gap-4'
+                                        className='grid lg:grid-cols-3 gap-4'
                                     >
                                         {benfits.map((benefit, index) => (
                                             <div
@@ -68,7 +68,7 @@ export function LabelingService() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-span-2 p-4 border rounded-2xl bg-neutral-900 border-gray-800  hover:border-gray-700 transition duration-300 ease-in-out">
+                            <div className="hidden xl:block col-span-2 p-4 border rounded-2xl bg-neutral-900 border-gray-800  hover:border-gray-700 transition duration-300 ease-in-out">
                                 <div className="md:pt-12 md:px-12 md:pb-10 flex flex-col items-center">
                                     <img className="rounded-lg object-cover" src="/expert-annotator.png" alt="Expert annotator" />
                                     <p className="mt-2 text-gray-400 text-xs italic">"Expert sitting in front of a computer labeling some data in cartoon style"</p>
@@ -84,7 +84,7 @@ export function LabelingService() {
                     </div>
                     <div className="mt-10 mx-auto max-w-7xl px-6 lg:px-8">
                         <div className='bg-gradient-to-b from-purple-700 via-purple-400 to-purple-700 rounded-lg 
-                        transition shadow-[0_0px_100px_10px_rgba(202,73,223,0.5)]
+                        transition xl:shadow-[0_0px_100px_10px_rgba(202,73,223,0.5)]
                         '>
                             <img
                                 className="mb-[-12%] rounded-lg p-[1px] shadow-2xl ring-1 ring-gray-900/10"
