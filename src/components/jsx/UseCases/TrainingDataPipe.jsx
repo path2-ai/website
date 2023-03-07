@@ -83,7 +83,7 @@ export function TrainingDataPipe() {
                     <div
                         className='mx-auto w-fit h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-full opacity-90'
                     >
-                        <div className='flex flex-row mx-auto p-2 space-x-2'>
+                        <div className='flex flex-col md:flex-row mx-auto p-2 space-y-2 md:space-y-0 md:space-x-2'>
                             {slideContent.map((item) => (
                                 <div key={item.name}>
                                     <div
