@@ -76,7 +76,7 @@ export function Enduser() {
                         <div className='p-[1px] h-[48rem] rounded-xl bg-gradient-to-b from-neutral-600 to-neutral-900'>
                             <div className="flex min-h-full bg-neutral-900 rounded-xl">
                                 {/* Static sidebar for desktop */}
-                                <div className="lg:inset-y-0 lg:flex lg:w-64">
+                                <div className="md:inset-y-0 md:flex md:w-28 lg:w-64">
                                     {/* Sidebar component, swap this element with another sidebar if you like */}
                                     <div className="flex min-h-0 flex-1 flex-col">
                                         <div className="flex h-16 flex-shrink-0 items-center border-b border-r border-gray-800 bg-[#1c1c1c] px-4 rounded-tl-xl">
@@ -167,7 +167,7 @@ export function Enduser() {
                                     </div>
                                     <main className="flex-1">
                                         <div className="py-2 xl:py-2">
-                                            <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8  xl:max-w-5xl">
+                                            <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-8  xl:max-w-5xl">
                                                 {showTransformedContent ? (
                                                     <div className='mt-4 xl:grid xl:grid-cols-3'>
                                                         <div className="xl:col-span-2 xl:border-r xl:border-gray-800 xl:pr-8">
@@ -331,7 +331,7 @@ export function Enduser() {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div className='block md:hidden'>
                         <svg viewBox="0 0 366 729" role="img" className="mx-auto w-[22.875rem] max-w-full drop-shadow-xl">
                             <defs>
                                 <clipPath id="2ade4387-9c63-4fc4-b754-10e687a0d332">

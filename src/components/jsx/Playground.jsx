@@ -36,7 +36,7 @@ export function Playground() {
                         built on our platform
                     </span>
                 </h2>
-                <p className='text-gray-400 text-center mt-2'>
+                <p className='text-gray-400 md:text-center mt-2'>
                     See exemplary use cases that can be built with Kern AI.
                 </p>
             </div>
@@ -67,7 +67,7 @@ export function Playground() {
                 </div>
             </div>
 
-            <div className='mx-auto max-w-7xl py-16 flex flex-col space-y-14 md:space-y-20 px-6'>
+            <div className='mx-auto max-w-7xl py-16 md:py-24 flex flex-col space-y-20 md:space-y-32 px-6'>
 
                 <InView
                     threshold={0.5}

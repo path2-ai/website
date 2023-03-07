@@ -30,9 +30,9 @@ function classNames(...classes) {
 export function PlatformBenefits() {
 
     return (
-        <section className="my-8 mx-auto w-full max-w-5xl px-4 sm:px-6 lg:px-8">
+        <section className="mx-auto w-full max-w-5xl px-6">
             <h2
-                className='text-3xl font-bold text-white text-center'
+                className='text-3xl font-bold text-white md:text-center'
             >
                 Scale your operations and gain new insights with our platform
             </h2>

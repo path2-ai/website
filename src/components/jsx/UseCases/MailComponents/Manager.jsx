@@ -50,59 +50,59 @@ export function Manager() {
 
     return (
         <>
-            <div className="relative isolate overflow-hidden md:px-6 py-10 sm:py-12 md:overflow-visible md:px-0">
-                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-4 md:gap-y-16 gap-x-8 md:mx-0 md:max-w-none md:grid-cols-2 md:items-start md:gap-y-10">
-                    <div className="md:col-span-2 md:col-start-1 md:row-start-1 md:mx-auto md:grid md:w-full md:max-w-7xl md:grid-cols-2 md:gap-x-8 md:px-8">
-                        <div className="md:pr-4">
-                            <div className="md:max-w-lg">
+            <div className="relative isolate overflow-hidden lg:px-6 py-10 sm:py-12 lg:overflow-visible lg:px-0">
+                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-4 lg:gap-y-16 gap-x-8 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+                    <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+                        <div className="lg:pr-4">
+                            <div className="lg:max-w-lg">
                                 <p className="text-base font-semibold leading-7 text-green-400">Shortage of skilled labor</p>
                                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">The truly intelligent inbox</h1>
-                                <p className="mt-6 md:text-xl md:leading-8 text-gray-300">
+                                <p className="mt-6 lg:text-xl lg:leading-8 text-gray-300">
                                     You're working with emails every single day. It is the universal communication tool. But it's not very smart. We're here to change that.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div className="md:col-span-2 md:col-start-1 md:row-start-2 md:mx-auto md:grid md:w-full md:max-w-7xl md:grid-cols-2 md:gap-x-8 md:px-8">
-                        <div className="md:pr-4">
-                            <div className="max-w-xl text-base md:leading-7 text-gray-300 md:max-w-lg">
+                    <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+                        <div className="lg:pr-4">
+                            <div className="max-w-xl text-base lg:leading-7 text-gray-300 lg:max-w-lg">
                                 <p>
                                     Every company has generic inboxes; think of the typical info@, support@, or sales@ inbox (even we have them). Making them smarter is an incredible time saver for your team. Let's see how:
                                 </p>
-                                <ul role="list" className="mt-4 space-y-4 md:mt-8 md:space-y-8 text-gray-500">
+                                <ul role="list" className="mt-4 space-y-4 lg:mt-8 lg:space-y-8 text-gray-500">
                                     <li className="flex gap-x-3">
                                         <IconCategory2 className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
-                                        <span className="text-sm md:text-base">
+                                        <span className="text-sm lg:text-base">
                                             <strong className="font-semibold text-gray-100">Automate categorization.</strong> Every incoming email receives a category, helping you to forward mails to the right department and giving you insights about sentiment, urgency or language.
                                         </span>
                                     </li>
                                     <li className="flex gap-x-3">
                                         <IconNote className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
-                                        <span className="text-sm md:text-base">
+                                        <span className="text-sm lg:text-base">
                                             <strong className="font-semibold text-gray-100">Automate response drafting.</strong> Imagine that you enter your inbox, and 50% of your mails already have drafts generated for you. Read it, edit it, send it. Done.
                                         </span>
                                     </li>
                                     <li className="flex gap-x-3">
                                         <IconRoute className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
-                                        <span className="text-sm md:text-base">
+                                        <span className="text-sm lg:text-base">
                                             <strong className="font-semibold text-gray-100">Conditional flows.</strong> Create conditional flows helping you focus on what matters. For instance, get notified when a mail is really urgent. Or when your NLP wasn't confident and you should take a look.
                                         </span>
                                     </li>
                                 </ul>
-                                <p className="mt-4 md:mt-8">
+                                <p className="mt-4 lg:mt-8">
                                     The implications are clear: your team can save a lot of time while ensuring a fast and consistent response to recipients. And on top of this, you can get tons of insights about characteristics of your incoming mails.
                                 </p>
-                                <div className='hidden md:block'>
+                                <div className='hidden lg:block'>
                                     <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-100">Email hasn't seen innovation for decades.</h2>
                                     <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-100">We change that.</h2>
                                 </div>
-                                <div className='block md:hidden'>
+                                <div className='block lg:hidden'>
                                     <h2 className="mt-8 text-2xl font-bold tracking-tight text-gray-100">Email hasn't seen innovation for decades. We change that.</h2>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="mt-8 md:mt-0 md:p-16 md:sticky md:top-4 md:col-start-2 md:row-span-2 md:row-start-1 md:overflow-hidden">
+                    <div className="mt-8 lg:mt-0 lg:p-16 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
                         <div className='relative'>
                             <div
                                 className='absolute w-full h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
@@ -149,11 +149,11 @@ export function Manager() {
                                             Analytical benefits
                                         </div>
                                         <div
-                                            className="flex flex-col h-88 md:h-60 text-gray-100 block w-full bg-gradient-to-b from-[#141414] to-[#111111] p-4 focus:outline-none sm:text-sm resize-none"
+                                            className="flex flex-col h-88 text-gray-100 block w-full bg-gradient-to-b from-[#141414] to-[#111111] p-4 focus:outline-none sm:text-sm resize-none"
                                         >
-                                            <div className='mt-2 flex flex-col md:flex-row'>
+                                            <div className='mt-2 flex flex-col'>
                                                 <div
-                                                    className='md:-ml-10'
+                                                    className=''
                                                 >
                                                     <Doughnut
                                                         data={dataSentiment}
@@ -170,7 +170,7 @@ export function Manager() {
                                                     />
                                                 </div>
                                                 <div
-                                                    className='mt-10 md:mt-0 md:-ml-28'
+                                                    className='mt-10'
                                                 >
                                                     <Doughnut
                                                         data={dataIntent}
@@ -196,9 +196,6 @@ export function Manager() {
                                         <div
                                             className='h-12 rounded-b-md bg-neutral-800 border-t border-gray-800 flex flex-row pl-4 pr-2 items-center justify-between text-sm text-gray-500'
                                         >
-                                            <span className='hidden md:block'>
-                                                Help your team to work smarter
-                                            </span>
                                             <button
                                                 type="button"
                                                 className="inline-flex items-center px-2 py-1 border border-gray-800 text-sm font-medium rounded-md shadow-sm text-gray-200 bg-neutral-900 hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
