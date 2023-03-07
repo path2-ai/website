@@ -3,7 +3,7 @@ import { Menu, Transition } from '@headlessui/react'
 import {
     ChevronDownIcon,
 } from '@heroicons/react/20/solid'
-import { IconFilter, IconLoader2, IconRefresh } from '@tabler/icons'
+import { IconChevronLeft, IconFilter, IconLoader2, IconRefresh } from '@tabler/icons'
 import { CustomMailModal } from './CustomMailModal'
 import { InView } from 'react-intersection-observer';
 
@@ -27,6 +27,7 @@ function classNames(...classes) {
 
 export function Enduser() {
 
+    const [showMessageMobile, setShowMessageMobile] = useState(false)
     const [messages, setMessages] = useState([
         {
             id: 1,
@@ -682,39 +683,132 @@ export function Enduser() {
                                                 </Menu>
                                             </div>
                                         </div>
-                                        <div className="border-t border-b border-gray-800 bg-zinc-800 px-6 py-2 text-sm font-medium text-gray-500">
-                                            Sorted by date
-                                        </div>
                                     </div>
-                                    {messagesInFilter.map((message) => (
-                                        <div
-                                            key={message.id}
-                                            className='flex flex-col space-y-3 p-6 w-full bg-neutral-900 border-b border-gray-800'
-                                        >
-                                            <div className='flex flex-row items-center justify-between'>
-                                                <p className='text-gray-100 text-sm'>
-                                                    {message.sender.name}
-                                                </p>
-                                                <p className='text-gray-400 text-sm'>
-                                                    {message.date}
-                                                </p>
+                                    {showMessageMobile ? (
+                                        <div>
+                                            <div className="flex flex-row items-center space-x-1 border-t border-b border-gray-800 bg-zinc-800 px-6 py-2 text-sm font-medium text-gray-500">
+                                                <IconChevronLeft className='h-5 w-5 text-gray-500 hover:text-gray-300 transition-colors duration-200' onClick={() => {
+                                                    setShowMessageMobile(false)
+                                                    setSelectedMessage(messagesInFilter[0])
+                                                }} />
+                                                <span>Messages</span>
                                             </div>
-
-                                            <h3 className='text-gray-100'>
-                                                {message.subject}
-                                            </h3>
-                                            <p className='text-gray-400'>
-                                                {message.preview}
-                                            </p>
-                                            <div className={classNames(
-                                                selectedMessage?.id === message.id && loading && "hidden",
-                                                "w-fit inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
-                                                message.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : (message.response.sentiment === 'negative' ? 'bg-red-700 text-red-400' : 'bg-yellow-700 text-yellow-400')
-                                            )}>
-                                                {message.response.sentiment}
+                                            <div className='flex flex-col space-y-3 px-6 py-3'>
+                                                <div className='flex flex-row justify-between items-center pb-2 border-b border-gray-700'>
+                                                    <h3 className='text-gray-100'>
+                                                        {selectedMessage.subject}
+                                                    </h3>
+                                                    <div className={classNames(
+                                                        "w-fit inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
+                                                        selectedMessage.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : (selectedMessage.response.sentiment === 'negative' ? 'bg-red-700 text-red-400' : 'bg-yellow-700 text-yellow-400')
+                                                    )}>
+                                                        {selectedMessage.response.sentiment}
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <p className='text-gray-300 text-sm'>
+                                                        authored by {selectedMessage.sender.name}
+                                                    </p>
+                                                </div>
+                                                <ul role="list" className="space-y-2 py-4 sm:space-y-4">
+                                                    {selectedMessage.thread.map((item, index) => (
+                                                        <li key={item.id} className={classNames(
+                                                            "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
+                                                            index % 2 === 0 ? 'mr-8' : 'ml-8'
+                                                        )}>
+                                                            <h3 className="text-base font-medium">
+                                                                <span className="text-gray-100 text-xs">{item.author.name}</span>{' '}
+                                                            </h3>
+                                                            <div
+                                                                className="mt-2 space-y-4 text-sm text-gray-300"
+                                                                dangerouslySetInnerHTML={{ __html: item.body }}
+                                                            />
+                                                        </li>
+                                                    ))}
+                                                    {(draftAccepted || acceptedDraftMessageIds.includes(selectedMessage.id)) ? (
+                                                        <li key='response' className={classNames(
+                                                            "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
+                                                            selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
+                                                        )}>
+                                                            <h3 className="text-base font-medium">
+                                                                <span className="text-gray-100 text-sm">You</span>{' '}
+                                                                <span className="text-gray-300 text-sm">wrote</span>
+                                                            </h3>
+                                                            <div
+                                                                className="mt-2 space-y-4 text-sm text-gray-300"
+                                                                dangerouslySetInnerHTML={{ __html: selectedMessage.response.text }}
+                                                            />
+                                                        </li>
+                                                    ) : (
+                                                        <li key='draft' className={classNames(
+                                                            "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6 bg-opacity-50 border-2 border-dashed border-gray-700",
+                                                            selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
+                                                        )}>
+                                                            <h3 className="text-base font-medium">
+                                                                <span className="text-gray-100 text-sm">You</span>{' '}
+                                                                <span className="text-gray-300 text-sm">drafted</span>
+                                                            </h3>
+                                                            <div className='mt-2 flex flex-col '>
+                                                                <div
+                                                                    className="space-y-4 text-sm text-gray-300"
+                                                                    dangerouslySetInnerHTML={{ __html: selectedMessage.response.text }}
+                                                                />
+                                                                <button
+                                                                    className="mt-2 py-1.5 px-3 rounded-full bg-neutral-900 hover:bg-neutral-700 active:bg-neutral-800 transition-colors duration-200 text-gray-200 text-sm"
+                                                                    onClick={() => {
+                                                                        setDraftAccepted(true)
+                                                                    }}
+                                                                >
+                                                                    Accept & Send
+                                                                </button>
+                                                            </div>
+                                                        </li>
+                                                    )}
+                                                </ul>
                                             </div>
                                         </div>
-                                    ))}
+                                    ) : (
+                                        <div>
+                                            <div className="border-t border-b border-gray-800 bg-zinc-800 px-6 py-2 text-sm font-medium text-gray-500">
+                                                Sorted by date
+                                            </div>
+                                            <div className='flex-shrink-0'>
+                                                {messagesInFilter.map((message) => (
+                                                    <button
+                                                        key={message.id}
+                                                        className='flex flex-col space-y-2 p-6 w-full bg-neutral-900 border-b border-gray-800'
+                                                        onClick={() => {
+                                                            setSelectedMessage(message)
+                                                            setShowMessageMobile(true)
+                                                        }}
+                                                    >
+                                                        <div className='flex flex-row items-center justify-between w-full'>
+                                                            <p className='text-gray-100 text-sm'>
+                                                                {message.sender.name}
+                                                            </p>
+                                                            <p className='text-gray-400 text-sm'>
+                                                                {message.date}
+                                                            </p>
+                                                        </div>
+
+                                                        <h3 className='text-gray-100'>
+                                                            {message.subject}
+                                                        </h3>
+                                                        <p className='text-gray-400 text-sm text-left'>
+                                                            {message.preview}
+                                                        </p>
+                                                        <div className={classNames(
+                                                            selectedMessage?.id === message.id && loading && "hidden",
+                                                            "w-fit inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
+                                                            message.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : (message.response.sentiment === 'negative' ? 'bg-red-700 text-red-400' : 'bg-yellow-700 text-yellow-400')
+                                                        )}>
+                                                            {message.response.sentiment}
+                                                        </div>
+                                                    </button>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
                             </foreignObject>
                         </svg>
