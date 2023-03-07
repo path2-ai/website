@@ -285,7 +285,7 @@ export function DocumentProcessing() {
                                             <aside className="mt-4 hidden xl:block xl:pl-8">
                                                 {isScanned && (
                                                     <div className="flex flex-col space-y-4">
-                                                        <h4 className='text-lg font-semibold font-mono text-gray-300 pb-5 border-b border-gray-800'>JSON</h4>
+                                                        <h4 className='text-lg font-semibold font-mono text-gray-300 pb-3 border-b border-gray-800'>JSON</h4>
                                                         <pre className='text-sm text-gray-500 overflow-auto scrollbar-thin scrollbar-thumb-neutral-900 scrollbar-track-neutral-700'>
                                                             {JSON.stringify({
                                                                 "vendor": {
