@@ -60,7 +60,6 @@ export function TrainingDataPipe() {
 
     return (
         <div
-            className='mt-28 px-6'
             id="training-data"
         >
             <div className='max-w-5xl mx-auto flex flex-col space-y-6'>

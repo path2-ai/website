@@ -31,7 +31,6 @@ export function MemoToContent() {
 
     return (
         <div
-            className='my-28 px-6'
             id='content-generation'
         >
             <div className='max-w-5xl mx-auto flex flex-col space-y-6'>

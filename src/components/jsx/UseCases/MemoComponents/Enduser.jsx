@@ -474,11 +474,7 @@ export function Enduser() {
                             clipPath="url(#2ade4387-9c63-4fc4-b754-10e687a0d332)"
                         >
 
-                            <div className='flex h-full items-end justify-center'>
-                                <img
-                                    src="/gradient-bg.png"
-                                    className='absolute w-full h-full object-cover grayscale opacity-50'
-                                />
+                            <div className='flex h-full items-end justify-center bg-gray-500 rounded-[38px]'>
                                 <div className='my-4 flex items-center relative py-6 px-4 rounded-3xl bg-neutral-200 bg-opacity-50 shadow-md border border-gray-500'>
                                     <div>
                                         <div className='flex flex-col space-y-4 p-2 rounded-2xl bg-neutral-900 border-gray-800 w-fit'>

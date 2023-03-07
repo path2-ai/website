@@ -32,7 +32,6 @@ export function EmailAnalytics() {
 
     return (
         <div
-            className='my-28 px-6'
             id="email-automation">
             <div className='max-w-5xl mx-auto flex flex-col space-y-6'>
                 <div className='flex flex-row items-center md:space-x-4'>
