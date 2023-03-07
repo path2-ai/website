@@ -601,8 +601,8 @@ export function Enduser() {
                                                         {filterOnSentiment}
                                                     </div>
                                                 )}
-                                                <Menu as="div" key="filter" className="relative text-left">
-                                                    <Menu.Button className="mt-2">
+                                                <Menu as="div" key="filter" className="">
+                                                    <Menu.Button>
                                                         <IconFilter className='h-5 w-5 text-gray-500 hover:text-gray-300 transition-colors duration-200' />
                                                     </Menu.Button>
 

@@ -167,7 +167,7 @@ export function Enduser() {
                                     </div>
                                     <main className="flex-1">
                                         <div className="py-2 xl:py-2">
-                                            <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-8  xl:max-w-5xl">
+                                            <div className="mx-auto max-w-3xl px-4 sm:px-6 md:px-8 xl:max-w-5xl">
                                                 {showTransformedContent ? (
                                                     <div className='mt-4 xl:grid xl:grid-cols-3'>
                                                         <div className="xl:col-span-2 xl:border-r xl:border-gray-800 xl:pr-8">
@@ -475,7 +475,7 @@ export function Enduser() {
                         >
 
                             <div className='flex h-full items-end justify-center bg-gray-500 rounded-[38px]'>
-                                <div className='my-4 flex items-center relative py-6 px-4 rounded-3xl bg-neutral-200 bg-opacity-50 shadow-md border border-gray-500'>
+                                <div className='my-4 flex items-center  py-6 px-4 rounded-3xl bg-neutral-200 bg-opacity-50 shadow-md border border-gray-500'>
                                     <div>
                                         <div className='flex flex-col space-y-4 p-2 rounded-2xl bg-neutral-900 border-gray-800 w-fit'>
                                             <div className='flex flex-row bg-neutral-800 rounded-full space-x-5'>
