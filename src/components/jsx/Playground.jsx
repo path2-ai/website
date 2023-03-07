@@ -59,7 +59,7 @@ export function Playground() {
             </div>
 
 
-            <div className="mx-auto max-w-7xl mx-6"
+            <div className="mx-auto max-w-7xl px-6"
             >
                 <h2 className='text-4xl font-bold text-white md:text-center flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 md:items-center md:justify-center'>
                     <span className='animate-text bg-gradient-to-r from-white via-gray-600 to-white bg-clip-text text-transparent'>

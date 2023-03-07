@@ -86,25 +86,58 @@ export function Manager() {
 
     return (
         <>
-            <div className="relative isolate overflow-hidden px-6 py-10 sm:py-12 lg:overflow-visible lg:px-0">
-                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-16 gap-x-8 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
-                    <div className="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-                        <div className="lg:pr-4">
-                            <div className="lg:max-w-lg">
+            <div className="relative isolate overflow-hidden md:px-6 py-10 sm:py-12 md:overflow-visible md:px-0">
+                <div className="mx-auto grid max-w-2xl grid-cols-1 gap-y-4 md:gap-y-16 gap-x-8 md:mx-0 md:max-w-none md:grid-cols-2 md:items-start md:gap-y-10">
+                    <div className="md:col-span-2 md:col-start-1 md:row-start-1 md:mx-auto md:grid md:w-full md:max-w-7xl md:grid-cols-2 md:gap-x-8 md:px-8">
+                        <div className="md:pr-4">
+                            <div className="md:max-w-lg">
                                 <p className="text-base font-semibold leading-7 text-green-400">Integrate NLP into your processes</p>
                                 <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-100 sm:text-4xl">"What can ChatGPT do for my business?"</h1>
-                                <p className="mt-6 text-xl leading-8 text-gray-300">
+                                <p className="mt-6 md:text-xl md:leading-8 text-gray-300">
                                     We get this question on a daily basis. And it's not just ChatGPT, but so much more. Embed and chain powerful NLP models into your processes.
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div className="p-16 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
-
+                    <div className="md:col-span-2 md:col-start-1 md:row-start-2 md:mx-auto md:grid md:w-full md:max-w-7xl md:grid-cols-2 md:gap-x-8 md:px-8">
+                        <div className="md:pr-4">
+                            <div className="max-w-xl text-base leading-7 text-gray-300 md:max-w-lg">
+                                <p>
+                                    Every company has processess running mainly on communication, collaboration and creativity. We know that these processes can be optimized by using AI to automate repetitive tasks and to provide insights that help to make better decisions.
+                                </p>
+                                <ul role="list" className="mt-4 space-y-4 md:mt-8 md:space-y-8 text-gray-500">
+                                    <li className="flex gap-x-3">
+                                        <IconBulb className="mt-1 h-5 w-5 flex-none text-yellow-400" aria-hidden="true" />
+                                        <span className="text-sm md:text-base">
+                                            <strong className="font-semibold text-gray-100">Automate insights.</strong> Every idea, ticket or post receives a category, giving you insights about sentiment, urgency or language.
+                                        </span>
+                                    </li>
+                                    <li className="flex gap-x-3">
+                                        <IconMicrophone className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
+                                        <span className="text-sm md:text-base">
+                                            <strong className="font-semibold text-gray-100">Text-to-text, voice-to-text.</strong> Build transformations that turn voice into text, and text into modified text. For instance, to create a detailed ticket from a voice message.
+                                        </span>
+                                    </li>
+                                    <li className="flex gap-x-3">
+                                        <IconArrowsShuffle className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
+                                        <span className="text-sm md:text-base">
+                                            <strong className="font-semibold text-gray-100">Structure-to-text, text-to-structure</strong> Turn any complex text into a structured format, and vice versa. For instance, turn spreadsheets describing products into SEO-optimized texts.
+                                        </span>
+                                    </li>
+                                </ul>
+                                <p className="mt-4 md:mt-8">
+                                    The implications are clear: your team can save a lot of time while generating better content, e.g. in sales, in support or other roles.
+                                </p>
+                                <h2 className="mt-8 md:mt-16 text-2xl font-bold tracking-tight text-gray-100">ChatGPT is only the beginning.</h2>
+                                <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-100">Put NLP into action for you.</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="mt-8 md:mt-0 md:p-16 md:sticky md:top-4 md:col-start-2 md:row-span-2 md:row-start-1 md:overflow-hidden">
                         <div className='relative'>
                             {!showRoI && (
                                 <div
-                                    className='grid grid-cols-2 gap-8'
+                                    className='grid md:grid-cols-2 gap-4  md:gap-8'
                                 >
                                     {useCases.map((useCase, index) => (
                                         <div
@@ -161,7 +194,7 @@ export function Manager() {
                                                     Operational benefits
                                                 </div>
                                                 <div
-                                                    className="h-52 text-gray-100 block w-full bg-gradient-to-b from-[#0f0f0f] to-[#141414] p-4 focus:outline-none sm:text-sm resize-none"
+                                                    className="h-66 text-gray-100 block w-full bg-gradient-to-b from-[#0f0f0f] to-[#141414] p-4 focus:outline-none sm:text-sm resize-none"
                                                 >
                                                     <label for="minmax-range" className="block mb-2 text-sm font-medium text-gray-500">
                                                         {showRoI.question}
@@ -195,11 +228,11 @@ export function Manager() {
                                                     Analytical benefits
                                                 </div>
                                                 <div
-                                                    className="flex flex-col h-60 text-gray-100 block w-full bg-gradient-to-b from-[#141414] to-[#111111] p-4 focus:outline-none sm:text-sm resize-none"
+                                                    className="flex flex-col h-88 md:h-60 text-gray-100 block w-full bg-gradient-to-b from-[#141414] to-[#111111] p-4 focus:outline-none sm:text-sm resize-none"
                                                 >
-                                                    <div className='mt-2 flex flex-row'>
+                                                    <div className='mt-2 flex flex-col md:flex-row'>
                                                         <div
-                                                            className='-ml-10'
+                                                            className='md:-ml-10'
                                                         >
                                                             <Doughnut
                                                                 data={dataSentiment}
@@ -216,7 +249,7 @@ export function Manager() {
                                                             />
                                                         </div>
                                                         <div
-                                                            className='-ml-28'
+                                                            className='mt-10 md:mt-0 md:-ml-28'
                                                         >
                                                             <Doughnut
                                                                 data={dataIntent}
@@ -235,14 +268,14 @@ export function Manager() {
                                                     </div>
                                                     <div className='mt-6'>
                                                         <p className='text-gray-400 text-sm'>
-                                                            Gain <span className='font-semibold text-green-500'>relevant insights</span> directly from your process.
+                                                            Gain <span className='font-semibold text-green-500'>relevant insights</span>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div
                                                     className='h-12 rounded-b-md bg-neutral-800 border-t border-gray-800 flex flex-row pl-4 pr-2 items-center justify-between text-sm text-gray-500'
                                                 >
-                                                    <span>
+                                                    <span className='hidden md:block'>
                                                         Help your team to work smarter
                                                     </span>
                                                     <button
@@ -259,41 +292,6 @@ export function Manager() {
                                     </div>
                                 </div>
                             )}
-                        </div>
-
-                    </div>
-                    <div className="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
-                        <div className="lg:pr-4">
-                            <div className="max-w-xl text-base leading-7 text-gray-300 lg:max-w-lg">
-                                <p>
-                                    Every company has processess running mainly on communication, collaboration and creativity. We know that these processes can be optimized by using AI to automate repetitive tasks and to provide insights that help to make better decisions.
-                                </p>
-                                <ul role="list" className="mt-8 space-y-8 text-gray-500">
-                                    <li className="flex gap-x-3">
-                                        <IconBulb className="mt-1 h-5 w-5 flex-none text-yellow-400" aria-hidden="true" />
-                                        <span>
-                                            <strong className="font-semibold text-gray-100">Automate insights.</strong> Every idea, ticket or post receives a category, giving you insights about sentiment, urgency or language.
-                                        </span>
-                                    </li>
-                                    <li className="flex gap-x-3">
-                                        <IconMicrophone className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
-                                        <span>
-                                            <strong className="font-semibold text-gray-100">Text-to-text, voice-to-text.</strong> Build transformations that turn voice into text, and text into modified text. For instance, to create a detailed ticket from a voice message.
-                                        </span>
-                                    </li>
-                                    <li className="flex gap-x-3">
-                                        <IconArrowsShuffle className="mt-1 h-5 w-5 flex-none text-green-400" aria-hidden="true" />
-                                        <span>
-                                            <strong className="font-semibold text-gray-100">Structure-to-text, text-to-structure</strong> Turn any complex text into a structured format, and vice versa. For instance, turn spreadsheets describing products into SEO-optimized texts.
-                                        </span>
-                                    </li>
-                                </ul>
-                                <p className="mt-8">
-                                    The implications are clear: your team can save a lot of time while generating better content, e.g. in sales, in support or other roles.
-                                </p>
-                                <h2 className="mt-16 text-2xl font-bold tracking-tight text-gray-100">ChatGPT is only the beginning.</h2>
-                                <h2 className="mt-2 text-2xl font-bold tracking-tight text-gray-100">Put NLP into action for you.</h2>
-                            </div>
                         </div>
                     </div>
                 </div>

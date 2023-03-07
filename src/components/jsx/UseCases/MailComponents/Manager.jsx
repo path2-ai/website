@@ -102,7 +102,7 @@ export function Manager() {
                             </div>
                         </div>
                     </div>
-                    <div className="md:p-16 md:sticky md:top-4 md:col-start-2 md:row-span-2 md:row-start-1 md:overflow-hidden">
+                    <div className="mt-8 md:mt-0 md:p-16 md:sticky md:top-4 md:col-start-2 md:row-span-2 md:row-start-1 md:overflow-hidden">
                         <div className='relative'>
                             <div
                                 className='absolute w-full h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
