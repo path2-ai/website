@@ -31,7 +31,7 @@ export function DocumentProcessing() {
         <div
             id="document-processing"
         >
-            <div className='h-[48rem] max-w-5xl mx-auto flex flex-col space-y-6 overflow-auto scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-neutral-900'>
+            <div className='max-w-5xl mx-auto flex flex-col space-y-6'>
                 <div className='flex flex-row items-center md:space-x-4'>
                     <div
                         className='hidden md:block p-3 bg-[#0d0d0d] border border-neutral-900 rounded-2xl'
@@ -57,7 +57,7 @@ export function DocumentProcessing() {
                         </p>
                     </div>
                 </div>
-                <div className='p-[1px] h-[48rem] rounded-xl bg-gradient-to-b from-neutral-600 to-neutral-900'>
+                <div className='p-[1px] h-[48rem] rounded-xl bg-gradient-to-b from-neutral-600 to-neutral-900  overflow-auto scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-neutral-900'>
                     <div className="flex min-h-full bg-neutral-900 rounded-xl">
 
                         <div className="flex w-0 flex-1 flex-col">
