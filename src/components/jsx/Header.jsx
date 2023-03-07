@@ -204,7 +204,7 @@ export function Header({ isDarkTheme }) {
                                                     leaveFrom="opacity-100 translate-y-0"
                                                     leaveTo="opacity-0 translate-y-1"
                                                 >
-                                                    <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
+                                                    <Popover.Panel className="absolute left-1/2 z-40 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
                                                         <div className={
                                                             classNames(
                                                                 isDarkTheme ? (
@@ -326,7 +326,7 @@ export function Header({ isDarkTheme }) {
                                         ) : (
                                             "bg-white ring-gray-200"
                                         ),
-                                        "absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md shadow-lg ring-1 ring-opacity-5 focus:outline-none"
+                                        "absolute right-0 z-40 mt-2 w-56 origin-top-right rounded-md shadow-lg ring-1 ring-opacity-5 focus:outline-none"
                                     )}>
                                         <div className="py-1">
                                             <Menu.Item>
@@ -425,7 +425,7 @@ export function Header({ isDarkTheme }) {
 
                 {/* mobile menu */}
                 <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-                    <Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-black px-6 py-6 lg:hidden">
+                    <Dialog.Panel focus="true" className="fixed inset-0 z-40 overflow-y-auto bg-black px-6 py-6 lg:hidden">
                         <div className="flex h-9 items-center justify-between">
                             <div className="flex">
                                 <a

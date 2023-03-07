@@ -394,33 +394,7 @@ export function Enduser() {
                                     <div className='border border-t border-gray-800'>
                                         {showTransformedContent ? (
                                             <div>
-                                                <div className='flex flex-row space-x-2 pb-2 px-6'>
-                                                    <ul role="list" className="mt-2 leading-8">
-                                                        <li className="inline">
-                                                            <a
-                                                                href="#"
-                                                                className="relative inline-flex items-center rounded-full border border-gray-800 px-3 py-0.5"
-                                                            >
-                                                                <div className="absolute flex flex-shrink-0 items-center justify-center">
-                                                                    <span className="h-1.5 w-1.5 rounded-full bg-rose-500" aria-hidden="true" />
-                                                                </div>
-                                                                <div className="ml-3.5 text-sm font-medium text-gray-100">Knowledge</div>
-                                                            </a>{' '}
-                                                        </li>
-                                                        <li className="inline">
-                                                            <a
-                                                                href="#"
-                                                                className="relative inline-flex items-center rounded-full border border-gray-800 px-3 py-0.5"
-                                                            >
-                                                                <div className="absolute flex flex-shrink-0 items-center justify-center">
-                                                                    <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" aria-hidden="true" />
-                                                                </div>
-                                                                <div className="ml-3.5 text-sm font-medium text-gray-100">Tutorial</div>
-                                                            </a>{' '}
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div className='border-t border-gray-800 p-6 text-gray-300 text-sm leading-6 font-medium'>
+                                                <div className='p-6 text-gray-300 text-sm leading-6 font-medium'>
                                                     <p>
                                                         Have you ever wanted to get the latest stock news in Slack? Enriched with sentiment, so you know if positive or negative things are happening? Well, now you can!
 

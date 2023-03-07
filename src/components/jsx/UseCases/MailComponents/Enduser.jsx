@@ -502,7 +502,7 @@ export function Enduser() {
                                                                 Now
                                                             </p>
                                                         </div>
-                                                        <div className='mt-4 flex flex-row justify-between'>
+                                                        <div className='mt-4 flex flex-col mt-3 xl:mt-0 xl:flex-row justify-between'>
                                                             <div
                                                                 className="space-y-6 text-sm text-gray-300"
                                                                 dangerouslySetInnerHTML={{ __html: selectedMessage.response.text }}
@@ -748,7 +748,7 @@ export function Enduser() {
                                                                 <span className="text-gray-100 text-sm">You</span>{' '}
                                                                 <span className="text-gray-300 text-sm">drafted</span>
                                                             </h3>
-                                                            <div className='mt-2 flex flex-col '>
+                                                            <div className='mt-2 flex flex-col'>
                                                                 <div
                                                                     className="space-y-4 text-sm text-gray-300"
                                                                     dangerouslySetInnerHTML={{ __html: selectedMessage.response.text }}

@@ -42,7 +42,7 @@ export function Playground() {
             </div>
 
             <div className={classNames(
-                'mt-6 hidden md:block sticky top-14 py-1 z-40 backdrop-blur-md opacity-[98%]'
+                'mt-6 hidden md:block sticky top-14 py-1 z-20 backdrop-blur-md opacity-[98%]'
             )}>
                 <div className='flex flex-row justify-center mx-auto p-2 space-x-2'>
                     {navigation.map((item) => (
