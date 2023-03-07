@@ -78,7 +78,7 @@ export function TrainingDataPipe() {
                         </p>
                     </div>
                 </div>
-                <div className='hidden md:flex flex-row items-center space-x-2 mx-auto '>
+                <div className='hidden lg:flex flex-row items-center space-x-2 mx-auto '>
                     <div
                         className='mx-auto w-fit h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-full opacity-90'
                     >
