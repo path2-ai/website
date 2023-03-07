@@ -208,7 +208,7 @@ export function Footer({ isDarkTheme }) {
                     </div>
                 </div>
             </div >
-            <div className="flex flex-row space-x-6">
+            <div className="mx-6 flex flex-row space-x-6">
                 <Link
                     href="/file/DE_IS_20230058_27001_KernAI_ENG.pdf" download
                 >
