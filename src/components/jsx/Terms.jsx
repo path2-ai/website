@@ -185,7 +185,7 @@ export function Terms() {
                         </span>
                     </h1>
                     <div className="mt-8">
-                        <p>Last updated: 06/02/2023</p>
+                        <p>Last updated: 07/03/2023</p>
                     </div>
                     <div className="mt-8 space-y-8">
                         <div className="flex flex-col space-y-4">
@@ -229,7 +229,7 @@ export function Terms() {
                                 <li>unlimited users</li>
                                 <li>batch and realtime data processing</li>
                                 <li>role-based access control</li>
-                                <li>5,000 refinery credits/month incl.</li>
+                                <li>3,000 refinery credits/month incl.</li>
                                 <li>priority support</li>
                             </ul>
                             <p>13.2.3 Enterprise</p>
