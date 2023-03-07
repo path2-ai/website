@@ -5,11 +5,13 @@ import { ContactModal } from "./ContactModal"
 import axios from "axios";
 import { Fragment, useEffect, useState } from 'react'
 import { Transition } from '@headlessui/react'
+import Link from "next/link";
+
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export function Footer() {
+export function Footer({ isDarkTheme }) {
 
     const router = useRouter()
 
@@ -23,12 +25,21 @@ export function Footer() {
 
 
     const navigation = {
+        "Common use cases": [
+            { name: 'Email automation', onClick: () => { router.push('/#email-automation') } },
+            { name: 'GPT-like content', onClick: () => { router.push('/#content-generation') } },
+            { name: 'Data-centric NLP', onClick: () => { router.push('/#training-data') } },
+
+        ],
         product: [
-            { name: 'Platform architecture', onClick: () => { router.push('/docs/architecture') } },
-            { name: 'How it works', onClick: () => { router.push('/docs/how-it-works') } },
-            { name: 'Pricing', onClick: () => { router.push('/pricing') } },
+            { name: 'Platform', onClick: () => { router.push('/platform') } },
+            { name: 'Architecture', onClick: () => { router.push('/platform/architecture') } },
+            { name: 'How it works', onClick: () => { router.push('/platform/how-it-works') } },
+            { name: 'Labeling services', onClick: () => { router.push('/platform/labeling-services') } },
+            { name: 'One API for everything', onClick: () => { router.push('/platform/api-proxy') } },
         ],
         docs: [
+            { name: 'Changelog', onClick: () => { router.push('https://changelog.kern.ai') } },
             { name: 'refinery', onClick: () => { router.push('https://docs.kern.ai/refinery') } },
             { name: 'bricks', onClick: () => { router.push('https://docs.kern.ai/bricks') } },
             { name: 'gates', onClick: () => { router.push('https://docs.kern.ai/gates') } },
@@ -39,6 +50,8 @@ export function Footer() {
             { name: 'Blog', onClick: () => { router.push('/company/blog') } },
             { name: 'Careers', onClick: () => { router.push('/company/careers') } },
             { name: 'Contact', onClick: () => { setOpenContactModal(true) } },
+            { name: 'Pricing', onClick: () => { router.push('/pricing') } },
+            { name: 'Lean NLP Canvas', onClick: () => { router.push('/company/lean-nlp-canvas') } },
         ],
         other: [
             { name: 'Imprint', onClick: () => { router.push('/imprint') } },
@@ -76,17 +89,24 @@ export function Footer() {
         ],
     }
     return (
-        <footer className="my-10 max-w-5xl mx-auto">
+        <footer className="py-10 max-w-5xl mx-auto">
             <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-                <div className="md:grid md:grid-cols-6 gap-4 text-sm">
-                    <div className="flex col-span-2 md:col-span-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="md:grid md:grid-cols-7 gap-4 text-sm">
+                    <div className="flex col-span-2 md:col-span-5 grid grid-cols-2 md:grid-cols-5 gap-2">
                         {Object.keys(navigation).filter(section => section != 'social').map((section) => (
                             <div key={section} className="col-span-1">
                                 <h3 className="text-white">{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
                                 <ul role="list" className="mt-2 space-y-2">
                                     {navigation[section].map((item) =>
                                         <li key={item.name}>
-                                            <div onClick={item.onClick} className="text-gray-300 hover:text-white cursor-pointer">
+                                            <div onClick={item.onClick} className={classNames(
+                                                isDarkTheme ? (
+                                                    "text-gray-300 hover:text-white"
+                                                ) : (
+                                                    "text-gray-600 hover:text-gray-900"
+                                                ),
+                                                "cursor-pointer"
+                                            )}>
                                                 {item.name}
                                             </div>
                                         </li>
@@ -95,10 +115,16 @@ export function Footer() {
                             </div>
                         ))}
                     </div>
-                    <div className="mt-8 md:mt-0 col-span:4 md:col-span-2">
+                    <div className="mt-8 md:mt-0 col-span:5 md:col-span-2">
                         <div>
                             <h3 className="text-white">Subscribe to our newsletter</h3>
-                            <p className="mt-4 text-gray-300">
+                            <p className={classNames(
+                                isDarkTheme ? (
+                                    "text-gray-300"
+                                ) : (
+                                    "text-gray-600"
+                                ),
+                                "mt-4")}>
                                 The latest news, articles, and resources, sent to your inbox weekly.
                             </p>
                             <div className="mt-4 flex max-w-md">
@@ -110,7 +136,13 @@ export function Footer() {
                                     name="newsletter"
                                     id="newsletter"
                                     required
-                                    className="w-full min-w-0 appearance-none rounded-md border border-transparent bg-neutral-900 py-2 px-4 text-base text-gray-100 placeholder-gray-300 focus:border-white focus:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-neutral-900 focus:ring-offset-2 focus:ring-offset-gray-200"
+                                    className={classNames(
+                                        isDarkTheme ? (
+                                            "bg-neutral-900 text-gray-100 placeholder-gray-300 focus:border-white focus:placeholder-gray-400 focus:ring-neutral-900 focus:ring-offset-gray-200"
+                                        ) : (
+                                            "bg-white text-gray-900 placeholder-gray-500 focus:border-green-300 focus:placeholder-gray-400 focus:ring-green-500 focus:ring-offset-green-200"
+                                        ),
+                                        "w-full min-w-0 appearance-none rounded-md border border-transparent py-2 px-4 text-base focus:outline-none focus:ring-2 focus:ring-offset-2")}
                                     placeholder="Enter your email"
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
@@ -118,7 +150,11 @@ export function Footer() {
                                     <button
                                         type="button"
                                         className={classNames(
-                                            !(consent && email) ? "text-gray-500 bg-neutral-700 cursor-not-allowed " : "text-neutral-900 bg-gradient-to-r from-lime-300 to-green-600 hover:from-lime-400 hover:to-green-500",
+                                            isDarkTheme ? (
+                                                !(consent && email) ? "text-gray-500 bg-neutral-700 cursor-not-allowed " : "text-neutral-900 bg-gradient-to-r from-lime-300 to-green-600 hover:from-lime-400 hover:to-green-500"
+                                            ) : (
+                                                !(consent && email) ? "text-gray-300 bg-gray-500 cursor-not-allowed " : "text-white bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700"
+                                            ),
                                             "flex w-full items-center justify-center rounded-md py-2 px-4 text-base font-medium focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-800"
                                         )}
                                         onClick={() => {
@@ -157,8 +193,14 @@ export function Footer() {
                                     </div>
                                 </div>
                                 <div className="ml-2 text-xs">
-                                    <label htmlFor="consent" className="font-medium text-gray-300">
-                                        I agree to the storage of my data for the purpose of contacting me and I consent to the privacy policy.
+                                    <label htmlFor="consent" className={classNames(
+                                        isDarkTheme ? (
+                                            "text-gray-300"
+                                        ) : (
+                                            "text-gray-600"
+                                        ),
+                                        "font-medium")}>
+                                        I would like to receive the newsletter with news, articles and resources about Kern AI and NLP. Consent can be revoked with future effect, e.g. by emailing info@kern.ai. For more information, please see our <a className="hover:text-green-500" href="/privacy">privacy policy</a>.
                                     </label>
                                 </div>
                             </div>
@@ -166,16 +208,36 @@ export function Footer() {
                     </div>
                 </div>
             </div >
+            <div className="mx-6 flex flex-row space-x-6">
+                <Link
+                    href="/file/DE_IS_20230058_27001_KernAI_ENG.pdf" download
+                >
+                    <img src="/iso-27001.png" className="h-12 w-12" />
+
+                </Link>
+                <img src="/gdpr.png" className="h-12 w-12" />
+            </div>
             <div className="mx-4 mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
                 <div className="flex space-x-6 md:order-2">
                     {navigation.social.map((item) => (
-                        <a key={item.name} href={item.href} className="text-gray-400 hover:text-lime-400">
+                        <a key={item.name} href={item.href} className={classNames(
+                            isDarkTheme ? (
+                                "text-gray-400 hover:text-lime-400"
+                            ) : (
+                                "text-gray-600 hover:text-green-700"
+                            ))}>
                             <span className="sr-only">{item.name}</span>
                             <item.icon className="h-6 w-6" aria-hidden="true" />
                         </a>
                     ))}
                 </div>
-                <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
+                <p className={classNames(
+                    isDarkTheme ? (
+                        "text-gray-400"
+                    ) : (
+                        "text-gray-600"
+                    ),
+                    "mt-8 text-base md:order-1 md:mt-0")}>
                     &copy; 2023 Kern AI GmbH. All rights reserved.
                 </p>
             </div>

@@ -1,5 +1,9 @@
 import { Head, Html, Main, NextScript } from 'next/document'
 
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
 const modeScript = `
   let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
 
@@ -9,7 +13,8 @@ const modeScript = `
 
   function updateMode() {
     let isSystemDarkMode = darkModeMediaQuery.matches
-    let isDarkMode = true //window.localStorage.isDarkMode === 'true' || (!('isDarkMode' in window.localStorage) && isSystemDarkMode)
+
+    let isDarkMode = !window.location.href.includes('german-insurers')
 
     if (isDarkMode) {
       document.documentElement.classList.add('dark')
@@ -36,13 +41,15 @@ const modeScript = `
 `
 
 export default function Document() {
+
+
   return (
     <Html lang="en">
       <Head>
         <script src="https://cdn.usefathom.com/script.js" data-site="ZIUTHOCW" defer></script>
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
       </Head>
-      <body className="bg-white antialiased dark:bg-black">
+      <body className="antialiased bg-slate-50 dark:bg-black">
         <Main />
         <NextScript />
       </body>

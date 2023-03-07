@@ -1,11 +1,109 @@
+import { Disclosure } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import { IconArrowRight } from '@tabler/icons'
+import Link from 'next/link'
+
+
+const faqs = [
+    {
+        question: "How is my data encrypted?",
+        answer:
+            "All of your data is encrypted with A-grade SSL at transfer and with LUKS at rest to protect requests from eavesdropping and man-in-the-middle attacks and to secure your data from unauthorized access.",
+    }, {
+        question: "How often are backups created?",
+        answer: "Our databases are provided and managed by our certified cloud service provider. Daily full cluster database backups are created and write-ahead-logs are maintained to enable rollbacks to any point in time for the last seven days. The database rollback strategy gets detailed tested at least quarterly.",
+    }, {
+        question: "Where are the data centers located?",
+        answer: "Our application server and managed databases are located in Frankfurt, Germany. The data centers of the provider we use maintain state-of-the-art physical security, including around-the-clock surveillance, environmental protection, and comprehensive secure access policies, and are ISO 27001 certified.",
+    }, {
+        question: "How do you ensure operational security?",
+        answer: "We have set up ISO 27001 conform processes and continuously train the security awareness of our employees to ensure a high level of operational security. Amongst other measures, we protect all digital assets from malware, have strict logging procedures, and have comprehensive technical vulnerability management.",
+    }, {
+        question: "Can we use Multi-Factor Authorization?",
+        answer: "In our App we provide users the ability to enable MFA for login to reduce friction and increase security. Additionally, we use a security stack that detects on account creation whether a password has been leaked in a data breach, and validates that used passwords are secure.",
+    }, {
+        question: "How do you deal with vendors?",
+        answer: "At Kern AI, we strive to minimize our reliance on external service providers. When we do need to engage their services, we take great care to choose providers who meet our high standards, and we conduct audits of all key service providers in compliance with ISO 27001.",
+    }, {
+        question: "I have some further questions about your security - who can I contact?",
+        answer: "For all further questions, please contact security@kern.ai.",
+    },
+]
+
+function classNames(...classes) {
+    return classes.filter(Boolean).join(' ')
+}
+
+
 export function Security() {
     return (
         <div className="relative overflow-hidden text-gray-100 py-16">
             <div className="relative px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-prose text-lg flex flex-col space-y-8">
-
                     <h1>
                         <span className="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-white sm:text-4xl">
+                            Security at Kern AI in a nutshell
+                        </span>
+                    </h1>
+                    <p className="mt-8 text-lg leading-8 text-gray-300">
+                        For the development and operation of our application platform, we follow industry-leading best practices to keep your data secure.
+                    </p>
+
+                    <dl className="mt-10 space-y-6 divide-y divide-gray-800">
+                        {faqs.map((faq) => (
+                            <Disclosure as="div" key={faq.question} className="pt-6">
+                                {({ open }) => (
+                                    <>
+                                        <dt className="text-sm">
+                                            <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-600">
+                                                <span className="font-medium text-gray-100">{faq.question}</span>
+                                                <span className="ml-6 flex h-7 items-center">
+                                                    <ChevronDownIcon
+                                                        className={classNames(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
+                                                        aria-hidden="true"
+                                                    />
+                                                </span>
+                                            </Disclosure.Button>
+                                        </dt>
+                                        <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                                            <p className="text-sm text-gray-500">{faq.answer}</p>
+                                        </Disclosure.Panel>
+                                    </>
+                                )}
+                            </Disclosure>
+                        ))}
+                    </dl>
+
+
+                    <h2>
+                        <span className="mt-16 block text-center text-2xl font-bold leading-8 tracking-tight text-white sm:text-3xl">
+                            ISO 27001
+                        </span>
+                    </h2>
+                    <p className="mt-8 text-lg leading-8 text-gray-300">
+                        ISO 27001 is an internationally recognized standard that outlines requirements for establishing, implementing, maintaining, and continuously improving an information security management system (ISMS). This standard provides a systematic approach to managing sensitive information and helps organizations protect the confidentiality, integrity, and availability of their data.
+                    </p>
+                    <Link
+                        href="/file/DE_IS_20230058_27001_KernAI_ENG.pdf" download
+                        className='flex flex-row items-center space-x-2 group text-gray-200 hover:text-white'>
+                        <IconArrowRight className='h-5 w-5 text-gray-200 group-hover:text-white group-hover:rotate-90 transition-transform duration-300 ease-in-out' />
+                        <span>
+                            Download certification
+                        </span>
+                    </Link>
+
+                    <h2>
+                        <span className="mt-16 block text-center text-2xl font-bold leading-8 tracking-tight text-white sm:text-3xl">
+                            GDPR
+                        </span>
+                    </h2>
+                    <p className="mt-8 text-lg leading-8 text-gray-300">
+                        At Kern AI, we strictly adhere to all requirements of the General Data Protection Regulation (GDPR), including those related to data protection, privacy, and the sharing of personal data.
+                    </p>
+                    <img src="/heydata.png" className="mt-4 w-40 mx-auto" />
+
+                    <h1>
+                        <span className="mt-20 block text-center text-3xl font-bold leading-8 tracking-tight text-white sm:text-4xl">
                             General Information Security Policy
                         </span>
                     </h1>

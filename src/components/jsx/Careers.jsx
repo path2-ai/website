@@ -6,43 +6,43 @@ import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto'; // this must be imported to enable the charts plugin; don't remove it!
 import { useState } from 'react';
 
-const labels = ['July', 'August', 'September', 'October', 'November', 'December', 'January', 'February'];
+const labels = ['July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March']
 const employeeSurveyData = [
     {
         label: "How happy are you with your role?",
         colorPrimary: "#f97316", // orange
         colorSecondary: "#fdba74",
-        data: [6.2, 6.6, 5.8, 6.2, 6, 6.2, 6.6, 6.4]
+        data: [6.2, 6.6, 5.8, 6.2, 6, 6.2, 6.6, 6.4, 6.6]
     },
     {
         label: "Are my work and efforts sufficiently appreciated?",
         colorPrimary: "#84cc16", // green
         colorSecondary: "#bef264",
-        data: [6, 6.4, 6, 6.2, 6.6, 6.4, 6.6, 6.4]
+        data: [6, 6.4, 6, 6.2, 6.6, 6.4, 6.6, 6.4, 6.6]
     },
     {
         label: "Do I feel comfortable expressing my opinion at work and is it respected?",
         colorPrimary: "#14b8a6", // teal
         colorSecondary: "#5eead4",
-        data: [6.4, 6.6, 6.4, 6.6, 6.8, 6.6, 6.8, 6.6]
+        data: [6.4, 6.6, 6.4, 6.6, 6.8, 6.6, 6.8, 6.6, 6.2]
     },
     {
         label: "Do I know what is expected of me at work?",
         colorPrimary: "#8b5cf6", // purple
         colorSecondary: "#c4b5fd",
-        data: [6.2, 6.4, 6.2, 6.4, 6.6, 6.4, 6.6, 6.6]
+        data: [6.2, 6.4, 6.2, 6.4, 6.6, 6.4, 6.6, 6.6, 6.4]
     },
     {
         label: "I have the feeling to have clear company goals ahead of me.",
         colorPrimary: "#ec4899", // pink
         colorSecondary: "#f9a8d4",
-        data: [6, 6.2, 6.2, 6.6, 6.6, 6.6, 6.8, 6.8]
+        data: [6, 6.2, 6.2, 6.6, 6.6, 6.6, 6.8, 6.8, 6.8]
     },
     {
         label: "I know exactly what I do and my work is clearly defined.",
         colorPrimary: "#ef4444", // red
         colorSecondary: "#fca5a5",
-        data: [5.6, 5.8, 5.6, 5.8, 6, 5.8, 6, 6.4]
+        data: [5.6, 5.8, 5.6, 5.8, 6, 5.8, 6, 6.4, 6.4]
     },
 ]
 
@@ -71,35 +71,15 @@ function getEmployeeSurveyDataset(employeeData) {
 }
 
 export const positions = [
-    // {
-    //     id: 1,
-    //     title: 'Go-to-Market Manager',
-    //     type: 'Full-time',
-    //     href: 'https://join.com/companies/kernai/6849194-go-to-market-manager',
-    //     location: 'Remote or Bonn',
-    //     department: 'Business Development',
-    //     closeDate: '2022-02-28',
-    //     closeDateFull: 'February 28, 2022',
-    // },
-    // {
-    //     id: 2,
-    //     title: 'Founders Associate',
-    //     type: 'Full-time',
-    //     href: 'https://join.com/companies/kernai/6849584-founders-associate',
-    //     location: 'Remote or Bonn',
-    //     department: 'Founders department',
-    //     closeDate: '2022-02-28',
-    //     closeDateFull: 'February 28, 2022',
-    // },
     {
-        id: 3,
-        title: 'Working student for Administration',
+        id: 1,
+        title: 'Working student - bricks contributor',
         type: 'Working student',
-        href: 'https://join.com/companies/kernai/6849926-working-student-for-administration',
-        location: 'Berlin/Potsdam',
-        department: 'Administration',
-        closeDate: '2022-02-28',
-        closeDateFull: 'February 28, 2022',
+        href: 'https://join.com/companies/kernai/7353178-working-student-natural-language-processing-engineer-project-bricks',
+        location: 'Remote',
+        department: 'Engineering',
+        closeDate: '2023-05-01',
+        closeDateFull: 'May 1, 2023',
     },
 ]
 
@@ -209,7 +189,7 @@ const values = [
 const perks = [
     {
         name: 'CET ± 2 hours',
-        description: "You can work from anywhere within CET ± 2 hours. We have an office in Bonn if you want to join on-site.",
+        description: "You can work from anywhere within CET ± 2 hours. We have offices in Bonn/Potsdam if you want to join on-site.",
         icon: IconGlobe,
     },
     {

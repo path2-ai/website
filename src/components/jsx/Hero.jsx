@@ -1,32 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { LogoCloud } from './LogoCloud'
-import Link from 'next/link'
-import { AccessBanner } from './AccessBanner'
+import { StrategicNLPBanner } from './StrategicNLPBanner'
 import { AccessModal } from './AccessModal'
 
 export function Hero() {
-    const [text, setText] = useState('ETL pipelines')
-    const [counter, setCounter] = useState(0)
+
     const [openAccessModal, setOpenAccessModal] = useState(false)
-
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            // Increment the counter
-            setCounter((prevCounter) => prevCounter + 1)
-
-            // Update the text based on the counter value
-            if (counter % 3 == 0) {
-                setText('workflows')
-            } else if (counter % 3 == 1) {
-                setText('products')
-            } else if (counter % 3 == 2) {
-                setText('ETL pipelines')
-            }
-        }, 2000) // Update the text every 2 seconds
-
-        return () => clearInterval(interval)
-    }, [counter]) // Only run the effect when the counter changes
 
     return (
         <div>
@@ -49,18 +28,13 @@ export function Hero() {
                             <div>
                                 <h1 className="text-white text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
                                     <div>We help companies to embed modern</div>
-                                    <div className="md:py-6 text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600">
+                                    <div className="md:py-3 lg:py-6 text-transparent bg-clip-text bg-gradient-to-r from-lime-300 via-emerald-500 to-green-600 animate-text">
                                         natural language processing
                                     </div>
                                     <div>into their products and processes</div>
-
-                                    {/* <div>The data-centric platform to power</div>
-                                    <div className="md:py-6 text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600">
-                                        natural language <span className='bg-clip-text bg-gradient-to-r from-lime-300 to-green-600 animate-pulse'>{' '}{text}</span>
-                                    </div> */}
                                 </h1>
                                 <p className="mt-6 text-xl leading-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-gray-300 to-gray-500 sm:text-center">
-                                    Used by developers at AI-driven organizations, both small and large
+                                    Used by teams at AI-driven organizations, both small and large
                                 </p>
                                 <LogoCloud />
                             </div>
@@ -68,7 +42,7 @@ export function Hero() {
                     </div>
                 </div>
             </main>
-            <AccessBanner setOpenAccessModal={setOpenAccessModal} />
+            <StrategicNLPBanner />
             <AccessModal open={openAccessModal} setOpen={setOpenAccessModal} />
         </div>
     )
