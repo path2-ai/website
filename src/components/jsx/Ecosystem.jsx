@@ -677,7 +677,7 @@ export function Ecosystem() {
       </div>
       <div className='flex flex-col justify-center max-w-5xl mx-auto mt-16'>
         <h2
-          className="text-3xl w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-neutral-600 to-neutral-300 animate-text"
+          className="mx-6 text-3xl w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-neutral-600 to-neutral-300 animate-text"
         >
           Why we believe low-code and data-centric will power the future of NLP
         </h2>

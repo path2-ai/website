@@ -67,7 +67,7 @@ export function Story() {
                                 className='absolute w-full h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
                             />
                             <div
-                                className="p-6 relative flex overflow-x-scroll hide-scroll-bar"
+                                className="p-6 relative flex overflow-x-scroll scrollbar-thin scrollbar-thumb-neutral-900 scrollbar-track-neutral-700"
                             >
                                 <div
                                     className="flex flex-nowrap space-x-6"
