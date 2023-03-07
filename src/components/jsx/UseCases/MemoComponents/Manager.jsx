@@ -188,7 +188,7 @@ export function Manager() {
                                         className='absolute w-full h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
                                     />
 
-                                    <div className='p-6 relative flex flex-col space-y-6'>
+                                    <div className='relative flex flex-col space-y-6'>
                                         <div className=''>
                                             <div className='p-[1px] rounded-md bg-gradient-to-b from-gray-800 to-neutral-900'>
                                                 <div className='flex flex-row items-center justify-between px-4 py-1 text-gray-500 text-sm rounded-t-md bg-neutral-900 border-b border-gray-800'>
