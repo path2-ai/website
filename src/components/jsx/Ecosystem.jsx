@@ -9,7 +9,58 @@ import { Icon360, IconApiApp, IconApps, IconBrain, IconBrandDocker, IconBrandOpe
 import Link from 'next/link'
 import { Tooltip } from "@nextui-org/react";
 import { useRouter } from 'next/router'
-import { IconArrowRight, IconBrandDiscord, IconChessKnight, IconHeart, IconStack3, IconTerminal, IconTrophy, IconUser } from "@tabler/icons"
+import { IconTerminal } from "@tabler/icons"
+import { Disclosure } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/24/outline'
+
+const faqs = [
+  {
+    question: "Do I need expertise in NLP to use this?",
+    answer:
+      "It's a low-code platform. You certainly must have some technical affinity, but you do not need a PhD in NLP. You can build almost any NLP use case with ease. Plus, we're here to help you."
+  },
+  {
+    question: "What can I build with this?",
+    answer:
+      "Think of processes in your company running on communications like emails or messages. That is where NLP usually is interesting, look into our examples on the front page. However, NLP is a broad field, and there definitely are dozens of niche use cases in your team. With our platform, you can build them."
+  },
+  {
+    question: "Is this complimentary to OpenAI?",
+    answer:
+      "You can combine any kind of algorithm you want with other ones in refinery. Let's say you have a sentiment analysis use case (positive, neutral, negative classification of texts), and want to use GPT-3 for this. You can do that. In our platform, you can simultaneously call the GPT-3 API, combine it with your own regular expressions and active learning models finetuned on your data, and many more. This will improve the accuracy of your model with ease."
+  },
+  {
+    question: "How much data do I need?",
+    answer:
+      "If you're thinking of raw data, you can start with as little as 10 items - they can be handcrafted. We can extend this data with synthetic data generated from large language models like GPT-3. If you have thousands of samples for raw data, that is also great. For labeling, you can easily start with as little as 30 items per class - and use our autolabeling capabilities as well as managed labeling services to scale your training data."
+  },
+  {
+    question: "Can I leverage the power of large language models?",
+    answer:
+      "Absolutely. Our platform is designed to work flexibly, so if your goal is to build great training data, you can use e.g. GPT-3 to label data for you. In the training phase, you can then switch to something like a logistic regression - it's up to you."
+  },
+  {
+    question: "Is this open source?",
+    answer:
+      "Partially. The core of refinery is open source, and bricks is fully available on GitHub. gates and workflow are proprietary. You can find the open source repositories on our GitHub page."
+  },
+  {
+    question: "I'm missing an integration. Can you add it?",
+    answer:
+      "Yes, we are constantly adding new integrations. If you are missing an integration, please let us know and we will add it to our roadmap. If you're on the enterprise plan, we can also add custom integrations."
+  },
+  {
+    question: "Where is my data stored?",
+    answer:
+      "Our application server and managed databases are located in Frankfurt, Germany. The data centers of the provider we use maintain state-of-the-art physical security, including around-the-clock surveillance, environmental protection, and comprehensive secure access policies, and are ISO 27001 certified. For more information, please look into our security page."
+  },
+  {
+    question: "How do the products work together?",
+    answer:
+      "Our products can be stacked together. Take a look into our product architecture to see how the stack is designed."
+  }
+]
+
 
 const useCases = [
   {
@@ -712,6 +763,39 @@ export function Ecosystem() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className="mx-auto max-w-3xl lg:max-w-5xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl divide-y-2 divide-gray-800">
+            <h2 className="text-center text-2xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+              Frequently asked questions
+            </h2>
+            <dl className="mt-10 space-y-6 divide-y divide-gray-800">
+              {faqs.map((faq) => (
+                <Disclosure as="div" key={faq.question} className="pt-6">
+                  {({ open }) => (
+                    <>
+                      <dt className="text-sm">
+                        <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-600">
+                          <span className="font-medium text-gray-100">{faq.question}</span>
+                          <span className="ml-6 flex h-7 items-center">
+                            <ChevronDownIcon
+                              className={classNames(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
+                              aria-hidden="true"
+                            />
+                          </span>
+                        </Disclosure.Button>
+                      </dt>
+                      <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                        <p className="text-sm text-gray-500">{faq.answer}</p>
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+              ))}
+            </dl>
           </div>
         </div>
       </div>
