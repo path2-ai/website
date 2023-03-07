@@ -60,13 +60,13 @@ export function TrainingDataPipe() {
 
     return (
         <div
-            className='mt-28'
+            className='mt-28 px-6'
             id="training-data"
         >
             <div className='max-w-5xl mx-auto flex flex-col space-y-6'>
-                <div className='flex flex-row items-center space-x-4'>
+                <div className='flex flex-row items-center md:space-x-4'>
                     <div
-                        className='p-3 bg-[#0d0d0d] border border-neutral-900 rounded-2xl'
+                        className='hidden md:block p-3 bg-[#0d0d0d] border border-neutral-900 rounded-2xl'
                     >
                         <IconArrowsShuffle className='text-neutral-500 w-6 h-6' />
                     </div>
@@ -79,11 +79,11 @@ export function TrainingDataPipe() {
                         </p>
                     </div>
                 </div>
-                <div className='flex flex-row items-center space-x-2 mx-auto '>
+                <div className='hidden md:flex flex-row items-center space-x-2 mx-auto '>
                     <div
                         className='mx-auto w-fit h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-full opacity-90'
                     >
-                        <div className='flex flex-col md:flex-row mx-auto p-2 space-y-2 md:space-y-0 md:space-x-2'>
+                        <div className='flex flex-row mx-auto p-2 space-x-2'>
                             {slideContent.map((item) => (
                                 <div key={item.name}>
                                     <div
