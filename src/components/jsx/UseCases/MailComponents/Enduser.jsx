@@ -47,7 +47,7 @@ export function Enduser() {
                         name: 'Monica White',
                         email: 'monica.white@acme.org',
                     },
-                    date: 'Wednesday at 4:35pm',
+                    date: 'Wed. at 4:35pm',
                     datetime: '2021-01-27T16:35',
                     body: `
                     <p>It is amazing to see how natural language processing can be used to automate email workflows. I love this tool!</p>
@@ -166,8 +166,7 @@ export function Enduser() {
                     setLoading(inView)
                 }
             }}>
-                <div className='p-[1px] rounded-xl bg-gradient-to-b from-neutral-600 to-neutral-900'>
-
+                <div className='hidden md:block p-[1px] rounded-xl bg-gradient-to-b from-neutral-600 to-neutral-900 m-4'>
                     <div className="relative h-[48rem] flex flex-col rounded-xl bg-neutral-900 p-[1px]">
                         {/* Top nav*/}
                         <header className="relative flex h-16 flex-shrink-0 items-center bg-neutral-900 rounded-t-xl">
@@ -248,7 +247,7 @@ export function Enduser() {
                             {/* Main area */}
                             <main className="min-w-0 flex flex-row border-t border-gray-800 xl:flex">
                                 {/* Message list*/}
-                                <aside className="hidden lg:block xl:flex-shrink-0">
+                                <aside className="hidden md:block xl:flex-shrink-0">
                                     <div className="relative flex h-full w-96 flex-col border-r border-gray-800 bg-neutral-900">
                                         <div className="flex-shrink-0">
                                             <div className="flex h-16 flex-row items-center justify-between bg-neutral-900 px-6">
@@ -539,13 +538,13 @@ export function Enduser() {
                                                 ) : (
                                                     <div className='p-[1px] rounded-lg bg-gradient-to-r from-neutral-900 via-green-700 to-neutral-900 hover:from-neutral-800 hover:via-green-600 hover:to-neutral-800'>
                                                         <button
-                                                            className="h-16 px-4 bg-[#141414] rounded-lg text-gray-200 flex flex-col items-center justify-center text-sm hover:bg-[#171717] active:bg-[#0f0f0f] hover:text-gray-300 transition-colors duration-200"
+                                                            className="h-20 px-4 bg-[#141414] rounded-lg text-gray-200 flex flex-col items-center justify-center text-sm hover:bg-[#171717] active:bg-[#0f0f0f] hover:text-gray-300 transition-colors duration-200"
                                                             onClick={() => {
                                                                 setLoading(true)
                                                             }}
                                                         >
                                                             <div className='flex flex-row items-center font-semibold'>
-                                                                Classify mail and generate a draft response
+                                                                Classify mail and generate draft
                                                             </div>
                                                             <p className='text-gray-500 text-sm ml-2'>
                                                                 In production, this would happen in the background
@@ -557,12 +556,13 @@ export function Enduser() {
                                         )}
                                     </div>
                                 </section>
-
-
                             </main>
                         </div>
                     </div>
                     <CustomMailModal open={openCustomMailModal} setOpen={setOpenCustomMailModal} messages={messages} setMessages={setMessages} />
+                </div>
+                <div className='block md:hidden text-white'>
+                    Please switch to desktop view
                 </div>
                 <p className='mt-4 text-center text-gray-300'>
                     This works for any email client, for all channels (Email, WhatsApp, Telegram, Social Media) and with any customer-facing IT system (CRM, CSM).
