@@ -322,7 +322,7 @@ export function DocumentProcessing() {
                                                                                             <th scope="row" className="pl-6 pr-3 pt-1 text-left text-sm font-semibold text-gray-100 sm:hidden">
                                                                                                 Total
                                                                                             </th>
-                                                                                            <td className="pl-3 pr-4 pt-1 text-right text-sm font-semibold text-gray-100 sm:pr-0"><span className='border border-transparent-500 w-fit p-1'>1.071,00€</span></td>
+                                                                                            <td className="pl-3 pr-4 pt-1 text-right text-sm font-semibold text-gray-100 sm:pr-0"><span className='border border-transparent w-fit p-1'>1.071,00€</span></td>
                                                                                         </tr>
                                                                                     </tfoot>
                                                                                 </table>
