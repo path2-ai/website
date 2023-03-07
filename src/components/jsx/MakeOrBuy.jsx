@@ -72,34 +72,32 @@ export function MakeOrBuy() {
     return (
         <div>
             {/* <div className="absolute inset-0 bg-gradient-to-b from-neutral-900 to-black" /> */}
-            <main className="relative">
-                <div className="relative px-6 lg:px-8">
-                    <div className="mx-auto max-w-5xl py-16 sm:py-20">
+            <main className="relative mx-6">
+                <div className="relative">
+                    <div className="mx-auto max-w-5xl py-12 md:py-32">
                         <div>
-                            <div>
-                                <h1 className="text-white text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
-                                    <div>"How will </div>
-                                    <div className="md:py-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-500 to-green-600 animate-text">
-                                        ChatGPT and the likes
-                                    </div>
-                                    <div>affect my business?"</div>
-                                </h1>
-                                <p className="mt-6 text-xl leading-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-gray-300 to-gray-500 sm:text-center">
-                                    - Literally everyone right now.
-                                </p>
-                            </div>
+                            <h1 className="text-white text-4xl font-bold tracking-tight sm:text-center">
+                                <span>"How will </span>
+                                <span className="mr-2 md:py-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-500 to-green-600 animate-text">
+                                    ChatGPT and the likes
+                                </span>
+                                <span>affect my business?"</span>
+                            </h1>
+                            <p className="mt-6 text-xl leading-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-gray-300 to-gray-500 sm:text-center">
+                                - Literally everyone right now.
+                            </p>
                         </div>
                     </div>
+
                 </div>
                 <div className='flex flex-col items-center justify-center'>
 
-                    {/* immediate race for innovation */}
-                    <section className="max-w-5xl mx-auto py-16 sm:py-20">
+                    <section className="max-w-5xl mx-auto py-16 sm:py-12">
                         <div
                             className='flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-16'
                         >
-                            <img src='/communication.png' className='p-10 lg:order-last max-w-md ml-auto' />
-                            <div className='mx-6 lg:mx-0 text-white'>
+                            <img src='/communication.png' className='lg:p-10 lg:order-last max-w-xs lg:max-w-md lg:ml-auto' />
+                            <div className='mt-10 lg:mt-0 lg:mx-6 lg:mx-0 text-white'>
                                 <h2 className='text-2xl font-bold'>
                                     Every process that involves two or more people in communication will be affected.
                                 </h2>
@@ -120,8 +118,8 @@ export function MakeOrBuy() {
                         <div
                             className='flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-16'
                         >
-                            <img src='/sigmoid.png' className='p-10 lg:order-first max-w-md ml-auto' />
-                            <div className='mx-6 lg:mx-0 text-white'>
+                            <img src='/sigmoid.png' className='p-10 lg:order-first max-w-xs lg:max-w-md lg:ml-auto' />
+                            <div className='mt-10 lg:mt-0 lg:mx-6 lg:mx-0 text-white'>
                                 <h2 className='text-2xl font-bold'>
                                     ChatGPT is only the beginning.
                                 </h2>
@@ -141,7 +139,7 @@ export function MakeOrBuy() {
                         <div
                             className='flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-16'
                         >
-                            <div className='mx-6 lg:mx-0 text-white'>
+                            <div className='lg:mx-6 lg:mx-0 text-white'>
                                 <h2 className='text-2xl font-bold'>
                                     {current.title}
                                 </h2>
@@ -170,9 +168,9 @@ export function MakeOrBuy() {
                                 </div>
                             </div>
                             <div
-                                className='w-fit bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
+                                className='mt-10 lg:mt-0 w-fit bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-2xl opacity-90'
                             >
-                                <img src={`/${showUseCase}.png`} className='relative p-10 lg:order-last max-w-md ml-auto' />
+                                <img src={`/${showUseCase}.png`} className='relative p-4 lg:p-10 lg:order-last max-w-xs lg:max-w-md lg:ml-auto' />
                             </div>
                         </div>
                     </section>
@@ -182,8 +180,8 @@ export function MakeOrBuy() {
                         <div
                             className='flex flex-col items-center lg:grid lg:grid-cols-2 lg:gap-16'
                         >
-                            <img src='/longtail.png' className='p-10 lg:order-first max-w-md ml-auto' />
-                            <div className='mx-6 lg:mx-0 text-white'>
+                            <img src='/longtail.png' className='p-10 lg:order-first max-w-xs lg:max-w-md lg:ml-auto' />
+                            <div className='mt-10 lg:mt-0 lg:mx-6 lg:mx-0 text-white'>
                                 <h2 className='text-2xl font-bold'>
                                     Make or buy? With a longtail of use cases, the strengths of a platform become apparent.
                                 </h2>
@@ -223,27 +221,25 @@ export function MakeOrBuy() {
                                                         <event.icon className="h-5 w-5 text-white" aria-hidden="true" />
                                                     </span>
                                                 </div>
-                                                <div className="flex min-w-0 flex-1">
-                                                    <div className="text-sm text-gray-400">
-                                                        <div>
-                                                            {event.title}
-                                                        </div>
-                                                        <div className="font-medium text-gray-100">
-                                                            {event.description}
-                                                        </div>
-                                                        {event.link && (
-                                                            <a
-                                                                href={event.link}
-                                                                className="group flex flex-row space-x-1 items-center text-blue-500 font-semibold hover:text-white"
-                                                            >
-                                                                <span>More about our lean NLP canvas</span>
-                                                                <IconArrowRight className='w-4 h-4 text-blue-500 group-hover:text-white' />
-                                                            </a>
-                                                        )}
+                                                <div className="text-sm text-gray-400">
+                                                    <div>
+                                                        {event.title}
+                                                    </div>
+                                                    <div className="font-medium text-gray-100">
+                                                        {event.description}
+                                                    </div>
+                                                    {event.link && (
+                                                        <a
+                                                            href={event.link}
+                                                            className="group flex flex-row space-x-1 items-center text-blue-500 font-semibold hover:text-white"
+                                                        >
+                                                            <span>More about our lean NLP canvas</span>
+                                                            <IconArrowRight className='w-4 h-4 text-blue-500 group-hover:text-white' />
+                                                        </a>
+                                                    )}
 
-                                                        <div className="whitespace-nowrap text-sm text-gray-300">
-                                                            {event.result}
-                                                        </div>
+                                                    <div className="text-sm text-gray-300">
+                                                        {event.result}
                                                     </div>
                                                 </div>
                                             </div>
@@ -255,7 +251,9 @@ export function MakeOrBuy() {
                     </div>
 
                 </div>
-                <PlatformBenefits />
+                <div className='py-20'>
+                    <PlatformBenefits />
+                </div>
             </main>
         </div>
     )
