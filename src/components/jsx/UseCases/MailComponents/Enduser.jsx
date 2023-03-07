@@ -443,7 +443,7 @@ export function Enduser() {
                                         <ul role="list" className="space-y-2 py-4 sm:space-y-4 sm:px-6 lg:px-8">
                                             {selectedMessage.thread.map((item, index) => (
                                                 <li key={item.id} className={classNames(
-                                                    "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
+                                                    "bg-neutral-800 px-4 py-6 shadow rounded-lg sm:px-6",
                                                     index % 2 === 0 ? 'mr-8' : 'ml-8'
                                                 )}>
                                                     <div className="sm:flex sm:items-baseline sm:justify-between">
@@ -471,7 +471,7 @@ export function Enduser() {
                                             {(classifiedMessageIds.includes(selectedMessage.id) || acceptedDraftMessageIds.includes(selectedMessage.id)) && (
                                                 (draftAccepted || acceptedDraftMessageIds.includes(selectedMessage.id)) ? (
                                                     <li key='response' className={classNames(
-                                                        "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
+                                                        "bg-neutral-800 px-4 py-6 shadow rounded-lg sm:px-6",
                                                         selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
                                                     )}>
                                                         <div className="sm:flex sm:items-baseline sm:justify-between">
@@ -490,7 +490,7 @@ export function Enduser() {
                                                     </li>
                                                 ) : (
                                                     <li key='draft' className={classNames(
-                                                        "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6 bg-opacity-50 border-2 border-dashed border-gray-700",
+                                                        "bg-neutral-800 px-4 py-6 shadow rounded-lg sm:px-6 bg-opacity-50 border-2 border-dashed border-gray-700",
                                                         selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
                                                     )}>
                                                         <div className="sm:flex sm:items-baseline sm:justify-between">
@@ -710,10 +710,10 @@ export function Enduser() {
                                                         authored by {selectedMessage.sender.name}
                                                     </p>
                                                 </div>
-                                                <ul role="list" className="space-y-2 py-4 sm:space-y-4">
+                                                <ul role="list" className="h-[30rem] space-y-2 py-4 sm:space-y-4 overflow-auto">
                                                     {selectedMessage.thread.map((item, index) => (
                                                         <li key={item.id} className={classNames(
-                                                            "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
+                                                            "bg-neutral-800 px-4 py-6 shadow rounded-lg sm:px-6",
                                                             index % 2 === 0 ? 'mr-8' : 'ml-8'
                                                         )}>
                                                             <h3 className="text-base font-medium">
@@ -727,7 +727,7 @@ export function Enduser() {
                                                     ))}
                                                     {(draftAccepted || acceptedDraftMessageIds.includes(selectedMessage.id)) ? (
                                                         <li key='response' className={classNames(
-                                                            "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
+                                                            "bg-neutral-800 px-4 py-6 shadow rounded-lg sm:px-6",
                                                             selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
                                                         )}>
                                                             <h3 className="text-base font-medium">
@@ -741,7 +741,7 @@ export function Enduser() {
                                                         </li>
                                                     ) : (
                                                         <li key='draft' className={classNames(
-                                                            "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6 bg-opacity-50 border-2 border-dashed border-gray-700",
+                                                            "bg-neutral-800 px-4 py-6 shadow rounded-lg sm:px-6 bg-opacity-50 border-2 border-dashed border-gray-700",
                                                             selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
                                                         )}>
                                                             <h3 className="text-base font-medium">

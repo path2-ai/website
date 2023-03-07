@@ -29,7 +29,7 @@ export function Playground() {
         <section className='py-16'>
             <div className={classNames(
                 hideSubNav ? 'hidden' : null,
-                'sticky top-14 py-1 z-40 backdrop-blur-md opacity-[98%]'
+                'hidden md:block sticky top-14 py-1 z-40 backdrop-blur-md opacity-[98%]'
             )}>
                 <div
                     className='max-w-5xl mx-auto '
@@ -59,9 +59,9 @@ export function Playground() {
             </div>
 
 
-            <div className="mx-auto max-w-7xl"
+            <div className="mx-auto max-w-7xl mx-6"
             >
-                <h2 className='text-4xl font-bold text-white text-center flex flex-row space-x-2 items-center justify-center'>
+                <h2 className='text-4xl font-bold text-white md:text-center flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 md:items-center md:justify-center'>
                     <span className='animate-text bg-gradient-to-r from-white via-gray-600 to-white bg-clip-text text-transparent'>
                         Common use cases
                     </span>

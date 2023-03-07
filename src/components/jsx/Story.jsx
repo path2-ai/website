@@ -53,11 +53,11 @@ export function Story() {
                     <div className="mx-auto max-w-5xl py-16 sm:py-20">
 
                         <h3
-                            className='text-3xl font-bold text-white text-center'
+                            className='text-2xl md:text-3xl font-bold text-white md:text-center'
                         >
                             A bit about natural language processing
                         </h3>
-                        <p className='text-gray-400 text-center mt-4'>
+                        <p className='text-sm md:text-base text-gray-400 md:text-center mt-2 md:mt-4'>
                             ...and why you should care!
                         </p>
                         <div
@@ -379,8 +379,11 @@ export function Story() {
                                             className="p-4 w-96 h-72 max-w-xs overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
                                         >
                                             <div className='absolute w-72 text-sm text-gray-500'>
-                                                <span className='text-center'>
+                                                <span className='hidden md:block text-center'>
                                                     Hover over this card to see the response
+                                                </span>
+                                                <span className='block md:hidden text-center'>
+                                                    Click on this card to see the response
                                                 </span>
                                             </div>
                                             <div className='relative rounded-md border border-gray-600 bg-neutral-800 h-64 mt-12 hover:mt-0 transition-all duration-300 ease-in-out'>
@@ -412,8 +415,11 @@ export function Story() {
                                             className="p-4 w-96 h-72 max-w-xs overflow-hidden rounded-lg shadow-md bg-neutral-900 border border-gray-800 hover:shadow-sm hover:shadow-gray-800 transition-shadow duration-300 ease-in-out"
                                         >
                                             <div className='absolute w-72 text-sm text-gray-500'>
-                                                <span className='text-center'>
+                                                <span className='hidden md:block text-center'>
                                                     Hover over this card to see the response
+                                                </span>
+                                                <span className='block md:hidden text-center'>
+                                                    Click on this card to see the response
                                                 </span>
                                             </div>
                                             <div className='relative rounded-md border border-gray-600 bg-neutral-800 h-64 mt-12 hover:mt-0 transition-all duration-300 ease-in-out'>
@@ -456,19 +462,28 @@ export function Story() {
                             </div>
                         </div>
 
-                        <div className='mt-2'>
-                            <Link
-                                href="/file/kernai_pitch_deck.pdf" download
-                                className='flex flex-row items-center space-x-2 group text-gray-200 hover:text-white'>
-                                <IconArrowRight className='h-5 w-5 text-gray-200 group-hover:text-white group-hover:rotate-90 transition-transform duration-300 ease-in-out' />
-                                <span>
-                                    Download slides
-                                </span>
-                            </Link>
+                        <div className='mt-4 flex flex-row space-x-4 items-center'>
+                            <div className='flex flex-row items-center space-x-2'>
+                                <div className='p-2 rounded-full bg-neutral-900 border-gray-800 w-fit'>
+                                    <IconArrowRight className='h-4 w-4 text-gray-100' />
+                                </div>
+                                <span className='text-white text-sm'>Scroll to the right</span>
+                            </div>
+                            <div>
+                                <Link
+                                    href="/file/kernai_pitch_deck.pdf" download
+                                    className='flex flex-row items-center space-x-2 group text-gray-200 hover:text-white'>
+                                    <div className='p-2 rounded-full bg-neutral-900 border-gray-800 w-fit'>
+                                        <IconArrowRight className='h-4 w-4 text-gray-100  group-hover:text-white group-hover:rotate-90 transition-transform duration-300 ease-in-out' />
+                                    </div>
+                                    <span className='text-white text-sm'>Download slides</span>
+
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </section >
+        </div >
     )
 }
