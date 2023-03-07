@@ -3,6 +3,7 @@ import { MemoToContent } from './UseCases/MemoToContent'
 import { TrainingDataPipe } from './UseCases/TrainingDataPipe'
 import { InView } from 'react-intersection-observer';
 import { useState } from 'react'
+import { AnyCase } from './UseCases/AnyCase';
 
 
 function classNames(...classes) {
@@ -20,6 +21,9 @@ export function Playground() {
     }, {
         name: 'Data-centric NLP',
         href: '#training-data',
+    }, {
+        name: 'Any use case',
+        href: '#any-case',
     }]
 
     const [currentView, setCurrentView] = useState(null)
@@ -96,6 +100,15 @@ export function Playground() {
                         }
                     }}>
                     <TrainingDataPipe />
+                </InView>
+                <InView
+                    threshold={0.5}
+                    as="div" onChange={(inView, entry) => {
+                        if (inView) {
+                            setCurrentView('Any use case')
+                        }
+                    }}>
+                    <AnyCase />
                 </InView>
             </div>
         </section >

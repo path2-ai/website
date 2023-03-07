@@ -494,10 +494,9 @@ export function Enduser() {
                                                         setIsLoadingTranscript(true)
                                                     }}
                                                 >
-                                                    Transcribe audio
-                                                    {isLoadingTranscript && (
-                                                        <IconLoader2 className='w-4 h-4 text-gray-500 animate-spin ml-1' />
-                                                    )}
+                                                    <span>
+                                                        {isLoadingTranscript ? "Loading..." : "Generate Transcript"}
+                                                    </span>
                                                 </button>
                                             </div>
                                         </div>
