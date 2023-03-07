@@ -159,7 +159,7 @@ export function MakeOrBuy() {
                                             Next
                                         </span>
                                     </button>
-                                    <a href="/#email-intelligence" className='group flex items-center mt-4 text-sm font-semibold text-gray-300 hover:text-white space-x-2'>
+                                    <a href={`/#${current.href}`} className='group flex items-center mt-4 text-sm font-semibold text-gray-300 hover:text-white space-x-2'>
                                         <IconArrowRight className='w-5 h-5 text-gray-300 group-hover:text-white' />
                                         <span>
                                             More details
