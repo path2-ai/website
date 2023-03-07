@@ -167,6 +167,9 @@ export function Enduser() {
                     setLoading(inView)
                 }
             }}>
+                <div className='pt-4 text-gray-500 text-sm text-center'>
+                    This is an interactive demo. You can click on the messages or generate drafts. In production, AI processes run in the background.
+                </div>
                 <div className='hidden md:block p-[1px] rounded-xl bg-gradient-to-b from-neutral-600 to-neutral-900 m-4'>
                     <div className="relative h-[48rem] flex flex-col rounded-xl bg-neutral-900 p-[1px]">
                         {/* Top nav*/}

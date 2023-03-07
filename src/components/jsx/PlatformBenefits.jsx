@@ -4,10 +4,10 @@ const useCases = [
     {
         name: 'Low-code',
         icon: IconTerminal,
-        description: 'You need some Python knowledge to build an application on our platform, but you do not need a PhD. You have the full flexibility, but can developer fast and easy.',
+        description: 'You need some Python knowledge to build an application on our platform, but you do not need a PhD. You have the full flexibility, but can develop fast and easy.',
     },
     {
-        name: 'Your data intellectual property',
+        name: 'Your intellectual data property',
         icon: IconDatabase,
         description: 'Data lives longer than code. With our data-centric approach, you build your intellectual data property, allowing you to stay flexible when it comes to your requirements.',
     },
@@ -19,7 +19,7 @@ const useCases = [
     {
         name: 'Strategic investment',
         icon: IconChessKnight,
-        description: 'Businesses are run by people, and people communicate - via email, chat, PDFs, and more. NLP will must be core to your business strategy, and we are here to help you build it.',
+        description: 'Businesses are run by people, and people communicate - via email, chat, PDFs, and more. NLP must be core to your business strategy, and we are here to help you build it.',
     },
 ]
 

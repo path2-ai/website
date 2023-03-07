@@ -12,6 +12,8 @@ import { useRouter } from 'next/router'
 import { IconTerminal } from "@tabler/icons"
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import { InView } from 'react-intersection-observer';
+
 
 const faqs = [
   {
@@ -67,10 +69,10 @@ const useCases = [
     name: 'Speed and flexibility',
     icon: IconTerminal,
     mirror: false,
-    description: 'You need some Python knowledge to build an application on our platform, but you do not need a PhD. You have the full flexibility, but can developer fast and easy.',
+    description: 'You need some Python knowledge to build an application on our platform, but you do not need a PhD. You have the full flexibility, but can develop fast and easy.',
   },
   {
-    name: 'Your data intellectual property',
+    name: 'Your intellectual data property',
     icon: IconDatabase,
     mirror: false,
     description: 'Data lives longer than code. With our data-centric approach, you build your intellectual data property, allowing you to stay flexible when it comes to your requirements.',
@@ -132,7 +134,7 @@ const slideContent = {
         href: 'https://docs.kern.ai/refinery/heuristics',
         name: 'Automate with heuristics',
         description:
-          'refinery is shipped with a Monaco editor, enabling you to write heuristics in plain Python. Use them for e.g. rules, API calls, regex, active transfer learning or zero-shot predictions',
+          'refinery is shipped with a Monaco editor, enabling you to write heuristics in plain Python. Use them for e.g. rules, API calls, regex, active transfer learning or zero-shot predictions.',
         icon: IconCode,
         colsSpan: 1,
       },
@@ -281,7 +283,7 @@ const slideContent = {
     image: "/screenshot-workflow.png",
     fromColor: "from-sky-500",
     toColor: "to-blue-500",
-    ringColor: "ring-blue-500",
+    ringColor: "ring-sky-500",
     cols: 2,
     features: [
       {
@@ -422,6 +424,7 @@ function Feature({ feature, product }) {
 
 export function Ecosystem() {
 
+  const [carouselInView, setCarouselInView] = useState(false)
   const [current, setCurrent] = useState(slider.current())
   const [clickedOption, setClickedOption] = useState(null)
   const router = useRouter()
@@ -437,6 +440,16 @@ export function Ecosystem() {
     }, 10)
     return () => clearInterval(interval)
   }, [timer])
+
+  useEffect(() => {
+    if (!carouselInView) {
+      setClickedOption(current)
+      setTimer(0)
+    } else {
+      setClickedOption(null)
+      setTimer(0)
+    }
+  }, [carouselInView])
 
   return (
     <section className='mx-auto max-w-5xl py-10 sm:py-16'>
@@ -454,9 +467,14 @@ export function Ecosystem() {
       <p className='mt-8 text-center text-gray-300 text-lg'>
         Designed with an open-core available on GitHub. Build from templates or build completely from scratch.
       </p>
+
       <div className='mt-16 mx-6'>
-        <div>
-          <div className="flex">
+        <div className="flex flex-col space-y-6">
+          <InView
+            threshold={0.5}
+            as="div" onChange={(inView, entry) => {
+              setCarouselInView(inView)
+            }}>
             <div className='space-y-4'>
               {current == 'refinery' && (
                 <div className='bg-gradient-to-b from-purple-700 via-purple-400 to-purple-700 rounded-lg 
@@ -707,25 +725,28 @@ export function Ecosystem() {
                   You can click on the below feature cards to jump into the documentation.
                 </p>
               </div>
-              <div className='hidden md:block'>
-                <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-white/5`}>
-                  {slideContent[current].features.map((feature) => (
-                    <Feature key={feature.name} feature={feature} product={current} />
-                  ))}
-                </div>
+            </div>
+          </InView>
+          <div>
+            <div className='hidden md:block'>
+              <div className={`w-full grid grid-cols-1 md:grid-cols-2 gap-6 border-t border-white/5`}>
+                {slideContent[current].features.map((feature) => (
+                  <Feature key={feature.name} feature={feature} product={current} />
+                ))}
               </div>
-              <div className='block md:hidden'>
-                <div className={`w-full flex flex-col space-y-6 border-t border-white/5`}>
-                  {slideContent[current].features.map((feature) => (
-                    <Feature key={feature.name} feature={feature} product={current} />
-                  ))}
-                </div>
+            </div>
+            <div className='block md:hidden'>
+              <div className={`w-full flex flex-col space-y-6 border-t border-white/5`}>
+                {slideContent[current].features.map((feature) => (
+                  <Feature key={feature.name} feature={feature} product={current} />
+                ))}
               </div>
-
             </div>
           </div>
         </div>
       </div>
+
+
       <div className='flex flex-col justify-center max-w-5xl mx-auto mt-16'>
         <h2
           className="mx-6 text-3xl w-fit font-bold text-transparent bg-clip-text bg-gradient-to-r from-gray-200 via-neutral-600 to-neutral-300 animate-text"

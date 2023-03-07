@@ -69,6 +69,9 @@ export function Enduser() {
 
     return (
         <>
+            <div className='pt-4 mb-2 text-gray-500 text-sm text-center'>
+                This is an interactive demo. You can click on the button to transcribe the recording.
+            </div>
             {showTranscribed ? (
                 <div>
                     <div

@@ -1,4 +1,4 @@
-import { IconArrowDown, IconArrowRight, IconCategory2, IconFile, IconHighlight, IconMail, IconSearch, IconWindmill, IconWorldWww } from '@tabler/icons'
+import { IconArrowDown, IconArrowLeftRight, IconArrowRight, IconArrowsLeftRight, IconCategory2, IconFile, IconHighlight, IconMail, IconSearch, IconWindmill, IconWorldWww } from '@tabler/icons'
 import Link from 'next/link'
 
 export function Story() {
@@ -152,13 +152,13 @@ export function Story() {
                                                     <IconArrowDown className="h-4 w-4 mx-auto my-2 text-gray-400" />
                                                 </div>
                                                 <p className="text-gray-400 text-center text-sm">
-                                                    Businesses are run by humans. Most of the data in a company contains natural language.
+                                                    Businesses are run by humans. Most of the data in a company contain natural language.
                                                 </p>
                                                 <div>
                                                     <IconArrowDown className="h-4 w-4 mx-auto my-2 text-gray-400" />
                                                 </div>
                                                 <p className="text-gray-400 text-center text-sm">
-                                                    It becomes obvious why 80% of the data in the world is unstructured like text.
+                                                    It becomes obvious why 80% of the data in the world is unstructured, like text.
                                                 </p>
                                             </div>
                                         </div>
@@ -465,13 +465,15 @@ export function Story() {
                         <div className='mt-4 flex flex-row space-x-4 items-center'>
                             <div className='flex flex-row items-center space-x-2'>
                                 <div className='p-2 rounded-full bg-neutral-900 border-gray-800 w-fit'>
-                                    <IconArrowRight className='h-4 w-4 text-gray-100' />
+                                    <IconArrowsLeftRight className='h-4 w-4 text-gray-100' />
                                 </div>
-                                <span className='text-white text-sm'>Scroll to the right</span>
+                                <span className='text-white text-sm'>You can scroll horizontally</span>
                             </div>
                             <div>
                                 <Link
                                     href="/file/kernai_pitch_deck.pdf" download
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className='flex flex-row items-center space-x-2 group text-gray-200 hover:text-white'>
                                     <div className='p-2 rounded-full bg-neutral-900 border-gray-800 w-fit'>
                                         <IconArrowRight className='h-4 w-4 text-gray-100  group-hover:text-white group-hover:rotate-90 transition-transform duration-300 ease-in-out' />

@@ -20,7 +20,7 @@ export function Playground() {
         name: 'GPT-like content generation',
         href: '#content-generation',
     }, {
-        name: 'Data-centric NLP',
+        name: 'NLP pipelines',
         href: '#training-data',
     }, {
         name: 'Document processing',
@@ -100,7 +100,7 @@ export function Playground() {
                     threshold={0.5}
                     as="div" onChange={(inView, entry) => {
                         if (inView) {
-                            setCurrentView('Data-centric NLP')
+                            setCurrentView('NLP pipelines')
                         }
                     }}>
                     <TrainingDataPipe />

@@ -92,7 +92,7 @@ export function Header({ isDarkTheme }) {
                         <div className="mt-2" aria-label="Global">
                             <button
                                 type='button'
-                                className="m-1.5 p-1.5 cursor-pointer">
+                                className="-mt-1.5 p-1.5 cursor-pointer">
                                 <span className="sr-only">Kern AI</span>
                                 <span className='hidden xl:block'>
                                     {isDarkTheme ? (
@@ -142,7 +142,7 @@ export function Header({ isDarkTheme }) {
                                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                             </button>
                         </div>
-                        <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-8">
+                        <div className="-mt-1.5 hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-8">
                             {navigation.map((item) => (
                                 item.href ? (
                                     <Link key={item.name} href={item.href} className={classNames(

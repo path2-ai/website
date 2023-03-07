@@ -1,10 +1,12 @@
 import { IconArrowRight, IconMoon, IconSun } from "@tabler/icons";
 import Link from "next/link";
 import { useState } from "react";
+import { ContactModal } from "./ContactModal";
 
 export function LeanNLPCanvas() {
 
     const [showLightVersion, setShowLightVersion] = useState(false)
+    const [openContactModal, setOpenContactModal] = useState(false)
 
     return (
         <section className='max-w-5xl mx-auto py-32 px-6'>
@@ -15,6 +17,8 @@ export function LeanNLPCanvas() {
                     href={
                         showLightVersion ? "/file/lean_nlp_canvas_light.pdf" : "/file/lean_nlp_canvas.pdf"
                     }
+                    target="_blank"
+                    rel="noopener noreferrer"
                     download
                 >
                     <img src={
@@ -62,6 +66,8 @@ export function LeanNLPCanvas() {
                         <div className='mt-2'>
                             <Link
                                 href="/file/lean_nlp_canvas_email_intelligence.pdf" download
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className='flex flex-row items-center space-x-2 group text-gray-200 hover:text-white'>
                                 <IconArrowRight className='h-5 w-5 text-gray-200 group-hover:text-white group-hover:rotate-90 transition-transform duration-300 ease-in-out' />
                                 <span>
@@ -82,6 +88,8 @@ export function LeanNLPCanvas() {
                         <div className='mt-2'>
                             <Link
                                 href="/file/lean_nlp_canvas_email_intelligence.pdf" download
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className='flex flex-row items-center space-x-2 group text-gray-200 hover:text-white'>
                                 <IconArrowRight className='h-5 w-5 text-gray-200 group-hover:text-white group-hover:rotate-90 transition-transform duration-300 ease-in-out' />
                                 <span>
@@ -98,13 +106,16 @@ export function LeanNLPCanvas() {
                     <h2 className='text-2xl font-bold text-white'>A few notes on the canvas</h2>
                     <div className="mt-4 text-gray-300">
                         <ul className="mt-4 list-disc list-inside">
-                            <li>The canvas aims to bridge strategical and technical questions. Use it with the level of granularity you think makes sense; that is, if you want to add a KPI to the value proposition, do that.</li>
+                            <li>The canvas aims to bridge strategical and technical questions. Use it how you like; that is, if you want to add a KPI to the value proposition, do that.</li>
                             <li>Your canvas will be iterative. Don't aim for perfection right away.</li>
                             <li>Try to understand which challenges could come when you use the canvas.</li>
                             <li>The canvas is a tool. Not your answer. The relevant part is what happens when you work with it. It helps you gain an overview of questions that are relevant to ask, and potential obstacles.</li>
                         </ul>
                         <p className="mt-4 text-gray-300">
-                            If you need help filling out the canvas, or if you have any questions, feel free to reach out to us.
+                            If you need help filling out the canvas, or if you have any questions, feel free to <button
+                                className='text-green-500 hover:text-white'
+                                onClick={() => setOpenContactModal(true)}
+                            >reach out to us</button>.
                         </p>
                     </div>
                 </div>
