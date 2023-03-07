@@ -178,7 +178,7 @@ export function Enduser() {
                             </div>
 
                             {/* Desktop nav area */}
-                            <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:items-center lg:justify-end">
+                            <div className="flex min-w-0 flex-1 items-center justify-end">
                                 <div className="ml-10 flex flex-shrink-0 items-center space-x-10 pr-4">
                                     <nav aria-label="Global" className="flex space-x-10">
                                         {navigation.map((item) =>
