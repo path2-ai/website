@@ -814,7 +814,7 @@ export function Enduser() {
                         </svg>
                     </div>
                 </div>
-                <p className='mt-4 text-center text-gray-300'>
+                <p className='mt-4 md:text-center text-gray-400 text-sm'>
                     This works for any email client, for all channels (Email, WhatsApp, Telegram, Social Media) and with any customer-facing IT system (CRM, CSM).
                 </p>
             </InView>

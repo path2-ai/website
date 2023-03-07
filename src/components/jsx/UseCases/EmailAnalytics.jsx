@@ -32,12 +32,12 @@ export function EmailAnalytics() {
 
     return (
         <div
-            className='my-28'
+            className='my-28 px-6'
             id="email-automation">
             <div className='max-w-5xl mx-auto flex flex-col space-y-6'>
-                <div className='flex flex-row items-center space-x-4'>
+                <div className='flex flex-row items-center md:space-x-4'>
                     <div
-                        className='p-3 bg-[#0d0d0d] border border-neutral-900 rounded-2xl'
+                        className='hidden md:block p-3 bg-[#0d0d0d] border border-neutral-900 rounded-2xl'
                     >
                         <IconMail className='text-neutral-500 w-6 h-6' />
                     </div>
