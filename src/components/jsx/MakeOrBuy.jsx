@@ -7,17 +7,17 @@ const slider = new Circular(["email-intelligence", "voice-processing", "document
 const data = [{
     key: "email-intelligence",
     title: "Email intelligence",
-    description: "Automatically extract information from emails and use it to automate your business processes.",
+    description: "It's time to turn your generic info@-inbox into an AI superpower. Automatically categorize incoming mails, detect sentiment (e.g. positive, negative, neutral) and extract information (e.g. name, address, phone number, etc.) from them. Autogenerate response drafts and use the extracted information to automate your business processes.",
     href: 'email-automation'
 }, {
     key: "voice-processing",
     title: "Voice processing",
-    description: "Automatically extract information from voice recordings and use it to automate your business processes.",
+    description: "Transcribe voice recordings with highest accuracy, and automatically turn the transcripts into actionable items. Use the extracted information to automate your business processes, or transform the transcripts via simple instructions into formats like articles, posts and many more.",
     href: 'content-generation'
 }, {
     key: "document-processing",
     title: "Document processing",
-    description: "Automatically extract information from documents and use it to automate your business processes.",
+    description: "Turn your PDF documents into machine-readable data, even for niche cases specific to your company. Finally solve the longtail of your document processing needs with NLP.",
     href: 'training-data'
 }]
 
@@ -187,10 +187,10 @@ export function MakeOrBuy() {
                                 </h2>
 
                                 <p className='mt-4 text-gray-300'>
-                                    Don't make the mistake thinking ChatGPT is the final result of NLP. No, it is the beginning of mass awareness. In the next years, we will see more and more companies using NLP to automate their processes.
+                                    Our platform gives you the power to solve even niche use cases that are not covered by other providers in short time. And more than our platform, we are here to help you with your use case.
                                 </p>
                                 <p className='mt-2 text-blue-500 font-semibold'>
-                                    You're wondering which use cases NLP can be applied to? <br /> Read on.
+                                    Build your first use case with us. <br /> Turn your team into NLP pioneers, and solve your use cases with ease.
                                 </p>
                             </div>
                         </div>
