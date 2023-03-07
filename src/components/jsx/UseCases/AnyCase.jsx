@@ -35,11 +35,9 @@ export function AnyCase() {
             >
                 <img
                     src="/astronaut.png"
-                    className='bg-red-100 rounded-xl'
+                    className='rounded-xl'
                 />
             </div>
         </div >
     )
 }
-
-
