@@ -5,8 +5,8 @@ export function APIProxy() {
 
 
     return (
-        <div className="py-32 max-w-5xl mx-auto">
-            <main className="grid grid-cols-2 gap-4">
+        <div className="py-32 max-w-5xl mx-auto px-6">
+            <main className="grid md:grid-cols-2 gap-8 md:gap-4">
                 <div
                     className="flex flex-col items-center justify-center"
                 >
