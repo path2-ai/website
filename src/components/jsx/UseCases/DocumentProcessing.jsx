@@ -39,17 +39,17 @@ export function DocumentProcessing() {
                         <IconFile className='text-neutral-500 w-6 h-6' />
                     </div>
                     <div>
-                        <div className='flex flex-row items-center justify-between'>
+                        <div className='flex flex-col md:flex-row items-center justify-between'>
                             <h3 className='text-2xl font-bold text-white'>
                                 Processing PDF documents
                             </h3>
                             <div
-                                className='rounded-full text-sm bg-neutral-900 border border-neutral-800 px-2 py-1 text-gray-400'
+                                className='mt-2 md:mt-0 rounded-full text-sm bg-neutral-900 border border-neutral-800 px-2 py-1 text-gray-400'
                             >
                                 <span
                                     className='h-2 w-2 rounded-full bg-green-500 inline-block mr-1.5 animate-pulse'
                                 />
-                                Under development
+                                Coming this year
                             </div>
                         </div>
                         <p className='text-gray-400 mt-1'>
@@ -57,7 +57,7 @@ export function DocumentProcessing() {
                         </p>
                     </div>
                 </div>
-                <div className='p-[1px] h-[48rem] rounded-xl bg-gradient-to-b from-neutral-600 to-neutral-900  overflow-auto scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-neutral-900'>
+                <div className='hidden md:block p-[1px] h-[48rem] rounded-xl bg-gradient-to-b from-neutral-600 to-neutral-900 overflow-auto scrollbar-thin scrollbar-thumb-neutral-700 scrollbar-track-neutral-900'>
                     <div className="flex min-h-full bg-neutral-900 rounded-xl">
 
                         <div className="flex w-0 flex-1 flex-col">
