@@ -38,7 +38,7 @@ export function PlatformBenefits() {
             </h2>
             <div className="mt-12">
                 <div
-                    className='grid grid-cols-2 gap-8'
+                    className='grid md:grid-cols-2 gap-4 md:gap-8'
                 >
                     {useCases.map((useCase, index) => (
                         <div
@@ -91,22 +91,22 @@ export function PlatformBenefits() {
                                 When you become a client, we don't stop caring once you sign the contract. We are here to help you succeed, and we will do everything in our power to make that happen.
                             </p>
                         </div>
-                        <div className="flex flex-row space-x-4">
+                        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
                             <a
                                 className='group flex flex-row items-center space-x-1 text-sm text-gray-200 hover:text-yellow-500'
                                 href='https://discord.com/channels/993436333055938600/994293197087969311'
                                 target='_blank'
                                 rel='noreferrer noopener'
                             >
-                                <IconBrandDiscord className='text-gray-200 group-hover:text-yellow-500' size={16} />
-                                <span>See our CTO responding to community questions within minutes</span>
+                                <IconArrowRight className='hidden md:block text-gray-200 group-hover:text-yellow-500' size={16} />
+                                <span>See our CTO respond to community questions within minutes</span>
 
                             </a>
                             <a
                                 className='group flex flex-row items-center space-x-1 text-sm text-gray-200 hover:text-yellow-500'
                                 href='/company/about'
                             >
-                                <IconArrowRight className='text-gray-200 group-hover:text-yellow-500' size={16} />
+                                <IconArrowRight className='hidden md:block text-gray-200 group-hover:text-yellow-500' size={16} />
                                 <span>The power of our small team</span>
                             </a>
                         </div>
