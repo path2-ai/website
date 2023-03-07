@@ -189,7 +189,7 @@ const values = [
 const perks = [
     {
         name: 'CET ± 2 hours',
-        description: "You can work from anywhere within CET ± 2 hours. We have an office in Bonn if you want to join on-site.",
+        description: "You can work from anywhere within CET ± 2 hours. We have offices in Bonn/Potsdam if you want to join on-site.",
         icon: IconGlobe,
     },
     {
