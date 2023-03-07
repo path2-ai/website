@@ -172,7 +172,7 @@ export function Enduser() {
                         {/* Top nav*/}
                         <header className="relative flex h-16 flex-shrink-0 items-center bg-neutral-900 rounded-t-xl">
                             {/* Logo area */}
-                            <div className="absolute inset-y-0 left-0 lg:static lg:flex-shrink-0 border-r border-gray-800">
+                            <div className="hidden lg:block absolute inset-y-0 left-0 lg:static lg:flex-shrink-0 border-r border-gray-800">
                                 <div
                                     className="flex h-16 w-16 items-center justify-center focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-600 lg:w-20 rounded-tl-xl"
                                 />
@@ -246,154 +246,9 @@ export function Enduser() {
                             </nav>
 
                             {/* Main area */}
-                            <main className="min-w-0 flex-1 border-t border-gray-800 xl:flex">
-                                <section
-                                    aria-labelledby="message-heading"
-                                    className="flex h-full min-w-0 flex-1 flex-col overflow-hidden xl:order-last"
-                                >
-                                    <div className="mb-6 min-h-0 flex-1 overflow-y-auto">
-                                        <div className="bg-neutral-900 pt-5 pb-6 shadow">
-                                            <div className="px-4 sm:flex sm:items-baseline sm:justify-between sm:px-6 lg:px-8">
-                                                <div className="sm:w-0 sm:flex-1">
-                                                    <h1 id="message-heading" className="text-lg font-medium text-gray-100">
-                                                        {selectedMessage.subject}
-                                                    </h1>
-                                                    <p className="mt-1 truncate text-sm text-gray-500">{selectedMessage.sender.email}</p>
-                                                </div>
-
-                                                {classifiedMessageIds.includes(selectedMessage.id) && (
-                                                    <div className="mt-4 flex items-center justify-between sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:justify-start">
-                                                        <span className={classNames(
-                                                            "inline-flex items-center rounded-full px-3 py-0.5 text-sm font-medium",
-                                                            selectedMessage.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : (selectedMessage.response.sentiment === 'negative' ? 'bg-red-700 text-red-400' : 'bg-yellow-700 text-yellow-400')
-                                                        )}>
-                                                            {selectedMessage.response.sentiment}
-                                                        </span>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        </div>
-                                        {/* Thread section*/}
-                                        <ul role="list" className="space-y-2 py-4 sm:space-y-4 sm:px-6 lg:px-8">
-                                            {selectedMessage.thread.map((item, index) => (
-                                                <li key={item.id} className={classNames(
-                                                    "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
-                                                    index % 2 === 0 ? 'mr-8' : 'ml-8'
-                                                )}>
-                                                    <div className="sm:flex sm:items-baseline sm:justify-between">
-                                                        <h3 className="text-base font-medium">
-                                                            <span className="text-gray-100">{item.author.name}</span>{' '}
-                                                            <span className="text-gray-300">wrote</span>
-                                                        </h3>
-                                                        <p className="mt-1 whitespace-nowrap text-sm text-gray-200 sm:mt-0 sm:ml-3">
-                                                            <time dateTime={item.datetime}>{item.date}</time>
-                                                        </p>
-                                                    </div>
-                                                    <div
-                                                        className="mt-4 space-y-6 text-sm text-gray-300"
-                                                        dangerouslySetInnerHTML={{ __html: item.body }}
-                                                    />
-                                                </li>
-                                            ))}
-                                            {loading && (
-                                                <div className='pt-12 flex items-center justify-end h-full'>
-                                                    <div className='rounded-full bg-stone-500 h-8 w-8 flex items-center justify-center'>
-                                                        <IconLoader2 className='animate-spin h-5 w-5 text-gray-700' />
-                                                    </div>
-                                                </div>
-                                            )}
-                                            {(classifiedMessageIds.includes(selectedMessage.id) || acceptedDraftMessageIds.includes(selectedMessage.id)) && (
-                                                (draftAccepted || acceptedDraftMessageIds.includes(selectedMessage.id)) ? (
-                                                    <li key='response' className={classNames(
-                                                        "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
-                                                        selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
-                                                    )}>
-                                                        <div className="sm:flex sm:items-baseline sm:justify-between">
-                                                            <h3 className="text-base font-medium">
-                                                                <span className="text-gray-100">You</span>{' '}
-                                                                <span className="text-gray-300">wrote</span>
-                                                            </h3>
-                                                            <p className="mt-1 whitespace-nowrap text-sm text-gray-200 sm:mt-0 sm:ml-3">
-                                                                Now
-                                                            </p>
-                                                        </div>
-                                                        <div
-                                                            className="mt-4 space-y-6 text-sm text-gray-300"
-                                                            dangerouslySetInnerHTML={{ __html: selectedMessage.response.text }}
-                                                        />
-                                                    </li>
-                                                ) : (
-                                                    <li key='draft' className={classNames(
-                                                        "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6 bg-opacity-50 border-2 border-dashed border-gray-700",
-                                                        selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
-                                                    )}>
-                                                        <div className="sm:flex sm:items-baseline sm:justify-between">
-                                                            <h3 className="text-base font-medium">
-                                                                <span className="text-gray-100">You</span>{' '}
-                                                                <span className="text-gray-300">drafted</span>
-                                                            </h3>
-                                                            <p className="mt-1 whitespace-nowrap text-sm text-gray-200 sm:mt-0 sm:ml-3">
-                                                                Now
-                                                            </p>
-                                                        </div>
-                                                        <div className='mt-4 flex flex-row justify-between'>
-                                                            <div
-                                                                className="space-y-6 text-sm text-gray-300"
-                                                                dangerouslySetInnerHTML={{ __html: selectedMessage.response.text }}
-                                                            />
-                                                            <button
-                                                                className="py-1.5 px-3 rounded-full bg-neutral-900 hover:bg-neutral-700 active:bg-neutral-800 transition-colors duration-200 text-gray-200 text-sm"
-                                                                onClick={() => {
-                                                                    setDraftAccepted(true)
-                                                                }}
-                                                            >
-                                                                Accept & Send
-                                                            </button>
-                                                        </div>
-                                                    </li>
-                                                )
-                                            )}
-                                        </ul>
-                                        {!loading && !acceptedDraftMessageIds.includes(selectedMessage.id) && (
-                                            <div
-                                                className='my-2 flex items-center justify-end px-4 sm:px-6 lg:px-8'
-                                            >
-                                                {classifiedMessageIds.includes(selectedMessage.id) ? (
-                                                    <div className='p-[1px] rounded-lg bg-gradient-to-r from-neutral-900 via-green-700 to-neutral-900 hover:from-neutral-800 hover:via-green-600 hover:to-neutral-800'>
-                                                        <button
-                                                            className="p-4 bg-[#141414] rounded-lg text-gray-200 flex flex-col items-center justify-center text-sm hover:bg-[#171717] active:bg-[#0f0f0f] hover:text-gray-300 transition-colors duration-200"
-                                                            onClick={() => {
-                                                                setLoading(true)
-                                                                setClassifiedMessageIds(classifiedMessageIds.filter((messageId) => messageId !== selectedMessage.id))
-                                                            }}
-                                                        >
-                                                            <IconRefresh className='h-5 w-5' />
-                                                        </button>
-                                                    </div>
-                                                ) : (
-                                                    <div className='p-[1px] rounded-lg bg-gradient-to-r from-neutral-900 via-green-700 to-neutral-900 hover:from-neutral-800 hover:via-green-600 hover:to-neutral-800'>
-                                                        <button
-                                                            className="h-16 px-4 bg-[#141414] rounded-lg text-gray-200 flex flex-col items-center justify-center text-sm hover:bg-[#171717] active:bg-[#0f0f0f] hover:text-gray-300 transition-colors duration-200"
-                                                            onClick={() => {
-                                                                setLoading(true)
-                                                            }}
-                                                        >
-                                                            <div className='flex flex-row items-center font-semibold'>
-                                                                Classify mail and generate a draft response
-                                                            </div>
-                                                            <p className='text-gray-500 text-sm ml-2'>
-                                                                In production, this would happen in the background
-                                                            </p>
-                                                        </button>
-                                                    </div>
-                                                )}
-                                            </div>
-                                        )}
-                                    </div>
-                                </section>
-
+                            <main className="min-w-0 flex flex-row border-t border-gray-800 xl:flex">
                                 {/* Message list*/}
-                                <aside className="hidden xl:order-first xl:block xl:flex-shrink-0">
+                                <aside className="hidden lg:block xl:flex-shrink-0">
                                     <div className="relative flex h-full w-96 flex-col border-r border-gray-800 bg-neutral-900">
                                         <div className="flex-shrink-0">
                                             <div className="flex h-16 flex-row items-center justify-between bg-neutral-900 px-6">
@@ -556,6 +411,154 @@ export function Enduser() {
                                         </nav>
                                     </div>
                                 </aside>
+
+
+                                <section
+                                    aria-labelledby="message-heading"
+                                    className="flex h-full min-w-0 flex-1 flex-col overflow-hidden"
+                                >
+                                    <div className="mb-6 min-h-0 flex-1 overflow-y-auto">
+                                        <div className="bg-neutral-900 pt-5 pb-6 shadow">
+                                            <div className="px-4 sm:flex sm:items-baseline sm:justify-between sm:px-6 lg:px-8">
+                                                <div className="sm:w-0 sm:flex-1">
+                                                    <h1 id="message-heading" className="text-lg font-medium text-gray-100">
+                                                        {selectedMessage.subject}
+                                                    </h1>
+                                                    <p className="mt-1 truncate text-sm text-gray-500">{selectedMessage.sender.email}</p>
+                                                </div>
+
+                                                {classifiedMessageIds.includes(selectedMessage.id) && (
+                                                    <div className="mt-4 flex items-center justify-between sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:justify-start">
+                                                        <span className={classNames(
+                                                            "inline-flex items-center rounded-full px-3 py-0.5 text-sm font-medium",
+                                                            selectedMessage.response.sentiment === 'positive' ? 'bg-green-700 text-green-400' : (selectedMessage.response.sentiment === 'negative' ? 'bg-red-700 text-red-400' : 'bg-yellow-700 text-yellow-400')
+                                                        )}>
+                                                            {selectedMessage.response.sentiment}
+                                                        </span>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        </div>
+                                        {/* Thread section*/}
+                                        <ul role="list" className="space-y-2 py-4 sm:space-y-4 sm:px-6 lg:px-8">
+                                            {selectedMessage.thread.map((item, index) => (
+                                                <li key={item.id} className={classNames(
+                                                    "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
+                                                    index % 2 === 0 ? 'mr-8' : 'ml-8'
+                                                )}>
+                                                    <div className="sm:flex sm:items-baseline sm:justify-between">
+                                                        <h3 className="text-base font-medium">
+                                                            <span className="text-gray-100">{item.author.name}</span>{' '}
+                                                            <span className="text-gray-300">wrote</span>
+                                                        </h3>
+                                                        <p className="mt-1 whitespace-nowrap text-sm text-gray-200 sm:mt-0 sm:ml-3">
+                                                            <time dateTime={item.datetime}>{item.date}</time>
+                                                        </p>
+                                                    </div>
+                                                    <div
+                                                        className="mt-4 space-y-6 text-sm text-gray-300"
+                                                        dangerouslySetInnerHTML={{ __html: item.body }}
+                                                    />
+                                                </li>
+                                            ))}
+                                            {loading && (
+                                                <div className='pt-12 flex items-center justify-end h-full'>
+                                                    <div className='rounded-full bg-stone-500 h-8 w-8 flex items-center justify-center'>
+                                                        <IconLoader2 className='animate-spin h-5 w-5 text-gray-700' />
+                                                    </div>
+                                                </div>
+                                            )}
+                                            {(classifiedMessageIds.includes(selectedMessage.id) || acceptedDraftMessageIds.includes(selectedMessage.id)) && (
+                                                (draftAccepted || acceptedDraftMessageIds.includes(selectedMessage.id)) ? (
+                                                    <li key='response' className={classNames(
+                                                        "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6",
+                                                        selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
+                                                    )}>
+                                                        <div className="sm:flex sm:items-baseline sm:justify-between">
+                                                            <h3 className="text-base font-medium">
+                                                                <span className="text-gray-100">You</span>{' '}
+                                                                <span className="text-gray-300">wrote</span>
+                                                            </h3>
+                                                            <p className="mt-1 whitespace-nowrap text-sm text-gray-200 sm:mt-0 sm:ml-3">
+                                                                Now
+                                                            </p>
+                                                        </div>
+                                                        <div
+                                                            className="mt-4 space-y-6 text-sm text-gray-300"
+                                                            dangerouslySetInnerHTML={{ __html: selectedMessage.response.text }}
+                                                        />
+                                                    </li>
+                                                ) : (
+                                                    <li key='draft' className={classNames(
+                                                        "bg-neutral-800 px-4 py-6 shadow sm:rounded-lg sm:px-6 bg-opacity-50 border-2 border-dashed border-gray-700",
+                                                        selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
+                                                    )}>
+                                                        <div className="sm:flex sm:items-baseline sm:justify-between">
+                                                            <h3 className="text-base font-medium">
+                                                                <span className="text-gray-100">You</span>{' '}
+                                                                <span className="text-gray-300">drafted</span>
+                                                            </h3>
+                                                            <p className="mt-1 whitespace-nowrap text-sm text-gray-200 sm:mt-0 sm:ml-3">
+                                                                Now
+                                                            </p>
+                                                        </div>
+                                                        <div className='mt-4 flex flex-row justify-between'>
+                                                            <div
+                                                                className="space-y-6 text-sm text-gray-300"
+                                                                dangerouslySetInnerHTML={{ __html: selectedMessage.response.text }}
+                                                            />
+                                                            <button
+                                                                className="py-1.5 px-3 rounded-full bg-neutral-900 hover:bg-neutral-700 active:bg-neutral-800 transition-colors duration-200 text-gray-200 text-sm"
+                                                                onClick={() => {
+                                                                    setDraftAccepted(true)
+                                                                }}
+                                                            >
+                                                                Accept & Send
+                                                            </button>
+                                                        </div>
+                                                    </li>
+                                                )
+                                            )}
+                                        </ul>
+                                        {!loading && !acceptedDraftMessageIds.includes(selectedMessage.id) && (
+                                            <div
+                                                className='my-2 flex items-center justify-end px-4 sm:px-6 lg:px-8'
+                                            >
+                                                {classifiedMessageIds.includes(selectedMessage.id) ? (
+                                                    <div className='p-[1px] rounded-lg bg-gradient-to-r from-neutral-900 via-green-700 to-neutral-900 hover:from-neutral-800 hover:via-green-600 hover:to-neutral-800'>
+                                                        <button
+                                                            className="p-4 bg-[#141414] rounded-lg text-gray-200 flex flex-col items-center justify-center text-sm hover:bg-[#171717] active:bg-[#0f0f0f] hover:text-gray-300 transition-colors duration-200"
+                                                            onClick={() => {
+                                                                setLoading(true)
+                                                                setClassifiedMessageIds(classifiedMessageIds.filter((messageId) => messageId !== selectedMessage.id))
+                                                            }}
+                                                        >
+                                                            <IconRefresh className='h-5 w-5' />
+                                                        </button>
+                                                    </div>
+                                                ) : (
+                                                    <div className='p-[1px] rounded-lg bg-gradient-to-r from-neutral-900 via-green-700 to-neutral-900 hover:from-neutral-800 hover:via-green-600 hover:to-neutral-800'>
+                                                        <button
+                                                            className="h-16 px-4 bg-[#141414] rounded-lg text-gray-200 flex flex-col items-center justify-center text-sm hover:bg-[#171717] active:bg-[#0f0f0f] hover:text-gray-300 transition-colors duration-200"
+                                                            onClick={() => {
+                                                                setLoading(true)
+                                                            }}
+                                                        >
+                                                            <div className='flex flex-row items-center font-semibold'>
+                                                                Classify mail and generate a draft response
+                                                            </div>
+                                                            <p className='text-gray-500 text-sm ml-2'>
+                                                                In production, this would happen in the background
+                                                            </p>
+                                                        </button>
+                                                    </div>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+                                </section>
+
+
                             </main>
                         </div>
                     </div>

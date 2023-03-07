@@ -51,7 +51,8 @@ export function StrategicNLPBanner() {
                                             }}
                                                 className="text-left"
                                             >
-                                                How will ChatGPT and the likes affect my business
+                                                "How will
+                                                <span className='mx-1 text-amber-400'>ChatGPT</span>and the likes affect my business?"
                                             </button>
 
                                         </h3>

@@ -94,27 +94,40 @@ export function Header({ isDarkTheme }) {
                                 type='button'
                                 className="m-1.5 p-1.5 cursor-pointer">
                                 <span className="sr-only">Kern AI</span>
-                                {isDarkTheme ? (
+                                <span className='hidden xl:block'>
+                                    {isDarkTheme ? (
+                                        <img
+                                            className="h-8"
+                                            src="/KernAI-primary-gray-100.svg"
+                                            alt=""
+                                            onClick={
+                                                () => {
+                                                    router.push('/')
+                                                }
+                                            } />
+                                    ) : (
+                                        <img
+                                            className="h-8"
+                                            src="/KernAI-primary-gray-900.svg"
+                                            alt=""
+                                            onClick={
+                                                () => {
+                                                    router.push('/')
+                                                }
+                                            } />
+                                    )}
+                                </span>
+                                <span className='block xl:hidden'>
                                     <img
                                         className="h-8"
-                                        src="/KernAI-primary-gray-100.svg"
+                                        src="/KernAI-icon.svg"
                                         alt=""
                                         onClick={
                                             () => {
                                                 router.push('/')
                                             }
                                         } />
-                                ) : (
-                                    <img
-                                        className="h-8"
-                                        src="/KernAI-primary-gray-900.svg"
-                                        alt=""
-                                        onClick={
-                                            () => {
-                                                router.push('/')
-                                            }
-                                        } />
-                                )}
+                                </span>
 
                             </button>
                         </div>
