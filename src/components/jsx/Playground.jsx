@@ -4,6 +4,7 @@ import { TrainingDataPipe } from './UseCases/TrainingDataPipe'
 import { InView } from 'react-intersection-observer';
 import { useState } from 'react'
 import { AnyCase } from './UseCases/AnyCase';
+import { DocumentProcessing } from './UseCases/DocumentProcessing';
 
 
 function classNames(...classes) {
@@ -21,6 +22,9 @@ export function Playground() {
     }, {
         name: 'Data-centric NLP',
         href: '#training-data',
+    }, {
+        name: 'Document processing',
+        href: '#document-processing',
     }, {
         name: 'Any use case',
         href: '#any-case',
@@ -100,6 +104,15 @@ export function Playground() {
                         }
                     }}>
                     <TrainingDataPipe />
+                </InView>
+                <InView
+                    threshold={0.5}
+                    as="div" onChange={(inView, entry) => {
+                        if (inView) {
+                            setCurrentView('Document processing')
+                        }
+                    }}>
+                    <DocumentProcessing />
                 </InView>
                 <InView
                     threshold={0.5}

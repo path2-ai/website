@@ -18,7 +18,7 @@ const data = [{
     key: "document-processing",
     title: "Document processing",
     description: "Turn your PDF documents into machine-readable data, even for niche cases specific to your company. Finally solve the longtail of your document processing needs with NLP.",
-    href: 'training-data'
+    href: 'document-processing'
 }]
 
 const timeline = [
