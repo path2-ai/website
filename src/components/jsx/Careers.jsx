@@ -78,8 +78,8 @@ export const positions = [
         href: 'https://join.com/companies/kernai/7353178-working-student-natural-language-processing-engineer-project-bricks',
         location: 'Remote',
         department: 'Engineering',
-        closeDate: '2022-05-01',
-        closeDateFull: 'May 1, 2022',
+        closeDate: '2023-05-01',
+        closeDateFull: 'May 1, 2023',
     },
 ]
 

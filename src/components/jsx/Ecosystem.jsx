@@ -42,6 +42,11 @@ const faqs = [
       "Absolutely. Our platform is designed to work flexibly, so if your goal is to build great training data, you can use e.g. GPT-3 to label data for you. In the training phase, you can then switch to something like a logistic regression - it's up to you."
   },
   {
+    question: "Which languages can I process?",
+    answer:
+      "English, most European languages, and Chinese. We're constantly adding new languages. If you're missing a language, please let us know and we will add it to our roadmap."
+  },
+  {
     question: "Is this open source?",
     answer:
       "Partially. The core of refinery is open source, and bricks is fully available on GitHub. gates and workflow are proprietary. You can find the open source repositories on our GitHub page."

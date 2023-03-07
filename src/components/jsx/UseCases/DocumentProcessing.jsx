@@ -217,62 +217,116 @@ export function DocumentProcessing() {
                                                                             </div>
                                                                         </div>
                                                                     ) : (
-                                                                        <div className="flex flex-col space-y-4 pl-4 pr-8 py-4">
-                                                                            <div
-                                                                                className='bg-neutral-700 h-2.5 w-full rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-
-                                                                            <div
-                                                                                className='bg-neutral-700 h-2.5 w-full rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-
-                                                                            <div
-                                                                                className='bg-neutral-700 h-2.5 w-full rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-
-
-                                                                            <div
-                                                                                className='bg-neutral-700 h-2.5 w-full rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
-                                                                            <div
-                                                                                className='bg-neutral-800 h-2.5 w-1/2 rounded-full'
-                                                                            />
+                                                                        <div className="flex flex-col space-y-0.5 pl-4 pr-8 py-4 text-gray-100">
+                                                                            <div className='flex flex-row items-center'>
+                                                                                <span className='border border-transparent w-fit p-1'>Musterfirma GmbH</span> · <span className='border border-transparent w-fit p-1'>Musterstr. 9 · 12345 Beispielstadt</span>
+                                                                            </div>
+                                                                            <div className='flex flex-row items-center'>
+                                                                                <span className='border border-transparent w-fit p-1'>Kern AI GmbH</span>
+                                                                            </div>
+                                                                            <div className='flex flex-row items-center'>
+                                                                                <span className='border border-transparent w-fit p-1'>Johannes Hötter</span>
+                                                                            </div>
+                                                                            <div className='flex flex-row items-center'>
+                                                                                <span className='border border-transparent w-fit p-1'>Fürstenstraße 3</span>
+                                                                            </div>
+                                                                            <div className='flex flex-row items-center'>
+                                                                                <span className='border border-transparent w-fit p-1'>53111 Bonn</span>
+                                                                            </div>
+                                                                            <div className='pt-4 flex flex-row items-center'>
+                                                                                <span className='border text-xl font-bold border-transparent w-fit p-1'>Rechnung</span>
+                                                                            </div>
+                                                                            <div className='flex flex-row justify-end items-center space-x-1'>
+                                                                                <div className='flex flex-col border border-transparent w-fit p-1 '><span>Rechnungsnummer</span> <span>RE1000001</span></div>
+                                                                                <div className='flex flex-col border border-transparent w-fit p-1 '><span>Zahlungsziel</span> <span>16.02.2023</span></div>
+                                                                                <div className='flex flex-col border border-transparent w-fit p-1 '><span>Leistungszeitraum</span> <span>08.02.2023 - 08.03.2023</span></div>
+                                                                                <div className='flex flex-col border border-transparent w-fit p-1 '><span>Rechnungsdatum</span> <span>09.02.2023</span></div>
+                                                                            </div>
+                                                                            <div className='flex flex-row items-center'>
+                                                                                <span className='border border-transparent w-fit p-1'>Kundennummer Bonn</span>
+                                                                            </div>
+                                                                            <div >
+                                                                                <table className="min-w-full divide-y divide-gray-700">
+                                                                                    <thead>
+                                                                                        <tr>
+                                                                                            <th scope="col" className="pb-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-100 sm:pl-0">
+                                                                                                Projekt
+                                                                                            </th>
+                                                                                            <th
+                                                                                                scope="col"
+                                                                                                className="hidden pb-3.5 px-3 text-right text-sm font-semibold text-gray-100 sm:table-cell"
+                                                                                            >
+                                                                                                Stunden
+                                                                                            </th>
+                                                                                            <th
+                                                                                                scope="col"
+                                                                                                className="hidden pb-3.5 px-3 text-right text-sm font-semibold text-gray-100 sm:table-cell"
+                                                                                            >
+                                                                                                Rate
+                                                                                            </th>
+                                                                                            <th scope="col" className="pb-3.5 pl-3 pr-4 text-right text-sm font-semibold text-gray-100 sm:pr-0">
+                                                                                                Preis
+                                                                                            </th>
+                                                                                        </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+                                                                                        {projects.map((project) => (
+                                                                                            <tr key={project.id} className="border-b border-gray-800">
+                                                                                                <td className="py-4 pl-4 pr-3 text-sm sm:pl-0">
+                                                                                                    <div className="font-medium text-gray-100"><span className='border border-transparent w-fit p-1'>{project.name}</span></div>
+                                                                                                    <div className="mt-0.5 text-gray-500 sm:hidden">
+                                                                                                        {project.hours} hours at {project.rate}
+                                                                                                    </div>
+                                                                                                </td>
+                                                                                                <td className="hidden py-4 px-3 text-right text-sm text-gray-500 sm:table-cell"><span className='border border-transparent w-fit p-1'>{project.hours}</span></td>
+                                                                                                <td className="hidden py-4 px-3 text-right text-sm text-gray-500 sm:table-cell"><span className='border border-transparent w-fit p-1'>{project.rate}</span></td>
+                                                                                                <td className="py-4 pl-3 pr-4 text-right text-sm text-gray-500 sm:pr-0"><span className='border border-transparent w-fit p-1'>{project.price}</span></td>
+                                                                                            </tr>
+                                                                                        ))}
+                                                                                    </tbody>
+                                                                                    <tfoot>
+                                                                                        <tr>
+                                                                                            <th
+                                                                                                scope="row"
+                                                                                                colSpan={3}
+                                                                                                className="hidden pl-4 pr-3 pt-2 text-right text-sm font-normal text-gray-500 sm:table-cell sm:pl-0"
+                                                                                            >
+                                                                                                Brutto
+                                                                                            </th>
+                                                                                            <th scope="row" className="pl-6 pr-1 pt-6 text-left text-sm font-normal text-gray-500 sm:hidden">
+                                                                                                Brutto
+                                                                                            </th>
+                                                                                            <td className="pl-3 pr-6 pt-2 text-right text-sm text-gray-500 sm:pr-0"><span className='border border-transparent w-fit p-1'>900,00€</span></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th
+                                                                                                scope="row"
+                                                                                                colSpan={3}
+                                                                                                className="hidden pl-4 pr-3 pt-1 text-right text-sm font-normal text-gray-500 sm:table-cell sm:pl-0"
+                                                                                            >
+                                                                                                Steuern
+                                                                                            </th>
+                                                                                            <th scope="row" className="pl-6 pr-3 pt-1 text-left text-sm font-normal text-gray-500 sm:hidden">
+                                                                                                Steuern
+                                                                                            </th>
+                                                                                            <td className="pl-3 pr-6 pt-1 text-right text-sm text-gray-500 sm:pr-0"><span className='border border-transparent w-fit p-1'>171,00€</span></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <th
+                                                                                                scope="row"
+                                                                                                colSpan={3}
+                                                                                                className="hidden pl-4 pr-3 pt-1 text-right text-sm font-semibold text-gray-100 sm:table-cell sm:pl-0"
+                                                                                            >
+                                                                                                Total
+                                                                                            </th>
+                                                                                            <th scope="row" className="pl-6 pr-3 pt-1 text-left text-sm font-semibold text-gray-100 sm:hidden">
+                                                                                                Total
+                                                                                            </th>
+                                                                                            <td className="pl-3 pr-4 pt-1 text-right text-sm font-semibold text-gray-100 sm:pr-0"><span className='border border-transparent-500 w-fit p-1'>1.071,00€</span></td>
+                                                                                        </tr>
+                                                                                    </tfoot>
+                                                                                </table>
+                                                                            </div>
                                                                         </div>
                                                                     )
                                                                 )}

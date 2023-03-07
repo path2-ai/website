@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react'
-import { IconArrowsShuffle, IconPlayerPause, IconPlayerPlay, IconTools } from '@tabler/icons'
+import { IconTools } from '@tabler/icons'
 
 
 function classNames(...classes) {
@@ -38,6 +37,14 @@ export function AnyCase() {
                     className='rounded-xl'
                 />
             </div>
+            <p className='max-w-2xl mx-auto text-gray-400 mt-2 md:text-center'>
+                See this <a
+                    href='https://www.youtube.com/watch?v=yeML0vX0yLw&ab_channel=KernAI'
+                    className='text-green-500 hover:text-white'
+                    target='_blank'
+                    rel='noreferrer noopener'
+                >example video</a> where we build a Slackbot summarizing sentiment of stocknews data for daily stock market updates in 5 minutes.
+            </p>
         </div >
     )
 }
