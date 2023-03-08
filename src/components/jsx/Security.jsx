@@ -83,6 +83,8 @@ export function Security() {
                     <p className="mt-8 text-lg leading-8 text-gray-300">
                         ISO 27001 is an internationally recognized standard that outlines requirements for establishing, implementing, maintaining, and continuously improving an information security management system (ISMS). This standard provides a systematic approach to managing sensitive information and helps organizations protect the confidentiality, integrity, and availability of their data.
                     </p>
+                    <img src="/proks_certificationfull.png" className="mt-4 w-40 mx-auto" />
+
                     <Link
                         href="/file/DE_IS_20230058_27001_KernAI_ENG.pdf" download
                         className='flex flex-row items-center space-x-2 group text-gray-200 hover:text-white'>

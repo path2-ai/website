@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { IconArrowsShuffle, IconPlayerPause, IconPlayerPlay } from '@tabler/icons'
+import { IconArrowsShuffle, IconChevronLeft, IconChevronRight, IconPlayerPause, IconPlayerPlay } from '@tabler/icons'
 import { Circular } from '@/util/Circular'
 import { Tooltip } from "@nextui-org/react";
 
@@ -78,6 +78,44 @@ export function TrainingDataPipe() {
                         </p>
                     </div>
                 </div>
+
+                <div className="flex flex-col space-y-2 lg:hidden">
+                    <div
+                        className='flex items-center justify-center space-x-2'
+                    >
+                        <button
+                            onClick={() => {
+                                setCurrent(slider.prev())
+                                setTimer(0)
+                            }}
+                        >
+                            <IconChevronLeft className='text-gray-300 w-5 h-5' />
+                        </button>
+                        <button
+                            className='flex flex-row items-center bg-neutral-800 border border-neutral-700 rounded-full px-2 py-1'
+                        >
+                            <span className='text-white'>
+                                {slideContent.find((item) => item.name === current).title}
+                            </span>
+                        </button>
+                        <button
+                            onClick={() => {
+                                setCurrent(slider.next())
+                                setTimer(0)
+                            }}
+                        >
+                            <IconChevronRight className='text-gray-300 w-5 h-5' />
+                        </button>
+                    </div>
+                    <div
+                        className='bg-neutral-800 mt-1 w-1/2 mx-auto h-1.5 rounded-full'
+                    >
+                        <div
+                            className='bg-green-500 h-1.5 rounded-full' style={{ width: `${timer / 5}%` }}
+                        />
+                    </div>
+                </div>
+
                 <div className='hidden lg:flex flex-row items-center space-x-2 mx-auto '>
                     <div
                         className='mx-auto w-fit h-full bg-gradient-to-b from-[#0d0d0d] to-[#0f0f0f] border border-neutral-900 rounded-full opacity-90'
@@ -234,6 +272,7 @@ export function TrainingDataPipe() {
                     </div>
                 </div>
             </div>
+
         </div >
     )
 }
