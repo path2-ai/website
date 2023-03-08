@@ -12,27 +12,27 @@ const slideContent = [
     {
         name: 'workflows',
         title: 'Design workflows',
-        video: "/video/workflows.mp4",
+        video: "/video/workflows",
     },
     {
         name: 'annotate',
         title: 'Annotate data',
-        video: "/video/annotate.mp4",
+        video: "/video/annotate",
     },
     {
         name: 'automate',
         title: 'Build automations',
-        video: "/video/automate.mp4",
+        video: "/video/automate",
     },
     {
         name: 'manage',
         title: 'Manage and orchestrate',
-        video: "/video/manage.mp4",
+        video: "/video/manage",
     },
     {
         name: 'deploy',
         title: 'Deploy as an API',
-        video: "/video/deploy.mp4",
+        video: "/video/deploy",
     }
 ]
 const slideOptions = Object.entries(slideContent).map(([key, value]) => value.name)
@@ -192,17 +192,25 @@ export function TrainingDataPipe() {
                     )}
                         key={item.name}
                     >
-                        <video
-                            width="100%"
-                            className='rounded-lg p-0.5'
-                            autoPlay
-                            loop
-                            muted
-                        >
-                            <source src={item.video} type="video/mp4"
+                        <div className='hidden md:block'>
+                            <video
+                                width="100%"
+                                className='rounded-lg p-0.5'
+                                autoPlay
+                                loop
+                                muted
+                            >
+                                <source src={`${item.video}.mp4`} type="video/mp4"
+                                />
+                                Sorry, your browser doesn't support videos.
+                            </video>
+                        </div>
+                        <div className='block md:hidden'>
+                            <img
+                                src={`${item.video}.png`}
+                                className='rounded-lg p-0.5'
                             />
-                            Sorry, your browser doesn't support videos.
-                        </video>
+                        </div>
                     </div>
                 ))}
 
