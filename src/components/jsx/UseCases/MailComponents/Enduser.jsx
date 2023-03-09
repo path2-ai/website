@@ -130,6 +130,14 @@ export function Enduser() {
     const [acceptedDraftMessageIds, setAcceptedDraftMessageIds] = useState([])
     const [filterOnSentiment, setFilterOnSentiment] = useState(null)
 
+    const [pingIntegratesWith, setPingIntegratesWith] = useState(true)
+    const [pingRefresh, setPingRefresh] = useState(true)
+    const [pingAcceptAndSend, setPingAcceptAndSend] = useState(true)
+    const [pingFilter, setPingFilter] = useState(true)
+    const [pingOtherMessages, setPingOtherMessages] = useState(true)
+    const [pingGenerateDraft, setPingGenerateDraft] = useState(true)
+
+
     useEffect(() => {
         if (loading) {
             setTimeout(() => {
@@ -188,7 +196,15 @@ export function Enduser() {
                                         {navigation.map((item) =>
                                             item.children.length ? (
                                                 <Menu as="div" key={item.name} className="relative text-left">
-                                                    <Menu.Button className="flex items-center rounded-md text-sm font-medium text-gray-100 focus:outline-none hover:text-gray-300">
+                                                    <Menu.Button
+                                                        className="flex items-center rounded-md text-sm font-medium text-gray-100 focus:outline-none hover:text-gray-300"
+                                                        onClick={() => { setPingIntegratesWith(false) }}
+                                                    >
+                                                        {pingIntegratesWith && (
+                                                            <span className="flex h-3 w-3">
+                                                                <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500" />
+                                                            </span>
+                                                        )}
                                                         <span>{item.name}</span>
                                                         <ChevronDownIcon className="ml-1 h-5 w-5 text-gray-500" aria-hidden="true" />
                                                     </Menu.Button>
@@ -269,8 +285,16 @@ export function Enduser() {
                                                         </div>
                                                     )}
                                                     <Menu as="div" key="filter" className="relative text-left">
-                                                        <Menu.Button className="mt-2">
-                                                            <IconFilter className='h-5 w-5 text-gray-500 hover:text-gray-300 transition-colors duration-200' />
+                                                        <Menu.Button
+                                                            className="mt-2"
+                                                            onClick={() => { setPingFilter(false) }}
+                                                        >
+                                                            {pingFilter && (
+                                                                <span className="absolute ml-3 -mt-3 flex h-3 w-3">
+                                                                    <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500" />
+                                                                </span>
+                                                            )}
+                                                            <IconFilter className='relative h-5 w-5 text-gray-500 hover:text-gray-300 transition-colors duration-200' />
                                                         </Menu.Button>
 
                                                         <Transition
@@ -368,11 +392,23 @@ export function Enduser() {
                                                             <div className="min-w-0 flex-1">
                                                                 <div
                                                                     className="block focus:outline-none cursor-pointer"
-                                                                    onClick={() => setSelectedMessage(message)}
+                                                                    onClick={() => {
+                                                                        setSelectedMessage(message)
+                                                                        setPingOtherMessages(false)
+                                                                    }}
                                                                 >
                                                                     <span className="absolute inset-0" aria-hidden="true" />
-                                                                    <p className="truncate text-sm font-medium text-gray-100">{message.sender.name}</p>
+                                                                    <div>
+                                                                        {message.id !== selectedMessage?.id && pingOtherMessages && (
+                                                                            <span className="absolute -ml-3 -mt-3 flex h-3 w-3">
+                                                                                <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
+                                                                            </span>
+                                                                        )}
+                                                                        <p className="truncate text-sm font-medium text-gray-100">{message.sender.name}</p>
+                                                                    </div>
+
                                                                     <p className="truncate text-sm text-gray-500">{message.subject}</p>
+
                                                                 </div>
                                                             </div>
                                                             <time
@@ -514,9 +550,15 @@ export function Enduser() {
                                                                 className="py-1.5 px-3 rounded-full bg-neutral-900 hover:bg-neutral-700 active:bg-neutral-800 transition-colors duration-200 text-gray-200 text-sm"
                                                                 onClick={() => {
                                                                     setDraftAccepted(true)
+                                                                    setPingAcceptAndSend(false)
                                                                 }}
                                                             >
-                                                                Accept & Send
+                                                                {pingAcceptAndSend && (
+                                                                    <span className="-ml-2 -mt-2 flex h-3 w-3">
+                                                                        <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500" />
+                                                                    </span>
+                                                                )}
+                                                                <span>Accept & Send</span>
                                                             </button>
                                                         </div>
                                                     </li>
@@ -528,16 +570,24 @@ export function Enduser() {
                                                 className='my-2 flex items-center justify-end px-4 sm:px-6 lg:px-8'
                                             >
                                                 {classifiedMessageIds.includes(selectedMessage.id) ? (
-                                                    <div className='p-[1px] rounded-lg bg-gradient-to-r from-neutral-900 via-green-700 to-neutral-900 hover:from-neutral-800 hover:via-green-600 hover:to-neutral-800'>
-                                                        <button
-                                                            className="p-4 bg-[#141414] rounded-lg text-gray-200 flex flex-col items-center justify-center text-sm hover:bg-[#171717] active:bg-[#0f0f0f] hover:text-gray-300 transition-colors duration-200"
-                                                            onClick={() => {
-                                                                setLoading(true)
-                                                                setClassifiedMessageIds(classifiedMessageIds.filter((messageId) => messageId !== selectedMessage.id))
-                                                            }}
-                                                        >
-                                                            <IconRefresh className='h-5 w-5' />
-                                                        </button>
+                                                    <div>
+                                                        {pingRefresh && (
+                                                            <span className="flex h-3 w-3">
+                                                                <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500" />
+                                                            </span>
+                                                        )}
+                                                        <div className='-mt-3 p-[1px] rounded-lg bg-gradient-to-r from-neutral-900 via-green-700 to-neutral-900 hover:from-neutral-800 hover:via-green-600 hover:to-neutral-800'>
+                                                            <button
+                                                                className="p-4 bg-[#141414] rounded-lg text-gray-200 flex flex-col items-center justify-center text-sm hover:bg-[#171717] active:bg-[#0f0f0f] hover:text-gray-300 transition-colors duration-200"
+                                                                onClick={() => {
+                                                                    setLoading(true)
+                                                                    setClassifiedMessageIds(classifiedMessageIds.filter((messageId) => messageId !== selectedMessage.id))
+                                                                    setPingRefresh(false)
+                                                                }}
+                                                            >
+                                                                <IconRefresh className='h-5 w-5' />
+                                                            </button>
+                                                        </div>
                                                     </div>
                                                 ) : (
                                                     <div className='p-[1px] rounded-lg bg-gradient-to-r from-neutral-900 via-green-700 to-neutral-900 hover:from-neutral-800 hover:via-green-600 hover:to-neutral-800'>
@@ -547,12 +597,17 @@ export function Enduser() {
                                                                 setLoading(true)
                                                             }}
                                                         >
-                                                            <div className='flex flex-row items-center font-semibold'>
-                                                                Classify mail and generate draft
+                                                            <span className="flex -mt-3 -ml-56 h-3 w-3">
+                                                                <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500" />
+                                                            </span>
+                                                            <div>
+                                                                <div className='-mt-3 font-semibold'>
+                                                                    Classify mail and generate draft
+                                                                </div>
+                                                                <p className='text-gray-500 text-sm ml-2'>
+                                                                    In production, this would happen in the background
+                                                                </p>
                                                             </div>
-                                                            <p className='text-gray-500 text-sm ml-2'>
-                                                                In production, this would happen in the background
-                                                            </p>
                                                         </button>
                                                     </div>
                                                 )}
@@ -756,10 +811,16 @@ export function Enduser() {
                                                                     className="space-y-4 text-sm text-gray-300"
                                                                     dangerouslySetInnerHTML={{ __html: selectedMessage.response.text }}
                                                                 />
+                                                                {pingAcceptAndSend && (
+                                                                    <span className="flex pt-3 h-3 w-3">
+                                                                        <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
+                                                                    </span>
+                                                                )}
                                                                 <button
                                                                     className="mt-2 py-1.5 px-3 rounded-full bg-neutral-900 hover:bg-neutral-700 active:bg-neutral-800 transition-colors duration-200 text-gray-200 text-sm"
                                                                     onClick={() => {
                                                                         setDraftAccepted(true)
+                                                                        setPingAcceptAndSend(false)
                                                                     }}
                                                                 >
                                                                     Accept & Send
@@ -783,9 +844,15 @@ export function Enduser() {
                                                         onClick={() => {
                                                             setSelectedMessage(message)
                                                             setShowMessageMobile(true)
+                                                            setPingOtherMessages(false)
                                                         }}
                                                     >
                                                         <div className='flex flex-row items-center justify-between w-full'>
+                                                            {pingOtherMessages && (
+                                                                <span className="absolute -ml-3 -mt-3 flex h-3 w-3">
+                                                                    <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
+                                                                </span>
+                                                            )}
                                                             <p className='text-gray-100 text-sm'>
                                                                 {message.sender.name}
                                                             </p>

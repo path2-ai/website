@@ -12,6 +12,8 @@ export function DocumentProcessing() {
     const [loading, setLoading] = useState(false)
     const [timer, setTimer] = useState(0)
 
+    const [pingScanDocument, setPingScanDocument] = useState(true)
+
     useEffect(() => {
         const interval = setInterval(() => {
             setTimer(timer + 1)
@@ -84,8 +86,14 @@ export function DocumentProcessing() {
                                                                     onClick={() => {
                                                                         setListenToTimer(true)
                                                                         setLoading(true)
+                                                                        setPingScanDocument(false)
                                                                     }}
                                                                 >
+                                                                    {pingScanDocument && (
+                                                                        <span className="flex h-3 w-3">
+                                                                            <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
+                                                                        </span>
+                                                                    )}
                                                                     <span>Scan document</span>
                                                                 </button>
                                                             )}
@@ -348,7 +356,7 @@ export function DocumentProcessing() {
                                                                 },
                                                                 "customer": {
                                                                     "name": "Kern AI GmbH",
-                                                                    "handTo": "Johannes Hötter",
+                                                                    "giveTo": "Johannes Hötter",
                                                                     "address": "Fürstenstraße 3, 53111 Bonn"
                                                                 },
                                                                 "invoice": {

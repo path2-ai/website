@@ -42,6 +42,10 @@ export function Enduser() {
     const [showTransformedContent, setShowTransformedContent] = useState(false)
     const [isLoadingTransformedContent, setIsLoadingTransformedContent] = useState(false)
 
+    const [pingTranscribe, setPingTranscribe] = useState(true)
+    const [pingShowTransformedContent, setPingShowTransformedContent] = useState(true)
+    const [pingIntegratesWith, setPingIntegratesWith] = useState(true)
+
     useEffect(() => {
         if (!showTranscribed) {
             setIsTransformedContent(false)
@@ -127,7 +131,16 @@ export function Enduser() {
                                         {navigation.map((item) =>
                                             item.children.length ? (
                                                 <Menu as="div" key={item.name} className="mr-8 relative text-left">
-                                                    <Menu.Button className="flex items-center rounded-md text-sm font-medium text-gray-100 focus:outline-none hover:text-gray-300">
+                                                    <Menu.Button
+                                                        onClick={() => {
+                                                            setPingIntegratesWith(false)
+                                                        }}
+                                                        className="flex items-center rounded-md text-sm font-medium text-gray-100 focus:outline-none hover:text-gray-300">
+                                                        {pingIntegratesWith && (
+                                                            <span className="flex h-3 w-3">
+                                                                <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
+                                                            </span>
+                                                        )}
                                                         <span>{item.name}</span>
                                                         <ChevronDownIcon className="ml-1 h-5 w-5 text-gray-500" aria-hidden="true" />
                                                     </Menu.Button>
@@ -282,14 +295,21 @@ export function Enduser() {
                                                                             <button
                                                                                 type="button"
                                                                                 className="inline-flex justify-center rounded-md border border-gray-700 bg-neutral-900 px-4 py-2 text-sm font-medium text-gray-300 shadow-sm hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
-                                                                                onClick={() => setShowTransformedContent(true)}
+                                                                                onClick={() => {
+                                                                                    setShowTransformedContent(true)
+                                                                                    setPingShowTransformedContent(false)
+                                                                                }}
                                                                                 disabled={!isTransformedContent}
                                                                             >
+                                                                                {pingShowTransformedContent && (
+                                                                                    <span className="flex h-3 w-3">
+                                                                                        <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
+                                                                                    </span>
+                                                                                )}
                                                                                 <IconSeo className="-ml-1 mt-0.5 mr-2 h-5 w-5 text-gray-500" aria-hidden="true" />
                                                                                 {!isTransformedContent ? (
                                                                                     <span className='flex flex-row items-center space-x-1'>
                                                                                         Creating post draft
-
                                                                                         <IconLoader2 className="animate-spin -mr-1 ml-2 h-4 w-4 text-gray-500" aria-hidden="true" />
                                                                                     </span>
                                                                                 ) : (
@@ -484,7 +504,9 @@ export function Enduser() {
                                                     {audioPlaying ? (
                                                         <IconPlayerPause size={20} />
                                                     ) : (
-                                                        <IconPlayerPlay size={20} />
+                                                        <IconPlayerPlay
+                                                            className='relative' size={20
+                                                            } />
                                                     )}
                                                 </button>
                                             </div>
@@ -495,8 +517,14 @@ export function Enduser() {
                                                     className='flex flex-row items-center justify-center w-full p-2 bg-black rounded-full text-white text-sm'
                                                     onClick={() => {
                                                         setIsLoadingTranscript(true)
+                                                        setPingTranscribe(false)
                                                     }}
                                                 >
+                                                    {pingTranscribe && (
+                                                        <span className="pt-2 flex h-3 w-3">
+                                                            <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
+                                                        </span>
+                                                    )}
                                                     <span>
                                                         {isLoadingTranscript ? "Loading..." : "Generate Transcript"}
                                                     </span>
