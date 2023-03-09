@@ -58,7 +58,10 @@ export function MemoToContent() {
                                 <button
                                     key={item.name}
                                     onClick={item.onClick}
-                                    className='flex flex-row group space-x-2 items-center relative border border-neutral-800 rounded-full bg-neutral-900 pl-2 pr-3 py-1.5'
+                                    className={classNames(
+                                        item.showFor == 'manager' ? 'bg-gradient-to-r from-orange-300 via-rose-400 to-red-500 border border-neutral-500' : 'null',
+                                        'flex flex-row group space-x-2 items-center relative rounded-full bg-neutral-900 pl-2 pr-3 py-1.5'
+                                    )}
                                 >
                                     <span
                                         className={classNames(
@@ -67,8 +70,9 @@ export function MemoToContent() {
                                         )}
                                     />
                                     <span
-                                        className='text-gray-400 group-hover:text-white'
-                                    >
+                                        className={classNames(
+                                            item.showFor == 'manager' ? 'text-transparent bg-clip-text bg-gradient-to-r from-orange-700 via-rose-800 to-red-900' : 'text-gray-400 group-hover:text-white',
+                                        )}                                    >
                                         {item.name}
                                     </span>
                                 </button>

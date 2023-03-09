@@ -80,7 +80,6 @@ export function Playground() {
                 <InView
                     threshold={0.5}
                     as="div" onChange={(inView, entry) => {
-                        console.log(entry)
                         if (inView) {
                             setCurrentView('Email automation')
                         }
