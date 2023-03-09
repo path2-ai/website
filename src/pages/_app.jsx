@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }) {
   const Body = ({ pageProps, Component }) => {
     // check if any of the paths are partially in the current path
 
-    if ((router.pathname.includes('german-insurers'))) {
+    if ((router.pathname.includes('loesungen'))) {
       return (
         <div className='bg-slate-50'>
           <Animate play start={{ opacity: 0 }} end={{ opacity: 1 }}>

@@ -14,7 +14,7 @@ const modeScript = `
   function updateMode() {
     let isSystemDarkMode = darkModeMediaQuery.matches
 
-    let isDarkMode = !window.location.href.includes('german-insurers')
+    let isDarkMode = !window.location.href.includes('loesungen')
 
     if (isDarkMode) {
       document.documentElement.classList.add('dark')
