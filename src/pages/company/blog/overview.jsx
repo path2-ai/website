@@ -5,7 +5,7 @@ export const articles = [
         "title": "Alleviate the pain of manual labeling and deploying models with weak supervision",
         "description": "How to use weak supervision to get high quality labels fast",
         "slug": "weak-supervision-for-nlp",
-        "teaser": "In this article we explain how to use weak supervision and how to leverage it to quickly obtain high quality labels for your text data.",
+        "teaser": "In this article we explain how to use weak supervision and how to leverage it to quickly obtain high quality labels for your text datagit .",
         "category": "Knowledge",
         "thumbnail": "/blog/multiple-streams.png",
         "prompt": "multiple streams flowing into the ocean, abstract style.",
@@ -13,7 +13,7 @@ export const articles = [
             "name": "Leonard Püttmann",
             "image": `${KERN_ASSETS_URL}/team/team-leo.png`
         },
-        "date": "2023-02-16"
+        "date": "2023-03-09"
     },
     {
         "title": "Announcing our 2.7m€ seed round",
