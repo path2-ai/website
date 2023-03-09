@@ -43,20 +43,6 @@ export function TrainingDataPipe() {
 
 
     const [current, setCurrent] = useState(slider.current())
-    const [clickedOption, setClickedOption] = useState(null)
-
-    const [timer, setTimer] = useState(0)
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setTimer(timer + 1)
-            if (timer % 500 === 0 && timer !== 0 && clickedOption === null) {
-                setCurrent(slider.next())
-                setTimer(0)
-            }
-        }, 10)
-        return () => clearInterval(interval)
-    }, [timer])
-
 
     return (
         <div
@@ -86,7 +72,6 @@ export function TrainingDataPipe() {
                         <button
                             onClick={() => {
                                 setCurrent(slider.prev())
-                                setTimer(0)
                             }}
                         >
                             <IconChevronLeft className='text-gray-300 w-5 h-5' />
@@ -101,18 +86,10 @@ export function TrainingDataPipe() {
                         <button
                             onClick={() => {
                                 setCurrent(slider.next())
-                                setTimer(0)
                             }}
                         >
                             <IconChevronRight className='text-gray-300 w-5 h-5' />
                         </button>
-                    </div>
-                    <div
-                        className='bg-neutral-800 mt-1 w-1/2 mx-auto h-1.5 rounded-full'
-                    >
-                        <div
-                            className='bg-green-500 h-1.5 rounded-full' style={{ width: `${timer / 5}%` }}
-                        />
                     </div>
                 </div>
 
@@ -125,21 +102,13 @@ export function TrainingDataPipe() {
                                 <div key={item.name}>
                                     <div
                                         className={classNames(
-                                            clickedOption === item.name ? 'border border-green-500' : 'border border-neutral-800',
                                             'text-gray-300 rounded-full p-2 bg-neutral-900 hover:text-white cursor-pointer'
                                         )}
                                         onClick={() => {
-                                            if (item.name === clickedOption) {
-                                                setClickedOption(null)
-                                                setTimer(0)
-                                                return
-                                            }
                                             while (slider.current() !== item.name) {
                                                 slider.next()
                                             }
                                             setCurrent(item.name)
-                                            setClickedOption(item.name)
-                                            setTimer(0)
                                         }}
                                     >
 
@@ -161,63 +130,12 @@ export function TrainingDataPipe() {
                                         </button>
 
                                     </div>
-                                    <div
-                                        className={classNames(
-                                            current == item.name ? 'bg-gray-200' : 'bg-neutral-800',
-                                            'mt-1 w-3/4 mx-auto h-1.5 rounded-full'
-                                        )}
-                                    >
-                                        {current == item.name && !clickedOption && (
-                                            <div
-                                                className='bg-green-500 h-1.5 rounded-full' style={{ width: `${timer / 5}%` }}
-                                            />
-                                        )}
-                                    </div>
                                 </div>
                             ))}
 
 
                         </div>
                     </div>
-                    {clickedOption && (
-                        <div className="-mt-2">
-                            <Tooltip className='ml-1' color="invert" content={"Autoplay"} placement="right"
-                            >
-                                <button
-                                    type='button'
-                                    className='mt-2 h-fit hover:text-green-500 hover:bg-neutral-800 bg-neutral-900 flex rounded-lg p-2 text-xs font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'
-                                    onClick={() => {
-                                        setClickedOption(null)
-                                        setTimer(0)
-                                    }}
-                                >
-                                    <IconPlayerPlay className='my-auto h-5 w-5 inline-block' />
-                                </button>
-                            </Tooltip>
-                        </div>
-                    )}
-                    {clickedOption == null && (
-                        <div className='-mt-2'>
-                            <Tooltip className='ml-1' color="invert" content={"Stop autoplay"} placement="right"
-                            >
-                                <button
-                                    type='button'
-                                    className='mt-2 h-fit hover:text-red-400 hover:bg-neutral-800 bg-neutral-900 flex rounded-lg p-2 text-xs font-semibold leading-7 text-gray-100 ring-1 ring-inset ring-neutral-700 group-hover:ring-white/20'
-                                    onClick={() => {
-                                        while (slider.current() !== current) {
-                                            slider.next()
-                                        }
-                                        setCurrent(current)
-                                        setClickedOption(current)
-                                        setTimer(0)
-                                    }}
-                                >
-
-                                    <IconPlayerPause className='my-auto h-5 w-5 inline-block' />
-                                </button>
-                            </Tooltip>
-                        </div>
-                    )}
                 </div>
             </div>
 
