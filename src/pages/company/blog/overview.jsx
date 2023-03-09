@@ -2,6 +2,20 @@ import { KERN_ASSETS_URL } from "@/components/jsx/_settings"
 
 export const articles = [
     {
+        "title": "Alleviate the pain of manual labeling and deploying models with weak supervision",
+        "description": "How to use weak supervision to get high quality labels fast",
+        "slug": "weak-supervision-for-nlp",
+        "teaser": "In this article we explain how to use weak supervision and how to leverage it to quickly obtain high quality labels for your text data.",
+        "category": "Knowledge",
+        "thumbnail": "/blog/multiple-streams.png",
+        "prompt": "multiple streams flowing into the ocean, abstract style.",
+        "author": {
+            "name": "Leonard Püttmann",
+            "image": `${KERN_ASSETS_URL}/team/team-leo.png`
+        },
+        "date": "2023-02-16"
+    },
+    {
         "title": "Announcing our 2.7m€ seed round",
         "description": "And how we got there (with a failed first product) since our start in 2020.",
         "slug": "our-seed",
