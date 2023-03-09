@@ -103,7 +103,7 @@ export function Manager() {
                         <div className="lg:pr-4">
                             <div className="max-w-xl text-base leading-7 text-gray-300 lg:max-w-lg">
                                 <p>
-                                    Every company has processess running mainly on communication, collaboration and creativity. We know that these processes can be optimized by using AI to automate repetitive tasks and to provide insights that help to make better decisions.
+                                    Every company has processes running mainly on communication, collaboration and creativity. We know that these processes can be optimized by using AI to automate repetitive tasks and to provide insights that help to make better decisions.
                                 </p>
                                 <ul role="list" className="mt-4 space-y-4 lg:mt-8 lg:space-y-8 text-gray-500">
                                     <li className="flex gap-x-3">
