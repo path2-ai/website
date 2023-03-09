@@ -2,49 +2,409 @@ export function Privacy() {
     return (
         <div className="relative overflow-hidden text-gray-100 py-16">
             <div className="relative px-4 sm:px-6 lg:px-8">
+
                 <div className="mx-auto max-w-prose text-lg">
-                    <h1 className="mt-12 block text-center text-3xl font-bold leading-8 tracking-tight text-white sm:text-4xl">Privacy Policy</h1>
-                    <h2 className="mt-12 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">1. An overview of data protection</h2>
-                    <h3 className="mt-8 text-xl leading-8 text-white">General information</h3> <p>The following information will provide you with an easy to navigate overview of what will happen with your personal data when you visit this website. The term &ldquo;personal data&rdquo; comprises all data that can be used to personally identify you. For detailed information about the subject matter of data protection, please consult our Data Protection Declaration, which we have included beneath this copy.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Data recording on this website</h3> <h4>Who is the responsible party for the recording of data on this website (i.e., the &ldquo;controller&rdquo;)?</h4> <p>The data on this website is processed by the operator of the website, whose contact information is available under section &ldquo;Information about the responsible party (referred to as the &ldquo;controller&rdquo; in the GDPR)&rdquo; in this Privacy Policy.</p> <h4>How do we record your data?</h4> <p>We collect your data as a result of your sharing of your data with us. This may, for instance be information you enter into our contact form.</p> <p>Other data shall be recorded by our IT systems automatically or after you consent to its recording during your website visit. This data comprises primarily technical information (e.g., web browser, operating system, or time the site was accessed). This information is recorded automatically when you access this website.</p> <h4>What are the purposes we use your data for?</h4> <p>A portion of the information is generated to guarantee the error free provision of the website. Other data may be used to analyze your user patterns.</p> <h4>What rights do you have as far as your information is concerned?</h4> <p>You have the right to receive information about the source, recipients, and purposes of your archived personal data at any time without having to pay a fee for such disclosures. You also have the right to demand that your data are rectified or eradicated. If you have consented to data processing, you have the option to revoke this consent at any time, which shall affect all future data processing. Moreover, you have the right to demand that the processing of your data be restricted under certain circumstances. Furthermore, you have the right to log a complaint with the competent supervising agency.</p> <p>Please do not hesitate to contact us at any time if you have questions about this or any other data protection related issues.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Analysis tools and tools provided by third parties</h3> <p>There is a possibility that your browsing patterns will be statistically analyzed when your visit this website. Such analyses are performed primarily with what we refer to as analysis programs.</p> <p>For detailed information about these analysis programs please consult our Data Protection Declaration below.</p>
-                    <h2 className="mt-12 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">2. Hosting</h2>
-                    <p>We are hosting the content of our website at the following provider:</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">External Hosting</h3> <p>This website is hosted externally. Personal data collected on this website are stored on the servers of the host. These may include, but are not limited to, IP addresses, contact requests, metadata and communications, contract information, contact information, names, web page access, and other data generated through a web site.</p> <p>The external hosting serves the purpose of fulfilling the contract with our potential and existing customers (Art. 6(1)(b) GDPR) and in the interest of secure, fast, and efficient provision of our online services by a professional provider (Art. 6(1)(f) GDPR). If appropriate consent has been obtained, the processing is carried out exclusively on the basis of Art. 6 (1)(a) GDPR and &sect; 25 (1) TTDSG, insofar the consent includes the storage of cookies or the access to information in the user's end device (e.g., device fingerprinting) within the meaning of the TTDSG. This consent can be revoked at any time.</p> <p>Our host(s) will only process your data to the extent necessary to fulfil its performance obligations and to follow our instructions with respect to such data.</p> <p>We are using the following host(s):</p>
-                    <p>creoline GmbH<br />
-                        Bergstra&szlig;e 9a, 48341 Altenberge, Deutschland</p>
-                    <h2 className="mt-12 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">3. General information and mandatory information</h2>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Data protection</h3> <p>The operators of this website and its pages take the protection of your personal data very seriously. Hence, we handle your personal data as confidential information and in compliance with the statutory data protection regulations and this Data Protection Declaration.</p> <p>Whenever you use this website, a variety of personal information will be collected. Personal data comprises data that can be used to personally identify you. This Data Protection Declaration explains which data we collect as well as the purposes we use this data for. It also explains how, and for which purpose the information is collected.</p> <p>We herewith advise you that the transmission of data via the Internet (i.e., through e-mail communications) may be prone to security gaps. It is not possible to completely protect data against third-party access.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Information about the responsible party (referred to as the &ldquo;controller&rdquo; in the GDPR)</h3> <p>The data processing controller on this website is:</p> <p>Kern AI GmbH<br />
-                        Gerhart-Hauptmann-Allee 71, 15732 Eichwalde, Deutschland</p>
-
-                    <p>Phone: +49 1573 7025688<br />
-                        E-mail: johannes.hoetter@kern.ai</p>
-                    <p>The controller is the natural person or legal entity that single-handedly or jointly with others makes decisions as to the purposes of and resources for the processing of personal data (e.g., names, e-mail addresses, etc.).</p>
-
-                    <h3 className="mt-8 text-xl leading-8 text-white">Storage duration</h3> <p>Unless a more specific storage period has been specified in this privacy policy, your personal data will remain with us until the purpose for which it was collected no longer applies. If you assert a justified request for deletion or revoke your consent to data processing, your data will be deleted, unless we have other legally permissible reasons for storing your personal data (e.g., tax or commercial law retention periods); in the latter case, the deletion will take place after these reasons cease to apply.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">General information on the legal basis for the data processing on this website</h3> <p>If you have consented to data processing, we process your personal data on the basis of Art. 6(1)(a) GDPR or Art. 9 (2)(a) GDPR, if special categories of data are processed according to Art. 9 (1) DSGVO. In the case of explicit consent to the transfer of personal data to third countries, the data processing is also based on Art. 49 (1)(a) GDPR. If you have consented to the storage of cookies or to the access to information in your end device (e.g., via device fingerprinting), the data processing is additionally based on &sect; 25 (1) TTDSG. The consent can be revoked at any time. If your data is required for the fulfillment of a contract or for the implementation of pre-contractual measures, we process your data on the basis of Art. 6(1)(b) GDPR. Furthermore, if your data is required for the fulfillment of a legal obligation, we process it on the basis of Art. 6(1)(c) GDPR. Furthermore, the data processing may be carried out on the basis of our legitimate interest according to Art. 6(1)(f) GDPR. Information on the relevant legal basis in each individual case is provided in the following paragraphs of this privacy policy.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Information on data transfer to the USA and other non-EU countries</h3> <p>Among other things, we use tools of companies domiciled in the United States or other from a data protection perspective non-secure non-EU countries. If these tools are active, your personal data may potentially be transferred to these non-EU countries and may be processed there. We must point out that in these countries, a data protection level that is comparable to that in the EU cannot be guaranteed. For instance, U.S. enterprises are under a mandate to release personal data to the security agencies and you as the data subject do not have any litigation options to defend yourself in court. Hence, it cannot be ruled out that U.S. agencies (e.g., the Secret Service) may process, analyze, and permanently archive your personal data for surveillance purposes. We have no control over these processing activities.</p><h3>Revocation of your consent to the processing of data</h3> <p>A wide range of data processing transactions are possible only subject to your express consent. You can also revoke at any time any consent you have already given us. This shall be without prejudice to the lawfulness of any data collection that occurred prior to your revocation.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Right to object to the collection of data in special cases; right to object to direct advertising (Art. 21 GDPR)</h3> <p>IN THE EVENT THAT DATA ARE PROCESSED ON THE BASIS OF ART. 6(1)(E) OR (F) GDPR, YOU HAVE THE RIGHT TO AT ANY TIME OBJECT TO THE PROCESSING OF YOUR PERSONAL DATA BASED ON GROUNDS ARISING FROM YOUR UNIQUE SITUATION. THIS ALSO APPLIES TO ANY PROFILING BASED ON THESE PROVISIONS. TO DETERMINE THE LEGAL BASIS, ON WHICH ANY PROCESSING OF DATA IS BASED, PLEASE CONSULT THIS DATA PROTECTION DECLARATION. IF YOU LOG AN OBJECTION, WE WILL NO LONGER PROCESS YOUR AFFECTED PERSONAL DATA, UNLESS WE ARE IN A POSITION TO PRESENT COMPELLING PROTECTION WORTHY GROUNDS FOR THE PROCESSING OF YOUR DATA, THAT OUTWEIGH YOUR INTERESTS, RIGHTS AND FREEDOMS OR IF THE PURPOSE OF THE PROCESSING IS THE CLAIMING, EXERCISING OR DEFENCE OF LEGAL ENTITLEMENTS (OBJECTION PURSUANT TO ART. 21(1) GDPR).</p> <p>IF YOUR PERSONAL DATA IS BEING PROCESSED IN ORDER TO ENGAGE IN DIRECT ADVERTISING, YOU HAVE THE RIGHT TO OBJECT TO THE PROCESSING OF YOUR AFFECTED PERSONAL DATA FOR THE PURPOSES OF SUCH ADVERTISING AT ANY TIME. THIS ALSO APPLIES TO PROFILING TO THE EXTENT THAT IT IS AFFILIATED WITH SUCH DIRECT ADVERTISING. IF YOU OBJECT, YOUR PERSONAL DATA WILL SUBSEQUENTLY NO LONGER BE USED FOR DIRECT ADVERTISING PURPOSES (OBJECTION PURSUANT TO ART. 21(2) GDPR).</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Right to log a complaint with the competent supervisory agency</h3> <p>In the event of violations of the GDPR, data subjects are entitled to log a complaint with a supervisory agency, in particular in the member state where they usually maintain their domicile, place of work or at the place where the alleged violation occurred. The right to log a complaint is in effect regardless of any other administrative or court proceedings available as legal recourses.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Right to data portability</h3> <p>You have the right to demand that we hand over any data we automatically process on the basis of your consent or in order to fulfil a contract be handed over to you or a third party in a commonly used, machine readable format. If you should demand the direct transfer of the data to another controller, this will be done only if it is technically feasible.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Information about, rectification and eradication of data</h3> <p>Within the scope of the applicable statutory provisions, you have the right to at any time demand information about your archived personal data, their source and recipients as well as the purpose of the processing of your data. You may also have a right to have your data rectified or eradicated. If you have questions about this subject matter or any other questions about personal data, please do not hesitate to contact us at any time.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Right to demand processing restrictions</h3> <p>You have the right to demand the imposition of restrictions as far as the processing of your personal data is concerned. To do so, you may contact us at any time. The right to demand restriction of processing applies in the following cases:</p> <ul> <li>In the event that you should dispute the correctness of your data archived by us, we will usually need some time to verify this claim. During the time that this investigation is ongoing, you have the right to demand that we restrict the processing of your personal data.</li> <li>If the processing of your personal data was/is conducted in an unlawful manner, you have the option to demand the restriction of the processing of your data in lieu of demanding the eradication of this data.</li> <li>If we do not need your personal data any longer and you need it to exercise, defend or claim legal entitlements, you have the right to demand the restriction of the processing of your personal data instead of its eradication.</li> <li>If you have raised an objection pursuant to Art. 21(1) GDPR, your rights and our rights will have to be weighed against each other. As long as it has not been determined whose interests prevail, you have the right to demand a restriction of the processing of your personal data.</li> </ul> <p>If you have restricted the processing of your personal data, these data &ndash; with the exception of their archiving &ndash; may be processed only subject to your consent or to claim, exercise or defend legal entitlements or to protect the rights of other natural persons or legal entities or for important public interest reasons cited by the European Union or a member state of the EU.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">SSL and/or TLS encryption</h3> <p>For security reasons and to protect the transmission of confidential content, such as purchase orders or inquiries you submit to us as the website operator, this website uses either an SSL or a TLS encryption program. You can recognize an encrypted connection by checking whether the address line of the browser switches from &ldquo;http://&rdquo; to &ldquo;https://&rdquo; and also by the appearance of the lock icon in the browser line.</p> <p>If the SSL or TLS encryption is activated, data you transmit to us cannot be read by third parties.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Rejection of unsolicited e-mails</h3> <p>We herewith object to the use of contact information published in conjunction with the mandatory information to be provided in our Site Notice to send us promotional and information material that we have not expressly requested. The operators of this website and its pages reserve the express right to take legal action in the event of the unsolicited sending of promotional information, for instance via SPAM messages.</p>
-                    <h2 className="mt-12 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">4. Recording of data on this website</h2>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Cookies</h3> <p>Our websites and pages use what the industry refers to as &ldquo;cookies.&rdquo; Cookies are small data packages that do not cause any damage to your device. They are either stored temporarily for the duration of a session (session cookies) or they are permanently archived on your device (permanent cookies). Session cookies are automatically deleted once you terminate your visit. Permanent cookies remain archived on your device until you actively delete them, or they are automatically eradicated by your web browser.</p> <p>In some cases, it is possible that third-party cookies are stored on your device once you enter our site (third-party cookies). These cookies enable you or us to take advantage of certain services offered by the third party (e.g., cookies for the processing of payment services).</p> <p>Cookies have a variety of functions. Many cookies are technically essential since certain website functions would not work in the absence of the cookies (e.g., the shopping cart function or the display of videos). The purpose of other cookies may be the analysis of user patterns or the display of promotional messages.</p> <p>Cookies, which are required for the performance of electronic communication transactions, or for the provision of certain functions you want to use (e.g., for the shopping cart function) or those that are necessary for the optimization (required cookies) of the website (e.g., cookies that provide measurable insights into the web audience), shall be stored on the basis of Art. 6(1)(f) GDPR, unless a different legal basis is cited. The operator of the website has a legitimate interest in the storage of required cookies to ensure the technically error free and optimized provision of the operator&rsquo;s services. If your consent to the storage of the cookies and similar recognition technologies has been requested, processing occurs exclusively on the basis of the consent obtained (Art. 6(1)(a) GDPR and &sect; 25 (1) TTDSG); this consent may be revoked at any time.</p> <p>You have the option to set up your browser in such a manner that you will be notified any time cookies are placed and to permit the acceptance of cookies only in specific cases. You may also exclude the acceptance of cookies in certain cases or in general or activate the delete function for the automatic eradication of cookies when the browser closes. If cookies are deactivated, the functions of this website may be limited.</p> <p>In the event that third-party cookies are used or if cookies are used for analytical purposes, we will separately notify you in conjunction with this Data Protection Policy and, if applicable, ask for your consent.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Contact form</h3> <p>If you submit inquiries to us via our contact form, the information provided in the contact form as well as any contact information provided therein will be stored by us in order to handle your inquiry and in the event that we have further questions. We will not share this information without your consent.</p> <p>The processing of these data is based on Art. 6(1)(b) GDPR, if your request is related to the execution of a contract or if it is necessary to carry out pre-contractual measures. In all other cases the processing is based on our legitimate interest in the effective processing of the requests addressed to us (Art. 6(1)(f) GDPR) or on your agreement (Art. 6(1)(a) GDPR) if this has been requested; the consent can be revoked at any time.</p> <p>The information you have entered into the contact form shall remain with us until you ask us to eradicate the data, revoke your consent to the archiving of data or if the purpose for which the information is being archived no longer exists (e.g., after we have concluded our response to your inquiry). This shall be without prejudice to any mandatory legal provisions, in particular retention periods.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Request by e-mail, telephone, or fax</h3> <p>If you contact us by e-mail, telephone or fax, your request, including all resulting personal data (name, request) will be stored and processed by us for the purpose of processing your request. We do not pass these data on without your consent.</p> <p>These data are processed on the basis of Art. 6(1)(b) GDPR if your inquiry is related to the fulfillment of a contract or is required for the performance of pre-contractual measures. In all other cases, the data are processed on the basis of our legitimate interest in the effective handling of inquiries submitted to us (Art. 6(1)(f) GDPR) or on the basis of your consent (Art. 6(1)(a) GDPR) if it has been obtained; the consent can be revoked at any time.</p> <p>The data sent by you to us via contact requests remain with us until you request us to delete, revoke your consent to the storage or the purpose for the data storage lapses (e.g. after completion of your request). Mandatory statutory provisions - in particular statutory retention periods - remain unaffected.</p>
-                    <h2 className="mt-12 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">5. Newsletter</h2>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Newsletter data</h3> <p>If you would like to receive the newsletter offered on the website, we require an e-mail address from you as well as information that allows us to verify that you are the owner of the e-mail address provided and that you agree to receive the newsletter. Further data is not collected or only on a voluntary basis. For the handling of the newsletter, we use newsletter service providers, which are described below.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Mailchimp</h3> <p>This website uses the services of Mailchimp to send out its newsletters. The provider is the Rocket Science Group LLC, 675 Ponce De Leon Ave NE, Suite 5000, Atlanta, GA 30308, USA.</p> <p>Among other things, Mailchimp is a service that can be deployed to organize and analyze the sending of newsletters. Whenever you enter data for the purpose of subscribing to a newsletter (e.g. your e-mail address), the information is stored on Mailchimp servers in the United States.</p> <p>With the assistance of the Mailchimp tool, we can analyze the performance of our newsletter campaigns. If you open an e-mail that has been sent through the Mailchimp tool, a file that has been integrated into the e-mail (a so-called web-beacon) connects to Mailchimp&rsquo;s servers in the United States. As a result, it can be determined whether a newsletter message has been opened and which links the recipient possibly clicked on. Technical information is also recorded at that time (e.g. the time of access, the IP address, type of browser and operating system). This information cannot be allocated to the respective newsletter recipient. Their sole purpose is the performance of statistical analyses of newsletter campaigns. The results of such analyses can be used to tailor future newsletters to the interests of their recipients more effectively.</p> <p>If you do not want to permit an analysis by Mailchimp, you must unsubscribe from the newsletter. We provide a link for you to do this in every newsletter message.</p> <p>The data is processed based on your consent (Art. 6(1)(a) GDPR). You may revoke any consent you have given at any time by unsubscribing from the newsletter. This shall be without prejudice to the lawfulness of any data processing transactions that have taken place prior to your revocation.</p> <p>The data deposited with us for the purpose of subscribing to the newsletter will be stored by us until you unsubscribe from the newsletter or the newsletter service provider and deleted from the newsletter distribution list after you unsubscribe from the newsletter. Data stored for other purposes with us remain unaffected.</p> <p>Data transmission to the US is based on the Standard Contractual Clauses (SCC) of the European Commission. Details can be found here: <a href="https://mailchimp.com/eu-us-data-transfer-statement/" target="_blank" rel="noopener noreferrer">https://mailchimp.com/eu-us-data-transfer-statement/</a> and <a href="https://mailchimp.com/legal/data-processing-addendum/#Annex_C_-_Standard_Contractual_Clauses" target="_blank" rel="noopener noreferrer">https://mailchimp.com/legal/data-processing-addendum/#Annex_C_-_Standard_Contractual_Clauses</a>.</p> <p>After you unsubscribe from the newsletter distribution list, your e-mail address may be stored by us or the newsletter service provider in a blacklist, if such action is necessary to prevent future mailings. The data from the blacklist is used only for this purpose and not merged with other data. This serves both your interest and our interest in complying with the legal requirements when sending newsletters (legitimate interest within the meaning of Art. 6(1)(f) GDPR). The storage in the blacklist is indefinite. <strong>You may object to the storage if your interests outweigh our legitimate interest.</strong></p> <p>For more details, please consult the Data Privacy Policies of Mailchimp at: <a href="https://mailchimp.com/legal/terms/" target="_blank" rel="noopener noreferrer">https://mailchimp.com/legal/terms/</a>.</p>
-                    <h2 className="mt-12 block text-center text-xl font-bold leading-8 tracking-tight text-white sm:text-2xl">6. Plug-ins and Tools</h2>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Google Fonts</h3> <p>To ensure that fonts used on this website are uniform, this website uses so-called Google Fonts provided by Google. When you access a page on our website, your browser will load the required fonts into your browser cache to correctly display text and fonts.</p> <p>To do this, the browser you use will have to establish a connection with Google&rsquo;s servers. As a result, Google will learn that your IP address was used to access this website. The use of Google Fonts is based on Art. 6(1)(f) GDPR. The website operator has a legitimate interest in a uniform presentation of the font on the operator&rsquo;s website. If appropriate consent has been obtained, the processing is carried out exclusively on the basis of Art. 6(1)(a) GDPR and &sect; 25 (1) TTDSG, insofar the consent includes the storage of cookies or the access to information in the user&rsquo;s end device (e.g., device fingerprinting) within the meaning of the TTDSG. This consent can be revoked at any time.</p> <p>If your browser should not support Google Fonts, a standard font installed on your computer will be used.</p> <p>For more information on Google Fonts, please follow this link: <a href="https://developers.google.com/fonts/faq" target="_blank" rel="noopener noreferrer">https://developers.google.com/fonts/faq</a> and consult Google&rsquo;s Data Privacy Declaration under: <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener noreferrer">https://policies.google.com/privacy?hl=en</a>.</p>
-                    <h3 className="mt-8 text-xl leading-8 text-white">Zapier</h3> <p>We have integrated Zapier on this website. The provider is Zapier Inc, Market St. #62411, San Francisco, CA 94104-5401, USA (hereinafter &ldquo;Zapier&rdquo;).</p> <p>Zapier allows us to link and synchronize various functionalities, databases, and tools with our website. In this way, it is possible, for example, to automatically play out content that we publish on our website on our social media channels or to export content from marketing and analysis tools. Depending on the functionality, Zapier may also collect various personal data in the process.</p> <p>The use of Zapier is based on Art. 6(1)(f) GDPR. The website operator has a legitimate interest on the most effective integration of the tools used. If appropriate consent has been obtained, the processing is carried out exclusively on the basis of Art. 6(1)(a) GDPR and &sect; 25 (1) TTDSG, insofar the consent includes the storage of cookies or the access to information in the user&rsquo;s end device (e.g., device fingerprinting) within the meaning of the TTDSG. This consent can be revoked at any time.</p> <p>Data transfer to the USA is based on the standard contractual clauses of the EU Commission. You can find details here: <a href="https://zapier.com/tos" target="_blank" rel="noopener noreferrer">https://zapier.com/tos</a>.</p>
-
+                    <h1 className="py-10 text-4xl font-bold text-white">
+                        Privacy Policy
+                    </h1>
+                    <h2 className="text-3xl font-bold text-white">
+                        1. Introduction
+                    </h2>
+                    <p className="mt-4">
+                        In the following, we provide information about the collection of personal data when using
+                    </p>
+                    <ul className="list-disc list-inside mt-4">
+                        <li className="mt-2">
+                            our website https://www.kern.ai/
+                        </li>
+                        <li className="mt-2">
+                            our profiles in social media.
+                        </li>
+                    </ul>
+                    <p className="mt-4">
+                        Personal data is any data that can be related to a specific natural person, such as their name or IP address.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        1.1. Contact details
+                    </h3>
+                    <p className="mt-4">
+                        The controller within the meaning of Art. 4 para. 7 EU General Data Protection Regulation (GDPR) is Kern AI GmbH, Gerhart-Hauptmann-Allee 71, 15732 Eichwalde, Germany, email:
+                        <a
+                            className="text-blue-500"
+                            href="mailto:info@kern.ai"
+                        >
+                            info@kern.ai
+                        </a>
+                        . We are legally represented by Johannes Hötter and Henrik Wenck.
+                    </p>
+                    <p className="mt-4">
+                        Our data protection officer can be reached via heyData GmbH, Schützenstraße 5, 10117 Berlin, www.heydata.eu, E-Mail:
+                        <a
+                            className="text-blue-500"
+                            href="mailto:datenschutz@heydata.eu"
+                        >
+                            datenschutz@heydata.eu
+                        </a>
+                        .
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        1.2. Scope of data processing, processing purposes and legal bases
+                    </h3>
+                    <p className="mt-4">
+                        We detail the scope of data processing, processing purposes and legal bases below. In principle, the following come into consideration as the legal basis for data processing:
+                    </p>
+                    <ul className="list-disc list-inside mt-4">
+                        <li className="mt-2">
+                            Art. 6 para. 1 s. 1 it. a GDPR serves as our legal basis for processing operations for which we obtain consent.
+                        </li>
+                        <li className="mt-2">
+                            Art. 6 para. 1 s. 1 lit. b GDPR is the legal basis insofar as the processing of personal data is necessary for the performance of a contract, e.g. if a site visitor purchases a product from us or we perform a service for him. This legal basis also applies to processing that is necessary for pre-contractual measures, such as in the case of inquiries about our products or services.
+                        </li>
+                        <li className="mt-2">
+                            Art. 6 para. 1 s. 1 lit. c GDPR applies if we fulfill a legal obligation by processing personal data, as may be the case, for example, in tax law.
+                        </li>
+                        <li className="mt-2">
+                            Art. 6 para. 1 s. 1 lit. f GDPR serves as the legal basis when we can rely on legitimate interests to process personal data, e.g. for cookies that are necessary for the technical operation of our website.
+                        </li>
+                    </ul>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        1.3 Data processing outside the EEA
+                    </h3>
+                    <p className="mt-4">
+                        Insofar as we transfer data to service providers or other third parties outside the EEA, the security of the data during the transfer is guaranteed by adequacy decisions of the EU Commission, insofar as they exist (e.g. for Great Britain, Canada and Israel) (Art. 45 para. 3 GDPR).
+                        If no adequacy decision exists (e.g. for the USA), the legal basis for the data transfer are usually, i.e. unless we indicate otherwise, standard contractual clauses. These are a set of rules adopted by the EU Commission and are part of the contract with the respective third party. According to Art. 46 para. 2 lit. b GDPR, they ensure the security of the data transfer. Many of the providers have given contractual guarantees that go beyond the standard contractual clauses to protect the data. These include, for example, guarantees regarding the encryption of data or regarding an obligation on the part of the third party to notify data subjects if law enforcement agencies wish to access the respective data.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        1.4. Storage duration
+                    </h3>
+                    <p className="mt-4">
+                        Unless expressly stated in this privacy policy, the data stored by us will be deleted as soon as they are no longer required for their intended purpose and no legal obligations to retain data conflict with the deletion. If the data are not deleted because they are required for other and legally permissible purposes, their processing is restricted, i.e. the data are blocked and not processed for other purposes. This applies, for example, to data that must be retained for commercial or tax law reasons.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        1.5. Rights of data subjects
+                    </h3>
+                    <p className="mt-4">
+                        Data subjects have the following rights against us with regard to their personal data:
+                    </p>
+                    <ul className="list-disc ml-8 mt-4">
+                        <li className="mt-2">
+                            Right of access,
+                        </li>
+                        <li className="mt-2">
+                            Right to correction or deletion,
+                        </li>
+                        <li className="mt-2">
+                            Right to limit processing,
+                        </li>
+                        <li className="mt-2">
+                            Right to object to the processing,
+                        </li>
+                        <li className="mt-2">
+                            Right to data transferability,
+                        </li>
+                        <li className="mt-2">
+                            Right to revoke a given consent at any time.
+                        </li>
+                    </ul>
+                    <p className="mt-4">
+                        Data subjects also have the right to complain to a data protection supervisory authority about the processing of their personal data. Contact details of the data protection supervisory authorities are available at https://www.bfdi.bund.de/EN/Service/Anschriften/Laender/Laender-node.html.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        1.6. Obligation to provide data
+                    </h3>
+                    <p className="mt-4">
+                        Within the scope of the business or other relationship, customers, prospective customers or third parties need to provide us with personal data that is necessary for the establishment, execution and termination of a business or other relationship or that we are legally obliged to collect. Without this data, we will generally have to refuse to conclude the contract or to provide a service or will no longer be able to perform an existing contract or other relationship.
+                        Mandatory data are marked as such.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        1.7. No automatic decision making in individual cases
+                    </h3>
+                    <p className="mt-4">
+                        As a matter of principle, we do not use a fully automated decision-making process in accordance with article 22 GDPR to establish and implement the business or other relationship. Should we use these procedures in individual cases, we will inform of this separately if this is required by law.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        1.8. Making contact
+                    </h3>
+                    <p className="mt-4">
+                        When contacting us, e.g. by e-mail or telephone, the data provided to us (e.g. names and e-mail addresses) will be stored by us in order to answer questions. The legal basis for the processing is our legitimate interest (Art. 6 para. 1 s. 1 lit. f GDPR) to answer inquiries directed to us. We delete the data accruing in this context after the storage is no longer necessary or restrict the processing if there are legal retention obligations.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        1.9. Competitions
+                    </h3>
+                    <p className="mt-4">
+                        Occasionally, we offer competitions via our website or in other ways. We process the data requested in these competitions in order to determine and notify the winners. Afterwards, we delete the data. It may also be that we only offer competitions for existing customers. In this case, we only process the name to determine the winners and the contact data to notify the winners. It is our legitimate interest to offer competitions to attract customers or to interact with our existing customers. The legal basis for data processing is Art. 6 para. 1 s. 1 lit. f GDPR.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        1.10. Customer surveys
+                    </h3>
+                    <p className="mt-4">
+                        From time to time, we conduct customer surveys to get to know our customers and their wishes better. In doing so, we collect the data requested in each case. It is our legitimate interest to get to know our customers and their wishes better, so that the legal basis for the associated data processing is Art. 6 para. 1 s. 1 lit f GDPR. We delete the data when the results of the surveys have been evaluated.
+                    </p>
+                    <h2 className="text-2xl font-bold text-white mt-8">
+                        2. Newsletter
+                    </h2>
+                    <p className="mt-4">
+                        We reserve the right to inform customers who have already used services from us or purchased goods from time to time by e-mail or other means electronically about our offers, if they have not objected to this. The legal basis for this data processing is Art. 6 para. 1 s. 1 lit. f GDPR. Our legitimate interest is to conduct direct advertising (recital 47 GDPR). Customers can object to the use of their e-mail address for advertising purposes at any time without incurring additional costs, for example via the link at the end of each e-mail or by sending an e-mail to our above-mentioned e-mail address.
+                    </p>
+                    <p className="mt-4">
+                        Interested parties have the option to subscribe to a free newsletter. We process the data provided during registration exclusively for sending the newsletter. Subscription takes place by selecting the corresponding field on our website, by ticking the corresponding field in a paper document or by another clear action, whereby interested parties declare their consent to the processing of their data, so that the legal basis is Art. 6 para. p. 1 lit. a GDPR. Consent can be revoked at any time, e.g. by clicking the corresponding link in the newsletter or notifying our e-mail address given above. The processing of the data until revocation remains lawful even in the event of revocation.
+                    </p>
+                    <p className="mt-4">
+                        Based on the consent of the recipients (Art. 6 para. 1 s. 1 lit. a GDPR), we also measure the opening and click-through rate of our newsletters to understand what is relevant for our audience.
+                    </p>
+                    <p className="mt-4">
+                        We send newsletters with the tool Mailchimp of the provider Rocket Science Group LLC, 675 Ponce de Leon Ave NE, Suite 5000, Atlanta, GA 30308, USA (privacy policy: https://mailchimp.com/legal/privacy/). The provider processes content, usage, meta/communication data and contact data in the process in the USA.
+                    </p>
+                    <p className="mt-4">
+                        We send newsletters with the tool Pipedrive of the provider Pipedrive OÜ, Mustamäe tee 3a, 10615 Tallinn, Estonia (privacy policy: https://www.pipedrive.com/en/privacy). The provider processes content, usage, meta/communication data and contact data in the process in the EU.
+                    </p>
+                    <p className="mt-4">
+                        We send newsletters using Trumpet. The provider thereby processes content, usage, meta/communication data and contact data.
+                    </p>
+                    <h2 className="text-2xl font-bold text-white mt-8">
+                        3. Data processing on our website
+                    </h2>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        3.1. Notice for website visitors from Germany
+                    </h3>
+                    <p className="mt-4">
+                        Our website stores information in the terminal equipment of website visitors (e.g. cookies) or accesses information that is already stored in the terminal equipment (e.g. IP addresses). What information this is in detail can be found in the following sections.
+                    </p>
+                    <p className="mt-4">
+                        This storage and access is based on the following provisions:
+                    </p>
+                    <ul className="list-disc ml-8 mt-4">
+                        <li>
+                            Insofar as this storage or access is absolutely necessary for us to provide the service of our website expressly requested by website visitors (e.g., to carry out a chatbot used by the website visitor or to ensure the IT security of our website), it is carried out on the basis of Section 25 para. 2 no. 2 of the German Telecommunications Telemedia Data Protection (Telekommunikation-Telemedien-Datenschutz-Gesetz, "TTDSG").
+                        </li>
+                        <li>
+                            Otherwise, this storage or access takes place on the basis of the website visitor's consent (Section 25 para. 1 TTDSG).
+                        </li>
+                    </ul>
+                    <p className="mt-4">
+                        The subsequent data processing is carried out in accordance with the following sections and on the basis of the provisions of the GDPR.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        3.2 Informative use of our website
+                    </h3>
+                    <p className="mt-4">
+                        During the informative use of the website, i.e. when site visitors do not separately transmit information to us, we collect the personal data that the browser transmits to our server in order to ensure the stability and security of our website. This is our legitimate interest, so that the legal basis is Art. 6 para. 1 s. 1 lit. f GDPR.
+                    </p>
+                    <p className="mt-4">
+                        These data are:
+                    </p>
+                    <ul className="list-disc ml-8 mt-4">
+                        <li>
+                            IP address
+                        </li>
+                        <li>
+                            Date and time of the request
+                        </li>
+                        <li>
+                            Time zone difference to Greenwich Mean Time (GMT)
+                        </li>
+                        <li>
+                            Content of the request (specific page)
+                        </li>
+                        <li>
+                            Access status/HTTP status code
+                        </li>
+                        <li>
+                            Amount of data transferred in each case
+                        </li>
+                        <li>
+                            Website from which the request comes
+                        </li>
+                        <li>
+                            Browser
+                        </li>
+                        <li>
+                            Operating system and its interface
+                        </li>
+                        <li>
+                            Language and version of the browser software.
+                        </li>
+                    </ul>
+                    <p className="mt-4">
+                        This data is also stored in log files. They are deleted when their storage is no longer necessary, at the latest after 14 days.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        3.3 Web hosting and provision of the website
+                    </h3>
+                    <p className="mt-4">
+                        Our website is hosted by DigitalOcean. The provider is Digitalocean LLC, 101 Avenue of the Americas 10th Floor, New York, NY 10013, USA. In doing so, the provider processes the personal data transmitted via the website, e.g. content, usage, meta/communication data or contact data, in the EU. Further information can be found in the provider's privacy policy at https://www.digitalocean.com/legal/privacy-policy.
+                    </p>
+                    <p className="mt-4">
+                        It is our legitimate interest to provide a website, so the legal basis of the described data processing is Art. 6 para. 1 s. 1 lit. f GDPR.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        3.4 Contact form
+                    </h3>
+                    <p className="mt-4">
+                        When contacting us via the contact form on our website, we store the data requested there and the content of the message.
+                    </p>
+                    <p className="mt-4">
+                        The legal basis for the processing is our legitimate interest in answering inquiries directed to us. The legal basis for the processing is therefore Art. 6 para. 1 s. 1 lit. f GDPR.
+                    </p>
+                    <p className="mt-4">
+                        We delete the data accruing in this context after the storage is no longer necessary or restrict the processing if there are legal retention obligations.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        3.5 Vacant positions
+                    </h3>
+                    <p className="mt-4">
+                        We publish positions that are vacant in our company on our website, on pages linked to the website or on third-party websites.
+                    </p>
+                    <p className="mt-4">
+                        The processing of the data provided as part of the application is carried out for the purpose of implementing the application process. Insofar as this is necessary for our decision to establish an employment relationship, the legal basis is Art. 88 para. GDPR in conjunction with Sec. 26 para. 1 of the German Data Protection Act (Bundesdatenschutzgesetz). We have marked the data required to carry out the application process accordingly or refer to them. If applicants do not provide this data, we cannot process the application.
+                    </p>
+                    <p className="mt-4">
+                        Further data is voluntary and not required for an application. If applicants provide further information, the basis is their consent (Art. 6 para. 1 s. 1 lit. a GDPR).
+                    </p>
+                    <p className="mt-4">
+                        We ask applicants to refrain from providing information on political opinions, religious beliefs and similarly sensitive data in their CV and cover letter. They are not required for an application. If applicants nevertheless provide such information, we cannot prevent their processing as part of the processing of the resume or cover letter. Their processing is then also based on the consent of the applicants (Art. 9 para. 2 lit. a GDPR).
+                    </p>
+                    <p className="mt-4">
+                        Finally, we process the applicants' data for further application procedures if they have given us their consent to do so. In this case, the legal basis is Art. 6 para. 1 s. 1 lit. a GDPR.
+                    </p>
+                    <p className="mt-4">
+                        We pass on the applicants' data to the responsible employees in the HR department, to our data processors in the area of recruiting and to the employees otherwise involved in the application process.
+                    </p>
+                    <p className="mt-4">
+                        If we enter into an employment relationship with the applicant following the application process, we delete the data only after the employment relationship has ended. Otherwise, we delete the data no later than six months after rejecting an applicant.
+                    </p>
+                    <p className="mt-4">
+                        If applicants have given us their consent to use their data for further application procedures as well, we will not delete their data until one year after receiving the application.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        3.6 Booking of appointments
+                    </h3>
+                    <p className="mt-4">
+                        Site visitors can book appointments with us on our website. For this purpose, we process meta data or communication data in addition to the data entered. We have a legitimate interest in offering interested parties a user-friendly option for making appointments. Therefore, the legal basis for data processing is Art. 6 para. 1 s. 1 lit. f GDPR. Insofar as we use a third-party tool for the agreement, the information on this can be found under "Third parties".
+                    </p>
+                    <ul className="list-disc ml-8 mt-4">
+                        <li>
+                            Mastercard Europe SA, Belgium
+                        </li>
+                        <li>
+                            Visa Europe Services Inc., Great Britain
+                        </li>
+                    </ul>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        3.7. Third parties
+                    </h3>
+                    <h4 className="text-xl font-bold text-white mt-8">
+                        3.7.1. Fathom Analytics
+                    </h4>
+                    <p className="mt-4">
+                        We use Fathom Analytics for analytics. The provider is Fathom Analytics, 37058 Millstream PO, Victoria, BC, USA. The provider processes usage data (e.g. web pages visited, interest in content, access times) and meta/communication data (e.g. device information, IP addresses) in the EU.
+                    </p>
+                    <p className="mt-4">
+                        The legal basis for the processing is Art. 6 para. 1 s. 1 lit. a GDPR. The processing is based on consent. Data subjects may revoke their consent at any time by contacting us, for example, using the contact details provided in our privacy policy. The revocation does not affect the lawfulness of the processing until the revocation.
+                    </p>
+                    <p className="mt-4">
+                        The data will be deleted when the purpose for which it was collected no longer applies and there is no obligation to retain it. Further information is available in the provider's privacy policy at https://usefathom.com/privacy.
+                    </p>
+                    <h4 className="text-xl font-bold text-white mt-8">
+                        3.7.2. Zapier
+                    </h4>
+                    <p className="mt-4">
+                        We use Zapier to automate between applications. The provider is Zapier, Inc., 548 Market St. #62411, San Francisco, CA 94104-5401, USA. The provider processes usage data (e.g. web pages visited, interest in content, access times) and meta/communication data (e.g. device information, IP addresses) in the USA.
+                    </p>
+                    <p className="mt-4">
+                        The legal basis for the processing is Art. 6 para. 1 s. 1 lit. f GDPR. We have a legitimate interest in easily connecting the applications in our company to optimize the way we work.
+                    </p>
+                    <p className="mt-4">
+                        The legal basis for the transfer to a country outside the EEA are standard contractual clauses. The security of the data transferred to the third country (i.e. a country outside the EEA) is guaranteed by standard data protection clauses (Art. 46 para. 2 lit. c GDPR) adopted by the EU Commission in accordance with the examination procedure under Art. 93 para. 2 of the GDPR, which we have agreed to with the provider.
+                    </p>
+                    <p className="mt-4">
+                        We delete the data when the purpose for which it was collected no longer applies. Further information is available in the provider's privacy policy at https://zapier.com/privacy.
+                    </p>
+                    <h4 className="text-xl font-bold text-white mt-8">
+                        3.7.3 Mailchimp
+                    </h4>
+                    <p className="mt-4">
+                        We use Mailchimp for email marketing and to manage emails. The provider is Rocket Science Group LLC, 675 Ponce de Leon Ave NE, Suite 5000, Atlanta, GA 30308, USA. The provider processes usage data (e.g. web pages visited, interest in content, access times), contact data (e.g. e-mail addresses, telephone numbers), meta/communication data (e.g. device information, IP addresses), and content data (e.g. entries in online forms) in the USA.
+                    </p>
+                    <p className="mt-4">
+                        The legal basis for the processing is Art. 6 para. 1 s. 1 lit. a GDPR. The processing is based on consent. Data subjects may revoke their consent at any time by contacting us, for example, using the contact details provided in our privacy policy. The revocation does not affect the lawfulness of the processing until the revocation.
+                    </p>
+                    <p className="mt-4">
+                        The legal basis for the transfer to a country outside the EEA are standard contractual clauses. The security of the data transferred to the third country (i.e. a country outside the EEA) is guaranteed by standard data protection clauses (Art. 46 para. 2 lit. c GDPR) adopted by the EU Commission in accordance with the examination procedure under Art. 93 para. 2 of the GDPR, which we have agreed to with the provider.
+                    </p>
+                    <p className="mt-4">
+                        The data is deleted when the purpose for which it was collected no longer applies. Further information is available in the provider's privacy policy at https://mailchimp.com/legal/privacy/.
+                    </p>
+                    <h4 className="text-xl font-bold text-white mt-8">
+                        3.7.4 Google Webfonts
+                    </h4>
+                    <p className="mt-4">
+                        We use Google Webfonts for fonts on the website. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Ireland. The provider processes meta/communication data (e.g. device information, IP addresses) in the USA.
+                    </p>
+                    <p className="mt-4">
+                        The legal basis for the processing is Art. 6 para. 1 s. 1 lit. a GDPR. The processing is based on consent. Data subjects may revoke their consent at any time by contacting us, for example, using the contact details provided in our privacy policy. The revocation does not affect the lawfulness of the processing until the revocation.
+                    </p>
+                    <p className="mt-4">
+                        The legal basis for the transfer to a country outside the EEA are consents.
+                    </p>
+                    <p className="mt-4">
+                        Further information is available in the provider's privacy policy at https://policies.google.com/privacy?hl=en-US.
+                    </p>
+                    <h4 className="text-xl font-bold text-white mt-8">
+                        3.7.5. Google reCAPTCHA
+                    </h4>
+                    <p className="mt-4">
+                        We use Google reCAPTCHA to manage authentifications. The provider is Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Dublin, Ireland. The provider processes usage data (e.g. web pages visited, interest in content, access times) and meta/communication data (e.g. device information, IP addresses) in the USA.
+                    </p>
+                    <p className="mt-4">
+                        The legal basis for the processing is Art. 6 para. 1 s. 1 lit. a GDPR. The processing is based on consent. Data subjects may revoke their consent at any time by contacting us, for example, using the contact details provided in our privacy policy. The revocation does not affect the lawfulness of the processing until the revocation.
+                    </p>
+                    <p className="mt-4">
+                        The legal basis for the transfer to a country outside the EEA are consents.
+                    </p>
+                    <p className="mt-4">
+                        Further information is available in the provider's privacy policy at https://policies.google.com/privacy?hl=en-US.
+                    </p>
+                    <h2 className="text-2xl font-bold text-white mt-8">
+                        4. Data processing on social media platforms
+                    </h2>
+                    <p className="mt-4">
+                        We are represented in social media networks in order to present our organization and our services there. The operators of these networks regularly process their users' data for advertising purposes. Among other things, they create user profiles from their online behavior, which are used, for example, to show advertising on the pages of the networks and elsewhere on the Internet that corresponds to the interests of the users. To this end, the operators of the networks store information on user behavior in cookies on the users' computers. Furthermore, it cannot be ruled out that the operators merge this information with other data. Users can obtain further information and instructions on how to object to processing by the site operators in the data protection declarations of the respective operators listed below. It is also possible that the operators or their servers are located in non-EU countries, so that they process data there. This may result in risks for users, e.g. because it is more difficult to enforce their rights or because government agencies access the data.
+                    </p>
+                    <p className="mt-4">
+                        If users of the networks contact us via our profiles, we process the data provided to us in order to respond to the inquiries. This is our legitimate interest, so that the legal basis is Art. 6 para. 1 s. 1 lit. f GDPR.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        4.1. YouTube
+                    </h3>
+                    <p className="mt-4">
+                        We maintain a profile on YouTube. The operator is Google Ireland Limited Gordon House, Barrow Street Dublin 4. Ireland. The privacy policy is available here: https://policies.google.com/privacy?hl=de.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        4.2. Twitter
+                    </h3>
+                    <p className="mt-4">
+                        We maintain a profile on Twitter. The operator is Twitter Inc, 1355 Market Street, Suite 900, San Francisco, CA 94103, USA. The privacy policy is available here: https://twitter.com/de/privacy. One way to object to data processing is via the settings for advertisements: https://twitter.com/personalization.
+                    </p>
+                    <h3 className="text-2xl font-bold text-white mt-8">
+                        4.3. LinkedIn
+                    </h3>
+                    <p className="mt-4">
+                        We maintain a profile on LinkedIn. The operator is LinkedIn Ireland Unlimited Company, Wilton Place, Dublin 2, Ireland. The privacy policy is available here: https://https://www.linkedin.com/legal/privacy-policy?_l=de_DE. One way to object to data processing is via the settings for advertisements: https://www.linkedin.com/psettings/guest-controls/retargeting-opt-out.
+                    </p>
+                    <h2 className="text-2xl font-bold text-white mt-8">
+                        5. Changes to this privacy policy
+                    </h2>
+                    <p className="mt-4">
+                        We reserve the right to change this privacy policy with effect for the future. A current version is always available here.
+                    </p>
+                    <h2 className="text-2xl font-bold text-white mt-8">
+                        6. Questions and comments
+                    </h2>
+                    <p className="mt-4">
+                        If you have any questions or comments regarding this privacy policy, please feel free to contact us using the contact information provided above.
+                    </p>
                 </div>
-
             </div>
         </div>
     )
