@@ -46,7 +46,7 @@ const timeline = [
 const stats = [
     { id: 1, name: 'Claims handling cost reduction', value: '30%', reference: 'McKinsey', link: 'https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/what%20drives%20insurance%20operating%20costs/successfully_reducing_operating_costs.pdf' },
     { id: 2, name: 'Improve claims processing time by', value: '50%', reference: 'McKinsey', link: 'https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/what%20drives%20insurance%20operating%20costs/successfully_reducing_operating_costs.pdf' },
-    { id: 3, name: '% of customers that appreciate AI Chatbots', value: '89%', reference: 'SmartTribune', link: 'https://blog.smart-tribune.com/en/customers-think-about-chatbots' },
+    { id: 3, name: 'Topline growth rate through intelligent automation', value: '2 - 5%', reference: 'Capgemini', link: 'https://www.capgemini.com/gb-en/wp-content/uploads/sites/3/2018/07/Report-1.pdf' },
 ]
 
 const options = [
