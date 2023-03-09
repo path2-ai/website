@@ -4,7 +4,7 @@ import Link from 'next/link'
 export function Story() {
 
     const companies = [
-        { name: 'Kern AI GmbH', founded: '2020', teamsize: '11' },
+        { name: 'Kern AI GmbH', headquarters: 'Bonn, Germany', country: 'DE' },
     ]
 
     const nlpActions = [{
@@ -102,8 +102,8 @@ export function Story() {
                                                                             <td className="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-100 sm:pl-0">
                                                                                 {company.name}
                                                                             </td>
-                                                                            <td className="whitespace-nowrap p-4 text-sm text-gray-500">{company.founded}</td>
-                                                                            <td className="whitespace-nowrap p-4 text-sm text-gray-500">{company.teamsize}</td>
+                                                                            <td className="whitespace-nowrap p-4 text-sm text-gray-500">{company.headquarters}</td>
+                                                                            <td className="whitespace-nowrap p-4 text-sm text-gray-500">{company.country}</td>
                                                                         </tr>
                                                                     ))}
                                                                 </tbody>
