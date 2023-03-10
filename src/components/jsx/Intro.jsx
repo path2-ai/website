@@ -13,16 +13,16 @@ export function Intro() {
                             What does that mean?
                         </h3>
                         <p className='text-sm md:text-base text-gray-400 md:text-center mt-4 md:mt-10'>
-                            Think of any use case in your company that requires some form of communication (e.g. via emails).
+                            Think of <span className="text-white font-semibold">any use case in your company that requires some form of communication</span> (e.g. via emails).
                         </p>
                         <p className='text-sm md:text-base text-gray-400 md:text-center mt-2'>
                             How is this process currently executed? What are the bottlenecks? What are the pain points?
                         </p>
                         <p className='text-sm md:text-base text-gray-400 md:text-center mt-2'>
-                            We help you to build process automations that understand texts, voice, and documents.
+                            We help you to <span className="text-white font-semibold">build process automations that understand texts, voice, and documents</span>.
                         </p>
                         <p className='text-sm md:text-base text-gray-400 md:text-center mt-2'>
-                            For instance, to create an automation across all customer-facing channels - <span className='text-white'>beyond chatbots</span>.
+                            For instance, to create an automation across all customer-facing channels - including emails.
                         </p>
 
                         <div className="hidden md:block">
@@ -31,6 +31,10 @@ export function Intro() {
                         <div className="block md:hidden">
                             <img src="/nlp-hero-mobile.png" className='mt-8 mx-auto' />
                         </div>
+
+                        <p className='text-sm md:text-base text-gray-400 md:text-center mt-4'>
+                            Since we provide a platform, we can help you with a wide range of use cases. See below for some examples.
+                        </p>
                     </div>
                 </div>
             </section >

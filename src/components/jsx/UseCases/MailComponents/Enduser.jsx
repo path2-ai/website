@@ -31,33 +31,33 @@ export function Enduser() {
     const [messages, setMessages] = useState([
         {
             id: 1,
-            subject: 'I love this tool!',
+            subject: 'Status of my order',
             sender: {
-                name: 'Monica White',
-                email: 'monica.white@acme.org',
+                name: 'Johannes Hötter',
+                email: 'johannes.hoetter@kern.ai',
             },
             userDefinedMail: false,
             date: '1d ago',
             datetime: '2021-01-27T16:35',
             preview:
-                'It is amazing to see how natural language processing can be used to automate email workflows. I love this tool!',
+                'Hi, I ordered the book "the little Prince". Can you tell me the status? Thanks! Johannes Hötter',
             thread: [
                 {
                     id: 1,
                     author: {
-                        name: 'Monica White',
-                        email: 'monica.white@acme.org',
+                        name: 'Johannes Hötter',
+                        email: 'johannes.hoetter@kern.ai',
                     },
                     date: 'Wed. at 4:35pm',
                     datetime: '2021-01-27T16:35',
                     body: `
-                    <p>It is amazing to see how natural language processing can be used to automate email workflows. I love this tool!</p>
-                    <p><strong style="font-weight: 600;">Monica White</strong><br/>Customer Service</p>
+                    <p>Hi, I ordered the book "the little Prince". Can you tell me the status? Thanks!</p>
+                    <p><strong style="font-weight: 600;">Johannes Hötter</strong><br/>Co-Founder Kern AI</p>
                   `,
                 }
             ],
             response: {
-                text: 'Thanks, Monica! We are glad you like it!',
+                text: 'Hello Johannes, thanks for reaching out. Your order will most likely arrive by March 10th, which is a Friday. Thanks for your patience!',
                 sentiment: 'positive',
             }
         },
