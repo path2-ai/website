@@ -60,7 +60,7 @@ export function EmailAnalytics() {
                                     key={item.name}
                                     onClick={item.onClick}
                                     className={classNames(
-                                        item.showFor == 'manager' ? 'bg-gradient-to-r from-amber-300 via-lime-400 to-green-500 border border-neutral-500' : 'border border-neutral-800',
+                                        item.showFor == 'manager' ? 'bg-gradient-to-r from-amber-200 via-lime-300 to-green-400 border border-neutral-500' : 'border border-neutral-800',
                                         'flex flex-row group space-x-2 items-center relative  rounded-full bg-neutral-900 pl-2 pr-3 py-1.5'
                                     )}
                                 >

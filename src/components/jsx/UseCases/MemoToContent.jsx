@@ -59,7 +59,7 @@ export function MemoToContent() {
                                     key={item.name}
                                     onClick={item.onClick}
                                     className={classNames(
-                                        item.showFor == 'manager' ? 'bg-gradient-to-r from-orange-300 via-rose-400 to-red-500 border border-neutral-500' : 'null',
+                                        item.showFor == 'manager' ? 'bg-gradient-to-r from-orange-200 via-rose-300 to-red-400 border border-neutral-500' : 'null',
                                         'flex flex-row group space-x-2 items-center relative rounded-full bg-neutral-900 pl-2 pr-3 py-1.5'
                                     )}
                                 >

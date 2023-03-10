@@ -504,9 +504,7 @@ export function Enduser() {
                                                     {audioPlaying ? (
                                                         <IconPlayerPause size={20} />
                                                     ) : (
-                                                        <IconPlayerPlay
-                                                            className='relative' size={20
-                                                            } />
+                                                        <IconPlayerPlay size={20} />
                                                     )}
                                                 </button>
                                             </div>

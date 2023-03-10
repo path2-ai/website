@@ -16,6 +16,7 @@ const navigation = [
             { name: 'Zendesk' },
             { name: 'Intercom' },
             { name: 'Your own API' },
+            { name: 'Your ERP, CRM or HR system' },
             { name: 'Speech (voice recordings)' }
         ],
     },
@@ -218,7 +219,7 @@ export function Enduser() {
                                                         leaveFrom="transform opacity-100 scale-100"
                                                         leaveTo="transform opacity-0 scale-95"
                                                     >
-                                                        <Menu.Items className="absolute right-0 z-10 mt-2 w-52 origin-top-right rounded-md bg-neutral-900 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none">
+                                                        <Menu.Items className="absolute right-0 z-10 mt-2 w-60 origin-top-right rounded-md bg-neutral-900 shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none">
                                                             <div className="py-1">
                                                                 {item.children.map((child) => (
                                                                     <Menu.Item key={child.name}>
@@ -290,11 +291,11 @@ export function Enduser() {
                                                             onClick={() => { setPingFilter(false) }}
                                                         >
                                                             {pingFilter && (
-                                                                <span className="absolute ml-3 -mt-3 flex h-3 w-3">
+                                                                <span className="ml-3 -mt-3 flex h-3 w-3">
                                                                     <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500" />
                                                                 </span>
                                                             )}
-                                                            <IconFilter className='relative h-5 w-5 text-gray-500 hover:text-gray-300 transition-colors duration-200' />
+                                                            <IconFilter className='h-5 w-5 text-gray-500 hover:text-gray-300 transition-colors duration-200' />
                                                         </Menu.Button>
 
                                                         <Transition
@@ -400,7 +401,7 @@ export function Enduser() {
                                                                     <span className="absolute inset-0" aria-hidden="true" />
                                                                     <div>
                                                                         {message.id !== selectedMessage?.id && pingOtherMessages && (
-                                                                            <span className="absolute -ml-3 -mt-3 flex h-3 w-3">
+                                                                            <span className="-ml-3 -mt-3 flex h-3 w-3">
                                                                                 <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
                                                                             </span>
                                                                         )}
@@ -847,12 +848,13 @@ export function Enduser() {
                                                             setPingOtherMessages(false)
                                                         }}
                                                     >
+                                                        {pingOtherMessages && (
+                                                            <span className="flex h-3 w-3">
+                                                                <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
+                                                            </span>
+                                                        )}
                                                         <div className='flex flex-row items-center justify-between w-full'>
-                                                            {pingOtherMessages && (
-                                                                <span className="absolute -ml-3 -mt-3 flex h-3 w-3">
-                                                                    <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
-                                                                </span>
-                                                            )}
+
                                                             <p className='text-gray-100 text-sm'>
                                                                 {message.sender.name}
                                                             </p>
