@@ -4,9 +4,6 @@ import { WORKFLOW_ASSETS_URL } from './_settings'
 
 const tabsExtractions = [
     { name: 'All', icon: IconApiApp },
-    { name: 'Social Media', icon: IconSocial },
-    { name: 'Collaboration', icon: IconMessage },
-    { name: 'Customer Success', icon: IconTrophy },
 ]
 
 const tabsTransformations = [
@@ -18,8 +15,6 @@ const tabsTransformations = [
 
 const tabsLoaders = [
     { name: 'All', icon: IconApiApp },
-    { name: 'Customer Success', icon: IconTrophy },
-    { name: 'Collaboration', icon: IconMessage },
 ]
 
 const integrationsExtractions = [
@@ -28,6 +23,22 @@ const integrationsExtractions = [
         image: 'gmail',
         description: 'Gmail is a free, advertising-supported email service developed by Google. Users can access Gmail on the web and using third-party programs that synchronize email content through POP or IMAP protocols.',
         link: 'https://www.google.com/gmail/about/',
+        tags: ['Customer Success'],
+        state: 'production',
+    },
+    {
+        name: 'Emil',
+        image: 'emil-erp',
+        description: "Fast Go-to-Market, low operating cost, easy integration: Innovation for tomorrow's insurance industry.",
+        link: 'https://www.emil.de/en/home',
+        tags: ['Customer Success'],
+        state: 'production',
+    },
+    {
+        name: 'Mixmove',
+        image: 'mixmove-tms',
+        description: 'Best in class cloud software for outstanding logistics performance and global environmental protection',
+        link: 'https://www.mixmove.io/',
         tags: ['Customer Success'],
         state: 'production',
     },
@@ -97,6 +108,22 @@ const integrationsLoaders = [
         link: 'https://airtable.com/',
         tags: ['Collaboration'],
         state: 'development',
+    },
+    {
+        name: 'Emil',
+        image: 'emil-erp',
+        description: "Fast Go-to-Market, low operating cost, easy integration: Innovation for tomorrow's insurance industry.",
+        link: 'https://www.emil.de/en/home',
+        tags: ['Customer Success'],
+        state: 'production',
+    },
+    {
+        name: 'Mixmove',
+        image: 'mixmove-tms',
+        description: 'Best in class cloud software for outstanding logistics performance and global environmental protection',
+        link: 'https://www.mixmove.io/',
+        tags: ['Customer Success'],
+        state: 'production',
     },
     {
         name: 'GSheet',
@@ -191,8 +218,10 @@ function IntegrationList({ name, color, integrations, tabs, currentTab, setCurre
                                         {name == 'Transformations' ? (
                                             <img className="ring-1 ring-gray-700 h-10 w-10 rounded-lg p-2" src={integration.image} alt="" />
                                         ) : (
-                                            <img className="ring-1 ring-gray-700 h-10 w-10 rounded-lg p-2" src={`${WORKFLOW_ASSETS_URL}/icons/${integration.image}.png`} alt="" />
+                                            <div className='ring-1 ring-gray-700 h-10 w-10 rounded-lg p-2'>
+                                                <img className="rounded-md" src={`${WORKFLOW_ASSETS_URL}/icons/${integration.image}.png`} alt="" />
 
+                                            </div>
                                         )}
                                     </div>
                                     <div className="min-w-0 flex-1">

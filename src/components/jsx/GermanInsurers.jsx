@@ -38,19 +38,19 @@ const stats = [
 
 const steps = [{
     title: "Ermöglicht durch neue Technologien",
-    description: "Embedding text & language-based AI automation is now easy with groundbreaking tools such as ChatGPT and Open API. Kern AI is your gateway to utilising these tools for business-critical use cases.",
+    description: "Die Einbettung von text- und sprachbasierter KI-Automatisierung ist jetzt mit bahnbrechender Technologie ganz einfach - auch datenschutzkonform! Kern AI ist Ihr Tor zur Nutzung dieser Tools für geschäftskritische Anwendungsfälle.",
     icon: IconNumber1,
 }, {
     title: "Skalierbare und maßgeschneiderte Lösungen",
-    description: "Kern AI accelerates the time it takes to see results, allowing you to start small and scale AI across workflows or teams with ease. With Kern, you can supercharge your implementation process.",
+    description: "Kern AI verkürzt die Zeit, bis Sie Ergebnisse sehen. Wir ermöglichen es Ihnen, klein anzufangen und KI mühelos über Arbeitsabläufe oder Teams hinweg zu skalieren. Mit Kern können Sie Ihren Implementierungsprozess beschleunigen.",
     icon: IconNumber2,
 }, {
     title: "Kund:innen haben höchste Ansprüche",
-    description: "According to Salesforce, 64% of consumers and 80% of business buyers expect companies to respond to their inquiries within 24 hours. AI makes it possible to offer superior customer service.",
+    description: "Nach Angaben von Salesforce erwarten 64 % der Verbraucher:innen und 80 % der Geschäftskund:innen, dass Unternehmen innerhalb von 24 Stunden auf ihre Anfragen reagieren. KI macht es möglich, einen besseren Kundenservice anzubieten.",
     icon: IconNumber3,
 }, {
     title: "Reduzieren Sie Kosten in der Schadensfallbearbeitung",
-    description: "According to a study by McKinsey, claims automation can reduce claims handling costs by up to 30%. AI is the primary way to automate claims handling, support existing teams and reduce costs.",
+    description: "Laut einer Studie von McKinsey können die Kosten für die Schadenbearbeitung durch Automatisierung um bis zu 30 % gesenkt werden. KI ist der beste Weg, um die Schadenbearbeitung zu verbessern, bestehende Teams zu unterstützen und Kosten zu senken.",
     icon: IconNumber4,
 }]
 
