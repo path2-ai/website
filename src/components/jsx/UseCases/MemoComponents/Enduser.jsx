@@ -519,7 +519,7 @@ export function Enduser() {
                                                     }}
                                                 >
                                                     {pingTranscribe && (
-                                                        <span className="pt-2 flex h-3 w-3">
+                                                        <span className="flex h-3 w-3">
                                                             <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
                                                         </span>
                                                     )}
