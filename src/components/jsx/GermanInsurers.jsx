@@ -488,7 +488,7 @@ export function GermanInsurers() {
                 </div>
             </div>
 
-            <div className='pt-32 mx-auto max-w-2xl lg:max-w-3xl'>
+            <div className='pt-32 mx-auto max-w-2xl lg:max-w-3xl px-6'>
                 <h2 className='text-4xl font-bold'>
                     Wie wir mit Ihnen zusammenarbeiten
                 </h2>

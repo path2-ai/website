@@ -295,7 +295,7 @@ export function EnduserGerman() {
                                                                         onClick={() => { setPingFilter(false) }}
                                                                     >
                                                                         {pingFilter && (
-                                                                            <span className="absolute ml-3 -mt-3 flex h-3 w-3">
+                                                                            <span className="ml-3 -mt-3 flex h-3 w-3">
                                                                                 <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500" />
                                                                             </span>
                                                                         )}
@@ -405,7 +405,7 @@ export function EnduserGerman() {
                                                                                 <span className="absolute inset-0" aria-hidden="true" />
                                                                                 <div>
                                                                                     {message.id !== selectedMessage?.id && pingOtherMessages && (
-                                                                                        <span className="absolute -ml-3 -mt-3 flex h-3 w-3">
+                                                                                        <span className="-ml-3 -mt-3 flex h-3 w-3">
                                                                                             <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
                                                                                         </span>
                                                                                     )}
@@ -854,7 +854,7 @@ export function EnduserGerman() {
                                                                 >
                                                                     <div className='flex flex-row items-center justify-between w-full'>
                                                                         {pingOtherMessages && (
-                                                                            <span className="absolute -ml-3 -mt-3 flex h-3 w-3">
+                                                                            <span className="-ml-3 -mt-3 flex h-3 w-3">
                                                                                 <span className="ping relative inline-flex rounded-full h-3 w-3 bg-lime-500 animate-ping" />
                                                                             </span>
                                                                         )}
