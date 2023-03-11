@@ -1,4 +1,4 @@
-import { IconArrowRight, IconBallon, IconBulb, IconChecklist, IconCode, IconDashboard, IconFileSearch, IconHeartHandshake, IconInbox, IconLoader, IconNote, IconNumber1, IconNumber2, IconNumber3, IconNumber4, IconPerspective } from '@tabler/icons'
+import { IconArrowRight, IconBallon, IconBulb, IconChecklist, IconCode, IconDashboard, IconFileSearch, IconHeartHandshake, IconInbox, IconLoader, IconMoneybag, IconNote, IconNumber1, IconNumber2, IconNumber3, IconNumber4, IconPerspective } from '@tabler/icons'
 import { CallToAction } from '../CallToAction'
 import { PlatformBenefits } from '../PlatformBenefits'
 import { EmailAnalytics } from '../UseCases/EmailAnalytics'
@@ -55,7 +55,7 @@ const options = [
     {
         title: "Win tenders",
         description: "Use automated entity recognition to quickly rank and respond to tenders and synchronize with your transportation management system.",
-        icon: IconFileSearch,
+        icon: IconMoneybag,
 
     },
     {
