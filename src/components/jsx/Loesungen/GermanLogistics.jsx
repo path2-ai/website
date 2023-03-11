@@ -371,7 +371,7 @@ export function GermanLogistics() {
                     <Developer />
                 )} */}
                     {showForStakeholders == 'enduser' && (
-                        <EnduserGerman />
+                        <EnduserGerman industry={"logistics"} />
                     )}
                     {showForStakeholders == 'manager' && (
                         <ManagerGerman />

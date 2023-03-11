@@ -26,103 +26,196 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export function EnduserGerman() {
+export function EnduserGerman({ industry }) {
 
     const [showMessageMobile, setShowMessageMobile] = useState(false)
-    const [messages, setMessages] = useState([
-        {
-            id: 1,
-            subject: 'Status meiner Bestellung',
-            sender: {
-                name: 'Johannes Hötter',
-                email: 'johannes.hoetter@kern.ai',
-            },
-            userDefinedMail: false,
-            date: 'vor 1 Tag',
-            datetime: '2021-01-27T16:35',
-            preview:
-                'Hallo, ich habe das Buch "Der kleine Prinz" bestellt. Können Sie mir den Status mitteilen? Danke! Johannes Hötter',
-            thread: [
-                {
-                    id: 1,
-                    author: {
-                        name: 'Johannes Hötter',
-                        email: 'johannes.hoetter@kern.ai',
-                    },
-                    date: 'Mit. um 4:35pm',
-                    datetime: '2021-01-27T16:35',
-                    body: `
-                    <p>Hallo, ich habe das Buch "Der kleine Prinz" bestellt. Können Sie mir den Status mitteilen? Danke! Johannes Hötter</p>
-                    <p><strong style="font-weight: 600;">Johannes Hötter</strong><br/>Mitgründer Kern AI</p>
-                  `,
+    const [messages, setMessages] = useState({
+        "insurance": [
+            {
+                id: 1,
+                subject: 'Status meiner Bestellung',
+                sender: {
+                    name: 'Johannes Hötter',
+                    email: 'johannes.hoetter@kern.ai',
+                },
+                userDefinedMail: false,
+                date: 'vor 1 Tag',
+                datetime: '2021-01-27T16:35',
+                preview:
+                    'Hallo, ich hatte kürzlich einen Autounfall. [...]',
+                thread: [
+                    {
+                        id: 1,
+                        author: {
+                            name: 'Johannes Hötter',
+                            email: 'johannes.hoetter@kern.ai',
+                        },
+                        date: 'Mit. um 4:35pm',
+                        datetime: '2021-01-27T16:35',
+                        body: `
+                        <p>Hallo, ich hatte kürzlich einen Autounfall. Wie sieht das Verfahren für die Einreichung eines Schadenersatzantrages aus?</p>
+                        <p><strong style="font-weight: 600;">Johannes Hötter</strong><br/>Mitgründer Kern AI</p>
+                      `,
+                    }
+                ],
+                response: {
+                    text: 'Hallo Herr Hötter, danke für Ihre Nachricht. Wir benötigen zunächst weitere Infoszu dem Schadensfall. Teilen Sie uns bitte mit, wo und wann der Unfall geschah. Danke für Ihre Geduld!',
+                    sentiment: 'positiv',
                 }
-            ],
-            response: {
-                text: 'Hallo Herr Hötter, danke, dass Sie sich gemeldet haben. Ihre Bestellung wird höchstwahrscheinlich bis zum 10. März eintreffen, das ist ein Freitag. Vielen Dank für Ihre Geduld!',
-                sentiment: 'positiv',
-            }
-        },
-        {
-            id: 2,
-            subject: 'Downtime',
-            sender: {
-                name: 'Richard Hendricks',
-                email: 'richard.hendricks@piedpiper.com',
             },
-            userDefinedMail: false,
-            date: 'vor 1 Tag',
-            datetime: '2021-01-28T10:35',
-            preview:
-                'Hallo Support, Wir haben einige Ausfallzeiten. Können Sie sich das bitte ansehen?',
-            thread: [
-                {
-                    id: 1,
-                    author: {
-                        name: 'Richard Hendricks',
-                        email: 'richard.hendricks@piedpiper.com'
-                    },
-                    date: 'Don. um 10:35am',
-                    datetime: '2021-01-28T10:35',
-                    body: `
-                    <p>Hallo, wie genau kann ich die gates-API einsetzen? Danke</p>
-                  `,
+            {
+                id: 2,
+                subject: 'Wieso dauert die Bearbeitung so lange?',
+                sender: {
+                    name: 'Richard Hendricks',
+                    email: 'richard.hendricks@piedpiper.com',
                 },
-                {
-                    id: 2,
-                    author: {
-                        name: 'Sie',
-                        email: 'ihr.name@ihre-firma.de'
+                userDefinedMail: false,
+                date: 'vor 1 Tag',
+                datetime: '2021-01-28T10:35',
+                preview:
+                    'Hallo Support, ich warte nun schon seit 2 Tagen auf eine Antwort. [...]',
+                thread: [
+                    {
+                        id: 1,
+                        author: {
+                            name: 'Richard Hendricks',
+                            email: 'richard.hendricks@piedpiper.com'
+                        },
+                        date: 'Don. um 10:35am',
+                        datetime: '2021-01-28T10:35',
+                        body: `
+                        <p>Hallo Support, ich warte nun schon seit 2 Tagen auf eine Antwort. Können Sie mir bitte sagen, wann ich mit einer Antwort rechnen kann?</p>
+                      `,
                     },
-                    date: 'Don. um 10:37am',
-                    datetime: '2021-01-28T10:37',
-                    body: `
-                    <p>Hallo Herr Hendricks,</p>
-                    <p>Gehen Sie einfach zur Übersicht von gates und konfigurieren Sie die API-Einstellungen dort. <a class="underline" href="https://docs.kern.ai/gates">Hier ist die Dokumentation</a>.</p>
-                  `,
-                },
-                {
-                    id: 3,
-                    author: {
-                        name: 'Richard Hendricks',
-                        email: 'richard.hendricks@piedpiper.com'
+                    {
+                        id: 2,
+                        author: {
+                            name: 'Sie',
+                            email: 'ihr.name@ihre-firma.de'
+                        },
+                        date: 'Don. um 10:37am',
+                        datetime: '2021-01-28T10:37',
+                        body: `
+                        <p>Hallo Herr Hendricks,</p>
+                        <p>Entschuldigen Sie bitte die Verzögerung. Wir sind gerade dabei, Ihre Anfrage zu bearbeiten. Wir werden uns so bald wie möglich bei Ihnen melden.</p>
+                      `,
                     },
-                    date: 'Don. um 6:45pm',
-                    datetime: '2021-01-28T18:45',
-                    body: `
-                    <p>Hallo Support, Wir haben einige Ausfallzeiten. Können Sie sich das bitte ansehen?</p>
-                    <p><strong style="font-weight: 600;">Richard Hendricks</strong></p>
-                  `,
+                    {
+                        id: 3,
+                        author: {
+                            name: 'Richard Hendricks',
+                            email: 'richard.hendricks@piedpiper.com'
+                        },
+                        date: 'Don. um 6:45pm',
+                        datetime: '2021-01-28T18:45',
+                        body: `
+                        <p>Hallo Support, Danke: Können Sie mir bitte sagen, wie lange die Bearbeitung meiner Anfrage dauern wird?</p>
+                        <p><strong style="font-weight: 600;">Richard Hendricks</strong></p>
+                      `,
+                    },
+                ],
+                response: {
+                    text: 'Hallo Herr Hendricks, seit Einführung unseres neuen Systems mit Kern AI können wir Ihre Prozesse deutlich schneller bearbeiten. Sie können bis morgen mit einer Antwort rechnen.',
+                    sentiment: 'negativ',
+                }
+            },
+        ],
+        "logistics": [
+            {
+                id: 1,
+                subject: '75 Europaletten bis Freitag',
+                sender: {
+                    name: 'Johannes Hötter',
+                    email: 'johannes.hoetter@kern.ai',
                 },
-            ],
-            response: {
-                text: 'Hallo Herr Hendricks, wir sind dabei, dies zu prüfen. Wir werden uns so bald wie möglich bei Ihnen melden.',
-                sentiment: 'negativ',
-            }
-        },
-    ])
+                userDefinedMail: false,
+                date: 'vor 1 Tag',
+                datetime: '2021-01-27T16:35',
+                preview:
+                    'Hallo, wir brauchen bis Freitag 16 Uhr 75 Europaletten in Gothenburg. Maße 1200 x 800. [...]',
+                thread: [
+                    {
+                        id: 1,
+                        author: {
+                            name: 'Johannes Hötter',
+                            email: 'johannes.hoetter@kern.ai',
+                        },
+                        date: 'Mit. um 4:35pm',
+                        datetime: '2021-01-27T16:35',
+                        body: `
+                        <p>Hallo, wir brauchen bis Freitag 16 Uhr 75 Europaletten in Gothenburg. Maße 1200 x 800. Johannes Hötter</p>
+                        <p><strong style="font-weight: 600;">Johannes Hötter</strong><br/>Mitgründer Kern AI</p>
+                      `,
+                    }
+                ],
+                response: {
+                    text: 'Hallo Herr Hötter, Hallo Herr Hötter, danke für Ihre Nachricht. Ihre Bestellung wird am 10.03.2023 zu der von Ihnen genannten Uhrzeit eintreffen. Danke für Ihr Vertrauen.',
+                    sentiment: 'positiv',
+                }
+            },
+            {
+                id: 2,
+                subject: 'Wieso dauert die Bearbeitung so lange?',
+                sender: {
+                    name: 'Richard Hendricks',
+                    email: 'richard.hendricks@piedpiper.com',
+                },
+                userDefinedMail: false,
+                date: 'vor 1 Tag',
+                datetime: '2021-01-28T10:35',
+                preview:
+                    'Hallo Support, ich warte nun schon seit 2 Tagen auf eine Antwort. [...]',
+                thread: [
+                    {
+                        id: 1,
+                        author: {
+                            name: 'Richard Hendricks',
+                            email: 'richard.hendricks@piedpiper.com'
+                        },
+                        date: 'Don. um 10:35am',
+                        datetime: '2021-01-28T10:35',
+                        body: `
+                        <p>Hallo Support, ich warte nun schon seit 2 Tagen auf eine Antwort. Können Sie mir bitte sagen, wann ich mit einer Antwort rechnen kann?</p>
+                      `,
+                    },
+                    {
+                        id: 2,
+                        author: {
+                            name: 'Sie',
+                            email: 'ihr.name@ihre-firma.de'
+                        },
+                        date: 'Don. um 10:37am',
+                        datetime: '2021-01-28T10:37',
+                        body: `
+                        <p>Hallo Herr Hendricks,</p>
+                        <p>Entschuldigen Sie bitte die Verzögerung. Wir sind gerade dabei, Ihre Anfrage zu bearbeiten. Wir werden uns so bald wie möglich bei Ihnen melden.</p>
+                      `,
+                    },
+                    {
+                        id: 3,
+                        author: {
+                            name: 'Richard Hendricks',
+                            email: 'richard.hendricks@piedpiper.com'
+                        },
+                        date: 'Don. um 6:45pm',
+                        datetime: '2021-01-28T18:45',
+                        body: `
+                        <p>Hallo Support, Danke: Können Sie mir bitte sagen, wie lange die Bearbeitung meiner Anfrage dauern wird?</p>
+                        <p><strong style="font-weight: 600;">Richard Hendricks</strong></p>
+                      `,
+                    },
+                ],
+                response: {
+                    text: 'Hallo Herr Hendricks, seit Einführung unseres neuen Systems mit Kern AI können wir Ihre Prozesse deutlich schneller bearbeiten. Sie können bis morgen mit einer Antwort rechnen.',
+                    sentiment: 'negativ',
+                }
+            },
+        ]
+    })
 
-    const [selectedMessage, setSelectedMessage] = useState(messages[0])
-    const [messagesInFilter, setMessagesInFilter] = useState(messages)
+    const [selectedMessage, setSelectedMessage] = useState(messages[industry][0])
+    const [messagesInFilter, setMessagesInFilter] = useState(messages[industry])
 
     const [loading, setLoading] = useState(false)
     const [draftAccepted, setDraftAccepted] = useState(false)
@@ -136,7 +229,6 @@ export function EnduserGerman() {
     const [pingAcceptAndSend, setPingAcceptAndSend] = useState(true)
     const [pingFilter, setPingFilter] = useState(true)
     const [pingOtherMessages, setPingOtherMessages] = useState(true)
-    const [pingGenerateDraft, setPingGenerateDraft] = useState(true)
 
 
     useEffect(() => {
@@ -162,10 +254,12 @@ export function EnduserGerman() {
 
 
     useEffect(() => {
+        const messagesIndustry = messages[industry]
+        console.log(messagesIndustry)
         if (filterOnSentiment) {
-            setMessagesInFilter(messages.filter(message => message.response.sentiment === filterOnSentiment && classifiedMessageIds.includes(message.id)))
+            setMessagesInFilter(messagesIndustry.filter(message => message.response.sentiment === filterOnSentiment && classifiedMessageIds.includes(message.id)))
         } else {
-            setMessagesInFilter(messages)
+            setMessagesInFilter(messagesIndustry)
         }
     }, [filterOnSentiment, messages])
 

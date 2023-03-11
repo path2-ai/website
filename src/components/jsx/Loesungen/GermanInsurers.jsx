@@ -371,7 +371,7 @@ export function GermanInsurers() {
                     <Developer />
                 )} */}
                     {showForStakeholders == 'enduser' && (
-                        <EnduserGerman />
+                        <EnduserGerman industry={"insurance"} />
                     )}
                     {showForStakeholders == 'manager' && (
                         <ManagerGerman />
