@@ -95,7 +95,7 @@ export function Footer({ isDarkTheme }) {
                     <div className="flex col-span-2 md:col-span-5 grid grid-cols-2 md:grid-cols-5 gap-2">
                         {Object.keys(navigation).filter(section => section != 'social').map((section) => (
                             <div key={section} className="col-span-1">
-                                <h3 className="text-white">{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
+                                <h3 className={classNames(isDarkTheme ? "text-white" : "text-gray-900")}>{section.charAt(0).toUpperCase() + section.slice(1)}</h3>
                                 <ul role="list" className="mt-2 space-y-2">
                                     {navigation[section].map((item) =>
                                         <li key={item.name}>
@@ -117,7 +117,7 @@ export function Footer({ isDarkTheme }) {
                     </div>
                     <div className="mt-8 md:mt-0 col-span:5 md:col-span-2">
                         <div>
-                            <h3 className="text-white">Subscribe to our newsletter</h3>
+                            <h3 className={classNames(isDarkTheme ? "text-white" : "text-gray-900")}>Subscribe to our newsletter</h3>
                             <p className={classNames(
                                 isDarkTheme ? (
                                     "text-gray-300"

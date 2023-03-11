@@ -120,12 +120,12 @@ const timeline = [
 export function GermanInsurers() {
 
     const navigation = [{
-        name: 'How does this look like for a user?',
+        name: 'Wie sieht das für Nutzer:innen aus?',
         showFor: 'enduser',
         onClick: () => setShowForStakeholders("enduser")
     },
     {
-        name: 'What are my benefits?',
+        name: 'Was sind meine Vorteile?',
         showFor: 'manager',
         onClick: () => setShowForStakeholders("manager")
     }]
@@ -134,7 +134,7 @@ export function GermanInsurers() {
     const [showForStakeholders, setShowForStakeholders] = useState("enduser")
 
     return (
-        <div className='flex flex-col space-y-52'>
+        <div className='flex flex-col space-y-20'>
             <div className="relative isolate overflow-hidden bg-slate-50">
                 <svg
                     className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -162,12 +162,12 @@ export function GermanInsurers() {
                             alt="KernAI"
                         />
                         <div className="mt-24 sm:mt-32 lg:mt-16">
-                            <a href="/" className="inline-flex space-x-6">
+                            <a href="/" className="flex flex-col space-y-6 md:space-y-0 md:inline-flex md:flex-row md:space-x-6">
                                 <span className="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">
                                     KI aus Deutschland
                                 </span>
                                 <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-600">
-                                    <span>Zu unserer Website</span>
+                                    <span>Zu unserer Website (englisch)</span>
                                     <ChevronRightIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
                                 </span>
                             </a>
@@ -192,7 +192,7 @@ export function GermanInsurers() {
                             </div>
                         </div>
                     </div>
-                    <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
+                    <div className="mx-auto my-16 md:my-0 md:mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mt-0 lg:mr-0 lg:max-w-none lg:flex-none xl:ml-32">
                         <div className="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
                             <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                                 <img
@@ -208,8 +208,8 @@ export function GermanInsurers() {
                 </div>
             </div>
 
-            <div>
-                <div className="-mt-40 flex flex-col space-y-16 mx-auto w-full max-w-5xl sm:px-6 lg:px-8">
+            <div className='px-6'>
+                <div className="flex flex-col space-y-16 mx-auto w-full max-w-5xl">
                     <div className=''>
                         <h2 className="text-2xl font-bold tracking-tight sm:text-center sm:text-4xl">
                             Was bedeutet Text-KI?
@@ -222,7 +222,7 @@ export function GermanInsurers() {
                         {benefits.map((benefit) => (
                             <div
                                 key={benefit.title}
-                                className="flex flex-col hover:bg-neutral-100 p-4 rounded-lg"
+                                className="flex flex-col hover:bg-neutral-100 md:p-4 rounded-lg"
                             >
                                 <div className={classNames(
                                     "flex items-center justify-center h-12 w-12 rounded-md border bg-gradient-to-b from-neutral-100 to-neutral-200 border-gray-300 text-gray-800"
@@ -240,8 +240,23 @@ export function GermanInsurers() {
             </div>
 
 
+            <div className='pt-32 px-6'>
+                <div className="flex flex-col space-y-16 mx-auto w-full max-w-5xl sm:px-6 lg:px-8">
+                    <div className=''>
+                        <h2 className="text-2xl font-bold tracking-tight sm:text-center sm:text-4xl">
+                            Was bedeutet Text-KI?
+                        </h2>
+                        <p className="mt-6 text-xl leading-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600 sm:text-center">
+                            KI ist in der Lage, manuelle und zeitaufwändige E-Mail-Prozesse, die geschäftskritisch sind, zu automatisieren.
+                        </p>
+                    </div>
+                    <img src="/nlp-hero-desktop-light.png" className="hidden md:block w-full" />
+                    <img src="/nlp-hero-mobile-light.png" className="block md:hidden w-full" />
+                </div>
+            </div>
+
             <div
-                className='max-w-7xl mx-auto px-6'
+                className='pt-32 max-w-7xl mx-auto px-6'
                 id="email-automation">
                 <div className='max-w-5xl mx-auto flex flex-col space-y-6'>
                     <div className='flex flex-row items-center md:space-x-4'>
@@ -252,10 +267,10 @@ export function GermanInsurers() {
                         </div>
                         <div>
                             <h3 className='text-2xl font-bold'>
-                                Email automation
+                                Postfach Automatisierung
                             </h3>
                             <p className='text-gray-700 mt-1'>
-                                Turn your info@-inbox (or any other inbox) into a first-class AI assistant. Automatically categorize incoming emails by intent, identify sentiment and urgency, extract key information and automatically create response drafts.
+                                Verwandeln Sie Ihren info@-Posteingang (oder jeden anderen Posteingang) in einen erstklassigen KI-Assistenten. Kategorisieren Sie eingehende E-Mails automatisch nach Absicht, erkennen Sie Stimmung und Dringlichkeit, extrahieren Sie wichtige Informationen und erstellen Sie automatisch Antwortentwürfe.
                             </p>
                         </div>
                     </div>
@@ -308,7 +323,7 @@ export function GermanInsurers() {
             </div>
 
             <div
-                className="hidden lg:block mx-auto w-full max-w-6xl rounded-2xl"
+                className="pt-32 hidden lg:block mx-auto w-full max-w-6xl rounded-2xl"
             >
                 <div className="grid grid-cols-4 gap-8">
 
@@ -330,7 +345,7 @@ export function GermanInsurers() {
                 </div>
             </div>
 
-            <div>
+            <div className='pt-32'>
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <dl className="grid grid-cols-1 gap-y-16 gap-x-8 text-center lg:grid-cols-3">
                         {stats.map((stat) => (
@@ -354,7 +369,7 @@ export function GermanInsurers() {
                 </div>
             </div>
 
-            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="pt-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="relative isolate overflow-hidden bg-gray-900 py-20 px-6 sm:rounded-3xl sm:py-24 sm:px-10 lg:py-24 xl:px-24">
                     <div className="mx-auto">
                         <div className="">
@@ -422,8 +437,8 @@ export function GermanInsurers() {
                 </div>
             </div>
 
-            <div className='mx-auto max-w-2xl lg:max-w-3xl'>
-                <h2 className='text-2xl font-bold'>
+            <div className='pt-32 mx-auto max-w-2xl lg:max-w-3xl'>
+                <h2 className='text-4xl font-bold'>
                     Wie wir mit Ihnen zusammenarbeiten
                 </h2>
 
@@ -475,7 +490,13 @@ export function GermanInsurers() {
                 </div>
             </div>
 
-            <CallToActionGerman />
+            {/* ISO, Datenschutz */}
+
+            {/* FAQ */}
+
+            <div className='pt-32'>
+                <CallToActionGerman />
+            </div>
 
             <Footer isDarkTheme={false} />
         </div>

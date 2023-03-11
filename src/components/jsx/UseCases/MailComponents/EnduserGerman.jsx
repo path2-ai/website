@@ -9,14 +9,15 @@ import { InView } from 'react-intersection-observer';
 
 const navigation = [
     {
-        name: 'Integrates with',
+        name: 'Integrationen zu',
         children: [
             { name: 'Outlook' },
             { name: 'Gmail' },
             { name: 'Zendesk' },
             { name: 'Intercom' },
-            { name: 'Your own API' },
-            { name: 'Speech (voice recordings)' }
+            { name: 'Ihrer eigenen API' },
+            { name: 'Ihrem ERP-, CRM- oder HR-System' },
+            { name: 'Sprache (Audiodateien)' }
         ],
     },
 ]
@@ -31,34 +32,34 @@ export function EnduserGerman() {
     const [messages, setMessages] = useState([
         {
             id: 1,
-            subject: 'I love this tool!',
+            subject: 'Status meiner Bestellung',
             sender: {
-                name: 'Monica White',
-                email: 'monica.white@acme.org',
+                name: 'Johannes Hötter',
+                email: 'johannes.hoetter@kern.ai',
             },
             userDefinedMail: false,
-            date: '1d ago',
+            date: 'vor 1 Tag',
             datetime: '2021-01-27T16:35',
             preview:
-                'It is amazing to see how natural language processing can be used to automate email workflows. I love this tool!',
+                'Hallo, ich habe das Buch "Der kleine Prinz" bestellt. Können Sie mir den Status mitteilen? Danke! Johannes Hötter',
             thread: [
                 {
                     id: 1,
                     author: {
-                        name: 'Monica White',
-                        email: 'monica.white@acme.org',
+                        name: 'Johannes Hötter',
+                        email: 'johannes.hoetter@kern.ai',
                     },
-                    date: 'Wed. at 4:35pm',
+                    date: 'Mit. um 4:35pm',
                     datetime: '2021-01-27T16:35',
                     body: `
-                    <p>It is amazing to see how natural language processing can be used to automate email workflows. I love this tool!</p>
-                    <p><strong style="font-weight: 600;">Monica White</strong><br/>Customer Service</p>
+                    <p>Hallo, ich habe das Buch "Der kleine Prinz" bestellt. Können Sie mir den Status mitteilen? Danke! Johannes Hötter</p>
+                    <p><strong style="font-weight: 600;">Johannes Hötter</strong><br/>Mitgründer Kern AI</p>
                   `,
                 }
             ],
             response: {
-                text: 'Thanks, Monica! We are glad you like it!',
-                sentiment: 'positive',
+                text: 'Hallo Herr Hötter, danke, dass Sie sich gemeldet haben. Ihre Bestellung wird höchstwahrscheinlich bis zum 10. März eintreffen, das ist ein Freitag. Vielen Dank für Ihre Geduld!',
+                sentiment: 'positiv',
             }
         },
         {
@@ -69,10 +70,10 @@ export function EnduserGerman() {
                 email: 'richard.hendricks@piedpiper.com',
             },
             userDefinedMail: false,
-            date: '1d ago',
+            date: 'vor 1 Tag',
             datetime: '2021-01-28T10:35',
             preview:
-                'Hi support, We are experiencing some downtime. Can you please look into this?',
+                'Hallo Support, Wir haben einige Ausfallzeiten. Können Sie sich das bitte ansehen?',
             thread: [
                 {
                     id: 1,
@@ -80,23 +81,23 @@ export function EnduserGerman() {
                         name: 'Richard Hendricks',
                         email: 'richard.hendricks@piedpiper.com'
                     },
-                    date: 'Thursday at 10:35am',
+                    date: 'Don. um 10:35am',
                     datetime: '2021-01-28T10:35',
                     body: `
-                    <p>Hi, how exactly can I deploy a gates API? Thanks</p>
+                    <p>Hallo, wie genau kann ich die gates-API einsetzen? Danke</p>
                   `,
                 },
                 {
                     id: 2,
                     author: {
-                        name: 'You',
-                        email: 'you@your-company.com'
+                        name: 'Sie',
+                        email: 'ihr.name@ihre-firma.de'
                     },
-                    date: 'Thursday at 10:37am',
+                    date: 'Don. um 10:37am',
                     datetime: '2021-01-28T10:37',
                     body: `
-                    <p>Hi Richard,</p>
-                    <p>Simply head over to your gates overview and configure the API settings. <a class="underline" href="https://docs.kern.ai/gates">Here are the docs</a>.</p>
+                    <p>Hallo Herr Hendricks,</p>
+                    <p>Gehen Sie einfach zur Übersicht von gates und konfigurieren Sie die API-Einstellungen dort. <a class="underline" href="https://docs.kern.ai/gates">Hier ist die Dokumentation</a>.</p>
                   `,
                 },
                 {
@@ -105,17 +106,17 @@ export function EnduserGerman() {
                         name: 'Richard Hendricks',
                         email: 'richard.hendricks@piedpiper.com'
                     },
-                    date: 'Thursday at 10:35am',
-                    datetime: '2021-01-28T10:35',
+                    date: 'Don. um 6:45pm',
+                    datetime: '2021-01-28T18:45',
                     body: `
-                    <p>Hi support, we are experiencing some downtime. Can you please look into this?</p>
+                    <p>Hallo Support, Wir haben einige Ausfallzeiten. Können Sie sich das bitte ansehen?</p>
                     <p><strong style="font-weight: 600;">Richard Hendricks</strong></p>
                   `,
                 },
             ],
             response: {
-                text: 'Hi Richard, We are looking into this. We will get back to you as soon as possible.',
-                sentiment: 'negative',
+                text: 'Hallo Herr Hendricks, wir sind dabei, dies zu prüfen. Wir werden uns so bald wie möglich bei Ihnen melden.',
+                sentiment: 'negativ',
             }
         },
     ])
@@ -177,10 +178,10 @@ export function EnduserGerman() {
             }}>
                 <div>
                     <div className='py-6 text-gray-500 text-sm text-center'>
-                        This is an interactive demo. You can click on the messages or generate drafts. In production, AI processes run in the background.
+                        Dies ist eine interaktive Demo. Sie können die Nachrichten anklicken oder Entwürfe erstellen. In der Produktion laufen die KI-Prozesse im Hintergrund.
                     </div>
                     <div>
-                        <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl p-2">
+                        <div className="-m-2 rounded-xl md:bg-gray-900/5 p-2 md:ring-1 md:ring-inset md:ring-gray-900/10 lg:-m-4 lg:rounded-2xl p-2">
 
                             <div className='shadow-2xl hidden md:block p-[1px] rounded-xl bg-gradient-to-b from-neutral-400 via-neutral-100 to-neutral-400 m-4'>
                                 <div className="relative h-[48rem] flex flex-col rounded-xl bg-white p-[1px]">
@@ -222,7 +223,7 @@ export function EnduserGerman() {
                                                                     leaveFrom="transform opacity-100 scale-100"
                                                                     leaveTo="transform opacity-0 scale-95"
                                                                 >
-                                                                    <Menu.Items className="absolute right-0 z-10 mt-2 w-52 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none">
+                                                                    <Menu.Items className="absolute right-0 z-10 mt-2 w-72 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-white ring-opacity-5 focus:outline-none">
                                                                         <div className="py-1">
                                                                             {item.children.map((child) => (
                                                                                 <Menu.Item key={child.name}>
@@ -276,14 +277,14 @@ export function EnduserGerman() {
                                                     <div className="flex-shrink-0">
                                                         <div className="flex h-16 flex-row items-center justify-between bg-slate-100 px-6">
                                                             <div className="flex items-baseline space-x-3">
-                                                                <h2 className="text-lg font-medium text-gray-900">Inbox</h2>
-                                                                <p className="text-sm font-medium text-gray-500">{messagesInFilter.length} messages</p>
+                                                                <h2 className="text-lg font-medium text-gray-900">Postfach</h2>
+                                                                <p className="text-sm font-medium text-gray-500">{messagesInFilter.length} Nachrichten</p>
                                                             </div>
                                                             <div className='flex flex-row items-center space-x-2'>
                                                                 {filterOnSentiment && (
                                                                     <div className={classNames(
                                                                         "mt-1 inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
-                                                                        filterOnSentiment === 'positive' ? 'bg-green-200 text-green-700' : (filterOnSentiment === 'negative' ? 'bg-red-200 text-red-700' : 'bg-yellow-200 text-yellow-700')
+                                                                        filterOnSentiment === 'positiv' ? 'bg-green-200 text-green-700' : (filterOnSentiment === 'negativ' ? 'bg-red-200 text-red-700' : 'bg-yellow-200 text-yellow-700')
                                                                     )}>
                                                                         {filterOnSentiment}
                                                                     </div>
@@ -323,11 +324,11 @@ export function EnduserGerman() {
                                                                                                 setFilterOnSentiment(null)
                                                                                             }}
                                                                                         >
-                                                                                            remove filter
+                                                                                            Filter entfernen
                                                                                         </div>
                                                                                     )}
                                                                                 </Menu.Item>
-                                                                                <Menu.Item key="positive">
+                                                                                <Menu.Item key="positiv">
                                                                                     {({ active }) => (
                                                                                         <div
                                                                                             className={classNames(
@@ -335,10 +336,10 @@ export function EnduserGerman() {
                                                                                                 'block px-4 py-2 text-sm text-gray-700 cursor-pointer'
                                                                                             )}
                                                                                             onClick={() => {
-                                                                                                setFilterOnSentiment('positive')
+                                                                                                setFilterOnSentiment('positiv')
                                                                                             }}
                                                                                         >
-                                                                                            positive
+                                                                                            positiv
                                                                                         </div>
                                                                                     )}
                                                                                 </Menu.Item>
@@ -357,7 +358,7 @@ export function EnduserGerman() {
                                                                                         </div>
                                                                                     )}
                                                                                 </Menu.Item>
-                                                                                <Menu.Item key="negative">
+                                                                                <Menu.Item key="negativ">
                                                                                     {({ active }) => (
                                                                                         <div
                                                                                             className={classNames(
@@ -365,10 +366,10 @@ export function EnduserGerman() {
                                                                                                 'block px-4 py-2 text-sm text-gray-700 cursor-pointer'
                                                                                             )}
                                                                                             onClick={() => {
-                                                                                                setFilterOnSentiment('negative')
+                                                                                                setFilterOnSentiment('negativ')
                                                                                             }}
                                                                                         >
-                                                                                            negative
+                                                                                            negativ
                                                                                         </div>
                                                                                     )}
                                                                                 </Menu.Item>
@@ -379,7 +380,7 @@ export function EnduserGerman() {
                                                             </div>
                                                         </div>
                                                         <div className="border-t border-b border-gray-300 bg-slate-100 px-6 py-2 text-sm font-medium text-gray-500">
-                                                            Sorted by date
+                                                            Nach Datum sortiert
                                                         </div>
                                                     </div>
                                                     <nav aria-label="Message list" className="min-h-0 flex-1 overflow-y-auto">
@@ -436,7 +437,7 @@ export function EnduserGerman() {
                                                                         <div className={classNames(
                                                                             selectedMessage?.id === message.id && loading && "hidden",
                                                                             "mt-1 inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
-                                                                            message.response.sentiment === 'positive' ? 'bg-green-200 text-green-700' : (message.response.sentiment === 'negative' ? 'bg-red-200 text-red-700' : 'bg-yellow-200 text-yellow-700')
+                                                                            message.response.sentiment === 'positiv' ? 'bg-green-200 text-green-700' : (message.response.sentiment === 'negativ' ? 'bg-red-200 text-red-700' : 'bg-yellow-200 text-yellow-700')
                                                                         )}>
                                                                             {message.response.sentiment}
                                                                         </div>
@@ -474,7 +475,7 @@ export function EnduserGerman() {
                                                                 <div className="mt-4 flex items-center justify-between sm:mt-0 sm:ml-6 sm:flex-shrink-0 sm:justify-start">
                                                                     <span className={classNames(
                                                                         "inline-flex items-center rounded-full px-3 py-0.5 text-sm font-medium",
-                                                                        selectedMessage.response.sentiment === 'positive' ? 'bg-green-200 text-green-700' : (selectedMessage.response.sentiment === 'negative' ? 'bg-red-200 text-red-700' : 'bg-yellow-200 text-yellow-700')
+                                                                        selectedMessage.response.sentiment === 'positiv' ? 'bg-green-200 text-green-700' : (selectedMessage.response.sentiment === 'negativ' ? 'bg-red-200 text-red-700' : 'bg-yellow-200 text-yellow-700')
                                                                     )}>
                                                                         {selectedMessage.response.sentiment}
                                                                     </span>
@@ -492,7 +493,7 @@ export function EnduserGerman() {
                                                                 <div className="sm:flex sm:items-baseline sm:justify-between">
                                                                     <h3 className="text-base font-medium">
                                                                         <span className="text-gray-900">{item.author.name}</span>{' '}
-                                                                        <span className="text-gray-700">wrote</span>
+                                                                        <span className="text-gray-700">{item.author.name == 'Sie' ? 'schrieben' : 'schrieb'}</span>
                                                                     </h3>
                                                                     <p className="mt-1 whitespace-nowrap text-sm text-gray-800 sm:mt-0 sm:ml-3">
                                                                         <time dateTime={item.datetime}>{item.date}</time>
@@ -519,11 +520,11 @@ export function EnduserGerman() {
                                                                 )}>
                                                                     <div className="sm:flex sm:items-baseline sm:justify-between">
                                                                         <h3 className="text-base font-medium">
-                                                                            <span className="text-gray-900">You</span>{' '}
-                                                                            <span className="text-gray-700">wrote</span>
+                                                                            <span className="text-gray-900">Sie</span>{' '}
+                                                                            <span className="text-gray-700">schrieben</span>
                                                                         </h3>
                                                                         <p className="mt-1 whitespace-nowrap text-sm text-gray-800 sm:mt-0 sm:ml-3">
-                                                                            Now
+                                                                            Jetzt
                                                                         </p>
                                                                     </div>
                                                                     <div
@@ -538,11 +539,11 @@ export function EnduserGerman() {
                                                                 )}>
                                                                     <div className="sm:flex sm:items-baseline sm:justify-between">
                                                                         <h3 className="text-base font-medium">
-                                                                            <span className="text-gray-900">You</span>{' '}
-                                                                            <span className="text-gray-700">drafted</span>
+                                                                            <span className="text-gray-900">Sie</span>{' '}
+                                                                            <span className="text-gray-700">haben entworfen</span>
                                                                         </h3>
                                                                         <p className="mt-1 whitespace-nowrap text-sm text-gray-800 sm:mt-0 sm:ml-3">
-                                                                            Now
+                                                                            Jetzt
                                                                         </p>
                                                                     </div>
                                                                     <div className='mt-4 flex flex-col mt-3 xl:mt-0 xl:flex-row justify-between'>
@@ -562,7 +563,7 @@ export function EnduserGerman() {
                                                                                     <span className="animate-ping relative inline-flex rounded-full h-3 w-3 bg-lime-500" />
                                                                                 </span>
                                                                             )}
-                                                                            <span>Accept & Send</span>
+                                                                            <span>Annehmen & Senden</span>
                                                                         </button>
                                                                     </div>
                                                                 </li>
@@ -606,10 +607,10 @@ export function EnduserGerman() {
                                                                         </span>
                                                                         <div>
                                                                             <div className='-mt-3 font-semibold'>
-                                                                                Classify mail and generate draft
+                                                                                Email klassifizieren und Entwurf generieren
                                                                             </div>
                                                                             <p className='text-gray-500 text-sm ml-2'>
-                                                                                In production, this would happen in the background
+                                                                                In Produktion geschieht dies im Hintergrund
                                                                             </p>
                                                                         </div>
                                                                     </button>
@@ -651,14 +652,14 @@ export function EnduserGerman() {
                                                 <div className="flex-shrink-0">
                                                     <div className="flex h-16 flex-row items-center justify-between bg-slate-100 px-6">
                                                         <div className="flex items-baseline space-x-3">
-                                                            <h2 className="text-lg font-medium text-gray-900">Inbox</h2>
-                                                            <p className="text-sm font-medium text-gray-500">{messagesInFilter.length} messages</p>
+                                                            <h2 className="text-lg font-medium text-gray-900">Postfach</h2>
+                                                            <p className="text-sm font-medium text-gray-500">{messagesInFilter.length} Nachrichten</p>
                                                         </div>
                                                         <div className='flex flex-row items-center space-x-2'>
                                                             {filterOnSentiment && (
                                                                 <div className={classNames(
                                                                     "mt-1 inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
-                                                                    filterOnSentiment === 'positive' ? 'bg-green-200 text-green-200' : (filterOnSentiment === 'negative' ? 'bg-red-200 text-red-200' : 'bg-yellow-200 text-yellow-200')
+                                                                    filterOnSentiment === 'positiv' ? 'bg-green-200 text-green-200' : (filterOnSentiment === 'negativ' ? 'bg-red-200 text-red-200' : 'bg-yellow-200 text-yellow-200')
                                                                 )}>
                                                                     {filterOnSentiment}
                                                                 </div>
@@ -690,11 +691,11 @@ export function EnduserGerman() {
                                                                                             setFilterOnSentiment(null)
                                                                                         }}
                                                                                     >
-                                                                                        remove filter
+                                                                                        Filter entfernen
                                                                                     </div>
                                                                                 )}
                                                                             </Menu.Item>
-                                                                            <Menu.Item key="positive">
+                                                                            <Menu.Item key="positiv">
                                                                                 {({ active }) => (
                                                                                     <div
                                                                                         className={classNames(
@@ -702,10 +703,10 @@ export function EnduserGerman() {
                                                                                             'block px-4 py-2 text-sm text-gray-700 cursor-pointer'
                                                                                         )}
                                                                                         onClick={() => {
-                                                                                            setFilterOnSentiment('positive')
+                                                                                            setFilterOnSentiment('positiv')
                                                                                         }}
                                                                                     >
-                                                                                        positive
+                                                                                        positiv
                                                                                     </div>
                                                                                 )}
                                                                             </Menu.Item>
@@ -724,7 +725,7 @@ export function EnduserGerman() {
                                                                                     </div>
                                                                                 )}
                                                                             </Menu.Item>
-                                                                            <Menu.Item key="negative">
+                                                                            <Menu.Item key="negativ">
                                                                                 {({ active }) => (
                                                                                     <div
                                                                                         className={classNames(
@@ -732,10 +733,10 @@ export function EnduserGerman() {
                                                                                             'block px-4 py-2 text-sm text-gray-700 cursor-pointer'
                                                                                         )}
                                                                                         onClick={() => {
-                                                                                            setFilterOnSentiment('negative')
+                                                                                            setFilterOnSentiment('negativ')
                                                                                         }}
                                                                                     >
-                                                                                        negative
+                                                                                        negativ
                                                                                     </div>
                                                                                 )}
                                                                             </Menu.Item>
@@ -753,7 +754,7 @@ export function EnduserGerman() {
                                                                 setShowMessageMobile(false)
                                                                 setSelectedMessage(messagesInFilter[0])
                                                             }} />
-                                                            <span>Messages</span>
+                                                            <span>Nachrichten</span>
                                                         </div>
                                                         <div className='flex flex-col space-y-3 px-6 py-3'>
                                                             <div className='flex flex-row justify-between items-center pb-2 border-b border-gray-300'>
@@ -762,14 +763,14 @@ export function EnduserGerman() {
                                                                 </h3>
                                                                 <div className={classNames(
                                                                     "w-fit inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
-                                                                    selectedMessage.response.sentiment === 'positive' ? 'bg-green-200 text-green-700' : (selectedMessage.response.sentiment === 'negative' ? 'bg-red-200 text-red-700' : 'bg-yellow-200 text-yellow-700')
+                                                                    selectedMessage.response.sentiment === 'positiv' ? 'bg-green-200 text-green-700' : (selectedMessage.response.sentiment === 'negativ' ? 'bg-red-200 text-red-700' : 'bg-yellow-200 text-yellow-700')
                                                                 )}>
                                                                     {selectedMessage.response.sentiment}
                                                                 </div>
                                                             </div>
                                                             <div>
                                                                 <p className='text-gray-700 text-sm'>
-                                                                    authored by {selectedMessage.sender.name}
+                                                                    Author: {selectedMessage.sender.name}
                                                                 </p>
                                                             </div>
                                                             <ul role="list" className="h-[30rem] space-y-2 py-4 sm:space-y-4 overflow-auto">
@@ -793,8 +794,8 @@ export function EnduserGerman() {
                                                                         selectedMessage.thread.length % 2 === 0 ? 'mr-8' : 'ml-8'
                                                                     )}>
                                                                         <h3 className="text-base font-medium">
-                                                                            <span className="text-gray-900 text-sm">You</span>{' '}
-                                                                            <span className="text-gray-700 text-sm">wrote</span>
+                                                                            <span className="text-gray-900 text-sm">Sie</span>{' '}
+                                                                            <span className="text-gray-700 text-sm">schrieben</span>
                                                                         </h3>
                                                                         <div
                                                                             className="mt-2 space-y-4 text-sm text-gray-700"
@@ -827,7 +828,7 @@ export function EnduserGerman() {
                                                                                     setPingAcceptAndSend(false)
                                                                                 }}
                                                                             >
-                                                                                Accept & Send
+                                                                                Annehmen & Senden
                                                                             </button>
                                                                         </div>
                                                                     </li>
@@ -838,7 +839,7 @@ export function EnduserGerman() {
                                                 ) : (
                                                     <div>
                                                         <div className="border-t border-b border-gray-300 bg-neutral-200 px-6 py-2 text-sm font-medium text-gray-500">
-                                                            Sorted by date
+                                                            Nach Datum sortiert
                                                         </div>
                                                         <div className='flex-shrink-0'>
                                                             {messagesInFilter.map((message) => (
@@ -874,7 +875,7 @@ export function EnduserGerman() {
                                                                     <div className={classNames(
                                                                         selectedMessage?.id === message.id && loading && "hidden",
                                                                         "w-fit inline-flex items-center rounded-lg px-1.5 py-0.5 text-xs",
-                                                                        message.response.sentiment === 'positive' ? 'bg-green-200 text-green-700' : (message.response.sentiment === 'negative' ? 'bg-red-200 text-red-700' : 'bg-yellow-200 text-yellow-700')
+                                                                        message.response.sentiment === 'positiv' ? 'bg-green-200 text-green-700' : (message.response.sentiment === 'negativ' ? 'bg-red-200 text-red-700' : 'bg-yellow-200 text-yellow-700')
                                                                     )}>
                                                                         {message.response.sentiment}
                                                                     </div>
@@ -892,8 +893,7 @@ export function EnduserGerman() {
                     </div>
 
                     <p className='mt-6 md:text-center text-gray-600 text-sm'>
-                        This works for any email client, for all channels (Email, WhatsApp, Telegram, Social Media) and with any customer-facing IT system (CRM, CSM).
-                    </p>
+                        Dies funktioniert für jeden E-Mail-Client, für alle Kanäle (E-Mail, WhatsApp, Telegram, Social Media) und mit jedem kundenorientierten IT-System (CRM, CSM).                    </p>
                 </div>
 
             </InView>

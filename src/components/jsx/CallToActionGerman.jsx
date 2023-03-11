@@ -7,7 +7,7 @@ export function CallToActionGerman() {
 
     const [openCalModal, setOpenCalModal] = useState(false)
     return (
-        <section className="mx-auto max-w-7xl py-16 px-4 text-center sm:px-6 lg:py-16 lg:px-8 space-y-8">
+        <section className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8 space-y-8">
             <div className="mx-auto w-fit p-6 rounded-2xl bg-gradient-to-r from-gray-100 to-neutral-100 ring-1 ring-blue-500             
                   shadow-[0_0px_40px_2px_rgba(0,191,255,0.5)]">
                 <img

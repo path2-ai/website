@@ -106,8 +106,8 @@ export function Enduser() {
                         name: 'Richard Hendricks',
                         email: 'richard.hendricks@piedpiper.com'
                     },
-                    date: 'Thursday at 10:35am',
-                    datetime: '2021-01-28T10:35',
+                    date: 'Thursday at 6:45pm',
+                    datetime: '2021-01-28T18:45',
                     body: `
                     <p>Hi support, we are experiencing some downtime. Can you please look into this?</p>
                     <p><strong style="font-weight: 600;">Richard Hendricks</strong></p>

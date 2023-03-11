@@ -45,7 +45,7 @@ export function EmailAnalytics() {
                             Email automation
                         </h3>
                         <p className='text-gray-400 mt-1'>
-                            Turn your info@-inbox (or any other inbox) into a first-class AI assistant. Automatically categorize incoming emails by intent, identify sentiment and urgency, extract key information and automatically create response drafts.
+                            Turn your info@-inbox (or any other inbox) into a first-class AI assistant. Automatically categorize incoming emails by intent, identify sentiment and urgency, extract key information and automatically create response drafts that have the context of your IT-systems (e.g. ERP or CRM).
                         </p>
                     </div>
                 </div>
