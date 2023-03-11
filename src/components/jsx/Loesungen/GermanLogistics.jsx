@@ -1,10 +1,10 @@
 import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import { useState } from 'react'
-import { EnduserGerman } from './UseCases/MailComponents/EnduserGerman'
-import { ManagerGerman } from './UseCases/MailComponents/ManagerGerman'
-import { Footer } from './Footer'
-import { CallToActionGerman } from './CallToActionGerman'
-import { IconArrowDown, IconArrowRight, IconBallon, IconBulb, IconChecklist, IconDashboard, IconFileSearch, IconHeartHandshake, IconInbox, IconMail, IconNote, IconNumber1, IconChessKnight, IconDatabase, IconStack3, IconTerminal, IconNumber2, IconNumber3, IconNumber4, } from "@tabler/icons"
+import { EnduserGerman } from '.././UseCases/MailComponents/EnduserGerman'
+import { ManagerGerman } from '.././UseCases/MailComponents/ManagerGerman'
+import { Footer } from '.././Footer'
+import { CallToActionGerman } from '.././CallToActionGerman'
+import { IconArrowDown, IconArrowRight, IconBallon, IconBulb, IconChecklist, IconDashboard, IconFileSearch, IconHeartHandshake, IconInbox, IconMail, IconNote, IconNumber1, IconChessKnight, IconDatabase, IconStack3, IconTerminal, IconNumber2, IconNumber3, IconNumber4, IconMoneybag, } from "@tabler/icons"
 import { Disclosure } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
@@ -82,9 +82,9 @@ const useCases = [
 
 
 const stats = [
-    { id: 1, name: 'geringere Kosten im Claims Processing', value: 'Bis zu 30%', reference: 'McKinsey', link: 'https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/what%20drives%20insurance%20operating%20costs/successfully_reducing_operating_costs.pdf' },
-    { id: 2, name: 'Verbesserung der Durchlaufzeiten', value: 'Bis zu 50%', reference: 'McKinsey', link: 'https://www.mckinsey.com/~/media/mckinsey/industries/financial%20services/our%20insights/what%20drives%20insurance%20operating%20costs/successfully_reducing_operating_costs.pdf' },
-    { id: 3, name: 'Umsatzwachstum durch IPA', value: 'Bis zu 2 - 5%', reference: 'Capgemini', link: 'https://www.capgemini.com/gb-en/wp-content/uploads/sites/3/2018/07/Report-1.pdf' },
+    { id: 1, name: 'Verbesserung im Service', value: 'Bis zu 65%', reference: 'McKinsey', link: 'https://www.mckinsey.com/industries/metals-and-mining/our-insights/succeeding-in-the-ai-supply-chain-revolution' },
+    { id: 2, name: 'Kosteneinsparung durch Vollautomatisierung', value: 'Bis zu 40%', reference: 'McKinsey', link: 'https://www.mckinsey.com/industries/travel-logistics-and-infrastructure/our-insights/distraction-or-disruption-autonomous-trucks-gain-ground-in-us-logistics' },
+    { id: 3, name: 'pro Tag pro Operator gespart', value: 'Bis zu 1 Stunde', reference: null, link: null },
 ]
 
 const steps = [{
@@ -96,12 +96,12 @@ const steps = [{
     description: "Kern AI verkürzt die Zeit, bis Sie Ergebnisse sehen. Wir ermöglichen es Ihnen, klein anzufangen und KI mühelos über Arbeitsabläufe oder Teams hinweg zu skalieren. Mit Kern können Sie Ihren Implementierungsprozess beschleunigen.",
     icon: IconNumber2,
 }, {
-    title: "Kund:innen haben höchste Ansprüche",
-    description: "Nach Angaben von Salesforce erwarten 64 % der Verbraucher:innen und 80 % der Geschäftskund:innen, dass Unternehmen innerhalb von 24 Stunden auf ihre Anfragen reagieren. KI macht es möglich, einen besseren Kundenservice anzubieten.",
+    title: "Standardisieren Sie Emaileingänge",
+    description: "Wenn Sie mit vielen Partnern zusammenarbeiten, haben Sie ebensoviele Kommunikationskanäle. Vieles davon per Email - erschaffen Sie sich einen Wettbewerbsvorteil durch intelligente Postfächer zur schnellen Bearbeitung von Anfragen.",
     icon: IconNumber3,
 }, {
-    title: "Reduzieren Sie Kosten in der Schadensfallbearbeitung",
-    description: "Laut einer Studie von McKinsey können die Kosten für die Schadenbearbeitung durch Automatisierung um bis zu 30 % gesenkt werden. KI ist der beste Weg, um die Schadenbearbeitung zu verbessern, bestehende Teams zu unterstützen und Kosten zu senken.",
+    title: "Digitalisieren Sie papiergetriebene Prozesse",
+    description: "Mit uns sind Emails erst der Anfang. Gerne helfen wir Ihnen, weitere papierlastige Prozesse aus Ihrem Unternehmen zu digitalisieren - etwa bei Lieferscheinen.",
     icon: IconNumber4,
 }]
 
@@ -113,9 +113,9 @@ function classNames(...classes) {
 
 const benefits = [
     {
-        title: "Schadensfälle prüfen",
-        description: "KI kann die Schadenaufnahme automatisieren, Betrug aufdecken und Schäden korrekt weiterleiten. Automatisiert, sofort und kostengünstig. KI-gestützte Schadenbearbeitung unterstützt die gesamte Organisation.",
-        icon: IconFileSearch,
+        title: "Ausschreibungen gewinnen",
+        description: "Nutzen Sie die automatisierte Erkennung von Entitäten, um Ausschreibungen schnell einzuordnen und mit Ihrem Angebot zu reagieren, sowie Ihrem Transportmanagementsyste zu synchronisieren.",
+        icon: IconMoneybag,
     },
     {
         title: "Entwürfe automatisieren",
@@ -123,7 +123,7 @@ const benefits = [
         icon: IconNote,
     }, {
         title: "Posteingänge managen",
-        description: "Kategorisieren Sie eingehende E-Mails automatisch, erkennen Sie die Stimmung (z. B. positiv, negativ, neutral) und extrahieren Sie Informationen (z. B. Name, Adresse, Telefonnummer usw.)",
+        description: "Kategorisieren Sie eingehende E-Mails automatisch, erkennen Sie die Stimmung (z. B. positiv, negativ, neutral) und extrahieren Sie Informationen (z. B. Artikel, Menge, Adresse usw.)",
         icon: IconInbox,
     }, {
         title: "Posteingänge analysieren",
@@ -168,7 +168,7 @@ const timeline = [
 ]
 
 
-export function GermanInsurers() {
+export function GermanLogistics() {
 
     const navigation = [{
         name: 'Wie sieht das für Nutzer:innen aus?',
@@ -224,13 +224,13 @@ export function GermanInsurers() {
                             </a>
                         </div>
                         <h1 className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                            Sprach- und Text-KIs für Versicherungen
+                            Als Logistiker können Sie von Text-KI enorm profitieren!
                         </h1>
                         <p className="mt-6 text-lg leading-8 text-gray-600">
-                            Wir helfen Versicherungen, indem wir Fachbereiche mithilfe Künstlicher Intelligenz entlasten.
+                            Wir helfen Unternehmen aus der Logistik dabei, Kommunikationskanäle wie E-Mailpostfächer zu automatisieren, und somit eine effizientere und schnellere Kommunikation mit Partnern und Kunden zu ermöglichen.
                         </p>
                         <p className="text-lg leading-8 text-gray-600">
-                            Damit Fachexpert:innen mehr Zeit für Kund:innen und der Bearbeitung von Schadensfällen haben.
+                            Damit Sie schneller auf Anfragen reagieren können, und somit mehr Umsatz erzielen.
                         </p>
                         <div className="mt-10 flex items-center gap-x-6">
                             <div className='animate-bounce flex items-center flex-row space-x-4'>
@@ -304,7 +304,7 @@ export function GermanInsurers() {
                             Anders gesagt: Wir bieten KI zur Unterstützung von Fachpersonal. Ihre Kund:innen stellen dies in Form kürzerer Rücklaufzeiten und höherer Zufriedenheit fest.
                         </p>
                     </div>
-                    <img src="/nlp-hero-desktop-light-insurance.png" className="hidden md:block w-full" />
+                    <img src="/nlp-hero-desktop-light-logistics.png" className="hidden md:block w-full" />
                     <img src="/nlp-hero-mobile-light.png" className="block md:hidden w-full" />
                     <p className=" text-gray-700 sm:text-center">
                         Ihre IT-Landschaft kann eingebunden werden, um etwa kundenspezifische Daten zu verwenden.
@@ -411,15 +411,18 @@ export function GermanInsurers() {
                                 <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
                                     {stat.value}
                                 </dd>
-                                <p className="text-base leading-7 text-gray-600">Quelle: <a
-                                    href={stat.link}
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                    className="text-gray-600 underline"
-                                >
-                                    {stat.reference}
-                                </a>
-                                </p>
+
+                                {stat.reference && (
+                                    <p className="text-base leading-7 text-gray-600">Quelle: <a
+                                        href={stat.link}
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                        className="text-gray-600 underline"
+                                    >
+                                        {stat.reference}
+                                    </a>
+                                    </p>
+                                )}
                             </div>
                         ))}
                     </dl>
