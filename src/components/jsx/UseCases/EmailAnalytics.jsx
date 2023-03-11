@@ -8,7 +8,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export function EmailAnalytics() {
+export function EmailAnalytics({ industry }) {
 
     const navigation = [{
         name: 'How does this look like for a user?',
@@ -89,7 +89,7 @@ export function EmailAnalytics() {
                     <Developer />
                 )} */}
                 {showForStakeholders == 'enduser' && (
-                    <Enduser />
+                    <Enduser industry={industry} />
                 )}
                 {showForStakeholders == 'manager' && (
                     <Manager />

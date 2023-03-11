@@ -15,7 +15,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline'
 import { InView } from 'react-intersection-observer';
 
 
-const faqs = [
+export const faqs = [
   {
     question: "Do I need expertise in NLP to use this?",
     answer:

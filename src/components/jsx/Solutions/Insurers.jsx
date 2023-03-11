@@ -1,8 +1,10 @@
-import { IconArrowRight, IconBallon, IconBulb, IconChecklist, IconCode, IconHeartHandshake, IconLoader, IconNumber1, IconNumber2, IconNumber3, IconNumber4, IconPerspective } from '@tabler/icons'
+import { IconArrowRight, IconBallon, IconBulb, IconChecklist, IconCode, IconDashboard, IconFileSearch, IconHeartHandshake, IconInbox, IconLoader, IconNote, IconNumber1, IconNumber2, IconNumber3, IconNumber4, IconPerspective } from '@tabler/icons'
 import { CallToAction } from '../CallToAction'
 import { PlatformBenefits } from '../PlatformBenefits'
 import { EmailAnalytics } from '../UseCases/EmailAnalytics'
-
+import { Disclosure } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/24/outline'
+import { faqs } from '../Ecosystem'
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -53,17 +55,21 @@ const options = [
     {
         title: "Claims processing",
         description: "AI can automate claims intake, detect fraud, and route claims correctly. Automated, instant and cost-effective. AI-powered claims supports the entire organization.",
-        icon: IconCode,
+        icon: IconFileSearch,
 
     },
     {
         title: "Auto responses",
         description: "Auto-generate email responses to save valuable time on tasks easily supported by AI technology while improving customer experience and streamlining workflows.",
-        icon: IconLoader,
+        icon: IconNote,
     }, {
         title: "Inbox management",
         description: "Automatically categorize incoming mails, detect sentiment (e.g. positive, negative, neutral) and extract information (e.g. name, address, phone number, etc.) from them.",
-        icon: IconPerspective,
+        icon: IconInbox,
+    }, {
+        title: "Inbox analytics",
+        description: "Use the newfound insights from the operational process to create analytical dashboards that help you gain new insights into your inboxes.",
+        icon: IconDashboard,
     }
 ]
 
@@ -97,7 +103,7 @@ export function Insurers() {
         <section>
             <main className="relative">
                 <div className="relative px-6 lg:px-8">
-                    <div className="mx-auto max-w-5xl py-16 sm:py-20">
+                    <div className="mx-auto max-w-7xl py-16 sm:py-20">
                         <div>
                             <div>
                                 <h1 className="text-white text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
@@ -121,7 +127,7 @@ export function Insurers() {
                                         AI has the power to automate manual and time consuming email processes that are business-critical.
                                     </p>
                                 </div>
-                                <div className="mt-6 md:m-4 space-y-4 md:p-0 md:grid md:grid-cols-3 md:gap-4">
+                                <div className="mt-6 md:m-4 space-y-4 md:p-0 md:grid md:grid-cols-2 md:gap-4">
                                     {options.map((option) => (
                                         <div
                                             key={option.title}
@@ -142,15 +148,35 @@ export function Insurers() {
                             </div>
                         </div>
                         <div className='my-14'>
-                            <div className="mx-auto w-full max-w-5xl sm:px-6 lg:px-8">
+                            <div className="mx-auto w-full">
                                 <div className='flex flex-col space-y-10 my-8'>
                                     <h2 className="text-white text-2xl font-bold tracking-tight sm:text-center sm:text-4xl">
                                         See Kern AI in action
                                     </h2>
-                                    <EmailAnalytics />
                                 </div>
+                                <EmailAnalytics industry={'insurance'} />
                             </div>
                         </div>
+
+                        <div className='my-32 px-6'>
+                            <div className="flex flex-col space-y-16 mx-auto w-full max-w-5xl sm:px-6 lg:px-8">
+                                <div className=''>
+                                    <h2 className="text-gray-100 text-2xl font-bold tracking-tight sm:text-center sm:text-4xl">
+                                        Is this yet another chatbot?
+                                    </h2>
+                                    <p className="mt-6 text-xl leading-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-300 to-gray-100 sm:text-center">
+                                        No; a chatbot is typically placed on your website. We, on the other hand, offer holistic process automation across a wide range of channels, such as emails and other communication channels.                                    </p>
+                                    <p className="mt-2 text-xl leading-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-300 to-gray-100 sm:text-center">
+                                        In other words, we offer AI to support specialist staff. Your customers notice this in the form of shorter return times and higher satisfaction.                                    </p>
+                                </div>
+                                <img src="/nlp-hero-desktop.png" className="hidden md:block w-full" />
+                                <img src="/nlp-hero-mobile.png" className="block md:hidden w-full" />
+                                <p className="text-gray-300 sm:text-center">
+                                    Your IT landscape can be integrated, for example, to use customer-specific data.
+                                </p>
+                            </div>
+                        </div>
+
                         <div className='my-28'>
                             <div className="mx-auto w-full max-w-5xl sm:px-6 lg:px-8">
                                 <div className='my-8'>
@@ -342,6 +368,40 @@ export function Insurers() {
                                         </li>
                                     ))}
                                 </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="mx-auto max-w-3xl lg:max-w-5xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+                                <div className="mx-auto max-w-5xl divide-y-2 divide-gray-800">
+                                    <h2 className="text-center text-2xl font-bold tracking-tight text-gray-100 sm:text-4xl">
+                                        Frequently asked questions
+                                    </h2>
+                                    <dl className="mt-10 space-y-6 divide-y divide-gray-800">
+                                        {faqs.map((faq) => (
+                                            <Disclosure as="div" key={faq.question} className="pt-6">
+                                                {({ open }) => (
+                                                    <>
+                                                        <dt className="text-sm">
+                                                            <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-600">
+                                                                <span className="font-medium text-gray-100">{faq.question}</span>
+                                                                <span className="ml-6 flex h-7 items-center">
+                                                                    <ChevronDownIcon
+                                                                        className={classNames(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
+                                                                        aria-hidden="true"
+                                                                    />
+                                                                </span>
+                                                            </Disclosure.Button>
+                                                        </dt>
+                                                        <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                                                            <p className="text-sm text-gray-500">{faq.answer}</p>
+                                                        </Disclosure.Panel>
+                                                    </>
+                                                )}
+                                            </Disclosure>
+                                        ))}
+                                    </dl>
+                                </div>
                             </div>
                         </div>
 

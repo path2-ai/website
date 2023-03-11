@@ -84,7 +84,7 @@ export function Playground() {
                             setCurrentView('Email automation')
                         }
                     }}>
-                    <EmailAnalytics />
+                    <EmailAnalytics industry={'generic'} />
                 </InView>
                 <InView
                     threshold={0.5}

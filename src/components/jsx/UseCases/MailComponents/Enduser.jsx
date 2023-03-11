@@ -26,11 +26,11 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export function Enduser() {
+export function Enduser({ industry }) {
 
     const [showMessageMobile, setShowMessageMobile] = useState(false)
-    const [messages, setMessages] = useState([
-        {
+    const [messages, setMessages] = useState({
+        "generic": [{
             id: 1,
             subject: 'Status of my order',
             sender: {
@@ -119,10 +119,193 @@ export function Enduser() {
                 sentiment: 'negative',
             }
         },
-    ])
+        ],
+        "insurance": [
+            {
+                id: 1,
+                subject: 'Damage car',
+                sender: {
+                    name: 'Johannes Hötter',
+                    email: 'johannes.hoetter@kern.ai',
+                },
+                userDefinedMail: false,
+                date: '1d ago',
+                datetime: '2021-01-27T16:35',
+                preview:
+                    'Hello, I was recently in a car accident. [...]',
+                thread: [
+                    {
+                        id: 1,
+                        author: {
+                            name: 'Johannes Hötter',
+                            email: 'johannes.hoetter@kern.ai',
+                        },
+                        date: 'Wednesday at 4:35pm',
+                        datetime: '2021-01-27T16:35',
+                        body: `
+                        <p>Hello, I was recently in a car accident. What is the procedure for filing a claim for damages?</p>
+                        <p><strong style="font-weight: 600;">Johannes Hötter</strong><br/>Co-Founder Kern AI</p>
+                      `,
+                    }
+                ],
+                response: {
+                    text: 'Hello Mr. Hötter, thank you for your message. First of all, we need more information about the claim. Please let us know where and when the accident happened. Thank you for your patience!',
+                    sentiment: 'positive',
+                }
+            },
+            {
+                id: 2,
+                subject: 'Why does the processing take so long?',
+                sender: {
+                    name: 'Richard Hendricks',
+                    email: 'richard.hendricks@piedpiper.com',
+                },
+                userDefinedMail: false,
+                date: '1d ago',
+                datetime: '2021-01-28T10:35',
+                preview:
+                    'Hello Support, I have been waiting for a response for 2 days now. [...]',
+                thread: [
+                    {
+                        id: 1,
+                        author: {
+                            name: 'Richard Hendricks',
+                            email: 'richard.hendricks@piedpiper.com'
+                        },
+                        date: 'Thursday at 10:35am',
+                        datetime: '2021-01-28T10:35',
+                        body: `
+                        <p>Hello Support, I have been waiting for a response for 2 days now. Can you please let me know when I can expect a response?</p>
+                      `,
+                    },
+                    {
+                        id: 2,
+                        author: {
+                            name: 'You',
+                            email: 'you@your-company.com'
+                        },
+                        date: 'Wednesday at 10:37am',
+                        datetime: '2021-01-28T10:37',
+                        body: `
+                        <p>Hello Richard,</p>
+                        <p>Please excuse the delay. We are currently processing your request. We will get back to you as soon as possible.</p>
+                      `,
+                    },
+                    {
+                        id: 3,
+                        author: {
+                            name: 'Richard Hendricks',
+                            email: 'richard.hendricks@piedpiper.com'
+                        },
+                        date: 'Thursday at 6:45pm',
+                        datetime: '2021-01-28T18:45',
+                        body: `
+                        <p>Hello Support, Thank you: Can you please tell me how long it will take to process my request?</p>
+                        <p><strong style="font-weight: 600;">Richard Hendricks</strong></p>
+                      `,
+                    },
+                ],
+                response: {
+                    text: 'Hello Mr. Hendricks, since the introduction of our new system with Kern AI we can process your processes much faster. You can expect an answer by tomorrow.',
+                    sentiment: 'negative',
+                }
+            },
+        ],
+        "logistics": [
+            {
+                id: 1,
+                subject: '75 Euro pallets until Friday',
+                sender: {
+                    name: 'Johannes Hötter',
+                    email: 'johannes.hoetter@kern.ai',
+                },
+                userDefinedMail: false,
+                date: '1d ago',
+                datetime: '2021-01-27T16:35',
+                preview:
+                    'Hello, we need 75 euro pallets in Gothenburg by Friday 4pm. Dimensions 1200 x 800. [...]',
+                thread: [
+                    {
+                        id: 1,
+                        author: {
+                            name: 'Johannes Hötter',
+                            email: 'johannes.hoetter@kern.ai',
+                        },
+                        date: 'Wednesday at 4:35pm',
+                        datetime: '2021-01-27T16:35',
+                        body: `
+                        <p>Hello, we need 75 euro pallets in Gothenburg by Friday 4pm. Dimensions 1200 x 800. Johannes Hötter</p>
+                        <p><strong style="font-weight: 600;">Johannes Hötter</strong><br/>Co-founder Kern AI</p>
+                      `,
+                    }
+                ],
+                response: {
+                    text: 'Hello Mr. Hötter, Hello Mr. Hötter, thank you for your message. Your order will arrive on 10/03/2023 at the time you mentioned. Thank you for your trust.',
+                    sentiment: 'positive',
+                }
+            },
+            {
+                id: 2,
+                subject: 'Why does the processing take so long?',
+                sender: {
+                    name: 'Richard Hendricks',
+                    email: 'richard.hendricks@piedpiper.com',
+                },
+                userDefinedMail: false,
+                date: '1d ago',
+                datetime: '2021-01-28T10:35',
+                preview:
+                    'Hello Support, I have been waiting for a response for 2 days now. [...]',
+                thread: [
+                    {
+                        id: 1,
+                        author: {
+                            name: 'Richard Hendricks',
+                            email: 'richard.hendricks@piedpiper.com'
+                        },
+                        date: 'Thursday at 10:35am',
+                        datetime: '2021-01-28T10:35',
+                        body: `
+                        <p>Hello Support, I have been waiting for a response for 2 days now. Can you please let me know when I can expect a response?</p>
+                      `,
+                    },
+                    {
+                        id: 2,
+                        author: {
+                            name: 'You',
+                            email: 'you@your-company.com'
+                        },
+                        date: 'Wednesday at 10:37am',
+                        datetime: '2021-01-28T10:37',
+                        body: `
+                        <p>Hello Richard,</p>
+                        <p>Please excuse the delay. We are currently processing your request. We will get back to you as soon as possible.</p>
+                      `,
+                    },
+                    {
+                        id: 3,
+                        author: {
+                            name: 'Richard Hendricks',
+                            email: 'richard.hendricks@piedpiper.com'
+                        },
+                        date: 'Thursday at 6:45pm',
+                        datetime: '2021-01-28T18:45',
+                        body: `
+                        <p>Hello Support, Thank you: Can you please tell me how long it will take to process my request?</p>
+                        <p><strong style="font-weight: 600;">Richard Hendricks</strong></p>
+                      `,
+                    },
+                ],
+                response: {
+                    text: 'Hello Mr. Hendricks, since the introduction of our new system with Kern AI we can process your processes much faster. You can expect an answer by tomorrow.',
+                    sentiment: 'negative',
+                }
+            },
+        ]
+    })
 
-    const [selectedMessage, setSelectedMessage] = useState(messages[0])
-    const [messagesInFilter, setMessagesInFilter] = useState(messages)
+    const [selectedMessage, setSelectedMessage] = useState(messages[industry][0])
+    const [messagesInFilter, setMessagesInFilter] = useState(messages[industry])
 
     const [loading, setLoading] = useState(false)
     const [draftAccepted, setDraftAccepted] = useState(false)
@@ -136,7 +319,6 @@ export function Enduser() {
     const [pingAcceptAndSend, setPingAcceptAndSend] = useState(true)
     const [pingFilter, setPingFilter] = useState(true)
     const [pingOtherMessages, setPingOtherMessages] = useState(true)
-    const [pingGenerateDraft, setPingGenerateDraft] = useState(true)
 
 
     useEffect(() => {
@@ -162,10 +344,11 @@ export function Enduser() {
 
 
     useEffect(() => {
+        const industryMessages = messages[industry]
         if (filterOnSentiment) {
-            setMessagesInFilter(messages.filter(message => message.response.sentiment === filterOnSentiment && classifiedMessageIds.includes(message.id)))
+            setMessagesInFilter(industryMessages.filter(message => message.response.sentiment === filterOnSentiment && classifiedMessageIds.includes(message.id)))
         } else {
-            setMessagesInFilter(messages)
+            setMessagesInFilter(industryMessages)
         }
     }, [filterOnSentiment, messages])
 

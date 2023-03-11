@@ -33,7 +33,7 @@ export function EnduserGerman({ industry }) {
         "insurance": [
             {
                 id: 1,
-                subject: 'Status meiner Bestellung',
+                subject: 'Schadensfall Auto',
                 sender: {
                     name: 'Johannes Hötter',
                     email: 'johannes.hoetter@kern.ai',
@@ -59,7 +59,7 @@ export function EnduserGerman({ industry }) {
                     }
                 ],
                 response: {
-                    text: 'Hallo Herr Hötter, danke für Ihre Nachricht. Wir benötigen zunächst weitere Infoszu dem Schadensfall. Teilen Sie uns bitte mit, wo und wann der Unfall geschah. Danke für Ihre Geduld!',
+                    text: 'Hallo Herr Hötter, danke für Ihre Nachricht. Wir benötigen zunächst weitere Infos zu dem Schadensfall. Teilen Sie uns bitte mit, wo und wann der Unfall geschah. Danke für Ihre Geduld!',
                     sentiment: 'positiv',
                 }
             },
