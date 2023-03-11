@@ -185,7 +185,7 @@ export function GermanInsurers() {
     const [showForStakeholders, setShowForStakeholders] = useState("enduser")
 
     return (
-        <div className='flex flex-col space-y-20'>
+        <div className='flex flex-col md:space-y-20'>
             <div className="relative isolate overflow-hidden bg-slate-50">
                 <svg
                     className="absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -295,14 +295,20 @@ export function GermanInsurers() {
                 <div className="flex flex-col space-y-16 mx-auto w-full max-w-5xl sm:px-6 lg:px-8">
                     <div className=''>
                         <h2 className="text-2xl font-bold tracking-tight sm:text-center sm:text-4xl">
-                            Was bedeutet Text-KI?
+                            Handelt es sich dabei um einen Chatbot?
                         </h2>
                         <p className="mt-6 text-xl leading-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600 sm:text-center">
-                            KI ist in der Lage, manuelle und zeitaufwändige E-Mail-Prozesse, die geschäftskritisch sind, zu automatisieren.
+                            Nein; ein Chatbot ist typischerweise auf Ihrer Website platziert. Wir hingegen bieten ganzheitliche Prozessautomatisierungen über verschiedenste Kanäle hinweg, etwa für E-Mails und andere Kommunikationskanäle.
+                        </p>
+                        <p className="mt-2 text-xl leading-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-600 via-gray-900 to-gray-600 sm:text-center">
+                            Anders gesagt: Wir bieten KI zur Unterstützung von Fachpersonal. Ihre Kund:innen stellen dies in Form kürzerer Rücklaufzeiten und höherer Zufriedenheit fest.
                         </p>
                     </div>
-                    <img src="/nlp-hero-desktop-light.png" className="hidden md:block w-full" />
+                    <img src="/nlp-hero-desktop-light-insurance.png" className="hidden md:block w-full" />
                     <img src="/nlp-hero-mobile-light.png" className="block md:hidden w-full" />
+                    <p className=" text-gray-700 sm:text-center">
+                        Ihre IT-Landschaft kann eingebunden werden, um etwa kundenspezifische Daten zu verwenden.
+                    </p>
                 </div>
             </div>
 
