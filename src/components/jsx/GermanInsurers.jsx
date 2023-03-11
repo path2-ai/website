@@ -5,6 +5,57 @@ import { ManagerGerman } from './UseCases/MailComponents/ManagerGerman'
 import { Footer } from './Footer'
 import { CallToActionGerman } from './CallToActionGerman'
 import { IconArrowDown, IconArrowRight, IconBallon, IconBulb, IconChecklist, IconDashboard, IconFileSearch, IconHeartHandshake, IconInbox, IconMail, IconNote, IconNumber1, IconChessKnight, IconDatabase, IconStack3, IconTerminal, IconNumber2, IconNumber3, IconNumber4, } from "@tabler/icons"
+import { Disclosure } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/24/outline'
+
+const faqs = [
+    {
+        question: "Wie steht Kern AI zum Thema Datenschutz?",
+        answer:
+            "Wir sind ISO 27001 zertifiziert und haben ein umfangreiches Datenschutzkonzept. Ebenso sind wir DSGVO-konform und arbeiten eng mit unseren Kunden zusammen, um die Anforderungen zu erfüllen."
+    },
+    {
+        question: "Kann ich meine IT-Systeme anbinden?",
+        answer:
+            "Ja! Sie können Ihre IT-Systeme an Kern AI anbinden, um die Kontextinformationen zu nutzen, die Sie benötigen. Wir bieten eine Reihe von Standard-Integrationen an, die Sie nutzen können. Wenn Sie eine Integration benötigen, die nicht in unserer Liste aufgeführt ist, lassen Sie es uns bitte wissen und wir werden sie in unsere Roadmap aufnehmen. Wenn Sie einen Enterprise-Plan haben, können wir auch benutzerdefinierte Integrationen hinzufügen."
+    },
+    {
+        question: "Können Emailanhänge verarbeitet werden?",
+        answer:
+            "Einen Großteil an Anhängen können wir bereits vollautomatisiert verarbeiten; wir arbeiten aber auch daran, derzeit eine vollumfängliche und customizierbare Unterstützung für Anhänge zu ermöglichen, um hier wirklich alle Anwendungsfälle abzudecken."
+    },
+    {
+        question: "Nutzt Kern AI auch OpenAI?",
+        answer:
+            "Sie können jede Art von Algorithmus mit anderen Algorithmen in unserer Plattform kombinieren. Nehmen wir an, Sie haben einen Anwendungsfall der Stimmungsanalyse (positive, neutrale, negative Klassifizierung von Texten) und möchten dafür GPT-3 verwenden. Das können Sie tun. In unserer Plattform können Sie gleichzeitig die GPT-3-API aufrufen, sie mit Ihren eigenen regulären Ausdrücken und eigenen Machine Learning-Modellen kombinieren, die auf Ihre Daten abgestimmt sind, und vieles mehr. Dies wird die Genauigkeit Ihres Modells mit Leichtigkeit verbessern. Natürlich können Sie aber auch darauf verzichten, sollte es aus Datenschutzgründen nicht möglich sein."
+    },
+    {
+        question: "Welche Sprachen kann ich verarbeiten?",
+        answer:
+            "Englisch, die meisten europäischen Sprachen und Chinesisch. Wir fügen ständig neue Sprachen hinzu. Wenn Sie eine Sprache vermissen, lassen Sie es uns bitte wissen und wir werden sie in unsere Roadmap aufnehmen."
+    },
+    {
+        question: "Ist Kern AI open-source?",
+        answer:
+            "Teilweise. Der Kern von refinery ist open-source, und bricks ist vollständig auf GitHub verfügbar. gates und workflow sind proprietär. Sie können die open-source-Repositories auf unserer GitHub-Seite finden."
+    },
+    {
+        question: "Ich benötige eine Integration. Können Sie sie hinzufügen?",
+        answer:
+            "Ja, wir fügen ständig neue Integrationen hinzu. Wenn Sie eine Integration benötigen, lassen Sie es uns bitte wissen und wir werden sie in unsere Roadmap aufnehmen. Wenn Sie einen Enterprise-Plan haben, können wir auch benutzerdefinierte Integrationen hinzufügen."
+    },
+    {
+        question: "Wo werden meine Daten gespeichert?",
+        answer:
+            "Unsere Anwendungsserver und verwalteten Datenbanken befinden sich in Frankfurt am Main. Die Rechenzentren des von uns genutzten Providers sind nach dem neuesten Stand der Technik gesichert, einschließlich Rund-um-die-Uhr-Überwachung, Umweltschutz und umfassender sicherer Zugangsrichtlinien, und sind nach ISO 27001 zertifiziert. Weitere Informationen finden Sie auf unserer Sicherheitsseite."
+    },
+    {
+        question: "Wie viele Daten benötige ich?",
+        answer:
+            "Wenn Sie an Rohdaten denken, können Sie mit nur 10 Beispielen beginnen - diese können von Hand erstellt werden. Wir können diese Daten mit synthetischen Daten erweitern, die aus großen Sprachmodellen wie GPT-3 generiert werden. Wenn Sie Tausende von Stichproben für Rohdaten haben, ist das umso besser. Für das Labeln können Sie problemlos mit nur 30 Beispielen pro Klasse beginnen - und unsere Funktionen für automatisches Labeling sowie Managed Labeling Services nutzen, um Ihre Trainingsdaten zu skalieren."
+    },
+]
+
 
 const useCases = [
     {
@@ -493,6 +544,39 @@ export function GermanInsurers() {
             {/* ISO, Datenschutz */}
 
             {/* FAQ */}
+            <div>
+                <div className="mx-auto max-w-3xl lg:max-w-5xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+                    <div className="mx-auto max-w-5xl divide-y-2 divide-gray-200">
+                        <h2 className="text-center text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                            Häufig gestellte Fragen
+                        </h2>
+                        <dl className="mt-10 space-y-6 divide-y divide-gray-200">
+                            {faqs.map((faq) => (
+                                <Disclosure as="div" key={faq.question} className="pt-6">
+                                    {({ open }) => (
+                                        <>
+                                            <dt className="text-sm">
+                                                <Disclosure.Button className="flex w-full items-start justify-between text-left text-gray-300">
+                                                    <span className="font-medium text-gray-900">{faq.question}</span>
+                                                    <span className="ml-6 flex h-7 items-center">
+                                                        <ChevronDownIcon
+                                                            className={classNames(open ? '-rotate-180' : 'rotate-0', 'h-6 w-6 transform')}
+                                                            aria-hidden="true"
+                                                        />
+                                                    </span>
+                                                </Disclosure.Button>
+                                            </dt>
+                                            <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                                                <p className="text-sm text-gray-600">{faq.answer}</p>
+                                            </Disclosure.Panel>
+                                        </>
+                                    )}
+                                </Disclosure>
+                            ))}
+                        </dl>
+                    </div>
+                </div>
+            </div>
 
             <div className='pt-32'>
                 <CallToActionGerman />
