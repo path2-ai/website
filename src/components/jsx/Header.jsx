@@ -31,8 +31,8 @@ const navigation = [
     // },
     { name: 'Implications of GPT ', href: '/strategic-nlp' },
     {
-        name: 'Platform', subnav: [
-            { name: 'Platform', href: '/platform', icon: IconTools, description: 'Get an overview of the platform' },
+        name: 'Developers', subnav: [
+            { name: 'Data-centric NLP', href: '/platform', icon: IconTools, description: 'Get an overview of the platform' },
             { name: 'Platform architecture', href: '/platform/architecture', icon: IconStack3, description: 'See how the platform of Kern AI works under the hood' },
             { name: 'How it works', href: '/platform/how-it-works', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
             { name: 'Labeling services', href: '/platform/labeling-services', icon: IconTags, description: 'Let us handle your labeling needs' },
