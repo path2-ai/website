@@ -76,7 +76,7 @@ export function Terms() {
                                 <li>the Licensee has provided Licensor with incorrect or invalid contact data, and Licensor is no longer able to contact Licensee;</li>
                                 <li>in the event of payment by direct debit, the Licensee has provided incorrect bank account details and does not effect the respective payment by other means.</li>
                             </ul>
-                            <p>4.1.7 The Licensor shall announce the suspension of the Licensee’s credentials within the meaning of section 4.1.7 to the Licensee in text or written form at least one working day before the suspension comes into effect, insofar as, considering the interests of both parties, such announcement is reasonable does not affect the purpose of the suspension.</p>
+                            <p>4.1.7 The Licensor shall announce the suspension of the Licensee’s credentials within the meaning of section 4.1.6 to the Licensee in text or written form at least one working day before the suspension comes into effect, insofar as, considering the interests of both parties, such announcement is reasonable does not affect the purpose of the suspension.</p>
                             <h2 className="font-semibold">4.2 Term and Termination</h2>
                             <p>4.2.1 A subscription shall become effective upon its activation by Licensor and shall remain valid unless terminated.</p>
                             <p>4.2.2 Either party may terminate a monthly subscription at least 30 days prior to its expiration, a monthly subscription shall be prolonged for further monthly periods respectively.</p>
