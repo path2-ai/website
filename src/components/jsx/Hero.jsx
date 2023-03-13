@@ -49,11 +49,11 @@ export function Hero() {
                             </div>
                             <div>
                                 <h1 className="text-white text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
-                                    <div>Embed into your processes</div>
+                                    <div>Embed text, speech, and document AI</div>
                                     <div className="md:py-3 lg:py-6 text-transparent bg-clip-text bg-gradient-to-r from-lime-300 via-emerald-500 to-green-600 animate-text">
-                                        text-, speech- and document-AI
+                                        built on reliable training data
                                     </div>
-                                    <div>that is built on reliable training data</div>
+                                    <div>into your processes.</div>
                                 </h1>
                                 <p className="mt-6 text-xl leading-8 text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-gray-300 to-gray-500 sm:text-center">
                                     Used by teams at AI-driven organizations, both small and large
