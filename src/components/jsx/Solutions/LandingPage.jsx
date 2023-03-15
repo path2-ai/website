@@ -283,11 +283,11 @@ export function LandingPage() {
                                         <div className='pt-10'>
                                             <dl className="space-y-10 md:space-y-0 md:grid grid-cols-1 gap-y-16 md:gap-x-8 md:text-center md:grid-cols-3">
                                                 {strapiData.statistic.map((stat) => (
-                                                    <div key={stat.id} className="mx-auto flex max-w-xs flex-col gap-y-4">
+                                                    <div key={stat.name} className="mx-auto flex max-w-xs flex-col gap-y-4">
                                                         <div className="text-base leading-7 text-gray-400">{stat.name}</div>
                                                         <div className="order-first text-3xl font-semibold tracking-tight text-white sm:text-5xl">{stat.value}</div>
                                                         <div className="text-base leading-7 text-gray-400">according to <a
-                                                            href={stat.link}
+                                                            href={stat.url}
                                                             target='_blank'
                                                             rel='noreferrer noopener'
                                                             className='font-semibold text-green-500 hover:text-white'>{stat.reference}</a></div>
