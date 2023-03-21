@@ -4,17 +4,17 @@ import { useRouter } from "next/router"
 
 const options = [
     {
-        title: "Building products",
+        title: "Building NLP features",
         description: "Use refinery to craft the data for your NLP model. Optionally, you can also use the gates API to use refinery automations as your model's inference engine.",
         icon: IconCode,
         steps: [{
-            title: "Connect a dataset",
-            description: "refinery uses JSON for user-defined inputs. You can choose from a variety of formats to upload your data, e.g. CSV, JSON, or Excel. Alternatively, you can grab data from a store (e.g. a 3rd-party-integration or database) of the workflow product.",
+            title: "Connect a dataset (or generate one)",
+            description: "refinery uses JSON for user-defined inputs. You can choose from a variety of formats to upload your data, e.g. CSV, JSON, or Excel. Alternatively, you can grab data from a store (e.g. a 3rd-party-integration or database) of the workflow product. Alternatively, you can also generate data from a textual description and very few examples.",
             icon: IconNumber1,
             image: "screenshot-refinery"
         }, {
             title: "Label reference data",
-            description: "Next, you need to label a few sample records. You can either do this in the built-in editor, or via another labeling solution like Labelstudio. Also, you can upload existing labeled data. These sample records will be (partially) used to train and validate heuristics.",
+            description: "Next, you need to label a few sample records. You can either do this in the built-in editor, or via another labeling solution like Labelstudio. Also, you can upload existing labeled data. These sample records will be (partially) used to train and validate heuristics. Additionally, you can hire labelers to label your data.",
             icon: IconNumber2,
             image: "screenshot-refinery-labeling"
         }, {
@@ -41,38 +41,7 @@ const options = [
         }]
     },
     {
-        title: "Building ETL pipelines",
-        description: "Set up a batch-workflow to automate recurring data tasks. E.g. for internal analytical processes, dashboards, or for keeping your data up-to-date.",
-        icon: IconPerspective,
-        steps: [{
-            title: "Define a skeleton from scratch or use a template",
-            description: "First, to understand what you need to configure, set up the basic steps of your workflow. You can either start from scratch or choose a template. A batch-workflow fetches new data either daily, weekly, or monthly.",
-            icon: IconNumber1,
-            image: "screenshot-workflow-b-skeleton"
-        }, {
-            title: "Set up a store",
-            description: "Connect a store from one of our integrations, or use the workflow API to stream data into a custom store. This is where your raw data will be stored. By the way, you can connect stores from workflow directly to refinery.",
-            icon: IconNumber2,
-            image: "screenshot-workflow-store"
-        }, {
-            title: "Connect a model from gates",
-            description: "If you have set up a model in refinery and activated it in gates, it is now useable in workflow.",
-            icon: IconNumber3,
-            image: "screenshot-workflow-gates"
-        }, {
-            title: "Finish your workflow",
-            description: "Finally, you can finish the skeleton of your workflow and connect your stores and model to the pipeline. If you run into errors, you can just reset the pipeline and start over. When you're done, you can publish your workflow.",
-            icon: IconNumber4,
-            image: "screenshot-workflow-b"
-        }],
-        useCases: [{
-            title: 'ETL pipelines',
-            slug: 'etl',
-            description: 'Why limit ETL to only structured data? Build pipelines that actually understand human language, and future-proof your pipelines.',
-            icon: IconPerspective,
-        }]
-    }, {
-        title: "Building workflows",
+        title: "Building realtime workflows",
         description: "Set up a realtime-workflow to automate operational natural language-driven tasks. E.g. for customer service automations.",
         icon: IconLoader,
         steps: [{
@@ -107,7 +76,38 @@ const options = [
             description: 'Handling complex HTML structures can be a pain. Build a simple Python scraper, and use refinery to extract the data you need.',
             icon: IconWorldWww,
         }]
-    },
+    }, {
+        title: "Building analytical pipelines",
+        description: "Set up a batch-workflow to automate recurring data tasks. E.g. for internal analytical processes, dashboards, or for keeping your data up-to-date.",
+        icon: IconPerspective,
+        steps: [{
+            title: "Define a skeleton from scratch or use a template",
+            description: "First, to understand what you need to configure, set up the basic steps of your workflow. You can either start from scratch or choose a template. A batch-workflow fetches new data either daily, weekly, or monthly.",
+            icon: IconNumber1,
+            image: "screenshot-workflow-b-skeleton"
+        }, {
+            title: "Set up a store",
+            description: "Connect a store from one of our integrations, or use the workflow API to stream data into a custom store. This is where your raw data will be stored. By the way, you can connect stores from workflow directly to refinery.",
+            icon: IconNumber2,
+            image: "screenshot-workflow-store"
+        }, {
+            title: "Connect a model from gates",
+            description: "If you have set up a model in refinery and activated it in gates, it is now useable in workflow.",
+            icon: IconNumber3,
+            image: "screenshot-workflow-gates"
+        }, {
+            title: "Finish your workflow",
+            description: "Finally, you can finish the skeleton of your workflow and connect your stores and model to the pipeline. If you run into errors, you can just reset the pipeline and start over. When you're done, you can publish your workflow.",
+            icon: IconNumber4,
+            image: "screenshot-workflow-b"
+        }],
+        useCases: [{
+            title: 'ETL pipelines',
+            slug: 'etl',
+            description: 'Why limit ETL to only structured data? Build pipelines that actually understand human language, and future-proof your pipelines.',
+            icon: IconPerspective,
+        }]
+    }
 ]
 
 
@@ -150,7 +150,7 @@ export function HowItWorks() {
                                 <h3 className="text-lg leading-6 font-medium text-gray-100">{option.title}</h3>
                                 <p className="mt-2 text-sm leading-6 text-gray-300">{option.description}</p>
                             </div>
-                            <ul>
+                            {/* <ul>
                                 {option.useCases.map((useCase) => (
                                     <li key={useCase.title}
                                         className="mt-2 text-sm leading-6 text-gray-300  hover:text-green-500"
@@ -162,7 +162,7 @@ export function HowItWorks() {
                                         See "{useCase.title}"
                                     </li>
                                 ))}
-                            </ul>
+                            </ul> */}
                         </div>
                     ))}
                 </div>
