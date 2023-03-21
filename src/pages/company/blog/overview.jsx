@@ -2,6 +2,20 @@ import { KERN_ASSETS_URL } from "@/components/jsx/_settings"
 
 export const articles = [
     {
+        "title": "Alleviate the pain of manual labeling and deploying models with weak supervision",
+        "description": "How to use weak supervision to get high quality labels fast",
+        "slug": "whats-weak-supervision",
+        "teaser": "In this article we explain how to use weak supervision and how to leverage it to quickly obtain high quality labels for your text datagit .",
+        "category": "Knowledge",
+        "thumbnail": "/blog/multiple-streams.png",
+        "prompt": "multiple streams flowing into the ocean, abstract style.",
+        "author": {
+            "name": "Leonard Püttmann",
+            "image": `${KERN_ASSETS_URL}/team/team-leo.png`
+        },
+        "date": "2023-03-09"
+    },
+    {
         "title": "How we use the Kern AI platform to build a stock sentiment slackbot",
         "description": "We build a really cool slackbot to automatically classifiy stock news.",
         "slug": "slackbot-workflow",
