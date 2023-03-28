@@ -71,16 +71,17 @@ function getEmployeeSurveyDataset(employeeData) {
 }
 
 export const positions = [
-    {
-        id: 1,
-        title: 'Working student - bricks contributor',
-        type: 'Working student',
-        href: 'https://join.com/companies/kernai/7353178-working-student-natural-language-processing-engineer-project-bricks',
-        location: 'Remote',
-        department: 'Engineering',
-        closeDate: '2023-05-01',
-        closeDateFull: 'May 1, 2023',
-    },
+    // Keeping this as a template
+    // {
+    //     id: 1,
+    //     title: 'Working student - bricks contributor',
+    //     type: 'Working student',
+    //     href: 'https://join.com/companies/kernai/7353178-working-student-natural-language-processing-engineer-project-bricks',
+    //     location: 'Remote',
+    //     department: 'Engineering',
+    //     closeDate: '2023-05-01',
+    //     closeDateFull: 'May 1, 2023',
+    // },
 ]
 
 const timeline = [
@@ -624,6 +625,11 @@ export function Careers() {
                     <div className='text-2xl font-semibold'>
                         Open positions
                     </div>
+                    {positions.length == 0 && 
+                        <div className="flex items-center text-base font-medium text-green-700 mt-6">         
+                            No open positions at this time
+                        </div>
+                    }
                     <div className="mt-4 overflow-hidden border border-gray-800 shadow sm:rounded-md">
                         <ul role="list" className="divide-y divide-gray-800">
                             {positions.map((position) => (
