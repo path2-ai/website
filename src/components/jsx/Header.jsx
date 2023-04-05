@@ -364,7 +364,7 @@ export function Header({ isDarkTheme }) {
                                                             'block px-4 py-2 text-sm'
                                                         )}
                                                     >
-                                                        Try refinery online
+                                                        Try Kern AI online
                                                     </a>
                                                 )}
                                             </Menu.Item>

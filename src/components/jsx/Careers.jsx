@@ -6,43 +6,43 @@ import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto'; // this must be imported to enable the charts plugin; don't remove it!
 import { useState } from 'react';
 
-const labels = ['July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March']
+const labels = ['July', 'August', 'September', 'October', 'November', 'December', 'January', 'February', 'March', 'April']
 const employeeSurveyData = [
     {
         label: "How happy are you with your role?",
         colorPrimary: "#f97316", // orange
         colorSecondary: "#fdba74",
-        data: [6.2, 6.6, 5.8, 6.2, 6, 6.2, 6.6, 6.4, 6.6]
+        data: [6.2, 6.6, 5.8, 6.2, 6, 6.2, 6.6, 6.4, 6.6, 6.4]
     },
     {
         label: "Are my work and efforts sufficiently appreciated?",
         colorPrimary: "#84cc16", // green
         colorSecondary: "#bef264",
-        data: [6, 6.4, 6, 6.2, 6.6, 6.4, 6.6, 6.4, 6.6]
+        data: [6, 6.4, 6, 6.2, 6.6, 6.4, 6.6, 6.4, 6.6, 6.4]
     },
     {
         label: "Do I feel comfortable expressing my opinion at work and is it respected?",
         colorPrimary: "#14b8a6", // teal
         colorSecondary: "#5eead4",
-        data: [6.4, 6.6, 6.4, 6.6, 6.8, 6.6, 6.8, 6.6, 6.2]
+        data: [6.4, 6.6, 6.4, 6.6, 6.8, 6.6, 6.8, 6.6, 6.2, 6.4]
     },
     {
         label: "Do I know what is expected of me at work?",
         colorPrimary: "#8b5cf6", // purple
         colorSecondary: "#c4b5fd",
-        data: [6.2, 6.4, 6.2, 6.4, 6.6, 6.4, 6.6, 6.6, 6.4]
+        data: [6.2, 6.4, 6.2, 6.4, 6.6, 6.4, 6.6, 6.6, 6.4, 6.6]
     },
     {
         label: "I have the feeling to have clear company goals ahead of me.",
         colorPrimary: "#ec4899", // pink
         colorSecondary: "#f9a8d4",
-        data: [6, 6.2, 6.2, 6.6, 6.6, 6.6, 6.8, 6.8, 6.8]
+        data: [6, 6.2, 6.2, 6.6, 6.6, 6.6, 6.8, 6.8, 6.8, 6.8]
     },
     {
         label: "I know exactly what I do and my work is clearly defined.",
         colorPrimary: "#ef4444", // red
         colorSecondary: "#fca5a5",
-        data: [5.6, 5.8, 5.6, 5.8, 6, 5.8, 6, 6.4, 6.4]
+        data: [5.6, 5.8, 5.6, 5.8, 6, 5.8, 6, 6.4, 6.4, 6.4]
     },
 ]
 
@@ -71,16 +71,16 @@ function getEmployeeSurveyDataset(employeeData) {
 }
 
 export const positions = [
-    {
-        id: 1,
-        title: 'Working student - bricks contributor',
-        type: 'Working student',
-        href: 'https://join.com/companies/kernai/7353178-working-student-natural-language-processing-engineer-project-bricks',
-        location: 'Remote',
-        department: 'Engineering',
-        closeDate: '2023-05-01',
-        closeDateFull: 'May 1, 2023',
-    },
+    // {
+    //     id: 1,
+    //     title: 'Working student - bricks contributor',
+    //     type: 'Working student',
+    //     href: 'https://join.com/companies/kernai/7353178-working-student-natural-language-processing-engineer-project-bricks',
+    //     location: 'Remote',
+    //     department: 'Engineering',
+    //     closeDate: '2023-05-01',
+    //     closeDateFull: 'May 1, 2023',
+    // },
 ]
 
 const timeline = [
@@ -512,7 +512,7 @@ export function Careers() {
                                 options={{
                                     scales: {
                                         y: {
-                                            min: 0,
+                                            min: 1,
                                             max: 7,
                                         }
                                     },
@@ -523,6 +523,9 @@ export function Careers() {
                                     }
                                 }}
                             />
+                        </div>
+                        <div className='font-semibold mt-4 text-sm text-gray-200'>
+                            Values range from <span className='text-red-500'>1 (strongly disagree)</span> to <span className='text-green-500'>7 (strongly agree)</span>.
                         </div>
                         <div className="mt-16 space-y-16">
                             <div className='flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0'>
@@ -624,44 +627,50 @@ export function Careers() {
                     <div className='text-2xl font-semibold'>
                         Open positions
                     </div>
-                    <div className="mt-4 overflow-hidden border border-gray-800 shadow sm:rounded-md">
-                        <ul role="list" className="divide-y divide-gray-800">
-                            {positions.map((position) => (
-                                <li key={position.id}>
-                                    <a href={position.href} className="block hover:bg-neutral-900">
-                                        <div className="px-4 py-4 sm:px-6">
-                                            <div className="flex items-center justify-between">
-                                                <p className="truncate text-sm font-medium text-green-500">{position.title}</p>
-                                                <div className="ml-2 flex flex-shrink-0">
-                                                    <p className="inline-flex rounded-full bg-green-700 px-2 text-xs font-semibold leading-5 text-green-200">
-                                                        {position.type}
-                                                    </p>
+                    {positions.length === 0 ? (
+                        <div className="mt-4 text-sm text-gray-300">
+                            We are currently not hiring. Please check back later.
+                        </div>
+                    ) : (
+                        <div className="mt-4 overflow-hidden border border-gray-800 shadow sm:rounded-md">
+                            <ul role="list" className="divide-y divide-gray-800">
+                                {positions.map((position) => (
+                                    <li key={position.id}>
+                                        <a href={position.href} className="block hover:bg-neutral-900">
+                                            <div className="px-4 py-4 sm:px-6">
+                                                <div className="flex items-center justify-between">
+                                                    <p className="truncate text-sm font-medium text-green-500">{position.title}</p>
+                                                    <div className="ml-2 flex flex-shrink-0">
+                                                        <p className="inline-flex rounded-full bg-green-700 px-2 text-xs font-semibold leading-5 text-green-200">
+                                                            {position.type}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div className="mt-2 sm:flex sm:justify-between">
+                                                    <div className="sm:flex">
+                                                        <p className="flex items-center text-sm text-gray-300">
+                                                            <IconUsers className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300" aria-hidden="true" />
+                                                            {position.department}
+                                                        </p>
+                                                        <p className="mt-2 flex items-center text-sm text-gray-300 sm:mt-0 sm:ml-6">
+                                                            <IconMapPin className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300" aria-hidden="true" />
+                                                            {position.location}
+                                                        </p>
+                                                    </div>
+                                                    <div className="mt-2 flex items-center text-sm text-gray-300 sm:mt-0">
+                                                        <CalendarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300" aria-hidden="true" />
+                                                        <p>
+                                                            Closing on <time dateTime={position.closeDate}>{position.closeDateFull}</time>
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="mt-2 sm:flex sm:justify-between">
-                                                <div className="sm:flex">
-                                                    <p className="flex items-center text-sm text-gray-300">
-                                                        <IconUsers className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300" aria-hidden="true" />
-                                                        {position.department}
-                                                    </p>
-                                                    <p className="mt-2 flex items-center text-sm text-gray-300 sm:mt-0 sm:ml-6">
-                                                        <IconMapPin className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300" aria-hidden="true" />
-                                                        {position.location}
-                                                    </p>
-                                                </div>
-                                                <div className="mt-2 flex items-center text-sm text-gray-300 sm:mt-0">
-                                                    <CalendarIcon className="mr-1.5 h-5 w-5 flex-shrink-0 text-gray-300" aria-hidden="true" />
-                                                    <p>
-                                                        Closing on <time dateTime={position.closeDate}>{position.closeDateFull}</time>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

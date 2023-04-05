@@ -242,20 +242,22 @@ export function Team() {
                             </div>
                             <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
                                 <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
-                                    11
+                                    12
                                 </div>
                                 <div className="w-fit text-sm my-auto text-gray-300">
                                     People are working at Kern AI. We are a small team, but we know how to work together efficiently, how to communicate, and how to get things done.
                                 </div>
                             </div>
-                            <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
-                                <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
-                                    {positions.length}
+                            {positions.length > 0 && (
+                                <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+                                    <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
+                                        {positions.length}
+                                    </div>
+                                    <div className="w-fit text-sm my-auto text-gray-300">
+                                        Open positions are currently available at Kern AI. We are always looking for new team members, so if you are interested, please check out our <Link href="/company/careers"><span className="text-lime-300">careers page</span></Link>.
+                                    </div>
                                 </div>
-                                <div className="w-fit text-sm my-auto text-gray-300">
-                                    Open positions are currently available at Kern AI. We are always looking for new team members, so if you are interested, please check out our <Link href="/company/careers"><span className="text-lime-300">careers page</span></Link>.
-                                </div>
-                            </div>
+                            )}
                             <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
                                 <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
                                     {(gitHubStarsRefinery + gitHubStarsBricks).toLocaleString()}
