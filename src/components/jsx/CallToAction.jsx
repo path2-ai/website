@@ -28,7 +28,7 @@ export function CallToAction() {
                         onClick={() => setOpenCalModal(true)}
                     >
                         <span className='my-auto text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600'>
-                            Request a demo
+                            Contact the founders
                         </span>
                     </button>
                 </div>

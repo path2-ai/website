@@ -64,6 +64,22 @@ export function CookieBanner() {
                                                         Accept
                                                     </span>
                                                 </button>
+                                                <button
+                                                    type="button"
+                                                    className="ml-3 hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-4 py-2 text-base font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20"
+                                                    onClick={() => {
+                                                        localStorage.setItem('kern-cookie', JSON.stringify({
+                                                            // cookieCutter.set('kern-cookie', JSON.stringify({
+                                                            strictlyNecessary: true,
+                                                            analytics: false,
+                                                        }))
+                                                        setShow(false)
+                                                    }}
+                                                >
+                                                    <span className='my-auto text-transparent bg-clip-text bg-gradient-to-r from-orange-300 to-red-600'>
+                                                        Decline
+                                                    </span>
+                                                </button>
                                             </div>
                                             <div className="ml-3 inline-flex">
                                                 <button
