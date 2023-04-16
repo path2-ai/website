@@ -36,7 +36,6 @@ const navigation = [
             { name: 'Platform architecture', href: '/platform/architecture', icon: IconStack3, description: 'See how the platform of Kern AI works under the hood' },
             { name: 'How it works', href: '/platform/how-it-works', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
             { name: 'Labeling services', href: '/platform/labeling-services', icon: IconTags, description: 'Let us handle your labeling needs' },
-            { name: 'One API for everything', href: '/platform/api-proxy', icon: IconApi, description: 'Access dozens of NLP APIs via just one access token' },
             { name: 'Changelog', icon: IconInfoCircle, href: 'https://changelog.kern.ai', description: 'See what we have been up to' },
         ]
     },

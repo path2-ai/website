@@ -36,7 +36,6 @@ export function Footer({ isDarkTheme }) {
             { name: 'Architecture', onClick: () => { router.push('/platform/architecture') } },
             { name: 'How it works', onClick: () => { router.push('/platform/how-it-works') } },
             { name: 'Labeling services', onClick: () => { router.push('/platform/labeling-services') } },
-            { name: 'One API for everything', onClick: () => { router.push('/platform/api-proxy') } },
         ],
         docs: [
             { name: 'Changelog', onClick: () => { router.push('https://changelog.kern.ai') } },
