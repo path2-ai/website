@@ -58,6 +58,7 @@ export function Footer({ isDarkTheme }) {
             { name: 'Terms of service', onClick: () => { router.push('/terms') } },
             { name: 'Security', onClick: () => { router.push('/security') } },
             { name: 'Cookie settings', onClick: () => { setOpen(true) } },
+            { name: 'Public funding', onClick: () => { router.push('/public-funding') } },
         ],
         social: [
             {
