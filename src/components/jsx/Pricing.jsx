@@ -108,38 +108,6 @@ const perksCloud = [
         ],
     },
     {
-        title: 'Incl. refinery credits/month',
-        tiers: [
-            { title: 'personal', value: '100' },
-            { title: 'growth', featured: true, value: '3,000' },
-            { title: 'enterprise', value: 'Custom' },
-        ],
-    },
-    {
-        title: 'Price 100 added refinery credits (one-time)',
-        tiers: [
-            { title: 'personal', value: '14.99€' },
-            { title: 'growth', featured: true, value: '9.99€' },
-            { title: 'enterprise', value: 'Custom' },
-        ],
-    },
-    {
-        title: 'gates predictions/credit',
-        tiers: [
-            { title: 'personal', value: '1' },
-            { title: 'growth', featured: true, value: '1' },
-            { title: 'enterprise', value: '1' },
-        ],
-    },
-    {
-        title: 'refinery processings/credit',
-        tiers: [
-            { title: 'personal', value: '100' },
-            { title: 'growth', featured: true, value: '100' },
-            { title: 'enterprise', value: '100' },
-        ],
-    },
-    {
         title: 'Managed labeling service',
         tiers: [
             { title: 'personal', value: false },
@@ -233,7 +201,6 @@ function classNames(...classes) {
 export function Pricing() {
 
     const router = useRouter()
-    const [openPricingModal, setOpenPricingModal] = useState(false)
     const [openCalModal, setOpenCalModal] = useState(false)
     const [openDiscoveryModal, setOpenDiscoveryModal] = useState(false)
     const [openAccessModal, setOpenAccessModal] = useState(false)
@@ -248,7 +215,7 @@ export function Pricing() {
                 { id: 1, value: 'Access to full suite' },
                 { id: 2, value: 'Unlimited items' },
                 { id: 3, value: '1 user' },
-                { id: 4, value: '100 incl. refinery credits/month*' },
+                { id: 4, value: 'Few transactions per month*' },
                 { id: 5, value: 'Community support' },
             ],
             buttons: [
@@ -269,7 +236,7 @@ export function Pricing() {
                 { id: 1, value: 'Access to full suite' },
                 { id: 2, value: 'Unlimited items' },
                 { id: 3, value: 'Unlimited users' },
-                { id: 4, value: '3,000 incl. refinery credits/month*' },
+                { id: 4, value: 'Small transactions package*' },
                 { id: 5, value: 'Priority support' },
             ],
             buttons: [
@@ -295,7 +262,7 @@ export function Pricing() {
             mainFeatures: [
                 { id: 1, value: 'All Growth features' },
                 { id: 2, value: 'Custom integrations' },
-                { id: 3, value: 'Custom refinery credits/month*' },
+                { id: 3, value: 'Custom transactions package*' },
                 { id: 4, value: 'Dedicated support' },
             ],
             buttons: [
@@ -503,13 +470,7 @@ export function Pricing() {
                 {cloudIsSelected && (
                     <div className='text-sm mx-auto max-w-2xl lg:max-w-5xl '>
                         <div className='md:mt-4 text-gray-300'>
-                            refinery credits are used as an abstraction to power both execution and storage in the Kern AI cloud. Credits are consumed for realtime inference, batch inference and storage. Depending on your plan, you get a certain amount of credits every month, and you can buy more credits at any time.
-                        </div>
-                        <div
-                            className='mt-2 text-green-500 cursor-pointer'
-                            onClick={() => setOpenPricingModal(true)}
-                        >
-                            Why did we choose credits to implement our pricing model?
+                            Transactions are used as an abstraction to power both execution and storage in the Kern AI cloud. Transcations are consumed for realtime inference, batch inference and storage. Depending on your plan, you get a certain amount of transactions every month. As records can be anything ranging from a small text up to a 70-pages contract, we currently discuss the pricing with you individually.
                         </div>
                     </div>
                 )}
@@ -930,7 +891,6 @@ export function Pricing() {
                     </div>
                 </div>
             </section>
-            <PricingModal open={openPricingModal} setOpen={setOpenPricingModal} />
             <CalModal open={openCalModal} setOpen={setOpenCalModal} />
             <DiscoveryModal open={openDiscoveryModal} setOpen={setOpenDiscoveryModal} />
             <AccessModal open={openAccessModal} setOpen={setOpenAccessModal} />
