@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { LogoCloud } from './LogoCloud'
 import { StrategicNLPBanner } from './StrategicNLPBanner'
 import { AccessModal } from './AccessModal'
+import { IconPlayerPlay } from '@tabler/icons'
 
 export function Hero() {
 
@@ -36,17 +37,6 @@ export function Hero() {
                 <div className="relative px-6 lg:px-8">
                     <div className="mx-auto max-w-5xl py-16 sm:py-20">
                         <div>
-                            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                                <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-100/10 hover:ring-gray-100/20">
-                                    <span className="text-gray-300">
-                                        Announcing our 2.7m€ seed funding.{' '}
-                                        <a href="https://blog.kern.ai/our-seed" className="font-semibold text-green-400" target="_blank" rel="noreferrer noopener">
-                                            <span className="absolute inset-0" aria-hidden="true" />
-                                            Read more <span aria-hidden="true">&rarr;</span>
-                                        </a>
-                                    </span>
-                                </div>
-                            </div>
                             <div>
                                 <h1 className="text-white text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">
                                     <div>Embed text, speech, and document AI</div>
@@ -60,11 +50,47 @@ export function Hero() {
                                 </p>
                                 <LogoCloud />
                             </div>
+                            <div className='flex flex-col space-y-10 pt-10'>
+                                <div className="hidden sm:mt-8 sm:flex sm:justify-center">
+                                    <div className="relative overflow-hidden rounded-full py-1.5 px-4 text-sm leading-6 ring-1 ring-gray-100/10 hover:ring-gray-100/20">
+                                        <span className="text-gray-300">
+                                            GPT, GPT, GPT - everyone is talking about it. Learn more about its use cases in our booklet. {' '}
+                                            <a href="https://hitchhiker.kern.ai/" className="font-semibold text-green-400" target="_blank" rel="noreferrer noopener">
+                                                <span className="absolute inset-0" aria-hidden="true" />
+                                                Read more <span aria-hidden="true">&rarr;</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div className='hidden md:block'>
+                                    <div className='bg-gradient-to-b from-purple-700 via-purple-400 to-purple-700 rounded-lg 
+                                        transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
+                                        shadow-[0_0px_100px_10px_rgba(202,73,223,0.5)]
+                                    '>
+                                        <img
+                                            src="/hero-hitchhiker.png"
+                                            alt="Hitchhiker's Guide to ChatGPT"
+                                            className="rounded-lg p-0.5"
+                                        />
+                                        <a
+                                            className='flex justify-center items-center absolute top-[34%] left-[40%] md:top-[47%] md:left-[47%] h-16 w-16 bg-black rounded-full hover:scale-110 transition-transform duration-300'
+                                            href='https://www.youtube.com/watch?v=KCMbwFq6eTM'
+                                            target='_blank'
+                                            rel='noreferrer'
+                                        >
+                                            <IconPlayerPlay className='h-5 w-5 text-stone-100' fill='white' />
+                                        </a>
+                                    </div>
+                                    <p className="mt-4 text-sm text-gray-300 text-center">
+                                        Learn more about our new booklet on ChatGPT, which guides you through use cases and best practices.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </main>
-            <StrategicNLPBanner />
+            {/* <StrategicNLPBanner /> */}
             <AccessModal open={openAccessModal} setOpen={setOpenAccessModal} />
         </div>
     )

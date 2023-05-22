@@ -1,7 +1,7 @@
 export function Terms() {
     return (
         <div className="relative overflow-hidden text-gray-100 py-16">
-            <div className="relative px-4 sm:px-6 lg:px-8">
+            {/* <div className="relative px-4 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-prose text-lg">
                     <h1>
                         <span className="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-white sm:text-4xl">
@@ -258,7 +258,7 @@ export function Terms() {
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div >
     )
 }

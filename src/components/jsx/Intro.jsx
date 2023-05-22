@@ -10,7 +10,7 @@ export function Intro() {
                         <h3
                             className='text-3xl md:text-4xl font-bold text-white md:text-center'
                         >
-                            What does that mean?
+                            What does text AI mean?
                         </h3>
                         <p className='text-sm md:text-base text-gray-400 md:text-center mt-4 md:mt-10'>
                             Think of <span className="text-white font-semibold">any use case in your company that requires some form of communication</span> (e.g. via emails).

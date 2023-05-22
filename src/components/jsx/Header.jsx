@@ -29,7 +29,7 @@ const navigation = [
 
     //     ]
     // },
-    { name: 'Implications of GPT ', href: '/strategic-nlp' },
+    { name: 'ChatGPT Hitchhiker', href: 'https://hitchhiker.kern.ai/' },
     {
         name: 'Developers', subnav: [
             { name: 'Data-centric NLP', href: '/platform', icon: IconTools, description: 'Get an overview of the platform' },
