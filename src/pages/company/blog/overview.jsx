@@ -4,7 +4,7 @@ export const articles = [
     {
         "title": "How GPT will change our future",
         "description": "We take a look on how GPT models work, why they work and what they can do.",
-        "slug": "how-gpt-will-change-our-future",
+        "slug": "how-gpt-will-shape-our-future",
         "teaser": "Everybody is talking about AI at the moment, especially about ChatGPT and GPT-4. We must admit, we feel a little bit guilty about writing yet another article about this topic. But we feel that it’s just too important at the moment not to do so.",
         "category": "Knowledge",
         "thumbnail": "/blog/futuristic-world.png",
