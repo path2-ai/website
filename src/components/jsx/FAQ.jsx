@@ -35,18 +35,13 @@ const faqs = [
     {
         question: "Where is my data stored?",
         answer:
-            "Your data is stored in the cloud on DigitalOcean servers in Frankfurt, Germany. We use the latest security standards to protect your data."
+            "Our application server and managed databases are located in Frankfurt, Germany. The data centers of the provider we use maintain state-of-the-art physical security, including around-the-clock surveillance, environmental protection, and comprehensive secure access policies, and are ISO 27001 certified. For more information, please look into our security page."
     },
     {
         question: "How can I cancel my subscription?",
         answer:
             "You can cancel your subscription at any time, but our billing is based on a yearly cycle. If you cancel your subscription, you will still be able to use your credits until the end of the year."
     },
-    {
-        question: "How do the products work together?",
-        answer:
-            "Our products can be stacked together. Take a look into our product architecture to see how the stack is designed."
-    }
 ]
 
 function classNames(...classes) {

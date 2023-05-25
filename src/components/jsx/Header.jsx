@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import { IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChevronRight, IconDatabase, IconMessage, IconPerspective, IconRoute, IconUsers, IconWorldWww } from '@tabler/icons'
+import { IconApi, IconArticle, IconBrandGithub, IconBriefcase, IconBuildingCastle, IconChessKnight, IconChevronRight, IconDatabase, IconInfoCircle, IconMessage, IconPerspective, IconRoute, IconStack3, IconTags, IconTools, IconUser, IconUsers, IconWorldWww } from '@tabler/icons'
 import Link from 'next/link'
 import { KERN_ASSETS_URL } from './_settings'
 import { Menu } from '@headlessui/react'
@@ -20,26 +20,36 @@ const navigation = [
     //         { name: 'CSM assistant', href: 'https://csm-assistant.kern.ai', icon: IconQuote, description: 'Add a digital, intelligent assistant to your customer success team' },
     //     ]
     // },
-    {
-        name: 'Use cases', subnav: [
-            { name: 'Building training data', href: '/#training-data', icon: IconDatabase, description: 'Pipeline and automate your training data' },
-            { name: 'Email automation', href: '/#email-channels', icon: IconMessage, description: 'Automate email-channels from analysis to automation' },
-            { name: 'Webscraping NLP', href: '/#webscraping', icon: IconWorldWww, description: 'Make complex webscraping a breeze' },
-            { name: 'Extract, transform, load', href: '/#etl', icon: IconPerspective, description: 'Build pipelines that understand natural language' },
+    // {
+    //     name: 'Use cases', subnav: [
+    //         { name: 'Building training data', href: '/#training-data', icon: IconDatabase, description: 'Pipeline and automate your training data' },
+    //         { name: 'Email automation', href: '/#email-channels', icon: IconMessage, description: 'Automate email-channels from analysis to automation' },
+    //         { name: 'Webscraping NLP', href: '/#webscraping', icon: IconWorldWww, description: 'Make complex webscraping a breeze' },
+    //         { name: 'Extract, transform, load', href: '/#etl', icon: IconPerspective, description: 'Build pipelines that understand natural language' },
 
+    //     ]
+    // },
+    { name: 'Implications of GPT ', href: '/strategic-nlp' },
+    {
+        name: 'Developers', subnav: [
+            { name: 'Data-centric NLP', href: '/platform', icon: IconTools, description: 'Get an overview of the platform' },
+            { name: 'Platform architecture', href: '/platform/architecture', icon: IconStack3, description: 'See how the platform of Kern AI works under the hood' },
+            { name: 'How it works', href: '/platform/how-it-works', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
+            { name: 'Labeling services', href: '/platform/labeling-services', icon: IconTags, description: 'Let us handle your labeling needs' },
+            { name: 'One API for everything', href: '/platform/api-proxy', icon: IconApi, description: 'Access dozens of NLP APIs via just one access token' },
+            { name: 'Changelog', icon: IconInfoCircle, href: 'https://changelog.kern.ai', description: 'See what we have been up to' },
         ]
     },
+
     {
         name: 'Docs', subnav: [
-            { name: 'Platform architecture', href: '/docs/architecture', icon: IconBuildingCastle, description: 'See how the platform of Kern AI works under the hood' },
-            { name: 'How it works', href: '/docs/how-it-works', icon: IconRoute, description: 'How does a step-by-step implementation look like?' },
             { name: 'refinery', href: 'https://docs.kern.ai/refinery', icon: null, description: 'The data-centric editor to build data and algorithms' },
             { name: 'bricks', href: 'https://docs.kern.ai/bricks', icon: null, description: 'Our collection of modular and off-the-shelf NLP enrichments' },
             { name: 'gates', href: 'https://docs.kern.ai/gates', icon: null, description: 'Turn refinery into a realtime API' },
             { name: 'workflow', href: 'https://docs.kern.ai/workflow', icon: null, description: 'Automate any natural language-driven process' },
         ]
     },
-    { name: 'Changelog', href: 'https://changelog.kern.ai' },
+    // { name: 'Use Case Gallery', href: '/integrations' },
     { name: 'Integrations', href: '/integrations' },
     { name: 'Pricing', href: '/pricing' },
     // {
@@ -57,6 +67,7 @@ const navigation = [
             { name: 'About', href: '/company/about', icon: IconUsers, description: 'Get to know the team behind Kern AI' },
             { name: 'Careers', href: '/company/careers', icon: IconBriefcase, description: 'Interested in joining the team? Take a look at our open positions' },
             { name: 'Blog', href: '/company/blog', icon: IconArticle, description: 'Updates and interesting articles curated by our team' },
+            { name: 'Lean NLP Canvas', href: '/company/lean-nlp-canvas', icon: IconChessKnight, description: 'Plan your NLP use case with our lean canvas' },
         ]
     },
 ]
@@ -65,7 +76,7 @@ function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
 }
 
-export function Header() {
+export function Header({ isDarkTheme }) {
 
     const router = useRouter()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -81,17 +92,43 @@ export function Header() {
                         <div className="mt-2" aria-label="Global">
                             <button
                                 type='button'
-                                className="m-1.5 p-1.5 cursor-pointer">
+                                className="-mt-1.5 p-1.5 cursor-pointer">
                                 <span className="sr-only">Kern AI</span>
-                                <img
-                                    className="h-8"
-                                    src={`${KERN_ASSETS_URL}/logos/KernAI-primary-gray-100.svg`}
-                                    alt=""
-                                    onClick={
-                                        () => {
-                                            router.push('/')
-                                        }
-                                    } />
+                                <span className='hidden xl:block'>
+                                    {isDarkTheme ? (
+                                        <img
+                                            className="h-8"
+                                            src="/KernAI-primary-gray-100.svg"
+                                            alt=""
+                                            onClick={
+                                                () => {
+                                                    router.push('/')
+                                                }
+                                            } />
+                                    ) : (
+                                        <img
+                                            className="h-8"
+                                            src="/KernAI-primary-gray-900.svg"
+                                            alt=""
+                                            onClick={
+                                                () => {
+                                                    router.push('/')
+                                                }
+                                            } />
+                                    )}
+                                </span>
+                                <span className='block xl:hidden'>
+                                    <img
+                                        className="h-8"
+                                        src="/KernAI-icon.svg"
+                                        alt=""
+                                        onClick={
+                                            () => {
+                                                router.push('/')
+                                            }
+                                        } />
+                                </span>
+
                             </button>
                         </div>
 
@@ -105,10 +142,17 @@ export function Header() {
                                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                             </button>
                         </div>
-                        <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-8">
+                        <div className="-mt-1.5 hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-center lg:gap-x-8">
                             {navigation.map((item) => (
                                 item.href ? (
-                                    <Link key={item.name} href={item.href} className="h-8 pt-2 font-semibold text-gray-300 hover:text-lime-400">
+                                    <Link key={item.name} href={item.href} className={classNames(
+                                        isDarkTheme ? (
+                                            "text-gray-300 hover:text-lime-400"
+                                        ) : (
+                                            "text-gray-700 hover:text-lime-700"
+                                        ),
+                                        "h-8 pt-2 font-semibold"
+                                    )}>
                                         {item.name}
                                     </Link>
                                 ) : (
@@ -117,13 +161,36 @@ export function Header() {
                                             <>
                                                 <Popover.Button
                                                     className={classNames(
-                                                        open ? 'text-lime-300' : 'text-gray-300',
-                                                        'h-8 pt-2 group inline-flex items-center rounded-md text-base font-semibold hover:text-lime-400 focus:outline-none'
+                                                        isDarkTheme ? (
+                                                            open ? 'text-lime-300' : 'text-gray-300'
+                                                        ) : (
+                                                            open ? 'text-green-700' : 'text-gray-700'
+                                                        ),
+                                                        isDarkTheme ? (
+                                                            'hover:text-lime-400'
+                                                        ) : (
+                                                            'hover:text-green-800'
+                                                        ),
+                                                        'h-8 pt-2 group inline-flex items-center rounded-md text-base font-semibold focus:outline-none'
                                                     )}
                                                 >
                                                     <span>{item.name}</span>
                                                     <ChevronDownIcon
-                                                        className={classNames(open ? 'text-lime-300' : 'text-gray-300', 'ml-2 h-4 w-4 group-hover:text-lime-400')}
+                                                        className={
+                                                            classNames(
+                                                                isDarkTheme ? (
+                                                                    open ? 'text-lime-300' : 'text-gray-300'
+                                                                ) : (
+                                                                    open ? 'text-green-700' : 'text-gray-700'
+                                                                ),
+                                                                isDarkTheme ? (
+                                                                    'group-hover:text-lime-400'
+                                                                ) : (
+                                                                    'group-hover:text-green-800'
+                                                                ),
+                                                                'ml-2 h-4 w-4'
+                                                            )
+                                                        }
                                                         aria-hidden="true"
                                                     />
                                                 </Popover.Button>
@@ -137,24 +204,81 @@ export function Header() {
                                                     leaveFrom="opacity-100 translate-y-0"
                                                     leaveTo="opacity-0 translate-y-1"
                                                 >
-                                                    <Popover.Panel className="absolute left-1/2 z-10 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
-                                                        <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                                                            <div className="relative grid gap-6 bg-neutral-900 px-5 py-6 sm:gap-8 sm:p-8 border border-gray-800">
+                                                    <Popover.Panel className="absolute left-1/2 z-40 mt-3 w-screen max-w-md -translate-x-1/2 transform px-2 sm:px-0">
+                                                        <div className={
+                                                            classNames(
+                                                                isDarkTheme ? (
+                                                                    "ring-black"
+                                                                ) : (
+                                                                    "ring-white"
+                                                                ),
+                                                                "overflow-hidden rounded-lg shadow-lg ring-1 ring-opacity-5"
+                                                            )
+                                                        }>
+                                                            <div className={
+                                                                classNames(
+                                                                    isDarkTheme ? (
+                                                                        "bg-neutral-900 border border-gray-800"
+                                                                    ) : (
+                                                                        "bg-white border border-gray-200"
+                                                                    ),
+                                                                    "relative grid gap-6 px-5 py-6 sm:gap-8 sm:p-8"
+                                                                )
+                                                            }>
                                                                 {item.subnav.map((subItem) => (
                                                                     <Link
                                                                         key={subItem.name}
                                                                         href={subItem.href}
-                                                                        className="-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out hover:bg-neutral-800"
+                                                                        className={
+                                                                            classNames(
+                                                                                isDarkTheme ? (
+                                                                                    "hover:bg-neutral-800"
+                                                                                ) : (
+                                                                                    "hover:bg-neutral-50"
+                                                                                ),
+                                                                                "-m-3 flex items-start rounded-lg p-3 transition duration-150 ease-in-out")
+                                                                        }
                                                                     >
                                                                         {subItem.icon ? (
-                                                                            <subItem.icon className="h-6 w-6 flex-shrink-0 text-lime-400" aria-hidden="true" />
+                                                                            <subItem.icon className={classNames(
+                                                                                isDarkTheme ? (
+                                                                                    "text-lime-400"
+                                                                                ) : (
+                                                                                    "text-green-700"
+                                                                                ),
+                                                                                "h-6 w-6 flex-shrink-0"
+                                                                            )} aria-hidden="true" />
                                                                         ) : (
-                                                                            <img src={`/${subItem.name}-icon.png`} className="h-6 w-6 flex-shrink-0 text-lime-400" />
+                                                                            <img src={`/${subItem.name}-icon.png`} className={classNames(
+                                                                                isDarkTheme ? (
+                                                                                    "text-lime-400"
+                                                                                ) : (
+                                                                                    "text-green-700"
+                                                                                ),
+                                                                                "h-6 w-6 flex-shrink-0"
+                                                                            )} />
                                                                         )}
 
                                                                         <div className="ml-4">
-                                                                            <p className="text-base font-medium text-gray-100">{subItem.name}</p>
-                                                                            <p className="mt-1 text-sm text-gray-300">{subItem.description}</p>
+                                                                            <p className={
+                                                                                classNames(
+                                                                                    isDarkTheme ? (
+                                                                                        "text-gray-100"
+                                                                                    ) : (
+                                                                                        "text-gray-900"
+                                                                                    ),
+                                                                                    "text-base font-medium"
+                                                                                )
+                                                                            }>{subItem.name}</p>
+                                                                            <p className={classNames(
+                                                                                isDarkTheme ? (
+                                                                                    "text-gray-300"
+                                                                                ) : (
+                                                                                    "text-gray-700"
+                                                                                ),
+                                                                                "mt-1 text-sm"
+                                                                            )
+                                                                            }>{subItem.description}</p>
                                                                         </div>
                                                                     </Link>
                                                                 ))}
@@ -173,7 +297,15 @@ export function Header() {
                             <Menu as="div" className="relative inline-block text-left">
                                 <div>
                                     <Menu.Button
-                                        className="inline-flex hover:bg-neutral-800 bg-neutral-900 inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20 text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600"
+                                        className={classNames(
+                                            isDarkTheme ? (
+                                                "hover:bg-neutral-800 bg-neutral-900 ring-white/10 group-hover:ring-white/20 text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600"
+                                            ) : (
+                                                "hover:bg-neutral-50 bg-white ring-black/10 group-hover:ring-black/20 text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-green-500"
+                                            ),
+                                            "inline-flex inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 shadow-sm ring-1 ring-inset"
+                                        )
+                                        }
                                     >
                                         Actions
                                     </Menu.Button>
@@ -188,7 +320,14 @@ export function Header() {
                                     leaveFrom="transform opacity-100 scale-100"
                                     leaveTo="transform opacity-0 scale-95"
                                 >
-                                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-neutral-900 shadow-lg ring-1 ring-gray-800 ring-opacity-5 focus:outline-none">
+                                    <Menu.Items className={classNames(
+                                        isDarkTheme ? (
+                                            "bg-neutral-900 ring-gray-800"
+                                        ) : (
+                                            "bg-white ring-gray-200"
+                                        ),
+                                        "absolute right-0 z-40 mt-2 w-56 origin-top-right rounded-md shadow-lg ring-1 ring-opacity-5 focus:outline-none"
+                                    )}>
                                         <div className="py-1">
                                             <Menu.Item>
                                                 {({ active }) => (
@@ -197,7 +336,11 @@ export function Header() {
                                                             setOpenAccessModal(true)
                                                         }}
                                                         className={classNames(
-                                                            active ? 'text-gray-100' : 'text-gray-400',
+                                                            isDarkTheme ? (
+                                                                active ? 'text-gray-100' : 'text-gray-400'
+                                                            ) : (
+                                                                active ? 'text-gray-900' : 'text-gray-700'
+                                                            ),
                                                             'block px-4 py-2 text-sm cursor-pointer'
                                                         )}
                                                     >
@@ -213,11 +356,15 @@ export function Header() {
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         className={classNames(
-                                                            active ? 'text-gray-100' : 'text-gray-400',
+                                                            isDarkTheme ? (
+                                                                active ? 'text-gray-100' : 'text-gray-400'
+                                                            ) : (
+                                                                active ? 'text-gray-900' : 'text-gray-700'
+                                                            ),
                                                             'block px-4 py-2 text-sm'
                                                         )}
                                                     >
-                                                        Try refinery online
+                                                        Try Kern AI online
                                                     </a>
                                                 )}
                                             </Menu.Item>
@@ -229,7 +376,11 @@ export function Header() {
                                                         target="_blank"
                                                         rel="noopener noreferrer"
                                                         className={classNames(
-                                                            active ? 'text-gray-100' : 'text-gray-400',
+                                                            isDarkTheme ? (
+                                                                active ? 'text-gray-100' : 'text-gray-400'
+                                                            ) : (
+                                                                active ? 'text-gray-900' : 'text-gray-700'
+                                                            ),
                                                             'block px-4 py-2 text-sm'
                                                         )}
                                                     >
@@ -243,7 +394,14 @@ export function Header() {
                             </Menu>
 
                             <a
-                                className='flex items-center px-2.5 shadow-sm ring-1 ring-inset ring-white/10 group-hover:ring-white/20 rounded-lg cursor-pointer'
+                                className={classNames(
+                                    isDarkTheme ? (
+                                        'ring-white/10 group-hover:ring-white/20'
+                                    ) : (
+                                        'ring-black/10 group-hover:ring-black/20'
+                                    ),
+                                    'flex items-center px-2.5 shadow-sm ring-1 ring-inset rounded-lg cursor-pointer'
+                                )}
                                 href='https://github.com/code-kern-ai'
                                 target='_blank'
                                 rel='noreferrer noopener'
@@ -267,7 +425,7 @@ export function Header() {
 
                 {/* mobile menu */}
                 <Dialog as="div" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-                    <Dialog.Panel focus="true" className="fixed inset-0 z-10 overflow-y-auto bg-black px-6 py-6 lg:hidden">
+                    <Dialog.Panel focus="true" className="fixed inset-0 z-40 overflow-y-auto bg-black px-6 py-6 lg:hidden">
                         <div className="flex h-9 items-center justify-between">
                             <div className="flex">
                                 <a
@@ -302,7 +460,7 @@ export function Header() {
                                 <div className="m-4 py-4 grid grid-cols-2 gap-8">
                                     {navigation.map((item) => (
                                         !item.href && (
-                                            <div>
+                                            <div key={item.name}>
                                                 <div
                                                     key={item.name}
                                                     className="font-semibold text-gray-100 hover:bg-gray-600/10"
@@ -376,7 +534,14 @@ export function Header() {
             </div>
 
             {!mobileMenuOpen && (
-                <div className="mt-3 h-px bg-gradient-to-r from-gray-800 via-lime-600 to-gray-800" />
+                <div className={classNames(
+                    isDarkTheme ? (
+                        "from-gray-800 via-lime-600 to-gray-800"
+                    ) : (
+                        "from-gray-100 via-green-600 to-gray-100"
+                    ),
+                    "mt-3 h-px bg-gradient-to-r"
+                )} />
             )}
             <AccessModal open={openAccessModal} setOpen={setOpenAccessModal} />
         </div>

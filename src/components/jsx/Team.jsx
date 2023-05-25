@@ -37,16 +37,13 @@ export function Team() {
                         <p className="mt-2 text-sm leading-5 text-gray-300">
                             As large language models are becoming more and more powerful, we further believe that the next step is to make them more data-centric. This gives developers and scientists the superpower to control and shape the models to their needs. And for this to happen, data must finally be the first-class citizen in the world of NLP.
                         </p>
-                        <p className="mt-2 text-sm leading-5 text-gray-300">
-                            We will not stop until training data is treated as if it were software code, such that ideas can be turned into reality in a matter of hours.
-                        </p>
                         <div className="mt-10">
                             <div
                                 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-lime-300 to-green-600"
                             >Our mission
                             </div> {' '}
                             <div className="text-gray-300 -sm mt-2">
-                                Shorten the gap between ideas and reality in NLP, ultimately enabling reliable, controllable and powerful natural language interfaces.
+                                Help you succeed in one of the most fascinating technology innovations of our time.
                             </div>
                         </div>
                     </div>
@@ -86,6 +83,9 @@ export function Team() {
                         <h2 className="text-2xl font-bold tracking-tight text-gray-100">
                             Our founders
                         </h2>
+                        <h3 className="text-lg font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-amber-600">
+                            are here to help you succeed with NLP
+                        </h3>
                         <p className="mt-2 text-sm leading-5 text-gray-300">
                             Henrik and Johannes started Kern AI during their master's degree at <a
                                 href="https://hpi.de/"
@@ -113,6 +113,14 @@ export function Team() {
                             <p className='text-gray-300 text-xs'>
                                 Co-founder & CEO
                             </p>
+                            <a
+                                href="https://cal.com/jhoetter"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm text-green-500 hover:text-green-600"
+                            >
+                                Book a call with Johannes
+                            </a>
                         </div>
                         <div>
                             <img
@@ -234,20 +242,22 @@ export function Team() {
                             </div>
                             <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
                                 <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
-                                    11
+                                    12
                                 </div>
                                 <div className="w-fit text-sm my-auto text-gray-300">
                                     People are working at Kern AI. We are a small team, but we know how to work together efficiently, how to communicate, and how to get things done.
                                 </div>
                             </div>
-                            <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
-                                <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
-                                    {positions.length}
+                            {positions.length > 0 && (
+                                <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+                                    <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
+                                        {positions.length}
+                                    </div>
+                                    <div className="w-fit text-sm my-auto text-gray-300">
+                                        Open positions are currently available at Kern AI. We are always looking for new team members, so if you are interested, please check out our <Link href="/company/careers"><span className="text-lime-300">careers page</span></Link>.
+                                    </div>
                                 </div>
-                                <div className="w-fit text-sm my-auto text-gray-300">
-                                    Open positions are currently available at Kern AI. We are always looking for new team members, so if you are interested, please check out our <Link href="/company/careers"><span className="text-lime-300">careers page</span></Link>.
-                                </div>
-                            </div>
+                            )}
                             <div className="flex flex-col md:items-center md:flex-row md:space-x-8 space-y-4 md:space-y-0">
                                 <div className="flex justify-center items-center h-28 w-32 text-3xl font-semibold text-white rounded-xl bg-neutral-900 border border-gray-700">
                                     {(gitHubStarsRefinery + gitHubStarsBricks).toLocaleString()}

@@ -64,10 +64,9 @@ export function Terms() {
                             <p>4.1.1 Unless agreed otherwise and depending on the subscription plan chosen by Licensee, Licensor will provide the services set out in these Terms and in Annex 1.</p>
                             <p>4.1.2 Licensor shall make the SaaS Edition available to the Licensee via the Internet as software as a service during the term of the subscription contract.</p>
                             <p>4.1.3 The Licensor’s responsibility for the performance of the services ends at the WAN port of the router in the Licensor's data center (Ort der Leistungsübergabe). It is the Licensee’s sole duty to ensure that he can receive the Licensor’s service.</p>
-                            <p>4.1.4 The average availability of the SaaS Edition for Licensees is 98% on an annual average. This does not include any necessary planned maintenance work and disruptions that are beyond the Licensor's control. Such disruptions include all events of force majeure. If possible, the Licensor shall inform the Licensee in text form (email being sufficient) about planned maintenance work at least 48 hours before it shall begin. However, the Licensor reserves the right to carry out unannounced maintenance work in case this is necessary, in particular, if this is required for data and operational security.</p>
-                            <p>4.1.5 The Licensor is entitled, but under no obligation, to extend and further develop new features and functionalities of the SaaS Edition. The Licensor reserves the right to offer Licensee such new features and improvements against payment of an additional fee only. In the event of Licensee being provided with new features and improvements for a fee by means of a corresponding contractual agreement in addition to an existing contract, the provisions of such contract shall apply accordingly. In the event of Licensee being provided with new features and improvements free of charge, these new features and further improvements shall be deemed to be a voluntary service of the Licensor.</p>
-                            <p>4.1.6 The Licensor may change the functional scope of the services at any time to an extent that is reasonable for the Licensee. Such change shall be deemed reasonable, in particular, if the services the parties expressly agreed on and the Licensor's main contractual performance obligations (Hauptleistungspflichten) remain substantially unchanged and if that change is necessary for an important reason. Such reasons are, without limitation, disruptions in the provision of services by subcontractors and safety reasons. If the changes do not exclusively concern new features and improvements or if the changes do not only concern insignificant components of the services to be provided by the Licensor, the Licensor shall notify the Licensee of the change by email at least four weeks before it comes into effect.</p>
-                            <p>4.1.7 The Licensor is entitled to suspend the Licensee's access to the SaaS Edition if:</p>
+                            <p>4.1.4 The Licensor is entitled, but under no obligation, to extend and further develop new features and functionalities of the SaaS Edition. The Licensor reserves the right to offer Licensee such new features and improvements against payment of an additional fee only. In the event of Licensee being provided with new features and improvements for a fee by means of a corresponding contractual agreement in addition to an existing contract, the provisions of such contract shall apply accordingly. In the event of Licensee being provided with new features and improvements free of charge, these new features and further improvements shall be deemed to be a voluntary service of the Licensor.</p>
+                            <p>4.1.5 The Licensor may change the functional scope of the services at any time to an extent that is reasonable for the Licensee. Such change shall be deemed reasonable, in particular, if the services the parties expressly agreed on and the Licensor's main contractual performance obligations (Hauptleistungspflichten) remain substantially unchanged and if that change is necessary for an important reason. Such reasons are, without limitation, disruptions in the provision of services by subcontractors and safety reasons. If the changes do not exclusively concern new features and improvements or if the changes do not only concern insignificant components of the services to be provided by the Licensor, the Licensor shall notify the Licensee of the change by email at least four weeks before it comes into effect.</p>
+                            <p>4.1.6 The Licensor is entitled to suspend the Licensee's access to the SaaS Edition if:</p>
                             <ul className="list-disc">
                                 <li>there are indications that the Licensee's credentials for accessing the SaaS Edition have been or are being misused or that these credentials have been or are being provided to an unauthorised third party, or that credentials are being used by more than one person;</li>
                                 <li>there are indications that third parties have otherwise gained access to the SaaS Edition provided to Licensee;</li>
@@ -77,7 +76,7 @@ export function Terms() {
                                 <li>the Licensee has provided Licensor with incorrect or invalid contact data, and Licensor is no longer able to contact Licensee;</li>
                                 <li>in the event of payment by direct debit, the Licensee has provided incorrect bank account details and does not effect the respective payment by other means.</li>
                             </ul>
-                            <p>4.1.8 The Licensor shall announce the suspension of the Licensee’s credentials within the meaning of section 4.1.7 to the Licensee in text or written form at least one working day before the suspension comes into effect, insofar as, considering the interests of both parties, such announcement is reasonable does not affect the purpose of the suspension.</p>
+                            <p>4.1.7 The Licensor shall announce the suspension of the Licensee’s credentials within the meaning of section 4.1.6 to the Licensee in text or written form at least one working day before the suspension comes into effect, insofar as, considering the interests of both parties, such announcement is reasonable does not affect the purpose of the suspension.</p>
                             <h2 className="font-semibold">4.2 Term and Termination</h2>
                             <p>4.2.1 A subscription shall become effective upon its activation by Licensor and shall remain valid unless terminated.</p>
                             <p>4.2.2 Either party may terminate a monthly subscription at least 30 days prior to its expiration, a monthly subscription shall be prolonged for further monthly periods respectively.</p>
@@ -185,7 +184,7 @@ export function Terms() {
                         </span>
                     </h1>
                     <div className="mt-8">
-                        <p>Last updated: 06/02/2023</p>
+                        <p>Last updated: 13/03/2023</p>
                     </div>
                     <div className="mt-8 space-y-8">
                         <div className="flex flex-col space-y-4">
@@ -229,7 +228,7 @@ export function Terms() {
                                 <li>unlimited users</li>
                                 <li>batch and realtime data processing</li>
                                 <li>role-based access control</li>
-                                <li>5,000 refinery credits/month incl.</li>
+                                <li>3,000 refinery credits/month incl.</li>
                                 <li>priority support</li>
                             </ul>
                             <p>13.2.3 Enterprise</p>
