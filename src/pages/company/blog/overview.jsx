@@ -2,6 +2,23 @@ import { KERN_ASSETS_URL } from "@/components/jsx/_settings"
 
 export const articles = [
     {
+        "title": "How GPT will change our future",
+        "description": "We take a look on how GPT models work, why they work and what they can do.",
+        "slug": "how-gpt-will-shape-our-future",
+        "teaser": "Everybody is talking about AI at the moment, especially about ChatGPT and GPT-4. We must admit, we feel a little bit guilty about writing yet another article about this topic. But we feel that it’s just too important at the moment not to do so.",
+        "category": "Knowledge",
+        "thumbnail": "/blog/futuristic-world.png",
+        "prompt": "a futuristic world with humans and robots.",
+        "author": {
+            "name": "Leonard Püttmann",
+            "image": `${KERN_ASSETS_URL}/team/team-leo.png`
+        },
+        "date": "2023-04-13"
+    },
+    {
+        "title": "Alleviate the pain of manual labeling and deploying models with weak supervision",
+        "description": "How to use weak supervision to get high quality labels fast",
+        "slug": "weak-supervision-for-nlp",
         "title": "Alleviate the pain of manual labeling and deploying models with weak supervision",
         "description": "How to use weak supervision to get high quality labels fast",
         "slug": "whats-weak-supervision",
